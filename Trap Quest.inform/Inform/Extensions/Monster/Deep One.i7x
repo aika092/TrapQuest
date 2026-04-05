@@ -134,14 +134,14 @@ To compute damaging attack of (M - deep one):
 To compute stunning attack of (M - deep one):
 	say "[BigNameDesc of M] emits a guttural croak that literally rumbles your surroundings.";
 	if the intelligence roll of M >= the intelligence of the player:
-		say "It takes you a second too long to realise that 'you' are included in 'your surroundings', and powerful vibrations travel up your legs [if doomed >= 5]temporarily stopping your movement and making your crotch [otherwise]and cause your crotch to [end if]explode with sensation!";
+		say "It takes you a second too long to realise that [']you['] are included in [']your surroundings['], and powerful vibrations travel up your legs [if doomed >= 5]temporarily stopping your movement and making your crotch [otherwise]and cause your crotch to [end if]explode with sensation!";
 		if doomed >= 5:
 			now another-turn-flavour is the substituted form of "Your legs are still trembling!";
 			now another-turn is 1;
 		stimulate vagina from M;
 		moderateHumiliate;
 	otherwise:
-		say "Luckily, you're smart enough to realise that 'you' are included in 'your surroundings' and quickly create some distance before you start rumbling too.".
+		say "Luckily, you're smart enough to realise that [']you['] are included in [']your surroundings['] and quickly create some distance before you start rumbling too.".
 
 [Applies glue to a random piece of clothing. Was clunky to implement, and made the deep one a little too complicated.]
 [To compute grabbing attack of (M - deep one):

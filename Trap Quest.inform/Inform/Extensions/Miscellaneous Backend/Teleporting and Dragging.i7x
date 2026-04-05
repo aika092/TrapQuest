@@ -41,7 +41,7 @@ To teleport to (R - a room):
 			unless T is the player or T is backdrop, now T is in the location of iron-maiden;
 	repeat with T running through on-stage trophies:
 		if T is held, say "[bold type][BigNameDesc of T] [bold type]is ripped from your hands by an invisible force, and in your mind's eye you can see that it has been taken to the 'Trophy Hall'![roman type][line break]";
-		now T is in School31;
+		now T is in Facility31;
 	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;[this may be causing lag]
 	if player-dragger is yourself: [it was a teleport, rather than a drag]
 		if iron-maiden is in R:
@@ -66,7 +66,7 @@ To teleport to (R - a room):
 		now the player is in R;
 	zero focus stuff; [Location has changed so we need to empty the location window]
 	now the location of the player is discovered;
-	if playerRegion is school: [if we were inside a painting, this will have been set to school]
+	if playerRegion is facility: [if we were inside a painting, this will have been set to facility]
 		let P be a random painting in the location of the player;
 		if P is painting, compute painting completion of P;
 	update player region;
@@ -128,7 +128,7 @@ To compute bad teleport:
 	if diaper messing >= 7:
 		let DP be a random diaper pail;
 		let L be the location of DP;
-		if L is a placed room:
+		if L is a placed room and (L is not an academic room or armband is worn):
 			add L to LR, if absent;
 	let L be the location of iron-maiden;
 	if L is a placed room:

@@ -13,10 +13,10 @@ Definition: a staff member is motionless-when-defeated: decide yes.
 Definition: a staff member is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 To compute monstermotion of (M - a staff member):
-	if playerRegion is not school and M is undefeated:
-		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
-		now M is in School01;
-	otherwise if a random number between 0 and 4 < the number of staff member in the location of the player or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of the player)):
+	if playerRegion is not Facility and M is undefeated:
+		say "BUG: [BigNameDesc of M] has followed the player out of the training facility. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
+		now M is in Facility01;
+	otherwise if a random number between 0 and 4 < the number of staff member in the location of the player or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a tutor in the location of the player)):
 		compute room leaving of M.
 
 [Definition: a staff member is messy:
@@ -33,15 +33,15 @@ To say StaffDesc of (M - a staff member):
 	say "[big he of M] is wearing a black armband which says 'STAFF' in large [rank-colour of M] letters.".
 
 To say rank-colour of (M - a staff member):
-	if M is sapphire-teacher:
+	if M is sapphire-tutor:
 		say "sapphire";
-	otherwise if M is emerald-teacher:
+	otherwise if M is emerald-tutor:
 		say "emerald";
-	otherwise if M is ruby-teacher:
+	otherwise if M is ruby-tutor:
 		say "ruby";
-	otherwise if M is pink-diamond-teacher:
+	otherwise if M is pink-diamond-tutor:
 		say "pink diamond";
-	otherwise if M is diamond-teacher:
+	otherwise if M is diamond-tutor:
 		say "pure diamond";
 	otherwise:
 		say "solid gold".
@@ -52,7 +52,7 @@ To decide which number is the starting difficulty of (M - a staff member):
 To set up (M - a staff member):
 	reset M;
 	now the monstersetup of M is 1;
-	while M is in School01 or M is in School33 or M is in School34 or M is in School35 or M is off-stage:
+	while M is in Facility01 or M is in Facility33 or M is in Facility34 or M is in Facility35 or M is off-stage:
 		now M is in a random placed academic room;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
@@ -62,8 +62,8 @@ To uniquely set up (M - a staff member):
 	do nothing.
 
 To regionally place (M - a staff member):
-	while M is not in the school or M is in the location of the player or M is nearby:
-		now M is in a random schoolplaced room.
+	while M is not in the facility or M is in the location of the player or M is nearby:
+		now M is in a random facilityplaced room.
 
 Definition: a staff member is human: decide yes.
 
@@ -84,7 +84,7 @@ Check kicking a staff member:
 
 Definition: yourself is purposefully rebelling:
 	[if staff-combat-warning is false and the noun is friendly and armband is worn:
-		say "Initiating combat in the school can be rather punishing. Do you know what you're doing? ";
+		say "Initiating combat in the facility can be rather punishing. Do you know what you're doing? ";
 		if the player is not consenting, decide no;]
 	decide yes.
 
@@ -92,19 +92,19 @@ To compute perception of (M - a staff member):
 	interest M;
 	calm M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if detention chair is grabbing the player:
-		compute detention chair tease of M;
-	otherwise if armband is worn and playerRegion is school:
+	if reconditioning chair is grabbing the player:
+		compute reconditioning chair tease of M;
+	otherwise if armband is worn and playerRegion is facility:
 		unless there is a currently-in-progress assembly:
-			compute student perception of M;
+			compute trainee perception of M;
 	otherwise:
-		compute nonstudent perception of M.
+		compute nontrainee perception of M.
 
 To FavourDown (M - a staff member) by (N - a number):
 	if latest-top-malfunction is not 0 and M is reactive, now latest-top-malfunction is earnings; [If an intelligent interested NPC has lost favour with the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
 	if N > 0 and armband is not worn, decrease the favour of M by N.
 
-To compute student perception of (M - a staff member):
+To compute trainee perception of (M - a staff member):
 	if the diaper-duration of M > 0 and the number of worn diaper is 0:
 		say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'HEY! Where is your diaper?! You're in big trouble, you naughty baby!'[roman type][line break]";
 		anger M;
@@ -115,9 +115,13 @@ To compute student perception of (M - a staff member):
 	otherwise if M is male and M is groping:
 		compute grope of M.
 
-To compute nonstudent perception of (M - a staff member):
-	say "[speech style of M]'You! Where is your armband?!'[roman type][line break][big he of M] takes an aggressive stance.";
-	anger M.
+To compute nontrainee perception of (M - a staff member):
+	if dungeon chains is worn and dungeon chains is stuck:
+		say "[speech style of M]'[one of]Disappointing[or]Yet another failure of a potential [prince][or]I hope you're learning something in there[cycling].'[roman type][line break][big he of M] says coldly.";
+		bore M;
+	otherwise:
+		say "[speech style of M]'You! Where is your armband?!'[roman type][line break][big he of M] takes an aggressive stance.";
+		anger M.
 
 To compute (M - a staff member) reacting to armband replacement:
 	if M is in the location of the player, say "[ArmbandCalming of M]";
@@ -164,7 +168,7 @@ To compute angry punishment of (M - a staff member):
 
 Part - Protection
 
-To reset staff boredom: [when the player attacks a student, staff members shouldn't stay bored in the same room]
+To reset staff boredom: [when the player attacks a trainee, staff members shouldn't stay bored in the same room]
 	repeat with M running through uninterested staff members in the location of the player:
 		deinterest M; [resets boredom to 0]
 		check perception of M.
@@ -181,18 +185,18 @@ To compute (M - a staff member) protecting against (X - a monster):
 To compute interaction of (M - a staff member):
 	if M is undefeated and M is not caged:
 		if armband is not worn and there is fucked-silly alive staff member:
-			compute M protecting against headmistress; [There's a rebellion afoot!]
+			compute M protecting against mistress; [There's a rebellion afoot!]
 		otherwise if the player is in danger:
 			compute protection of M;
 		otherwise if the current-errand of M is completed:
 			compute errand completion of M.
 
 To compute (M - a staff member) protecting against (X - nurse): [The nurse assaults the player on the bed, and this shouldn't upset the staff!]
-	if armband is not worn, compute M protecting against headmistress. [There's a rebellion afoot!]
+	if armband is not worn, compute M protecting against mistress. [There's a rebellion afoot!]
 
-To compute (M - a staff member) seeking (D - a direction): [Staff members don't stalk the player around the school in normal circumstances.]
-	if playerRegion is not school and M is undefeated and M is friendly:
-		unless M is nearby, deinterest M; [this should trigger unique boredom below which teleports them back to the school]
+To compute (M - a staff member) seeking (D - a direction): [Staff members don't stalk the player around the facility in normal circumstances.]
+	if playerRegion is not facility and M is undefeated and M is friendly:
+		unless M is nearby, deinterest M; [this should trigger unique boredom below which teleports them back to the facility]
 	otherwise if the friendly boredom of M >= 0 and M is interested and M is friendly and the player is not in danger:
 		distract M;
 	otherwise:
@@ -200,7 +204,7 @@ To compute (M - a staff member) seeking (D - a direction): [Staff members don't 
 		compute monstermotion reactions of M.
 
 To compute unique boredom of (M - a staff member):
-	if playerRegion is not school and M is unleashed, now M is in School01.
+	if playerRegion is not facility and M is unleashed, now M is in Facility01.
 
 Part - Combat
 
@@ -211,14 +215,14 @@ To make (M - a staff member) expectant: [Staff members do not wait a turn before
 This is the staff member unique punishment rule:
 	if the player is at least partially immobile and current-monster is not wrangling a body part: [Otherwise the staff member just holds a defeated wrangled player forever]
 		do nothing;
-	otherwise if there is a worn armband: [No staff members have yet been attacked and no students killed]
+	otherwise if there is a worn armband: [No staff members have yet been attacked and no trainees killed]
 		if the assemblyCount of locked-toilets-shame-assembly > 0 and diaper lover > 0 and the number of worn diapers is 0:
 			compute nurse diapering of current-monster;
 		otherwise:
-			compute detention of current-monster;
+			compute reconditioning of current-monster;
 		repeat with M running through unfriendly staff members:
 			calm M;
-	otherwise if ex-princess is not guarding: [If ex-princess is guarding we're in the rescue mission fight which has its own unique ending, see "the school rescue fight rule"]
+	otherwise if ex-princess is not guarding: [If ex-princess is guarding we're in the rescue mission fight which has its own unique ending, see "the facility rescue fight rule"]
 		compute current-monster dungeon locking;
 	rule succeeds.
 
@@ -250,10 +254,10 @@ To compute banishment of (M - a staff member):
 		repeat with K running through things carried by M:
 			now K is in the location of the player;
 			compute autotaking K;
-	if M is not in the school, now M is in School01.
+	if M is not in the facility, now M is in Facility01.
 
 To say DefeatFlav of (M - a staff member):
-	say "[BigNameDesc of M] collapses, and [if M is in the school]is left sprawled on the floor. [big he of M] won't be getting up any time soon[otherwise][his of M] body disappears[end if].".
+	say "[BigNameDesc of M] collapses, and [if M is in the facility]is left sprawled on the floor. [big he of M] won't be getting up any time soon[otherwise][his of M] body disappears[end if].".
 
 Part - Conversation
 
@@ -263,7 +267,7 @@ To say FirstResponse of (M - a staff member):
 
 To say RepeatResponse of (M - a staff member):
 	let E be the extra lives of the player;
-	say "[speech style of M]'Good [if E is 1]morning[otherwise if E is 2]evening[otherwise if E is 3]afternoon[end if], Miss [NameBimbo]'[roman type][line break]".
+	say "[speech style of M]'Good [if E is 1]morning[otherwise if E is 2]evening[otherwise if E is 3]afternoon[end if], Miss [NameBimbo].'[roman type][line break]".
 
 To say WhoQuestion of (M - a staff member):
 	say "[variable custom style]'What do you teach?'[roman type][line break]".
@@ -272,13 +276,13 @@ To say WhereQuestion of (M - a staff member):
 	say "[variable custom style]'[if the rank of the player <= 1]Where [one of]are we?'[or]am I?'[at random][otherwise]What's the best way to increase my rank?'[end if][roman type][line break]".
 
 To say EscapeQuestion of (M - a staff member):
-	say "[variable custom style]'What stuff is there to find deeper in the school?'[roman type][line break]".
+	say "[variable custom style]'What stuff is there to find deeper in the training grounds?'[roman type][line break]".
 
 To say StoryQuestion of (M - a staff member):
 	say "[variable custom style]'What's up with this place?'[roman type][line break]".
 
 To say AdviceQuestion of (M - a staff member):
-	say "[variable custom style]'Any advice for an eager student?'[roman type][line break]".
+	say "[variable custom style]'Any advice for an eager trainee?'[roman type][line break]".
 
 To say WhoAnswer of (M - a staff member):
 	say "[speech style of M]'I should clearly be teaching you not to ask stupid questions!'[roman type][line break]".
@@ -305,52 +309,52 @@ To decide which number is the freebie-reluctance of (M - a staff member):
 	decide on 99.
 
 
-Part - Teachers
+Part - Tutors
 
-A teacher is a kind of staff member. A teacher has a text called teacher-name. Understand the teacher-name property as describing a teacher.
-Definition: a teacher is motionless-when-defeated: decide no.
-Definition: a teacher is a generic-unlocker: decide yes.
+A tutor is a kind of staff member. A tutor has a text called tutor-name. Understand the tutor-name property as describing a tutor.
+Definition: a tutor is motionless-when-defeated: decide no.
+Definition: a tutor is a generic-unlocker: decide yes.
 
-A sapphire-teacher is a kind of teacher. Understand "sapphire" as a sapphire-teacher.
-To decide which object is the default-local-room of (M - a sapphire-teacher):
-	decide on School14.
-An emerald-teacher is a kind of teacher. Understand "emerald" as an emerald-teacher.
-To decide which object is the default-local-room of (M - an emerald-teacher):
-	decide on School18.
-A ruby-teacher is a kind of teacher. Understand "ruby" as a ruby-teacher.
-To decide which object is the default-local-room of (M - a ruby-teacher):
-	if the rank of the player >= 3, decide on School29;
-	otherwise decide on School05.
-A pink-diamond-teacher is a kind of teacher. Understand "pink", "diamond" as a pink-diamond-teacher.
-To decide which object is the default-local-room of (M - a pink-diamond-teacher):
-	if the rank of the player >= 3, decide on School30;
-	otherwise decide on School03.
-A diamond-teacher is a kind of teacher. [Understand "diamond" as a diamond-teacher.]
-To decide which object is the default-local-room of (M - a diamond-teacher):
-	if the rank of the player >= 5, decide on School27;
-	otherwise decide on School02.
+A sapphire-tutor is a kind of tutor. Understand "sapphire" as a sapphire-tutor.
+To decide which object is the default-local-room of (M - a sapphire-tutor):
+	decide on Facility14.
+An emerald-tutor is a kind of tutor. Understand "emerald" as an emerald-tutor.
+To decide which object is the default-local-room of (M - an emerald-tutor):
+	decide on Facility18.
+A ruby-tutor is a kind of tutor. Understand "ruby" as a ruby-tutor.
+To decide which object is the default-local-room of (M - a ruby-tutor):
+	if the rank of the player >= 3, decide on Facility29;
+	otherwise decide on Facility05.
+A pink-diamond-tutor is a kind of tutor. Understand "pink", "diamond" as a pink-diamond-tutor.
+To decide which object is the default-local-room of (M - a pink-diamond-tutor):
+	if the rank of the player >= 3, decide on Facility30;
+	otherwise decide on Facility03.
+A diamond-tutor is a kind of tutor. [Understand "diamond" as a diamond-tutor.]
+To decide which object is the default-local-room of (M - a diamond-tutor):
+	if the rank of the player >= 5, decide on Facility27;
+	otherwise decide on Facility02.
 
-To say NameDesc of (M - a teacher):
-	say "[input-style][teacher-name of M][roman type]".
-To say BigNameDesc of (M - a teacher):
-	say "[input-style][teacher-name of M][roman type]".
-To say FuckerDesc of (M - a teacher):
-	say teacher-name of M.
-To say BigFuckerDesc of (M - a teacher):
-	say teacher-name of M.
-To say ShortDesc of (M - a teacher):
-	say teacher-name of M.
-To say MediumDesc of (M - a teacher):
-	say "teacher [teacher-name of M]".
+To say NameDesc of (M - a tutor):
+	say "[input-style][tutor-name of M][roman type]".
+To say BigNameDesc of (M - a tutor):
+	say "[input-style][tutor-name of M][roman type]".
+To say FuckerDesc of (M - a tutor):
+	say tutor-name of M.
+To say BigFuckerDesc of (M - a tutor):
+	say tutor-name of M.
+To say ShortDesc of (M - a tutor):
+	say tutor-name of M.
+To say MediumDesc of (M - a tutor):
+	say "tutor [tutor-name of M]".
 
 To say DismissalRequestVixen of (M - a staff member):
-	say "'[if the player is a nympho and diaper quest is 0]Look! Over there! Those students are having unauthorised sex[otherwise if the player is a nympho]Look! Over there! That student needs a diaper change[otherwise if the intelligence of the player < 6]Look, over there! A distraction[otherwise][one of]Quick, quick, there's a fight going on over there[or]We need a teacher! Some students are getting violent! Over there[in random order][end if]!'".
+	say "'[if the player is a nympho and diaper quest is 0]Look! Over there! Those trainees are having unauthorised sex[otherwise if the player is a nympho]Look! Over there! That trainee needs a diaper change[otherwise if the intelligence of the player < 6]Look, over there! A distraction[otherwise][one of]Quick, quick, there's a fight going on over there[or]We need a tutor! Some trainees are getting violent! Over there[in random order][end if]!'".
 
 To say DismissalResponseVixen of (M - a staff member):
 	say "[speech style of M]'[if M is interested]Is that meant to be a joke?'[otherwise]What?! I'm on my way! YOU OVER THERE! COME HERE AT ONCE!'[end if][roman type][line break]".
 
 To decide which number is the DismissalPowerToilet of (M - a staff member):
-	if the rank of the player > 3 or the diaper-duration of headmistress > 0, decide on -100;
+	if the rank of the player > 3 or the diaper-duration of mistress > 0, decide on -100;
 	if the rank of the player <= 1, decide on 100;
 	decide on 2.
 
@@ -360,20 +364,20 @@ To say DismissalResponseToilet of (M - a staff member):
 To say ToiletReactionFlav of (M - a staff member):
 	if diaper quest is 0:
 		say "[BigNameDesc of M] touches [himself of M] as [he of M] watches.[line break][speech style of M]'[one of]Adorable[or]There's a good little exhibitionist[or]How lewd[in random order].'[roman type][line break]";
-	otherwise if the diaper-duration of headmistress > 0:
-		say "[BigNameDesc of M] frowns.[line break][speech style of M]'In the future, I'll give you detention, probably.'[roman type][line break]";
+	otherwise if the diaper-duration of mistress > 0:
+		say "[BigNameDesc of M] frowns.[line break][speech style of M]'In the future, I'll give you reconditioning, probably.'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] [one of]claps [his of M] hands[or]smiles caringly[or]applauds[then at random].[line break][speech style of M]'[one of]Great job[or]There's a good little grown-up[or]Using the potty like a big [boy of the player]! Great job[in random order], [honey of M].'[roman type][line break]".
 
 To decide which number is the DismissalPowerBursting of (M - a staff member):
-	if the rank of the player > 3 or the diaper-duration of headmistress > 0, decide on -100;
+	if the rank of the player > 3 or the diaper-duration of mistress > 0, decide on -100;
 	decide on 2.
 
 To say DismissalResponseBursting of (M - a staff member):
 	if there is a worn diaper:
 		say "[speech style of M]'[if M is interested]Well go ahead, I'm not stopping you[otherwise]Hmm, I'll allow you some privacy this time[end if]. Barely continent [boy of the player]s like you need to learn to use your nappies in front of people without being embarrassed about it.'[roman type][line break]";
 	otherwise if diaper quest is 1:
-		say "[speech style of M]'Well this is why you should be kept in nappies, [honey of M]. [if M is interested]I'm afraid it's important that if you wet yourself before you can make it to the potty, I'm here to witness it and inform the Headmistress.'[otherwise]Now run along to the toilet. I hope next time I see you, you've changed your mind in that department.'[end if][roman type][line break]";
+		say "[speech style of M]'Well this is why you should be kept in nappies, [honey of M]. [if M is interested]I'm afraid it's important that if you wet yourself before you can make it to the potty, I'm here to witness it and inform the mistress.'[otherwise]Now run along to the toilet. I hope next time I see you, you've changed your mind in that department.'[end if][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[if M is interested]I think I'd like to see that[otherwise]I presume you know where the toilets are[end if].'[roman type][line break]".
 
@@ -384,17 +388,17 @@ To say DismissalResponseDefault of (M - a staff member):
 	say "[speech style of M]'I beg your pardon, young one?! I will tell you when you're allowed to proceed unsupervised in these halls[if M is not interested]. Now run along before I change my mind[end if].'[roman type][line break]".
 
 
-To say MasturbationAfterFlav of (M - a teacher):
+To say MasturbationAfterFlav of (M - a tutor):
 	say "After this [he of M] seems satisfied, and [if refractoryperiod > 0]flexes [his of M] wrist muscles in pride.[otherwise if the player is a bit horny][MasturbationTeaseFlav of M][otherwise]pulls back.[end if][line break][speech style of M]'Right, run along now!'[roman type][line break][if hot-tub is in the location of M]It doesn't seem like [he of M] is going to let you stay here.[end if]".
 
-To compute masturbation aftermath of (M - a teacher):
+To compute masturbation aftermath of (M - a tutor):
 	say MasturbationAfterFlav of M;
 	dislodge M;
 	FavourUp M;
 	say MasturbationAftermath of M;
 	calm M.
 
-To say conventional greeting of (M - a teacher):
+To say conventional greeting of (M - a tutor):
 	say "'Hi [if M is presenting as male]Sir[otherwise]Miss[end if]. Do you have a minute?'";
 
 To consider angry punishment of (M - a staff member):
@@ -407,28 +411,28 @@ To consider angry punishment of (M - a staff member):
 To say AngryForgiveness of (M - a staff member):
 	say "[one of][speech style of M]'I should punish you, but I have a busy day today.'[roman type][line break][or][speech style of M]'You deserve a punishment for that... But I'm on my break right now. So I'll let you off, this one time.'[roman type][line break][in random order]".
 
-Part - Lessons
+Part - TrainingSessions
 
-A lesson is a kind of object. A lesson has a teacher called lesson-teacher.
+A training session is a kind of object. A training session has a tutor called training-tutor.
 
-To say LessonTitle of (L - a lesson):
-	say "Unnamed lesson with [NameDesc of lesson-teacher of L]".
+To say TrainingSessionTitle of (L - a training session):
+	say "Unnamed training session with [NameDesc of training-tutor of L]".
 
 class-time is a number that varies. class-time is 1000.
 
-chosen-lesson is an object that varies.
+chosen-training is an object that varies.
 
-lesson-room is a room that varies.
+training-room is a room that varies.
 
-[Lesson "style guide," lifted from discord
+[TrainingSession "style guide," lifted from discord
 
-Firstly all classes should have a way to promote both the player and the students. Doesn't need to happen every time but it would be good to have it happen a lot of the time. Secondly I prefer it when classes give some kind of the decision to the player, even if it's just whether to participate in the 'test' at the end or not. But this isn't mandatory.
+Firstly all classes should have a way to promote both the player and the trainees. Doesn't need to happen every time but it would be good to have it happen a lot of the time. Secondly I prefer it when classes give some kind of the decision to the player, even if it's just whether to participate in the 'test' at the end or not. But this isn't mandatory.
 
 Sapphire classes should be something that is at least vaguely feasible as being interpreted in how to act like a proper lady.
 
-Emerald classes can be lewd but not involve sex. The focus begins to shift over to being attractive and submissive to dominants, or men. Body modification will be very present here. Maybe one or more lessons to do with latex.
+Emerald classes can be lewd but not involve sex. The focus begins to shift over to being attractive and submissive to dominants, or men. Body modification will be very present here. Maybe one or more training sessions to do with latex.
 
-Ruby classes will begin to include sexual acts, including vanilla with real penises. Practising oral on dildos, drinking cum but not from the tap, that sort of thing, and then also there will be a male teacher who does 'practical' sessions.
+Ruby classes will begin to include sexual acts, including vanilla with real penises. Practising oral on dildos, drinking cum but not from the tap, that sort of thing, and then also there will be a male tutor who does 'practical' sessions.
 
 Pink Diamond classes will take sex to the next level - sex is just the foreplay and the real competition is how you can degrade yourself further during or after sex. For example, snowballing / felching cum from others, wearing used condoms, etc. I imagine that watersports and similar degrading acts go here too. Anal sex probably goes here. Fucking two guys at the same time.
 
@@ -439,107 +443,107 @@ Selkie wonders about the possibility of a less extreme option, in which the extr
 ]
 
 An all later time based rule (this is the class-time cooldown rule):
-	if class-time <= 0 and armband is solid gold, now class-time is lessonFrequency;
+	if class-time <= 0 and armband is solid gold, now class-time is trainingFrequency;
 	if class-time < 1000 and armband is not solid gold and (playerRegion is not Hotel or Hotel40 is discovered) and (playerRegion is not Mansion or Mansion32 is discovered): [We use 1000 to represent that the player hasn't been to a class before.] [Players who are in the hotel looking for the warp portal shouldn't be penalised]
 		let CS be time-seconds;
-		if playerRegion is not School or class-time <= 0, decrease class-time by CS;
+		if playerRegion is not facility or class-time <= 0, decrease class-time by CS;
 		if armband is worn:
-			let LF1 be lessonFrequency * -1;
-			let LF2 be lessonFrequency * -2;
-			let LF3 be lessonFrequency * -3;
-			let LF4 be lessonFrequency * -4;
+			let LF1 be trainingFrequency * -1;
+			let LF2 be trainingFrequency * -2;
+			let LF3 be trainingFrequency * -3;
+			let LF4 be trainingFrequency * -4;
 			if class-time <= 0 and class-time + CS > 0:
-				say "[bold type]Your [ShortDesc of armband] begins to beep like an alarm clock![line break][variable custom style][one of]That must be my first reminder that I need to return to class...[or]Time for class again...[stopping][roman type][line break]";
+				say "[bold type]Your [ShortDesc of armband] begins to beep like an alarm clock![line break][variable custom style][one of]That must be my first reminder that I need to return for the next training session...[or]Time for a training session again...[stopping][roman type][line break]";
 			otherwise if class-time <= LF1 and class-time + CS > LF1:
-				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 2nd beep. If it beeps a 5th time, I get detention.[roman type][line break]";
+				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 2nd beep. If it beeps a 5th time, I get reconditioning.[roman type][line break]";
 			otherwise if class-time <= LF2 and class-time + CS > LF2:
-				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 3rd beep. If it beeps a 5th time, I get detention.[roman type][line break]";
+				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 3rd beep. If it beeps a 5th time, I get reconditioning.[roman type][line break]";
 			otherwise if class-time <= LF3 and class-time + CS > LF3:
-				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 4th beep. If it beeps a 5th time, I get detention.[roman type][line break]";
+				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 4th beep. If it beeps a 5th time, I get reconditioning.[roman type][line break]";
 			otherwise if class-time <= LF4 and class-time + CS > LF4:
 				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 5th beep. I'm in trouble...[roman type][line break]".
 
-Definition: a lesson (called L) is correctly-situated:
-	if lesson-room is School14 and the lesson-teacher of L is sapphire-teacher, decide yes;
-	if lesson-room is School18 and the lesson-teacher of L is emerald-teacher, decide yes;
-	if lesson-room is School29 and the lesson-teacher of L is ruby-teacher, decide yes;
-	if lesson-room is School30 and the lesson-teacher of L is pink-diamond-teacher, decide yes;
-	if lesson-room is School32 and the lesson-teacher of L is diamond-teacher, decide yes;
+Definition: a training session (called L) is correctly-situated:
+	if training-room is Facility14 and the training-tutor of L is sapphire-tutor, decide yes;
+	if training-room is Facility18 and the training-tutor of L is emerald-tutor, decide yes;
+	if training-room is Facility29 and the training-tutor of L is ruby-tutor, decide yes;
+	if training-room is Facility30 and the training-tutor of L is pink-diamond-tutor, decide yes;
+	if training-room is Facility32 and the training-tutor of L is diamond-tutor, decide yes;
 	decide no.
 
-Definition: a teacher is correctly-ranked: decide no.
-Definition: a sapphire-teacher is correctly-ranked:
+Definition: a tutor is correctly-ranked: decide no.
+Definition: a sapphire-tutor is correctly-ranked:
 	if armband is sapphire, decide yes;
 	decide no.
-Definition: an emerald-teacher is correctly-ranked:
+Definition: an emerald-tutor is correctly-ranked:
 	if armband is emerald, decide yes;
 	decide no.
-Definition: a ruby-teacher is correctly-ranked:
+Definition: a ruby-tutor is correctly-ranked:
 	if armband is ruby, decide yes;
 	decide no.
-Definition: a pink-diamond-teacher is correctly-ranked:
+Definition: a pink-diamond-tutor is correctly-ranked:
 	if armband is pink diamond, decide yes;
 	decide no.
-Definition: a diamond-teacher is correctly-ranked:
+Definition: a diamond-tutor is correctly-ranked:
 	if armband is pure diamond, decide yes;
 	decide no.
 
-Definition: a lesson is correctly-ranked:
-	if the lesson-teacher of it is correctly-ranked, decide yes;
+Definition: a training session is correctly-ranked:
+	if the training-tutor of it is correctly-ranked, decide yes;
 	decide no.
 
-Definition: a lesson is lesson-appropriate: decide yes.
-To decide which number is the min-students of (L - a lesson):
+Definition: a training session is training-appropriate: decide yes.
+To decide which number is the min-trainees of (L - a training session):
 	decide on 1.
 
-Definition: a lesson (called L) is appropriate:
-	if the lesson-teacher of L is emerald-teacher and the breast-enhancement of nurse < 0 and the lesson-teacher of tits-lesson is alive: [If the player was recently instructed to get a breast enhancement and went through with it, it takes top priority]
-		if L is tits-lesson, decide yes;
+Definition: a training session (called L) is appropriate:
+	if the training-tutor of L is emerald-tutor and the breast-enhancement of nurse < 0 and the training-tutor of tits-training is alive: [If the player was recently instructed to get a breast enhancement and went through with it, it takes top priority]
+		if L is tits-training, decide yes;
 		otherwise decide no;
-	if condom-timer of condom-lesson > 0:
-		if L is condom-lesson, decide yes;
+	if condom-timer of condom-training > 0:
+		if L is condom-training, decide yes;
 		otherwise decide no;
-	if ((diaper quest is 1 and the lesson-teacher of L is emerald-teacher) or (diaper quest is 0 and the lesson-teacher of L is ruby-teacher)) and L is not pain-lesson and the lesson-teacher of pain-lesson is alive and (the player is wrist bound or the player is ankle bound or portal gag is worn), decide no; [Most if not all other emerald lessons should let releasing the bondage from the pain lesson take priority]
-	if the lesson-teacher of L is alive and the lesson-teacher of L is undefeated and the number of alive lesson-appropriate students >= the min-students of L and L is lesson-appropriate, decide yes;
+	if ((diaper quest is 1 and the training-tutor of L is emerald-tutor) or (diaper quest is 0 and the training-tutor of L is ruby-tutor)) and L is not pain-training and the training-tutor of pain-training is alive and (the player is wrist bound or the player is ankle bound or portal gag is worn), decide no; [Most if not all other emerald training sessions should let releasing the bondage from the pain training session take priority]
+	if the training-tutor of L is alive and the training-tutor of L is undefeated and the number of alive training-appropriate trainees >= the min-trainees of L and L is training-appropriate, decide yes;
 	decide no.
 
 Report going north:
-	now lesson-room is the location of the player;
-	compute potential lesson.
+	now training-room is the location of the player;
+	compute potential training session.
 
-To decide which number is lessonFrequency:
+To decide which number is trainingFrequency:
 	decide on 225 * slower timers.
 
-lessonJustDone is initially false.
-totalLessonCount is a number that varies.
+trainingJustDone is initially false.
+totalTrainingSessionCount is a number that varies.
 
-To compute potential lesson:
-	if lesson-room is a lecture academic room and armband is worn and armband is not solid gold and the armband-print of armband is not "new recruit":
+To compute potential training session:
+	if training-room is a lecture academic room and armband is worn and armband is not solid gold and the armband-print of armband is not "new recruit":
 		if debugmode > 0:
-			say "Class time tracker is at [class-time]; less than [lessonFrequency * -4] = detention.";
-		now chosen-lesson is a random correctly-ranked appropriate lesson;
+			say "Class time tracker is at [class-time]; less than [trainingFrequency * -4] = reconditioning.";
+		now chosen-training is a random correctly-ranked appropriate training session;
 		if cheatsenabled:
-			if class-time >= lessonFrequency * -4:
-				let LL be the list of correctly-ranked appropriate lessons;
+			if class-time >= trainingFrequency * -4:
+				let LL be the list of correctly-ranked appropriate training sessions;
 				if the number of entries in LL > 1:
-					say "There are [number of entries in LL] available lessons. Because you have enabled [if debugmode > 0]debug[otherwise]cheater[end if] mode, you have the option to choose a specific one.[line break]";
+					say "There are [number of entries in LL] available training sessions. Because you have enabled [if debugmode > 0]debug[otherwise]cheater[end if] mode, you have the option to choose a specific one.[line break]";
 					let N be 1;
 					reset multiple choice questions;
 					repeat with L running through LL:
-						set numerical response N to "[LessonTitle of L]";
+						set numerical response N to "[TrainingSessionTitle of L]";
 						increase N by 1;
 					set numerical response 0 to "randomise normally";
 					compute multiple choice question;
-					if player-numerical-response is not 0, now chosen-lesson is entry player-numerical-response in LL;
+					if player-numerical-response is not 0, now chosen-training is entry player-numerical-response in LL;
 		if hallway-fight-event is event-started:
 			now hallway-fight-event is event-ended;
-			releash students;
-		if class-time < (lessonFrequency * -4): [arrived too late for class]
-			compute detention of lesson-teacher of chosen-lesson;
+			releash trainees;
+		if class-time < (trainingFrequency * -4): [arrived too late for class]
+			compute reconditioning of training-tutor of chosen-training;
 			now class-time is -1;
 		otherwise:
 			now genericAssemblyHappened is false;
-			if lessonJustDone is true and a random number between 1 and 2 is 1: [player is trying to do several lessons in a row, which means they might get a random annoying assembly]
+			if trainingJustDone is true and a random number between 1 and 2 is 1: [player is trying to do several training sessions in a row, which means they might get a random annoying assembly]
 				let A be a random appropriate assembly; [first let's look at the really cool and specific assemblies]
 				if A is not assembly: [if there are no cool specific assemblies, we look for a generic assembly]
 					now genericAssemblyTime is true;
@@ -551,90 +555,90 @@ To compute potential lesson:
 					set up A;
 					compute start of A;
 			if genericAssemblyHappened is false: [only happens if we didn't have an assembly]
-				if chosen-lesson is not lesson: [there's no eligible lessons for some reason]
-					compute solo lesson;
+				if chosen-training is not training session: [there's no eligible training sessions for some reason]
+					compute solo training session;
 				otherwise:
-					if chosen-lesson is correctly-situated:
-						set up chosen-lesson;
+					if chosen-training is correctly-situated:
+						set up chosen-training;
 						try looking;
 						display focus stuff;
 						render buffered stuff;
-						compute early lesson progression stuff;
-						compute teaching of chosen-lesson;
-						compute late lesson progression stuff;
+						compute early training session progression stuff;
+						compute teaching of chosen-training;
+						compute late training session progression stuff;
 						temporaryYesNoBackgroundReset;
 					otherwise:
-						say "Your rank is [accessory-colour of armband], so there's no lesson for you here.".
+						say "Your rank is [accessory-colour of armband], so there's no training session for you here.".
 
-To compute early lesson progression stuff:
+To compute early training session progression stuff:
 	if the wont-change of nurse > 0, decrease the wont-change of nurse by 1;
 	if predicamentJustDone is true and (class-time is 1000 or class-time < 0), now predicamentJustDone is false;
-	now lessonJustDone is true.
+	now trainingJustDone is true.
 
-To compute late lesson progression stuff:
-	increase totalLessonCount by 1;
-	enable academy events;
-	now class-time is lessonFrequency / slower timers;
-	if student-interaction-time > 10, now student-interaction-time is 10; [soon, a student might want something from you]
+To compute late training session progression stuff:
+	increase totalTrainingSessionCount by 1;
+	enable facility events;
+	now class-time is trainingFrequency / slower timers;
+	if trainee-interaction-time > 10, now trainee-interaction-time is 10; [soon, a trainee might want something from you]
 	[let B be (the rank of the player * 3) - the bimbo of the player;
-	if B > 0, increase class-time by B * 60;] [Lessons are spaced further apart if the player isn't slutty enough for them]
+	if B > 0, increase class-time by B * 60;] [TrainingSessions are spaced further apart if the player isn't slutty enough for them]
 	if the breast-enhancement of nurse is not 0:
-		decrease the breast-enhancement of nurse by 1; [If the player has had a lesson since they were instructed to get a breast enhancement, this should end that side-quest.]
+		decrease the breast-enhancement of nurse by 1; [If the player has had a training session since they were instructed to get a breast enhancement, this should end that side-quest.]
 		if the breast-enhancement of nurse is 0, say "[bold type]You realise that you should now be able to visit the nurse again without [him of the nurse] giving you a breast enhancement.[roman type][line break]".
 
 To compute teaching of (L - an object):
 	say "BUG - Tried to compute teaching of [L], but it doesn't exist.".
 
-To set up (L - a lesson):
-	optimise students;
-	repeat with M running through monsters in lesson-room:
+To set up (L - a training session):
+	optimise trainees;
+	repeat with M running through monsters in training-room:
 		regionally place M;
 		bore M;
-	now the lesson-teacher of L is in lesson-room;
-	bore the lesson-teacher of L;
-	repeat with M running through alive lesson-appropriate students:
-		now M is in lesson-room;
-		bore M; [It's important that everyone is bored because otherwise after the lesson they'll all immediately notice the player]
-	while the number of students in lesson-room > 5:
-		let ST be a random student in lesson-room;
+	now the training-tutor of L is in training-room;
+	bore the training-tutor of L;
+	repeat with M running through alive training-appropriate trainees:
+		now M is in training-room;
+		bore M; [It's important that everyone is bored because otherwise after the training session they'll all immediately notice the player]
+	while the number of trainees in training-room > 5:
+		let ST be a random trainee in training-room;
 		regionally place ST;
-		if ST is not in lesson-room, now the boredom of ST is 0.
+		if ST is not in training-room, now the boredom of ST is 0.
 
-To compute solo lesson:
+To compute solo training session:
 	let L be the location of the player;
 	let M be yourself;
-	if L is School14 and armband is sapphire:
-		now M is a random alive undefeated sapphire-teacher;
-	otherwise if L is School18 and armband is emerald:
-		now M is a random alive undefeated emerald-teacher;
-	otherwise if L is School29 and armband is ruby:
-		now M is a random alive undefeated ruby-teacher;
-	otherwise if L is School30 and armband is pink diamond:
-		now M is a random alive undefeated pink-diamond-teacher;
-	otherwise if L is School32:
-		now M is a random alive undefeated diamond-teacher;
-	if M is nothing and headmistress is alive and headmistress is undefeated, now M is headmistress;
-	if M is nothing, now M is a random alive undefeated teacher;
+	if L is Facility14 and armband is sapphire:
+		now M is a random alive undefeated sapphire-tutor;
+	otherwise if L is Facility18 and armband is emerald:
+		now M is a random alive undefeated emerald-tutor;
+	otherwise if L is Facility29 and armband is ruby:
+		now M is a random alive undefeated ruby-tutor;
+	otherwise if L is Facility30 and armband is pink diamond:
+		now M is a random alive undefeated pink-diamond-tutor;
+	otherwise if L is Facility32:
+		now M is a random alive undefeated diamond-tutor;
+	if M is nothing and mistress is alive and mistress is undefeated, now M is mistress;
+	if M is nothing, now M is a random alive undefeated tutor;
 	if M is nothing:
-		say "There is nobody available to run your lesson.";
+		say "There is nobody available to run your training session.";
 	otherwise if M is yourself:
-		say "Your rank is [accessory-colour of armband], so there's no lesson for you here.";
+		say "Your rank is [accessory-colour of armband], so there's no training session for you here.";
 	otherwise:
-		compute early lesson progression stuff;
-		compute solo lesson of M;
-		compute late lesson progression stuff.
+		compute early training session progression stuff;
+		compute solo training session of M;
+		compute late training session progression stuff.
 
-To compute solo lesson of (M - staff member):
-	repeat with X running through monsters in lesson-room:
+To compute solo training session of (M - staff member):
+	repeat with X running through monsters in training-room:
 		regionally place X;
 		bore X;
-	now M is in lesson-room;
+	now M is in training-room;
 	bore M;
-	say "[BigNameDesc of M] enters the room shortly after you. There's nobody else with [him of M].[line break][speech style of M]'Looks like you're my only student today. We'll have to get creative with your lesson, then.'[roman type][line break]";
+	say "[BigNameDesc of M] enters the room shortly after you. There's nobody else with [him of M].[line break][speech style of M]'Looks like you're my only trainee today. We'll have to get creative with your training session, then.'[roman type][line break]";
 	if armband is solid gold:
 		say "[BigNameDesc of M] stretches [his of M] arms.[line break][speech style of M]'You're already solid gold rank, too. Can we just do this another time? I'm tired.'[roman type][line break][BigNameDesc of M] shoos you away.";
-	otherwise if diaper quest is 0 and armband is ruby and gloryhole is in School19 and face is not actually occupied:
-		compute gloryhole lesson of M;
+	otherwise if diaper quest is 0 and armband is ruby and gloryhole is in Facility19 and face is not actually occupied:
+		compute gloryhole training session of M;
 	otherwise:
 		say "[BigNameDesc of M] stretches [his of M] arms.[line break][speech style of M]'Ugh, I can't think of anything right now. Let's just pretend this went well. Here's your coveted promotion.'[roman type][line break][BigNameDesc of M] waves a hand in your direction.";
 		if armband is pure diamond, now armband is solid gold;
@@ -644,23 +648,23 @@ To compute solo lesson of (M - staff member):
 		if armband is sapphire, now armband is emerald;
 		say "You watch as the ID card inside your armband transforms!";
 		now the armband-title of armband is "";
-		now the armband-print of armband is "solo student";
+		now the armband-print of armband is "solo trainee";
 		say ClothingDesc of armband.
 
-To compute gloryhole lesson of (M - a monster):
+To compute gloryhole training session of (M - a monster):
 	say "[speech style of M]'[if M is staff member]Let's test your cocksucking skills[otherwise]This is where a worthless piece of shit like you belongs[end if].'[roman type][line break][BigNameDesc of M] leads you to the Changing Rooms, and forces you to your knees.";
-	drag to School19 by M;
+	drag to Facility19 by M;
 	now the stance of the player is 1;
 	say "Your face is brought near to the bottom hole, and suddenly a magic force grips you, pulling your mouth up against the hole. Within moments, a large [if the oral sex addiction of the player > 5]juicy [end if][manly-penis] pushes through, into your mouth. It's easily long enough to hit the back of your throat, causing you to gag[if the oral sex addiction of the player > 7] slightly[end if].";
 	now gloryhole is penetrating face;
 	now gloryhole is grabbing the player;
 	now busy is 1;
 	now the turns trapped of gloryhole is 0;
-	if M is student, say "[speech style of M]'Don't you dare resist, now, you cock-hungry slut.'[roman type][line break]";
+	if M is trainee, say "[speech style of M]'Don't you dare resist, now, you cock-hungry slut.'[roman type][line break]";
 	say "Do you want to resist? ";
 	if the player is consenting:
 		try resisting;
-		if M is student:
+		if M is trainee:
 			say "[BigNameDesc of M] growls.[line break][speech style of M]'You still don't get it, do you? I'm going to keep making your life miserable until you learn your proper place.'[roman type][line break]";
 			HappinessDown M;
 		otherwise:
@@ -676,7 +680,7 @@ To compute gloryhole lesson of (M - a monster):
 			say ClothingDesc of armband;
 		otherwise:
 			say "[BigNameDesc of M] laughs at you.[line break][speech style of M]'I knew it. You're such a slut.'[roman type][line break][moderateHumiliateReflect][line break][speech style of M]'Have fun now!'[roman type][line break]";
-	if M is staff member: [student's `satisfy` function is called in the `compute default bullying` function]
+	if M is staff member: [trainee's `satisfy` function is called in the `compute default bullying` function]
 		say "[speech style of M]'Have fun now!'[roman type][line break]";
 		satisfy M;
 	try M going south.
@@ -692,7 +696,7 @@ Definition: an assembly is currently-in-progress:
 	if the assemblyTime of it > 0, decide yes;
 	decide no.
 To decide which monster is the assemblyAnnouncer of (A - an assembly):
-	decide on headmistress.
+	decide on mistress.
 Definition: an assembly is eligible: decide no.
 Definition: an assembly (called A) is appropriate:
 	if A is eligible and the assemblyAnnouncer of A is alive, decide yes;
@@ -707,25 +711,25 @@ Definition: an generic-assembly (called A) is appropriate:
 
 
 To set up (A - an assembly):
-	repeat with ST running through alive students:
-		now ST is in School16;
+	repeat with ST running through alive trainees:
+		now ST is in Facility16;
 		interest ST;
 		now ST is unconcerned;
-	now the assemblyAnnouncer of A is in School16;
+	now the assemblyAnnouncer of A is in Facility16;
 	now the assemblyAnnouncer of A is interested;
-	now the player is in School16;
+	now the player is in Facility16;
 	increase the assemblyCount of A by 1.
 
 To say WarpPortalStartFlav of (A - an assembly):
-	say "As you stumble through the warp portal, you find yourself in the assembly hall. The other students are already here. ".
+	say "As you stumble through the warp portal, you find yourself in the assembly hall. The other trainees are already here. ".
 
 To say WalkOverStartFlav of (A - an assembly):
-	let M be a random alive undefeated correctly-ranked teacher;
-	if M is nothing, now M is a random alive undefeated teacher;
+	let M be a random alive undefeated correctly-ranked tutor;
+	if M is nothing, now M is a random alive undefeated tutor;
 	if M is nothing, now M is a random alive undefeated staff member;
 	now M is in the location of the player;
-	say "Nobody is here except [M].[line break][speech style of M]'What are you doing here? It's not time for class right now, it's time for assembly first! Quick, come with me!'[roman type][line break][BigNameDesc of M] drags you to the [School16]! The other students are already here. ";
-	now M is in School16;
+	say "Nobody is here except [M].[line break][speech style of M]'What are you doing here? It's not time for a training session right now, it's time for assembly first! Quick, come with me!'[roman type][line break][BigNameDesc of M] drags you to the [Facility16]! The other trainees are already here. ";
+	now M is in Facility16;
 
 To compute start of (A - an assembly):
 	say AssemblyStartFlav of A;
@@ -742,17 +746,17 @@ To say AssemblyStartFlav of (A - an assembly):
 An all time based rule (this is the assembly computation rule):
 	let A be a random currently-in-progress assembly;
 	if A is assembly:
-		if the player is in School16 and (the assemblyTime of A <= 1 or the player is not in danger):
+		if the player is in Facility16 and (the assemblyTime of A <= 1 or the player is not in danger):
 			execute A;
 			decrease the assemblyTime of A by 1;
 			if the assemblyTime of A <= 0, conclude A;
 		otherwise:
 			conclude A. [failsafe]
 
-Check going when the player is in School16 and there is a currently-in-progress assembly:
+Check going when the player is in Facility16 and there is a currently-in-progress assembly:
 	say "There seems to be some kind of force-field preventing you from leaving via the doorway until assembly is over." instead.
 
-Check standing when the player is in School16 and the player is prone and there is a currently-in-progress assembly:
+Check standing when the player is in Facility16 and the player is prone and there is a currently-in-progress assembly:
 	say "There seems to be some kind of magical force preventing you from standing up until assembly is over." instead.
 
 To execute (A - an assembly):
@@ -761,7 +765,7 @@ To execute (A - an assembly):
 
 To conclude (A - an assembly):
 	if the assemblyAnnouncer of A is friendly, satisfy the assemblyAnnouncer of A;
-	repeat with ST running through students in School16:
+	repeat with ST running through trainees in Facility16:
 		if ST is in the location of the player, try ST going south;
 		regionally place ST;
 		now the boredom of ST is 0;
@@ -771,15 +775,15 @@ To conclude (A - an assembly):
 	now the assemblyTime of A is 0;
 	if genericAssemblyHappened is true:
 		now genericAssemblyHappened is false;
-		now lessonJustDone is false. [prevents a generic assembly from happening twice in a row]
+		now trainingJustDone is false. [prevents a generic assembly from happening twice in a row]
 
 soiled-diaper-assembly is an assembly.
 Definition: soiled-diaper-assembly is eligible:
-	if diaper messing >= 7 and there is a soiled-diaper in the School, decide yes;
+	if diaper messing >= 7 and there is a soiled-diaper in the facility, decide yes;
 	decide no.
 To say AssemblyStartFlav of (A - soiled-diaper-assembly):
 	repeat with SD running through soiled-diaper:
-		if SD is in the school, now SD is in the location of the player;
+		if SD is in the facility, now SD is in the location of the player;
 	let M be the assemblyAnnouncer of A;
 	say "[line break][speech style of M]'It has come to my attention that one of you has been leaving their filth in my halls.'[roman type][line break][big he of M] is holding up a soiled diaper, which [he of M] then throws on the ground right at your feet.[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] of just how bad [his of the player] diapers smell.'[roman type][line break]".
 
@@ -788,7 +792,7 @@ To decide which number is the assemblyTurns of (A - soiled-diaper-assembly):
 
 To execute (A - soiled-diaper-assembly):
 	let M be the assemblyAnnouncer of A;
-	let ST be a random student in the location of the player;
+	let ST be a random trainee in the location of the player;
 	let SD be a random soiled-diaper in the location of the player;
 	say "[BigNameDesc of ST] [one of]smirks[or]laughs[or]harrumphs[or]grimaces[or]grins[in random order] as [he of ST] takes the [MediumDesc of SD] and smushes it into your face.";
 	slowDelicateUp 1;
@@ -799,14 +803,14 @@ egg-assembly is an assembly.
 Definition: egg-assembly is eligible:
 	if asshole is not actually occupied:
 		repeat with E running through on-stage eggs:
-			if E is not held and E is in the School, decide yes;
+			if E is not held and E is in the facility, decide yes;
 	decide no.
 To say AssemblyStartFlav of (A - egg-assembly):
 	repeat with SD running through eggs:
-		if SD is in the school and SD is not held, now SD is in the location of the player;
+		if SD is in the facility and SD is not held, now SD is in the location of the player;
 	let M be the assemblyAnnouncer of A;
 	now the stance of the player is 1;
-	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been using my halls as a dumping ground for their perverse discarded objects.'[roman type][line break][big he of M] points to the table in front of [him of M], upon which [if the number of eggs in the location of the player > 1]are the eggs you left in the school[otherwise]is [NameDesc of a random egg in the location of the player][end if].[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] where [his of the player] eggs belong: UP [caps his of the player] ASSHOLE.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and your [asshole] is exposed to all your peers.";
+	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other trainees are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been using my halls as a dumping ground for their perverse discarded objects.'[roman type][line break][big he of M] points to the table in front of [him of M], upon which [if the number of eggs in the location of the player > 1]are the eggs you left in the trainin halls[otherwise]is [NameDesc of a random egg in the location of the player][end if].[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] where [his of the player] eggs belong: UP [caps his of the player] ASSHOLE.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and your [asshole] is exposed to all your peers.";
 	repeat with C running through ass covering clothing:
 		if C is displacable, now C is crotch-displaced;
 		otherwise now C is in the location of the player.
@@ -816,7 +820,7 @@ To decide which number is the assemblyTurns of (A - egg-assembly):
 
 To execute (A - egg-assembly):
 	let M be the assemblyAnnouncer of A;
-	let ST be a random student in the location of the player;
+	let ST be a random trainee in the location of the player;
 	let SD be a random egg in the location of the player;
 	if SD is nothing, let SD be a random held egg;
 	if SD is egg:
@@ -838,97 +842,97 @@ To execute (A - egg-assembly):
 		destroy SD;
 	otherwise:
 		now the assemblyTime of A is 1;
-	say "[one of]You hear amused gasps and giggles from your fellow students[or]Whispers, gasps, and laughter rain down on you from the student body[or]Muttered comments like 'Slut', 'Check the gape!' and '[big he of the player]'s really enjoying that'! rise from all around you, down on the floor on your knees[or]Jeers, catcalls, and gasps match the pointing fingers of your shocked peers[in random order].";
+	say "[one of]You hear amused gasps and giggles from your fellow trainees[or]Whispers, gasps, and laughter rain down on you from the trainee body[or]Muttered comments like 'Slut', 'Check the gape!' and '[big he of the player]'s really enjoying that'! rise from all around you, down on the floor on your knees[or]Jeers, catcalls, and gasps match the pointing fingers of your shocked peers[in random order].";
 	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's it for today. And [NameBimbo], make sure you don't leave your disgusting eggs in my halls again.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
 
 Check squatting when egg-assembly is currently-in-progress:
-	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
+	say "This doesn't seem like a sensible time to antagonise [NameDesc of mistress] by doing that." instead.
 
 Check wearing when egg-assembly is currently-in-progress:
-	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
+	say "This doesn't seem like a sensible time to antagonise [NameDesc of mistress] by doing that." instead.
 
 Check replacing when egg-assembly is currently-in-progress:
-	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
+	say "This doesn't seem like a sensible time to antagonise [NameDesc of mistress] by doing that." instead.
 
-student-furious-assembly is an assembly.
-Definition: student-furious-assembly is eligible:
-	if headmistress is alive and headmistress is undefeated:
-		repeat with ST running through alive students:
+trainee-furious-assembly is an assembly.
+Definition: trainee-furious-assembly is eligible:
+	if mistress is alive and mistress is undefeated:
+		repeat with ST running through alive trainees:
 			if the favour of ST < the aggro limit of ST - 6:
 				decide yes;
 	decide no.
 
-To say AssemblyStartFlav of (A - student-furious-assembly):
-	let M be headmistress;
-	let ST be a random alive student;
-	repeat with STT running through alive students:
+To say AssemblyStartFlav of (A - trainee-furious-assembly):
+	let M be mistress;
+	let ST be a random alive trainee;
+	repeat with STT running through alive trainees:
 		if the favour of STT < the aggro limit of STT - 6, now ST is STT;
 	say "[ST] is at the front, talking to [NameDesc of M] with a furious look on [his of ST] face.";
 	now most-recent-leaver is ST.
 
-To execute (A - student-furious-assembly):
-	let M be headmistress;
+To execute (A - trainee-furious-assembly):
+	let M be mistress;
 	let ST be most-recent-leaver;
-	say "[BigNameDesc of ST] spits on the ground when [he of ST] sees you.[line break][speech style of ST]'There [he of the player] is. I'm sorry but I just can't take it any more. Every moment of my time here, [NameBimbo] has been trying to make my life miserable. I can't be around [him of the player] any more. If [he of the player] stays, I walk.'[roman type][line break][BigNameDesc of M] has an equally furious frown, and looks from [NameDesc of ST] to you, then back to [him of ST].[line break][speech style of M]'[NameBimbo] is clearly guilty of disturbing the peace in my academy. This is a severe crime, on par with inciting a rebellion. I will punish [him of the player] dearly, with a nice long stay in my dungeons.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and somehow unable to move! You try to protest but you find yourself unable to make any noise![line break][speech style of M]'As for you, [student-name of ST], don't think I have been blind. I am aware of your part in this rivalry; you are not guilt-free. You can have your wish - you are henceforth expelled from this academy. ";
-	if diaper quest is 1 or gloryhole is off-stage, say "For your crimes, I place this curse on you. It shall be active whenever you are within ten miles of my academy.'[roman type][line break]With another snap of [his of M] fingers, you watch [NameDesc of ST][']s belly bulge to an insanely huge size! As you watch, [if diaper quest is 1 and diaper messing < 3]a fountain of [urine] spurts from [his of ST] crotch, soiling [his of ST] clothes and quickly leaking to the floor. The [urine] keeps going until [his of ST] belly has completely deflated[otherwise if diaper quest is 1]an insane amount of poop starts to slither its way out of [his of ST] backdoor and into [his of ST] underwear. The giant mess just keeps and keeps coming, blarting and spurting until [his of ST] belly has returned to a normal size[otherwise]fountains of [semen] spurts from [his of ST] mouth and asshole, soiling [his of ST] clothes and quickly leaking to the floor. The [semen] keeps going until [his of ST] belly has completely deflated[end if]! Then in the next instant, [his of ST] belly explodes out to maximum size and it all starts again![line break][speech style of M]'I would find a way to leave my zone of influence, and quickly.'[roman type][line break][BigNameDesc of ST] shrieks, gags, and then waddles from the room as fast as [his of ST] wobbling legs can carry [him of ST], [his of ST] belly emptying and refilling itself repeatedly as [he of ST] does!";
-	otherwise say "Go, leave now.'[roman type][line break][BigNameDesc of ST] looks panicked for a moment, like [he of ST] is expecting further retribution from [NameDesc of headmistress], but nothing comes.[line break][speech style of ST]'I'm just... free to leave? Okay...'[roman type][line break][BigNameDesc of ST] very slowly inches out of the room, as if with every step [he of ST] is entirely sure that [NameDesc of headmistress] is going to change [his of headmistress] mind and do something horrible to [him of ST] the moment [his of ST] foot touches the floor. But nothing happens.";
+	say "[BigNameDesc of ST] spits on the ground when [he of ST] sees you.[line break][speech style of ST]'There [he of the player] is. I'm sorry but I just can't take it any more. Every moment of my time here, [NameBimbo] has been trying to make my life miserable. I can't be around [him of the player] any more. If [he of the player] stays, I walk.'[roman type][line break][BigNameDesc of M] has an equally furious frown, and looks from [NameDesc of ST] to you, then back to [him of ST].[line break][speech style of M]'[NameBimbo] is clearly guilty of disturbing the peace in my training halls. This is a severe crime, on par with inciting a rebellion. I will punish [him of the player] dearly, with a nice long stay in my dungeons.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and somehow unable to move! You try to protest but you find yourself unable to make any noise![line break][speech style of M]'As for you, [trainee-name of ST], don't think I have been blind. I am aware of your part in this rivalry; you are not guilt-free. You can have your wish - you are henceforth expelled. ";
+	if diaper quest is 1 or gloryhole is off-stage, say "For your crimes, I place this curse on you. It shall be active whenever you are within ten miles of these grounds.'[roman type][line break]With another snap of [his of M] fingers, you watch [NameDesc of ST][']s belly bulge to an insanely huge size! As you watch, [if diaper quest is 1 and diaper messing < 3]a fountain of [urine] spurts from [his of ST] crotch, soiling [his of ST] clothes and quickly leaking to the floor. The [urine] keeps going until [his of ST] belly has completely deflated[otherwise if diaper quest is 1]an insane amount of poop starts to slither its way out of [his of ST] backdoor and into [his of ST] underwear. The giant mess just keeps and keeps coming, blarting and spurting until [his of ST] belly has returned to a normal size[otherwise]fountains of [semen] spurts from [his of ST] mouth and asshole, soiling [his of ST] clothes and quickly leaking to the floor. The [semen] keeps going until [his of ST] belly has completely deflated[end if]! Then in the next instant, [his of ST] belly explodes out to maximum size and it all starts again![line break][speech style of M]'I would find a way to leave my zone of influence, and quickly.'[roman type][line break][BigNameDesc of ST] shrieks, gags, and then waddles from the room as fast as [his of ST] wobbling legs can carry [him of ST], [his of ST] belly emptying and refilling itself repeatedly as [he of ST] does!";
+	otherwise say "Go, leave now.'[roman type][line break][BigNameDesc of ST] looks panicked for a moment, like [he of ST] is expecting further retribution from [NameDesc of mistress], but nothing comes.[line break][speech style of ST]'I'm just... free to leave? Okay...'[roman type][line break][BigNameDesc of ST] very slowly inches out of the room, as if with every step [he of ST] is entirely sure that [NameDesc of mistress] is going to change [his of mistress] mind and do something horrible to [him of ST] the moment [his of ST] foot touches the floor. But nothing happens.";
 	say "Once [he of ST] has cleared the room, all eyes return to you.";
 	destroy ST;
-	compute headmistress dungeon locking.
+	compute mistress dungeon locking.
 
 new-fuckhole-assembly is an assembly.
 Definition: new-fuckhole-assembly is eligible:
-	if diaper quest is 0 and headmistress is alive and headmistress is undefeated and most-recent-leaver is a student and gloryhole is on-stage and the player is possessing a penis, decide yes;
+	if diaper quest is 0 and mistress is alive and mistress is undefeated and most-recent-leaver is a trainee and gloryhole is on-stage and the player is possessing a penis, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - new-fuckhole-assembly):
-	say "[BigNameDesc of headmistress] casts [his of headmistress] eyes over the crowd of students.".
+	say "[BigNameDesc of mistress] casts [his of mistress] eyes over the crowd of trainees.".
 
 To execute (A - new-fuckhole-assembly):
-	now school-fuckhole is in the location of gloryhole;
-	now the fuckhole-person of school-fuckhole is most-recent-leaver;
+	now facility-fuckhole is in the location of gloryhole;
+	now the fuckhole-person of facility-fuckhole is most-recent-leaver;
 	if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
 	now most-recent-leaver is nothing;
 	destroy gloryhole;
-	now the fuckhole-rule of school-fuckhole is a random number between 1 and 5;
-	if bukkake fetish is 1 and (the fuckhole-rule of school-fuckhole is 2 or the fuckhole-rule of school-fuckhole is 3), now the fuckhole-rule of school-fuckhole is 0;
-	if the fuckhole-rule of school-fuckhole is 2:
+	now the fuckhole-rule of facility-fuckhole is a random number between 1 and 5;
+	if bukkake fetish is 1 and (the fuckhole-rule of facility-fuckhole is 2 or the fuckhole-rule of facility-fuckhole is 3), now the fuckhole-rule of facility-fuckhole is 0;
+	if the fuckhole-rule of facility-fuckhole is 2:
 		let B be a random off-stage fetish appropriate fluid vulnerable bra;
 		if B is nothing, now B is random fetish appropriate fluid vulnerable bra;
-		now B is in the location of school-fuckhole;
-	if the fuckhole-rule of school-fuckhole >= 4, now the buttcondoms of school-fuckhole is 1;
-	say "[speech style of headmistress]'I've... ah... recently... [']acquired['] a new fuckhole. It shall be replacing the gloryholes in the changing rooms. You must only use it once per visit to the school. Anyone caught breaking the usage rules will be punished.'[roman type][line break][big he of headmistress] thinks for a moment, and then says[line break][speech style of headmistress][FuckholeRuleDesc][roman type][line break]".
+		now B is in the location of facility-fuckhole;
+	if the fuckhole-rule of facility-fuckhole >= 4, now the buttcondoms of facility-fuckhole is 1;
+	say "[speech style of mistress]'I've... ah... recently... [']acquired['] a new fuckhole. It shall be replacing the gloryholes in the changing rooms. You must only use it once per visit to the training halls. Anyone caught breaking the usage rules will be punished.'[roman type][line break][big he of mistress] thinks for a moment, and then says[line break][speech style of mistress][FuckholeRuleDesc][roman type][line break]".
 
 locked-toilets is initially false.
 locked-toilets-assembly is an assembly.
 Definition: locked-toilets-assembly is eligible:
-	if locked-toilets is false and headmistress is alive and headmistress is undefeated and watersports mechanics is 1:
+	if locked-toilets is false and mistress is alive and mistress is undefeated and watersports mechanics is 1:
 		if genericAssemblyTime is true, decide yes;
 		repeat with R running through academic rooms:
 			if the urine-puddle of R > 0, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - locked-toilets-assembly):
-	say "[BigNameDesc of headmistress] casts [his of headmistress] eyes over the crowd of students.".
+	say "[BigNameDesc of mistress] casts [his of mistress] eyes over the crowd of trainees.".
 
 To execute (A - locked-toilets-assembly):
 	now locked-toilets is true;
-	now headmistress is carrying academy-toilet-key;
-	let L be School01;
+	now mistress is carrying facility-toilet-key;
+	let L be Facility01;
 	repeat with R running through academic rooms:
-		if the urine-puddle of R > 0 and L is not School10, now L is R;
-	say "[speech style of headmistress]'It has come to my attention that a puddle of urine was found in the [L]. It would appear that the pupils in this school are in need of some serious bladder training. Therefore, henceforth, until we determine once and for all which of you can hold in your pee and which of you are naughty wetters, using the toilet is a privilege. The toilets will be locked, and you will have to come to me to ask for the key to use them. Furthermore, you must bring a teacher with you when you use the toilet, to act as a witness and to retrieve the toilet key when you are finished. Is that clear?'[roman type][line break]Everyone murmurs assent.[line break][speech style of headmistress]'To be clear, [bold type]you are not allowed to use any other toilet or urinal either - even ones outside of this Academy[speech style of headmistress], and if we catch you, you best believe you'll be in for a world of trouble.'[roman type][line break]Twirling the solitary toilet key on its key ring around [his of headmistress] index finger, [NameDesc of headmistress] marches from the hall.".
+		if the urine-puddle of R > 0 and L is not Facility10, now L is R;
+	say "[speech style of mistress]'It has come to my attention that a puddle of urine was found in the [L]. It would appear that the trainees are in need of some serious bladder training. Therefore, henceforth, until we determine once and for all which of you can hold in your pee and which of you are naughty wetters, using the toilet is a privilege. The toilets will be locked, and you will have to come to me to ask for the key to use them. Furthermore, you must bring a tutor with you when you use the toilet, to act as a witness and to retrieve the toilet key when you are finished. Is that clear?'[roman type][line break]Everyone murmurs assent.[line break][speech style of mistress]'To be clear, [bold type]you are not allowed to use any other toilet or urinal either - even ones outside of these grounds[speech style of mistress], and if we catch you, you best believe you'll be in for a world of trouble.'[roman type][line break]Twirling the solitary toilet key on its key ring around [his of mistress] index finger, [NameDesc of mistress] marches from the hall.".
 
-Report going when the player is in School10:
+Report going when the player is in Facility10:
 	if locked-toilets is false and watersports mechanics is 1: [this is how we get a urine puddle in the first place]
-		let ST be a random student in School10;
-		if ST is nothing, now ST is a random student in School05;
-		if ST is student and the current-rank of ST > a random number between 1 and 2:
-			if ST is ditzy student or (diaper quest is 1 and ST is innocent student) or (diaper quest is 0 and ST is nasty student):
-				if ST is in School05, try ST going south;
-				if ST is innocent student:
+		let ST be a random trainee in Facility10;
+		if ST is nothing, now ST is a random trainee in Facility05;
+		if ST is trainee and the current-rank of ST > a random number between 1 and 2:
+			if ST is ditzy trainee or (diaper quest is 1 and ST is innocent trainee) or (diaper quest is 0 and ST is nasty trainee):
+				if ST is in Facility05, try ST going south;
+				if ST is innocent trainee:
 					say "[BigNameDesc of ST] is rushing to remove [his of ST] clothes.[line break][speech style of ST]'No no no no no!'[roman type][line break][BigNameDesc of ST] hasn't made it in time, and soils [himself of ST]. There's so much pee that some leaks through the legholes to the ground. [big he of ST] clenches [his of ST] eyes shut and looks away from you.[line break][speech style of ST]'This never happened, okay?'[roman type][line break]";
-				otherwise if ST is nasty student:
+				otherwise if ST is nasty trainee:
 					say "[BigNameDesc of ST] pulls [his of ST] pussy-flaps open and bucks [his of ST] hips towards you as [he of ST] unleashes a big stream of piss onto the floor.[line break][speech style of ST]'Clean that up me, skank.'[roman type][line break][big he of ST] gives you the middle finger and turns back towards the door.";
 				otherwise:
 					say "[BigNameDesc of ST] suddenly starts urinating. There's so much that it [if diaper quest is 1]leaks and [end if]flows down to the ground, creating a big puddle. [BigNameDesc of ST] just shrugs.[line break][speech style of ST]'Oh well!'[roman type][line break][big he of ST] gives you a shameless, carefree grin and turns to leave.";
@@ -936,33 +940,33 @@ Report going when the player is in School10:
 				distract ST;
 				now ST is moved.
 
-To check school toilet supervision:
-	if the player is in School10:
+To check facility toilet supervision:
+	if the player is in Facility10:
 		let M be a random undefeated staff member in the location of the player;
 		if M is monster:
-			say "[speech style of M]'Now remember to lock it up again, and then give the key back to the [ShortDesc of headmistress].'[roman type][line break]";
+			say "[speech style of M]'Now remember to lock it up again, and then give the key back to the [ShortDesc of mistress].'[roman type][line break]";
 			satisfy M;
 		otherwise:
-			now M is a random undefeated staff member in School05;
+			now M is a random undefeated staff member in Facility05;
 			if M is nothing:
 				repeat with X running through on-stage undefeated staff members:
-					if (X is in School04 or X is in School06 or X is in School16) and a random number between 1 and 2 is 1:
+					if (X is in Facility04 or X is in Facility06 or X is in Facility16) and a random number between 1 and 2 is 1:
 						now M is X;
 			if M is a monster:
-				if M is not in School05, now M is in School05;
+				if M is not in Facility05, now M is in Facility05;
 				try M going south;
-				say "[M] has caught you using the toilet![line break][speech style of M]'What's this?! You know you aren't allowed to use the toilet without supervision! It's detention for you!'[roman type][line break]";
-				compute detention of M;
+				say "[M] has caught you using the toilet![line break][speech style of M]'What's this?! You know you aren't allowed to use the toilet without supervision! It's reconditioning for you!'[roman type][line break]";
+				compute reconditioning of M;
 			otherwise:
-				let M be a random student in the location of the player;
-				if M is nothing, let M be a random student in School05;
+				let M be a random trainee in the location of the player;
+				if M is nothing, let M be a random trainee in Facility05;
 				if M is nothing:
-					repeat with X running through on-stage students:
-						if (X is in School04 or X is in School06 or X is in School16) and a random number between 1 and 2 is 1:
+					repeat with X running through on-stage trainees:
+						if (X is in Facility04 or X is in Facility06 or X is in Facility16) and a random number between 1 and 2 is 1:
 							now M is X;
 				if M is monster:
-					if M is not in the location of the player and M is not in School05, now M is in School05;
-					if M is in School05:
+					if M is not in the location of the player and M is not in Facility05, now M is in Facility05;
+					if M is in Facility05:
 						try M going south;
 						say "[M] has caught you using the toilet!";
 					otherwise:
@@ -972,18 +976,18 @@ To check school toilet supervision:
 						FavourDown M;
 						interest M;
 						if M is friendly:
-							say "[speech style of M]'You're supposed to have a teacher supervising you to do that!'[roman type][line break]";
+							say "[speech style of M]'You're supposed to have a tutor supervising you to do that!'[roman type][line break]";
 						otherwise:
-							let X be a random alive unleashed teacher;
+							let X be a random alive unleashed tutor;
 							if X is a monster:
-								say "[big he of M] tuts.[line break][speech style of M]'Naughty naughty, breaking the rules. I think you need punishing. Get on your knees and put your head in the toilet, or I'm calling a teacher!'[roman type][line break]Do you let [him of M] bully you?";
+								say "[big he of M] tuts.[line break][speech style of M]'Naughty naughty, breaking the rules. I think you need punishing. Get on your knees and put your head in the toilet, or I'm calling a tutor!'[roman type][line break]Do you let [him of M] bully you?";
 								if the player is consenting:
 									now the stance of the player is 1;
 									compute swirlie of M;
 								otherwise:
 									now X is in the location of the player;
-									say "[speech style of M]'MISS! MISS! Come quick! [NameBimbo] is using the toilet without a teacher!'[roman type][line break]Before you have time to lock the toilet back up, [X] has come running and caught you red-handed holding the key, with the recently flushed toilet behind you.[line break][speech style of M]'It's detention for you, you naughty minx!'[roman type][line break]";
-									compute detention of X;
+									say "[speech style of M]'MISS! MISS! Come quick! [NameBimbo] is using the toilet without a tutor!'[roman type][line break]Before you have time to lock the toilet back up, [X] has come running and caught you red-handed holding the key, with the recently flushed toilet behind you.[line break][speech style of M]'It's reconditioning for you, you naughty minx!'[roman type][line break]";
+									compute reconditioning of X;
 					otherwise: [needs to pee too]
 						interest M;
 						if M is friendly:
@@ -993,7 +997,7 @@ To check school toilet supervision:
 							set numerical response 2 to "Let [him of M] use the toilet, but keep the key and force [him of M] to use the toilet in front of you.";
 							set numerical response 3 to "Refuse to let [him of M] use the toilet.";
 							if player-numerical-response is 1:
-								now academy-toilet-key is carried by M;
+								now facility-toilet-key is carried by M;
 								say "[speech style of M]'Thank you so much!'[roman type][line break][big he of M] takes the key, and you turn to make a quick exit to the north.";
 								now another-turn-stored-action is going north;
 								now another-turn is 1;
@@ -1003,12 +1007,12 @@ To check school toilet supervision:
 								strongDignify;
 								let X be M;
 								repeat with Z running through on-stage undefeated staff members:
-									if Z is in School04 or Z is in School06 or Z is in School16, now X is Z;
-								if X is teacher and there is an appropriate eligible team-predicament:
-									now X is in School05;
+									if Z is in Facility04 or Z is in Facility06 or Z is in Facility16, now X is Z;
+								if X is tutor and there is an appropriate eligible team-predicament:
+									now X is in Facility05;
 									try X going south;
-									say "[X] has caught [NameDesc of M] using the toilet![line break][speech style of X]'What's this?! You know you aren't allowed to use the toilet without supervision! And [NameBimbo], what are you doing holding the key? You're both in on this, aren't you! It's detention for you both!'[line break][speech style of M]'What?! No, [please] no!'[roman type][line break]But there's nothing [NameDesc of M] can do to prevent [himself of M] from being dragged out into the hallway and towards the reception, along with you.";
-									compute detention joint predicament of X with M;
+									say "[X] has caught [NameDesc of M] using the toilet![line break][speech style of X]'What's this?! You know you aren't allowed to use the toilet without supervision! And [NameBimbo], what are you doing holding the key? You're both in on this, aren't you! It's reconditioning for you both!'[line break][speech style of M]'What?! No, [please] no!'[roman type][line break]But there's nothing [NameDesc of M] can do to prevent [himself of M] from being dragged out into the hallway and towards the reception, along with you.";
+									compute reconditioning joint predicament of X with M;
 							otherwise:
 								HappinessDown M by 2;
 								if M is unfriendly:
@@ -1016,43 +1020,43 @@ To check school toilet supervision:
 								otherwise:
 									say "[speech style of M]'You're so mean! I'm going to wet myself!!!'[roman type][line break]";
 	otherwise:
-		if the player is not in a predicament room and the player is not in a nonstandard room and headmistress is alive and headmistress is undefeated and the player is getting unlucky:
-			now headmistress is in the location of the player;
-			interest headmistress;
-			anger headmistress;
-			say "As you move to get up, you spot [NameDesc of headmistress] in the corner of your eye. [big he of headmistress] is advancing on you quickly, looking furious.[line break][speech style of headmistress]'You thought you could just get away with breaking the rules?! I SAID NO TOILETS AT ALL!!! Including ones outside the Academy!'[roman type][line break]";
+		if the player is not in a predicament room and the player is not in a nonstandard room and mistress is alive and mistress is undefeated and the player is getting unlucky:
+			now mistress is in the location of the player;
+			interest mistress;
+			anger mistress;
+			say "As you move to get up, you spot [NameDesc of mistress] in the corner of your eye. [big he of mistress] is advancing on you quickly, looking furious.[line break][speech style of mistress]'You thought you could just get away with breaking the rules?! I SAID NO TOILETS AT ALL!!! Including ones outside the Training Grounds!'[roman type][line break]";
 
 missing-key-assembly is an assembly.
 Definition: missing-key-assembly is eligible:
-	if locked-toilets is true and headmistress is alive and headmistress is undefeated and academy-toilet-key is on-stage and academy-toilet-key is not carried by a monster, decide yes;
+	if locked-toilets is true and mistress is alive and mistress is undefeated and facility-toilet-key is on-stage and facility-toilet-key is not carried by a monster, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - missing-key-assembly):
-	say "[BigNameDesc of headmistress] addresses you directly.".
+	say "[BigNameDesc of mistress] addresses you directly.".
 
 To execute (A - missing-key-assembly):
-	say "[speech style of headmistress]'There you are! Everyone, this is the [boy of the player] I gave the key to, and [he of the player] never returned it, and that's the reason we've all got bladders filled to bursting. I'm going to have to make new locks, and a new key, and find a way to remove the existing locks. Meanwhile, [NameBimbo] will be spending some time in the dungeon, reflecting on the consequences of [his of the player] negligence!'[roman type][line break]";
-	now academy-toilet-key is carried by headmistress;
-	compute headmistress dungeon locking.
+	say "[speech style of mistress]'There you are! Everyone, this is the [boy of the player] I gave the key to, and [he of the player] never returned it, and that's the reason we've all got bladders filled to bursting. I'm going to have to make new locks, and a new key, and find a way to remove the existing locks. Meanwhile, [NameBimbo] will be spending some time in the dungeon, reflecting on the consequences of [his of the player] negligence!'[roman type][line break]";
+	now facility-toilet-key is carried by mistress;
+	compute mistress dungeon locking.
 
 locked-toilets-shame-assembly is an assembly.
 Definition: locked-toilets-shame-assembly is eligible: decide no.
 
 To say AssemblyStartFlav of (A - locked-toilets-shame-assembly):
-	say "[BigNameDesc of headmistress] addresses you directly.".
+	say "[BigNameDesc of mistress] addresses you directly.".
 
 To execute (A - locked-toilets-shame-assembly):
-	say "[speech style of headmistress]'There you are! Everyone, this is the [boy of the player] who pissed all over the floor in the toilets. I know! Disgusting! So, here's a new rule: ";
+	say "[speech style of mistress]'There you are! Everyone, this is the [boy of the player] who pissed all over the floor in the toilets. I know! Disgusting! So, here's a new rule: ";
 	if watersports fetish is 1:
-		say "[NameBimbo]'s mouth [if diaper swapping >= 2]and diaper are officially FREE USE URINALS[otherwise] is officially a FREE USE URINAL[end if]. Anyone who needs to piss, can come up to this nasty fucking tramp and demand to use [his of the player] face-hole[if diaper swapping >= 2] or diaper[end if] as their own personal toilet. Right there. Straight away. If [he of the player] refuses, you have my permission to tell a teacher and we will ensure that just punishment is served. Alternatively, feel free to beat the fucking disgusting [cunt] up yourself. I don't give a fuck. ";
+		say "[NameBimbo]'s mouth [if diaper swapping >= 2]and diaper are officially FREE USE URINALS[otherwise] is officially a FREE USE URINAL[end if]. Anyone who needs to piss, can come up to this nasty fucking tramp and demand to use [his of the player] face-hole[if diaper swapping >= 2] or diaper[end if] as their own personal toilet. Right there. Straight away. If [he of the player] refuses, you have my permission to tell a tutor and we will ensure that just punishment is served. Alternatively, feel free to beat the fucking disgusting [cunt] up yourself. I don't give a fuck. ";
 	if diaper lover > 0:
 		say "[NameBimbo] is now required to wear diapers at all times. Anyone who catches [him of the player] out of diapers has my permission to tackle [him of the player] to the ground, subdue [him of the player], and take [him of the player] to the nurse for punishment and forced diapering. ";
 		repeat with M running through staff members:
 			now the diaper-duration of M is 99999;
 	if watersports fetish is 1 and WC collar is actually summonable:
 		summon WC collar locked;
-		say "And one more thing...'[roman type][line break][BigNameDesc of headmistress] places a [MediumDesc of WC collar] around your neck!";
-		compute headmistress keylocking WC collar;
+		say "And one more thing...'[roman type][line break][BigNameDesc of mistress] places a [MediumDesc of WC collar] around your neck!";
+		compute mistress keylocking WC collar;
 		say severeHumiliateReflect;
 	otherwise:
 		say "You are all dismissed.'[roman type][line break][severeHumiliateReflect]".
@@ -1068,7 +1072,7 @@ To compute free use urinal perception of (M - a monster):
 				now auto is 0;
 			otherwise:
 				anger M;
-				if M is unfriendly, say "[speech style of M]'[if M is student]No! You're supposed to get[otherwise]Rebellious [bitch]! Get[end if] on your knees NOW!'[roman type][line break]";
+				if M is unfriendly, say "[speech style of M]'[if M is trainee]No! You're supposed to get[otherwise]Rebellious [bitch]! Get[end if] on your knees NOW!'[roman type][line break]";
 		if the player is prone:
 			compute diaper urinal use of M;
 	otherwise:
@@ -1081,7 +1085,7 @@ To compute free use urinal perception of (M - a monster):
 				now auto is 0;
 			otherwise:
 				anger M;
-				if M is unfriendly, say "[speech style of M]'[if M is student]No! You're supposed to get[otherwise]Rebellious [bitch]! Get[end if] on your knees NOW!'[roman type][line break]";
+				if M is unfriendly, say "[speech style of M]'[if M is trainee]No! You're supposed to get[otherwise]Rebellious [bitch]! Get[end if] on your knees NOW!'[roman type][line break]";
 		if the player is prone:
 			say "[BigNameDesc of M] happily stands over you and grabs you by the head, directing your face towards [his of M] crotch. A few moments later, [he of M] releases a torrent of piss over your hair and face.";
 			FacePiss from M;
@@ -1094,34 +1098,34 @@ Definition: tattoo-assembly is eligible:
 	decide no.
 
 To say AssemblyStartFlav of (A - tattoo-assembly):
-	say "[BigNameDesc of headmistress] casts [his of headmistress] eyes over the crowd of students.".
+	say "[BigNameDesc of mistress] casts [his of mistress] eyes over the crowd of trainees.".
 
 To execute (A - tattoo-assembly):
-	say "[speech style of headmistress]'I have decided that all students of emerald rank and above should get matching tattoos of our academy's logo! They will go below your chest, and be imbued with a magical effect that increases your balance... and docility... when wearing high heels. Anyone who refuses will be demoted one rank.'[roman type][line break]";
-	let LST be the list of students in the location of the player;
+	say "[speech style of mistress]'I have decided that all trainees of emerald rank and above should get matching tattoos of our institution's logo! They will go below your chest, and be imbued with a magical effect that increases your balance... and docility... when wearing high heels. Anyone who refuses will be demoted one rank.'[roman type][line break]";
+	let LST be the list of trainees in the location of the player;
 	let N be 0;
 	let T be 0;
 	repeat with ST running through LST:
 		if the current-rank of ST > 1:
 			increase N by 1;
-			say "[BigNameDesc of headmistress] turns to [ST].[line break][speech style of headmistress]'You [if N is 1]first[otherwise]next[end if].'[roman type][line break]";
+			say "[BigNameDesc of mistress] turns to [ST].[line break][speech style of mistress]'You [if N is 1]first[otherwise]next[end if].'[roman type][line break]";
 			let D be the dedication of ST + the current-rank of ST;
 			if D > a random number between 1 and 4:
-				say "[BigNameDesc of ST] nods, and presents [his of ST] torso to [NameDesc of headmistress]. One magic zap later, [NameDesc of ST] has the Nintendolls logo branded on [his of ST] stomach.";
+				say "[BigNameDesc of ST] nods, and presents [his of ST] torso to [NameDesc of mistress]. One magic zap later, [NameDesc of ST] has the Nintendolls logo branded on [his of ST] stomach.";
 				if T is 0:
 					try examining nintendolls-logo tattoo;
 					now T is 1;
 			otherwise:
-				say "[BigNameDesc of ST] backs away, shaking [his of ST] head. [BigNameDesc of headmistress] tuts, and clicks [his of headmistress] fingers.";
+				say "[BigNameDesc of ST] backs away, shaking [his of ST] head. [BigNameDesc of mistress] tuts, and clicks [his of mistress] fingers.";
 				demote ST;
-	say "Finally, [NameDesc of headmistress] turns to you.[paragraph break]Do you let [him of headmistress] give you a tattoo? ";
+	say "Finally, [NameDesc of mistress] turns to you.[paragraph break]Do you let [him of mistress] give you a tattoo? ";
 	if the player is bimbo consenting:
-		say "You gulp and nod. [BigNameDesc of headmistress] points an index finger at you, and a moment later the magic brand has appeared on your skin.";
+		say "You gulp and nod. [BigNameDesc of mistress] points an index finger at you, and a moment later the magic brand has appeared on your skin.";
 		summon nintendolls-logo tattoo;
 		say "Some of the power from the magic spell lingers in your body.";
 		MagicPowerUp 1;
 	otherwise:
-		say "You protect your stomach with your arms. [BigNameDesc of headmistress] shakes [his of headmistress] head in disappointment, and then clicks [his of headmistress] fingers. Your armband transforms!";
+		say "You protect your stomach with your arms. [BigNameDesc of mistress] shakes [his of mistress] head in disappointment, and then clicks [his of mistress] fingers. Your armband transforms!";
 		if armband is emerald, now armband is sapphire;
 		if armband is ruby, now armband is emerald;
 		if armband is pink diamond, now armband is ruby;
@@ -1130,8 +1134,8 @@ To execute (A - tattoo-assembly):
 		now the armband-title of armband is "";
 		now the armband-print of armband is "hesitant";
 		say ClothingDesc of armband;
-		update students; [an important line which makes boring old students disappear and new cool ones appear]
-	say "[BigNameDesc of headmistress] turns to leave.[line break][speech style of headmistress]'That is all. You are all dismissed!'[roman type][line break]".
+		update trainees; [an important line which makes boring old trainees disappear and new cool ones appear]
+	say "[BigNameDesc of mistress] turns to leave.[line break][speech style of mistress]'That is all. You are all dismissed!'[roman type][line break]".
 
 
 hip-assembly is a generic-assembly.
@@ -1140,11 +1144,11 @@ Definition: hip-assembly is eligible:
 	decide no.
 
 To execute (A - hip-assembly):
-	say "[speech style of headmistress]'I have been informed that several students have been overheard discussing how jealous they are of my incredible waist-to-hip ratio. So I have decided to share the joy around.'[roman type][line break][big he of headmistress] waves [his of headmistress] hand around, and as [he of headmistress] does, every student in the hall finds their hips visibly widening! Some shriek with shock and horror, but others sound audibly pleased with their new extra-feminine proportions.";
+	say "[speech style of mistress]'I have been informed that several trainees have been overheard discussing how jealous they are of my incredible waist-to-hip ratio. So I have decided to share the joy around.'[roman type][line break][big he of mistress] waves [his of mistress] hand around, and as [he of mistress] does, every trainee in the hall finds their hips visibly widening! Some shriek with shock and horror, but others sound audibly pleased with their new extra-feminine proportions.";
 	HipUp 1;
-	say "[BigNameDesc of headmistress] blow kisses to the room.[line break][speech style of headmistress]'You are all very welcome!'[roman type][line break]And with that, [he of headmistress] leaves the room.";
-	try headmistress going south;
-	regionally place headmistress.
+	say "[BigNameDesc of mistress] blow kisses to the room.[line break][speech style of mistress]'You are all very welcome!'[roman type][line break]And with that, [he of mistress] leaves the room.";
+	try mistress going south;
+	regionally place mistress.
 
 
 drink-assembly is a generic-assembly.
@@ -1156,24 +1160,24 @@ Definition: drink-assembly is eligible:
 	decide no.
 
 To say AssemblyStartFlav of (A - drink-assembly):
-	say "[BigNameDesc of headmistress] is standing next to a table with a royal red cloth draped over it. Sitting on the table is large metal chalice.".
+	say "[BigNameDesc of mistress] is standing next to a table with a royal red cloth draped over it. Sitting on the table is large metal chalice.".
 
 To execute (A - drink-assembly):
-	say "[speech style of headmistress]'At this academy, you are all one big family. And as such, you should all drink from the same cup.'[roman type][line break]";
+	say "[speech style of mistress]'At this institution, you are all one big family. And as such, you should all drink from the same cup.'[roman type][line break]";
 	if a2m fetish >= 2:
-		say "[BigNameDesc of headmistress] takes the chalice and holds it underneath [his of headmistress] butt. And then [he of headmistress] grunts and pushes... causing a stream of water to gush out of [his of headmistress] butthole and into the large drinking vessel, filling it to the brim.";
+		say "[BigNameDesc of mistress] takes the chalice and holds it underneath [his of mistress] butt. And then [he of mistress] grunts and pushes... causing a stream of water to gush out of [his of mistress] butthole and into the large drinking vessel, filling it to the brim.";
 	otherwise if watersports fetish is 1:
-		say "[BigNameDesc of headmistress] takes the chalice and holds it underneath [his of headmistress] crotch. And then [he of headmistress] relaxes and pushes... and pisses straight into the large drinking vessel, filling it to the brim.";
+		say "[BigNameDesc of mistress] takes the chalice and holds it underneath [his of mistress] crotch. And then [he of mistress] relaxes and pushes... and pisses straight into the large drinking vessel, filling it to the brim.";
 	otherwise:
-		say "[BigNameDesc of headmistress] turns around and takes out [his of headmistress] breasts. And then [he of headmistress] spends a somewhat awkward 30 seconds milking [himself of headmistress], until the chalice is half full of [his of headmistress] breastmilk.";
-	say "[line break]And then [he of headmistress] begins to hand it around the room.[line break][speech style of headmistress]'This ritual is critically important for your development. Anyone who refuses to drink a mouthful will be [bold type]expelled[speech style of headmistress].'[roman type][line break]And so one by one, each student finds themselves holding their nose and gulping down a mouthful of the chalice's sordid contents.";
-	let M be headmistress;
-	repeat with ST running through students in the location of the player:
+		say "[BigNameDesc of mistress] turns around and takes out [his of mistress] breasts. And then [he of mistress] spends a somewhat awkward 30 seconds milking [himself of mistress], until the chalice is half full of [his of mistress] breastmilk.";
+	say "[line break]And then [he of mistress] begins to hand it around the room.[line break][speech style of mistress]'This ritual is critically important for your development. Anyone who refuses to drink a mouthful will be [bold type]expelled[speech style of mistress].'[roman type][line break]And so one by one, each trainee finds themselves holding their nose and gulping down a mouthful of the chalice's sordid contents.";
+	let M be mistress;
+	repeat with ST running through trainees in the location of the player:
 		if the favour of ST < the aggro limit of ST - 4, now M is ST;
-	if M is a student:
-		say "When the chalice makes its way to [M], [he of M] just makes a gagging sound.[line break][speech style of M]'Sorry, but no way. I'm out of here.'[roman type][line break][big he of M] moves to leave, but before [he of M] can make it even a couple of steps, [NameDesc of headmistress] interrupts.[line break][speech style of headmistress]'Fine then, so be it. But here, take this parting gift.'[roman type][line break][BigNameDesc of M]'s armband disappears, and at the same time, a pink collar appears around [his of M] neck. It has a metal heart at the front. [BigNameDesc of M] squeaks in surprise, and immediately tries to remove it, but can't find a latch.[line break][speech style of headmistress]'Think of this as your final assignment. You won't be able to remove the collar until you put that mouth to good use. And until then, you're going to find yourself getting thirsty much faster than normal.'[roman type][line break][BigNameDesc of M] runs from the room, sobbing.";
+	if M is a trainee:
+		say "When the chalice makes its way to [M], [he of M] just makes a gagging sound.[line break][speech style of M]'Sorry, but no way. I'm out of here.'[roman type][line break][big he of M] moves to leave, but before [he of M] can make it even a couple of steps, [NameDesc of mistress] interrupts.[line break][speech style of mistress]'Fine then, so be it. But here, take this parting gift.'[roman type][line break][BigNameDesc of M]'s armband disappears, and at the same time, a pink collar appears around [his of M] neck. It has a metal heart at the front. [BigNameDesc of M] squeaks in surprise, and immediately tries to remove it, but can't find a latch.[line break][speech style of mistress]'Think of this as your final assignment. You won't be able to remove the collar until you put that mouth to good use. And until then, you're going to find yourself getting thirsty much faster than normal.'[roman type][line break][BigNameDesc of M] runs from the room, sobbing.";
 		destroy M;
-	say "Finally the chalice is passed to you. Can you really bring yourself to drink an entire mouthful of this [if a2m fetish >= 2]water that came out of [his of headmistress] asshole[otherwise if watersports fetish is 1][urine][otherwise][milk][end if]? ";
+	say "Finally the chalice is passed to you. Can you really bring yourself to drink an entire mouthful of this [if a2m fetish >= 2]water that came out of [his of mistress] asshole[otherwise if watersports fetish is 1][urine][otherwise][milk][end if]? ";
 	if the player is bimbo consenting:
 		say "You bring the chalice to your lips, fill your mouth, and then gulp it down. ";
 		if a2m fetish >= 2:
@@ -1185,9 +1189,9 @@ To execute (A - drink-assembly):
 		otherwise:
 			StomachMilkUp 2;
 			say moderateHumiliateReflect;
-		say "You hand the chalice back to [NameDesc of headmistress], who nods with approval.[line break][speech style of headmistress]'Today you have all formed a bond that shall never be broken. Dismissed![roman type][line break]";
+		say "You hand the chalice back to [NameDesc of mistress], who nods with approval.[line break][speech style of mistress]'Today you have all formed a bond that shall never be broken. Dismissed![roman type][line break]";
 	otherwise:
-		say "You refuse to take hold of the disgusting chalice.[line break][speech style of headmistress]'Disappointing.'[roman type][line break][BigNameDesc of headmistress] says, and as [he of headmistress] does, your armband disappears.";
+		say "You refuse to take hold of the disgusting chalice.[line break][speech style of mistress]'Disappointing.'[roman type][line break][BigNameDesc of mistress] says, and as [he of mistress] does, your armband disappears.";
 		only destroy armband;
 		if heart-collar is actually summonable:
 			say "At the same time, a pink collar with a metal heart appears around your neck! You can sense that it is significantly speeding up how quickly you digest food and drink!";
@@ -1214,7 +1218,7 @@ Definition: disgrace-assembly is appropriate: [can happen more than once]
 	decide no.
 
 To execute (A - disgrace-assembly):
-	say "[speech style of headmistress]'I thought you should all get to see [one of]something rather incredible I found on the Internet today[or]another one of [NameBimbo][']s latest claims to Internet fame[stopping].'[roman type][line break][big he of headmistress] clicks a button on a small remote control, and a large overhead projector turns on... showing you.";
+	say "[speech style of mistress]'I thought you should all get to see [one of]something rather incredible I found on the Internet today[or]another one of [NameBimbo][']s latest claims to Internet fame[stopping].'[roman type][line break][big he of mistress] clicks a button on a small remote control, and a large overhead projector turns on... showing you.";
 	let disgrace-viewed be false;
 	repeat with N running from 1 to the number of filled rows in the Table of Published Disgraces:
 		if disgrace-viewed is false:
@@ -1222,7 +1226,7 @@ To execute (A - disgrace-assembly):
 			if the lastwitnessed entry is 0:
 				now disgrace-viewed is true;
 				say DisgracePost N;
-				say ".[line break]Several of the other students cackle mercilessly. ";
+				say ".[line break]Several of the other trainees cackle mercilessly. ";
 				let S be HUMILIATION-BASE * DisgracePostImpact N;
 				say DisgracePostReaction strength S;
 				humiliate S / 5;
@@ -1233,77 +1237,77 @@ To execute (A - disgrace-assembly):
 		say "You just shrug, and wait for them to get bored and move on with their day, which eventually of course, they all do.";
 	otherwise:
 		say "You storm out of the hall, the sound of vindictive laughter following you out into the hall.";
-		teleport to School05.
+		teleport to Facility05.
 
 
 
-Part - Detention
+Part - Reconditioning
 
-detention-reason is a number that varies. [0: didn't get to class on time. 1: failed at generic academy event errand]
+reconditioning-reason is a number that varies. [0: didn't get to class on time. 1: failed at generic facility event errand]
 
-To say detention-reason-flav:
-	if detention-reason is 1:
+To say reconditioning-reason-flav:
+	if reconditioning-reason is 1:
 		say "follow simple instructions";
 	otherwise:
 		say "get to class on time".
 
 [Now part of the compute swimming in swimming pool function.
 Report Showering:
-	if the player is in School20 and armband is worn:
+	if the player is in Facility20 and armband is worn:
 		let M be a random staff member in the location of the player;
-		if M is nothing and a random number between 1 and 2 is 1, now M is a random alive undefeated teacher;
+		if M is nothing and a random number between 1 and 2 is 1, now M is a random alive undefeated tutor;
 		if M is monster:
 			say "[speech style of M]'Um, NO! No going in the swimming pool without permission!'[roman type][line break]";
-			compute detention of M.]
+			compute reconditioning of M.]
 
-detention-turns is a number that varies.
+reconditioning-turns is a number that varies.
 
-An all later time based rule (this is the detention decay rule):
-	if detention-turns > 0, decrease detention-turns by 1.
+An all later time based rule (this is the reconditioning decay rule):
+	if reconditioning-turns > 0, decrease reconditioning-turns by 1.
 
-To compute detention of (M - a staff member):
+To compute reconditioning of (M - a staff member):
 	now M is in the location of the player;
-	let specificDetention be 0;
+	let specificReconditioning be 0;
 	let ST be M;
-	now lessonJustDone is false;
+	now trainingJustDone is false;
 	if the player is the donator:
-		repeat with S running through students in the location of the player:
+		repeat with S running through trainees in the location of the player:
 			if the health of S < the maxhealth of S, now ST is S;
 	if the health of M < the maxhealth of M:
-		say GenericDetention of M;
-	otherwise if ST is student and there is an appropriate eligible team-predicament:
+		say GenericReconditioning of M;
+	otherwise if ST is trainee and there is an appropriate eligible team-predicament:
 		say "[BigNameDesc of M] looks from you, to [NameDesc of ST], then back at you.[line break][speech style of M]'I think you two need some time together, so that you can learn to co-exist peacefully...'[roman type][line break]";
-		now specificDetention is 1;
-		compute detention joint predicament of M with ST;
-	otherwise if the player is in a lecture academic room and class-time < (lessonFrequency * -3):
-		say LateDetention of M;
+		now specificReconditioning is 1;
+		compute reconditioning joint predicament of M with ST;
+	otherwise if the player is in a lecture academic room and class-time < (trainingFrequency * -3):
+		say LateReconditioning of M;
 	otherwise:
-		say GenericDetention of M;
-	if specificDetention is 0:
-		if diaper quest is 0 and a random number between 1 and 2 is 1, compute remedial detention of M;
-		otherwise compute chair detention of M.
+		say GenericReconditioning of M;
+	if specificReconditioning is 0:
+		if diaper quest is 0 and a random number between 1 and 2 is 1, compute remedial reconditioning of M;
+		otherwise compute chair reconditioning of M.
 
-To say LateDetention of (M - a staff member):
-	say "[BigNameDesc of M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE! Class is already over! It's detention for you, young Miss. Come with me now!'[roman type][line break]".
+To say LateReconditioning of (M - a staff member):
+	say "[BigNameDesc of M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE! Class is already over! It's reconditioning for you, young Miss. Come with me now!'[roman type][line break]".
 
-To say GenericDetention of (M - a staff member):
-	say "[BigNameDesc of M] looks furious.[line break][speech style of M]'It's DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
+To say GenericReconditioning of (M - a staff member):
+	say "[BigNameDesc of M] looks furious.[line break][speech style of M]'It's RECONDITIONING for you, young Miss. Come with me now!'[roman type][line break]".
 
-dq-staff-detention is a diaper punishment. the priority of dq-staff-detention is 5.
+dq-staff-reconditioning is a diaper punishment. the priority of dq-staff-reconditioning is 5.
 
-To say EnticeFlav of (M - a monster) for (P - dq-staff-detention):
-	say "[speech style of M]'It's DETENTION for you, young Miss. Get on your knees at once!'[roman type][line break]".
+To say EnticeFlav of (M - a monster) for (P - dq-staff-reconditioning):
+	say "[speech style of M]'It's RECONDITIONING for you, young Miss. Get on your knees at once!'[roman type][line break]".
 
-To compute punishment of (P - a dq-staff-detention):
+To compute punishment of (P - a dq-staff-reconditioning):
 	follow the unique punishment rule of current-monster.
 
-Definition: a dq-staff-detention (called P) is appropriate:
+Definition: a dq-staff-reconditioning (called P) is appropriate:
 	if current-monster is staff member, decide yes;
 	decide no.
 
-To compute detention joint predicament of (M - a monster) with (ST - a student):
-	now ST is in School01;
-	drag to School01 by M;
+To compute reconditioning joint predicament of (M - a monster) with (ST - a trainee):
+	now ST is in Facility01;
+	drag to Facility01 by M;
 	now team-predicament-partner is ST;
 	let P be a random appropriate team-predicament;
 	now current-predicament is P;
@@ -1329,7 +1333,7 @@ To compute detention joint predicament of (M - a monster) with (ST - a student):
 	temporaryYesNoBackgroundReset;
 	[now predicamentJustDone is true;] [We should probably still let the player jump back in for a trophy if they want to]
 
-Section - Chair Detention
+Section - Chair Reconditioning
 
 To compute TQChairSetup of (M - a staff member):
 	let K be a random worn trousers;
@@ -1347,75 +1351,75 @@ To compute DQChairSetup of (M - a staff member):
 	summon D;
 	say "[big he of M] forces a [ShortDesc of D] around your loins.".
 
-To compute chair detention of (M - a staff member):
-	now detention chair is detention-wand;
-	now detention-turns is a random number between 15 and 25;
-	drag to School13 by M;
-	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this school, as you are about to learn the hard way[otherwise if class-time < (lessonFrequency * -3)]If you can't [detention-reason-flav] then you'll have to catch up the hard way[otherwise]There's only one way you'll learn your lesson, isn't there[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
+To compute chair reconditioning of (M - a staff member):
+	now reconditioning chair is reconditioning-wand;
+	now reconditioning-turns is a random number between 15 and 25;
+	drag to Facility13 by M;
+	say "[speech style of M]'[if the health of M < the maxhealth of M]We will not allow aggressive behaviour in this institution, as you are about to learn the hard way[otherwise if class-time < (trainingFrequency * -3)]If you can't [reconditioning-reason-flav] then you'll have to catch up the hard way[otherwise]There's only one way you'll learn your lesson, isn't there[end if]. [if diaper quest is 1 and the number of worn diapers is 0]Put on this diaper and sit[otherwise]Sit[end if].'[roman type][line break][big he of M] points to the chair with a vibrating wand fixed in the centre. ";
 	if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
 	if (diaper quest is 1 or a random number between 0 and 3 < diaper lover) and the number of worn diapers is 0, compute DQChairSetup of M;
-	say "[if the delicateness of the player > 10]You crawl over to the [ShortDesc of detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [ShortDesc of detention chair] and forces you into it[end if], [if the delicateness of the player > 10]submissively allowing [him of M] to bind[otherwise]quickly binding[end if] you in place with the straps. ";
+	say "[if the delicateness of the player > 10]You crawl over to the [ShortDesc of reconditioning chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [ShortDesc of reconditioning chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [ShortDesc of reconditioning chair] and forces you into it[end if], [if the delicateness of the player > 10]submissively allowing [him of M] to bind[otherwise]quickly binding[end if] you in place with the straps. ";
 	if the player is able to speak:
 		say "[if the player is able to speak][line break][speech style of M]'[one of]These are the rules: You must announce out loud whenever you orgasm, and whenever someone speaks to you, you must say [']Thank you for putting me in my place, Sir or Ma'am.[']'[or]I'd tell you the rules, but unfortunately we have been through this before.'[stopping][roman type][line break][end if][big he of M] points to a camera in the upper corner of the room, facing the chair.[line break][speech style of M]'I will be watching. I will release you when I believe you have learned your lesson.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'I will release you when I believe you have learned your lesson.'[roman type][line break]";
 	compute mandatory room leaving of M;
 	now M is in Holding Pen;
-	repeat with N running through alive students:
+	repeat with N running through alive trainees:
 		deinterest N;
 	repeat with N running through alive staff members:
 		deinterest N;
 	now the stance of the player is 1;
-	now detention chair is grabbing the player;
-	now detention chair is detention-wand;
-	display entire map. [So that the detention thing takes over the map window]
+	now reconditioning chair is grabbing the player;
+	now reconditioning chair is reconditioning-wand;
+	display entire map. [So that the reconditioning thing takes over the map window]
 
-To DetentionChairWait:
-	while detention chair is grabbing the player:
+To ReconditioningChairWait:
+	while reconditioning chair is grabbing the player:
 		allocate 6 seconds;
 		compute extra turn.
 
-An all time based rule (this is the detention chair rule):
-	if detention chair is grabbing the player:
-		if detention chair is detention-wand:
-			compute wand chair detention;
+An all time based rule (this is the reconditioning chair rule):
+	if reconditioning chair is grabbing the player:
+		if reconditioning chair is reconditioning-wand:
+			compute wand chair reconditioning;
 		otherwise:
-			compute rem chair detention;
-		if detention chair is not grabbing the player, refresh the graphics-window.
+			compute rem chair reconditioning;
+		if reconditioning chair is not grabbing the player, refresh the graphics-window.
 
-To compute wand chair detention:
-	repeat with M running through uninterested alive students:
+To compute wand chair reconditioning:
+	repeat with M running through uninterested alive trainees:
 		if the boredom of M <= 0, check seeking 1 of M; [NPCs make their way to watch the spectacle]
-	if detention-turns > 0:
+	if reconditioning-turns > 0:
 		say "The magic wand [one of]buzzes powerfully[or]continues to buzz[stopping]!";[possibly add text here describing arousal so far]
 		FatigueUp 30;
-		stimulate vagina from detention chair; [TODO NEXT: modify detention chair's stimulation value]
+		stimulate vagina from reconditioning chair; [TODO NEXT: modify reconditioning chair's stimulation value]
 	otherwise:
 		let M be a random staff member in Holding Pen;
 		if M is nothing:
-			if headmistress is alive and headmistress is undefeated, now M is headmistress;
+			if mistress is alive and mistress is undefeated, now M is mistress;
 			otherwise now M is a random alive undefeated staff member;
 		if M is staff member:
 			now M is in the location of the player;
 			say "[BigNameDesc of M] returns and after looking at your exhausted state gives you a wide smirk. [big he of M] doesn't say anything but just releases you from the bindings before sauntering off.";
 			distract M;
 		otherwise:
-			say "BUG: There's no teacher to summon to release the player. The player will be released anyway so that the game doesn't freeze!";
+			say "BUG: There's no tutor to summon to release the player. The player will be released anyway so that the game doesn't freeze!";
 		if class-time < 0, now class-time is 0;
-		dislodge detention chair.
+		dislodge reconditioning chair.
 
-To compute detention chair tease of (M - a monster):
-	say "[detention chair tease of M][detention chair tease response of M]";
+To compute reconditioning chair tease of (M - a monster):
+	say "[reconditioning chair tease of M][reconditioning chair tease response of M]";
 	now the boredom of M is 300;
 	now M is uninterested.
 
-To say detention chair tease of (M - a monster):
-	say "[speech style of M]'[one of]Hah! You enjoying yourself there, [honey of M]?'[or]Geez, it's like you get off on humiliation or something.'[or]You must be pretty dumb if you can't even [detention-reason-flav].'[in random order][roman type][line break]".
+To say reconditioning chair tease of (M - a monster):
+	say "[speech style of M]'[one of]Hah! You enjoying yourself there, [honey of M]?'[or]Geez, it's like you get off on humiliation or something.'[or]You must be pretty dumb if you can't even [reconditioning-reason-flav].'[in random order][roman type][line break]".
 
-To say detention chair tease of (M - a teacher):
+To say reconditioning chair tease of (M - a tutor):
 	say "[speech style of M]'[one of]Hmmph. I wouldn't be surprised if I saw you in here again.'[or]Pathetic.'[or]Hah. You're not even worthy of being teased.'[in random order][roman type][line break]".
 
-To say detention chair tease response of (M - a monster):
+To say reconditioning chair tease response of (M - a monster):
 	if the player is able to speak:[Possibly mention a camera being in the room so low delicateness players have an incentive to obey]
 		if the delicateness of the player > 12 or the fatigue of the player > 200:
 			if the delicateness of the player <= 12, say "You're just too tired to fight it, and say the words without hesitation.[line break]";[if we say this, it's because the player is really fatigued]
@@ -1430,42 +1434,42 @@ To say detention chair tease response of (M - a monster):
 				strongHumiliate;
 			otherwise:
 				say "[if the delicateness of the player < 3]You say nothing and stick out your tongue at the camera[otherwise if the delicateness of the player < 6]You avert your eyes from the camera and say nothing[otherwise]You quickly avert your eyes from the camera, trying not to tremble as you purposefully say nothing[end if], fully aware that you've probably just earned an extra thirty seconds on the chair[one of] before you'll be released[or][stopping].";
-				increase detention-turns by 2;
+				increase reconditioning-turns by 2;
 	otherwise:
 		say "You [one of]shiver[or]shudder[or]cringe[in random order] with shame.";
 		moderateHumiliate.
 
-This is the detention orgasm announcement rule:
-	if detention chair is grabbing the player and the player is able to speak:
+This is the reconditioning orgasm announcement rule:
+	if reconditioning chair is grabbing the player and the player is able to speak:
 		if the player is feeling submissive or the fatigue of the player > 350:
-			say "You hear the camera in the corner focusing on you, and loudly blurt out the truth.[line break][variable custom style]'[one of]I CAME FROM BEING IN DETENTION!'[or]MY DETENTION PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN DETENTION!'[in random order][roman type][line break]";
+			say "You hear the camera in the corner focusing on you, and loudly blurt out the truth.[line break][variable custom style]'[one of]I CAME FROM BEING IN RECONDITIONING!'[or]MY RECONDITIONING PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN RECONDITIONING!'[in random order][roman type][line break]";
 			repeat with M running through reactive monsters:
-				say detention orgasm reaction of M;
+				say reconditioning orgasm reaction of M;
 				moderateHumiliate;
 			strongHumiliate;
-			decrease detention-turns by a random number between 3 and 10;
+			decrease reconditioning-turns by a random number between 3 and 10;
 		otherwise:
 			say "[one of]You can't help but feel like you're being watched right now[or]You know you can't pretend that didn't just happen[or]The camera in the corner is pointing right at you[or]You know the camera was pointing right at you when you came[at random]. Announce that you just came? ";
 			if the player is bimbo consenting:
-				say "[variable custom style]'[one of]GUESS WHO JUST CAME FROM BEING IN DETENTION!'[or]I[']M A [if diaper quest is 1]NAUGHTY BABY[otherwise]DIRTY SLUT[end if] WHO CAME FROM BEING IN DETENTION!'[or]LOOK AT ME! DETENTION MADE ME CUM!'[or]MY DETENTION PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN DETENTION!'[in random order][roman type][line break]";[TODO: more interesting + nearby monsters react]
+				say "[variable custom style]'[one of]GUESS WHO JUST CAME FROM BEING IN RECONDITIONING!'[or]I[']M A [if diaper quest is 1]NAUGHTY BABY[otherwise]DIRTY SLUT[end if] WHO CAME FROM BEING IN RECONDITIONING!'[or]LOOK AT ME! RECONDITIONING MADE ME CUM!'[or]MY RECONDITIONING PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN RECONDITIONING!'[in random order][roman type][line break]";[TODO: more interesting + nearby monsters react]
 				repeat with M running through reactive monsters:
-					say detention orgasm reaction of M;
+					say reconditioning orgasm reaction of M;
 					moderateHumiliate;
 				strongHumiliate;
-				decrease detention-turns by a random number between 3 and 10;
+				decrease reconditioning-turns by a random number between 3 and 10;
 			otherwise:
 				say "You [if the delicateness of the player < 2]look right at the camera, refusing to say anything[otherwise]look away from the camera and say nothing[end if][if the number of monsters in the location of the player > 0], hoping your silence will prevent anyone around you from catching on[end if], with the knowledge that if the staff watching you through the camera can tell that you came, you've probably just failed to earn any bonus time towards your release.";
 				repeat with M running through reactive monsters:
 					if (the player is possessing a penis and penis is exposed and a random number between 1 and 2 is 1) or a random number between 1 and 4 is 1:[it's a lot harder to hide an orgasm when you just jizzed everywhere]
-						say detention orgasm reaction of M;
+						say reconditioning orgasm reaction of M;
 						moderateHumiliate;
 		rule succeeds.
-The detention orgasm announcement rule is listed last in the orgasm resolution rules.
+The reconditioning orgasm announcement rule is listed last in the orgasm resolution rules.
 
-To compute detention internet publish:
+To compute reconditioning internet publish:
 	if the number of blank rows in the Table of Published Disgraces > 0:
 		choose a blank row in Table of Published Disgraces;
-		now the content entry is the substituted form of "a high quality [video] of you sat on a chair with a wand vibrator, announcing that you are orgasming during detention,";
+		now the content entry is the substituted form of "a high quality [video] of you sat on a chair with a wand vibrator, announcing that you are orgasming during reconditioning,";
 		now the published entry is the substituted form of "has been [if infamy fetish > 0]posted on the website disciplinedundergrads.xxx[otherwise]sent to the Outer Rim[end if]";
 		now the severity entry is 3;
 		now the popularity entry is 4;
@@ -1476,47 +1480,47 @@ To compute detention internet publish:
 		say "[variable custom style][one of]I really hope this video doesn't find its way[or]Why do I get the feeling that these orgasm declarations are getting uploaded[stopping] to the internet...[roman type][line break]".
 
 
-To say detention orgasm reaction of (M - a monster):
-	say "[speech style of M]'[one of]Wow, so you're really enjoying your punishment THAT much?'[or]What kind of desperate slut actually has an orgasm from something like that?'[or]Is that why you earned yourself a detention? So everyone could watch you cum?'[or]So, you got in trouble on purpose then?'[or]I hope I don't get detention after you.'[in random order][roman type][line break][BigNameDesc of M] can't help but watch you.";
+To say reconditioning orgasm reaction of (M - a monster):
+	say "[speech style of M]'[one of]Wow, so you're really enjoying your punishment THAT much?'[or]What kind of desperate slut actually has an orgasm from something like that?'[or]Is that why you earned yourself a reconditioning? So everyone could watch you cum?'[or]So, you got in trouble on purpose then?'[or]I hope I don't get reconditioning after you.'[in random order][roman type][line break][BigNameDesc of M] can't help but watch you.";
 	FavourDown M.
 
-To say detention orgasm reaction of (M - a teacher):
+To say reconditioning orgasm reaction of (M - a tutor):
 	say "[speech style of M]'[one of]If you enjoy the punishment that much, maybe you should be the one to clean the floor when you're done.'[or]Pathetic. That wand isn't even on the highest setting.'[or]Honestly, you haven't even been in the chair that long.'[in random order][roman type][line break][BigNameDesc of M] rolls [his of M] eyes as [he of M] watches you.".
 
 [
-More detention ideas:
+More reconditioning ideas:
 
 Hole
--Player has to work a gloryhole for high level students. (timer)
+-Player has to work a gloryhole for high level trainees. (timer)
 
 Tutoring
--Player is paired up with a student of higher or equal rank(or lower rank if absolutely necessary)
+-Player is paired up with a trainee of higher or equal rank(or lower rank if absolutely necessary)
 -Sex here, maybe?
 
 Conference(maybe this would be better as a thing that happens naturally)
--The player is taken to the headmistress, who contacts someone the player knows (ex, room-mate 1, room-mate 2, room-mate 1 and 2)
+-The player is taken to the mistress, who contacts someone the player knows (ex, room-mate 1, room-mate 2, room-mate 1 and 2)
 -The person comments on the player's appearance somehow, and (maybe) has the chance to mess with the player remotely
 
 ]
 
 [player is forced to watch a hypno video]
-To compute remedial detention of (M - a staff member):
-	now detention chair is detention-remedial;
-	now detention-turns is 8;
-	drag to School13 by M;
-	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't [detention-reason-flav] then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
-	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break][big he of M] slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
-	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress.[line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention.'[roman type][line break]The pulsing, rhythm of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is solely possessing a penis]hard[otherwise if the player is solely possessing a vagina]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
+To compute remedial reconditioning of (M - a staff member):
+	now reconditioning chair is reconditioning-remedial;
+	now reconditioning-turns is 8;
+	drag to Facility13 by M;
+	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with tutors[otherwise]If you can't [reconditioning-reason-flav] then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
+	say "[if the delicateness of the player > 10]You crawl over to the [reconditioning chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [reconditioning chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [reconditioning chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break][big he of M] slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
+	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress.[line break][first custom style]'Welcome to my classroom, trainees. Shut off your minds and let your bodies pay attention.'[roman type][line break]The pulsing, rhythm of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is solely possessing a penis]hard[otherwise if the player is solely possessing a vagina]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
 	compute mandatory room leaving of M;
 	now M is in Holding Pen;
-	now School13 is bossed;
+	now Facility13 is bossed;
 	now the stance of the player is 1;
-	now detention chair is grabbing the player.
+	now reconditioning chair is grabbing the player.
 
-To compute rem chair detention:
-	if detention chair is grabbing the player:
-		if detention-turns > 0:
+To compute rem chair reconditioning:
+	if reconditioning chair is grabbing the player:
+		if reconditioning-turns > 0:
 			let N be a random number between (the intelligence of the player * -1) and 10;
 			say RemHypnoContent;
 			if N < -9:
@@ -1541,7 +1545,7 @@ To compute rem chair detention:
 		otherwise:
 			let M be a random staff member in Holding Pen;
 			if M is nothing:
-				if headmistress is alive and headmistress is undefeated, now M is headmistress;
+				if mistress is alive and mistress is undefeated, now M is mistress;
 				otherwise now M is a random alive undefeated staff member;
 			if M is staff member:
 				now M is in the location of the player;
@@ -1551,61 +1555,61 @@ To compute rem chair detention:
 				regionally place M;
 				now the location of the player is not bossed;
 			otherwise:
-				say "BUG: There's no teacher to summon to release the player. The player will be released anyway so the game doesn't freeze!";
+				say "BUG: There's no tutor to summon to release the player. The player will be released anyway so the game doesn't freeze!";
 			if class-time < 0, now class-time is 0;
-			now detention chair is not grabbing the player.
+			now reconditioning chair is not grabbing the player.
 
 To say RemHypnoContent:
 	if diaper quest is 0, say "[one of]The camera pans over the professor's body as she's being spit-roasted by two of her interns.[line break][first custom style]'Mnaa mun humnd mnurphrmr.'[roman type][line break][or]The camera zooms in on the professor's asshole as three of her interns pound her at once.[line break][first custom style]'Your sphincter is a muscle, ladies. Always be tight for your man, but never too tight for more!'[roman type][line break][or]The camera zooms in on the professor's face, following the lines of spit ruining her makeup as her interns take turns fucking her face.[line break][first custom style]'Glk! Glk! Glk! Glk!'[roman type][line break][or]The camera zooms in as the professor's interns take turns smacking her in the face. She grins straight into the camera as her hands deftly pump their cocks.[line break][first custom style]'You're always happy to be used, ladies. Only frown because it's over.'[roman type][line break][or]The camera pans slowly as the professor rides one of her interns, zooming in [if tg fetish > 0]on her hand as she rapidly pumps her own cock[otherwise]on her hand as she plays with her clit[end if].[line break][first custom style]'Only pleasure during his pleasure, ladies.'[roman type][line break][in random order]";
 	otherwise say "PLACEHOLDER".
 
 
-Book - Academy Events
+Book - Facility Events
 
-An academy-event is a kind of object. An academy-event can be event-unstarted, event-started, event-ended or event-failed (this is the academy-event-status property). An academy-event is usually event-unstarted.
+An facility-event is a kind of object. An facility-event can be event-unstarted, event-started, event-ended or event-failed (this is the facility-event-status property). An facility-event is usually event-unstarted.
 
-An academy-event can be event-potential.
+An facility-event can be event-potential.
 
-To decide which number is the event-rarity of (E - an academy-event):
+To decide which number is the event-rarity of (E - an facility-event):
 	decide on 2. [1 in X chance of event being enabled as a potential option each time]
 
-academy-event has an object called the event-failure-punisher. The event-failure-punisher of an academy-event is usually headmistress.
+facility-event has an object called the event-failure-punisher. The event-failure-punisher of an facility-event is usually mistress.
 
-academy-event-ready is initially false.
+facility-event-ready is initially false.
 
-To enable academy events:
-	now academy-event-ready is true;
-	repeat with E running through event-unstarted academy-events:
+To enable facility events:
+	now facility-event-ready is true;
+	repeat with E running through event-unstarted facility-events:
 		if a random number between 1 and the event-rarity of E is 1, now E is event-potential;
 		otherwise now E is not event-potential;
 	if debugmode > 0:
-		let NE be the number of event-unstarted academy-events;
-		let NP be the number of event-unstarted event-potential academy-events;
-		say "[NP] out of [NE] unstarted Academy Events have been marked as randomly available (NB that some or most may not actually be eligible right now due to player state / fetish selection, even if marked available). As debugmode is enabled, would you like to mark them all as available instead?";
+		let NE be the number of event-unstarted facility-events;
+		let NP be the number of event-unstarted event-potential facility-events;
+		say "[NP] out of [NE] unstarted facility events have been marked as randomly available (NB that some or most may not actually be eligible right now due to player state / fetish selection, even if marked available). As debugmode is enabled, would you like to mark them all as available instead?";
 		if the player is consenting:
-			repeat with E running through event-unstarted academy-events:
+			repeat with E running through event-unstarted facility-events:
 				now E is event-potential.
 
-Definition: an academy-event is eligible:	decide yes.
+Definition: an facility-event is eligible:	decide yes.
 
-An all time based rule (this is the academy event processing rule):
+An all time based rule (this is the facility event processing rule):
 	unless the player is in a predicament room:
-		if playerRegion is school and armband is worn:
-			repeat with E running through event-failed academy-events:
+		if playerRegion is facility and armband is worn:
+			repeat with E running through event-failed facility-events:
 				compute event failure punishment of E;
 				now E is event-ended;
-		repeat with E running through event-started academy-events:
-			if debugmode is 1 and debuginfo > 0, say "[input-style]Handling current academy event...[roman type][line break]";
+		repeat with E running through event-started facility-events:
+			if debugmode is 1 and debuginfo > 0, say "[input-style]Handling current facility event...[roman type][line break]";
 			compute event handling of E.
 
-Report going south when academy-event-ready is true:
+Report going south when facility-event-ready is true:
 	unless the player is in a predicament room:
-		if playerRegion is school and armband is worn:
-			if debugmode is 1, say "[input-style]Trying to find academy event...[roman type][line break]";
+		if playerRegion is facility and armband is worn:
+			if debugmode is 1, say "[input-style]Trying to find facility event...[roman type][line break]";
 			if the number of alive dangerous regional monsters is 0:
-				let E be a random event-unstarted event-potential eligible academy-event;
-				if E is an academy-event:
-					now academy-event-ready is false;
+				let E be a random event-unstarted event-potential eligible facility-event;
+				if E is an facility-event:
+					now facility-event-ready is false;
 					now E is event-started;
 					compute event start of E;
 				otherwise:
@@ -1613,55 +1617,55 @@ Report going south when academy-event-ready is true:
 			otherwise:
 				if debugmode is 1, say "[input-style]Dangerous NPC blocks event search.[roman type][line break]";
 		otherwise:
-			now academy-event-ready is false.
+			now facility-event-ready is false.
 
-To compute event start of (E - an academy-event):
-	say "Error - an academy event had no setup function.".
+To compute event start of (E - an facility-event):
+	say "Error - an facility event had no setup function.".
 
-To compute event handling of (E - an academy-event):
+To compute event handling of (E - an facility-event):
 	now E is event-ended;
-	say "Error - an academy event had no handling function.".
+	say "Error - an facility event had no handling function.".
 
-To compute event failure punishment of (E - an academy-event):
+To compute event failure punishment of (E - an facility-event):
 	let M be the event-failure-punisher of E;
 	if M is nonregional, now M is a random regional staff member;
 	if M is a monster:
 		now M is in the location of the player;
 		interest M;
 		anger M;
-		say "[BigNameDesc of M] grabs you on the shoulder.[line break][speech style of M]'[EventFailureFlav of E]! You're going straight to detention!'";
-		now detention-reason is 1;
-		compute detention of M;
-		now detention-reason is 0.
+		say "[BigNameDesc of M] grabs you on the shoulder.[line break][speech style of M]'[EventFailureFlav of E]! You're going straight to reconditioning!'";
+		now reconditioning-reason is 1;
+		compute reconditioning of M;
+		now reconditioning-reason is 0.
 
-To say EventFailureFlav of (E - an academy-event):
+To say EventFailureFlav of (E - an facility-event):
 	say "You were given an important task, and you fucked it up".
-To say AcademyEventDesc of (E - an academy-event):
-	say "You were given an important task in the Academy region.".
+To say FacilityEventDesc of (E - an facility-event):
+	say "You were given an important task in the [training halls] region.".
 
-To school event wait place (X - a monster):
+To facility event wait place (X - a monster):
 	let LR be a list of rooms;
-	unless the player is in School23 or the rank of the player < the entry-rank of School23, add School23 to LR;
-	unless the player is in School04 or the player is in School08 or the rank of the player < the entry-rank of School08, add School08 to LR;
-	unless the player is in School03 or the player is in School09 or the rank of the player < the entry-rank of School09, add School09 to LR;
-	unless the player is in School11 or the player is in School12 or the rank of the player < the entry-rank of School12, add School12 to LR;
-	unless the player is in School24 or the player is in School26 or the rank of the player < the entry-rank of School26, add School26 to LR;
-	unless the player is in School15 or the player is in School25 or the player is in School28 or the rank of the player < the entry-rank of School28, add School28 to LR;
-	unless the player is in School01 or the player is in School02 or the player is in School17 or the rank of the player < the entry-rank of School17, add School17 to LR;
+	unless the player is in Facility23 or the rank of the player < the entry-rank of Facility23, add Facility23 to LR;
+	unless the player is in Facility04 or the player is in Facility08 or the rank of the player < the entry-rank of Facility08, add Facility08 to LR;
+	unless the player is in Facility03 or the player is in Facility09 or the rank of the player < the entry-rank of Facility09, add Facility09 to LR;
+	unless the player is in Facility11 or the player is in Facility12 or the rank of the player < the entry-rank of Facility12, add Facility12 to LR;
+	unless the player is in Facility24 or the player is in Facility26 or the rank of the player < the entry-rank of Facility26, add Facility26 to LR;
+	unless the player is in Facility15 or the player is in Facility25 or the player is in Facility28 or the rank of the player < the entry-rank of Facility28, add Facility28 to LR;
+	unless the player is in Facility01 or the player is in Facility02 or the player is in Facility17 or the rank of the player < the entry-rank of Facility17, add Facility17 to LR;
 	sort LR in random order;
 	let LRR be entry 1 in LR;
 	now X is in LRR.
 
-idol-delivery-event is an academy-event.
+idol-delivery-event is an facility-event.
 
-To say AcademyEventDesc of (E - idol-delivery-event):
+To say FacilityEventDesc of (E - idol-delivery-event):
 	say "You have been tasked with carrying [NameDesc of fertility idol] to the hallway outside the staff room (below the ruby classroom).".
 To say EventFailureFlav of (E - idol-delivery-event):
 	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for you to move that idol forever[otherwise]Weren't you supposed to move my idol?! Where have you been[end if]".
 
 Definition: idol-delivery-event is eligible:
 	if diaper quest is 1 or the rank of the player < 3, decide no;
-	if fertility idol is off-stage and there is a worn bag of holding and the player is in School02, decide yes;
+	if fertility idol is off-stage and there is a worn bag of holding and the player is in Facility02, decide yes;
 	decide no.
 
 To compute event start of (E - idol-delivery-event):
@@ -1670,7 +1674,7 @@ To compute event start of (E - idol-delivery-event):
 	if debugmode is 1, say "[input-style]Idol delivery event. Found [M].[roman type][line break]";
 	if M is a monster:
 		if M is not in the location of the player:
-			now M is in School01;
+			now M is in Facility01;
 			try M going north;
 			now M is moved;
 		now fertility idol is carried by M;
@@ -1686,7 +1690,7 @@ To compute event start of (E - idol-delivery-event):
 				say "[speech style of M]'Phew! Thank you.'[roman type][line break][BigNameDesc of M] releases [his of M] hold on the large idol, the task now successfully delegated.";
 				now fertility idol is in the location of the player;
 				if the player is getting unlucky, now fertility idol is fertility-cursed;
-				now academy-event-ready is true; [other events can combo]
+				now facility-event-ready is true; [other events can combo]
 			otherwise:
 				say "[BigNameDesc of M] grunts with frustration.[line break][speech style of M]'Really! I have to do everything myself, I guess.'[roman type][line break]";
 				FavourDown M;
@@ -1698,13 +1702,13 @@ To compute event start of (E - idol-delivery-event):
 
 To compute event handling of (E - idol-delivery-event):
 	let M be the the event-failure-punisher of E;
-	if playerRegion is school and armband is worn:
+	if playerRegion is facility and armband is worn:
 		if the player is not in danger and the player is not immobile:
-			if fertility idol is in School26:
-				if M is in School24:
+			if fertility idol is in Facility26:
+				if M is in Facility24:
 					try M going west;
 				otherwise if M is not in the location of the player:
-					now M is in School27;
+					now M is in Facility27;
 					try M going east;
 				if M is not in the location of the player, now M is in the location of the player; [failsafe]
 				if M is not interested:
@@ -1712,7 +1716,7 @@ To compute event handling of (E - idol-delivery-event):
 					say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 					calm M;
 				say "[speech style of M]'Ah, you are a life-saver! Thank you!'[roman type][line break][BigNameDesc of M] starts dragging [NameDesc of fertility idol] the rest of the way towards the Staff Room door.";
-				now fertility idol is in School27;
+				now fertility idol is in Facility27;
 				try M going west;
 				now M is moved;
 				now the fat-burning of the player is 9999999; [will trigger another fat burning milestone]
@@ -1724,15 +1728,15 @@ To compute event handling of (E - idol-delivery-event):
 		now E is event-failed.
 
 
-wand-delivery-event is an academy-event.
+wand-delivery-event is an facility-event.
 
-To say AcademyEventDesc of (E - wand-delivery-event):
+To say FacilityEventDesc of (E - wand-delivery-event):
 	say "You have been tasked with delivering [NameDesc of glittery-wand] to [NameDesc of the event-failure-punisher of E].".
 To say EventFailureFlav of (E - wand-delivery-event):
 	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for my wand forever[otherwise]Weren't you supposed to deliver a wand by now?! Where have you been[end if]".
 
 Definition: wand-delivery-event is eligible:
-	if glittery-wand is off-stage and glittery-wand is actually summonable, decide yes;
+	if glittery-wand is off-stage and glittery-wand is actually summonable and the player is not wrist bound, decide yes;
 	decide no.
 
 Definition: glittery-wand is removal-blocking:
@@ -1757,7 +1761,7 @@ To compute event start of (E - wand-delivery-event):
 			while failsafe > 0 and X is in the location of the player:
 				now X is a random regional staff member;
 				decrease failsafe by 1;
-			school event wait place X;
+			facility event wait place X;
 			say "[speech style of M]'[NameBimbo], would you be a darling and take this wand to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a sparking wand vibrator towards you.[paragraph break]Agree to the task?";
 			now temporaryYesNoBackground is the examine-image of glittery-wand;
 			if the player is bimbo consenting:
@@ -1765,7 +1769,7 @@ To compute event start of (E - wand-delivery-event):
 				summon glittery-wand uncursed;
 				now the event-failure-punisher of E is X;
 				now X is guarding;
-				now academy-event-ready is true; [other events can combo]
+				now facility-event-ready is true; [other events can combo]
 			otherwise:
 				say "[BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'Useless.'[roman type][line break]";
 				FavourDown M;
@@ -1775,7 +1779,7 @@ To compute event start of (E - wand-delivery-event):
 
 To compute event handling of (E - wand-delivery-event):
 	let M be the the event-failure-punisher of E;
-	if playerRegion is school and armband is worn and glittery-wand is held:
+	if playerRegion is facility and armband is worn and glittery-wand is held:
 		if the player is not in danger and the player is not immobile:
 			if the event-failure-punisher of E is in the location of the player and glittery-wand is not-in-bag:
 				if M is not interested:
@@ -1792,16 +1796,16 @@ To compute event handling of (E - wand-delivery-event):
 		now E is event-failed.
 
 
-cookie-delivery-event is an academy-event.
+cookie-delivery-event is an facility-event.
 
-To say AcademyEventDesc of (E - cookie-delivery-event):
+To say FacilityEventDesc of (E - cookie-delivery-event):
 	say "You have been tasked with delivering [NameDesc of cookie] to [NameDesc of the event-failure-punisher of E].".
 To say EventFailureFlav of (E - cookie-delivery-event):
 	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for my special birthday treat forever[otherwise]Weren't you supposed to deliver me a special birthday treat by now?! Where have you been[end if]".
 
 Definition: cookie-delivery-event is eligible:
 	if diaper quest is 1, decide no;
-	if cookie is off-stage and there is an unleashed male regional teacher, decide yes;
+	if cookie is off-stage and there is an unleashed male regional tutor, decide yes;
 	decide no.
 
 To compute event start of (E - cookie-delivery-event):
@@ -1817,12 +1821,12 @@ To compute event start of (E - cookie-delivery-event):
 			interest M;
 			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 		if M is friendly:
-			let X be a random unleashed male regional teacher;
+			let X be a random unleashed male regional tutor;
 			let failsafe be 50;
 			while failsafe > 0 and X is in the location of the player:
-				now X is a random unleashed male regional teacher;
+				now X is a random unleashed male regional tutor;
 				decrease failsafe by 1;
-			school event wait place X;
+			facility event wait place X;
 			now the quality of cookie is -3;
 			now the fat of cookie is 3;
 			say "[speech style of M]'[NameBimbo], would you be a darling and take this special birthday snack to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a lewd towards you.[paragraph break]Agree to the task?";
@@ -1832,7 +1836,7 @@ To compute event start of (E - cookie-delivery-event):
 				now cookie is carried by the player;
 				now the event-failure-punisher of E is X;
 				now X is guarding;
-				now academy-event-ready is true; [other events can combo]
+				now facility-event-ready is true; [other events can combo]
 			otherwise:
 				say "[BigNameDesc of M] clicks [his of M] tongue.[line break][speech style of M]'Disappointing. I'll find someone else, I guess.'[roman type][line break]";
 				FavourDown M;
@@ -1843,7 +1847,7 @@ To compute event start of (E - cookie-delivery-event):
 
 To compute event handling of (E - cookie-delivery-event):
 	let M be the the event-failure-punisher of E;
-	if playerRegion is school and armband is worn and cookie is held:
+	if playerRegion is facility and armband is worn and cookie is held:
 		if the player is not in danger and the player is not immobile:
 			if the event-failure-punisher of E is in the location of the player:
 				if M is not interested:
@@ -1882,22 +1886,22 @@ To compute event handling of (E - cookie-delivery-event):
 
 
 
-egg-smuggling-event is an academy-event.
+egg-smuggling-event is an facility-event.
 
-To say AcademyEventDesc of (E - egg-smuggling-event):
-	say "You have been tasked with smuggling a special egg out of the Academy. You can find it in the gymnasium.".
+To say FacilityEventDesc of (E - egg-smuggling-event):
+	say "You have been tasked with smuggling a special egg out of the [training halls]. You can find it in the gymnasium.".
 To say EventFailureFlav of (E - egg-smuggling-event):
 	say "I knew I shouldn't have trusted you. That was my one chance to steal that egg, RUINED! You best believe that you're going to suffer for this".
 
 Definition: egg-smuggling-event is eligible:
-	unless receptionist is alive and headmistress is alive and receptionist is in School01 and Dungeon10 is discovered and the rank of the player >= 2, decide no;
+	unless receptionist is alive and mistress is alive and receptionist is in Facility01 and Dungeon10 is discovered and the rank of the player >= 2, decide no;
 	if egg laying fetish is 1 and there is an off-stage medium egg, decide yes;
 	decide no.
 
 To compute event start of (ESV - egg-smuggling-event):
 	let M be a random alive staff member in the location of the player;
 	let failsafe be 50;
-	while failsafe > 0 and (M is nothing or M is receptionist or M is headmistress):
+	while failsafe > 0 and (M is nothing or M is receptionist or M is mistress):
 		decrease failsafe by 1;
 		now M is a random alive staff member;
 	if debugmode is 1, say "[input-style]Smuggling. Found [M].[roman type][line break]";
@@ -1912,13 +1916,13 @@ To compute event start of (ESV - egg-smuggling-event):
 		if M is friendly:
 			now event-failure-punisher of ESV is M;
 			let E be a random off-stage medium egg;
-			say "[speech style of M]'[NameBimbo], perfect timing. I need to get a rare egg out of the Academy and into the Dungeon. It's not strictly... Permitted. But the receptionist is watching the exit like a hawk, and us staff get checked VERY thoroughly when they leave. You can figure a way to smuggle it out, right?'[paragraph break][variable custom style]Oh fuck, I'd probably have to sneak it out INSIDE me, wouldn't I...[roman type][line break]Agree to the task?";
+			say "[speech style of M]'[NameBimbo], perfect timing. I need to get a rare egg out of the training halls and into the Dungeon. It's not strictly... Permitted. But the receptionist is watching the exit like a hawk, and us staff get checked VERY thoroughly when they leave. You can figure a way to smuggle it out, right?'[paragraph break][variable custom style]Oh fuck, I'd probably have to sneak it out INSIDE me, wouldn't I...[roman type][line break]Agree to the task?";
 			if the player is bimbo consenting:
 				now the egg-origin of E is carrot daggers;
-				now E is in School23;
-				say "[speech style of M]'Brilliant, I know I could count on you. I've left it discreetly in the corner of the gymnasium. You won't be able to miss it if you're looking for it. Make sure you don't leave the Academy without it, and make sure nobody sees you with it. Good [boy of the player].'[roman type][line break][BigNameDesc of M] begins to wander off.";
+				now E is in Facility23;
+				say "[speech style of M]'Brilliant, I know I could count on you. I've left it discreetly in the corner of the gymnasium. You won't be able to miss it if you're looking for it. Make sure you don't leave the training halls without it, and make sure nobody sees you with it. Good [boy of the player].'[roman type][line break][BigNameDesc of M] begins to wander off.";
 				bore M;
-				now academy-event-ready is true; [other events can combo]
+				now facility-event-ready is true; [other events can combo]
 			otherwise:
 				say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'Goody two-shoes. You'd better not tell anyone we had this conversation.'[roman type][line break]";
 				FavourDown M;
@@ -1927,7 +1931,7 @@ To compute event start of (ESV - egg-smuggling-event):
 			now ESV is event-ended.
 
 To compute event handling of (ESV - egg-smuggling-event):
-	if playerRegion is school:
+	if playerRegion is facility:
 		let EG be nothing;
 		repeat with EX running through held medium eggs:
 			if the egg-origin of EX is carrot daggers, now EG is EX;
@@ -1936,7 +1940,7 @@ To compute event handling of (ESV - egg-smuggling-event):
 				unless M is the event-failure-punisher of ESV:
 					interest M;
 					anger M;
-					say "[speech style of M]'HEY! WHERE ARE YOU TAKING THAT EGG?! THAT'S [if M is headmistress]MINE[otherwise]THE HEADMISTRESS'S[end if]!'[roman type][line break][big he of M] looks furious! ";
+					say "[speech style of M]'HEY! WHERE ARE YOU TAKING THAT EGG?! THAT'S [if M is mistress]MINE[otherwise]THE mistress'S[end if]!'[roman type][line break][big he of M] looks furious! ";
 					if armband is worn:
 						say "[BigNameDesc of armband] fizzles into dust.";
 						destroy armband;
@@ -1972,27 +1976,27 @@ To compute event handling of (ESV - egg-smuggling-event):
 
 
 
-slimeball-spillage-event is an academy-event.
+slimeball-spillage-event is an facility-event.
 
-To say AcademyEventDesc of (E - slimeball-spillage-event):
+To say FacilityEventDesc of (E - slimeball-spillage-event):
 	say "You have been tasked with dealing with the event in the lab.".
 To say EventFailureFlav of (E - slimeball-spillage-event):
 	say "I knew I shouldn't have relied you. Those slimeballs got everywhere".
 
 Definition: slimeball-spillage-event is eligible:
-	if the rank of the player >= 3 and the player is in School04, decide yes;
+	if the rank of the player >= 3 and the player is in Facility04, decide yes;
 	decide no.
 
 To compute event start of (ESV - slimeball-spillage-event):
 	let M be a random alive staff member in the location of the player;
 	let failsafe be 50;
-	while failsafe > 0 and (M is nothing or M is receptionist or M is headmistress):
+	while failsafe > 0 and (M is nothing or M is receptionist or M is mistress):
 		decrease failsafe by 1;
 		now M is a random alive staff member;
 	if debugmode is 1, say "[input-style]Slimeballs. Found [M].[roman type][line break]";
 	if M is a monster:
 		if M is not in the location of the player:
-			now M is in School03;
+			now M is in Facility03;
 			try M going west;
 			now M is moved;
 		if M is not interested:
@@ -2006,11 +2010,11 @@ To compute event start of (ESV - slimeball-spillage-event):
 					let S be a random off-stage slimeball;
 					if S is a thing:
 						set up S;
-						now S is in School28;
+						now S is in Facility28;
 				repeat with X running from 1 to 6:
 					let C be a random off-stage mass collectible;
-					if C is a thing, now C is in School28;
-				now academy-event-ready is true; [other events can combo]
+					if C is a thing, now C is in Facility28;
+				now facility-event-ready is true; [other events can combo]
 			otherwise:
 				say "[speech style of M]'Seriously?! Ugh! Useless!'[roman type][line break]";
 				FavourDown M;
@@ -2019,31 +2023,31 @@ To compute event start of (ESV - slimeball-spillage-event):
 			now ESV is event-ended.
 
 To compute event handling of (ESV - slimeball-spillage-event):
-	if playerRegion is school:
+	if playerRegion is facility:
 		if the number of regional slimeballs is 0, now ESV is event-ended;
 	otherwise:
 		repeat with M running through slimeballs:
 			if M is in an academic room, destroy M;
 		repeat with M running through mass collectibles:
-			if M is in School28, destroy M;
+			if M is in Facility28, destroy M;
 		now ESV is event-failed.
 
 
 
 
 
-portal-down-event is an academy-event. portal-down-event has a number called backup-solution. portal-down-event has a number called help-offer-cooldown.
+portal-down-event is an facility-event. portal-down-event has a number called backup-solution. portal-down-event has a number called help-offer-cooldown.
 
 To decide which number is the event-rarity of (E - portal-down-event):
 	decide on 3.
 
-To say AcademyEventDesc of (E - portal-down-event):
+To say FacilityEventDesc of (E - portal-down-event):
 	say "You have been tasked with sourcing some semen and some ectoplasm so that the receptionist can repair the portal.".
 [To say EventFailureFlav of (E - portal-down-event):
 	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for my wand forever[otherwise]Weren't you supposed to deliver a wand by now?! Where have you been[end if]".]
 
 Definition: portal-down-event is eligible:
-	if diaper quest is 0 and receptionist is alive and receptionist is in School01 and the player is in School01 and the rank of the player >= 3 and there is a carried vessel, decide yes;
+	if diaper quest is 0 and receptionist is alive and receptionist is in Facility01 and the player is in Facility01 and the rank of the player >= 3 and there is a carried vessel, decide yes;
 	decide no.
 
 To compute event start of (ESV - portal-down-event):
@@ -2054,13 +2058,13 @@ To compute event start of (ESV - portal-down-event):
 		say "[BigNameDesc of receptionist] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	let ECT be a random off-stage ectoplasm;
 	if ECT is nothing, now ECT is a random ectoplasm;
-	if a random number between 1 and 2 is 1, now ECT is in School28;
-	otherwise now ECT is in School22;
+	if a random number between 1 and 2 is 1, now ECT is in Facility28;
+	otherwise now ECT is in Facility22;
 	now event-failure-punisher of ESV is receptionist;
 	say "[speech style of receptionist]'Oh [NameBimbo], I'm sorry, the portal has run out of juice! I need some help to get it back up and running. Could you get a couple of important ingredients for me? When I said [']juice['], I was being rather literal... What I need is some sticky, slimy ectoplasm... And some semen. Either in a cup, or a used condom would be fine. Nobody's going to be able to leave via the until I get these two things, sorry!'[roman type][line break]".
 
 To compute event handling of (ESV - portal-down-event):
-	if playerRegion is school:
+	if playerRegion is facility:
 		increase the backup-solution of ESV by 1;
 		decrease the help-offer-cooldown of ESV by 1;
 		if receptionist is uninterested, interest receptionist;
@@ -2122,7 +2126,7 @@ To compute event handling of (ESV - portal-down-event):
 						destroy ECT;
 						now ESV is event-ended;
 						try receptionist going north;
-						now receptionist is in School10;
+						now receptionist is in Facility10;
 						now receptionist is unleashed; [allows her to walk back to the reception]
 					otherwise:
 						say "[speech style of receptionist]'Okay honey, good luck getting that happy batter!'[roman type][line break][BigNameDesc of receptionist] smiles sweetly.";
@@ -2130,8 +2134,8 @@ To compute event handling of (ESV - portal-down-event):
 			otherwise if the number of regional ectoplasm is 0:
 				now ECT is a random off-stage ectoplasm;
 				if ECT is nothing, now ECT is a random ectoplasm;
-				if a random number between 1 and 2 is 1, now ECT is in School28;
-				otherwise now ECT is in School22;
+				if a random number between 1 and 2 is 1, now ECT is in Facility28;
+				otherwise now ECT is in Facility22;
 				say "[speech style of receptionist]'Come on sweetie, I'm sure there's some ectoplasm out there somewhere, I can sense it! Keep looking!'[roman type][line break][BigNameDesc of receptionist] beams at you.";
 			otherwise if the backup-solution of ESV > a random number between 30 and 300 and the number of regional bag lunch is 0:
 				say "[speech style of receptionist]'A little sweetie handed me this. So I just need an ectoplasm now.'[roman type][line break][BigNameDesc of receptionist] picks up a used, full condom from [his of receptionist] desk and flings it at you. It hits you in the face!";
@@ -2144,29 +2148,29 @@ To compute event handling of (ESV - portal-down-event):
 
 
 
-hallway-fight-event is an academy-event. hallway-fight-event has an object called fighter-1. hallway-fight-event has an object called fighter-2.
+hallway-fight-event is an facility-event. hallway-fight-event has an object called fighter-1. hallway-fight-event has an object called fighter-2.
 
 To decide which number is the event-rarity of (E - hallway-fight-event):
 	decide on 4.
 
-To say AcademyEventDesc of (E - hallway-fight-event):
-	say "You could find a teacher to resolve a hallway fight.".
+To say FacilityEventDesc of (E - hallway-fight-event):
+	say "You could find an instructor to resolve a hallway fight.".
 [To say EventFailureFlav of (E - hallway-fight-event):
 	say "[if the event-failure-punisher of E is in the location of the player]I've been waiting for my wand forever[otherwise]Weren't you supposed to deliver a wand by now?! Where have you been[end if]".]
 
 Definition: hallway-fight-event is eligible:
-	if there is a staff member in the location of the player or there is a nearby staff member, decide no;
-	if the number of alive students >= 4 and south is listed in the NViables of the location of the player, decide yes;
+	if the player is in Facility13 or there is a staff member in the location of the player or there is a nearby staff member, decide no;
+	if the number of alive trainees >= 4 and south is listed in the NViables of the location of the player, decide yes;
 	decide no.
 
 To compute event start of (ESV - hallway-fight-event):
 	if debugmode is 1, say "[input-style]Hallway fight.[roman type][line break]";
-	let ST1 be a random alive student;
-	let ST2 be a random alive student;
+	let ST1 be a random alive trainee;
+	let ST2 be a random alive trainee;
 	let failsafe be 50;
 	while ST1 is ST2 and failsafe > 0:
 		decrease failsafe by 1;
-		now ST2 is a random alive student;
+		now ST2 is a random alive trainee;
 	bore ST1;
 	bore ST2;
 	now ST1 is guarding;
@@ -2176,20 +2180,20 @@ To compute event start of (ESV - hallway-fight-event):
 	now fighter-1 of ESV is ST1;
 	now fighter-2 of ESV is ST2;
 	say "[BigNameDesc of ST1] and [NameDesc of ST2] are shoving each other by the south doorway.[line break][speech style of ST1]'Bitch!'[roman type][line break][BigNameDesc of ST1] snarls at [NameDesc of ST2].[paragraph break][speech style of ST1]'Insufferable [cunt]!'[roman type][line break][BigNameDesc of ST2] shrieks back, grabbing [NameDesc of ST1][']s hair.";
-	repeat with ST running through alive students:
+	repeat with ST running through alive trainees:
 		unless ST is ST1 or ST is ST2:
 			bore ST;
 			now ST is in the location of the player;
 			now ST is guarding;
-	say "A crowd of students quickly gathers![line break][second custom style]'Fight! Fight! Fight!'[roman type][line break]It's going to be almost impossible to get past this fight until it's finished. Maybe you should try to find a teacher? Or just let it play out...".
+	say "A crowd of trainees quickly gathers![line break][second custom style]'Fight! Fight! Fight!'[roman type][line break]It's going to be almost impossible to get past this fight until it's finished. Maybe you should try to find a tutor? Or just let it play out...".
 
 Check going south when hallway-fight-event is event-started:
 	if fighter-1 of hallway-fight-event is in the location of the player or fighter-2 of hallway-fight-event is in the location of the player, say "There's no way to get past the fight until it has ended." instead.
 
 To compute event handling of (ESV - hallway-fight-event):
-	if playerRegion is school and fighter-1 of ESV is regional and fighter-2 of ESV is regional:
+	if playerRegion is facility and fighter-1 of ESV is regional and fighter-2 of ESV is regional:
 		now fighter-2 of ESV is in the location of fighter-1 of ESV;
-		let X be a random number between 2 and 5;
+		let X be a random number between 2 and 7;
 		if the health of fighter-2 of ESV < X or the health of fighter-1 of ESV < X:
 			let ST1 be fighter-1 of ESV;
 			let ST2 be fighter-2 of ESV;
@@ -2200,42 +2204,51 @@ To compute event handling of (ESV - hallway-fight-event):
 			DifficultyDown ST2 by 1;
 			now the health of ST2 is 1;
 			now ESV is event-ended;
-			releash students;
+			releash trainees;
 		otherwise:
 			let ST1 be fighter-1 of ESV;
 			let ST2 be fighter-2 of ESV;
-			if the dedication of fighter-2 of ESV + the vindictiveness of fighter-2 of ESV > the dedication of fighter-1 of ESV + the vindictiveness of fighter-1 of ESV:
-				now ST1 is ST2; [attack victor]
+			if the dedication of fighter-2 of ESV + the vindictiveness of fighter-2 of ESV + a random number between 1 and 10 > the dedication of fighter-1 of ESV + the vindictiveness of fighter-1 of ESV + a random number between 1 and 10:
+				now ST1 is ST2; [ST1 is the attack victor]
 				now ST2 is fighter-1 of ESV;
-				decrease the health of ST2 by a random number between 1 and 3;
-				if the health of ST2 < 0, now the health of ST2 is 1;
-				if ST1 is in the location of the player, say "[BigNameDesc of ST1] [one of]wrestles [NameDesc of ST2] to the ground.[or]spits in [NameDesc of ST2][']s face.[or]slaps [NameDesc of ST2] in the face![or]punches [NameDesc of ST2] in the boob![or]easily dodges a fist that came flying from [NameDesc of ST2], before laughing derisively at [him of ST2].[in random order]";
+			decrease the health of ST2 by a random number between 2 and 4;
+			if the health of ST2 < 0, now the health of ST2 is 1;
+			if ST1 is in the location of the player:
+				say "[BigNameDesc of ST1] [one of]wrestles [NameDesc of ST2] to the ground.[or]spits in [NameDesc of ST2][']s face.[or]slaps [NameDesc of ST2] in the face![or]punches [NameDesc of ST2] in the boob![or]easily dodges a fist that came flying from [NameDesc of ST2], before laughing derisively at [him of ST2].[in random order]";
+				let M be a random unleashed staff member in the location of ST1;
+				if M is a monster:
+					say "[speech style of M]'HEY! NO WAY! RECONDITIONING FOR BOTH OF YOU!'[roman type][line break][BigNameDesc of M] breaks up the fight, grabbing both of them by the ears, and leading them away towards the reconditioning room, while they both squeal with fury and indignation.";
+					now ESV is event-ended;
+					releash trainees;
+					now M is in Facility13;
+					now ST1 is in Facility13;
+					now ST2 is in Facility13;
 	otherwise:
 		now ESV is event-ended;
-		releash students.
+		releash trainees.
 
-To releash students:
-	repeat with ST running through alive students:
+To releash trainees:
+	repeat with ST running through alive trainees:
 		now ST is unleashed;
 		unless ST is fighter-1 of hallway-fight-event or ST is fighter-2 of hallway-fight-event:
 			if a random number between 1 and 2 is 1, deinterest ST;
 			otherwise distract ST;
 
-Check slapping a student when hallway-fight-event is event-started:
+Check slapping a trainee when hallway-fight-event is event-started:
 	unless the noun is dangerous, say "There's enough chaos right now." instead.
-Check kneeing a student when hallway-fight-event is event-started:
+Check kneeing a trainee when hallway-fight-event is event-started:
 	unless the noun is dangerous, say "There's enough chaos right now." instead.
-Check kicking a student when hallway-fight-event is event-started:
+Check kicking a trainee when hallway-fight-event is event-started:
 	unless the noun is dangerous, say "There's enough chaos right now." instead.
 
-To MonsterHeal (M - a student) by (N - a number):
+To MonsterHeal (M - a trainee) by (N - a number):
 	unless hallway-fight-event is event-started and (M is fighter-1 of hallway-fight-event or M is fighter-2 of hallway-fight-event):
 		if the health of M < the maxhealth of M:
 			increase the health of M by N;
 			if the health of M > the maxhealth of M, now the health of M is the maxhealth of M.[Overhealing is not allowed]
 
 
-Book - Ultimate Lesson Actor Renamed Unseen Stranger
+Book - Ultimate TrainingSession Actor Renamed Unseen Stranger
 
 An unseen-stranger is a kind of monster. An unseen-stranger is male. There are 4 unseen-strangers. The text-shortcut of an unseen-stranger is "voi". Understand ["manly", "womanly", "voice",] "unseen", "stranger" as unseen-stranger.
 An unseen-stranger has a text called the specific-man-title.
@@ -2434,8 +2447,8 @@ Definition: an unseen-stranger is uniquely reactive:
 	if current-predicament is free-use-fuckhole-predicament and it is in Toilet02 and the player is in Toilet02, decide yes;
 	decide no.
 Definition: an unseen-stranger is anticipating-climax: decide no.
-Figure of unseen actor is the file "NPCs/School/unseen1.png".
-Figure of unseen actor futa is the file "NPCs/School/unseen2.jpg".
+Figure of unseen actor is the file "NPCs/Facility/unseen1.png".
+Figure of unseen actor futa is the file "NPCs/Facility/unseen2.jpg".
 To decide which figure-name is the monster-image of (M - an unseen-stranger):
 	if M is specific-man and the specific-man-image of M is not figure of small image, decide on the specific-man-image of M;
 	if M is presenting as female, decide on figure of unseen actor futa;
@@ -2447,18 +2460,30 @@ Definition: an unseen-stranger (called M) is dark skinned:
 	if M is specific-man:
 		if the specific-man-title of M matches the text "black" or the specific-man-title of M matches the text "dark" or the specific-man-title of M matches the text "ebony" or the specific-man-title of M matches the text "African", decide yes;
 	decide no.
+An unseen-stranger has a number called current-girth. The current-girth of an unseen-stranger is 2.
+bonus-black-girth is a number that varies. bonus-black-girth is 1.
+An all time based rule (this is the unseen stranger girth shuffle rule):
+	if a random number between 1 and 10 is 1 and the number of alive unseen-stranger is 0:
+		if bonus-black-girth is 1 and the raw bbc addiction of the player > 2, now bonus-black-girth is 2;
+		if bonus-black-girth is 2 and the raw bbc addiction of the player > 7, now bonus-black-girth is 3;
+		repeat with M running through unseen-strangers:
+			now the current-girth of M is (a random number between 1 and 2) + (a random number between 1 and 2);
 To decide which number is the girth of (M - an unseen-stranger):
 	if M is penetrating a fuckhole and slimy-portal-creature is demon-fuck and slimy-portal-creature is grabbing the player, decide on 6;
 	if M is penetrating face and slimy-portal-creature is demon-oral and slimy-portal-creature is grabbing the player, decide on 6;
-	if M is dark skinned, decide on 5;
-	decide on 2.
+	if M is dark skinned, decide on the current-girth of M + bonus-black-girth;
+	decide on the current-girth of M.
 Definition: an unseen-stranger is able to remove cursed plugs: decide yes. [Can the monster remove all plugs & gags?]
 To set up sex length of (M - an unseen-stranger) in (B - a body part):
 	set up sex length (a random number between 1 and 2) of M in B.
 To compute sudden floor squirt disapproval of (M - an unseen-stranger):
 	if M is in Toilet02 and current-predicament is free-use-fuckhole-predicament, say "[speech style of M]'[one of]Holy shit, was that someone else's cum?!'[or]You're fucking gross.'[or]I guess I'm not the first guy to fuck this Free Use whore today, then...'[or]Woah!'[or]Holy shit, that nearly hit me!'[or]Fucking ASSCUM?!'[cycling][roman type][line break]".
 To compute SelectionFailure of (M - an unseen-stranger):
-	say "You feel a [LongDickDesc of M] shoved [one of]up against your torso[or]into your hand's grip[or]against your cheek[in random order] and moved around as [NameDesc of M] waits for an available hole.".
+	if M is in an elevator-room:
+		say "[speech style of M]'[one of]Unbelievable. I actually can't fuck [him of the player] right now. Maybe [he of the player] wasn't as stupid as I reckoned[or]I guess you got lucky this time[stopping].'[roman type][line break][BigNameDesc of M] give sup, and leaves you alone.";
+		destroy M;
+	otherwise:
+		say "You feel a [LongDickDesc of M] shoved [one of]up against your torso[or]into your hand's grip[or]against your cheek[in random order] and moved around as [NameDesc of M] waits for an available hole.".
 To say AnalDefloweringFlav of (M - an unseen-stranger):
 	say "Suddenly you feel a hard [manly-penis] pushing against, and into your virgin [asshole]. You reflect on how disgraceful it is that you're losing your anal virginity to a [man of M] who you don't even know what [he of M] looks like, never mind what [his of M] name is...".
 To say VaginalDefloweringFlav of (M - an unseen-stranger):

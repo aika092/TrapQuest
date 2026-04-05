@@ -17,9 +17,9 @@ Check waiting:
 		if the player is in agreement, urinalwait instead;
 	otherwise if the player is in HoleInWall:
 		holewait instead;
-	otherwise if detention chair is grabbing the player:
-		say "Do you want to keep waiting until detention is over? ";
-		if the player is in agreement, detentionchairwait instead;
+	otherwise if reconditioning chair is grabbing the player:
+		say "Do you want to keep waiting until reconditioning is over? ";
+		if the player is in agreement, reconditioningchairwait instead;
 	otherwise if the player is live fucked or there is a thing grabbing the player or there is a thing wrangling a body part:
 		let M be a random live thing penetrating a body part;
 		if M is minotaur and M is asleep:

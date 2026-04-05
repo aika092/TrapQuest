@@ -175,7 +175,7 @@ To compute perception of (M - a robomilkmaid):
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'HIGH VOLUME OF MILK DETECTED. DAIRY FARM SIMULATION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the player is hotel employed:
-		if breasts is lewdly exposed or trainee bra is worn:
+		if breasts is lewdly exposed or trainee-bra is worn:
 			say "[big he of M] glides towards you, addressing you in a monotone.[line break][speech style of M]HEY [robogreeting of M]-! FRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS-! TITS. TEEHEE-! TEEHEE.[roman type][line break][big he of M] seems to abruptly lose interest.";
 			calm M;
 		otherwise if the largeness of breasts < 2:[exposed but not lewdly exposed? You must have small breasts!]
@@ -360,7 +360,7 @@ This is the robomilkmaid punishment rule:
 	otherwise if the ready-for-milking of milking-quest is 1:
 		let C be a random top level breasts protection clothing;
 		if there is worn actually nipple covering clothing and C is clothing:
-			if C is trainee bra or (C is not-top-displacable and C is not stealable):
+			if C is trainee-bra or (C is not-top-displacable and C is not stealable):
 				say "[BigNameDesc of current-monster] cocks [his of current-monster] head sideways, staring at your [ShortDesc of C]![line break][speech style of current-monster]'ERROR: UNREMOVABLE CLOTHING. MILKING ROUTINE TERMINATED EARLY. THIS INCIDENT HAS BEEN LOGGED.'[roman type][line break][BigNameDesc of current-monster] turns to leave you alone.";
 				bore M;
 			otherwise if C is currently not-top-displacable:
@@ -395,7 +395,7 @@ This is the robomilkmaid punishment rule:
 			rule succeeds;
 	otherwise if the player is hotel employed:
 		let C be a random stealable top level breasts protection clothing;
-		if C is clothing and C is not trainee bra:
+		if C is clothing and C is not trainee-bra:
 			if C is currently not-top-displacable:
 				say "[BigNameDesc of current-monster] tears off your [printed name of C], exposing your [ShortDesc of breasts]!";
 				destroy C;

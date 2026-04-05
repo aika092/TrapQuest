@@ -1,6 +1,7 @@
 Soiled Diaper by Collectibles begins here.
 
-A soiled-diaper is a kind of collectible. There are 30 soiled-diapers. The printed name of soiled-diaper is "[TQlink of item described][if diaper messing >= 6]soiled[otherwise]used[end if] [diaper-origin of item described][shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of soiled-diaper is the file "Items/Collectibles/diaper1.jpg". Understand "soiled", "diaper" as soiled-diaper. Understand "used" as soiled-diaper when diaper messing < 6.
+A soiled-diaper is a kind of collectible. There are 30 soiled-diapers. The printed name of soiled-diaper is "[TQlink of item described][if diaper messing >= 6]soiled[otherwise]used[end if] [diaper-origin of item described][shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "soiled", "diaper" as soiled-diaper. Understand "used" as soiled-diaper when diaper messing < 6.
+
 
 To decide which number is the outrage of (S - a soiled-diaper):
 	if diaper quest is 1, decide on 0;
@@ -17,8 +18,40 @@ To say ShortDesc of (C - a soiled-diaper):
 	say "used diaper".
 To say MediumDesc of (C - a soiled-diaper):
 	say "used [diaper-origin of C]".
+
+Figure of soiled-diaper small is the file "Items/Collectibles/Diapers/diaper_used_01.png".
+Figure of soiled-diaper medium is the file "Items/Collectibles/Diapers/diaper_used_02.png".
+Figure of soiled-diaper largish is the file "Items/Collectibles/Diapers/diaper_used_03.png".
+Figure of soiled-diaper cloth is the file "Items/Collectibles/Diapers/diaper_used_04.png".
+Figure of soiled-diaper bunny is the file "Items/Collectibles/Diapers/diaper_used_05.png".
+Figure of soiled-diaper rubber is the file "Items/Collectibles/Diapers/diaper_used_06.png".
+Figure of soiled-diaper velcro is the file "Items/Collectibles/Diapers/diaper_used_07.png".
+Figure of soiled-diaper giant is the file "Items/Collectibles/Diapers/diaper_used_08.png".
+Figure of soiled-diaper massive is the file "Items/Collectibles/Diapers/diaper_used_09.png".
+Figure of soiled-diaper waddle is the file "Items/Collectibles/Diapers/diaper_used_10.png".
+
 To decide which figure-name is the examine-image of (C - a soiled-diaper):
-	decide on figure of soiled-diaper.
+	if the diaper-origin of C matches the text "waddle":
+		decide on figure of soiled-diaper waddle;
+	otherwise if the diaper-origin of C matches the text "massive":
+		decide on figure of soiled-diaper massive;
+	otherwise if the diaper-origin of C matches the text "giant":
+		decide on figure of soiled-diaper giant;
+	otherwise if the diaper-origin of C matches the text "velcro":
+		decide on figure of soiled-diaper velcro;
+	otherwise if the diaper-origin of C matches the text "rubber":
+		decide on figure of soiled-diaper rubber;
+	otherwise if the diaper-origin of C matches the text "button":
+		decide on figure of soiled-diaper bunny;
+	otherwise if the diaper-origin of C matches the text "cloth":
+		decide on figure of soiled-diaper cloth;
+	otherwise if the diaper-origin of C matches the text "large":
+		decide on figure of soiled-diaper largish;
+	otherwise if the diaper-origin of C matches the text "medium":
+		decide on figure of soiled-diaper medium;
+	otherwise:
+		decide on figure of soiled-diaper small.
+
 
 Definition: a soiled-diaper is never-in-bag: decide yes.
 To decide which number is the heaviness of (H - a soiled-diaper):
@@ -92,7 +125,7 @@ most-recent-pail is an object that varies.
 
 dungeon-diaper-pail is a diaper pail. dungeon-diaper-pail is in Dungeon30.
 hotel-diaper-pail is a diaper pail. hotel-diaper-pail is in Hotel31.
-school-diaper-pail is a diaper pail. school-diaper-pail is in School07.
+facility-diaper-pail is a diaper pail. facility-diaper-pail is in Facility07.
 mansion-diaper-pail is a diaper pail. mansion-diaper-pail is in Mansion13.
 
 a diaper pail has a list of soiled-diaper called the pailed-diapers.
@@ -103,7 +136,7 @@ Check inserting something into a diaper pail:
 	if the noun is soiled-diaper or the noun is carried diaper:
 		if the player is immobile or the player is in danger, say "You're a bit busy!" instead;
 		allocate 3 seconds;
-		if the noun is school-diaper-pail:
+		if the noun is facility-diaper-pail:
 			say "You push the diaper down the pneumatic tube system, and it is whoosed away, [if the times-met of ex-princess > 0 and ex-princess is caged]as you now know, directly onto [NameDesc of ex-princess][']s face[otherwise if the times-met of ex-princess > 0]to [NameDesc of ex-princess][']s old dungeon cell[otherwise]to who-knows-where[end if].";
 		otherwise:
 			say "You open the lid of the diaper pail[if the diaper addiction of the player < 12], holding your nose[end if], and push [NameDesc of the noun] into it. You quickly close the lid again.";
@@ -167,7 +200,7 @@ Check BabChanging it with:
 	if the second noun is worn diaper, say "You would need to take that off first." instead;
 	if the noun is not messy and (the noun is not woman-player or diaper quest is 0), say "[big he of the noun] isn't [if the noun is defeated]in need of[otherwise]likely to let you do[end if] that." instead;
 	if the noun is undefeated and the noun is not woman-player and the noun is not adult baby slave, say "[big he of the noun] isn't likely to let you do that." instead;
-	if playerRegion is School, say "That would be a waste of time. [big he of the noun] would just mess [himself of the noun] again almost instantly." instead;
+	if playerRegion is facility, say "That would be a waste of time. [big he of the noun] would just mess [himself of the noun] again almost instantly." instead;
 	if the noun is undefeated uninterested monster, say "You'd need to have [his of the noun] attention first." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy." instead;
 	if the player is not able to use manual dexterity, say "Your limited manual dexterity makes this impractical." instead.

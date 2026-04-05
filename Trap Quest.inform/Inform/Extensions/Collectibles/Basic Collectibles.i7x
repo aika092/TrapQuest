@@ -10,7 +10,7 @@ To decide which figure-name is the examine-image of (C - chess piece):
 	decide on figure of chess piece.
 
 To say ExamineDesc of (C - chess piece):
-	say "The white king piece you kept after your victory against [NameDesc of chess-opponent of chess-lesson].".
+	say "The white king piece you kept after your victory against [NameDesc of chess-opponent of chess-training].".
 
 Definition: chess piece is ingredient: decide no.
 Definition: chess piece is immune to change: decide yes.
@@ -143,6 +143,19 @@ To decide which figure-name is the examine-image of (E - mechanic-id-card):
 
 To say ExamineDesc of (B - mechanic-id-card):
 	say "The mechanic's ID card.".
+
+matron-id-card is an id-card. The printed name of matron-id-card is "[TQlink of item described]matron's ID card[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of matron-id-card is "midc". Understand "matron's", "id", "card" as matron-id-card.
+
+Figure of matron-id-card is the file "Items/Collectibles/idcard4.png".
+To decide which figure-name is the examine-image of (E - matron-id-card):
+	decide on figure of matron-id-card.
+
+To say ExamineDesc of (B - matron-id-card):
+	say "The matron's ID card.".
+
+Definition: matron-id-card is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 demonic-id-card is an id-card. The printed name of demonic-id-card is "[TQlink of item described]fire card[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of demonic-id-card is "fc". Understand "fire", "card" as demonic-id-card.
 
@@ -296,7 +309,7 @@ To decide which figure-name is the examine-image of (C - pink-hair):
 	decide on figure of pink-hair.
 
 To say ExamineDesc of (B - pink-hair):
-	say "A strand of hair from a fairy. It is surprisingly thick and very pink. It probably contains some magic power.".
+	say "A small clump of hair. It is surprisingly thick and very pink.".
 
 To decide which number is the crafting key of (C - pink-hair):
 	decide on 17.
@@ -338,7 +351,7 @@ To say ShortDesc of (C - pack of playing cards):
 
 Report taking pack of playing cards when the player is in Dungeon07:
 	say "You collect up the cards. ";
-	compute poker table hypno.
+	compute poker table cunt.
 
 Check taking pack of playing cards:
 	if 23 is not listed in stolenCards and the recipe of (alchemy key of queen-of-hearts heels) is memorised:
@@ -381,7 +394,7 @@ Check taking pack of playing cards:
 			now T is carried by the player;
 		if T is held:
 			compute poker theft of T;
-			if pack of playing cards is not held and the player is in Dungeon07 and orc is not in Dungeon07, compute poker table hypno;
+			if pack of playing cards is not held and the player is in Dungeon07 and orc is not in Dungeon07, compute poker table cunt;
 		do nothing instead;
 	if pack of playing cards is not held and the player is in Dungeon07:
 		allocate 1 seconds;
@@ -405,9 +418,9 @@ To construct unique buttons for (T - pack of playing cards):
 
 
 
-To compute poker table hypno:
-	if diaper quest is 0 and hypno-trigger-pussy is 0 and (the player is possessing a vagina or tg fetish > 0):
-		now hypno-trigger-pussy is 1;
+To compute poker table cunt:
+	if diaper quest is 0 and htrigger-pussy is 0 and (the player is possessing a vagina or tg fetish > 0):
+		now htrigger-pussy is 1;
 		say "Your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way they're so... daringly on display, open and inviting! The words [second custom style][']pussy['][roman type] and [second custom style][']cunt['][roman type] consume your inner thoughts...".
 
 queen-of-hearts is a collectible. The printed name of queen-of-hearts is "[TQlink of item described]queen of hearts[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of queen-of-hearts is "qoh". Understand "queen", "of hearts", "hearts" as queen-of-hearts.

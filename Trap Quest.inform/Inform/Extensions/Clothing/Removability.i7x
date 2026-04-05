@@ -116,12 +116,27 @@ Definition: a clothing (called C) is actually strippable:
 
 autoremove is initially false.
 autolayerremove is initially false.
+gluetearing is initially false.
 Definition: a clothing (called C) is autoremovable: [Can it be removed right now]
 	now autoremove is true;
 	if C is actually removable:
 		now autoremove is false;
 		decide yes;
 	now autoremove is false;
+	decide no.
+Definition: a clothing (called C) is gluetearable: [Can it be glue teared right now]
+	now gluetearing is true;
+	if C is actually removable:
+		now gluetearing is false;
+		decide yes;
+	now gluetearing is false;
+	decide no.
+Definition: a clothing (called C) is autogluetearable: [Can it be automatically glue teared right now]
+	now gluetearing is true;
+	if C is autoremovable:
+		now gluetearing is false;
+		decide yes;
+	now gluetearing is false;
 	decide no.
 Definition: a clothing (called C) is usually autoremovable: [Can it be removed once the stuff on top has been displaced or removed]
 	now autoremove is true;
@@ -161,13 +176,13 @@ This is the sex doll struggles rule:
 The sex doll struggles rule is listed in the global removability rules.
 
 This is the unremovable rule:
-	if wearing-target is unremovable and wipeChecking is false:
+	if wearing-target is unremovable and wipeChecking is false and gluetearing is false:
 		if summoning is 0 and autoremove is false, say "You can't find any way to take it off!";
 		rule fails.
 The unremovable rule is listed in the global removability rules.
 
 This is the cursed unremovable rule:
-	if wearing-target is cursed curse-sticky clothing and summoning is 0:
+	if wearing-target is cursed curse-sticky clothing and summoning is 0 and gluetearing is false:
 		if autoremove is false:
 			now the curse-ID of the noun is sure;
 			if the noun is hand ready:
@@ -190,7 +205,7 @@ Carry out taking off strength stealing clothing:
 		decrease the raw strength of the player by 1.
 
 This is the locked unremovable rule:
-	if wearing-target is locked clothing:
+	if wearing-target is locked clothing and gluetearing is false:
 		if autoremove is false and summoning is 0, say "It's locked on! You'll need to find someone with a key.";
 		rule fails.
 The locked unremovable rule is listed in the global removability rules.
@@ -209,13 +224,14 @@ This is the wrist collar bar unremovable rule:
 The wrist collar bar unremovable rule is listed in the global removability rules.
 
 This is the people won't automatically remove glue rule:
-	if wearing-target is glued clothing and (summoning is 1 or autoremove is true), rule fails.
+	if wearing-target is glued clothing and gluetearing is false and (summoning is 1 or autoremove is true), rule fails.
 The people won't automatically remove glue rule is listed in the global removability rules.
 
 This is the removal blocking rule:
-	repeat with C running through worn removal-blocking wearthings:
-		if summoning is 0 and autoremove is false, say RemovalBlocked of C;
-		rule fails.
+	if gluetearing is false:
+		repeat with C running through worn removal-blocking wearthings:
+			if summoning is 0 and autoremove is false, say RemovalBlocked of C;
+			rule fails.
 The removal blocking rule is listed in the global removability rules.
 
 To say RemovalBlocked of (C - a wearthing):
@@ -249,7 +265,7 @@ This is the bottom layer removal rule:
 				if summoning is 0 and autoremove is false, say "You need to pull up your [printed name of C] first.";
 				if autolayerremove is false, rule fails;
 		repeat with A running through worn ankle bonds:
-			if wearing-target is crotch-pullup:
+			if wearing-target is crotch-pullup and gluetearing is false:
 				if summoning is 0 and autoremove is false, say "You can't remove that without first removing your [printed name of A]!";
 				if autolayerremove is false, rule fails.
 The bottom layer removal rule is listed in the global removability rules.

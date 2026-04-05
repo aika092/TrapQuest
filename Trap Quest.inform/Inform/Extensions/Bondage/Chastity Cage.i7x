@@ -142,7 +142,7 @@ To compute periodic effect of (C - a chastity cage):
 			say "You feel your [ShortDesc of C] slip off your [sissy-penis] to the ground.";
 			now C is in the location of the player;
 
-To compute school periodic effect of (C - a chastity cage):
+To compute facility periodic effect of (C - a chastity cage):
 	compute periodic effect of C.
 
 [!<TheChastityCageOrgasmRule>+

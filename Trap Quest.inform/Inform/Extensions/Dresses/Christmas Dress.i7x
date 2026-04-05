@@ -10,6 +10,9 @@ To decide which number is the initial outrage of (C - a christmas dress):
 
 To decide which number is the initial cringe of (C - a christmas dress):
 	decide on 5.
+Definition: a christmas dress (called C) is uniquely priority babywear:
+	if christmas content is 1 and the initial cringe of C > 2 and current-monster is matron and the good-behaviour of behaviour-chart < the behaviour-unlock-threshold of C, decide yes;
+	decide no.
 
 Definition: a christmas dress is fetish appropriate:
 	if diaper lover > 0, decide yes;

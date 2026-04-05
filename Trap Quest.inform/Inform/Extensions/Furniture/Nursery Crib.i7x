@@ -1,6 +1,10 @@
 Nursery Crib by Furniture begins here.
 
-nursery crib is a furniture. The printed name of nursery crib is "[TQlink of item described]nursery crib[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of nursery crib is "crb". nursery crib has a number called charge.
+nursery crib is a kind of furniture. The printed name of a nursery crib is "[TQlink of item described]nursery crib[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of a nursery crib is "crb". A nursery crib has a number called charge.
+
+dungeon nursery crib is nursery crib. dungeon nursery crib is in DungeonNursery.
+hotel nursery crib is nursery crib. hotel nursery crib is in HotelNursery.
+mansion nursery crib is nursery crib. mansion nursery crib is in MansionNursery.
 
 To say ExamineDesc of (C - a nursery crib):
 	say "An adult-sized bed fashioned as a nursery crib, complete with solar system themed mobile, and large crib cage fencing on each side.".
@@ -10,12 +14,12 @@ Figure of nursery crib is the file "Env/Hotel/crib1.jpg".
 To decide which figure-name is the examine-image of (C - a nursery crib):
 	decide on figure of nursery crib.
 
-To compute furniture resting on (F - nursery crib):
+To compute furniture resting on (F - a nursery crib):
 	say "You [if F is not grabbing the player]step up into the crib, and [end if]lie down.";
 	compute crib locking of F;
 	compute normal rest of F.
 
-To compute crib locking of (F - nursery crib):
+To compute crib locking of (F - a nursery crib):
 	if matron is in the location of the player and matron is undefeated:
 		say "[BigNameDesc of matron] pulls up the cage gate, and locks it. [big he of matron] pulls away the steps, ensuring that a surprisingly high drop awaits you if you try to climb out before you are allowed.";
 		now F is grabbing the player;
@@ -27,14 +31,14 @@ To compute crib locking of (F - nursery crib):
 	otherwise if F is not grabbing the player:
 		say "As [NameDesc of matron] [if matron is in the location of the player]is indisposed[otherwise]isn't there[end if], nobody closes or locks the gate.".
 
-To compute rest completion of (F - a furniture):
+To compute rest completion of (F - a nursery crib):
 	if F is not grabbing the player:
 		say RestCompleteFlav of F;
 		now auto is 1;
 		try standing;
 		now auto is 0.
 
-To compute rest ending of (F - nursery crib):
+To compute rest ending of (F - a nursery crib):
 	now player-currently-resting is 0;
 	if F is grabbing the player:
 		say "[if the alert of the player is 0]You now feel fully rested[otherwise]your rest has been interrupted[end if][if the charge of F < 8], but the nursery rhyme keeps playing. Being made to keep napping like this, when you no longer need to rest, makes you feel small and pathetic[otherwise]! And you notice that the nursery rhyme has stopped playing[end if].";
@@ -45,15 +49,37 @@ To say RestingDesc of (F - a nursery crib):
 	say "You [one of][or]continue to [stopping]rest on the comfortable mattress[if F is grabbing the player], with the mobile singing you its gentle song[end if].".
 
 A time based rule (this is the nursery crib rule):
-	if nursery crib is grabbing the player:
-		increase the charge of nursery crib by 1;
-		if the charge of nursery crib >= 40:
-			say "All of a sudden, the lock snaps! The crib's gate thuds to the ground, releasing you.[line break][variable custom style]Phew![roman type][line break]";
+	repeat with N running through nursery cribs grabbing the player:
+		increase the charge of N by 1;
+		if player-currently-resting is 0:
+			if the fatigue of the player > 0:
+				compute fatigue refresh of N;
+			otherwise if the body soreness of the player > 0:
+				compute soreness refresh of N;
+			otherwise:
+				say RestingDesc of N;
+		if the charge of N is 5 and playerRegion is mansion and ghostly tentacle is not permanently banished and the number of monsters in the location of the player is 0:
+			if ghostly tentacle is not alive, set up ghostly tentacle;
+			now ghostly tentacle is in the location of the player;
+			say "[bold type]Suddenly, [NameDesc of ghostly tentacle] materialises above the crib![roman type][line break][big he of ghostly tentacle] cackles naughtly while staring right at you...";
+			interest meet ghostly tentacle;
+			anger ghostly tentacle;
+		if the charge of N >= 40:
+			if nursery resident is 1 and the times-met of matron <= 1 and matron is regional:
+				let L be the room east from the location of the player;
+				now matron is in L;
+				try matron going west;
+				check guaranteed perception of matron;
+			otherwise:
+				say "All of a sudden, the lock snaps! The crib's gate thuds to the ground, releasing you.[line break][variable custom style]Phew![roman type][line break]";
+				dislodge N;
+				now the charge of N is 0.
 
-Check standing when nursery crib is grabbing the player:
+Check standing when there is a nursery crib grabbing the player:
 	say "The bed is too high and the ceiling is too low for you to stand." instead.
 
-Check jumping when nursery crib is grabbing the player:
+Check jumping when there is a nursery crib grabbing the player:
+	let NC be a random nursery crib grabbing the player;
 	if there is a worn ankle locking clothing, say "You won't be able to manage that while your ankles are bound!" instead;
 	allocate 6 seconds;
 	say "You reach for the top of the cage and try to vault over it.";
@@ -77,14 +103,15 @@ Check jumping when nursery crib is grabbing the player:
 				say "You land on your side, bruising your arm and shoulder. Ouch!";
 				BodyRuin 2;
 				PainUp 10;
-			dislodge nursery crib;
-			if matron is alive and matron is undefeated and the player is getting unlucky:
+			dislodge NC;
+			if matron is alive and matron is undefeated and ((nursery resident is 1 and earnings > starting-earnings - 100 and a random number between 1 and 2 is 1) or the player is getting unlucky):
 				say "Suddenly, [NameDesc of matron] arrives from the west! [GotUnluckyFlav]";
 				now matron is in the location of the player;
-				say "[speech style of matron]'What in the world do you think you are doing?!'[roman type][line break][BigNameDesc of matron] storms towards you. Uh-oh...";
+				say "[speech style of matron]'What in the world do you think you are doing?! Getting out of the crib on your own?! No no no, I decide when naptime ends! Get ready for punishment, you naughty baby!'[roman type][line break][BigNameDesc of matron] storms towards you. Uh-oh...";
 				anger matron;
 				now matron is interested;
 				now matron is moved;
+				aggravate matron;
 	do nothing instead.
 
 Nursery Crib ends here.

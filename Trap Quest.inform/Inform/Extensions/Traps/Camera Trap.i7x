@@ -423,11 +423,11 @@ To compute title of (P - a shameful orgasm poster):
 				now the title of P is "At Hotel Premier Sinn, your every demand is [his of P] desire!";
 			otherwise:
 				now the title of P is "Come along to Hotel Premier Sinn, where even the maids join in on the fun!";
-		otherwise if the old-overdress of P is schoolgirl outfit:
+		otherwise if the old-overdress of P is alchemist outfit:
 			if P is in the hotel:
 				now the title of P is "GOOD [caps boy of P]";
 			otherwise if diaper lover <= 0:
-				now the title of P is "This Detention Hall Doll just can't keep out of trouble!";
+				now the title of P is "This Reconditioning Hall Doll just can't keep out of trouble!";
 			otherwise:
 				now the title of P is "Daddy's little [boy of P] is all grown up!";
 		otherwise if the old-overdress of P is clubbing dress or the old-overdress of P is evening dress:
@@ -535,7 +535,7 @@ To compute title of (P - a masturbation poster):
 				now the title of P is "Serving [himself of P] before anyone else? How disgraceful!";
 			otherwise:
 				now the title of P is "This is why you should keep your maid locked in chastity.";
-		otherwise if the old-overdress of P is schoolgirl outfit:
+		otherwise if the old-overdress of P is alchemist outfit:
 			if P is in the hotel, now the title of P is "BAD [caps boy of P]";
 			otherwise now the title of P is "Only the naughtiest [boy of P]s have a danger wank in public!";
 		otherwise if the old-overdress of P is clubbing dress or the old-overdress of P is evening dress:
@@ -612,7 +612,7 @@ To compute title of (P - a wetting poster):
 			otherwise if the old-overdress of P is maid outfit:
 				if P is in the hotel, now the title of P is "EMPLOYEE OF THE MONTH";
 				otherwise now the title of P is "A hard working maid doesn't have time to take loo breaks!";
-			otherwise if the old-overdress of P is schoolgirl outfit:
+			otherwise if the old-overdress of P is alchemist outfit:
 				if P is in the hotel, now the title of P is "TEACHER'S PET";
 				otherwise now the title of P is "When conventional punishments didn't work, this is what the principal came up with.";
 			otherwise if the old-overdress of P is clubbing dress or the old-overdress of P is evening dress:
@@ -700,7 +700,7 @@ To say ExamineDesc of (C - a wetting poster):
 
 To say ShortDesc of (P - a wetting poster):
 	say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if][if urination-target of P is clothing]You are very visibly wetting yourself into your [urination-target of P]. [otherwise if urination-target of P is room]You are very visibly peeing onto the floor of the [urination-target of P]. [otherwise]You are very visibly peeing onto the ground. [end if]";
-	if the title of P is "TEACHER'S PET" and the class of the player is schoolgirl, cutshow figure of teachers pet cutscene 1 for P.
+	if the title of P is "TEACHER'S PET" and the class of the player is alchemist, cutshow figure of teachers pet cutscene 1 for P.
 
 To decide which number is the lewdness of (P - a wetting poster):
 	let N be 200;
@@ -776,21 +776,21 @@ To compute title of (P - an expulsion poster):
 					if R is 2, now the title of P is "CHEERBAB'S FAMOUS ROUTINE";
 				otherwise:
 					let R be a random number between 1 and 2;
-					if R is 1, now the title of P is "You need detention for such disgusting behaviour, young Miss!";
-					if R is 2, now the title of P is "School[boy of P]s should be put back into diapers until they can control their buttholes.";
+					if R is 1, now the title of P is "You need reconditioning for such disgusting behaviour, young Miss!";
+					if R is 2, now the title of P is "Dumb [boy of P]s should be put back into diapers until they can control their buttholes.";
 			otherwise if old-headgear of P is blue scrunchie:
 				if P is in the hotel:
 					let R be a random number between 1 and 4;
 					if R is 1, now the title of P is "HALL MONITOR NEEDED?";
-					if R is 2, now the title of P is "SCHOOLGIRL STOMACH STRUGGLES";
+					if R is 2, now the title of P is "STUDENT[']S STOMACH STRUGGLES";
 					if R is 3, now the title of P is "STUDENT SPLASHES OUT";
 					if R is 4, now the title of P is "LAZY LEARNER NEEDS NAPPIES";
 				otherwise:
 					let R be a random number between 1 and 4;
-					if R is 1, now the title of P is "You need detention for such disgusting behaviour, young Miss!";
+					if R is 1, now the title of P is "You need reconditioning for such disgusting behaviour, young Miss!";
 					if R is 2, now the title of P is "Someone deserves a spanking!";
-					if R is 3, now the title of P is "If this school[boy of P] can't find the toilet, maybe [he of P] should be put back into kindergarten!";
-					if R is 4, now the title of P is "School[boy of P]s should be put back into diapers until they can control their buttholes.";
+					if R is 3, now the title of P is "If this [boy of P] can't find the toilet, maybe [he of P] should be put back into kindergarten!";
+					if R is 4, now the title of P is "Dumb [boy of P]s should be put back into diapers until they can control their buttholes.";
 			otherwise:
 				if P is in the hotel:
 					let R be a random number between 1 and 4;
@@ -813,7 +813,7 @@ To compute title of (P - an expulsion poster):
 		otherwise if the old-overdress of P is maid outfit:
 			if P is in the hotel, now the title of P is "CLEAN THAT UP";
 			otherwise now the title of P is "The aftermath of this maid's most recent disciplinary session.";
-		otherwise if the old-overdress of P is schoolgirl outfit:
+		otherwise if the old-overdress of P is alchemist outfit:
 			if P is in the hotel, now the title of P is "TEACHER'S PET";
 			otherwise now the title of P is "Being the teacher's pet has its ups and downs.";
 		otherwise if the old-overdress of P is priestess outfit:

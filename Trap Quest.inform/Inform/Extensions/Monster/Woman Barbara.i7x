@@ -55,7 +55,7 @@ To decide which figure-name is the monster-image of (M - woman-player):
 	if the vine-scene of M > 0 and the vine-scene of M < 5, decide on figure of barbara cutscene 8;
 	if the woman-pregnancy of M > 1, decide on figure of woman pregnant;
 	if M is partially-enslaved, decide on Figure of woman partial slavery;
-	let HT be a random revealed hypno trap in the location of M;
+	let HT be a random revealed spiral trap in the location of M;
 	if HT is a thing and HT is not expired, decide on Figure of Barbara Cutscene 23;
 	if the woman-bimbo of M < 3:
 		if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3, decide on Figure of Barbara Cutscene 21;
@@ -288,7 +288,7 @@ STATES:
 91: Appeared by being fucked by mechanic in the hotel
 92: Appeared to try the deepthroat discount challenge with the shopkeeper
 93: Appeared by being fucked by the dominatrix's anal predicament contraption
-94: Interacting with a hypno trap
+94: Interacting with a spiral trap
 95: Released from the toilet
 96: Scene with hotel beds & patrons
 97: Appeared by sitting on the throne
@@ -370,9 +370,9 @@ An all time based rule (this is the barbara vines rule):
 To womanVinePull:
 	let W be woman-player;
 	allocate 6 seconds;
-	if the traitor-hypno of hypno-lesson > 0:
+	if the traitor-h of traitor-training > 0:
 		say "Something inside you urges you to [second custom style]help your friend[roman type] instead. You stand and watch.";
-		if the vine-scene of W >= 4, decrease the traitor-hypno of hypno-lesson by 1;
+		if the vine-scene of W >= 4, decrease the traitor-h of traitor-training by 1;
 	otherwise if the player is upright and clumsy april fools is 1:
 		say "You reach for a vine but instead trip and fall!";
 		try kneeling;
@@ -480,7 +480,7 @@ Report going when the vine-hole-scene of woman-player is 0 and the woman-bimbo o
 
 Chapter - Mechanic Sex Scene
 
-Report going when there is an uninterested mechanic in the location [of the player ]and the mechanic-scene of woman-player is 0:
+Report going when legacy content is 1 and there is an uninterested mechanic in the location [of the player ]and the mechanic-scene of woman-player is 0:
 	if debugmode is 1, say "Checking if barbara can appear.";
 	if the number of monsters in the location of the player is 1 and woman-player is redeploy appropriate:
 		deploy woman-player with woman-status 91;
@@ -576,8 +576,8 @@ Check pulling woman-player when the woman-status of woman-player is 93 and the d
 
 Check searching woman-player when the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player < 6:
 	if the player is at least partially immobile or the player is in danger, say "You're a bit busy right now!" instead;
-	if the traitor-hypno of hypno-lesson > 0 and the dominatrix-contraption-scene of woman-player <= 2:
-		decrease the traitor-hypno of hypno-lesson by 1;
+	if the traitor-h of traitor-training > 0 and the dominatrix-contraption-scene of woman-player <= 2:
+		decrease the traitor-h of traitor-training by 1;
 		say "Something inside you urges you to [second custom style]help your friend[roman type] instead.";
 		try pulling woman-player instead;
 	if the player is upright, try kneeling;
@@ -681,8 +681,8 @@ To compute woman toilet release:
 	if K is held:
 		if forbidden-key is K:
 			say "Something deep in your brain won't let you use [NameDesc of K] to save [NameDesc of woman-player].";
-		otherwise if the traitor-hypno of hypno-lesson > 0 and forbidden-key is nothing:
-			decrease the traitor-hypno of hypno-lesson by 1;
+		otherwise if the traitor-h of traitor-training > 0 and forbidden-key is nothing:
+			decrease the traitor-h of traitor-training by 1;
 			say "Something inside you urges you to [speech style of woman-player]help your friend[roman type]. You find yourself unable to bring yourself to use [NameDesc of K] to save [NameDesc of woman-player]. Perhaps if you are able to obtain a different key, however, you'll be able to circumvent your hypnosis and help [him of woman-player] in the [']proper['] way.";
 			if the player is desperate to pee and the player is able to use a toilet:
 				say "But for now... your body has different plans for what would be the best way to help [NameDesc of woman-player] become a better person...";
@@ -1192,9 +1192,9 @@ Chapter - Swimming Pool Scene
 first-time-swimming-pool is initially false.
 
 Carry out going west:
-	if the player is in School19 and School20 is unvisited, now first-time-swimming-pool is true.
+	if the player is in Facility19 and Facility20 is unvisited, now first-time-swimming-pool is true.
 
-Report going when the player is in School20 and first-time-swimming-pool is true:
+Report going when the player is in Facility20 and first-time-swimming-pool is true:
 	now first-time-swimming-pool is false;
 	if the woman-bimbo of woman-player is 2:
 		if debugmode is 1, say "Checking if barbara can appear.";
@@ -1202,7 +1202,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 		if MSM is clothing and MSM is not fetish appropriate, now MSM is a random off-stage navy-monokini;
 		if MSM is clothing and woman-player is relaxed redeploy appropriate:
 			deploy woman-player with woman-status 1; [we're going to send her dungeon crawling afterwards]
-			now woman-player is in School20;
+			now woman-player is in Facility20;
 			interest woman-player;
 			only destroy MSM;
 			now MSM is in the location of the player;
@@ -1215,7 +1215,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 			if MSM is actually autowearable, now able-to-wear-swimsuit is true;
 			repeat with C running through LC:
 				now C is worn by the player;
-			say "As you arrive here you see [NameDesc of woman-player] holding a stretchy blue swimsuit. [big he of woman-player] spots you immediately.[line break][speech style of woman-player]'Hey, [NameBimbo]! I didn't know you went to this academy. I'm just visiting on a provisional basis - I'm not sure I really want to join somewhere designed to make you sluttier, even if there are allegedly excellent rewards available once you get to the higher ranks. But still, while I'm here, I might as well take a dip in this pool, right? Come on, fancy joining me? There's loads of spare swimsuits over there. Although I'm afraid I've nabbed the only one that isn't weirdly slutty, haha.'[roman type][line break]";
+			say "As you arrive here you see [NameDesc of woman-player] holding a stretchy blue swimsuit. [big he of woman-player] spots you immediately.[line break][speech style of woman-player]'Hey, [NameBimbo]! I didn't know you were a trainee here. I'm just visiting on a provisional basis - I'm not sure I really want to join somewhere designed to make you sluttier, even if there are allegedly excellent rewards available once you get to the higher ranks. But still, while I'm here, I might as well take a dip in this pool, right? Come on, fancy joining me? There's loads of spare swimsuits over there. Although I'm afraid I've nabbed the only one that isn't weirdly slutty, haha.'[roman type][line break]";
 			reset multiple choice questions;
 			set numerical response 0 to "Decline to go in the pool with [him of woman-player]";
 			if able-to-wear-swimsuit is true and the player is silently able to manually speak, set numerical response 1 to "Say you'll only join [him of woman-player] if you can have the modest swimsuit";
@@ -1231,7 +1231,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 				if pregnancy fetish > 0:
 					say "But [his of woman-player] belly is hardly deflating![line break][speech style of woman-player]'Huh?!'[roman type][line break][BigNameDesc of woman-player] holds [his of woman-player] new bloated, round belly.[line break][speech style of woman-player]'Wait, am I... Am I PREGNANT?! WHAT THE FUCK?!'[roman type][line break]In visible distress, [NameDesc of woman-player] sprints from the room, not even remembering to take [his of woman-player] clothes with [him of woman-player].";
 					now the woman-pregnancy of woman-player is 2;
-					compute addiction reflection on "pregnancy";
+					compute addiction reflection on "pregnancy" with 1 flavour;
 				otherwise:
 					say "[speech style of woman-player]'What is this place?! What sort of evil person would arrange for such a [']prank['], or whatever this is! How disgusting! How humiliating! I can't stay here a moment longer!'[roman type][line break]In visible distress, [NameDesc of woman-player] quickly gathers up [his of woman-player] clothes and sprints from the room.";
 					ImmediatewomanSluttify;
@@ -1241,7 +1241,7 @@ Report going when the player is in School20 and first-time-swimming-pool is true
 					say "[BigNameDesc of woman-player] frowns.[line break][speech style of woman-player]'Fine.'[roman type][line break][BigNameDesc of woman-player] drops the blue swimsuit for you.";
 					now MSM is turtle-swimsuit;
 					blandify and reveal MSM;
-					now MSM is in School20;
+					now MSM is in Facility20;
 				if able-to-wear-swimsuit is true:
 					say "You strip down and don the swimsuit.";
 					repeat with C running through LC:
@@ -1276,7 +1276,7 @@ This is the woman gives birth to a tentacle monster rule:
 			increase the delayed sluttification of woman-player by 1;
 			interest M;
 			anger M;
-			compute addiction reflection on "pregnancy";
+			compute addiction reflection on "pregnancy" with 1 flavour;
 			rule succeeds.
 The woman gives birth to a tentacle monster rule is listed last in the woman wandering rules.
 
@@ -1632,9 +1632,9 @@ To compute basic greeting to (M - woman-player):
 	otherwise if the woman-status of M is 90:
 		say "[speech style of M]'Let's keep away from those vines, shall we?'[roman type][line break]";
 	otherwise if the woman-status of M is 94:
-		let HT be a random revealed hypno trap in the location of M;
+		let HT be a random revealed spiral trap in the location of M;
 		if HT is a thing and HT is not expired:
-			say "[speech style of M]'Huh? Oh crap, another hypno trap! Let's get out of here!'[roman type][line break]";
+			say "[speech style of M]'Huh? Oh crap, another spiral trap! Let's get out of here!'[roman type][line break]";
 			compute mandatory room leaving of M;
 			now M is uninterested;
 		otherwise:
@@ -1674,14 +1674,14 @@ To say BarbaraQuestion:
 		say "'Can we chat?'".
 
 To execute (T - talk-barbara-question) for (M - a monster):
-	let HT be a random revealed hypno trap in the location of M;
+	let HT be a random revealed spiral trap in the location of M;
 	if the woman-status of M is 91 and the mechanic-scene of M <= 5 and M is in the location of the player and mechanic is unfriendly:
 		say "[speech style of M]'HYUK HYUK HYUK'[roman type][line break]";
 	otherwise if the woman-status of M is 80:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if M is angered:
 		say "[speech style of M]'[if the player is upright]That's a great question. Let me answer it with my fist.'[otherwise]I don't think you're in the position to be the one asking questions right now, do you?'[roman type][line break]";
-	otherwise if HT is a thing and HT is not expired: [looking at hypno trap]
+	otherwise if HT is a thing and HT is not expired: [looking at spiral trap]
 		say "[speech style of M]'Uuuuuuuuh...'[roman type][line break]";
 	otherwise if the woman-status of M is 0:
 		if the woman-bimbo of M < 3:

@@ -49,7 +49,7 @@ To decide which figure-name is the examine-image of (C - alchemist's table):
 	if the charge of C <= 0, decide on figure of alchemist's table glowing;
 	decide on figure of alchemist's table.
 
-the science table is a crafting-table. science table is in School28. The text-shortcut of science table is "scit". science table has a number called second charge.
+the science table is a crafting-table. science table is in Facility28. The text-shortcut of science table is "scit". science table has a number called second charge.
 The printed name of science table is "[TQlink of item described][ShortDesc of item described] with [if the charge of science table <= 0 and the second charge of science table <= 0]two glowing bowls[otherwise if the charge of science table <= 0 or the second charge of science table <= 0 ]one glowing bowl[otherwise]two dull bowls[end if][TQxlink of item described][shortcut-desc][verb-desc of item described]".
 To say ExamineDesc of (C - science table):
 	say "[if the charge of C <= 0 and the second charge of C <= 0]Two glowing bowls[otherwise if the charge of C <= 0 or the second charge of C <= 0 ]One glowing bowl and one currently dull bowl[otherwise]Two currently dull bowls[end if] sit on a large metal crafting-table.".

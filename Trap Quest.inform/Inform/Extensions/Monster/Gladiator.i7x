@@ -1281,7 +1281,7 @@ To say angry punishment insult of (M - a gladiator):
 To compute angry punishment of (M - a gladiator):
 	say angry punishment insult of M;
 	if M is not friendly-fucking and (M is not seduced or M is unfriendly):
-		if bondage protection < 2 and nipple-ring bikini top is off-stage and nipple-ring bikini top is actually summonable and there is an off-stage specific-key:
+		if bondage protection < 3 and nipple-ring bikini top is off-stage and nipple-ring bikini top is actually summonable and there is an off-stage specific-key:
 			summon nipple-ring bikini top uncursed;
 			say "[BigNameDesc of M] makes you wear a [nipple-ring bikini top]!";
 			let K be a random off-stage specific-key;
@@ -1528,8 +1528,13 @@ To compute punishment of (P - gladiator-forced-pee):
 	say "[speech style of M]'[if diaper quest is 1]Are you sure you don't need diapers? You might need to pee at any moment...'[otherwise]A grown woman should not be wearing a child's underwear. You should be able to control your own bodily functions.'[end if][roman type][line break]Rolling you over slightly, [he of M] pushes a knee into your side, where your bladder is, crushing it painfully.";
 	PainUp 10;
 	if the bladder of the player < 6:
-		say "[if the bimbo of the player < 8]Luckily you[otherwise]You[end if] don't need to go, and so [he of M] doesn't manage to force you to wet yourself.[line break][speech style of M]'Hmph, I guess you got lucky this time.'[roman type][line break]";
-		satisfy M;
+		if there is worn messed knickers:
+			say "[speech style of M]'For that, I am forced to commit you to particularly thick diapers.'[roman type][line break]";
+			now M is bulkier-diaper-committed;
+			compute diaper change of M;
+		otherwise:
+			say "[if the bimbo of the player < 8]Luckily you[otherwise]You[end if] don't need to go, and so [he of M] doesn't manage to force you to wet yourself.[line break][speech style of M]'Hmph, I guess you got lucky this time.'[roman type][line break]";
+			satisfy M;
 	otherwise:
 		say "The weight of [NameDesc of M][']s knee forces you to start wetting yourself!";
 		now delayed urination is 1;
@@ -1627,7 +1632,7 @@ To compute damage reaction of (M - a gladiator):
 	otherwise:
 		let C be the curse-charge of M;
 		[say DamageReaction (the health of M) of M.]
-		if (attack-type is 2 or attack-type is 3) and M is not male:
+		if diaper quest is 0 and (attack-type is 2 or attack-type is 3) and M is not male:
 			increase the curse-charge of M by 4 - combatSpeed;
 			if the curse-charge of M <= 2:
 				say DamageReaction (the health of M) of M;

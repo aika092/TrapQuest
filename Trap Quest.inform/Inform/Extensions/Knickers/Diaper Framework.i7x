@@ -12,6 +12,11 @@ To decide which number is the initial armour of (C - a diaper):
 To decide which number is the crotch-tightness of (C - a diaper):
 	decide on 0.
 
+Definition: a diaper (called D) is same-type:
+	if theme-share-target is diaper, decide yes;
+	if theme-share-target is training pants and theme-share-target is not purple training pants and D is small diaper, decide yes;
+	decide no. [In general, non-diapers don't become diapers except via training pants]
+
 The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
 A diaper has a number called perceived-urine-soak. A diaper has a number called perceived-milk-soak. A diaper has a number called perceived-water-soak. A diaper has a number called perceived-semen-soak. A diaper has a number called perceived-mess.
@@ -240,9 +245,12 @@ To decide which number is the initial outrage of (C - a diaper):
 	decide on the initial cringe of C.
 
 To decide which number is the initial cringe of (C - a diaper):
-	let O be 3 + the DQBulk of C;
+	let O be 4 + the DQBulk of C;
 	increase O by the unique outrage of C;
 	decide on O.
+
+To decide which number is the bulk cringe of (C - a diaper):
+	decide on 4 + the DQBulk of C.
 
 To decide which number is the unique outrage of (C - a diaper):
 	decide on 0.
@@ -279,6 +287,7 @@ To compute periodic effect of (D - a diaper):
 		if S <= 0 and D is not cursed and a random number between 1 and 70 is 1:
 			say "[bold type]You feel the waistband and leg holes of your [ShortDesc of D] tighten significantly. It looks like you can't take it off any more![line break][variable custom style]I'm being punished for not changing it, aren't I?[roman type][line break]";
 			curse D;
+			compute summoned quest of D;
 	if xavier-diaper-link > 0 and D is total protection:
 		increase xavier-diaper-link by 1;
 		if xavier-diaper-link is 57 or xavier-diaper-link is 113:
@@ -855,6 +864,7 @@ To WaterEmpty (C - diaper-stack):
 To Drench (C - diaper-stack) by (N - a number):
 	repeat with D running through the list of stacked diapers:
 		Drench D by N;
+		if tough-shit is 0 and D is glued, GlueDown D by N; [might not be necessary]
 	if tough-shit is 0 and C is glued, GlueDown C by N;
 	update diaper stack;
 	if C is worn:

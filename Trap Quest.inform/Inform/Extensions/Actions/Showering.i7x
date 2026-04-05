@@ -18,8 +18,8 @@ Check showering:
 	if the player is in danger and auto is 0, say "You can't do that in the middle of combat!" instead;
 	if the noun is not water-body and the noun is not water-body-scenery, say "[if auto is 0]How would that work exactly?[end if]" instead;
 	if hot-tub is in the location of the player:
-		let M be a random teacher in the location of the player;
-		if M is teacher:
+		let M be a random tutor in the location of the player;
+		if M is tutor:
 			say "You tentatively make a slight move towards the hot tub, but [NameDesc of M] shakes [his of M] head. It seems like you're not allowed in right now. You'll have to wait until you're not being supervised..." instead;
 	if there is a worn perceived unmessed diaper and auto is 0:
 		say "You feel that it isn't too sensible to get into a body of water when wearing a super-absorbent diaper! Are you sure you want to? ";
@@ -262,9 +262,9 @@ To compute difficult swimming check in (WB - a thing):
 To compute swimming fatigue check in (WB - a thing):
 	if the fatigue of the player >= the buckle threshold of the player:[You're too tired, and you faint.]
 		say "You're too tired, and strength leaves your limbs as you slowly sink beneath the surface. You pass out.";
-		if the location of the player is School20:
+		if the location of the player is Facility20:
 			repeat with M running through monsters in the location of the player:
-				now M is in School19;[Kick the school npc's out so they don't get pulled in by the fainting code]
+				now M is in Facility19;[Kick the facility NPCs out so they don't get pulled in by the fainting code]
 		now delayed fainting is 1;
 		now the fainting reason of the player is 23;
 	otherwise:

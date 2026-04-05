@@ -42,7 +42,7 @@ An all time based rule (this is the compute cum movements rule):
 					say "A maternity bra materialises over your breasts![if the size of M is the largeness of breasts + 3]It's way too big for you, as if it has purposefully been left with room for growth![end if]";
 					compute summoned quest of M;
 			compute enema holding;
-		if the pregnancy of the player > 0 and timeBombTime <= 0 and playerRegion is not school:
+		if the pregnancy of the player > 0 and timeBombTime <= 0 and playerRegion is not facility:
 			if the latex-transformation of the player > 3 and the pregnancy of the player is 1, pause pregnancy;
 			compute pregnancy;
 		if the womb volume of vagina > 0 and (diaper quest is 1 or the player is not possessing a vagina):

@@ -172,7 +172,7 @@ To compute drinking effect (N - 4):
 	otherwise say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another weight loss drink. Lovely! [end if]";
 	if diaper quest is 1:
 		if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and the raw-bladder-incontinence of the player > a random number between 0 and 4:
-			say "You feel slightly more in control of your bladder.";
+			BladderIncontinenceDown 1;
 		otherwise:
 			say "You feel some pressure lifted from your [if diaper lover >= 3]bowels and [end if]bladder.";
 			decrease the bladder of the player by 2;

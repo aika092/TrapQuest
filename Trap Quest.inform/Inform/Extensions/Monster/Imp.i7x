@@ -242,7 +242,7 @@ To compute periodic recovery of (M - an imp):
 	let R be a random number between 1 and the imp-rudeness of M;
 	decrease the refractory-period of M by R;
 	let P be the refractory-period of M;
-	if M is in the location of the player: [really only matters in the school and in the extra credit zone]
+	if M is in the location of the player: [really only matters in the facility and in the extra credit zone]
 		if P < 200 and R + P >= 200: [If the current refractory period just dropped below 200, run this code]
 			say "[BigNameDesc of M] glances at you, snickering. Looks like [he of M][']s getting bored...";
 		otherwise if the refractory-period of M < 100 and R + the refractory-period of M >= 100:

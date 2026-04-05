@@ -165,8 +165,8 @@ To compute damaging attack of (M - a robobellboy):
 
 To compute shredding attack of (M - a robobellboy):
 	let C be a random worn tearable clothing;
-	if C is trainee bra, now C is nothing;
-	if C is trainee thigh highs, now C is nothing;
+	if C is trainee-bra, now C is nothing;
+	if C is trainee-thigh-highs, now C is nothing;
 	if C is headgear, now C is nothing;
 	if C is clothing and C is not super-slutty-bra and C is not super-slutty-knickers and C is not nudism-enabling or C is cursed:
 		say "[speech style of M]'ERROR, SERVANT ATTIRE UNSUITABLE. REMOVING.'[roman type][line break][BigNameDesc of M] pulls a pair of scissors from its chest compartment and cuts apart your [ShortDesc of C]!";
@@ -205,18 +205,18 @@ This is the robobellboy punishment rule:
 To compute trainee forcing of (M - a robobellboy):
 	if the training-progress of senior robobellboy is -1:
 		compute whore forcing of M;
-	let C be trainee bra;
+	let C be trainee-bra;
 	let D be C;
-	let T be a random off-stage trainee thigh highs;
+	let T be a random off-stage trainee-thigh-highs;
 	if C is off-stage and C is actually summonable:
 		summon C;
 		say "[BigNameDesc of M] opens [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you.";
 		bore M;
 		FavourUp M;
-	otherwise if trainee hood is off-stage and trainee hood is actually summonable:
-		summon trainee hood;
-		say "[BigNameDesc of M] opens [his of M] chest compartment and pulls out a [ShortDesc of trainee hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.";
-		now D is trainee hood;
+	otherwise if trainee-hood is off-stage and trainee-hood is actually summonable:
+		summon trainee-hood;
+		say "[BigNameDesc of M] opens [his of M] chest compartment and pulls out a [ShortDesc of trainee-hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.";
+		now D is trainee-hood;
 	otherwise if T is clothing and T is actually summonable:
 		summon T;
 		say "[BigNameDesc of M] opens [his of M] chest compartment and pulls out a pair of [printed name of T]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces them onto your body, where they emit a short tone and cling to your skin like glue.";
@@ -447,7 +447,7 @@ To compute unique banishment of (M - senior robobellboy):
 	now the leftover-type of L is the leftover-type of M;
 	now L is in the location of the player;
 	repeat with H running through worn clothing:
-		if H is trainee hood or H is trainee bra or H is trainee thigh highs, demagnetise H.
+		if H is trainee-hood or H is trainee-bra or H is trainee-thigh-highs, demagnetise H.
 
 To compute trainee forcing of (M - senior robobellboy):
 	if there is a worn free ride tattoo and the training-progress of M is 3, now the training-progress of M is -1;
@@ -478,16 +478,16 @@ To compute trainee forcing of (M - senior robobellboy):
 		compute headgear forcing of M.
 
 To compute headgear forcing of (M - senior robobellboy):
-	if trainee hood is off-stage and trainee hood is actually summonable:
-		summon trainee hood;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of trainee hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.[line break][first custom style]'APPEARANCE REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
+	if trainee-hood is off-stage and trainee-hood is actually summonable:
+		summon trainee-hood;
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of trainee-hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.[line break][first custom style]'APPEARANCE REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
 		FavourUp M;
 	otherwise:
 		say "[BigNameDesc of M] pauses and [his of M] eyes shift from red to green.[line break][first custom style]'CANNOT EXCEED MAXIMUM NUMBER OF ONGOING [']CLASS['] PROGRAMS. [caps please] REPORT BACK ONCE YOU HAVE REMOVED YOUR HEADWEAR.'[roman type][line break]";
 	bore M.
 
 To compute bra forcing of (M - senior robobellboy):
-	let C be trainee bra;
+	let C be trainee-bra;
 	if C is off-stage and C is actually summonable:
 		summon C;
 		now C is magnetised;
@@ -498,7 +498,7 @@ To compute bra forcing of (M - senior robobellboy):
 		compute headgear forcing of M.
 
 To compute knickers forcing of (M - senior robobellboy):
-	let C be a random off-stage trainee thigh highs;
+	let C be a random off-stage trainee-thigh-highs;
 	if C is clothing and C is actually summonable:
 		summon C;
 		now C is magnetised;

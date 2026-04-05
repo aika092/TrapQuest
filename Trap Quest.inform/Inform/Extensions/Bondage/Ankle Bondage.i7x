@@ -43,7 +43,7 @@ To say ShortDesc of (A - ankle-ropes):
 	say "ankle ropes".
 
 Definition: ankle-ropes is application appropriate:
-	if playerRegion is woods or playerRegion is hotel or playerRegion is school, decide yes;
+	if playerRegion is woods or playerRegion is hotel or playerRegion is facility, decide yes;
 	decide no.
 
 Chapter - Wearability

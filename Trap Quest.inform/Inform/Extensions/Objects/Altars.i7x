@@ -41,7 +41,7 @@ To decide which figure-name is the examine-image of (C - dungeon altar):
 	decide on figure of dungeon altar.
 
 To say ExamineDesc of (C - dungeon altar):
-	say "A large stone slab in front of a giant statue of a proud naked woman with a huge [if pregnancy fetish > 0]pregnant [end if]belly.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely need to be left to recharge its power before you use it again.[end if]";
+	say "A large stone slab in front of a giant statue of a proud naked woman with a huge [if pregnancy fetish > 0]pregnant [end if]belly.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely needs to be left to recharge its power before you use it again.[end if]";
 	if newbie tips is 1, say "[one of][newbie style]Placing things on here can bless them. Placing yourself here can help you or give you the priestess class. The altar doesn't recharge over time like other objects. Instead, it recharges slowly each time you open a container or interact with an NPC.[roman type][line break][or][stopping]".
 
 Check going when the player is in Dungeon28:
@@ -196,7 +196,7 @@ Check praying something with:
 	if the second noun is HotelScenery01, try inking the noun instead;
 	if the second noun is not the dungeon altar and the second noun is not the woods altar and the second noun is not elder altar and the second noun is not hotel altar, say "What would that do?" instead;
 	if the noun is ectoplasm:
-		if diaper quest is 1 or playerRegion is school or the second noun is woods altar, say "Nothing seems to happen." instead;
+		if diaper quest is 1 or playerRegion is facility or the second noun is woods altar, say "Nothing seems to happen." instead;
 	if the second noun is woods altar:
 		if the noun is clothing:
 			if the noun is not accessory or the price of the noun < 1, say "That won't do anything." instead;
@@ -1086,6 +1086,8 @@ To DevilPray (P - a person):
 			increase TN by X;
 			decrease LN by X;
 		now N is TN; [total N spent on benefits]
+	otherwise if diaper quest is 0 and the player is a march 2026 top donator and the raw sex addiction of the player > 7 and familiar is off-stage and the stored-sex-addiction of familiar is 0:
+		compute familiar arrival;
 	otherwise if R is 1 and demon tail plug is off-stage and demon tail plug is unclash summonable:
 		say "The statue's face seems to wink as an orange glow surrounds your body. ";
 		let C be a random off-stage demonic clothing;

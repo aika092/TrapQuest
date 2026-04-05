@@ -54,7 +54,7 @@ To decide which text is the RecipeDesc of (C - condom-pack):
 
 Report taking condom-pack when the player is in Dungeon07:
 	if condom fetish >= 2 and the player is getting unlucky, now condom-pack is condom-trapped;
-	compute poker table hypno.
+	compute poker table cunt.
 
 Report going when condom-pack is carried:
 	if condom-pack is condom-trapped:
@@ -257,7 +257,7 @@ To compute (M - a monster) condom pinning on (C - a clothing):
 	say CondomPinnedFlav of C;
 	progress quest of condom-creampie-quest;
 	if C is cheerleader outfit and there is a worn pigtail-scrunchie and artificial enhancements fetish is 1:
-		if the class of the player is schoolgirl, transform C into daddy issues dress;
+		if the class of the player is alchemist, transform C into daddy issues dress;
 		otherwise transform C into plastic-is-fantastic dress;
 	otherwise if the player is in a predicament room:
 		do nothing; [no new classes in the predicament world!]

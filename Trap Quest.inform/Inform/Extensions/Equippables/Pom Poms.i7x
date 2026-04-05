@@ -101,7 +101,7 @@ To say MediumDesc of (C - condom-pom-pom):
 To compute periodic effect of (C - condom-pom-pom):
 	now the used condoms of C is 20;
 	now the empty condoms of C is 0.
-To compute school periodic effect of (C - condom-pom-pom):
+To compute facility periodic effect of (C - condom-pom-pom):
 	compute periodic effect of C.
 
 Pom Poms ends here.

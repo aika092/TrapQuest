@@ -455,7 +455,7 @@ To say ActiveWarning of (G - giant-statue):
 		say "You hear a rumble far off in the distance, and a really strange heated feeling comes over you as the noise passes through the trees.";
 	if the location of the player is Woods30, say "[variable custom style]What happens when she comes?[roman type][line break]";
 	otherwise say "[variable custom style]It feels like something is coming...[roman type][line break]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the woods summoning altar just activated! It will slowly count down until it releases a brand new monster into the woods. Try stalling it by entering it or offering items to it, or perform some sexual acts nearby to speed it up![roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the woods summoning object (the statue) just activated! It will slowly count down until it releases a brand new monster into the woods. Try stalling it by entering it or offering items to it, or perform some sexual acts nearby to speed it up![roman type][line break][or][stopping]".
 
 Check entering giant-statue:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
@@ -587,7 +587,7 @@ To say ActiveWarning of (G - teleportation-pad):
 	otherwise say "[bold type]The lights flicker as a low humming noise pierces the hotel.[roman type][line break]";
 	if the location of the player is Hotel41, say "[variable custom style]'Is it about to summon something?'[roman type][line break]";
 	otherwise say "[variable custom style]'It feels like something is coming...'[roman type][line break]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the hotel summoning altar just activated! It will slowly count down until it releases a brand new monster into the hotel. Try stalling it by entering it or offering items to it, or perform some sexual acts nearby to speed it up![roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the hotel summoning object (the teleportation pad) just activated! It will slowly count down until it releases a brand new monster into the hotel. Try stalling it by entering it or offering items to it, or perform some sexual acts nearby to speed it up![roman type][line break][or][stopping]".
 
 Check entering teleportation-pad:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
@@ -787,7 +787,7 @@ To say ActiveWarning of (S - mysterious-mummy):
 		say "You hear a peal of mocking laughter as the mummy's wrappings pull taut around its chest, and it falls forward onto its knees, arms suddenly snapping together behind its back. A bright green glow begins to build up around the now kneeling figure.";
 	if S is in the location of the player, say " Distinctly unclean energy seems to slowly gather around it.[line break][variable custom style]Something is happening.[roman type][line break]";
 	otherwise say "[variable custom style]I wonder what's going on?[roman type][line break]";
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the mansion summoning altar (the mummy) just activated! It will slowly count down until it releases a brand new monster into the mansion. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the mansion summoning object (the mummy) just activated! It will slowly count down until it releases a brand new monster into the mansion. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][line break][or][stopping]".
 
 Definition: a thing is mysterious-mummy-related:
 	if it is tattoo or it is unremovable clothing, decide no;

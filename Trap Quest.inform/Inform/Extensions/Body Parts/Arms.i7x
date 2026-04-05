@@ -245,7 +245,7 @@ To change default arm positions:
 	if girlfriend-partner is in the location of the player:
 		say "How would you like to pose?[line break]";
 		set numerical response 1 to "With your free hand covering your most embarrassing body part or worn item";
-		set numerical response 2 to "Pressed into [student-name of team-predicament-partner], with your free hand touching [his of team-predicament-partner] crotch";
+		set numerical response 2 to "Pressed into [trainee-name of team-predicament-partner], with your free hand touching [his of team-predicament-partner] crotch";
 		set numerical response 0 to "by your side";
 		compute multiple choice question;
 		if player-numerical-response is 0:

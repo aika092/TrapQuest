@@ -92,7 +92,7 @@ To decide which room is the room at (grid ref - a spatial coordinate):
 		if the grid position of H is grid ref, decide on H;
 	repeat with M running through rooms in the Mansion:
 		if the grid position of M is grid ref, decide on M;
-	repeat with M running through rooms in the School:
+	repeat with M running through rooms in the facility:
 		if the grid position of M is grid ref and M is not Toilet01 and M is not Toilet02, decide on M;
 	repeat with R running through rooms in the tutorialarea:
 		if the grid position of R is grid ref, decide on R;

@@ -180,6 +180,7 @@ To decide which object is the unique-upgrade-target of (C - cameltoe-priestess-o
 	decide on exposing-priestess-outfit.
 To decide which number is the vaginal sensitivity influence of (C - cameltoe-priestess-outfit):
 	decide on -2.
+Definition: cameltoe-priestess-outfit is short-skirt-exception: decide yes.
 
 exposing-priestess-outfit is a priestess outfit. exposing-priestess-outfit is erect-nipple-exposing. The printed name of exposing-priestess-outfit is "[clothing-title-before]exposing priestess outfit[clothing-title-after]". The text-shortcut of exposing-priestess-outfit is "epo". Understand "exposing", "priestess", "outfit" as exposing-priestess-outfit. exposing-priestess-outfit is not purity.
 

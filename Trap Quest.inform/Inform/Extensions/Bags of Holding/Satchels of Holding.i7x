@@ -25,7 +25,7 @@ To decide which figure-name is clothing-image of (C - a pink satchel of holding)
 	decide on figure of pink satchel of holding.
 
 To say ClothingDesc of (C - a pink satchel of holding):
-	say "A cheap looking leather satchel in a vibrant shade of pink that holds all your spare items and negates their weight. Whilst it could be worse, it's very eye-catching and you'd expect it to be worn by someone of a school age rather than an adult. A warning on the label says '[BagHoldingWarning] satchel'.".
+	say "A cheap looking leather satchel in a vibrant shade of pink that holds all your spare items and negates their weight. Whilst it could be worse, it's very eye-catching and you'd expect it to be worn by someone of a younger age. A warning on the label says '[BagHoldingWarning] satchel'.".
 
 To say ShortDesc of (C - a pink satchel of holding):
 	say "pink leather satchel".

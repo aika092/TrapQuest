@@ -62,6 +62,9 @@ To decide which figure-name is Figure of hotel urinal portal piss:
 To decide which figure-name is Figure of hotel urinal portal cum:
 	decide on figure of small image.
 
+To display knee bounce cutscene of (M - a monster):
+	do nothing.
+
 To decide which figure-name is Figure of milk fountain touched:
 	decide on figure of small image.
 

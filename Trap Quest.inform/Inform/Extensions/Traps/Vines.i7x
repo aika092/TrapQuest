@@ -104,8 +104,8 @@ To compute vines standing:
 				if the heel-height of a random heels worn by the player > the heel skill of the player, decrease D by 1;
 				if the heel-height of a random heels worn by the player > the heel skill of the player + 1, decrease D by 1;
 			let R be a random number from 1 to D;
-			if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl and the player is vine-cursed]4[otherwise]2[end if].5) vine difficulty[roman type][line break]";
-			if R <= 2 or (R <= 4 and the class of the player is schoolgirl and the player is vine-cursed):
+			if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is alchemist and the player is vine-cursed]4[otherwise]2[end if].5) vine difficulty[roman type][line break]";
+			if R <= 2 or (R <= 4 and the class of the player is alchemist and the player is vine-cursed):
 				say "[one of]Vines slither up your legs, locking them in place![or]Living vines grab your ankles and feet, locking them in place.[or]A single vine slowly rises out of the soil, swaying [if the raw sex addiction of the player > 6]hypnotically[otherwise]menacingly[end if], sticky white fluids oozing from its shiny, bulbous tip. Before you can react, several more burst out of the ground and wrap around your ankles![or]Vines shoot out of the ground and wrap around your ankles![or]A pair of vines shoot out of the soil. You try to move out of the way, but it's too late! They wrap around your ankles and pin them to the ground![then at random]";
 				FearUp 9;
 				say "[one of]Maybe you'll be able to get away if you [bold type]pull[roman type] the vines.[or]There's no way you'll be able to get away if you don't [bold type]pull[roman type] them off.[then at random]";
@@ -140,8 +140,8 @@ To compute vines kneeling:
 				now V is revealed;
 				let D be the dexterity of the player;
 				let R be a random number from 1 to D;
-				if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1]6[otherwise]3[end if].5) vine difficulty[roman type][line break]";
-				if R <= 3 or (R <= 6 and (the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1)):
+				if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is alchemist or the class of the player is magical girl or diaper quest is 1]6[otherwise]3[end if].5) vine difficulty[roman type][line break]";
+				if R <= 3 or (R <= 6 and (the class of the player is alchemist or the class of the player is magical girl or diaper quest is 1)):
 					say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their [if diaper quest is 1]undulating bodies is strangely hypnotic, and before[otherwise if the raw sex addiction of the player > 6]oozing, bulbous tips is strangely hypnotic, and before[otherwise]oozing, bulbous tips is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before[end if] you realise it they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
 					now V is wrangling thighs;
 					now V is wrangling arms;

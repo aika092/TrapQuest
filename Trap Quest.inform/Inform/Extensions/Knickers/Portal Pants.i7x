@@ -174,7 +174,7 @@ To decide which number is the initial cringe of (C - giant-teddy):
 To decide which number is the wornArmsRequired of (C - giant-teddy):
 	decide on 2.
 
-To compute school periodic effect of (C - giant-teddy):
+To compute facility periodic effect of (C - giant-teddy):
 	if the player is prone:
 		say "[bold type]Now that you are on your knees, [NameDesc of C] falls down to the ground.[roman type][line break]";
 		dislodge C;

@@ -12,6 +12,8 @@ Definition: a bag of holding is transformation-theme-blockable: decide no. [It w
 Definition: a bag of holding is same-type:
 	if theme-share-target is bag of holding, decide yes;
 	decide no.
+To compute autotaking (I - a bag of holding):
+	do nothing.
 
 Definition: a thing is necessary-in-bag: decide yes. [Things that are not necessary-in-bag don't take up an item slot when the player has no bag.]
 
@@ -174,7 +176,7 @@ To compute periodic effect of (C - a bag of holding):
 			force clothing-focus redraw; [This forces the clothing window to redraw]
 			now the alert of the player is 1;
 			say "[bold type]Your [ShortDesc of C] growls hungrily. [roman type]You should feed it with an item of clothing soon or it might choose one on its own!".
-To compute school periodic effect of (C - a bag of holding):
+To compute facility periodic effect of (C - a bag of holding):
 	compute periodic effect of C.
 
 To compute (C - a bag of holding) unique inheriting from (D - a bag of holding):
@@ -752,7 +754,7 @@ To execute (E - bag-feeding-pink-theme):
 		if the number of entries in item-list > 0:
 			sort item-list in random order;
 			let X be entry 1 of item-list;
-			say "Suddenly a [ShortDesc of X] shimmers into appearance on your body!";
+			say "Suddenly a [ShortDesc of X] shimmers into existence on your body!";
 			summon X cursed with quest;
 		otherwise:
 			say "You feel more perverted...";
@@ -807,7 +809,7 @@ To say ClothingDesc of (B - enema-backpack):
 To decide which number is the initial cringe of (B - enema-backpack):
 	decide on 2.
 
-To compute school periodic effect of (B - enema-backpack):
+To compute facility periodic effect of (B - enema-backpack):
 	if B is not enema-released and realisticArms is 1 and (entry 1 in the armUses of arms is not hair or entry 2 in the armUses of arms is not hair):
 		now B is enema-released;
 		say "[bold type]A quiet 'click' sound heralds the backpack releasing its enema! [roman type]Before you can do anything your [asshole] has been filled with a huge amount of water!!![line break][variable custom style]Ugh... so much...[roman type][line break]";

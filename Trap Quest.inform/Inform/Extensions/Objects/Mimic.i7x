@@ -41,7 +41,7 @@ To say ExamineDesc of (M - a memic):
 A time based rule (this is the mimic wandering rule):
 	if playerRegion is Mansion:
 		compute wandering mimic;
-	otherwise if playerRegion is not School and the player is not in a predicament room:
+	otherwise if playerRegion is not facility and the player is not in a predicament room:
 		if halloween content is 1 or (the player is a september 2025 top donator and doomed is 5), compute wandering mimic.
 
 To compute wandering mimic:

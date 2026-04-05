@@ -29,7 +29,7 @@ To compute climax effect of (C - a writhing vine):
 	now V is not penetrating F.
 
 To decide which number is the raw-masturbation-bonus of (C - a writhing vine):
-	if the class of the player is schoolgirl, decide on 3;
+	if the class of the player is alchemist, decide on 3;
 	decide on 2.
 
 To decide which number is the grip of (I - a writhing vine):

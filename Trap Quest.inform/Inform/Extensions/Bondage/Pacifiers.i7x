@@ -14,6 +14,9 @@ Definition: a baby pacifier is fetish appropriate:
 Definition: a baby pacifier is shop-eligible:
 	if it is fetish appropriate and the initial cringe of it < 10, decide yes;
 	decide no.
+Definition: a baby pacifier (called C) is uniquely priority babywear:
+	if current-monster is matron and C is shop-eligible and the good-behaviour of behaviour-chart < the behaviour-unlock-threshold of C, decide yes;
+	decide no.
 To set up unique shop state of (C - a pacifier):
 	if a random number between 1 and 2 is 1, now C is speed;
 	otherwise now C is kicking;

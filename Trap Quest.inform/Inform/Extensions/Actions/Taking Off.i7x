@@ -50,6 +50,7 @@ Carry out taking off clothing:
 	now the mid-layer of the noun is 0;
 	now the bottom-layer of the noun is 0;
 	now the noun is crotch-in-place;
+	now the noun is top-placed;
 	if the noun is stuck, now the noun is in the location of the player;
 	if the noun is actually breast covering or the noun is potentially at least partially asshole covering or the noun is sex toy or the noun is potentially pussy covering:
 		unless the front-skirt-length of the noun >= 5 and the noun is not slitted, compute player submission; [longer skirts would be a tactical advantage to remove, as they can improve kneeing and kicking]

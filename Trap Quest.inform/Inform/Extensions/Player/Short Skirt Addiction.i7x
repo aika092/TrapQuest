@@ -1,7 +1,10 @@
 Short Skirt Addiction by Player begins here.
 
+Definition: a clothing is short-skirt-exception: decide no.
+
 Definition: a clothing (called C) is short-skirt-disallowed rather than short-skirt-allowed:
 	if short skirts permanent suggestion > 0:
+		if C is short-skirt-exception, decide no;
 		if C is unskirted themed, decide yes;
 		if (the front-skirt-length of C > short skirts permanent suggestion or the back-skirt-length of C > short skirts permanent suggestion) and C is crotch-in-place and C is not crotch-unzipped and C is actually dense, decide yes;
 	decide no.

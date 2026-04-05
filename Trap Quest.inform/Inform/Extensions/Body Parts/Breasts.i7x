@@ -989,7 +989,7 @@ To BustImplantsUp (X - a number):
 				now attempt-done is 2;
 			if X is 0:
 				let C be a random worn overdress;
-				if the class of the player is schoolgirl and the silicone volume of breasts > 3 and C is clothing and C is not daddy issues dress:
+				if the class of the player is alchemist and the silicone volume of breasts > 3 and C is clothing and C is not daddy issues dress:
 					repeat with S running through worn skirts:
 						WardrobeVanish S;
 					transform C into daddy issues dress;

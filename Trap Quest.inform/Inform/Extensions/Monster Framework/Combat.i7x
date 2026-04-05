@@ -72,16 +72,6 @@ To MonsterStomp (M - a monster):
 	now L is in the location of M;
 	now the leftover-type of L is the leftover-type of N.]
 
-To compute (M - a monster) stomping (N - a monster):[We keep this completely generic to avoid potential conflicts with the specific instances of each monster.]
-	if N is female and N is not neuter:
-		if M is in the location of the player, say "[BigNameDesc of M] grabs [NameDesc of N] and pulls [him of N] towards [him of M]. Remaining fully standing, [he of M] lowers [him of N] onto [his of M] giant erect [DickDesc of M] and starts fucking [his of N] [HoleDesc of N] furiously. [big he of N] screams in both pleasure and terror as [his of M] member almost splits [him of N] in two, and very soon [he of M] is coming inside [him of N]. [big his of N] belly visibly bulges before pints of [semen] begin to explode from around the sides of [his of M] [DickDesc of M]. After [he of M] has finished, [his of M] tail lets go of [his of N] waist and [he of N] falls to the ground, where [he of N] promptly faints.";
-		otherwise say "You hear a [man of N] shout out in a mixture of ecstasy and terror from [if N is nearby]nearby[otherwise]somewhere in the [playerRegion][end if]!";
-		destroy N;
-		let L be a random off-stage leftover;
-		now L is in the location of M;
-		now the leftover-type of L is the leftover-type of N;
-	otherwise:
-		say "[BigNameDesc of M] is glitching, it doesn't know how to deal with the [N]. Report this bug please!";[This will not happen with default game but with added monsters it allows the ability for them to be dungeon dwelling and have a scene where the minotaur kills them.]
 
 Chapter 1 Continue and Finish Sex
 
@@ -129,6 +119,12 @@ This is the default check for masturbating rule:
 		compute masturbation of current-monster;
 		rule succeeds.
 The default check for masturbating rule is listed last in the default continue sex rules.
+
+This is the default check for knee bouncing rule:
+	if current-monster is knee bouncing the player:
+		compute knee bouncing of current-monster;
+		rule succeeds.
+The default check for knee bouncing rule is listed last in the default continue sex rules.
 
 This is the default check for enema rule:
 	if current-monster is enema-filling the player:
@@ -241,7 +237,7 @@ To orgasm (M - a monster):
 		now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
 		let T be the substituted form of "making [NameDesc of M] cum";
 		now the video-event of vm is T;[note that the video-event always needs to be a present participle]
-	if notebook is worn or (the class of the player is schoolgirl and notebook is in the location of the player), compute studying 0 of M; [magical schoolgirls can have the notebook temporarily disarmed by tentacle monsters. the intention is that they should still get to study it]
+	if notebook is worn or (the class of the player is alchemist and notebook is in the location of the player), compute studying 0 of M; [magical alchemists can have the notebook temporarily disarmed by tentacle monsters. the intention is that they should still get to study it]
 	let G be a random fuckhole-mode glue penetrating face;
 	if G is glue:
 		say "[BigNameDesc of M][']s acts seem to have slightly weakened the glue's hold on you!";
@@ -1326,11 +1322,11 @@ To compute enticing of (M - a monster) with predetermined part (BP - a truth sta
 	let CM be current-monster;
 	now current-monster is M;
 	if diaper quest is 1:
-		if the chosen-diaper-punishment of M is punishment-not-found or the chosen-diaper-punishment of M is dq-student-flee, choose a diaper punishment;
+		if the chosen-diaper-punishment of M is punishment-not-found or the chosen-diaper-punishment of M is dq-trainee-flee, choose a diaper punishment;
 		if the chosen-diaper-punishment of M is punishment-not-found:
 			if debugmode > 0, say "Tried to entice but no acceptable diaper punishment found.";
-		otherwise if the chosen-diaper-punishment of M is dq-student-flee:
-			if debugmode > 0, say "Tried to entice but student just wants to flee.";
+		otherwise if the chosen-diaper-punishment of M is dq-trainee-flee:
+			if debugmode > 0, say "Tried to entice but trainee just wants to flee.";
 		otherwise:
 			if debugmode > 0, say "Tried to entice and successfully selected something.";
 			say EnticeFlav of M for the chosen-diaper-punishment of M;
@@ -1388,6 +1384,12 @@ To decide which number is the enticement-strength of (M - a monster) with (S - a
 	if debuginfo > 0, say "[input-style]Enticement stats: Arousal value ([A]) + Addiction level ([S])[if G > 0] - Grossness level ([G])[end if] = Enticement level [N][roman type][line break]";
 	decide on N.
 
+always-offer-kneeling is initially false.
+
+To offer enticingly from (M - a monster) for (B - a thing) with temptation level (S - a number):
+	now always-offer-kneeling is true;
+	check enticing of M for B with temptation level S.
+
 To check enticing of (M - a monster) for (B - a thing) with temptation level (S - a number):
 	if the class of the player is chosen one:
 		let H be a random worn headgear;
@@ -1431,7 +1433,15 @@ To check enticing of (M - a monster) for (B - a thing) with temptation level (S 
 				try kneeling;
 				now auto is 0;
 		otherwise:
-			if debuginfo > 0, say "[input-style]Below 15 = enticement level 0[roman type][line break]".
+			if debuginfo > 0, say "[input-style]Below 15 = enticement level 0[roman type][line break]";
+			if always-offer-kneeling is true:
+				say "Get on your knees and consent to what [he of M][']s asking for?[roman type][line break]";
+				if the player is consenting:
+					say "[variable custom style][one of]I'm not ready for a fight right now[or]I don't want to piss [him of M] off right now[stopping]...[roman type][line break]";
+					now auto is 1;
+					try kneeling;
+					now auto is 0;
+	now always-offer-kneeling is false.
 
 
 To say EnticeFlav of (M - a monster) with (B - face):
@@ -2377,7 +2387,7 @@ Definition: a monster (called M) is uniquely ready to entice:
 			let CM be current-monster;
 			now current-monster is M;
 			choose a diaper punishment;
-			if the chosen-diaper-punishment of current-monster is not punishment-not-found and the chosen-diaper-punishment of current-monster is not dq-student-flee:
+			if the chosen-diaper-punishment of current-monster is not punishment-not-found and the chosen-diaper-punishment of current-monster is not dq-trainee-flee:
 				now current-monster is CM;
 				decide yes;
 			otherwise:

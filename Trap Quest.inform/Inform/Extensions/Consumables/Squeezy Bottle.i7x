@@ -90,7 +90,7 @@ Check drinking straw-bottle:
 	allocate 6 seconds;
 	say "You sip [one of]the mystery liquid[or]some more of the strong laxative drink[stopping] into your mouth, and swallow. Almost instantly, your colon rumbles and groans.[line break][variable custom style][one of]Oh fuck... Don't tell me... That is some kind of super-strong laxative drink...[or]Fuck... That laxative effect is so strong![stopping][roman type][line break]";
 	increase suppository by 2;
-	StomachUp 1 instead.
+	StomachUp 2 instead.
 
 This is the thirsty straw-bottle suck rule:
 	try drinking straw-bottle.

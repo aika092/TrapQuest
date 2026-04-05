@@ -61,6 +61,7 @@ Figure of Berri Cutscene 19a is the file "NPCs/MultiFloor/berri/woman-cutscene19
 Figure of Berri Cutscene 19b is the file "NPCs/MultiFloor/berri/woman-cutscene19b.jpg".
 Figure of Berri Cutscene 20a is the file "NPCs/MultiFloor/berri/woman-cutscene20a.jpg".
 Figure of Berri Cutscene 20b is the file "NPCs/MultiFloor/berri/woman-cutscene20b.jpg".
+Figure of Berri Cutscene 21 is the file "NPCs/MultiFloor/berri/woman-cutscene21.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if M is caged and M is in the location of dominatrix-cage, decide on the examine-image of dominatrix-cage;
@@ -95,7 +96,7 @@ To decide which figure-name is the monster-image of (M - woman-player):
 		decide on figure of woman 1;
 	if the woman-bimbo of M is 3:
 		if the woman-status of woman-player is 90 and the vine-scene of woman-player <= 4, decide on figure of woman 2b;
-		let HT be a random revealed hypno trap in the location of M;
+		let HT be a random revealed spiral trap in the location of M;
 		if HT is a thing and HT is not expired, decide on figure of woman 2c;
 		decide on figure of woman 2;
 	if the woman-bimbo of M is 4, decide on figure of woman 3;
@@ -471,9 +472,9 @@ An all time based rule (this is the berri vines rule):
 To WomanVinePull:
 	let W be woman-player;
 	allocate 6 seconds;
-	if the traitor-hypno of hypno-lesson > 0:
+	if the traitor-h of traitor-training > 0:
 		say "Something inside you urges you to [second custom style]help your friend[roman type] instead. You stand and watch.";
-		if the vine-scene of W >= 4, decrease the traitor-hypno of hypno-lesson by 1;
+		if the vine-scene of W >= 4, decrease the traitor-h of traitor-training by 1;
 	otherwise if the player is upright and clumsy april fools is 1:
 		say "You reach for a vine but instead trip and fall!";
 		try kneeling;
@@ -562,6 +563,10 @@ An all time based rule (this is the berri urinal rule):
 		otherwise if the player is in Hotel31:
 			say "The wand vibrators continue to buzz away. Loud sexual moans fill the room. You can't help but get turned on.";
 			arouse 1000;
+
+This is the berri urinal gets focused rule:
+	if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31 and the hotel-urinal-scene of woman-player < 10, focus-consider urinal.
+The urinal gets focused rule is listed in the focus finding rules.
 
 Chapter - Hotel Chair Scene
 
@@ -679,8 +684,8 @@ A time based rule (this is the anal contraption predicament rule):
 
 Check searching woman-player when the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player < 6:
 	if the player is at least partially immobile or the player is in danger, say "You're a bit busy right now!" instead;
-	if the traitor-hypno of hypno-lesson > 0 and the dominatrix-contraption-scene of woman-player <= 2:
-		decrease the traitor-hypno of hypno-lesson by 1;
+	if the traitor-h of traitor-training > 0 and the dominatrix-contraption-scene of woman-player <= 2:
+		decrease the traitor-h of traitor-training by 1;
 		allocate 6 seconds;
 		say "Something inside you urges you to [second custom style]help your friend[roman type] instead. You walk up and give the front of [his of woman-player] diaper a loving rub. [big he of woman-player] looks at you like [he of woman-player][']s seen a ghost." instead;
 	if the player is upright, try kneeling;
@@ -856,8 +861,8 @@ To compute woman toilet release:
 	if K is held:
 		if forbidden-key is K:
 			say "Something deep in your brain won't let you use [NameDesc of K] to save [NameDesc of woman-player].";
-		otherwise if the traitor-hypno of hypno-lesson > 0 and forbidden-key is nothing:
-			decrease the traitor-hypno of hypno-lesson by 1;
+		otherwise if the traitor-h of traitor-training > 0 and forbidden-key is nothing:
+			decrease the traitor-h of traitor-training by 1;
 			say "Something inside you urges you to [speech style of woman-player]help your friend[roman type]. You find yourself unable to bring yourself to use [NameDesc of K] to save [NameDesc of woman-player]. Perhaps if you are able to obtain a different key, however, you'll be able to circumvent your hypnosis and help [him of woman-player] in the [']proper['] way.";
 			if the player is desperate to pee and the player is able to use a toilet:
 				say "But for now... your body has different plans for what would be the best way to help [NameDesc of woman-player] become a better person...";
@@ -1019,7 +1024,7 @@ Chapter - Matron Fight Scene
 
 woman-player has a number called matron-fight-scene.
 
-Report going when the matron-fight-scene of woman-player is 0 and the woman-bimbo of woman-player is 2 and the player is in Hotel22 and matron is in Hotel22 and matron is threatening and the times-met of matron is 0:
+Report going when the matron-fight-scene of woman-player is 0 and the woman-bimbo of woman-player is 2 and the player is in a dq-mandatory room and matron is in the location and matron is threatening and the times-met of matron is 0:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 100;
@@ -1062,13 +1067,13 @@ A later time based rule (this is the berri matron rule):
 			now the woman-status of woman-player is 27;
 			if woman-player is in the location of the player:
 				say "[BigNameDesc of woman-player] flees from the room, as fast as [his of woman-player] legs will carry [him of woman-player]!";
-				if woman-player is in Hotel22, try woman-player going east;
+				if woman-player is in a dq-mandatory room, try woman-player going east;
 			deinterest woman-player;
 			regionally place woman-player.
 
 Chapter - Matron Play Scene
 
-Report going when the woman-old-bimbo of woman-player <= 5 and the woman-bimbo of woman-player is 6 and the player is in Hotel22 and matron is in Hotel22 and matron is threatening:
+Report going when the woman-old-bimbo of woman-player <= 5 and the woman-bimbo of woman-player is 6 and the player is in a dq-mandatory room and matron is in the location and matron is threatening:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 26;
@@ -1080,11 +1085,11 @@ Report going when the woman-old-bimbo of woman-player <= 5 and the woman-bimbo o
 		otherwise say "[BigNameDesc of matron] notices you[if the player is sluttily dressed]![otherwise].[end if]";
 		say "[speech style of matron]'I'll let you decide.'[roman type][line break]";
 		interest matron;
-		if the traitor-hypno of hypno-lesson is 0, say "Does Berri get to orgasm? [if the player is not a nympho]On one hand it looks like [he of woman-player] really needs it, but on the other hand it might be best not to keep giving into the carnal desires of this game...[end if]";
-		if the traitor-hypno of hypno-lesson > 0 or the player is not consenting:
-			if the traitor-hypno of hypno-lesson > 0:
+		if the traitor-h of traitor-training is 0, say "Does Berri get to orgasm? [if the player is not a nympho]On one hand it looks like [he of woman-player] really needs it, but on the other hand it might be best not to keep giving into the carnal desires of this game...[end if]";
+		if the traitor-h of traitor-training > 0 or the player is not consenting:
+			if the traitor-h of traitor-training > 0:
 				say "Something inside urges you to [variable custom style]help your friend[roman type] by betraying [him of woman-player]. You shake your head, a vindictive grin appearing on your face.";
-				decrease the traitor-hypno of hypno-lesson by 1;
+				decrease the traitor-h of traitor-training by 1;
 			otherwise:
 				say "You shake your head.[line break][if the player is able to speak][variable custom style]'I don't want any part of this.'[roman type][line break]";
 			say "[BigNameDesc of woman-player][']s eyes go wide, but [NameDesc of matron] just shrugs, a bemused smile on [his of matron] face.[line break][speech style of matron]'Have it your way.'[roman type][line break][big he of matron] clicks off the wand, and begins packing it away.";
@@ -1136,9 +1141,9 @@ Check pulling woman-player when the changing-station-tank-scene of woman-player 
 	if the player is immobile or the player is in danger, say "You're a bit busy!" instead;
 	if the player is prone, say "You can't do that while on your knees." instead;
 	if the player is not able to manually use manual dexterity, do nothing instead;
-	if the traitor-hypno of hypno-lesson > 0:
+	if the traitor-h of traitor-training > 0:
 		say "Something inside urges you to [variable custom style]help your friend[roman type] by betraying [him of woman-player]. You just stand still and watch.";
-		decrease the traitor-hypno of hypno-lesson by 1;
+		decrease the traitor-h of traitor-training by 1;
 		try waiting instead;
 	reset multiple choice questions;
 	set numerical response 1 to "Try to take the weight of the rope while [NameDesc of woman-player] ties the knot";
@@ -1575,9 +1580,9 @@ To compute basic greeting to (M - woman-player):
 	otherwise if the woman-status of M is 90:
 		say "[speech style of M]'Let's keep away from those vines, shall we?'[roman type][line break]";
 	otherwise if the woman-status of M is 94:
-		let HT be a random revealed hypno trap in the location of M;
+		let HT be a random revealed spiral trap in the location of M;
 		if HT is a thing and HT is not expired:
-			say "[speech style of M]'Huh? Oh crap, another hypno trap! Let's get out of here!'[roman type][line break]";
+			say "[speech style of M]'Huh? Oh crap, another spiral trap! Let's get out of here!'[roman type][line break]";
 			compute mandatory room leaving of M;
 			now M is uninterested;
 		otherwise:
@@ -1616,14 +1621,14 @@ To say BerriQuestion:
 		say "'Can we chat?'".
 
 To execute (T - talk-berri-question) for (M - a monster):
-	let HT be a random revealed hypno trap in the location of M;
+	let HT be a random revealed spiral trap in the location of M;
 	if the woman-status of M is 98:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3:
 		say "[speech style of M]'EEEEEEEEEE!'[roman type][line break]";
 	otherwise if M is angered:
 		say "[speech style of M]'[if the player is upright]That's a great question. Let me answer it with my fist.'[otherwise]I don't think you're in the position to be the one asking questions right now, do you?'[roman type][line break]";
-	otherwise if HT is a thing and HT is not expired: [looking at hypno trap]
+	otherwise if HT is a thing and HT is not expired: [looking at spiral trap]
 		say "[speech style of M]'Uuuuuuuuh...'[roman type][line break]";
 	otherwise if the woman-status of M is 0:
 		if the woman-bimbo of M < 3:
@@ -1973,12 +1978,12 @@ A later time based rule (this is the berri hotel changing station rule):
 			now auto is 0;
 			now berriChangingStationScene is 45.
 
-berriHypnoScene is a number that varies.
+berriSpiralScene is a number that varies.
 
 A later time based rule (this is the berri hotel hypno rule):
-	decrease berriHypnoScene by 1;
-	if berriHypnoScene <= 0 and blue-dungarees is worn and there is a worn diaper and the class of the player is berri and the player is in a trappable modern room and there is an off-stage diaper-hypno-trap and the number of traps in the location of the player is 0 and the player is able to wank and wanking is 0 and the number of interested regional monsters is 0 and the player is not immobile and there is a regional explorer:
-		let T be a random off-stage diaper-hypno-trap;
+	decrease berriSpiralScene by 1;
+	if berriSpiralScene <= 0 and blue-dungarees is worn and there is a worn diaper and the class of the player is berri and the player is in a trappable modern room and there is an off-stage diaper-spiral-trap and the number of traps in the location of the player is 0 and the player is able to wank and wanking is 0 and the number of interested regional monsters is 0 and the player is not immobile and there is a regional explorer:
+		let T be a random off-stage diaper-spiral-trap;
 		now T is revealed;
 		now T is not untriggered;
 		now the reset-timer of T is 200;
@@ -1986,7 +1991,7 @@ A later time based rule (this is the berri hotel hypno rule):
 		now E is in the location of the player;
 		interest meet E;
 		say video content of T;
-		compute specific hypno effect of T;
+		compute specific spiral effect of T;
 		if the arousal of the player < 9000, now the arousal of the player is 9000;
 		let LD be the NViables of the location of the player;
 		sort LD in random order;
@@ -1999,7 +2004,7 @@ A later time based rule (this is the berri hotel hypno rule):
 		drag to R by E;
 		say "Only now does the fog begin to clear.[paragraph break][speech style of E]'[NameBimbo], you silly sausage, you got caught by a hypno screen[one of][or] again[stopping]! You really are hopeless.'[roman type][line break][BigNameDesc of E] chastizes you.[paragraph break]";
 		progress quest of berri-quest;
-		now berriHypnoScene is 45.
+		now berriSpiralScene is 45.
 
 
 berri-present is a diaper punishment. The priority of berri-present is 8.
@@ -2022,7 +2027,7 @@ To compute punishment of (P - berri-present):
 	pinkWardrobeUnclash pink-latex-bodysuit;
 	let K be a random worn knickers;
 	destroy K;
-	summon pink-giant-diaper uncursed;
+	summon plain-massive-diaper uncursed;
 	summon pink-latex-bodysuit uncursed;
 	now latest-berri-stage is 6;
 	repeat with T running through currently-not-in-bag things:
@@ -2048,7 +2053,8 @@ An all time based rule (this is the DiaperPresentBox rule):
 		if the priority of berri-present is 5 or the priority of berri-present is 6:
 			say "You feel your box being carried to a new location![line break][variable custom style]Oof! Aaah! Woah![roman type][line break]";
 			now the priority of berri-present is 4;
-		decrease the priority of berri-present by a random number between 0 and 2;
+		if tough-shit is 1, decrease the priority of berri-present by a random number between 0 and 1;
+		otherwise decrease the priority of berri-present by a random number between 0 and 2;
 		if the priority of berri-present <= 0:
 			let D be a random worn diaper;
 			let E be a random regional explorer;
@@ -2064,7 +2070,7 @@ An all time based rule (this is the DiaperPresentBox rule):
 			cutshow Figure of Berri Cutscene 12;
 			say "You groan weakly into your [if D is perceived messed diaper]filthy [end if]padding as [NameDesc of E] unties your ribbon bondage[if D is perceived messed diaper], gagging at the stench as [he of E] does[end if].";
 			if D is perceived messed diaper, say severeHumiliateReflect;
-			say "[speech style of E]'Were they really going to keep you like this until CHRISTMAS? The fucking savages...'[roman type][line break][BigNameDesc of E] mutters to [himself of E] in disgust.[line break][speech style of E]'Um, I'm not going to stick around [if D is messed]with that stench in the air[otherwise]to see whether or not you're about to shit yourself[end if], so, um, I'll see you around.'[roman type][paragraph break]";
+			say "[speech style of E]'Were they really going to keep you like this [if christmas content is 1]for however long it took someone like me to try to loot this box[otherwise]until CHRISTMAS[end if]? The fucking savages...'[roman type][line break][BigNameDesc of E] mutters to [himself of E] in disgust.[line break][speech style of E]'Um, I'm not going to stick around [if D is messed]with that stench in the air[otherwise]to see whether or not you're about to shit yourself[end if], so, um, I'll see you around[if christmas content is 1]... And Merry Christmas[end if].'[roman type][paragraph break]";
 			if D is diaper, compute automatic state check of D;
 			focus-consider E;
 			compute mandatory room leaving of E;
@@ -2108,7 +2114,7 @@ To decide which number is the relevant addiction of (P - potty-punishment):
 
 Definition: potty-punishment is appropriate:
 	if current-monster is intelligent and latest-berri-stage is 6 and the class of the player is berri and the player is in an unbossed modern room:
-		if the player is immobile or the player is in a guest room or there is a hypno trap in the location of the player or the number of combative monsters > 1, decide no;
+		if the player is immobile or the player is in a guest room or there is a spiral trap in the location of the player or the number of combative monsters > 1, decide no;
 		decide yes;
 	decide no.
 
@@ -2255,6 +2261,11 @@ To compute punishment of (P - urinal-competition-punishment):
 	regionally place W;
 	focus-consider W.
 
+This is the urinal predicament prevents standing rule:
+	if urinal is grabbing the player:
+		if auto is 0, say "You can't stand while you're strapped into position as a human urinal.";
+		rule fails.
+The urinal predicament prevents standing rule is listed in the ability to stand rules.
 
 A time based rule (this is the vibrator urinal rule):
 	if urinal is grabbing the player or the urinal-rival of urinal-competition-punishment is guarding monster:
@@ -2286,7 +2297,11 @@ A time based rule (this is the vibrator urinal rule):
 				if urinal is in the location of the player:
 					if urinal is grabbing the player, interest meet M;
 					say "[bold type][BigNameDesc of M] [bold type]immediately spots [if urinal is grabbing the player]you[otherwise][NameDesc of the urinal-rival of urinal-competition-punishment][end if]![roman type][line break]";
-			compute vibrator urinal use of M;
+			if urinal is grabbing the player:
+				compute vibrator urinal use of M;
+			otherwise:
+				if urinal is in the location of the player, say "[bold type][BigNameDesc of M] uses [NameDesc of the urinal-rival of urinal-competition-punishment] as a human urinal![roman type][line break]";
+				increase the rival-stomach of urinal-competition-punishment by the bladder of M / 100;
 			now the attendee-cooldown of urinal-competition-punishment is 0;
 		if urinal is grabbing the player and the stomach-urine of the player > 1, StomachDown 1;
 		if the rival-stomach of urinal-competition-punishment > 1:
@@ -2354,6 +2369,7 @@ To compute vibrator urinal use of (M - a monster):
 	let previous-player-vibe be the player-vibe of urinal-competition-punishment;
 	let previous-rival-vibe be the rival-vibe of urinal-competition-punishment;
 	focus-consider M;
+	let WN be a random number between 4 and (6 + (player-diaper of urinal-competition-punishment / 10));
 	if M is explorer and urinal is grabbing the player:
 		say "[BigNameDesc of M] looks at you with pity.[line break][speech style of M]'Here, you can drink from this water bottle, if it'll help.'[roman type][line break]Take a sip of water?";
 		if the player is consenting:
@@ -2366,40 +2382,44 @@ To compute vibrator urinal use of (M - a monster):
 		compute mandatory room leaving of M;
 		regionally place M;
 	otherwise if M is a urinater:
-		say "[speech style of M]'[one of]Which one of you wants my piss, then[or]Which urinal should I use[or]I wonder... Who wants this more[at random]?'[roman type][line break]";
-		let LT be a list of texts;
-		add the substituted form of "'[one of]Fuck you[or]Fuck off[or]No way[at random]!'" to LT;
-		add the substituted form of "'[one of]I guess I can't say no[or]I can't believe this is happening[or]This can't be happening[or]If you must[at random]...'" to LT;
-		add the substituted form of "'[one of]I'm here[or]Hi[or]Hello there[at random]...'" to LT;
-		add the substituted form of "'[one of]I don't mind if you pick me[or]Please consider picking me[or]I guess you could pick me[at random]...'" to LT;
-		add the substituted form of "'[one of]I'll do it[or]Please choose me[or]I'm ready to be used[at random]...'" to LT;
-		add the substituted form of "'[one of]I'll be your urinal[or]Please piss on me[or]I'm ready to be pissed on[at random]...'" to LT;
-		add the substituted form of "'[one of]Please pee inside my mouth[or]I want to drink your pee[or]I love to be pissed on[at random]!'" to LT;
-		add the substituted form of "'[one of]Please, I'm desperate to be pissed on[or]Please bless me with your golden nectar[or]Please, I really want your piss all for myself[at random]!'" to LT;
-		add the substituted form of "'[one of]Please, I'm desperate to drink all your delicious piss[or]Please let me be your disgusting piss guzzling urinal[or]Yes please, I'm a disgusting diapered piss addicted urinal[or]Yes please, I want to cum while your piss is [one of]filling my stomach[or]raining down on my face[cycling][in random order]!'" to LT;
-		add "Don't say anything." to LT;
-		reset multiple choice questions;
-		repeat with N running from 1 to 10:
-			set numerical response N to entry N in LT;
-		now temporaryYesNoBackground is examine-image of urinal;
-		say "[one of][bold type]WARNING: Self-esteem loss does not increase linearly with these options. Be very careful about how high you're willing to go. Maybe it's better to wait for a friendly face...[roman type][line break][or][stopping]";
-		compute multiple choice question;
-		if player-numerical-response > 0:
-			say "[variable custom style][entry player-numerical-response in LT][roman type][line break]You do your best to [one of]squeak[or]say[purely at random] the words through your ring gag.";
-			let HR be TRIVIAL-HUMILIATION * 3 * player-numerical-response;
-			if player-numerical-response > a random number between 0 and 9, now HR is HR * 2;
-			if player-numerical-response > a random number between 0 and 9, now HR is HR * 2;
-			if player-numerical-response > a random number between 0 and 9, now HR is HR * 2;
-			say HumiliateReflect HR;
-		say paragraph break;
-		let WN be a random number between 4 and 9;
-		say "[if player-numerical-response is 0]As you remain silent[otherwise]At the same time[end if], [NameDesc of W] [one of]squeals[or]shouts[purely at random][line break][speech style of W]'[if WN is 4]You can pick me...'[otherwise if WN is 5]Choose me!'[otherwise if WN is 6]Please pee on me!'[otherwise if WN is 7]Please, I'm a really good urinal!'[otherwise if WN is 8]Please let me swallow it all!'[otherwise]I'm a depraved diapered piss bucket, begging you for a golden shower!'[end if][roman type][line break]";
+		if W is monster:
+			say "[speech style of M]'[one of]Which one of you wants my piss, then[or]Which urinal should I use[or]I wonder... Who wants this more[at random]?'[roman type][line break]";
+			let LT be a list of texts;
+			add the substituted form of "'[one of]Fuck you[or]Fuck off[or]No way[at random]!'" to LT;
+			add the substituted form of "'[one of]I guess I can't say no[or]I can't believe this is happening[or]This can't be happening[or]If you must[at random]...'" to LT;
+			add the substituted form of "'[one of]I'm here[or]Hi[or]Hello there[at random]...'" to LT;
+			add the substituted form of "'[one of]I don't mind if you pick me[or]Please consider picking me[or]I guess you could pick me[at random]...'" to LT;
+			add the substituted form of "'[one of]I'll do it[or]Please choose me[or]I'm ready to be used[at random]...'" to LT;
+			add the substituted form of "'[one of]I'll be your urinal[or]Please piss on me[or]I'm ready to be pissed on[at random]...'" to LT;
+			add the substituted form of "'[one of]Please pee inside my mouth[or]I want to drink your pee[or]I love to be pissed on[at random]!'" to LT;
+			add the substituted form of "'[one of]Please, I'm desperate to be pissed on[or]Please bless me with your golden nectar[or]Please, I really want your piss all for myself[at random]!'" to LT;
+			add the substituted form of "'[one of]Please, I'm desperate to drink all your delicious piss[or]Please let me be your disgusting piss guzzling urinal[or]Yes please, I'm a disgusting diapered piss addicted urinal[or]Yes please, I want to cum while your piss is [one of]filling my stomach[or]raining down on my face[cycling][in random order]!'" to LT;
+			add "Don't say anything." to LT;
+			reset multiple choice questions;
+			repeat with N running from 1 to 10:
+				set numerical response N to entry N in LT;
+			now temporaryYesNoBackground is examine-image of urinal;
+			say "[one of][bold type]WARNING: Self-esteem loss does not increase linearly with these options. Be very careful about how high you're willing to go. Maybe it's better to wait for a friendly face...[roman type][line break][or][stopping]";
+			compute multiple choice question;
+			if player-numerical-response > 0:
+				say "[variable custom style][entry player-numerical-response in LT][roman type][line break]You do your best to [one of]squeak[or]say[purely at random] the words through your ring gag.";
+				if player-numerical-response is 1:
+					dignify TRIVIAL-HUMILIATION * 6;
+				otherwise:
+					let HR be TRIVIAL-HUMILIATION * 3 * player-numerical-response;
+					if player-numerical-response > a random number between 0 and 9, now HR is HR * 2;
+					if player-numerical-response > a random number between 0 and 9, now HR is HR * 2;
+					if player-numerical-response > a random number between 0 and 9, now HR is HR * 2;
+					say HumiliateReflect HR;
+			say paragraph break;
+			say "[if player-numerical-response is 0]As you remain silent[otherwise]At the same time[end if], [NameDesc of W] [one of]squeals[or]shouts[purely at random][line break][speech style of W]'[if WN is 4]You can pick me...'[otherwise if WN is 5]Choose me!'[otherwise if WN is 6]Please pee on me!'[otherwise if WN is 7]Please, I'm a really good urinal!'[otherwise if WN is 8]Please let me swallow it all!'[otherwise]I'm a depraved diapered piss bucket, begging you for a golden shower!'[end if][roman type][line break]";
 		let R be a random number between 0 and player-numerical-response;
 		let WR be a random number between 0 and WN;
+		if W is not a monster, now WR is -1;
 		if the bladder of M < 400, now the bladder of M is a random number between 400 and 1000;
 		say "[BigNameDesc of M] [one of]assesses you both[or]tilts [his of M] head from side to side[or]looks you both up and down[or]turns from left to right[or]bites [his of M] lip with indecision[in random order]... ";
-		if R >= WN:
-			say "And then [one of]advances[or]steps[or]moves[purely at random] towards you.";
+		if R >= WR:
+			say "[if W is monster]And then[otherwise][BigNameDesc of M][end if] [one of]advances[or]steps[or]moves[purely at random] towards you.";
 			if the player is getting unlucky:
 				say "[BigNameDesc of M] aims poorly, and hits your [one of]forehead[or]nose[purely at random] instead of your mouth! You are blasted in the face by a hot stream of piss.";
 				GrossOut 4;
@@ -2577,7 +2597,7 @@ To decide which number is the stimulation of (T - fixed-vibrator) on (F - a body
 
 berriSoiledDiaperScene is a number that varies.
 Report going when the class of the player is berri:
-	if latest-berri-stage is 7 and berriSoiledDiaperScene is 0 and playerRegion is not school and the player is upright and there is a held soiled-diaper and there is a diaper pail in the location of the player and the number of worn messed diaper is 0 and the player is in an unbossed roomstandard room and the number of alive dangerous regional monsters is 0 and the number of interested regional explorer is 0:
+	if latest-berri-stage is 7 and berriSoiledDiaperScene is 0 and playerRegion is not facility and the player is upright and there is a held soiled-diaper and there is a diaper pail in the location of the player and the number of worn messed diaper is 0 and the player is in an unbossed roomstandard room and the number of alive dangerous regional monsters is 0 and the number of interested regional explorer is 0:
 		let SD be a random off-stage soiled-diaper;
 		let TXT be the substituted form of "[ShortDesc of animal-massive-diaper]";
 		repeat with S running through carried soiled-diaper:
@@ -2710,6 +2730,7 @@ To compute punishment of (P - berri-collaring):
 		say "[BigNameDesc of M] rips off [NameDesc of C], ruining it!";
 		destroy C;
 	summon pet collar uncursed;
+	progress quest of berri-quest;
 	if latest-berri-stage < 8, now latest-berri-stage is 8;
 	compute berri class failure;
 	fix berri outfit;
@@ -2717,8 +2738,7 @@ To compute punishment of (P - berri-collaring):
 	if M is covering pet collar:
 		say "[speech style of M]'You're not human any more, baby [NameBimbo]. You are domesticated property, understand? Now, what else to do with you...'[roman type][line break]";
 	otherwise:
-		satisfy M;
-	progress quest of berri-quest.
+		satisfy M.
 
 
 Report going when the class of the player is berri:

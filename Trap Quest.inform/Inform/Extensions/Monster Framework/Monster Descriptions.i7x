@@ -143,9 +143,9 @@ To decide which figure-name is the oral-sex-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
 To decide which figure-name is the lick-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
-To decide which figure-name is the asslick-monster-image of (M - a monster):
-	if M is human:
-		if M is dark skinned:
+To decide which figure-name is the asslick-monster-image of (M - a person):
+	if M is not a monster or M is human:
+		if M is dark skinned monster:
 			if M is male, decide on figure of anilingus 2;
 			otherwise decide on figure of Missing NPC;
 		otherwise:

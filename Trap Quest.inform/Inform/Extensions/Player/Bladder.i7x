@@ -253,7 +253,7 @@ To decide which number is burstingColour:
 A game universe initialisation rule:
 	if tough-shit is 1 and diaper lover > 0:
 		now the bladder of the player is bladder-risky-level + 2;
-		if diaper messing >= 4:
+		if diaper messing >= 4 and cruel christmas is 0:
 			now rectum is 4;
 			now suppository is 1;
 		say "[bold type]You feel an urgent need to use the toilet![line break][first custom style]What, straight away?! How horribly unfair!!![roman type][line break]".

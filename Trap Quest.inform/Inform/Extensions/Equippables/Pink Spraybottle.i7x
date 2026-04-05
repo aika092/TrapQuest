@@ -51,7 +51,7 @@ Definition: pink-spraybottle is pink themed: decide yes.
 Definition: pink-spraybottle is fluid immune: decide yes.
 
 Check taking pink-spraybottle when pink-spraybottle is not held:
-	if playerRegion is not school:
+	if playerRegion is not facility:
 		if the noun is not actually summonable, say "That requires your dominant hand to be free - you are currently holding [NameDesc of a random worn hand ready clothing]." instead;
 		if the class of the player is not maid:
 			let H be a random worn headgear;

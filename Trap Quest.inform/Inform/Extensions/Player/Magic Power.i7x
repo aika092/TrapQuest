@@ -93,7 +93,7 @@ To decide which number is the magic-cost of (Z - a thing):
 	decide on M.
 
 Definition: a tentacle monster is a tripper:
-	if the class of the player is "magical schoolgirl" or (there is a worn zap ready equippable and heart hairpin is off-stage and heart hairpin is actually summonable), decide yes;
+	if the class of the player is "magical alchemist" or (there is a worn zap ready equippable and heart hairpin is off-stage and heart hairpin is actually summonable), decide yes;
 	decide no.
 
 To say TripChanceFlav of (M - a tentacle monster):
@@ -185,7 +185,7 @@ Spellcasting is an action applying to one thing.
 Check Spellcasting:
 	if the noun is uncastable, say "You don't know that spell." instead;
 	if the magic power of the player < the magic-cost of the noun, say "You don't have enough magic power to cast that spell (you need [magic-cost of the noun])." instead;
-	if the player is in a predicament room or the player is in School34, say "It seems like magic doesn't work here..." instead;
+	if the player is in a predicament room or the player is in Facility34, say "It seems like magic doesn't work here..." instead;
 	if the player is not able to trigger manual speech, say "You can't currently speak in order to perform the incantation!" instead.
 Carry Out Spellcasting:
 	allocate 3 seconds;
@@ -426,7 +426,7 @@ Report Spellcasting wand-summoning:
 	otherwise:
 		let W be nintendolls-wand;
 		if the class of the player is magical girl, now W is a random heart wand;
-		if the class of the player is "magical schoolgirl", now W is notebook;
+		if the class of the player is "magical alchemist", now W is notebook;
 		PinkWardrobeUnclash W;
 		summon W uncursed;
 		now W is impermanence;
@@ -443,6 +443,7 @@ Report Spellcasting wand-summoning:
 			try examining lolita magical dress.
 
 An all later time based rule (this is the magic power spell rule):
+	if the total magic power of the player < 1 and the class of the player is magical girl, MagicPowerUp 1;
 	if the player is not in a predicament room and the total magic power of the player > 0 and wand-summoning is uncastable:
 		now wand-summoning is everywhere;
 		now the outrageousness of wand-summoning is 6;
@@ -462,6 +463,14 @@ An all later time based rule (this is the magical girl spell rule):
 			now the incantation of magic-purify is "love being stalked";
 			now the text-shortcut of magic-purify is "love being stalked";
 		say "[bold type]You now instinctively know how to [MagicSpellEffect of magic-purify]! The magic incantation is 'I [incantation of magic-purify]'.[SpelloutrageousnessInfo of magic-purify][roman type][line break]".
+
+An all later time based rule (this is the familiar spell rule):
+	if diaper quest is 0 and the player is a march 2026 top donator and the raw sex addiction of the player > 7 and the player is not in a predicament room and (the class of the player is magical girl or the class of the player is princess) and magic-familiar is uncastable:
+		now magic-familiar is everywhere;
+		now the outrageousness of magic-familiar is 2;
+		now the incantation of magic-familiar is "want a beautiful bimbo buddy";
+		now the text-shortcut of magic-familiar is "want a beautiful bimbo buddy";
+		say "[bold type]You now instinctively know how to [MagicSpellEffect of magic-familiar]The magic incantation is 'I [incantation of magic-familiar]'.[SpelloutrageousnessInfo of magic-familiar][roman type][line break]".
 
 magic-mapping is a magic-spell.
 To decide which number is the raw-magic-cost of (S - magic-mapping):
@@ -506,13 +515,13 @@ Definition: magic-blinking is staller: decide no. [Does it make all NPCs lose a 
 magic-warping is a magic-spell.
 To decide which number is the raw-magic-cost of (S - magic-warping):
 	decide on 8.
-Definition: magic-warping is reactive-only: decide yes.
+Definition: magic-warping is reactive-only: decide no. [otherwise causes weird behaviour because the reactive check happens after the teleport]
 To say MagicSpellEffect of (S - magic-warping):
 	say "teleport away to a random location in this region".
 Report Spellcasting magic-warping when there is a reactive monster:
 	if the player is trap stuck or the player is vine stuck or a random lake monster is penetrating an orifice:
 		say "The magic tries to teleport you, but something holding onto you prevents the magical from successfully moving you!";
-	otherwise if playerRegion is school or the player is in a painting-room:
+	otherwise if playerRegion is facility or the player is in a painting-room:
 		say "The magic of this dimension seems to prevent this from working!";
 	otherwise:
 		let target-teleport be Dungeon12;
@@ -778,5 +787,20 @@ Report Spellcasting magic-purify:
 	unless T is nothing:
 		compute MagicDrain of T;
 		MagicPurify T.
+
+magic-familiar is a magic-spell.
+Definition: magic-familiar is fetish appropriate:
+	decide no.
+To decide which number is the raw-magic-cost of (S - magic-familiar):
+	decide on 1.
+Definition: magic-familiar is reactive-only:
+	decide no.
+To say MagicSpellEffect of (S - magic-familiar):
+	say "summon a bimbo familiar (once per game)[run paragraph on]".
+Report Spellcasting magic-familiar:
+	if the raw sex addiction of the player > 7 and familiar is off-stage and the stored-sex-addiction of familiar is 0:
+		compute familiar arrival;
+	otherwise:
+		say "Nothing seems to happen. [if familiar is off-stage and the stored-sex-addiction of familiar is 0]Perhaps you don't have enough sluttiness to own a bimbo familiar[otherwise]Well, it did say once per game[end if]...";
 
 Magic Power ends here.

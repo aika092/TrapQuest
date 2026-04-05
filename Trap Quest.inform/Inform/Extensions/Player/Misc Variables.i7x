@@ -5,7 +5,7 @@ Misc Variables by Player begins here.
 Has the game ended?
 
 *!]
-gameover-flag is a number that varies.
+gameover-flag is a number that varies. gameover-flag is -1.
 
 [!<debugMode:Integer>*
 
@@ -123,7 +123,7 @@ Victory is a number that varies. Victory is 0.
 
 Virgincursed is a number that varies. Virgincursed is 0.
 
-last-lactated-time is a number that varies. last-lactated-time is 0.
+last-lactated-time is a number that varies. last-lactated-time is 999999.
 [The idea of last-lactated-time is that the player will smell of milk for a while after lactating, and possibly exciting some monsters when they scent it. At present, that's just the fairies.]
 
 decideToSuckle is a number that varies. decideToSuckle is 0.

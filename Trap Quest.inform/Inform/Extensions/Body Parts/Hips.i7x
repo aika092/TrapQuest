@@ -384,7 +384,7 @@ Chapter 1 - Thickness
 bigHipBalance is a number that varies.
 
 To HipUp (X - a number):
-	while X > 0:
+	while diaper quest is 0 and X > 0:
 		decrease X by 1;
 		if there is a restricting salve covering hips:
 			if X is 0, say "[one of]You feel your [if weight gain fetish is 1][ShortDesc of hips][otherwise][MediumDesc of hips][end if] try to expand further, but the salve of restriction prevents it![or]Once again your [if weight gain fetish is 1][ShortDesc of hips][otherwise][MediumDesc of hips][end if] fail to grow any further.[stopping]";

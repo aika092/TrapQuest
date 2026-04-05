@@ -384,7 +384,7 @@ Carry Out Spitting:
 			MouthEmpty;
 	otherwise:
 		compute spitting;
-	if pledge-lesson-spit is implanted:
+	if pledge-training-spit is implanted:
 		say "[second custom style]Only prudes spit![bold type][line break]The magic pledge you've just broken activates. [roman type]You become extremely tired and thirsty!";
 		StomachDown 40;
 		now the fatigue of the player is the buckle threshold of the player;

@@ -72,6 +72,8 @@ Check orilubing something with:
 	if T is a live thing:
 		say "You can't lube up your [variable second noun] while there is something fucking it." instead;
 	if the player is not able to manually use their hands, do nothing instead;
+	if the player is wrist bound behind, say "You can't manage that while your wrists are bound behind you!" instead;
+	if wrist collar bar is worn, say "You can't manage that while your wrists are bound by your neck!" instead;
 	if the player is monster fucked, say "You're a little busy right now!" instead.
 
 Carry out orilubing something with:

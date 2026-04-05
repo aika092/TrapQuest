@@ -3,13 +3,13 @@ Resisting by Actions begins here.
 Definition: a monster (called M) is fucking daddy's hole:
 	unless daddy's cock only tattoo is worn, decide no;
 	unless there is a mating monster, decide no;
-	if the player is in DiamondLessonBlindfolded, decide no; [Otherwise the lesson is impossible]
+	if the player is in DiamondTrainingSessionBlindfolded, decide no; [Otherwise the sesson is impossible]
 	if M is penetrating asshole and M is not mating, decide yes;
 	decide no.
 
 Definition: a monster (called M) is wrong race fucking:
 	if M is not penetrating a body part, decide no;
-	if the player is in DiamondLessonBlindfolded, decide no; [Otherwise the lesson is impossible]
+	if the player is in DiamondTrainingSessionBlindfolded, decide no; [Otherwise the sesson is impossible]
 	if once-you-go-black tattoo is worn and M is pale skinned, decide yes;
 	decide no.
 
@@ -29,7 +29,7 @@ To decide which number is fuckhole pain:
 	decide on P.
 
 To say ResistSubduedFlav of (C - a clothing):
-	say "You don't dare resist whilst your [ShortDesc of C] is in the hands of a malicious enemy!".
+	say "You can't help but fully submit whilst your [ShortDesc of C] is in the hands of a malicious enemy!".
 
 forced submit is a number that varies. [0: not forced to submit; 1: forced to submit, still output submission flavour; 2: forced to submit, no flavour & no humiliation gain; 3: automatically chose to submit, no flavour but yes to humiliation gain]
 
@@ -49,9 +49,9 @@ Check resisting:
 		now forced submit is 2;[This tells the submission function not to display any flavour text.]
 		try submitting instead;
 	otherwise if there is a fucking daddy's hole monster:
-		say "[one of][if the player is able to speak]You find yourself resisting the act.[line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
+		say "[one of][if the player is able to speak]You find yourself refusing to submit.[line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if there is a wrong race fucking monster:
-		say "[one of][if the player is able to speak]You find yourself resisting the act.[line break][variable custom style]'I only serve black [manly-penis]!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
+		say "[one of][if the player is able to speak]You find yourself refusing to submit.[line break][variable custom style]'I only serve black [manly-penis]!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if the latex-transformation of the player > 2 and there is a live thing penetrating a fuckhole:
 		say "Your gaping [if the player is not possessing a vagina][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
 		now forced submit is 2;[This tells the submission function not to display any flavour text.]
@@ -63,17 +63,17 @@ Check resisting:
 	otherwise if there is a baby bouncer grabbing the player and the player is upset about sitting in mess:
 		say "You can't bring yourself to do that while sitting in your own mess!" instead;
 	otherwise if the player is broken and PEN + GRB > 0:
-		say "[one of][line break][bold type]As you are a fully broken in sex object, you no longer even consider resisting an option. From now on, this verb will automatically submit instead.[roman type][line break][or][stopping]";
+		say "[one of][line break][bold type]As you are a fully broken in sex object, you no longer even consider holding back an option. From now on, this verb will automatically submit instead.[roman type][line break][or][stopping]";
 		try submitting instead;
 	otherwise if there is a live thing penetrating asshole and gape-gloves is worn and gape-gloves is wrist-bound-behind:
-		say "It's hardly a resisting move to literally use your fingers to spread your [asshole] to allow [NameDesc of a random live thing penetrating asshole] inside, is it? You can only present yourself for anal while wearing these gape gloves!";
+		say "It's pretty submissive to literally use your fingers to spread your [asshole] to allow [NameDesc of a random live thing penetrating asshole] inside, is it? You can only present yourself for anal while wearing these gape gloves!";
 		now forced submit is 2;
 		try submitting instead;
 	otherwise if the class of the player is bride and the player-reaction of the player is submitting and there is a virginity taking monster penetrating a body part and bride-consort is not the throne and bride-consort is not in the location of the player: [adultery!]
 		let H be a random worn headgear;
 		let M be a random virginity taking monster penetrating a body part;
 		now forced submit is 3; [no flavour, but still process humiliation gain]
-		say "Now that you have already started submitting, your [ShortDesc of H] refuses to let you start resisting. Instead the attempt just fills you with feelings of guilt for not trying harder to prevent [NameDesc of M] from using you!";
+		say "Now that you have already started submitting, your [ShortDesc of H] refuses to let you start holding back. Instead the attempt just fills you with feelings of guilt for not trying harder to prevent [NameDesc of M] from using you!";
 		try submitting instead;
 	otherwise if there is a live thing penetrating asshole and a random number between 14 and 19 < the anal sex addiction of the player * 2:
 		say "You love anal sex too much, you can't will yourself to even [i]pretend[/i] to resist right now!";
@@ -118,7 +118,7 @@ Check resisting:
 		say VampResistRefusalFlav;
 		now forced submit is 1;
 		try submitting instead;
-	otherwise if the player is in DiamondLessonBlindfolded:
+	otherwise if the player is in DiamondTrainingSessionBlindfolded:
 		say "This will probably cause you to fail the initiation. Is that what you want? ";
 		if the player is not consenting, say "Action cancelled." instead;
 	otherwise if the player is friendly fucked and friendly-confirmation is 0:
@@ -144,8 +144,8 @@ Report resisting:
 	let M be a random thing grabbing the player;[prioritise anyone holding the player down]
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritise anyone inside the player]
 	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
-	if pledge-lesson-resist is implanted and the raw intelligence of the player > 1:
-		say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters.[roman type][line break][bold type]The magic pledge you've just broken activates![roman type] [one of]You blink, feeling a wave of confusion wash through your thoughts.[or]Once again your thoughts swim, getting all muddled.[or]You feel more stupid, [second custom style]like a dumb useless slut.[roman type][line break][stopping]";
+	if pledge-training-hold-back is implanted and the raw intelligence of the player > 1:
+		say "[second custom style][if legacy content is 1]Only a dumb useless slut resists the will of [his of the player] masters[otherwise]Only an fool would resist the pleasures of the flesh[end if].[roman type][line break][bold type]The magic pledge you've just broken activates![roman type] [one of]You blink, feeling a wave of confusion wash through your thoughts.[or]Once again your thoughts swim, getting all muddled.[or]You feel more stupid, [second custom style]like a dumb useless slut.[roman type][line break][stopping]";
 		IntDown 1;
 	unless M is nothing:
 		if the player is friendly fucked:
@@ -155,7 +155,7 @@ Report resisting:
 			if M is penetrating penis and M is not normal-penis-fucking:
 				say TQMasturbationResistFlav of M;
 			otherwise if M is penetrating a body part or M is grabbing the player:
-				say SexResistFlav of M;
+				say SexHoldBackFlav of M;
 				if M is monster, compute sex resist punishment of M;
 			otherwise if M is wrangling a body part:
 				compute wrangled resisting of M;
@@ -188,9 +188,33 @@ To compute WrangleResistSuccess of (T - a thing):
 To say WrangleResistSuccessFlav of (T - a thing):
 	say "You force [NameDesc of T] to let you go!".
 
+To say SexHoldBackFlav of (T - a thing):
+	if legacy content is 1:
+		say SexResistFlav of T;
+	otherwise if diaper quest is 1:
+		say DQResistFlav of T;
+	otherwise:
+		say HoldBackFlav of T.
+
+To say HoldBackFlav of (T - a thing):
+	say DefaultResistFlav of T.
+
+To say HoldBackFlav of (M - a monster):
+	if M is penetrating a fuckhole or (the sensitivity of breasts > 5 and M is penetrating breasts):
+		if the relevant sex addiction of M < a random number between 11 and 13:
+			say "You [one of]try to focus on anything except how good [NameDesc of M] is making you feel.[or][if player-breathing is false]clench your fists and hold your breath[otherwise]do your best to regulate your breathing[end if].[or][if player-breathing is false]clench your jaw as you hold your breath[otherwise]take long, deep breaths to try and fight against the pleasure[end if].[or]do you best to ignore the pleasure building up inside of you.[or][if M is intelligent]look away from [NameDesc of M], refusing to give [him of M] the satisfaction of seeing pleasure on your face[otherwise]try not to think about how this [ShortDesc of M] is making you feel so good[end if].[or]do your best to not let your feelings of pleasure show on your face.[or]keep your expression as neutral as you can, despite the delightful sensations down below.[in random order]";
+		otherwise if the player is able to speak:
+			say "[variable custom style]'[one of]Haaaah... Ha hah... [or]Oooh, [at random][one of]is that all you've got?'[or]you're not gonna make me cum like that!'[or]is that the best you can do?'[or]can'y you go any faster?'[or]you fuck like a wimp!'[or]I've had [one of]bigger[or]rougher[or]better[cycling]!'[in random order][line break]You [one of]taunt[or]tease[or][if M is intelligent]do your best to rile up[otherwise]jeer at[end if][at random] [NameDesc of M].";
+		otherwise:
+			say "[variable custom style][gag sounds][roman type][line break]You make playful noises as you try to hold back the tides of pleasure coursing through you.";
+	otherwise if M is penetrating a body part:
+		say "You [one of]remain passive, forcing [NameDesc of M] to do all the work[or]refuse to work hard for [NameDesc of M][']s pleasure[or]be helpful, and just stay still and let it happen[or]let your body go limp, forcing [NameDesc of M] to use you like a doll[cycling].";
+	otherwise:
+		say "You remain [one of]limp[or]unmoving[or]unflinching[or]neutral[in random order] and passive.".
+
 To say SexResistFlav of (T - a thing):
 	if diaper quest is 1, say DQResistFlav of T;
-	otherwise say "[if T is penetrating a body part][one of]You struggle in vain to free yourself![or]You try to crawl away but are being held in place![or]You resist being used as much as you can![purely at random][otherwise][DefaultResistFlav of T][end if]".
+	otherwise say DefaultResistFlav of T.
 
 To say TQMasturbationResistFlav of (T - a thing):
 	say "[one of]You fight against your impending orgasm![or]You try your best to ignore the pleasurable sensations![or]You do your best to hold back from letting yourself cum![or][variable custom style][if the player is horny]Fuck, if I'm not careful, I'm gonna cum[otherwise]Think unsexy thoughts[end if]![roman type][line break][at random]".
@@ -215,6 +239,9 @@ To say DQResistFlav of (M - a monster):
 	otherwise if M is masturbating the player:
 		say DQMasturbationResistFlav of M;
 		say DQMasturbationResistReactionFlav of M;
+	otherwise if M is knee bouncing the player:
+		say DQKneeBounceResistFlav of M;
+		say DQKneeBounceResistReactionFlav of M;
 	otherwise if M is feeding the player:
 		say DQFeedingResistFlav of M;
 		say DQFeedingResistReactionFlav of M;
@@ -265,13 +292,26 @@ To say DQMasturbationResistFlav of (M - a monster):
 To say DQMasturbationResistReactionFlav of (M - a monster):
 	say "". [Can be customised for specific NPCs]
 
+To say DQKneeBounceResistFlav of (M - a monster):
+	if player-knee-grinding is false, say "[one of]You shift your [if there is a worn diaper]padded [end if]loins left to right, trying to get off [NameDesc of M][']s knee[or]You flail your legs in rebellion[or]You try to shake away from [NameDesc of M][']s grip on your torso, but [he of M][']s holding you much too tight[in random order]!";
+	otherwise say "You do your best to pull away from [NameDesc of M][']s knee!";
+	if the player is able to speak:
+		if player-knee-grinding is false, say "[variable custom style]'[if there is worn perceived messed knickers][one of]This is really gross[or]Stop, there's poop down there[or]This is disgusting[or]I need a change[in random order][otherwise if there is worn perceived wet knickers][one of]It's all wet and gross[or]Not while I'm wet[or]This doesn't feel right[or]It's not dry[in random order][otherwise][one of]This is so degrading[or]I'm not a baby[or]Let me down[or]Get off[in random order][end if]!'[roman type][line break]";
+		otherwise say "[variable custom style]'[one of]I don't want to cum like this[or]This is wrong[or]No way[in random order]!'[roman type][line break]";
+	otherwise:
+		say "[variable custom style][muffled sounds][roman type][line break]".
+
+To say DQKneeBounceResistReactionFlav of (M - a monster):
+	say "". [Can be customised for specific NPCs]
+
 To say DQFeedingResistFlav of (M - a monster):
 	say DefaultResistFlav of M.
 To say DQFeedingResistReactionFlav of (M - a monster):
 	say "". [Can be customised for specific NPCs]
 
 To say DefaultResistFlav of (T - a thing):
-	say "You struggle in vain to free yourself!".
+	if T is penetrating a body part, say "You [one of]refuse to give in[or]scrunch your eyes tight and grimace[or]clench your jaw and hold your body still[or]squeeze your fists tight and knuckle down[at random]!";
+	otherwise say "You [one of]wriggle[or]struggle[or]pull back[at random]!".
 To say DefaultResistReactionFlav of (T - a thing):
 	say "". [Can be customised for specific NPCs]
 
@@ -279,26 +319,27 @@ To compute sex resist punishment of (M - a monster):
 	now resist-target is M;
 	choose a sex resist punishment.
 
-Understand "resist", "fight back", "escape", "run", "fight", "nono", "noway", "nn" as resisting.
+Understand "hold back", "pull back", "resist" as resisting.
 
 To say ForcedSubmitFlav:
-	say "You can't bring yourself to resist!".
+	say "You can't bring yourself to hold back!".
 
 To say PainResRefusalFlav of (M - a monster):
-	say "[one of]It hurts too much! You know resisting will only make it worse, so you focus on making it hurt as little as possible![or]You can't endure any more pain! There's no way you're going to make it worse by resisting![or]Resisting will only make it hurt more! You can't bring yourself to do anything but sit there and take it![at random]".
+	say "[one of]It hurts too much! You know being awkward will only make it worse, so you focus on making it hurt as little as possible![or]You can't endure any more pain! There's no way you're going to make it worse by continuing to hold back![or]Holding back will only make it hurt more! You can't bring yourself to do anything but sit there and take it![at random]".
 
 To say DelicateResRefusalFlav of (M - a monster):
-	say "[one of]You lie there and take it anyway - you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You're too afraid of what could happen if you put up a fight! There's no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is gendered male]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
+	if legacy content is 1, say "[one of]You lie there and submit to the pleasure anyway - you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You're too submissive! There's no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare refuse to submit now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is gendered male]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]";
+	otherwise say "You feel too submissive to be a brat about it right now!";
 
 To say OralAddResRefusalFlav of (M - a monster):
-	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is gendered female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M][']s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
+	say "[one of]You try to hold back, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to hold back, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to hold back. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to hold back knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is gendered female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M][']s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
 
 To say OralSlutResRefusalFlav of (M - a monster):
-	if M is male, say "[one of][if the oral sex addiction of the player < 6]No matter how hard you try, you can't keep yourself from desperately suckling [his of M] [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the oral sex addiction of the player < 6]You hate yourself for it, but you can't help suckling [his of M] [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's such a big, yummy [manly-penis] in your mouth.[end if][in random order]";
-	otherwise say "You just can't bring yourself to resist; you love oral sex so much!".
+	if M is male, say "[one of][if the oral sex addiction of the player < 6]No matter how hard you try, you can't keep yourself from desperately suckling [his of M] [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the oral sex addiction of the player < 6]You hate yourself for it, but you can't help suckling [his of M] [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to hold back. Not when there's such a big, yummy [manly-penis] in your mouth.[end if][in random order]";
+	otherwise say "You just can't bring yourself to hold back; you love oral sex so much!".
 
 To say ThirstResRefusalFlav of (M - a monster):
-	say "[one of]You want to resist, you really do, but you're just so thirsty...[or]You tell yourself to resist, but your body needs something to drink, and it knows where to get it from.[or]You can't stop now. Now when you're so close to something that can wet your throat...[or]You can't bring yourself to resist [NameDesc of M] knowing that [if M is a balls-haver][his of M] balls are so full of[otherwise][he of M] can shoot out[end if] something to drink.[or][if the player is feeling dominant]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
+	say "[one of]You want to hold back, you really do, but you're just so thirsty...[or]You tell yourself to hold back, but your body needs something to drink, and it knows where to get it from.[or]You can't stop now. Now when you're so close to something that can wet your throat...[or]You can't bring yourself to hold back [NameDesc of M] knowing that [if M is a balls-haver][his of M] balls are so full of[otherwise][he of M] can shoot out[end if] something to drink.[or][if the player is feeling dominant]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
 
 Part - Resist Punishments
 
@@ -362,17 +403,21 @@ warning-punishment is a sex resist punishment. The priority of warning-punishmen
 
 To decide which number is the resist impatience of (M - a monster):
 	decide on 8. [At this number of favour, they are going to get mad at further resisting, and do an angry punishment afterwards]
+To decide which number is the resist impatience of (M - matron):
+	decide on 100.
+To decide which number is the resist impatience of (M - a patron):
+	decide on 100.
 
 Definition: a monster is eager to warn angrily: decide no.
 [oral sex often has its own penalties for oral resisting so we don't need to double up on that here]
 Definition: a monster (called M) is classicly eager to warn angrily:
 	if M is not intelligent, decide no;
-	if diaper quest is 1 and M is not changing the player, decide yes;
+	if diaper quest is 1 [and M is not changing the player], decide yes;
 	if M is penetrating a fuckhole or M is penetrating breasts, decide yes;
 	decide no.
 
 Definition: warning-punishment (called P) is appropriate:
-	if resist-target is eager to warn angrily and the resist impatience of resist-target >= the favour of resist-target [and a random number between 1 and 2 is 1], decide yes;
+	if resist-target is eager to warn angrily and the resist impatience of resist-target >= the favour of resist-target, decide yes;
 	decide no.
 
 To compute punishment of (P - warning-punishment):
@@ -389,10 +434,11 @@ To compute punishment of (P - warning-punishment):
 	otherwise:
 		compute sex resist no more warnings of resist-target;
 		FavourDown resist-target;
-	increase the times-warned of resist-target by 1.
+	increase the times-warned of resist-target by 1;
+	if (resist-target is matron or resist-target is patron) and the times-warned of resist-target >= 3, aggravate resist-target.
 
 To compute sex resist initial warning of (M - a monster):
-	say "[speech style of M]'[one of]If you keep this up, I'll just have to punish you further.'[or]Stop resisting, or else!'[or]If you keep resisting, I'll make you regret it.'[or]Submit to me willingly, or else I'll MAKE you.'[in random order][roman type][line break][BigNameDesc of M] [one of]snarls[or]snaps[or]growls[at random] at you in warning.".
+	say "[speech style of M]'[one of]If you keep this up, I'll just have to punish you further.'[or]Stop holding back, or else!'[or]If you keep holding back, I'll make you regret it.'[or]Submit to me!'[in random order][roman type][line break][BigNameDesc of M] [one of]snarls[or]snaps[or]growls[at random] at you in warning.".
 
 To compute sex resist final warning of (M - a monster):
 	say "[speech style of M]'[one of]Do not test me, [if diaper quest is 0]bitch[otherwise]child[end if].'[or]My patience has reached its limit!'[or]Don't you dare defy me a moment longer...'[or]I'm fed up of giving you warnings. What happens next is your own fault.'[in random order][roman type][line break]That sounds like [NameDesc of M][']s final warning...".
@@ -405,7 +451,7 @@ To compute post sex punishment of (M - a monster):
 	compute angry post sex punishment of M.
 
 To say AngryPostSexPunishmentFlav of (M - a monster):
-	say "[speech style of M]'[one of]I warned you there would be further consequences for resisting...'[or]And now I shall discipline you for your insolence.'[or]This is for failing to submit when I demanded it.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]I warned you there would be further consequences for refusing to submit...'[or]And now I shall discipline you for your insolence.'[or]This is for failing to submit when I demanded it.'[in random order][roman type][line break]".
 
 To compute angry post sex punishment of (M - a monster):
 	compute default angry punishment of M.
@@ -439,10 +485,10 @@ To compute punishment of (P - anger-punishment):
 	compute sex resist anger of resist-target.
 
 To compute sex resist anger of (M - a monster):
-	if diaper quest is 1 and M is intelligent:
+	[if diaper quest is 1 and M is intelligent:
 		say DQResistChastise of M;
-	otherwise:
-		say "[BigNameDesc of M] [one of]snarls[or]growls[or]frowns[or]harrumphs[or]shouts in annoyance[at random]. It looks like all you've managed to do is [one of]anger [him of M] further[or]piss [him of M] off[or]increase [his of M] animosity towards you[at random].";
+	otherwise:]
+	say "[if diaper quest is 0][BigNameDesc of M] [one of]snarls[or]growls[or]frowns[or]harrumphs[or]shouts in annoyance[at random]. [end if]It looks like all you've managed to do is [one of]anger [him of M] further[or]piss [him of M] off[or]increase [his of M] animosity towards you[at random].";
 	FavourDown M.
 
 To say DQResistChastise of (M - a monster):

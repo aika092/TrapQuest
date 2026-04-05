@@ -673,11 +673,17 @@ To WaterSoak (C - a clothing):
 To CumFaceUp (X - a number):
 	AnnouncedSquirt semen On Face By X.
 
+To compute hair cum dribbling: [currently only happens when triggered manually]
+	now hair is soaked; [cum can't come straight back to the hair]
+	decrease the semen coating of hair by 1;
+	say "A glob of [semen] drips down from your hair onto your face. ";
+	AnnouncedSquirt semen on face by 1.
+
 To compute face cum dribbling:
 	now face is soaked; [cum can't come straight back to the face]
 	decrease the semen coating of face by 1;
 	say "Globs of [semen] drip down from your chin onto your [BreastDesc]. ";
-	AnnouncedExpel semen on breasts by 1.
+	AnnouncedSquirt semen on breasts by 1.
 
 To compute tits cum dribbling:
 	now breasts is soaked; [cum can't come straight back to the breasts]

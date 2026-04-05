@@ -469,9 +469,6 @@ To say SexSubmissionFlav of (M - djinn): [this is customised because I rewrote t
 	otherwise:
 		say "[one of]You allow [NameDesc of M] to violate you as much as [he of M] likes. [big he of M]'s in charge![or]You relax and enjoy the feeling of [NameDesc of M][']s [LongDickDesc of M].[at random]".
 
-To say SexResistFlav of (M - djinn):
-	say "[one of]You hopelessly flail against [NameDesc of M][']s grip, doing everything you can to resist the invasion.[or]You seem to be being held still by some kind of magical force, leaving you with no real way of resisting, but you still try![or]You flail around and make as much noise as you can, but no matter how much you try, you can't do anything about [NameDesc of M][']s powerful pistoning.[or]You fight against the [if interracial fetish is 1 and M is penetrating a fuckhole]pleasure that [his of M] [LongDickDesc of M] is sending through your sensitive hole[otherwise][M][end if] but it's no use, you can't do anything to stop the action![in random order]".
-
 To say angry punishment insult of (M - djinn):
 	if M is not friendly-fucking:
 		say "[first custom style]'You dare to disrespect me?! Learn your place, worm.'[roman type][line break]";

@@ -289,7 +289,7 @@ To uniquely set up (C - living belt of sturdiness):
 
 Definition: living belt of sturdiness is transformation-protected: decide yes.
 
-To compute school periodic effect of (I - living belt of sturdiness):
+To compute facility periodic effect of (I - living belt of sturdiness):
 	compute periodic effect of I.
 
 To compute periodic effect of (I - living belt of sturdiness):

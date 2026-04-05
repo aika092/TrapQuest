@@ -6,7 +6,7 @@ Definition: a thing is in-play:
 	if it is off-stage or it is in Holding Pen or it is in Predicament-Pen, decide no;
 	decide yes.
 Definition: a thing is containerRelevant: [should it be considered when counting how many of this item are available to the player right now?]
-	if it is not in-play or it is not unowned or it is in a container or it is in School15, decide no;
+	if it is not in-play or it is not unowned or it is in a container or it is in Facility15, decide no;
 	decide yes.
 Definition: a thing is containerAvailable: [can it appear in a container?]
 	if it is off-stage, decide yes;
@@ -112,7 +112,7 @@ To compute generic treasure to (X - a thing):
 			compute autotaking Z;
 		otherwise:
 			say "Oh no, it's empty. Boo!";
-	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < chest-luck + 100 - (10 * (the number of in-play rare clothing - the number of rare clothing in School15)):
+	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < chest-luck + 100 - (10 * (the number of in-play rare clothing - the number of rare clothing in Facility15)):
 		let C be a random off-stage rare fetish appropriate clothing;
 		now C is in X;
 		if C is bra, compute found size of C;
@@ -197,9 +197,13 @@ To compute autotaking (I - a thing):
 			say "[one of][bold type]You won't automatically pick stuff up when you have a risk of tripping over because of your heels and wrist bondage.[roman type][line break][or][stopping]";
 		otherwise:
 			let autotakeYes be 1;
+			if I is lubricant, now slut-lube is not summon-ready;
 			if (I is never-in-bag or the number of worn bag of holding is 0) and the outrage of I > 2 and (((diaper quest is 0 or the appearance of the player >= the cringe appearance of the player) and the outrage of I >= the appearance of the player) or (diaper quest is 1 and the cringe of I >= the cringe appearance of the player and the cringe appearance of the player >= the appearance of the player)):
 				say "[if there is a worn bag of holding][BigNameDesc of I] can't go in your bag, so it[otherwise]Picking up [NameDesc of I][end if] will negatively affect your appearance. Do you want to pick it up?";
-				if the player is not consenting, now autotakeYes is 0;
+				if the player is not consenting:
+					now autotakeYes is 0;
+				otherwise if I is lubricant:
+					now slut-lube is summon-ready;
 			if autotakeYes is 1:
 				now autotake-target is I;
 				now another-turn is 1;
@@ -222,12 +226,13 @@ This is the autotaking continues rule:
 				if I is worn:
 					do nothing;
 				otherwise if (I is autobinding clothing or I is spookiness clothing) and the player is not in a predicament room and I is unclash summonable:
-					say "[bold type]Suddenly, [NameDesc of I] disappears from your hands![roman type][line break]";
+					say "[bold type]Suddenly, [NameDesc of I] [if I is slap ready]seals itself to[otherwise]disappears from[end if] your hands![roman type][line break]";
 					if I is spookiness, spookify I;
 					otherwise autobind I;
 				otherwise:
 					if I is not never-in-bag, say "You add the [FullTitle of I] to your bag.";
 					otherwise say "You are now carrying the [FullTitle of I].";
+					if I is lubricant, check slut lube forced hold of I;
 					if I is clothing and the bimbo of the player > a random number between 11 and 18, compute automatic wearing of I.
 				[now another-turn is 1.]
 

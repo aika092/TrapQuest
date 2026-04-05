@@ -11,7 +11,7 @@ To say ShortDesc of (C - a vibrator):
 To say ClothingDesc of (C - a vibrator):
 	say "A vibrating dildo[if C is worn]. Its vibrations are slowly driving you insane![otherwise].[end if]".
 
-To compute school periodic effect of (V - a vibrator):
+To compute facility periodic effect of (V - a vibrator):
 	compute periodic effect of V.
 
 To compute periodic effect of (P - a vibrator):
@@ -34,13 +34,15 @@ To compute periodic effect of (P - a vibrator):
 				say "[one of]Your [ShortDesc of P] is vibrating just slowly enough to stimulate you without getting you any closer to an orgasm. It's maddening![or][or]Your [ShortDesc of P] continues to stimulate you.[or][cycling]";
 				passively stimulate F from P;
 			otherwise:
-				if P is clit-taped wired-vibe or the soreness of F > 7 or (the soreness of F > 2 and F is vagina):
+				let OF be the openness of F + a random number between 0 and 4;
+				if P is clit-taped wired-vibe or the soreness of F > 7 or (the soreness of F > 2 and F is vagina) or (the player is in a predicament room and OF >= the size of P): [we don't want vibrators to create insane levels of soreness, especially in predicament zones where they activate 5 times as frequently]
 					if P is clit-taped wired-vibe, say "Your [ShortDesc of P] is [one of]stimulating[or]buzzing against[or]vibrating on[cycling] your clit!";
 					otherwise say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more aroused![or]Your [ShortDesc of P] continues to buzz away inside your [variable F]![or]Your [ShortDesc of P] is still vibrating strongly inside your [variable F].[cycling]";
 					stimulate F from P;
 				otherwise:
 					if diaper quest is 0, say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more sore![or]Your [ShortDesc of P] continues to ruin your [variable F]![or]Your [ShortDesc of P] is still making you sore.[cycling]";
 					otherwise say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [variable F]! Every [if P is cursed]moment[otherwise]minute[end if] it stays inside of you is making you more aroused![or]Your [ShortDesc of P] continues to buzz away inside your [variable F]![or]Your [ShortDesc of P] is still vibrating strongly inside your [variable F].[cycling]";
+					stimulate F from P;
 					ruin F;
 				if P is cursed, arouse 200.
 
@@ -49,7 +51,7 @@ To decide which number is the original price of (C - a vibrator):
 To decide which number is the raw-masturbation-bonus of (C - a vibrator):
 	decide on 3.
 To decide which number is the stimulation of (T - a vibrator) on (F - a body part):
-	decide on 3.
+	decide on 2 + the square root of (the size of T).
 
 To set up magic attribute of (C - a vibrator):
 	let R be a random number between 1 and 10;
@@ -78,18 +80,18 @@ Definition: remote-controlled-vibrator is discovered varied: decide no.
 Definition: remote-controlled-vibrator is fetish appropriate: decide no. [Stops it spawning randomly]
 To say ClothingDesc of (C - remote-controlled-vibrator):
 	if current-predicament is team-girlfriends-predicament:
-		say "This hi-tech [if the player is not possessing a vagina]onahole [end if]vibrator stimulates you unless [student-name of team-predicament-partner][']s ring is touching it.";
+		say "This hi-tech [if the player is not possessing a vagina]onahole [end if]vibrator stimulates you unless [trainee-name of team-predicament-partner][']s ring is touching it.";
 	otherwise if current-predicament is not team-football-predicament:
 		say "This is a modern looking [if the player is not possessing a vagina]onahole [end if]vibrator.";
 	otherwise if the game-state of team-football-predicament is 0:
 		if current-predicament is team-football-predicament, say "This hi-tech remote controlled [if the player is not possessing a vagina]onahole vibrator wrapped around your [player-penis][otherwise]vibrator[end if] vibrates more strongly the closer it is to the football. Apparently it also has a hollow section, and the loser of the game will find their [if the player is not possessing a vagina]pants[otherwise][vagina][end if] filled to the brim with cum.";
-		otherwise say "This hi-tech [if the player is not possessing a vagina]onahole [end if]vibrator was used in an extra credit lesson.";
+		otherwise say "This hi-tech [if the player is not possessing a vagina]onahole [end if]vibrator was used in an extra credit training session.";
 	otherwise if the game-state of team-football-predicament is 1:
 		say "This hi-tech remote controlled vibrator has turned itself off.";
 	otherwise if the toy-charge of C >= 10:
 		say "This hi-tech remote controlled vibrator has run out of battery.";
 	otherwise:
-		say "A hi-tech remote controlled [if the player is not possessing a vagina]onahole [end if]vibrator that was used in the football extra credit lesson.".
+		say "A hi-tech remote controlled [if the player is not possessing a vagina]onahole [end if]vibrator that was used in the football extra credit training session.".
 To compute periodic effect of (P - remote-controlled-vibrator):
 	if current-predicament is team-girlfriends-predicament:
 		if girlfriend-partner is not snogged:
@@ -103,14 +105,13 @@ To compute periodic effect of (P - remote-controlled-vibrator):
 				stimulate F from P;
 		if the player is not in a predicament room, increase the toy-charge of P by 1;
 	otherwise if current-predicament is breastfeeding-predicament:
-		if (the player is in a predicament room and fake-baby is not settled) or the toy-charge of P < 10:
+		if (the player is in a predicament room and fake-baby is not settled) or (the player is not in a predicament room and the toy-charge of P < 10):
 			let F be vagina;
 			if the player is not possessing a vagina, now F is penis;
 			say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
 			stimulate F from P;
 		otherwise if the player is not in a predicament room:
 			if the toy-charge of P is 10, say "[bold type][BigNameDesc of P] [bold type]seems to run out of battery, and stops vibrating.[roman type][line break]";
-			now the toy-charge of P is 11;
 		if the player is not in a predicament room, increase the toy-charge of P by 1;
 	otherwise if current-predicament is team-lake-predicament:
 		if the beachball-game of team-lake-predicament is -1:

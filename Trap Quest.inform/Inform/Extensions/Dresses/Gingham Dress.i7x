@@ -3,40 +3,40 @@ Gingham Dress by Dresses begins here.
 A gingham dress is a kind of overdress. A gingham dress is usually transformation-rare. A gingham dress is usually not-top-displacable. A gingham dress is usually intelligence-influencing.
 
 Definition: a gingham dress is class-relevant:
-	if the class of the player is schoolgirl, decide yes;
+	if the class of the player is alchemist, decide yes;
 	decide no.
 Definition: a gingham dress is baby themed: decide yes.
 
-Part 1 - Gingham Schoolgirl Outfit
+Part 1 - Gingham Alchemist Outfit
 
-gingham schoolgirl outfit is a gingham dress.
+gingham alchemist outfit is a gingham dress.
 
-The printed name of gingham schoolgirl outfit is "[clothing-title-before]gingham schoolgirl outfit[clothing-title-after]". The text-shortcut of gingham schoolgirl outfit is "gso". gingham schoolgirl outfit is fully covering.
+The printed name of gingham alchemist outfit is "[clothing-title-before]gingham [alchemist-text] outfit[clothing-title-after]". The text-shortcut of gingham alchemist outfit is "gso". gingham alchemist outfit is fully covering.
 
-Figure of gingham schoolgirl outfit is the file "Items/Clothes/Upper/Special/Schoolgirl/schoolgirl5.png".
+Figure of gingham alchemist outfit is the file "Items/Clothes/Upper/Special/Alchemist/alchemist5.png".
 
-To decide which figure-name is clothing-image of (C - gingham schoolgirl outfit):
-	decide on figure of gingham schoolgirl outfit.
+To decide which figure-name is clothing-image of (C - gingham alchemist outfit):
+	decide on figure of gingham alchemist outfit.
 
-To say ShortDesc of (C - gingham schoolgirl outfit):
-	say "gingham schoolgirl outfit".
+To say ShortDesc of (C - gingham alchemist outfit):
+	say "gingham [alchemist-text] outfit".
 
-To say ClothingDesc of (C - gingham schoolgirl outfit):
-	say "A purple and white gingham schoolgirl outfit. It looks like a primary school uniform!".
+To say ClothingDesc of (C - gingham alchemist outfit):
+	say "A purple and white gingham [alchemist-text] outfit. It looks like a some sort of childish uniform. How humiliating!".
 
-To decide which number is the initial outrage of (C - gingham schoolgirl outfit):
+To decide which number is the initial outrage of (C - gingham alchemist outfit):
 	if diaper quest is 0, decide on the initial cringe of C;
 	decide on 0.
 
-To decide which number is the initial cringe of (C - gingham schoolgirl outfit):
+To decide which number is the initial cringe of (C - gingham alchemist outfit):
 	decide on 4.
 
-To decide which object is the unique-upgrade-target of (C - gingham schoolgirl outfit):
-	unless the class of the player is schoolgirl, decide on a random off-stage patterned baby dress;
+To decide which object is the unique-upgrade-target of (C - gingham alchemist outfit):
+	unless the class of the player is alchemist, decide on a random off-stage patterned baby dress;
 	decide on a random off-stage dangerously short gingham dress.
 
-Definition: gingham schoolgirl outfit is purple themed: decide yes.
-Definition: gingham schoolgirl outfit is fetish appropriate:
+Definition: gingham alchemist outfit is purple themed: decide yes.
+Definition: gingham alchemist outfit is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
 
@@ -48,7 +48,7 @@ The printed name of dangerously short gingham dress is usually "[clothing-title-
 
 There is 1 dangerously short gingham dress.
 
-Figure of dangerously short gingham dress is the file "Items/Clothes/Upper/Special/Schoolgirl/ginghamdress1.png".
+Figure of dangerously short gingham dress is the file "Items/Clothes/Upper/Special/Alchemist/ginghamdress1.png".
 
 To decide which figure-name is clothing-image of (C - a dangerously short gingham dress):
 	decide on figure of dangerously short gingham dress.
@@ -92,17 +92,17 @@ To decide which number is the defaultDiaperCoveringLength of (C - dainty dress):
 Definition: dainty dress is pink themed: decide yes.
 
 
-nursery smock is a schoolgirl outfit. The skirt-length of nursery smock is 4. nursery smock is fully covering.
+nursery smock is an alchemist outfit. The skirt-length of nursery smock is 4. nursery smock is fully covering.
 
 The printed name of nursery smock is usually "[clothing-title-before]nursery smock[clothing-title-after]". The text-shortcut of nursery smock is "nsm".
 
-Figure of nursery smock is the file "Items/Clothes/Upper/Special/Schoolgirl/schoolgirl6.png".
+Figure of nursery smock is the file "Items/Clothes/Upper/Dresses/Baby/smock1.png".
 
 To decide which figure-name is clothing-image of (C - nursery smock):
 	decide on figure of nursery smock.
 
 To say ClothingDesc of (C - nursery smock):
-	say "A very short shapeless yellow dress with school-related motifs on the childish peter pan collar.".
+	say "A very short shapeless yellow dress with facility-related motifs on the childish peter pan collar.".
 
 To decide which number is the initial outrage of (C - nursery smock):
 	if diaper quest is 0, decide on the initial cringe of C;

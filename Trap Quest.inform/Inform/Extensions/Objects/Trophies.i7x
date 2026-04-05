@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 
 @!]
 A trophy is a kind of thing. The printed name of a trophy is usually "[TQlink of item described]trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a trophy is usually "tphy". Understand "trophy" as trophy.
-Figure of trophy is the file "Env/School/trophy1.png".
+Figure of trophy is the file "Env/Facility/trophy1.png".
 
 To decide which figure-name is the examine-image of (T - trophy):
 	decide on figure of trophy.
@@ -27,7 +27,7 @@ A trophy has a number called trophy-mode.
 Definition: a trophy is necessary-in-bag: decide no. [Things that are not necessary-in-bag don't take up an item slot when the player has no bag.]
 
 Check taking trophy:
-	if the player is in School31, say "Unfortunately it seems to have been fixed in place!" instead.
+	if the player is in Facility31, say "Unfortunately it seems to have been fixed in place!" instead.
 
 TrophySwitching is an action applying to one thing.
 
@@ -53,7 +53,7 @@ Report examining a trophy:
 
 bbc-trophy is a trophy. The printed name of bbc-trophy is "[TQlink of item described]big black cock trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bbc-trophy is "bbct". Understand "big", "black", "black cock" as bbc-trophy.
 
-Figure of bbc trophy is the file "Env/School/trophy2.png".
+Figure of bbc trophy is the file "Env/Facility/trophy2.png".
 To decide which figure-name is the examine-image of (C - bbc-trophy):
 	decide on figure of bbc trophy.
 
@@ -74,7 +74,7 @@ Carry out TrophySwitching bbc-trophy:
 		now the trophy-mode of bbc-trophy is 0.
 
 pain-trophy is a trophy. The printed name of pain-trophy is "[TQlink of item described]dominatrix trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pain-trophy is "dmnt". Understand "dominatrix" as pain-trophy.
-Figure of pain trophy is the file "Env/School/trophy5.png".
+Figure of pain trophy is the file "Env/Facility/trophy5.png".
 To decide which figure-name is the examine-image of (C - pain-trophy):
 	decide on figure of pain trophy.
 
@@ -95,7 +95,7 @@ Carry out TrophySwitching pain-trophy:
 
 expel-trophy is a trophy. The printed name of expel-trophy is "[TQlink of item described]sphincter trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of expel-trophy is "spht". Understand "sphincter" as expel-trophy.
 
-Figure of expel trophy is the file "Env/School/trophy7.png".
+Figure of expel trophy is the file "Env/Facility/trophy7.png".
 To decide which figure-name is the examine-image of (C - expel-trophy):
 	decide on figure of expel trophy.
 
@@ -117,7 +117,7 @@ Carry out TrophySwitching expel-trophy:
 
 bust-trophy is a trophy. The printed name of bust-trophy is "[TQlink of item described]bust trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bust-trophy is "bstt". Understand "bust" as bust-trophy.
 
-Figure of bust trophy is the file "Env/School/trophy3.png".
+Figure of bust trophy is the file "Env/Facility/trophy3.png".
 To decide which figure-name is the examine-image of (C - bust-trophy):
 	decide on figure of bust trophy.
 
@@ -139,7 +139,7 @@ Carry out TrophySwitching bust-trophy:
 
 trip-trophy is a trophy. The printed name of trip-trophy is "[TQlink of item described]heel trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of trip-trophy is "helt". Understand "heel" as trip-trophy.
 
-Figure of trip trophy is the file "Env/School/trophy8.png".
+Figure of trip trophy is the file "Env/Facility/trophy8.png".
 To decide which figure-name is the examine-image of (C - trip-trophy):
 	decide on figure of trip trophy.
 
@@ -157,7 +157,7 @@ Carry out TrophySwitching trip-trophy:
 
 condom-trophy is a trophy. The printed name of condom-trophy is "[TQlink of item described]condom trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-trophy is "cdmt". Understand "condom" as condom-trophy.
 
-Figure of condom trophy is the file "Env/School/trophy6.png".
+Figure of condom trophy is the file "Env/Facility/trophy6.png".
 To decide which figure-name is the examine-image of (C - condom-trophy):
 	decide on figure of condom trophy.
 
@@ -178,7 +178,7 @@ Carry out TrophySwitching condom-trophy:
 		now the trophy-mode of condom-trophy is 0.
 
 ejaculate-trophy is a trophy. The printed name of ejaculate-trophy is "[TQlink of item described]semen trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of ejaculate-trophy is "smnt". Understand "semen" as ejaculate-trophy.
-Figure of ejaculate trophy is the file "Env/School/trophy4.png".
+Figure of ejaculate trophy is the file "Env/Facility/trophy4.png".
 To decide which figure-name is the examine-image of (C - ejaculate-trophy):
 	decide on figure of ejaculate trophy.
 
@@ -199,7 +199,7 @@ Carry out TrophySwitching ejaculate-trophy:
 		now the trophy-mode of ejaculate-trophy is 0.
 
 diaper-trophy is a trophy. The printed name of diaper-trophy is "[TQlink of item described]diaper trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of diaper-trophy is "dipt". Understand "diaper" as diaper-trophy.
-Figure of diaper trophy is the file "Env/School/trophy12.png".
+Figure of diaper trophy is the file "Env/Facility/trophy12.png".
 To decide which figure-name is the examine-image of (C - diaper-trophy):
 	decide on figure of diaper trophy.
 
@@ -221,7 +221,7 @@ Carry out TrophySwitching diaper-trophy:
 
 magic-trophy is a trophy. The printed name of magic-trophy is "[TQlink of item described]magic wand trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of magic-trophy is "mgwt". Understand "magic", "wand" as magic-trophy.
 
-Figure of magic trophy is the file "Env/School/trophy9.png".
+Figure of magic trophy is the file "Env/Facility/trophy9.png".
 To decide which figure-name is the examine-image of (C - magic-trophy):
 	decide on figure of magic trophy.
 
@@ -269,7 +269,7 @@ Carry out TrophySwitching magic-trophy:
 
 candy-trophy is a trophy. The printed name of candy-trophy is "[TQlink of item described]candy trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of candy-trophy is "cndt". Understand "candy" as candy-trophy.
 
-Figure of candy trophy is the file "Env/School/trophy10.png".
+Figure of candy trophy is the file "Env/Facility/trophy10.png".
 To decide which figure-name is the examine-image of (C - candy-trophy):
 	decide on figure of candy trophy.
 
@@ -289,7 +289,7 @@ Carry out TrophySwitching candy-trophy:
 
 fat-trophy is a trophy. The printed name of fat-trophy is "[TQlink of item described]fat trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fat-trophy is "fatt". Understand "fat" as fat-trophy.
 
-Figure of fat trophy is the file "Env/School/trophy11.png".
+Figure of fat trophy is the file "Env/Facility/trophy11.png".
 To decide which figure-name is the examine-image of (C - fat-trophy):
 	decide on figure of fat trophy.
 

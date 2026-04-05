@@ -477,9 +477,6 @@ To say SexSubmissionFlav of (M - Icarus):
 	otherwise:
 		say "[one of]Recognising how much it will hurt if you fall, you do your best not to resist and hope [NameDesc of M] will get bored soon.[or]As humiliating as it is to let [him of M] have [his of M] way, it's not like you can do much about it anyway.[or]You try your best not to break [NameDesc of M][']s concentration. [if F is fuckhole and the openness of F < 6]It hurts, but it would hurt more if [he of M] dropped you.[otherwise]It would hurt if [he of M] dropped you.[end if][or]You submit to being used as a plaything.[in random order]".
 
-To say SexResistFlav of (M - Icarus):
-	say "[one of]You hopelessly flail from your position in mid-air, doing everything you can to resist the invasion.[or]Since you're several feet off the ground, you have no real way of resisting, but you still try![or]You make breaststroke swimming motions with your hands in mid-air, trying something, anything to pull yourself away from [NameDesc of M]![or]You flail around and make as much noise as you can, but no matter how much you try, you can't break [NameDesc of M][']s concentration.[in random order]".
-
 Section 1 - Attack
 
 To compute the flying player taunting of (M - Icarus):

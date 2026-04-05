@@ -53,18 +53,21 @@ To say RequestFlav of (K - a specific-key):
 
 To compute (M - a monster) locking (C - a clothing) with (K - an object):
 	if C is worn:
+		if K is specific-key and K is not covering C, keyfree C;
 		say LockDeclarationFlav of M for C;
 		say LockFlav of M for C;
 		now C is locked;
 		if M is intelligent:
 			if K is specific-key:
 				now K is covering C;
-				now M is carrying K;
-				add K to the taxableItems of M;
-				[if M is student or M is staff member or M is not threatening, add K to the tradableItems of M;]
-				say LockAfterFlav of M for C;
+				if K is not carried by a monster and the owner of K is not shopkeeper:
+					now M is carrying K;
+					add K to the taxableItems of M;
+					[if M is trainee or M is staff member or M is not threatening, add K to the tradableItems of M;]
+					say LockAfterFlav of M for C;
 			say LockCommentFlav of M for C;
-		otherwise if K is specific-key:
+		otherwise if K is specific-key and K is not carried by a monster and the owner of K is not shopkeeper:
+			now K is covering C;
 			say "Then you can do nothing but watch as [NameDesc of K] surges back into the air, before flying off to another unknown part of this world. Where has it ended up? Will you be able to find it on the ground somewhere, or will someone else pick it up first?! You wish you had a way of knowing...";
 			now K is in a random placed visited roomstandard room;
 		now C is not temporarily-unlocked;
@@ -75,7 +78,9 @@ recently-used-key is an object that varies.
 
 To compute (M - a monster) keylocking (C - a clothing):
 	now recently-used-key is random off-stage specific-key;
-	if recently-used-key is a thing, compute M locking C with recently-used-key.
+	repeat with K running through specific-keys covering C:
+		now recently-used-key is K;
+	compute M locking C with recently-used-key.
 
 To say LockDeclarationFlav of (M - a monster) for (C - a clothing):
 	if M is intelligent, say "[speech style of M]'[one of]I reckon this will do wonders for your obedience.'[or]Hold still, this will only take a moment...'[or]If I have anything to say about it, you'll be wearing this for a long time...'[in random order][roman type][line break]".
@@ -85,7 +90,17 @@ To say LockFlav of (M - a monster) for (C - a clothing):
 To say LockAfterFlav of (M - a monster) for (C - a clothing):
 	say "[BigNameDesc of M] keeps the key!".
 To say LockCommentFlav of (M - a monster) for (C - a clothing):
-	if C is not temporarily-unlocked, say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you'd better start acting right.'[or]If you ever want that removed, you'd better start behaving yourself.'[in random order][roman type][line break]".
+	let X be M;
+	repeat with Z running through specific-keys covering C:
+		let N be a random monster holding Z;
+		if N is a monster, now X is N;
+	if M is not X:
+		say "[speech style of M]'[one of]The proper key for this lock is still out there somewhere.'[or]I'll leave the same keyholder in charge of this lock.'[or]Someone had you locked in this on purpose; it would not be right for me to free you without consulting them.'[in random order][roman type][line break]";
+	otherwise if C is not temporarily-unlocked:
+		say DefaultLockCommentFlav of M.
+
+To say DefaultLockCommentFlav of (M - a monster):
+	say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you'd better start acting right.'[or]If you ever want that removed, you'd better start behaving yourself.'[in random order][roman type][line break]".
 
 Definition: a monster (called M) is currently keyholding:
 	repeat with K running through specific-keys held by M:
@@ -159,6 +174,9 @@ To lock (C - diaper-stack):
 	if D is clothing, now D is locked;
 	now C is locked.
 
+To temporarily unlock (C - a clothing):
+	now C is unlocked;
+	now C is temporarily-unlocked.
 To unlock (C - a clothing):
 	now C is unlocked;
 	keyfree C.
@@ -195,25 +213,25 @@ A later time based rule (this is the defeated prison guard key rule):
 	if prison guard is defeated and prison guard is alive and prison guard is in the location of the player:
 		add skeleton key to the tradableItems of prison guard, if absent.
 
-academy-toilet-key is an unlock-key.
-The printed name of academy-toilet-key is "[TQlink of item described]academy toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of academy-toilet-key is "akey". Understand "academy toilet", "toilet key" as academy-toilet-key.
+facility-toilet-key is an unlock-key.
+The printed name of facility-toilet-key is "[TQlink of item described]training facility toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of facility-toilet-key is "akey". Understand "training facility toilet", "toilet key" as facility-toilet-key.
 Figure of toilet key is the file "Items/Collectibles/key4.png".
-To decide which figure-name is the examine-image of (K - academy-toilet-key):
+To decide which figure-name is the examine-image of (K - facility-toilet-key):
 	decide on Figure of toilet key.
-To say ExamineDesc of (B - academy-toilet-key):
-	say "This key unlocks the padlocks in the academy's toilets.".
-To decide which number is the bartering value of (K - academy-toilet-key) for (M - headmistress):
+To say ExamineDesc of (B - facility-toilet-key):
+	say "This key unlocks the padlocks in the training facility's toilets.".
+To decide which number is the bartering value of (K - facility-toilet-key) for (M - mistress):
 	if M is unfriendly, decide on 1;
 	decide on 10.
-To compute resolution of (M - headmistress) taking (T - academy-toilet-key):
+To compute resolution of (M - mistress) taking (T - facility-toilet-key):
 	if M is unfriendly:
 		say MonsterTakeFlav of M to T;
 		satisfy M;
 	otherwise:
 		say MonsterTakeFlav of M to T.
-To say FriendlyOfferFlav of (T - academy-toilet-key):
+To say FriendlyOfferFlav of (T - facility-toilet-key):
 	say "'I'm all done now.'".
-To say MonsterOfferAcceptFlav of (M - headmistress) to (T - academy-toilet-key):
+To say MonsterOfferAcceptFlav of (M - mistress) to (T - facility-toilet-key):
 	say "[speech style of M]'Good [boy of the player].'[roman type][line break]".
 
 
@@ -236,5 +254,33 @@ bike-lock-key is an unlock-key.
 The printed name of bike-lock-key is "[TQlink of item described]bike lock key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bike-lock-key is "blkey". Understand "bike", "lock", "lock key" as bike-lock-key.
 To say ExamineDesc of (B - bike-lock-key):
 	say "This small key unlocks the bike lock in the women's toilets.".
+
+A lockbox is a kind of collectible. Understand "lockbox", "box" as a lockbox.  A lockbox has an object called the locked-object.
+
+timed-lockbox is a lockbox. The printed name of timed-lockbox is "[TQlink of item described]timed lockbox ([lock-countdown of item described] seconds)[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of timed-lockbox is "tlb". Understand "timed" as timed-lockbox. timed-lockbox has a number called lock-countdown.
+
+Figure of timed lockbox is the file "Items/Collectibles/lockbox1.png".
+To decide which figure-name is the examine-image of (T - timed-lockbox):
+	decide on Figure of timed lockbox.
+
+To say ExamineDesc of (T - timed-lockbox):
+	say "A small locked box with an automatic timer until it opens. Its display shows that it has [lock-countdown of T] seconds remaining[if playerRegion is facility]. Due to some weird timey wimey rules, it seems like the timer doesn't progress while you're in the [training halls].".
+
+A time based rule (this is the timed lockbox rule):
+	if timed-lockbox is on-stage:
+		decrease the lock-countdown of timed-lockbox by time-seconds;
+		if the lock-countdown of timed-lockbox <= 0:
+			let C be the locked-object of timed-lockbox;
+			if C is a thing:
+				if timed-lockbox is carried or timed-lockbox is in the location of the player, say "[bold type]The timed lockbox pops open! [roman type]Inside is a [MediumDesc of C].";
+				if timed-lockbox is carried:
+					now C is carried by the player;
+					focus-consider C;
+				otherwise:
+					now C is in the location of timed-lockbox;
+			destroy timed-lockbox.
+
+
+
 
 Skeleton Key ends here.

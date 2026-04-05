@@ -386,7 +386,7 @@ Definition: an acolyte (called M) is uniquely distracted:
 		if L is a thing and L is not lever-pulled and ((player-currently-resting is 1 and M is in the location of the player) or a random number between 1 and 3 is 1):
 			compute L pull of M;
 			decide yes;
-		otherwise if L is a thing and L is lever-pulled and player-currently-resting is 1 and milking is 0 and there is worn actually nipple covering clothing:
+		otherwise if L is a thing and L is lever-pulled and player-currently-resting is 1 and M is in the location of the player and milking is 0 and there is worn actually nipple covering clothing:
 			compute L pull of M;
 			decide yes;
 	decide no.
@@ -692,6 +692,20 @@ To compute standard damage of (M - a mindless acolyte):
 					now DOR is R;
 			now deep one is in DOR. [the furthest away room]
 
+To say DamageReaction (N - a number) of (M - a mindless acolyte):
+	if M is unleashed:
+		if N > (the maxhealth of M / 4) * 3:
+			say DamageReactHealthy of M;
+		otherwise if N > (the maxhealth of M / 4) * 2:
+			say DamageReactDamaged of M;
+		otherwise if N > (the maxhealth of M / 4):
+			say DamageReactTired of M;
+		otherwise if diaper quest is 0 and M is dominantSexReady:
+			say DamageReactSubmissive of M;
+			if newbie tips is 1, say "[one of][newbie style]Newbie tip: Looks like the [he of M] would rather fuck than fight! You may be able to dominate [him of M] if you defeat [him of M]!'[roman type][line break][or][stopping]";
+		otherwise:
+			say DamageReactWeak of M.
+
 To say DamageReactHealthy of (M - an acolyte):
 	say "[big he of M] doesn't seem to notice any injury!".
 
@@ -722,7 +736,7 @@ To say BanishFleeFlav of (M - an acolyte):
 			let N be the target-abductee of M;
 			say "You recognise that voice - it's [NameDesc of N]!";
 			now N is previously-cultist;
-			if N is student:
+			if N is trainee:
 				say "[BigNameDesc of N] seems to be regaining some of [his of N] senses. [big he of N] flees towards the mansion entrance, likely never to be seen again.";
 			otherwise:
 				say "[BigNameDesc of N] seems to be regaining some of [his of N] senses. [big he of N] flees towards the mansion entrance, back out into the Woods.";

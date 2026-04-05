@@ -240,7 +240,7 @@ Intimacy with 90% bestial partner (hellhound): 11
 Messy diapers on face: 11
 Drinking / eating other anal food or enemas: 12
 Made to wear someone else's messy diaper: 12
-Someone else directly essing in your diaper: 13
+Someone else directly messing in your diaper: 13
 ]
 To GrossOut (X - a number):
 	say GrossOut X.

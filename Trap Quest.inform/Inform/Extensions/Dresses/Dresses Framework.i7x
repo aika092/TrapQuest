@@ -142,7 +142,7 @@ This is the skirt underdress clash rule:
 The skirt underdress clash rule is listed in the skirt wearability rules.
 
 This is the underdress removed over head rule:
-	if wearing-target is not crotch-pullup and summoning is 0:
+	if wearing-target is not crotch-pullup and summoning is 0 and gluetearing is false:
 		repeat with O running through embodied things penetrating face:
 			unless O is wearing-target:
 				if autoremove is false, say "You can't remove that while the [ShortDesc of O] is in your mouth!";
@@ -210,7 +210,7 @@ This is the overdress necklace clash rule:
 The overdress necklace clash rule is listed in the overdress wearability rules.
 
 This is the overdress removed over head rule:
-	if wearing-target is not crotch-pullup and summoning is 0:
+	if wearing-target is not crotch-pullup and summoning is 0 and gluetearing is false:
 		repeat with O running through embodied things penetrating face:
 			unless O is wearing-target:
 				if autoremove is false, say "You can't remove that while the [ShortDesc of O] is in your mouth!";

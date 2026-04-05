@@ -193,7 +193,7 @@ To decide which figure-name is Figure of princess final battle sword:
 To decide which figure-name is Figure of princess final battle sword semen:
 	decide on figure of small image.
 
-To decide which figure-name is Figure of Teacher Hannah Cutscene 2:
+To decide which figure-name is Figure of Tutor Hannah Cutscene 2:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Quiz Predicament Room:
@@ -297,7 +297,7 @@ To decide which figure-name is Figure of Egg Laying 8:
 
 To decide which figure-name is Figure of Enslaved Angela:
 	decide on figure of small image.
-To decide which figure-name is Figure of Enslaved Headmistress:
+To decide which figure-name is Figure of Enslaved mistress:
 	decide on figure of small image.
 To decide which figure-name is Figure of Enslaved Nurse:
 	decide on figure of small image.

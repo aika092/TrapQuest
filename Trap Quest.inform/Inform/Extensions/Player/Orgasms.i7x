@@ -304,7 +304,7 @@ This is the ejaculation during handjob rule:
 	if M is a monster and M is not normal-penis-fucking:
 		compute handjob orgasm of M; [See the Special Events extension]
 		rule succeeds.
-The ejaculation into clothing rule is listed last in the ejaculation rules.
+The ejaculation during handjob rule is listed last in the ejaculation rules.
 
 This is the chastity cage ejaculation rule:
 	if there is a worn chastity cage:
@@ -364,7 +364,7 @@ This is the ejaculation capture rule:
 		DoseUp collecting by A / 3;
 		now collecting is boring-origin;
 		if a random number between 1 and 5 is 1:
-			if bondage protection < 2 and the player is not immobile and collecting is waitress vessel:
+			if bondage protection < 3 and the player is not immobile and collecting is waitress vessel:
 				compute service spill punishment;
 			otherwise if there is a worn tattoo and drinkme tattoo is not worn:
 				summon drinkme tattoo;

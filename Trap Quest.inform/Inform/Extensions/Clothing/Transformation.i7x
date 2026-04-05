@@ -67,6 +67,7 @@ To decide which object is the potential-upgrade-target of (C - a clothing):
 		let O be 100;
 		repeat with D running through L2: [Find the least outrageous of the eligible transformation items. Hopefully makes the choices follow a nice sequence.]
 			let IO be the initial outrage of D;
+			if diaper quest is 1, now IO is the initial cringe of D;
 			if IO < O:
 				if debugmode > 1, say "[ShortDesc of D] has initial outrage [IO], which is lower than [O].";
 				now Z is D;

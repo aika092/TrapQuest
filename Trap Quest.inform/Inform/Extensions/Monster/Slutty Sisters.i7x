@@ -474,7 +474,7 @@ To compute damage reaction of (M - bulging-slutty-sister):
 		say "[BigNameDesc of M] jumps to [his of M] feet! [big he of M] looks very angry.[line break][variable custom style]Maybe that wasn't such a good idea...[roman type][line break]".
 
 To compute defeat of (M - bulging-slutty-sister):
-	say "[speech style of M]'Aack! [if bulging-slutty-sister is combative]I'm done for. Show [him of the player] who's boss, partner...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M] falls unconscious[if nintendolls-wand is not held and nintendolls-wand is not in the location of the player], [his of M] wand falling out of [his of M] hand[end if].";
+	say "[speech style of M]'Aack! [if futanari-slutty-sister is combative]I'm done for. Show [him of the player] who's boss, partner...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M] falls unconscious[if nintendolls-wand is not held and nintendolls-wand is not in the location of the player], [his of M] wand falling out of [his of M] hand[end if].";
 	dislodge M; [might be wrangling arms]
 	now the sleep of M is 300;
 	now the health of M is 1;

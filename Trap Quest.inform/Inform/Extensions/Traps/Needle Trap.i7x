@@ -54,7 +54,9 @@ To trigger (Y - a needle trap):
 		if the player is a flatchested trap or the player is prone or diaper quest is 1 or tutorial is 1, now target-body-part is hips;
 		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise if the player is in a heist-painting-room]a miniature turret[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise if target-body-part is hips]hip[otherwise if target-body-part is face][LipDesc][otherwise if target-body-part is vagina][vagina][otherwise][penis][end if]. ";
 		let NS be the number of worn speed clothing;
-		if a random number between 0 and NS > 0:
+		if tutorial is 1:
+			compute Y injecting into hips;
+		otherwise if a random number between 0 and NS > 0:
 			say "Your [random worn speed clothing] slows down time! You are able to twist and bend and dodge the needle at the last moment![paragraph break]";
 		otherwise if game difficulty > a random number between 0 and 5:
 			say "It contained some kind of ability reducing poison!";
@@ -159,6 +161,7 @@ To compute (Y - a needle trap) injecting into (X - hips):
 			say "Owww, that really hurt! And yet you can [one of]feel whatever it injected into you making you feel hotter and more flustered...[or]still feel the injected aphrodisiac making you hornier![stopping]";
 			if tutorial is 1, arouse 5000;
 			otherwise arouse 2500;
+			[if diaper quest is 0, HipUp 5;]
 			cutscene needle hips;
 			NeedleDelicateUp;
 	otherwise if inflation fetish is 1 and a random number between 1 and 2 is 1 and tutorial is 0:
@@ -400,7 +403,7 @@ To decide which figure-name is the triggered-image of (T - genitals-rune-trap):
 	decide on Figure of shrink rune trap triggered.
 
 To compute unique trigger of (Y - genitals-rune-trap):
-	if the player is possessing a penis and bondage protection < 2 and (the size of penis <= min penis size + 2 or the player is getting unlucky):
+	if the player is possessing a penis and bondage protection < 3 and (the size of penis <= min penis size + 2 or the player is getting unlucky):
 		let CC be a random off-stage fetish appropriate chastity cage;
 		if CC is actually summonable:
 			summon CC locked;
@@ -442,6 +445,8 @@ To compute unique trigger of (Y - polymorph-rune-trap):
 		if D is a thing:
 			say BerriCutsceneFlav;
 			quietly transform BD into D;
+			compute periodic effect of D;
+			fix berri diaper;
 			if D is blue-dungarees:
 				cutshow Figure of Berri Cutscene 14a for D;
 				say "[variable custom style]Diapered under dungarees?! [if the player is proud]This is an outrage, I haven't been dressed like this since I was a toddler![otherwise if the player is modest]I can't believe this, I look so ridiculous![otherwise if the player is not disgraced]I guess it's kind of cute... But still...[otherwise]I guess I really am just a big baby then...[end if][roman type][line break]";

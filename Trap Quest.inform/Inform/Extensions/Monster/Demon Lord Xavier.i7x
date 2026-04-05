@@ -205,9 +205,10 @@ To compute monstermotion of (M - demon lord):
 			compute room leaving of M.
 
 To compute the default taunting of (M - demon lord):
-	if nursery crib is grabbing the player and player-currently-resting is 0:
+	let NC be a random nursery crib grabbing the player;
+	if NC is a thing and player-currently-resting is 0:
 		say "[speech style of M]'NAPTIME IS OVER, SLUT!'[roman type][line break][BigNameDesc of M] unlocks the crib and roughly yanks you out.";
-		dislodge nursery crib;
+		dislodge NC;
 	otherwise:
 		say "[BigNameDesc of M] growls with impatience.".
 
@@ -225,7 +226,7 @@ To compute perception of (M - demon lord):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise if the player is soulless and the player-class is not succubus:
 		say "[first custom style]'YOU WILL SERVE AS AN IDEAL VESSEL FOR ONE OF MY SERVANTS! KNEEL AND PREPARE YOURSELF!'[roman type][line break]";
-	otherwise if ex-princess is unconcerned and ex-princess is alive and the number of monsters in the location of the player is 1 and ex-princess is not wearing golden-phallus and the player is the donator:
+	otherwise if ex-princess is unconcerned and ex-princess is alive and the number of undefeated monsters in the location of the player is 1 and ex-princess is not wearing golden-phallus and the player is the donator:
 		commence final battle;
 	otherwise if vaginalvirgin of the player is 1 and the player is possessing a vagina:
 		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH [caps boy of the player]!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, [caps boy of the player]! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
@@ -273,7 +274,9 @@ To compute bride perception of (M - demon lord):
 Part 2 - Stomp
 
 To compute (M - demon lord) stomping (N - a monster):
-	if N is female and N is not neuter:
+	if N is matron:
+		compute matron-escape from M;
+	otherwise if N is female and N is not neuter:
 		if M is in the location of the player, say "With a flick of [his of M] tail, [NameDesc of M] grabs [NameDesc of N] and pulls [him of N] towards [him of M]. Remaining fully standing, [he of M] lowers [him of N] onto [his of M] giant erect red [DickDesc of M] and starts fucking [his of N] [HoleDesc of N] furiously. [big he of N] screams in both pleasure and terror as [his of M] member almost splits [him of N] in two, and very soon [he of M] is coming inside [him of N]. [big his of N] belly visibly bulges before pints of [semen] begin to explode from around the sides of [his of M] [DickDesc of M]. After [he of M] has finished, [his of M] tail lets go of [his of N] waist and [he of N] falls to the ground, where [he of N] promptly faints.";
 		otherwise say "You hear a [man of N] shout out in a mixture of ecstasy and terror from [if N is nearby]nearby![otherwise]somewhere in the hotel![end if]";
 		destroy N;
@@ -1202,7 +1205,7 @@ To commence (F - final-battle-final-chance):
 		say "[BigNameDesc of ex-princess] tries to dodge another red demonic zap erupting from [NameDesc of demon lord][']s finger, but [he of ex-princess] is too injured, and [he of ex-princess] moves too slowly. The magic blast hits [NameDesc of ex-princess][']s dress, which immediately transforms into a too-tight and very skimpy pink bikini. [BigNameDesc of demon lord] laughs in triumph.[line break][speech style of demon lord]'YES, YES! FINALLY, MY ULTIMATE ABILITY HAS LANDED TRUE. MY VICTORY IS MOMENTS AWAY!'[line break][speech style of ex-princess]'What... have you...'[roman type][line break]And then, before saying anything else, [NameDesc of ex-princess] squeaks with dismay as [his of ex-princess] breasts and ass begin to rumble... and expand.[line break][speech style of demon lord]'HAHAHA! TRY NOT TO FALL OVER, PRINCESS, BECAUSE AS SOON AS YOU DO, YOU WILL BE AT MY MERCY!'[line break][speech style of ex-princess]'What the... Wait, [please], no!'[roman type][line break][BigNameDesc of ex-princess] is panicking, and seems unable to focus enough to cast any spells of [his of ex-princess] own. This would appear to be it. Within moments, [NameDesc of ex-princess] will have been defeated. You literally only have one chance left. Defeat [NameDesc of demon lord] yourself, right now, or lose [NameDesc of ex-princess] forever.".
 To execute (F - final-battle-final-chance):
 	if the uses of F > 3:
-		if diaper quest is 1, say "[BigNameDesc of ex-princess][']s wriggling becomes even more frantic for a few seconds, and then stops altogether. [big he of ex-princess] has passed out. And then, just as [NameDesc of demon lord] had promised, [his of ex-princess] body begins to fade away. It turns ethereal and see-through, and then is somehow sucked inside the diaper of [his of ex-princess] dark clone. The diaper becomes clean and dry again, but also [NameDesc of ex-princess] is no more. Only [his of ex-princess] evil clone remains.'";
+		if diaper quest is 1, say "[BigNameDesc of ex-princess][']s wriggling becomes even more frantic for a few seconds, and then stops altogether. [big he of ex-princess] has passed out. And then, just as [NameDesc of demon lord] had promised, [his of ex-princess] body begins to fade away. It turns ethereal and see-through, and then is somehow sucked inside the diaper of [his of ex-princess] dark clone. The diaper becomes clean and dry again, but also [NameDesc of ex-princess] is no more. Only [his of ex-princess] evil clone remains.";
 		otherwise say "[BigNameDesc of ex-princess] topples as [his of ex-princess] centre of gravity continues to shift outward... and then [he of ex-princess] face-plants onto the ground. [big he of ex-princess] won't be able to dodge anything at all, now...";
 		if extreme proportions fetish is 1, cutshow Figure of dark princess final battle defeat 6;
 		now the health of ex-princess is -9999;

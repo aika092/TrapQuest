@@ -1,0 +1,336 @@
+Spiral Traps by Traps begins here.
+
+A spiral trap is a kind of trap. cocksucker spiral trap is a spiral trap. fucktoy spiral trap is a spiral trap. BBC spiral trap is a spiral trap. milk-spiral-trap is a spiral trap. piss-spiral-trap is a spiral trap. diaper-spiral-trap is a spiral trap. A spiral trap is potentially wire. A spiral trap is potentially sticky. A spiral trap is potentially click. Understand "screen" as spiral trap. The printed name of a spiral trap is "spiral screen".
+
+This is the spawn initial dungeon spiral trap rule:
+	if legacy content is 1 and berri fetish is 0:
+		let T be a random off-stage fetish appropriate spiral trap;
+		let R be a random trappable placed labyrinth room;
+		deploy T in R.
+The spawn initial dungeon spiral trap rule is listed first in the set up dungeon traps rules.
+
+This is the spawn initial hotel spiral traps rule:
+	if legacy content is 1 and berri fetish is 0:
+		repeat with T running through off-stage fetish appropriate spiral traps:
+			let R be a random trappable placed modern room;
+			let X be 0;
+			while there is a spiral trap in R and X < 50:
+				now R is a random trappable placed modern room;
+				increase X by 1;
+			deploy T in R.
+The spawn initial hotel spiral traps rule is listed first in the set up hotel traps rules.
+
+Definition: a spiral trap is fetish appropriate:
+	if diaper quest is 1, decide no;
+	decide yes.
+
+Definition: bbc spiral trap is fetish appropriate:
+	if interracial fetish is 1, decide yes;
+	decide no.
+
+Definition: milk-spiral-trap is fetish appropriate:
+	if lactation fetish is 1, decide yes;
+	decide no.
+
+Definition: piss-spiral-trap is fetish appropriate:
+	if watersports fetish is 1, decide yes;
+	decide no.
+
+Definition: diaper-spiral-trap is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
+
+To say ExamineDesc of (T - a spiral trap):
+	say "A monitor revealed from within a hidden compartment in a wall. [if T is expired]The screen has now turned off[otherwise]On the screen is [spiral content of T]. It's difficult to look away once you start watching it[end if].".
+
+To say EnvironmentDesc of (T - a spiral trap):
+	say "A large [if T is expired]blank TV screen[otherwise if T is milk-spiral-trap]TV screen showing women's breasts being milked like cows[otherwise if T is diaper-spiral-trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a spiraltic pattern[end if] takes up a large portion of the wall in front of you. ".
+
+To say ShortDesc of (T - a spiral trap):
+	say "spiral screen".
+
+To trigger (Y - a spiral trap):
+	now Y is revealed;
+	now Y is not untriggered;
+	say "A section of the wall in front of you slides away, and behind it is a magic crystal display. Suddenly, the crystal starts playing [spiral content of Y] as if it was a giant TV screen!";
+	now the reset-timer of Y is 250.
+
+To compute turn trap effect of (T - a spiral trap):
+	say "The [printed name of T] in front of you [one of]captivates your attention[or]catches your eyes[or]once again catches your eyes[stopping]!";
+	compute spiral effect of T.
+
+To compute time decay of (T - a spiral trap):
+	if the reset-timer of T - time-seconds < 200:
+		if T is in the location of the player, say "The spiral screen finally turns itself off.";
+		if T is nearby, say "The [T] in the [location of T] finally stops.";
+		now T is expired.
+
+To say spiral content of (Y - a spiral trap):
+	say "a swirling pattern".
+
+To say spiral content of (Y - a cocksucker spiral trap):
+	say "a swirling pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars gleefully giving blowjobs to huge [manly-penis]s [if bukkake fetish is 1]and receiving massive facials[otherwise]and swallowing massive loads[end if]".
+
+To say spiral content of (Y - a fucktoy spiral trap):
+	say "a swirling pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars getting [if the player is not possessing a vagina]anally destroyed[otherwise if pregnancy fetish is 1]anally destroyed and vaginally bred[otherwise]double penetrated[end if] by huge [manly-penis]s".
+
+To say spiral content of (Y - a BBC spiral trap):
+	say "a swirling pattern, with short clips flashing constantly of porn stars worshipping and pleasuring incredibly sized black [manly-penis]s with every part of their body".
+
+To say spiral content of (Y - a milk-spiral-trap):
+	say "a swirling pattern, with short clips flashing constantly of tits being milked with industrial dairy machinery".
+
+To say spiral content of (Y - a piss-spiral-trap):
+	say "a swirling pattern, with short clips flashing constantly of women being used as urinals and swallowing [urine]".
+
+To say spiral content of (Y - a diaper-spiral-trap):
+	say "a swirling pattern, with short clips flashing constantly of adults gleefully wetting [if diaper messing >= 4]and messing [end if]their diapers and playing around in them, frequently stopping to rub their padded crotches enthusiastically".
+
+To compute spiral effect of (Y - a spiral trap):
+	let R be a random number between -6 and 19;
+	increase R by a random number between 0 and the intelligence of the player / 2;
+	if the player is immobile and R >= 0, increase R by 7; [There is always a chance of tearing eyes away even when immobile with low int]
+	if R > the intelligence of the player or the bimbo of the player > 14 or wanking is 1:
+		say "[if wanking is 1]You continue to stare at the screen, completely unable to look away. [otherwise if the bimbo of the player > 14]You don't even consider trying to look away, of course you want to watch! [otherwise if the player is immobile]Because you are held in place, you find it even more difficult to look elsewhere! [otherwise]You can't bring yourself to look away! [end if]";
+		say video content of Y;
+		compute specific spiral effect of Y;
+		if woman-player is in the location of the player:
+			compute woman spiral shared progression;
+		if the player is able to wank and the player is a bit horny and the player is not in danger and a random number between 5 and (30 - (the arousal of the player / 750)) < the sex addiction of the player and wanking is 0:
+			now auto is 1;
+			try masturbating;
+			now auto is 0;
+		arouse 750;
+	otherwise:
+		if woman-player is in the location of the player and (diaper quest is 1 or the woman-status of woman-player is not 80) and (the woman-status of woman-player is not 91 or the mechanic-scene of woman-player > 3) and woman-player is friendly and woman-player is awake:
+			say "Do you block [NameDesc of woman-player][']s vision of the screen? ";
+			if the player is reverse bimbo consenting:
+				if the woman-bimbo of woman-player > 5:
+					say "[BigNameDesc of woman-player] blinks out of [his of woman-player] trance.[line break][second custom style]'NO! NO STOPPING FUN! TAKE ME BACK!'[roman type][line break][big he of woman-player] takes an aggressive stance!";
+					now woman-player is angered;
+				otherwise:
+					say "[BigNameDesc of woman-player] blinks out of [his of woman-player] trance.[line break][second custom style]'Oh! Eek! Thank you so much for saving me, [NameBimbo]. I owe you one.'[roman type][line break]";
+					compute mandatory room leaving of woman-player;
+					bore woman-player;
+					FavourUp woman-player;
+				if the woman-status of woman-player is 94 and the delayed sluttification of woman-player >= 2, decrease the delayed sluttification of woman-player by 2;
+			otherwise:
+				compute woman spiral solo progression;
+		say "You overpower the urge and tear your eyes away from the screen, for now. You should try and leave the room before your eyes wander back!".
+
+To compute specific spiral effect of (Y - a spiral trap):
+	do nothing. [Should never happen; each spiral trap should have a function here]
+
+htrigger-tasty is a number that varies.
+htrigger-maturity is a number that varies.
+htrigger-pussy is a number that varies.
+
+To compute specific spiral effect of (Y - a cocksucker spiral trap):
+	commence animation of OralSpiralAnimation;
+	if htrigger-tasty is 0:
+		say "For some reason the word 'tasty' repeats in your head over and over and over and over. You feel that if you were to hear someone say that word out loud, you might lose control over your own actions.";
+		now htrigger-tasty is 1;
+	otherwise if the thirst of the player < 3:
+		say "You feel weirdly thirsty.";
+		StomachDown 1;
+	otherwise:
+		say "You feel an itch at the back of your throat[if the semen taste addiction of the player > 12], and you know that there's only one thing that can cure it[otherwise] for a brief moment[one of], and then it passes[or][stopping][end if].";
+	if diaper quest is 0:
+		if the oral sex addiction of the player * 2 > semen taste addiction of the player, SemenTasteAddictUp 1;
+		otherwise OralSexAddictUp 1;
+	[UrineTasteAddictUp 1.]
+
+To compute specific spiral effect of (Y - a fucktoy spiral trap):
+	if the player is gendered male:
+		commence animation of TransSpiralAnimation;
+	otherwise:
+		commence animation of DPSpiralAnimation;
+	if the player is not possessing a vagina or the anal sex addiction of the player < the vaginal sex addiction of the player:
+		if the anal sex addiction of the player * 2 <= the sex addiction of the player, AnalSexAddictUp 1;
+		otherwise SexAddictUp 1;
+	otherwise:
+		if the vaginal sex addiction of the player * 2 <= the sex addiction of the player, VaginalSexAddictUp 1;
+		otherwise SexAddictUp 1.
+
+To compute specific spiral effect of (Y - a BBC spiral trap):
+	commence animation of BBCSpiralAnimation;
+	if the raw BBC addiction of the player > the raw sex addiction of the player * 2, SexAddictUp 1;
+	BBCAddictUp 1.
+
+To compute specific spiral effect of (Y - a milk-spiral-trap):
+	commence animation of MilkSpiralAnimation;
+	if milk-squirt-orgasms is false and the sensitivity of breasts >= 4:
+		say "You feel a tingling in your nipples, as if [bold type]your orgasms are now directly linked to your breasts.[roman type][line break]";
+		now milk-squirt-orgasms is true;
+	otherwise:
+		say "[one of]Seeing the images on the screen, you can't help but crave that sensation on your own breasts.[or][or][cycling]";
+		BreastsSensitivityUp 1.
+
+To compute specific spiral effect of (Y - a piss-spiral-trap):
+	commence animation of PissSpiralAnimation;
+	say "[one of]Seeing the images on the screen, you find your own mouth opening, and your tongue feeling rather dry.[or][or][cycling]";
+	UrineTasteAddictUp 1.
+
+htrigger-please is a number that varies.
+
+To compute specific spiral effect of (Y - a diaper-spiral-trap):
+	commence animation of DiaperSpiralAnimation;
+	if the class of the player is berri and blue-dungarees is worn and the reset-timer of Y is 200:
+		DiaperAddictUp 1;
+		SexAddictUp 1;
+	otherwise if htrigger is "please" and htrigger-please is 0:
+		say "For some reason the words [second custom style]'PLEASE'[roman type] and [second custom style]'PEE'[roman type] keep echoing around in your head. You feel it ebb and settle, taking a permanent home in the deepest recesses of your mind.";
+		now htrigger-please is 1;
+		now htrigger is "";
+	otherwise if diaper messing >= 3 and the player is full and asshole is not actually occupied and there is a worn total protection soilable knickers:
+		say "Beyond your control, you feel your body bare down as you grunt.";
+		now voluntarySquatting is 1;
+		compute partial messing;
+	otherwise if the bladder of the player > 6:
+		say "You feel yourself relax.";
+		now delayed urination is 2;
+		try urinating;
+	otherwise if the raw-bladder-incontinence of the player < the max-bladder-incontinence of the player and a random number between 1 and 2 is 1:
+		BladderIncontinenceUp 1;
+	otherwise if diaper messing >= 3 and the raw-rectum-incontinence of the player < the max-rectum-incontinence of the player and a random number between 1 and 2 is 1:
+		RectumIncontinenceUp 1;
+	otherwise if the raw diaper addiction of the player < 20:
+		say "[one of][if there is a worn diaper]Seeing the images on the screen, you feel more comfortable with the idea of wearing and using your diaper. [end if][if there is a worn diaper and the diaper addiction of the player < 10]After all, if you have to go, you have to go, right?[otherwise if there is a worn diaper]After all, they're super comfy and toilets are dumb![otherwise]Part of you suddenly wishes you were wearing a diaper.[end if][if the number of worn diapers is 0 and the diaper addiction of the player < 10]At the very least, they're more convenient.[otherwise if the number of worn diapers is 0]After all, the people on the screen look like they're having so much fun![end if][or][or][cycling]";
+		SilentlyDiaperAddictUp 1.
+
+To say video content of (Y - a spiral trap):
+	say "[line break][specific video content of Y][one of]The words flash in front of your eyes and[or]Once again[stopping] [one of]they are imprinted onto your brain[or]they are burned onto the back of your skull[or]you can hear them echo throughout your mind[or]you find yourself repeating the words in your head[or]they are gone in an instant, leaving a permanent impression on your subconscious mind[in random order].".
+
+To say specific video content of (Y - a spiral trap):
+	say "[second custom style]I AM A FILTHY SLUT[roman type][line break]". [Should never happen]
+
+To say specific video content of (Y - a cocksucker spiral trap):
+	say "[second custom style][one of]I CRAVE CUM[or]FIND A [caps man of male-m][line break]DRAIN [caps his of male-m] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][or]WORSHIP THE COCK[line break]SWALLOW YOUR PRIZE[or]I CAN'T WAIT[line break]FOR [caps him of male-m] TO PAINT MY [if bukkake fetish is 1]FACE[otherwise]THROAT[end if][or]COCK TASTES GOOD[line break]CUM TASTES BETTER[or]MASSAGE [caps his of male-m] [if shopkeeper is a balls-haver]BALLS[otherwise]LOAD[end if][line break]WITH MY TONGUE[or]GOOD THINGS CUM[line break]TO THOSE WHO BEG[or]FUCK MY FACE[or]USE MY THROAT[or]OPEN WIDE[line break]TAKE [caps him of male-m] DEEP[or][caps he of male-m] LIKES IT BEST[line break]WHEN I GAG[or]IF [caps he of male-m] FEELS MY TEETH[line break]I GET A SLAP[or]I KEEP MY HANDS[line break]BEHIND MY BACK[or]I LOOK INTO [caps his of male-m] EYES[line break]AS I GAG ON [caps his of male-m] DICK[or]I CAN'T SAY NO[line break]WHEN MY MOUTH IS FULL OF DICK[or][if bukkake fetish is 1]GET COVERED IN SO MUCH CUM[line break]THAT MY EYES ARE GLUED SHUT[otherwise]GRAB MY HAIR[line break]PULL ME IN[end if][or][if bukkake fetish is 1]I KEEP [caps his of male-m] CUM ON MY FACE[line break]IT MAKES ME LOOK PRETTY[otherwise]I HOLD [caps his of male-m] CUM IN MY MOUTH[line break]TO SAVOUR THE TASTE[end if][in random order][roman type][line break]".
+
+To say specific video content of (Y - a fucktoy spiral trap):
+	say "[second custom style][one of]FILL ME UP[or]FIND A COCK[line break]RIDE IT HARD[or][caps he of male-m][']S SO STRONG[line break][caps he of male-m] DOES WHAT [caps he of male-m] WANTS[or]I CAN'T WAIT[line break]TO FEEL [caps him of male-m] INSIDE ME[or]I CAN TASTE MY ASS[line break]ON [caps his of male-m] DICK[or]ALL OF MY HOLES[line break]NEED FILLING WITH CUM[or]I WILL ONLY CUM[line break]WITH MASTER'S PERMISSION[or][if the player is possessing a penis]MY WILLY IS USELESS[line break]I NEED A REAL MAN[otherwise]MY JOB IN LIFE[line break]IS TO KEEP MY [caps cunt] WARM[end if][or]USE MY ASSHOLE[line break]AS YOUR PERSONAL [if watersports fetish is 1]URINAL[otherwise]CUM DUMP[end if][or][if pregnancy fetish is 1 and the player is possessing a vagina]BREED MY [caps cunt][line break]MAKE ME CARRY YOUR CHILD[otherwise]I DON'T USE CONDOMS[line break]SO I CAN FEEL [caps him of male-m] CUM INSIDE[end if][or]I THANK [caps him of male-m] POLITELY[line break]FOR RUINING MY ASS[or]ONE COCK IS GOOD[line break][if the player is possessing a vagina]THREE[otherwise]TWO[end if] COCKS IS BETTER[or][caps he of male-m] PULLS ON MY HAIR[line break]SO I KNOW TO GO FASTER[or]MY BELLY IS FULL[line break]OF STRANGERS['] SEMEN[or]I DON'T KNOW [caps his of male-m] NAME[line break][if pregnancy fetish is 1 and the player is possessing a vagina]BUT I'M CARRYING [caps his of male-m] KID[otherwise]BUT I RECOGNISE [caps his of male-m] DICK[end if][or][if egg laying fetish is 1 and the player is possessing a vagina]FILL MY [caps pussy] WITH CUM[line break]FILL MY BELLY WITH EGGS[otherwise]FILL MY BELLY SO MUCH[line break]THAT I CAN'T MOVE FOR HOURS[end if][or][if egg laying fetish is 1]I LET MONSTERS BREED ME[line break]WITH THEIR EGGS[otherwise]I KEEP A PLUG IN MY ASS[line break]SO I DON'T LOSE [caps his of male-m] CUM[end if][or]MY FRIENDS ARE WATCHING[line break]NOW THEY KNOW WHO I REALLY AM[or]I'M NOT A WHORE[line break]I'D FUCK ANY GUY FOR FREE[in random order][roman type][line break]".
+
+To say specific video content of (Y - a BBC spiral trap):
+	say "[second custom style][one of]BLACK IS BETTER[line break]BLACK IS BEST[or]GET BLACKED[line break]NEVER GO BACK[or]BLACK IS BIGGER[line break]BIGGER IS BETTER[or]I'M A PATHETIC SUBMISSIVE [WhiteSub in upper case][line break]BORN TO SERVE [BlackCock in upper case][or][if the player is possessing a penis]MY WHITE WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[otherwise]MY JOB IN LIFE[line break]IS TO KEEP [BlackCock in upper case] HAPPY[end if][or]THE ONLY THING BETTER THAN A [BlackCock in upper case][line break]IS TWO[or][if pregnancy fetish is 1 and the player is possessing a vagina]MY [caps cunt] IS FOR BREEDING[line break]STRONG BLACK BABIES[otherwise]I ONLY USE CONDOMS[line break]WITH BORING WHITE COCKS[end if][or]MY HOLE IS SO [if ungape is 1]GREEDY[otherwise]STRETCHED[end if][line break]ONLY [BlackCock in upper case] CAN FULFIL IT[or]ONE [BlackCock in upper case] FOR MY MOUTH[line break][if the player is possessing a vagina]TWO EACH FOR MY [caps cunt] AND ASS[otherwise]TWO FOR MY ASS[end if][or]MY [if pregnancy fetish is 1]WOMB[otherwise]BELLY[end if] IS FULL[line break]OF MY BULL'S BABY BATTER[or]I DON'T CARE WHO [caps he of male-m] IS[line break]IF [caps he of male-m][']S BLACK THEN I'M GAME[or]WHEN A BLACK [caps man of male-m] WALKS IN[line break]MY PANTIES HIT THE FLOOR[line break][or]I'LL SERVE AS A SEX SLAVE[line break]TO THE BLACK MASTER RACE[or]WHITE COCKS HAVE TO PAY[line break]BLACK ENTRY IS FREE[in random order][roman type][line break]".
+
+To say specific video content of (Y - a milk-spiral-trap):
+	say "[second custom style][one of]PUMP MY TITS[or]I'M A COW[or]JUST A COW[or]THEY'RE NOT BREASTS[line break]THEY'RE UDDERS[or]I'M NOT A PERSON[line break]I'M JUST CATTLE[or]MOO FOR MASTER[or]SQUEEZE MY TEATS[or]I BELONG ON A RANCH[or]SUCTION CUPS[line break]ON MY MILKERS[or]I MAKE MILK[line break]FOR OTHERS TO DRINK[or]MY MILKERS ARE FULL[or]IT FEELS GOOD TO BE MILKED[or]TO LACTATE[line break]IS GREAT[or]SUCK THE MILK[line break]OUT OF MY UDDERS[or]MILK SLUT FOR HIRE[or]MY TITS GET BIGGER[line break]MY MILK GETS THICKER[or]MAKE ME CUM[line break]WITH MY MILK JUGS[or]MILKING IS MAGICAL[in random order][roman type][line break]".
+
+To say specific video content of (Y - a piss-spiral-trap):
+	say "[second custom style][one of]DRINK IT DOWN[or]I'M JUST A RECEPTACLE[line break]FOR PISS[or]GLUG GLUG GLUG[line break]GLUG IT ALL DOWN[or]USE MY MOUTH[line break]AS YOUR TOILET[or]COCK TASTES GOOD[line break]PISS TASTES BETTER[or]PISS ON MY FACE[or]URINALS DON'T TALK[line break]THEY JUST DRINK[or]TOILET WHORE[or]PISS DRINKING SLUT[or]YUM YUM YUM[line break]I LOVE [caps his of male-m] PISS[or]PISS IN MY HAIR[or]A STOMACH FILLED WITH PISS[line break]IS ALL I NEED[or]GARGLE AND GULP[or]DRAIN [caps his of male-m] BLADDER[line break]DOWN MY THROAT[in random order][roman type][line break]".
+
+To say specific video content of (Y - a diaper-spiral-trap):
+	say "[second custom style][one of]I'M JUST A BABY[or]I'M JUST A DIAPERSLUT[or]CALL ME POTTYPANTS[or]NO TOILETS[line break]JUST DIAPERS[or]I'M NOT GROWN-UP[line break]I'LL NEVER GROW UP[or][if diaper messing >= 4]GRUNT AND PUSH[otherwise]I WET MY NAPPY[end if][or]SPANK MY ASS[line break][if diaper messing >= 4]AND SPREAD MY MESS[otherwise]AND MAKE IT RED[end if][or]FIND A MOMMY[line break]TO RUB MY DIAPER[or]I NEED[line break]A GROWN-UP[line break]TO TELL ME WHAT TO DO[or]I NEED A DADDY[line break][if the player is gendered male]TO MAKE ME HIS SISSY[otherwise]TO MAKE ME HIS BABYGIRL[end if][or][if the player is gendered male]GOOD SISSIES[otherwise]GOOD GIRLS[end if][line break]CREAM THEIR PAMPERS[or][if diaper quest is 1]DON'T THINK[line break]JUST LET IT GO[otherwise]PRETEND HIS COCK[line break]IS A PACIFIER[end if][or]WHEN I'M NAUGHTY[line break]PUT ME OVER YOUR KNEE[or][if diaper quest is 1]THE MORE I DRINK[line break]THE MORE I PEE[otherwise]FILL MY BOTTLE[line break]FULL OF CUM[end if][or][if lactation fetish is 1]FEED ME MILK[line break]FROM YOUR BREASTS[otherwise]BOUNCE ME[end if][line break]IN A DIAPER[line break]ON YOUR KNEE[or]FILL MY NAPPY[line break][if diaper quest is 1]SHOW MY FRIENDS[otherwise]WITH YOUR CUM[end if][or]RUB MY CLITTY[line break]THROUGH MY SOGGY PADDING[or][if diaper messing >= 3]MESS[otherwise]WET[end if] MYSELF ON PURPOSE[line break]DURING MY DIAPER CHECK[or]SPANK ME HARD ENOUGH[line break]AND YOU'LL MAKE ME CUM[or]CLEAN ME OUT[line break]WITH A BIG SOAPY ENEMA[or]THE FEELING OF [if diaper messing >= 3]POOPING[otherwise]WETTING[end if] MYSELF[line break]IS ABSOLUTE BLISS[or][caps please] LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE[in random order][roman type][line break]".
+
+Figure of SpiralDiaperAnimation000 is the file "Special/Animations/SpiralDiaper/frame_000.jpg".
+Figure of SpiralDiaperAnimation001 is the file "Special/Animations/SpiralDiaper/frame_001.jpg".
+Figure of SpiralDiaperAnimation002 is the file "Special/Animations/SpiralDiaper/frame_002.jpg".
+Figure of SpiralDiaperAnimation003 is the file "Special/Animations/SpiralDiaper/frame_003.jpg".
+Figure of SpiralDiaperAnimation004 is the file "Special/Animations/SpiralDiaper/frame_004.jpg".
+Figure of SpiralDiaperAnimation005 is the file "Special/Animations/SpiralDiaper/frame_005.jpg".
+Figure of SpiralDiaperAnimation006 is the file "Special/Animations/SpiralDiaper/frame_006.jpg".
+Figure of SpiralDiaperAnimation007 is the file "Special/Animations/SpiralDiaper/frame_007.jpg".
+Figure of SpiralDiaperAnimation008 is the file "Special/Animations/SpiralDiaper/frame_008.jpg".
+Figure of SpiralDiaperAnimation009 is the file "Special/Animations/SpiralDiaper/frame_009.jpg".
+Figure of SpiralDiaperAnimation010 is the file "Special/Animations/SpiralDiaper/frame_010.jpg".
+Figure of SpiralDiaperAnimation011 is the file "Special/Animations/SpiralDiaper/frame_011.jpg".
+Figure of SpiralDiaperAnimation012 is the file "Special/Animations/SpiralDiaper/frame_012.jpg".
+Figure of SpiralDiaperAnimation013 is the file "Special/Animations/SpiralDiaper/frame_013.jpg".
+Figure of SpiralDiaperAnimation014 is the file "Special/Animations/SpiralDiaper/frame_014.jpg".
+Figure of SpiralDiaperAnimation015 is the file "Special/Animations/SpiralDiaper/frame_015.jpg".
+Figure of SpiralDiaperAnimation016 is the file "Special/Animations/SpiralDiaper/frame_016.jpg".
+Figure of SpiralDiaperAnimation017 is the file "Special/Animations/SpiralDiaper/frame_017.jpg".
+Figure of SpiralDiaperAnimation018 is the file "Special/Animations/SpiralDiaper/frame_018.jpg".
+Figure of SpiralDiaperAnimation019 is the file "Special/Animations/SpiralDiaper/frame_019.jpg".
+Figure of SpiralDiaperAnimation020 is the file "Special/Animations/SpiralDiaper/frame_020.jpg".
+Figure of SpiralDiaperAnimation021 is the file "Special/Animations/SpiralDiaper/frame_021.jpg".
+Figure of SpiralDiaperAnimation022 is the file "Special/Animations/SpiralDiaper/frame_022.jpg".
+Figure of SpiralDiaperAnimation023 is the file "Special/Animations/SpiralDiaper/frame_023.jpg".
+Figure of SpiralDiaperAnimation024 is the file "Special/Animations/SpiralDiaper/frame_024.jpg".
+Figure of SpiralDiaperAnimation025 is the file "Special/Animations/SpiralDiaper/frame_025.jpg".
+Figure of SpiralDiaperAnimation026 is the file "Special/Animations/SpiralDiaper/frame_026.jpg".
+Figure of SpiralDiaperAnimation027 is the file "Special/Animations/SpiralDiaper/frame_027.jpg".
+Figure of SpiralDiaperAnimation028 is the file "Special/Animations/SpiralDiaper/frame_028.jpg".
+Figure of SpiralDiaperAnimation029 is the file "Special/Animations/SpiralDiaper/frame_029.jpg".
+Figure of SpiralDiaperAnimation030 is the file "Special/Animations/SpiralDiaper/frame_030.jpg".
+Figure of SpiralDiaperAnimation031 is the file "Special/Animations/SpiralDiaper/frame_031.jpg".
+Figure of SpiralDiaperAnimation032 is the file "Special/Animations/SpiralDiaper/frame_032.jpg".
+Figure of SpiralDiaperAnimation033 is the file "Special/Animations/SpiralDiaper/frame_033.jpg".
+Figure of SpiralDiaperAnimation034 is the file "Special/Animations/SpiralDiaper/frame_034.jpg".
+Figure of SpiralDiaperAnimation035 is the file "Special/Animations/SpiralDiaper/frame_035.jpg".
+Figure of SpiralDiaperAnimation036 is the file "Special/Animations/SpiralDiaper/frame_036.jpg".
+Figure of SpiralDiaperAnimation037 is the file "Special/Animations/SpiralDiaper/frame_037.jpg".
+Figure of SpiralDiaperAnimation038 is the file "Special/Animations/SpiralDiaper/frame_038.jpg".
+Figure of SpiralDiaperAnimation039 is the file "Special/Animations/SpiralDiaper/frame_039.jpg".
+Figure of SpiralDiaperAnimation040 is the file "Special/Animations/SpiralDiaper/frame_040.jpg".
+Figure of SpiralDiaperAnimation041 is the file "Special/Animations/SpiralDiaper/frame_041.jpg".
+Figure of SpiralDiaperAnimation042 is the file "Special/Animations/SpiralDiaper/frame_042.jpg".
+Figure of SpiralDiaperAnimation043 is the file "Special/Animations/SpiralDiaper/frame_043.jpg".
+Figure of SpiralDiaperAnimation044 is the file "Special/Animations/SpiralDiaper/frame_044.jpg".
+Figure of SpiralDiaperAnimation045 is the file "Special/Animations/SpiralDiaper/frame_045.jpg".
+Figure of SpiralDiaperAnimation046 is the file "Special/Animations/SpiralDiaper/frame_046.jpg".
+Figure of SpiralDiaperAnimation047 is the file "Special/Animations/SpiralDiaper/frame_047.jpg".
+Figure of SpiralDiaperAnimation048 is the file "Special/Animations/SpiralDiaper/frame_048.jpg".
+Figure of SpiralDiaperAnimation049 is the file "Special/Animations/SpiralDiaper/frame_049.jpg".
+Figure of SpiralDiaperAnimation050 is the file "Special/Animations/SpiralDiaper/frame_050.jpg".
+Figure of SpiralDiaperAnimation051 is the file "Special/Animations/SpiralDiaper/frame_051.jpg".
+Figure of SpiralDiaperAnimation052 is the file "Special/Animations/SpiralDiaper/frame_052.jpg".
+Figure of SpiralDiaperAnimation053 is the file "Special/Animations/SpiralDiaper/frame_053.jpg".
+Figure of SpiralDiaperAnimation054 is the file "Special/Animations/SpiralDiaper/frame_054.jpg".
+Figure of SpiralDiaperAnimation055 is the file "Special/Animations/SpiralDiaper/frame_055.jpg".
+Figure of SpiralDiaperAnimation056 is the file "Special/Animations/SpiralDiaper/frame_056.jpg".
+Figure of SpiralDiaperAnimation057 is the file "Special/Animations/SpiralDiaper/frame_057.jpg".
+Figure of SpiralDiaperAnimation058 is the file "Special/Animations/SpiralDiaper/frame_058.jpg".
+Figure of SpiralDiaperAnimation059 is the file "Special/Animations/SpiralDiaper/frame_059.jpg".
+Figure of SpiralDiaperAnimation060 is the file "Special/Animations/SpiralDiaper/frame_060.jpg".
+Figure of SpiralDiaperAnimation061 is the file "Special/Animations/SpiralDiaper/frame_061.jpg".
+Figure of SpiralDiaperAnimation062 is the file "Special/Animations/SpiralDiaper/frame_062.jpg".
+Figure of SpiralDiaperAnimation063 is the file "Special/Animations/SpiralDiaper/frame_063.jpg".
+Figure of SpiralDiaperAnimation064 is the file "Special/Animations/SpiralDiaper/frame_064.jpg".
+Figure of SpiralDiaperAnimation065 is the file "Special/Animations/SpiralDiaper/frame_065.jpg".
+Figure of SpiralDiaperAnimation066 is the file "Special/Animations/SpiralDiaper/frame_066.jpg".
+Figure of SpiralDiaperAnimation067 is the file "Special/Animations/SpiralDiaper/frame_067.jpg".
+Figure of SpiralDiaperAnimation068 is the file "Special/Animations/SpiralDiaper/frame_068.jpg".
+Figure of SpiralDiaperAnimation069 is the file "Special/Animations/SpiralDiaper/frame_069.jpg".
+Figure of SpiralDiaperAnimation070 is the file "Special/Animations/SpiralDiaper/frame_070.jpg".
+Figure of SpiralDiaperAnimation071 is the file "Special/Animations/SpiralDiaper/frame_071.jpg".
+Figure of SpiralDiaperAnimation072 is the file "Special/Animations/SpiralDiaper/frame_072.jpg".
+Figure of SpiralDiaperAnimation073 is the file "Special/Animations/SpiralDiaper/frame_073.jpg".
+Figure of SpiralDiaperAnimation074 is the file "Special/Animations/SpiralDiaper/frame_074.jpg".
+Figure of SpiralDiaperAnimation075 is the file "Special/Animations/SpiralDiaper/frame_075.jpg".
+Figure of SpiralDiaperAnimation076 is the file "Special/Animations/SpiralDiaper/frame_076.jpg".
+Figure of SpiralDiaperAnimation077 is the file "Special/Animations/SpiralDiaper/frame_077.jpg".
+Figure of SpiralDiaperAnimation078 is the file "Special/Animations/SpiralDiaper/frame_078.jpg".
+Figure of SpiralDiaperAnimation079 is the file "Special/Animations/SpiralDiaper/frame_079.jpg".
+Figure of SpiralDiaperAnimation080 is the file "Special/Animations/SpiralDiaper/frame_080.jpg".
+Figure of SpiralDiaperAnimation081 is the file "Special/Animations/SpiralDiaper/frame_081.jpg".
+Figure of SpiralDiaperAnimation082 is the file "Special/Animations/SpiralDiaper/frame_082.jpg".
+Figure of SpiralDiaperAnimation083 is the file "Special/Animations/SpiralDiaper/frame_083.jpg".
+Figure of SpiralDiaperAnimation084 is the file "Special/Animations/SpiralDiaper/frame_084.jpg".
+Figure of SpiralDiaperAnimation085 is the file "Special/Animations/SpiralDiaper/frame_085.jpg".
+Figure of SpiralDiaperAnimation086 is the file "Special/Animations/SpiralDiaper/frame_086.jpg".
+Figure of SpiralDiaperAnimation087 is the file "Special/Animations/SpiralDiaper/frame_087.jpg".
+Figure of SpiralDiaperAnimation088 is the file "Special/Animations/SpiralDiaper/frame_088.jpg".
+Figure of SpiralDiaperAnimation089 is the file "Special/Animations/SpiralDiaper/frame_089.jpg".
+Figure of SpiralDiaperAnimation090 is the file "Special/Animations/SpiralDiaper/frame_090.jpg".
+Figure of SpiralDiaperAnimation091 is the file "Special/Animations/SpiralDiaper/frame_091.jpg".
+Figure of SpiralDiaperAnimation092 is the file "Special/Animations/SpiralDiaper/frame_092.jpg".
+Figure of SpiralDiaperAnimation093 is the file "Special/Animations/SpiralDiaper/frame_093.jpg".
+Figure of SpiralDiaperAnimation094 is the file "Special/Animations/SpiralDiaper/frame_094.jpg".
+Figure of SpiralDiaperAnimation095 is the file "Special/Animations/SpiralDiaper/frame_095.jpg".
+Figure of SpiralDiaperAnimation096 is the file "Special/Animations/SpiralDiaper/frame_096.jpg".
+Figure of SpiralDiaperAnimation097 is the file "Special/Animations/SpiralDiaper/frame_097.jpg".
+Figure of SpiralDiaperAnimation098 is the file "Special/Animations/SpiralDiaper/frame_098.jpg".
+Figure of SpiralDiaperAnimation099 is the file "Special/Animations/SpiralDiaper/frame_099.jpg".
+Figure of SpiralDiaperAnimation100 is the file "Special/Animations/SpiralDiaper/frame_100.jpg".
+Figure of SpiralDiaperAnimation101 is the file "Special/Animations/SpiralDiaper/frame_101.jpg".
+Figure of SpiralDiaperAnimation102 is the file "Special/Animations/SpiralDiaper/frame_102.jpg".
+Figure of SpiralDiaperAnimation103 is the file "Special/Animations/SpiralDiaper/frame_103.jpg".
+Figure of SpiralDiaperAnimation104 is the file "Special/Animations/SpiralDiaper/frame_104.jpg".
+Figure of SpiralDiaperAnimation105 is the file "Special/Animations/SpiralDiaper/frame_105.jpg".
+Figure of SpiralDiaperAnimation106 is the file "Special/Animations/SpiralDiaper/frame_106.jpg".
+Figure of SpiralDiaperAnimation107 is the file "Special/Animations/SpiralDiaper/frame_107.jpg".
+When play begins:
+	fill DiaperSpiralAnimation from Figure of SpiralDiaperAnimation000 to 107.
+
+Spiral Traps ends here.

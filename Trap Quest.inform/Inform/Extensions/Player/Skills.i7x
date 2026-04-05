@@ -248,11 +248,11 @@ To teach fuckskill:
 		say "[bold type]You've already learned how to hide your inner submissive![roman type]".
 
 This is the fuckskill list rule:
-	if the fuckskill of the player is 1, say "When you try to have dominant sex, you have less chance of failing on account of your sex addiction.".
+	if the fuckskill of the player is 1, say "When you try to sexually dominate someone, you have less chance of failing on account of your nymphomania.".
 The fuckskill list rule is listed in the skill listing rules.
 
 This is the fuckskill learn rule:
-	if the fuckskill of the player is 0, say "When you try to have dominant sex, you are now just as likely to succeed regardless of sex addiction.";
+	if the fuckskill of the player is 0, say "When you try to sexually dominate someone, you are now just as likely to succeed regardless of [if diaper quest is 0]sex[otherwise]orgasm[end if] addiction.";
 	now the fuckskill of the player is 1.
 The fuckskill learn rule is listed in the skill cheating rules.
 
@@ -311,7 +311,7 @@ Part 17 - Domination Skill
 
 To teach divinationskill:
 	if the divinationskill of the player is 0:
-		say "[big he of witch] launches into a very long complicated explanation you don't fully understand, but manage to follow, mostly. [bold type]**You have learned how to read the flow of magic!**[roman type][line break]";
+		say "[big he of witch] launches into a very long complicated explanation you don't fully understand, but manage to follow, mostly. [bold type]**You have learned how to read the flow of magic!** [roman type]You can now [bold type]purify[roman type] things.[line break]";
 		now the divinationskill of the player is 1;
 		reset skill cooldown;
 	otherwise:
@@ -494,7 +494,7 @@ Check memorising:
 		say "How would you memorise that?" instead;
 	if the noun is memorised, say "You've already committed that to memory." instead;
 	if the player is in danger, say "You're a bit busy to do that, aren't you?" instead;
-	if saved-flat-intelligence < 4 + the number of memorised recipes and the class of the player is not schoolgirl, say "You're not smart enough to memorise that many recipes." instead.
+	if saved-flat-intelligence < 4 + the number of memorised recipes and the class of the player is not alchemist, say "You're not smart enough to memorise that many recipes." instead.
 Carry out memorising:
 	now the noun is memorised.
 Report memorising:

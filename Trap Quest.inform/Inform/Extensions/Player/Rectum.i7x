@@ -185,7 +185,7 @@ Punish the player for remaining messy, and then pass on to the correct messing c
 
 +!]
 To compute soiling:
-	if diaper messing >= 3 and chess table is grabbing the player and chess-victor of chess-lesson is 0:
+	if diaper messing >= 3 and chess table is grabbing the player and chess-victor of chess-training is 0:
 		compute chess soiling;
 	otherwise:
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, check real messing.
@@ -325,7 +325,7 @@ automaticallyHolding is initially false.
 
 [If we have any text T that means that something has caused the player to flinch / be surprised / etc. and they lose the opportunity to try and hold it in]
 To check real messing with reason (T - a text):
-	if rectum > 0:
+	if rectum > 0 and earnings < starting-earnings - 6:
 		let desperationCount be the number of worn desperation clothing;
 		let messAware be 0; [1: Can the player sense their fullness and 2: can they try to hold it in]
 		let canMessNow be 0; [Is the player physically able to go]
@@ -391,7 +391,7 @@ To check real messing with reason (T - a text):
 							compute partial messing;
 					otherwise if T is "":
 						say "You manage to hold it in for now.";
-						if pledge-lesson-mess is implanted and the player is not in a predicament room:
+						if pledge-training-mess is implanted and the player is not in a predicament room:
 							say "Magic ripples through your belly as the magic pledge you've just broken activates. Your belly bulges as the bulk inside grows to massive proportions!";
 							increase rectum by 20;
 							let K be a random worn uncursed knickers;
@@ -441,6 +441,7 @@ mess-phase is a number that varies.
 0: Full messing all in one turn
 1: Partial messing, first turn
 2+: Partial messing not first turn
+100+: Stopped partial messing partway through
 ]
 
 mess-amount is a number that varies. [How much did we just mess this turn?]
@@ -514,7 +515,7 @@ To compute messing:
 					let M2 be a random reactive monster;
 					say diaper mess declaration of M2;
 			repeat with N running through reactive monsters:
-				if N is not diaperMessReacted and the current-errand of N is not mess-yourself-errand:
+				if N is not diaperMessReacted and the current-errand of N is not mess-yourself-errand and N is not urinal-rival of urinal-competition-punishment:
 					compute diaper mess reaction of N;
 					now N is diaperMessReacted;
 		if mess-phase > 0:
@@ -524,13 +525,14 @@ To compute messing:
 				now suppository is 0;
 				now mess-phase is 0;
 			otherwise if mess-phase >= 100: [end of partial pooping - held the rest in]
-				now mess-phase is 0;
+				now mess-phase is -1; [prevents us from resetting rectum below]
 			otherwise:
 				increase mess-phase by 1;
 				if suppository > 0, decrease suppository by 1; [suppository effects are slightly relieved]
 				add the partial messing continues rule to the another-turn-rules, if absent;
-		if mess-phase is 0:
-			reset rectum;
+		if mess-phase <= 0:
+			if mess-phase is 0, reset rectum;
+			otherwise now mess-phase is 0;
 			now inhuman-messing is false;
 			now diaper-reaction-said is true;
 			if voluntarySquatting is 0, progress quest of adult-baby-quest;
@@ -670,7 +672,7 @@ To check unhandled diaper scene:
 				otherwise if playerRegion is Mansion and M is nothing:
 					now M is vampiress;
 					set up M;
-				otherwise if playerRegion is School and M is nothing:
+				otherwise if playerRegion is facility and M is nothing:
 					now M is nurse;
 					now M is unleashed;
 					if M is off-stage, set up M;
@@ -696,10 +698,10 @@ To compute instant change appearance of (M - matron):
 	now M is in the location of the player;
 	interest M;
 	if M is friendly, anger M; [This just helps the correct inline hyperlinks turn up]
-	say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], [NameDesc of M] suddenly arrives, adding to your shame. [big he of M] [if M is changing the player]continues to hold [his of M] hand pressed against your rear, making sure you realise that [he of M] is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle [he of M] is standing over you, one hand pressed firmly against the warm posterior of your padding[end if].[line break][speech style of M]'[one of]Uh-oh, what do we have here?! How have you managed this, you naughty baby! Only the most pathetic of babies can't control their number twos! [or]Again?! You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?! How long has it been since you last went potty?! [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
-	if the player is not in Hotel22:
+	say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], [NameDesc of M] suddenly arrives, adding to your shame. [big he of M] [if M is changing the player]continues to hold [his of M] hand pressed against your rear, making sure you realise that [he of M] is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle [he of M] is standing over you, one hand pressed firmly against the warm posterior of your padding[end if].[line break][speech style of M]'[one of]Uh-oh, what do we have here?! How have you managed this, you naughty baby! Only the most pathetic of babies can't control their number twos! [or]Again?! You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?! How long has it been since you last went potty?! [or][stopping][end if]Let's get you [if the player is not in HotelNursery]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
+	if the player is not in HotelNursery:
 		say "[line break][bold type][BigNameDesc of M] [bold type]lifts you into the air and [if playerRegion is Hotel]without a word swiftly carries you all the way to[otherwise]snaps [his of M] fingers, and after a brief moment of feeling like you are flying, suddenly you are back in[end if] the Nursery![roman type][line break]";
-		drag to Hotel22 by M;
+		drag to HotelNursery by M;
 
 To say diaper mess declaration of (M2 - a monster):
 	say "[variable custom style]'[if the humiliation of the player < 15000]Noooo! Don't watch!'[otherwise if the diaper addiction of the player > 15]Ooh [daddy of M2], I think I'm gonna need a change...'[otherwise if the humiliation of the player > 31000]Please watch me and laugh at me as I [one of]mess my stinky bottom[or]do a poopy in my pants[or]go number two[at random]!'[otherwise if the diaper addiction of the player < 8]Fuck fuck fuck, I can't believe this[one of][or] is happening again[stopping]. Please don't look!'[otherwise][one of]That was... bad timing...'[or]Uh-oh, it happened again...'[stopping][end if][roman type][line break]".

@@ -298,7 +298,7 @@ Definition: a tentacle monster (called M) is willing to shag:
 	decide no.
 
 To decide which number is the rounds of sex left of (M - a tentacle monster):
-	if the class of the player is schoolgirl and the class of the player is magical girl and there is a heart wand in the location of the player and the player is able to orgasm and the player is not unable to orgasm so soon and M is penetrating a fuckhole, decide on 2; [If the player will win the fight when they orgasm, the sex never ends.]
+	if the class of the player is alchemist and the class of the player is magical girl and there is a heart wand in the location of the player and the player is able to orgasm and the player is not unable to orgasm so soon and M is penetrating a fuckhole, decide on 2; [If the player will win the fight when they orgasm, the sex never ends.]
 	decide on the default rounds of sex left of M.
 
 To say PregGrowth of (M - a tentacle monster):
@@ -329,15 +329,15 @@ To compute (M - demon lord) stomping (N - a tentacle monster):
 
 Part 0 - Motion
 
-To compute monstermotion of (M - a tentacle monster): [Tentacle monsters shouldn't really be in the School unless they're in the School Dungeon with the player]
-	if M is in the School, now M is in Hotel01;
+To compute monstermotion of (M - a tentacle monster): [Tentacle monsters shouldn't really be in the facility unless they're in the facility Dungeon with the player]
+	if M is in the facility, now M is in Hotel01;
 	compute room leaving of M.
 
 Part 1 - Perception
 
 Definition: a tentacle monster is uniquely unfriendly:
-	if playerRegion is School, decide yes;
-	decide no. [The player looking ultra-slutty doesn't override the fact that the tentacle monster defends them when pregnant. However, the tentacle monster in the school dungeon must always be an enemy]
+	if playerRegion is facility, decide yes;
+	decide no. [The player looking ultra-slutty doesn't override the fact that the tentacle monster defends them when pregnant. However, the tentacle monster in the facility dungeon must always be an enemy]
 To decide which number is the bimbo tolerance of (M - a tentacle monster):
 	decide on 100. [If we don't make this prohibitively high, there can be some weird difficult-to-debug outcomes surrounding the overriding of uniquely unfriendly above, where the NPC is objectifying but friendly, and somehow attacking while friendly.]
 
@@ -600,9 +600,9 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 	if the reaction of the player > 0 and M is penetrating a fuckhole:
 		if M is not massive, say "Your lack of resistance against the monster is preventing you from getting more sore, [if M is player-brood]but it is extremely humiliating to submit to being bred by your own hellish tentacle spawn[otherwise]but you can feel your thoughts clouding as you are bred by the freakish tentacle spawn[end if].";
 	let spare-tentacle be the free-tentacles of M;
-	if the number of body parts penetrated by M is 0, now spare-tentacle is 0; [Magical schoolgirl just managed to free herself.]
+	if the number of body parts penetrated by M is 0, now spare-tentacle is 0; [Magical alchemist just managed to free herself.]
 	if spare-tentacle > 0:
-		if the class of the player is schoolgirl or the class of the player is magical girl or M is dull-tentacle-monster or M is doom-evolved or a random number between -1 and spare-tentacle > 0:
+		if the class of the player is alchemist or the class of the player is magical girl or M is dull-tentacle-monster or M is doom-evolved or a random number between -1 and spare-tentacle > 0:
 			choose a sex method;
 			if targeted-body-part is face:
 				if debugmode > 1, say "tentacles chose face!";
@@ -674,7 +674,7 @@ This is the tentacle monster climaxes rule:
 	if the class of the player is magical girl and the magic power of the player > 0:
 		say "You feel your magic energy completely drain from your body...[line break]";
 		increase the magic-fatigue of the player by 99;
-		if the class of the player is schoolgirl:
+		if the class of the player is alchemist:
 			say "As the magic drains away, you feel your brain [one of]sparkling with brilliance[or]gaining even more smarts[stopping]!";
 			IntUp 1;
 	progress quest of tentacle-quest;
@@ -706,7 +706,7 @@ This is the tentacle monster climaxes rule:
 		if M is large:
 			SizeRankUp M;
 			if heart hairpin is off-stage:
-				if the class of the player is "schoolgirl" and (there is a worn schoolgirl outfit or tartan tube top is worn): [has to be exactly this class and not any cross-class]
+				if the class of the player is "alchemist" and (there is a worn alchemist outfit or tartan tube top is worn): [has to be exactly this class and not any cross-class]
 					let S be a random worn scrunchie;
 					say "Your [S] explodes in a shower of cartoon lovehearts!";
 					destroy S;
@@ -722,8 +722,8 @@ This is the tentacle monster climaxes rule:
 		if M is lesser:
 			SizeRankUp M;
 		now the sleep of M is 250;
-		if the class of the player is schoolgirl, decrease the sleep of M by 100;
-		if M is doom-evolved or M is in School34, decrease the sleep of M by 100;
+		if the class of the player is alchemist, decrease the sleep of M by 100;
+		if M is doom-evolved or M is in Facility34, decrease the sleep of M by 100;
 		if M is dull-tentacle-monster, decrease the sleep of M by 25;
 		deinterest M;
 	rule succeeds.
@@ -745,7 +745,7 @@ To decide if (M - a tentacle monster) is losing wrapper in (F - a fuckhole):
 	decide no.
 
 To decide if (M - a tentacle monster) is willing to creampie (F - a fuckhole):
-	if the class of the player is schoolgirl, decide yes;
+	if the class of the player is alchemist, decide yes;
 	if F is vagina and the player is a pussy slut, decide yes;
 	if F is asshole and the player is a butt slut, decide yes;
 	if the reaction of the player is 0:

@@ -49,6 +49,7 @@ Mansion41 is a creaky haunted room. The printed name of Mansion41 is "Atrium". "
 Mansion42 is a creaky haunted room. The printed name of Mansion42 is "Soundproofed Room". "This room has soundproofing padding on all the walls... If the doorways weren't wide open, you probably wouldn't be able to hear any sounds from in here. And nobody outside the room would be able to hear you scream.".
 Mansion43 is a no-roof haunted room. The printed name of Mansion43 is "Graveyard". "A large patch of grass contains several gravestones, seemingly marking where a family was buried. The gravestones are so old that the engraving has faded away to beyond legibility.".
 Mansion44 is a no-roof haunted room. The printed name of Mansion44 is "Collapsed Room". "This used to be an internal room, but unknown years ago the ceiling and roof collapsed, leaving a large hole and open sky. Grass has started to grow through the rubble and dirt on the ground.".
+MansionNursery is a dq-mandatory important untrappable haunted room. The printed name of MansionNursery is "Adult Nursery". "[NurseryDesc]". The shape of MansionNursery is L4/0-0-0-1-0-0.
 
 [Hallways]
 
@@ -64,6 +65,6 @@ Mansion27 is a no-roof haunted room. The printed name of Mansion27 is "Back Walk
 Mansion09 is a haunted room. The printed name of Mansion09 is "Dark Hallway". "This hallway has a way of making you feel cramped and claustrophobic.".
 Mansion45 is a mandatory haunted room. The printed name of Mansion45 is "Slimy Hallway". "This hallway has droppings of green slime about the place.".
 
-The Mansion is a region. Mansion00, Mansion01, Mansion02, Mansion03, Mansion04, Mansion05, Mansion06, Mansion07, Mansion08, Mansion09, Mansion10, Mansion11, Mansion12, Mansion13, Mansion14, Mansion15, Mansion16, Mansion17, Mansion18, Mansion19, Mansion20, Mansion21, Mansion22, Mansion23, Mansion24, Mansion25, Mansion26, Mansion27, Mansion28, Mansion29, Mansion30, Mansion31, Mansion32, Mansion33, Mansion34, Mansion35, Mansion36, Mansion37, Mansion38, Mansion39, Mansion40, Mansion41, Mansion42, Mansion43, Mansion44 and Mansion45 are in The Mansion.
+The Mansion is a region. MansionNursery, Mansion00, Mansion01, Mansion02, Mansion03, Mansion04, Mansion05, Mansion06, Mansion07, Mansion08, Mansion09, Mansion10, Mansion11, Mansion12, Mansion13, Mansion14, Mansion15, Mansion16, Mansion17, Mansion18, Mansion19, Mansion20, Mansion21, Mansion22, Mansion23, Mansion24, Mansion25, Mansion26, Mansion27, Mansion28, Mansion29, Mansion30, Mansion31, Mansion32, Mansion33, Mansion34, Mansion35, Mansion36, Mansion37, Mansion38, Mansion39, Mansion40, Mansion41, Mansion42, Mansion43, Mansion44 and Mansion45 are in The Mansion.
 
 Mansion ends here.

@@ -11,7 +11,7 @@ An all later time based rule (this is the reflection rule):
 		say StatsChangedFlav;
 	if the strut of the player is 1 and the player is upright and the player is not immobile and there is a worn heels and the player-class is not succubus:
 		humiliate time-seconds;
-	otherwise if playerRegion is not school:
+	otherwise if playerRegion is not facility:
 		dignify time-seconds.
 
 humiliation-situation-timer is a number that varies.
@@ -86,7 +86,7 @@ To reflect on (A - huge-tits):
 	otherwise if the player-class is succubus:
 		say "Your [if soulstone is worn]soulstone aches[otherwise]horns ache[end if] with embarrassment as you look down at your puny breasts.";
 	otherwise:
-		say "[if the bimbo of the player < 9]You hold your [MediumDesc of breasts] and [one of]shudder as you wonder how much bigger they are going to grow[or]feel their weight. You are not used to this[or]pray that they don't continue to grow[or]hope desperately that nobody can see you like this[in random order][otherwise]You feel your [MediumDesc of breasts] and giggle awkwardly as you [one of]wonder how much bigger they are going to grow[or]absent-mindedly play with your nipples[or]catch yourself absent-mindedly touching yourself[or]imagine how stupidly big they might end up at this rate[in random order][end if].".
+		say "[if the bimbo of the player < 9 and legacy content is 0]You hold your [MediumDesc of breasts] and [one of]shudder as you wonder how much bigger they are going to grow[or]feel their weight. You are not used to this[or]cross your fingers that they don't grow much further[or]wonder how many people in the real world can see you like this[in random order][otherwise if the bimbo of the player < 9]You hold your [MediumDesc of breasts] and [one of]shudder as you wonder how much bigger they are going to grow[or]feel their weight. You are not used to this[or]pray that they don't continue to grow[or]hope desperately that nobody can see you like this[in random order][otherwise]You feel your [MediumDesc of breasts] and giggle awkwardly as you [one of]wonder how much bigger they are going to grow[or]absent-mindedly play with your nipples[or]catch yourself absent-mindedly touching yourself[or]imagine how stupidly big they might end up at this rate[in random order][end if].".
 
 To say FriendReaction of (M - a real-life patron) to (A - huge-tits):[TODO: maybe account for super huge boobs]
 	if the class of the player is succubus:
@@ -292,15 +292,15 @@ To reflect on (HS - low-addiction):
 	if diaper lover > 0, add "diaper addiction" to AL;
 	let R be a random number from 1 to the number of entries in AL;
 	let A be entry R in AL;
-	compute addiction reflection on A.
+	compute addiction reflection on A with 2 flavour.
 
 addiction-reflection-cooldown is a number that varies.
 An all time based rule (this is the addiction reflection cooldown rule):
 	decrease addiction-reflection-cooldown by 1.
 
-To compute addiction reflection on (A - a text):
-	if addiction-reflection-cooldown <= 0:
-		now addiction-reflection-cooldown is a random number between 10 and 25;
+To compute addiction reflection on (A - a text) with (F - a number) flavour:
+	if addiction-reflection-cooldown <= 0 or F is 0 or (F is 1 and addiction-reflection-cooldown <= 15):
+		now addiction-reflection-cooldown is a random number between 17 and 19;
 		if A exactly matches the text "semen addiction":
 			let SA be the semen addiction of the player - 1;
 			let GBP be a random glazed body part;
@@ -308,7 +308,7 @@ To compute addiction reflection on (A - a text):
 			if GBP is a thing: [player distracted by their glazed body part]
 				if the player is able to use manual dexterity, say "You [one of][if SA < 6]can't ignore[otherwise if GBP is face]enjoy the feeling of[otherwise if GBP is hair]enjoy the additional weight of[otherwise]shiver with pleasure as you look down at[end if][or][if SA < 6]can't help but[otherwise]excitedly[end if] touch[or][if SA < 6]gingerly prod at[otherwise]use a finger to play with[end if][in random order] ";
 				otherwise say "You wish you could touch [if SA < 3]and wipe away [end if] ";
-				say "the [if the semen coating of GBP > 6]masses of sticky [semen] coating[otherwise if the semen coating of GBP > 3]huge globs of [semen] stuck to[otherwise][semen] gently trickle down[end if] your [GBP]. ";
+				say "the [if the semen coating of GBP > 6]masses of sticky [semen] coating[otherwise if the semen coating of GBP > 3]huge globs of [semen] stuck to[otherwise][semen] gently trickling down[end if] your [GBP]. ";
 			otherwise: [player distracted by sticky feeling inside]
 				if the semen volume of vagina > 0 or (the womb volume of vagina > 0 and the pregnancy of the player is 0 and pregnancy fetish is 1), now GBP is vagina;
 				if the semen volume of belly > 0, now GBP is asshole;
@@ -469,7 +469,7 @@ To compute addiction reflection on (A - a text):
 					now ARS is ARS * -1;
 					cool down ARS;
 			otherwise if diaperOrgasmCount > a random number between 0 and diaperChangeCount:
-				say "Your mind wanders back to the memory of the recent time you orgasmed [if the player is possessing a penis]into your[otherwise]while wearing a[end if] diaper. ";
+				if F >= 2, say "Your mind wanders back to the memory of the recent time you orgasmed [if the player is possessing a penis]into your[otherwise]while wearing a[end if] diaper. ";
 				let SA be the diaper addiction of the player;
 				let ARS be (SA * 500) - 3000; [depending on addiction, we can gain or lose arousal]
 				if ARS > 3000, now ARS is 3000; [max 3000 arousal gain]
@@ -484,7 +484,7 @@ To compute addiction reflection on (A - a text):
 					say "[one of]You have mixed feelings about the experience[or]You reflect that the memory doesn't disgust you as much as it used to[or]You still feel rather ambivalent about it[stopping].";
 			otherwise if diaperChangeCount > 0:
 				let M be a random change-intimate monster;
-				say "Your mind wanders back to the memory of [NameDesc of M] laying you down on your back and changing your diaper[one of]. It's one of the most submissive and humiliating experiences you've ever had in your life[or][stopping]. ";
+				if F >= 2, say "Your mind wanders back to the memory of [NameDesc of M] laying you down on your back and changing your diaper[one of]. It's one of the most submissive and humiliating experiences you've ever had in your life[or][stopping]. ";
 				let SA be the diaper addiction of the player / 2;
 				increase SA by the delicateness of the player / 2;
 				let ARS be (SA * 500) - 3000; [depending on addiction, we can gain or lose arousal]
@@ -518,14 +518,17 @@ To compute addiction reflection on (A - a text):
 				say ".";
 				cool down ARS;
 			otherwise if ARS > 0:
-				say "[one of]You daydream about[or]Your thoughts drift to thoughts of[or]You lick your lips as you think about[in random order] [one of]how sexy black people look[or]the dominant presence a strong, tall black [man of male-m] can have in a room[or]how black [men of male-m] are on average stronger and more muscular than white [men of male-m][or]how black [men of male-m] have such bigger, thicker, juicier [manly-penis]s[or]how you love submitting to black [men of male-m][then at random]. [if ARS <= 1000]It leaves you feeling [one of]excited[or]a bit more aroused[or]a little worked up[in random order][otherwise]It makes you [one of]horny[or]more aroused[or]all worked up[in random order], and [one of]weirdly excited for your next opportunity to see a [BlackCock][or]eager for your next experience with [BlackCock][or]desperate to encounter another [BlackCock][or]craving [BlackCock][or]craving even more [BlackCock][stopping][end if].";
+				say "[if F < 2]You are reminded of[otherwise][one of]You daydream about[or]Your thoughts drift to thoughts of[or]You lick your lips as you think about[in random order][end if] [one of]how sexy black people look[or]the dominant presence a strong, tall black [man of male-m] can have in a room[or]how black [men of male-m] are on average stronger and more muscular than white [men of male-m][or]how black [men of male-m] have such bigger, thicker, juicier [manly-penis]s[or]how you love submitting to black [men of male-m][then at random]. [if ARS <= 1000]It leaves you feeling [one of]excited[or]a bit more aroused[or]a little worked up[in random order][otherwise]It makes you [one of]horny[or]more aroused[or]all worked up[in random order], and [one of]weirdly excited for your next opportunity to see a [BlackCock][or]eager for your next experience with [BlackCock][or]desperate to encounter another [BlackCock][or]craving [BlackCock][or]craving even more [BlackCock][stopping][end if].";
 				arouse ARS;
 		otherwise:
 			repeat with LQ running through liquid-objects:
 				let LT be the substituted form of "[LQ]";
 				if the first-taste of LQ is not 0 and A matches the text LT: [we have chosen to fantasize about LQ, and the player has tasted it before]
 					let PTA be the player taste addiction of LQ;
-					say "You [one of]find yourself thinking about[or]find your mind wandering back to[or][if PTA < 13]can't stop yourself from thinking[otherwise]daydream[end if] about[in random order] [one of]the taste of[or]your recent experience tasting[or]the act of drinking[in random order] [variable LQ]. ";
+					if F >= 1:
+						if F >= 2, say "You [one of]find yourself thinking about[or]find your mind wandering back to[or][if PTA < 13]can't stop yourself from thinking[otherwise]daydream[end if] about[in random order] ";
+						otherwise say "Your brain can't help but think about ";
+						say "[one of]the taste of[or]your recent experience tasting[or]the act of drinking[in random order] [variable LQ]. ";
 					let ARS be (PTA * 500) - 2000; [depending on addiction, we can gain or lose arousal]
 					if ARS > 3000, now ARS is 3000; [max 3000 arousal gain at 10+ addiction]
 					if ARS < 0:
@@ -536,7 +539,8 @@ To compute addiction reflection on (A - a text):
 						say ".";
 						cool down ARS;
 					otherwise if ARS > 0:
-						say "You [if ARS <= 1000]can't help but feel a little turned on at the thought[otherwise if ARS <= 2000][one of]hate to admit it, but[or]have to admit to yourself that[stopping] the idea now turns you on[otherwise]shiver with excitement and arousal[end if].";
+						if F >= 1, say "You [if ARS <= 1000]can't help but feel a little turned on at the thought[otherwise if ARS <= 2000][one of]hate to admit it, but[or]have to admit to yourself that[stopping] the idea now turns you on[otherwise]shiver with excitement and arousal[end if].";
+						otherwise say "You [if ARS <= 1000]can't help but feel a little turned on at the sight[otherwise if ARS <= 2000][one of]hate to admit it, but[or]have to admit to yourself that[stopping] the sight now turns you on[otherwise]shiver with excitement and arousal[end if].";
 						arouse ARS;
 					otherwise:
 						say line break;

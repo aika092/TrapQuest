@@ -444,14 +444,14 @@ Check jumping when there is g-animated cutscene animation track:
 To decide which number is the frameSlowness of (T - a cutscene animation track):
 	decide on 1.
 
-BBCHypnoAnimation is a g-looping cutscene animation track.
-OralHypnoAnimation is a g-looping cutscene animation track.
-ShemaleHypnoAnimation is a g-looping cutscene animation track.
-DPHypnoAnimation is a g-looping cutscene animation track.
-MilkHypnoAnimation is a g-looping cutscene animation track.
-PissHypnoAnimation is a g-looping cutscene animation track.
-DiaperHypnoAnimation is a g-looping cutscene animation track.
-To check speed change of (T - DPHypnoAnimation):
+BBCSpiralAnimation is a g-looping cutscene animation track.
+OralSpiralAnimation is a g-looping cutscene animation track.
+TransSpiralAnimation is a g-looping cutscene animation track.
+DPSpiralAnimation is a g-looping cutscene animation track.
+MilkSpiralAnimation is a g-looping cutscene animation track.
+PissSpiralAnimation is a g-looping cutscene animation track.
+DiaperSpiralAnimation is a g-looping cutscene animation track.
+To check speed change of (T - DPSpiralAnimation):
 	if the animation-speed of T is 1, now the animation-speed of T is 2. [Double the speed after the first loop]
 
 PussyExpelAnimation is a g-looping cutscene animation track.
@@ -472,25 +472,33 @@ An initial animation track is a kind of solo animation track.
 
 To commence animation of (T - an initial animation track):
 	compute unique setup of T;
+	say "checkpoint 5b1.";
 	now the current-frame of T is 1;
 	now the frame-tick of T is 1;
 	now the target-window of T is the graphics-window;
+	say "checkpoint 5b2.";
 	now the position of the graphics-window is g-placeabove;
 	now the measurement of the graphics-window is 99;
 	open the graphics-window;
+	say "checkpoint 5b3.";
 	compute framing of T.
 
 To compute framing of (T - an initial animation track):
+	say "checkpoint 5b4.";
 	let F be entry (current-frame of T) of the image-reel of T;
+	say "checkpoint 5b5.";
 	let mapH be the height of the graphics-window;
 	let mapW be the width of the graphics-window;
 	now the animW of T is the pixel-width of F;
 	now the animH of T is the pixel-height of F;
 	now the animX of T is (the width of the graphics-window - the animW of T) / 2;
 	now the animY of T is (the height of the graphics-window - the animH of T) / 2;
+	say "checkpoint 5b6.";
 	draw a rectangle animationColour of T in the graphics-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
 	set a graphlink in the graphics-window identified as hypermapskip from 0 by 0 to mapW by mapH as "skip";
+	say "checkpoint 5b7.";
 	unless the bannerImage of T is figure of no-image-yet:
+		say "checkpoint 5b8.";
 		let BI be the bannerImage of T;
 		let BIW be the pixel-width of BI;
 		let BIH be the pixel-height of BI;
@@ -626,66 +634,66 @@ To compute animation of (T - previous-body-flip):
 		cease animation of T.
 
 
-Figure of HypnoPissAnimation00 is the file "Special/Animations/HypnoPiss/frame00.jpg".
-Figure of HypnoPissAnimation01 is the file "Special/Animations/HypnoPiss/frame01.jpg".
-Figure of HypnoPissAnimation02 is the file "Special/Animations/HypnoPiss/frame02.jpg".
-Figure of HypnoPissAnimation03 is the file "Special/Animations/HypnoPiss/frame03.jpg".
-Figure of HypnoPissAnimation04 is the file "Special/Animations/HypnoPiss/frame04.jpg".
-Figure of HypnoPissAnimation05 is the file "Special/Animations/HypnoPiss/frame05.jpg".
-Figure of HypnoPissAnimation06 is the file "Special/Animations/HypnoPiss/frame06.jpg".
-Figure of HypnoPissAnimation07 is the file "Special/Animations/HypnoPiss/frame07.jpg".
-Figure of HypnoPissAnimation08 is the file "Special/Animations/HypnoPiss/frame08.jpg".
-Figure of HypnoPissAnimation09 is the file "Special/Animations/HypnoPiss/frame09.jpg".
-Figure of HypnoPissAnimation10 is the file "Special/Animations/HypnoPiss/frame10.jpg".
-Figure of HypnoPissAnimation11 is the file "Special/Animations/HypnoPiss/frame11.jpg".
-Figure of HypnoPissAnimation12 is the file "Special/Animations/HypnoPiss/frame12.jpg".
-Figure of HypnoPissAnimation13 is the file "Special/Animations/HypnoPiss/frame13.jpg".
-Figure of HypnoPissAnimation14 is the file "Special/Animations/HypnoPiss/frame14.jpg".
-Figure of HypnoPissAnimation15 is the file "Special/Animations/HypnoPiss/frame15.jpg".
-Figure of HypnoPissAnimation16 is the file "Special/Animations/HypnoPiss/frame16.jpg".
-Figure of HypnoPissAnimation17 is the file "Special/Animations/HypnoPiss/frame17.jpg".
-Figure of HypnoPissAnimation18 is the file "Special/Animations/HypnoPiss/frame18.jpg".
-Figure of HypnoPissAnimation19 is the file "Special/Animations/HypnoPiss/frame19.jpg".
-Figure of HypnoPissAnimation20 is the file "Special/Animations/HypnoPiss/frame20.jpg".
-Figure of HypnoPissAnimation21 is the file "Special/Animations/HypnoPiss/frame21.jpg".
-Figure of HypnoPissAnimation22 is the file "Special/Animations/HypnoPiss/frame22.jpg".
-Figure of HypnoPissAnimation23 is the file "Special/Animations/HypnoPiss/frame23.jpg".
-Figure of HypnoPissAnimation24 is the file "Special/Animations/HypnoPiss/frame24.jpg".
-Figure of HypnoPissAnimation25 is the file "Special/Animations/HypnoPiss/frame25.jpg".
-Figure of HypnoPissAnimation26 is the file "Special/Animations/HypnoPiss/frame26.jpg".
-Figure of HypnoPissAnimation27 is the file "Special/Animations/HypnoPiss/frame27.jpg".
-Figure of HypnoPissAnimation28 is the file "Special/Animations/HypnoPiss/frame28.jpg".
-Figure of HypnoPissAnimation29 is the file "Special/Animations/HypnoPiss/frame29.jpg".
-Figure of HypnoPissAnimation30 is the file "Special/Animations/HypnoPiss/frame30.jpg".
-Figure of HypnoPissAnimation31 is the file "Special/Animations/HypnoPiss/frame31.jpg".
-Figure of HypnoPissAnimation32 is the file "Special/Animations/HypnoPiss/frame32.jpg".
-Figure of HypnoPissAnimation33 is the file "Special/Animations/HypnoPiss/frame33.jpg".
-Figure of HypnoPissAnimation34 is the file "Special/Animations/HypnoPiss/frame34.jpg".
-Figure of HypnoPissAnimation35 is the file "Special/Animations/HypnoPiss/frame35.jpg".
-Figure of HypnoPissAnimation36 is the file "Special/Animations/HypnoPiss/frame36.jpg".
-Figure of HypnoPissAnimation37 is the file "Special/Animations/HypnoPiss/frame37.jpg".
-Figure of HypnoPissAnimation38 is the file "Special/Animations/HypnoPiss/frame38.jpg".
-Figure of HypnoPissAnimation39 is the file "Special/Animations/HypnoPiss/frame39.jpg".
-Figure of HypnoPissAnimation40 is the file "Special/Animations/HypnoPiss/frame40.jpg".
-Figure of HypnoPissAnimation41 is the file "Special/Animations/HypnoPiss/frame41.jpg".
-Figure of HypnoPissAnimation42 is the file "Special/Animations/HypnoPiss/frame42.jpg".
-Figure of HypnoPissAnimation43 is the file "Special/Animations/HypnoPiss/frame43.jpg".
-Figure of HypnoPissAnimation44 is the file "Special/Animations/HypnoPiss/frame44.jpg".
-Figure of HypnoPissAnimation45 is the file "Special/Animations/HypnoPiss/frame45.jpg".
-Figure of HypnoPissAnimation46 is the file "Special/Animations/HypnoPiss/frame46.jpg".
-Figure of HypnoPissAnimation47 is the file "Special/Animations/HypnoPiss/frame47.jpg".
-Figure of HypnoPissAnimation48 is the file "Special/Animations/HypnoPiss/frame48.jpg".
-Figure of HypnoPissAnimation49 is the file "Special/Animations/HypnoPiss/frame49.jpg".
-Figure of HypnoPissAnimation50 is the file "Special/Animations/HypnoPiss/frame50.jpg".
-Figure of HypnoPissAnimation51 is the file "Special/Animations/HypnoPiss/frame51.jpg".
-Figure of HypnoPissAnimation52 is the file "Special/Animations/HypnoPiss/frame52.jpg".
-Figure of HypnoPissAnimation53 is the file "Special/Animations/HypnoPiss/frame53.jpg".
-Figure of HypnoPissAnimation54 is the file "Special/Animations/HypnoPiss/frame54.jpg".
-Figure of HypnoPissAnimation55 is the file "Special/Animations/HypnoPiss/frame55.jpg".
-Figure of HypnoPissAnimation56 is the file "Special/Animations/HypnoPiss/frame56.jpg".
-Figure of HypnoPissAnimation57 is the file "Special/Animations/HypnoPiss/frame57.jpg".
-Figure of HypnoPissAnimation58 is the file "Special/Animations/HypnoPiss/frame58.jpg".
+Figure of SpiralPissAnimation00 is the file "Special/Animations/SpiralPiss/frame00.jpg".
+Figure of SpiralPissAnimation01 is the file "Special/Animations/SpiralPiss/frame01.jpg".
+Figure of SpiralPissAnimation02 is the file "Special/Animations/SpiralPiss/frame02.jpg".
+Figure of SpiralPissAnimation03 is the file "Special/Animations/SpiralPiss/frame03.jpg".
+Figure of SpiralPissAnimation04 is the file "Special/Animations/SpiralPiss/frame04.jpg".
+Figure of SpiralPissAnimation05 is the file "Special/Animations/SpiralPiss/frame05.jpg".
+Figure of SpiralPissAnimation06 is the file "Special/Animations/SpiralPiss/frame06.jpg".
+Figure of SpiralPissAnimation07 is the file "Special/Animations/SpiralPiss/frame07.jpg".
+Figure of SpiralPissAnimation08 is the file "Special/Animations/SpiralPiss/frame08.jpg".
+Figure of SpiralPissAnimation09 is the file "Special/Animations/SpiralPiss/frame09.jpg".
+Figure of SpiralPissAnimation10 is the file "Special/Animations/SpiralPiss/frame10.jpg".
+Figure of SpiralPissAnimation11 is the file "Special/Animations/SpiralPiss/frame11.jpg".
+Figure of SpiralPissAnimation12 is the file "Special/Animations/SpiralPiss/frame12.jpg".
+Figure of SpiralPissAnimation13 is the file "Special/Animations/SpiralPiss/frame13.jpg".
+Figure of SpiralPissAnimation14 is the file "Special/Animations/SpiralPiss/frame14.jpg".
+Figure of SpiralPissAnimation15 is the file "Special/Animations/SpiralPiss/frame15.jpg".
+Figure of SpiralPissAnimation16 is the file "Special/Animations/SpiralPiss/frame16.jpg".
+Figure of SpiralPissAnimation17 is the file "Special/Animations/SpiralPiss/frame17.jpg".
+Figure of SpiralPissAnimation18 is the file "Special/Animations/SpiralPiss/frame18.jpg".
+Figure of SpiralPissAnimation19 is the file "Special/Animations/SpiralPiss/frame19.jpg".
+Figure of SpiralPissAnimation20 is the file "Special/Animations/SpiralPiss/frame20.jpg".
+Figure of SpiralPissAnimation21 is the file "Special/Animations/SpiralPiss/frame21.jpg".
+Figure of SpiralPissAnimation22 is the file "Special/Animations/SpiralPiss/frame22.jpg".
+Figure of SpiralPissAnimation23 is the file "Special/Animations/SpiralPiss/frame23.jpg".
+Figure of SpiralPissAnimation24 is the file "Special/Animations/SpiralPiss/frame24.jpg".
+Figure of SpiralPissAnimation25 is the file "Special/Animations/SpiralPiss/frame25.jpg".
+Figure of SpiralPissAnimation26 is the file "Special/Animations/SpiralPiss/frame26.jpg".
+Figure of SpiralPissAnimation27 is the file "Special/Animations/SpiralPiss/frame27.jpg".
+Figure of SpiralPissAnimation28 is the file "Special/Animations/SpiralPiss/frame28.jpg".
+Figure of SpiralPissAnimation29 is the file "Special/Animations/SpiralPiss/frame29.jpg".
+Figure of SpiralPissAnimation30 is the file "Special/Animations/SpiralPiss/frame30.jpg".
+Figure of SpiralPissAnimation31 is the file "Special/Animations/SpiralPiss/frame31.jpg".
+Figure of SpiralPissAnimation32 is the file "Special/Animations/SpiralPiss/frame32.jpg".
+Figure of SpiralPissAnimation33 is the file "Special/Animations/SpiralPiss/frame33.jpg".
+Figure of SpiralPissAnimation34 is the file "Special/Animations/SpiralPiss/frame34.jpg".
+Figure of SpiralPissAnimation35 is the file "Special/Animations/SpiralPiss/frame35.jpg".
+Figure of SpiralPissAnimation36 is the file "Special/Animations/SpiralPiss/frame36.jpg".
+Figure of SpiralPissAnimation37 is the file "Special/Animations/SpiralPiss/frame37.jpg".
+Figure of SpiralPissAnimation38 is the file "Special/Animations/SpiralPiss/frame38.jpg".
+Figure of SpiralPissAnimation39 is the file "Special/Animations/SpiralPiss/frame39.jpg".
+Figure of SpiralPissAnimation40 is the file "Special/Animations/SpiralPiss/frame40.jpg".
+Figure of SpiralPissAnimation41 is the file "Special/Animations/SpiralPiss/frame41.jpg".
+Figure of SpiralPissAnimation42 is the file "Special/Animations/SpiralPiss/frame42.jpg".
+Figure of SpiralPissAnimation43 is the file "Special/Animations/SpiralPiss/frame43.jpg".
+Figure of SpiralPissAnimation44 is the file "Special/Animations/SpiralPiss/frame44.jpg".
+Figure of SpiralPissAnimation45 is the file "Special/Animations/SpiralPiss/frame45.jpg".
+Figure of SpiralPissAnimation46 is the file "Special/Animations/SpiralPiss/frame46.jpg".
+Figure of SpiralPissAnimation47 is the file "Special/Animations/SpiralPiss/frame47.jpg".
+Figure of SpiralPissAnimation48 is the file "Special/Animations/SpiralPiss/frame48.jpg".
+Figure of SpiralPissAnimation49 is the file "Special/Animations/SpiralPiss/frame49.jpg".
+Figure of SpiralPissAnimation50 is the file "Special/Animations/SpiralPiss/frame50.jpg".
+Figure of SpiralPissAnimation51 is the file "Special/Animations/SpiralPiss/frame51.jpg".
+Figure of SpiralPissAnimation52 is the file "Special/Animations/SpiralPiss/frame52.jpg".
+Figure of SpiralPissAnimation53 is the file "Special/Animations/SpiralPiss/frame53.jpg".
+Figure of SpiralPissAnimation54 is the file "Special/Animations/SpiralPiss/frame54.jpg".
+Figure of SpiralPissAnimation55 is the file "Special/Animations/SpiralPiss/frame55.jpg".
+Figure of SpiralPissAnimation56 is the file "Special/Animations/SpiralPiss/frame56.jpg".
+Figure of SpiralPissAnimation57 is the file "Special/Animations/SpiralPiss/frame57.jpg".
+Figure of SpiralPissAnimation58 is the file "Special/Animations/SpiralPiss/frame58.jpg".
 When play begins:
-	fill PissHypnoAnimation from Figure of HypnoPissAnimation00 to 58.
+	fill PissSpiralAnimation from Figure of SpiralPissAnimation00 to 58.
 
 Timer Stuff ends here.

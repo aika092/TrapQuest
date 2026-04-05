@@ -774,7 +774,7 @@ Definition: ghostly tentacle is mansion dwelling: decide yes.
 To decide which number is the girth of (M - ghostly tentacle):
 	let G be 4;
 	if the location of the player is mansion23, increase G by 1;
-	if the class of the player is schoolgirl, increase G by 1;
+	if the class of the player is alchemist, increase G by 1;
 	decide on G.
 
 To compute perception of (M - ghostly tentacle):

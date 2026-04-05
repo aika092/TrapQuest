@@ -92,16 +92,16 @@ To compute cultist conversion cutscene of (M - a monster):
 	destroy M;
 	now M is permanently banished.
 
-Report going when the player is in School01:
-	if retiredStudents > 0:
+Report going when the player is in Facility01:
+	if retiredTrainees > 0:
 		if most-recent-leaver is a monster:
 			let M be most-recent-leaver;
-			say "[bold type]As you enter the reception, you notice [M] [bold type]handing [his of M] armband back to [if receptionist is in School01][NameDesc of receptionist][otherwise]the reception desk[end if].[roman type][line break][speech style of receptionist]'Okay sweetie, now we just have to pop to the Staff Room for your final processing.'[roman type][line break][if receptionist is in School01][BigNameDesc of receptionist][otherwise][BigNameDesc of a random alive undefeated staff member][end if] takes [NameDesc of M][']s hand and leads them north, through to the Staff Room.";
-			increase retiredStudents by 1;
+			say "[bold type]As you enter the reception, you notice [M] [bold type]handing [his of M] armband back to [if receptionist is in Facility01][NameDesc of receptionist][otherwise]the reception desk[end if].[roman type][line break][speech style of receptionist]'Okay sweetie, now we just have to pop to the Staff Room for your final processing.'[roman type][line break][if receptionist is in Facility01][BigNameDesc of receptionist][otherwise][BigNameDesc of a random alive undefeated staff member][end if] takes [NameDesc of M][']s hand and leads them north, through to the Staff Room.";
+			increase retiredTrainees by 1;
 			focus-consider most-recent-leaver;
 			if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
 			now most-recent-leaver is nothing;
-	otherwise if doom counter > 0 and most-recent-leaver is student and doomed < 5 and doomed >= 0 and a random number between 1 and 3 is 1:
+	otherwise if doom counter > 0 and most-recent-leaver is trainee and doomed < 5 and doomed >= 0 and a random number between 1 and 3 is 1:
 		let M be most-recent-leaver;
 		let N be a random alive intelligent acolyte;
 		if N is nothing, now N is a random intelligent acolyte;

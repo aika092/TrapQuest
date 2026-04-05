@@ -28,7 +28,7 @@ overflowed is a number that varies.
 [Is the player peeing into a body of water?]
 water-peeing is initially false.
 
-toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of school toilets is the file "Env/School/toilets1.jpg". Figure of school toilets locked is the file "Env/School/toilets2.jpg".
+toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of facility toilets is the file "Env/Facility/toilets1.jpg". Figure of facility toilets locked is the file "Env/Facility/toilets2.jpg".
 urinal is a backdrop. Understand "potty", "urinals", "bathroom" as urinal. The text-shortcut of urinal is "urinal".
 
 
@@ -49,9 +49,9 @@ To say ExamineDesc of (T - urinal):
 
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
-	if playerRegion is school and the player is not in a predicament room:
-		if locked-toilets is true, decide on figure of school toilets locked;
-		otherwise decide on figure of school toilets;
+	if playerRegion is facility and the player is not in a predicament room:
+		if locked-toilets is true, decide on Figure of facility toilets locked;
+		otherwise decide on Figure of facility toilets;
 	if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
@@ -120,7 +120,7 @@ Definition: yourself is able to use a toilet:
 
 Definition: yourself is potentially able to use a toilet:
 	if diaper quest is 1 and watersports fetish is 0 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide no; [can't use Berri without watersports enabled!]
-	if locked-toilets is true and the player is in School10 and academy-toilet-key is not held, decide no; [toilet is locked]
+	if locked-toilets is true and the player is in Facility10 and facility-toilet-key is not held, decide no; [toilet is locked]
 	if diaper lover > 0 and the times-terrorised of toilet-monster > 1 and the number of intelligent friendly monsters in the location of the player is 0, decide no; [scared of toilets]
 	if the player is upright and the location of the player is toilets, decide yes;
 	decide no.
@@ -145,7 +145,7 @@ Check toileting:
 	if the noun is not toilet and the noun is not urinal, say "This verb is for using the toilet." instead;
 	if the player is prone, say "You can only do that while on two feet." instead;
 	if the player is immobile or the player is in danger or the player is flying, say "Aren't you a bit busy?" instead;
-	if locked-toilets is true and the player is in School10 and academy-toilet-key is not held, say "You don't have the key!" instead;
+	if locked-toilets is true and the player is in Facility10 and facility-toilet-key is not held, say "You don't have the key!" instead;
 	let PC be a random pee covering actually unavoidable clothing;
 	let AC be a random ass covering actually unavoidable clothing;
 	if the player is able to use the toilet past their diaper:
@@ -266,7 +266,7 @@ Check urinating:
 					now auto is 0;
 					if the player is not consenting, say "You change your mind." instead;
 			now auto is 0;
-	if the player is prone and the location of the player is bathroom and delayed urination is 0:
+	if the player is prone and the location of the player is bathroom and delayed urination is 0 and urinal is not grabbing the player:
 		say "Do you really want to try to pee [if the player is pee protected]your pants[otherwise]on the floor here[end if], while kneeling? ";
 		if the player is bimbo consenting:
 			let M be a random reactive person;
@@ -294,13 +294,13 @@ Definition: a clothing (called P) is pants pee refusal inducing:
 	decide no.
 [In DQ players will always pee their pants just not in front of people. This is to make sure that the 'never wet myself involuntarily' bonus is always attainable.]
 
-toiletJustUsed is initially false. [Used in the DQ ultimate lesson.]
+toiletJustUsed is initially false. [Used in the DQ ultimate training sesson.]
 
 To compute toilet use:
 	if seconds is 0, allocate 6 seconds;
 	let too be "";
 	let initialBladder be the bladder of the player;
-	if the location of the player is School10 and locked-toilets is true and academy-toilet-key is held, say "You unlock the toilet lid with the key.";
+	if the location of the player is Facility10 and locked-toilets is true and facility-toilet-key is held, say "You unlock the toilet lid with the key.";
 	if watersports mechanics is 1 and the player is not bladder incontinent and (the number of pee covering actually unavoidable clothing is 0 or the player is able to use the toilet past their diaper):
 		if the bladder of the player > 0:
 			let C be a random pee covering clothing;
@@ -411,7 +411,7 @@ To compute toilet use:
 	if toiletJustUsed is true:
 		trigger pee-wisp-trigger;
 		check woman toilet;
-		if locked-toilets is true, check school toilet supervision.
+		if locked-toilets is true, check facility toilet supervision.
 
 To compute urinal use:
 	if seconds is 0, allocate 6 seconds;
@@ -469,12 +469,21 @@ To compute urinal use:
 			say "[BigNameDesc of shopkeeper] groans in frustration as the [urine] floods [his of shopkeeper] mouth, and [he of shopkeeper] is forced to swallow. But there's absolutely nothing [he of shopkeeper] can do about it but drink it down, and wait until it comes out [his of shopkeeper] own bladder a bit later and joins the rest of the [urine] soaking [his of shopkeeper] extra-thick padding. You can't help but feel a bit better about yourself in comparison to this pathetic human toilet!";
 			Dignify 1000;
 			DelicateDown 1;
-		otherwise if the player is in School27:
+		otherwise if the player is in Facility27:
 			say "The human urinal whimpers as the [urine] floods their mouth, and they are forced to swallow. But there's absolutely nothing they can do about it but drink it down, and wait until it comes out their own bladder a bit later and joins the rest of the [urine] soaking their extra-thick padding. You can't help but feel a bit better about yourself in comparison to this pathetic human toilet!";
 			Dignify 1000;
 			DelicateDown 1;
+		otherwise if the player is in Facility35: [princess urinal]
+			let M be ex-princess;
+			say "[BigNameDesc of M] [if legacy content is 1]wails in despair as your [urine] flows towards [his of M] food.[speech style of M]'You fucking [cunt][otherwise]grunts in frustration as your [urine] flows towards [his of M] food.[speech style of M]'And there I thought maybe you were here to rescue me[end if]!'[roman type][line break]That's all [he of M] has time to say before [he of M] has to begin sucking up your [urine] and transferring it, mouthful by mouthful, into [his of M] toilet[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
+			DelicateDown 1;
+			obsceneDignify;
+			increase the torment-count of M by 1;
+			increase the current-torment of M by 60;
+			repeat with ST running through trainees in the location of the player:
+				FavourUp ST;
 		now the bladder of the player is 0;
-		unless the location of the player is School35: [princess urinal]
+		unless the location of the player is Facility35: [princess urinal]
 			repeat with M running through reactive monsters:
 				compute toilet reaction of M;
 		progress quest of careful-peeing-quest;
@@ -985,7 +994,7 @@ To say GroundPeeReaction of (M - a monster):
 		if diaper quest is 1:
 			now M is bulkier-diaper-committed;
 			interest M;
-			if M is friendly and M is not student and M is not staff member:
+			if M is friendly and M is not trainee and M is not staff member and M is not ex-princess and M is not witch and M is not kitsune and M is threatening:
 				anger M;
 				say BecomesAggressive of M.
 

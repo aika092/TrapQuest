@@ -2,13 +2,13 @@ Nurse by Monster begins here.
 
 nurse is a staff member.
 
-nurse is in School11. The text-shortcut of nurse is "nrs". nurse has a number called boost-cooldown. nurse has a number called wont-change. nurse has a number called boost-int-drain. nurse has a number called breast-enhancement. nurse can be diaper-change-punishing.
+nurse is in Facility11. The text-shortcut of nurse is "nrs". nurse has a number called boost-cooldown. nurse has a number called wont-change. nurse has a number called boost-int-drain. nurse has a number called breast-enhancement. nurse can be diaper-change-punishing.
 To decide which object is the default-local-room of (M - nurse):
-	decide on School11.
+	decide on Facility11.
 
-Figure of nurse is the file "NPCs/School/nurse1.png".
-Figure of enslaved diapered nurse is the file "NPCs/School/nurse3.png".
-Figure of mad nurse is the file "NPCs/School/nurse4.jpg".
+Figure of nurse is the file "NPCs/Facility/nurse1.png".
+Figure of enslaved diapered nurse is the file "NPCs/Facility/nurse3.png".
+Figure of mad nurse is the file "NPCs/Facility/nurse4.jpg".
 
 To decide which figure-name is the monster-image of (M - nurse):
 	decide on figure of nurse.
@@ -46,12 +46,12 @@ Definition: nurse is willing to do oral: decide yes.
 Definition: nurse is diaper disciplining: decide yes.
 
 To regionally place (M - nurse):
-	now M is in School11.
+	now M is in Facility11.
 
 To set up (M - nurse):
 	reset M;
 	now the monstersetup of M is 1;
-	now M is in School11;
+	now M is in Facility11;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
@@ -67,7 +67,7 @@ Definition: nurse (called M) is combative-or-blocking:
 Definition: nurse is dismissable: decide no.
 
 To compute friendly boredom of (M - nurse):
-	if the player is not in the location of M and the player is not in School11 and the player is not in School12, now M is uninterested.
+	if the player is not in the location of M and the player is not in Facility11 and the player is not in Facility12, now M is uninterested.
 
 To bore (M - nurse) for (N - a number) seconds:
 	compute common boredom of M for N seconds;
@@ -78,7 +78,7 @@ To bore (M - nurse) for (N - a number) seconds:
 		now the boredom of M is N.
 
 Definition: nurse (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
-	if the noun is south and M is in School11, decide yes; [The nurse always blocks the entrance into the med bay successfully.]
+	if the noun is south and M is in Facility11, decide yes; [The nurse always blocks the entrance into the med bay successfully.]
 	if M is dangerous:
 		let R be (a random number from 1 to the difficulty of M * 2) + the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
 		if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[difficulty of M * 2] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
@@ -86,7 +86,7 @@ Definition: nurse (called M) is successfully blocking: [Do they succeed in a rol
 	decide no.
 
 To say MovementBlock of (M - nurse):
-	say "[BigNameDesc of M] stands into the doorway, completely blocking your path![if M is in School11 and the noun is south][line break][speech style of M]'No dear, you're not allowed back there unless you need to use the bed.'[roman type][line break][end if]";
+	say "[BigNameDesc of M] stands into the doorway, completely blocking your path![if M is in Facility11 and the noun is south][line break][speech style of M]'No dear, you're not allowed back there unless you need to use the bed.'[roman type][line break][end if]";
 
 To say DamageReactHealthy of (M - nurse):
 	say "[BigNameDesc of M] easily takes the hit![line break][speech style of M]'[one of]Ooh!'[or]Oof!'[at random][roman type][line break]".
@@ -140,18 +140,18 @@ Definition: nurse (called M) is aware that the player needs a change:
 		if D is crotch-ripped diaper, decide yes;
 	decide no.
 
-To compute student perception of (M - nurse):
+To compute trainee perception of (M - nurse):
 	if M is aware that the player needs a change:
 		compute diaper check of M;
 	otherwise:
 		if there is a worn diaper, compute diaper check of M; [She can check and then if you don't need a change she'll just continue normally]
 		if M is interested and M is friendly and M is not changing the player:
 			if the diaper-duration of M > 0 and the number of worn diaper is 0:
-				say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'EXCUSE ME, LITTLE MISS! I'm pretty sure I SPECIFICALLY INSTRUCTED YOU to remain in diapers until I gave you permission to wear big [boy of the player] undies again, did I not?! This calls for detention! Get on your knees right now!'[roman type][line break]";
+				say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'EXCUSE ME, LITTLE MISS! I'm pretty sure I SPECIFICALLY INSTRUCTED YOU to remain in diapers until I gave you permission to wear big [boy of the player] undies again, did I not?! This calls for reconditioning! Get on your knees right now!'[roman type][line break]";
 				anger M;
 			otherwise if the bladder of M >= 1000 and M is able to use a free use urinal:
 				compute free use urinal perception of M;
-			otherwise if M is in School11 or M is in School12:
+			otherwise if M is in Facility11 or M is in Facility12:
 				if the breast-enhancement of M > 0:
 					say "[speech style of M]'Ah yes, I've been expecting you, [NameBimbo]. You're here for your breast enhancement, right? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
 				otherwise if the body soreness of the player > 0:
@@ -167,7 +167,7 @@ To compute student perception of (M - nurse):
 
 
 To say FirstResponse of (M - a nurse):
-	say "[speech style of M]'[one of]Hello there. Have we met before, sweetie?'[or]Hey there sweetie. Are you a new student?'[or]Hello. You must be a new student.'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Hello there. Have we met before, sweetie?'[or]Hey there sweetie. Are you a new trainee?'[or]Hello. You must be a new trainee.'[at random][roman type][line break]".
 
 To say RepeatResponse of (M - a nurse):
 	let E be the extra lives of the player;
@@ -180,10 +180,10 @@ To say WhoAnswer of (M - a nurse):
 	say "[speech style of M]'I'm the nurse! Glad to make your acquaintance, dear.'[roman type][line break]".
 
 To say WhereAnswer of (M - a nurse):
-	say "[speech style of M]'[if the rank of the player <= 1]You're in the nurse's office sweetie. If you're not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I'm not sure. Just do your best on your school-work and I'm sure you'll be all ranked up in no time!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]You're in the nurse's office sweetie. If you're not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I'm not sure. Just do your best in your training sessions and I'm sure you'll be all ranked up in no time!'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a nurse):
-	say "[speech style of M]'[one of]Mmm, I don't know. Maybe you need to increase your rank before you can find out?[or]Mmm, well, I have to stay here to take care of the students, so I don't know too much about that.'[or]Sorry honey, but I don't know much about that. Maybe when you're all done here you should try increasing your rank?'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Mmm, I don't know. Maybe you need to increase your rank before you can find out?[or]Mmm, well, I have to stay here to take care of the trainees, so I don't know too much about that.'[or]Sorry honey, but I don't know much about that. Maybe when you're all done here you should try increasing your rank?'[at random][roman type][line break]".
 
 To say StoryAnswer of (M - a nurse):
 	say "[speech style of M]'Mmm, well, I started working here because I love making people feel good. Doesn't matter where this place came from as long as I can do that.'[roman type][line break]".
@@ -196,19 +196,19 @@ Chapter - Motion
 [Nurse is never supposed to leave her little area unless using the toilet or combative]
 
 To compute (M - nurse) seeking (D - a direction):
-	if the player is in School11 or the player is in School12 or M is unfriendly:
+	if the player is in Facility11 or the player is in Facility12 or M is unfriendly:
 		blockable move M to D;
 		compute monstermotion reactions of M.
 
 To compute monstermotion of (M - nurse):
 	if M is undefeated:
-		if playerRegion is not school:
-			say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
-			now M is in School01;
-		otherwise if M is not in School11:
-			let D be the best route from the location of M to School11 through academic rooms;
+		if playerRegion is not facility:
+			say "BUG: [BigNameDesc of M] has followed the player out of the facility. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
+			now M is in Facility01;
+		otherwise if M is not in Facility11:
+			let D be the best route from the location of M to Facility11 through academic rooms;
 			if D is a direction, blockable move M to D;
-		if M is in School11 or M is in School12, now the boredom of M is 0.
+		if M is in Facility11 or M is in Facility12, now the boredom of M is 0.
 
 [Nurse always successfully follows the player]
 To decide which number is the seek roll of (M - nurse):
@@ -297,16 +297,16 @@ To say DiaperCheckResultsMostlyDryFlav of (M - nurse):
 	otherwise say "[speech style of M]'Not too wet yet.'[roman type][line break][big he of M] straightens up to address you normally.".
 
 To say DiaperCheckNoChangeAllowedFlav of (M - nurse):
-	say "[speech style of M]'Sorry, force of habit. The truth is, your teacher told me that you're not allowed any diaper changes from me until you've attended [wont-change of M] more lesson[if wont-change of M > 1]s[end if].'[roman type][line break][big he of M] straightens up to address you normally.".
+	say "[speech style of M]'Sorry, force of habit. The truth is, your tutor told me that you're not allowed any diaper changes from me until you've attended [wont-change of M] more training sessions[if wont-change of M > 1]s[end if].'[roman type][line break][big he of M] straightens up to address you normally.".
 
 To say DiaperChangeStart of (M - nurse):
-	unless M is in School12, drag to School12 by M;
+	unless M is in Facility12, drag to Facility12 by M;
 	say "[unless med bay bed is grabbing the player][BigNameDesc of M] lowers you onto the [med bay bed]. [big he of M] pins you down with one strong arm and uses the other to binds your wrists and ankles with the inbuilt straps.[end if]".
 
 To compute nurse diapering of (M - a monster):
 	if M is nurse:
 		interest M;
-		if M is not in School12, drag to School12 by M;
+		if M is not in Facility12, drag to Facility12 by M;
 		say "[speech style of M]'Right! Onto the bed you go, you naughty little minx!'[roman type][line break]";
 		now M is diaper-change-punishing;
 		if diaper quest is 1:
@@ -321,14 +321,14 @@ To compute nurse diapering of (M - a monster):
 		if nurse is off-stage, set up nurse;
 		if nurse is defeated, now nurse is unleashed; [shouldn't happen, but we should still have this failsafe]
 		unless nurse is in the location of the player:
-			now nurse is in School11;
-			drag to School11 by M;
-		say "[speech style of M]'Nurse, this naughty baby has been trapsing around the academy without a diaper!'[roman type][line break]";
+			now nurse is in Facility11;
+			drag to Facility11 by M;
+		say "[speech style of M]'Nurse, this naughty baby has been trapsing around the training halls without a diaper!'[roman type][line break]";
 		bore M;
 		compute nurse diapering of nurse.
 
 To compute unique boredom of (M - nurse):
-	if playerRegion is not school and M is undefeated, now M is in School11;
+	if playerRegion is not facility and M is undefeated, now M is in Facility11;
 	now M is not diaper-change-punishing.
 
 To compute diaper change after special of (M - nurse):

@@ -169,7 +169,7 @@ STATES:
 91: Appeared by being fucked by mechanic in the hotel
 92: Appeared to try the deepthroat discount challenge with the shopkeeper
 93: Appeared in the dominatrix's predicament contraption
-94: Interacting with a hypno trap
+94: Interacting with a spiral trap
 95: Released from the toilet
 96: Scene with hotel beds & patrons
 97: Appeared by sitting on the throne
@@ -317,7 +317,7 @@ To compute woman bimbo changes:
 This is the woman spawning pregnant rule:
 	if pregnancy fetish > 0 and the woman-pregnancy of woman-player > 1 and (barbsummoned is true or a random number between 1 and 60 is 1):
 		deploy woman-player with woman-status 82;
-		compute addiction reflection on "pregnancy";
+		compute addiction reflection on "pregnancy" with 1 flavour;
 		rule succeeds.
 The woman spawning pregnant rule is listed first in the womanspawning rules.
 
@@ -359,7 +359,7 @@ This is the woman spawning in the region of the player rule:
 			rule succeeds.
 The woman spawning in the region of the player rule is listed last in the womanspawning rules.
 
-woman-player has a number called hypno-scene.
+woman-player has a number called spiral-scene.
 woman-player has a number called human-toilet-scene. forbidden-key is an object that varies.
 woman-player has a number called hotel-urinal-scene.
 woman-player has a number called vine-scene.
@@ -400,17 +400,17 @@ Check pulling woman-player:
 Chapter - Mechanic Scene
 
 To compute traitor surrender to (M - a monster):
-	decrease the traitor-hypno of hypno-lesson by 1;
+	decrease the traitor-h of traitor-training by 1;
 	say "You consider attacking [NameDesc of M], but then something inside you urges you to [speech style of M]help your friend[roman type] instead. You find yourself dropping to your knees.";
 	compute silent surrender to M.
 
-Check slapping mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-status of woman-player is 91:
+Check slapping mechanic when the traitor-h of traitor-training > 0 and the woman-status of woman-player is 91:
 	if the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player and mechanic is unfriendly, compute traitor surrender to mechanic instead.
-Check zapping mechanic with something when the traitor-hypno of hypno-lesson > 0 and the woman-status of woman-player is 91:
+Check zapping mechanic with something when the traitor-h of traitor-training > 0 and the woman-status of woman-player is 91:
 	if the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player and mechanic is unfriendly, compute traitor surrender to mechanic instead.
-Check kneeing mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-status of woman-player is 91:
+Check kneeing mechanic when the traitor-h of traitor-training > 0 and the woman-status of woman-player is 91:
 	if the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player and mechanic is unfriendly, compute traitor surrender to mechanic instead.
-Check kicking mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-status of woman-player is 91:
+Check kicking mechanic when the traitor-h of traitor-training > 0 and the woman-status of woman-player is 91:
 	if the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player and mechanic is unfriendly, compute traitor surrender to mechanic instead.
 
 An all later time based rule (this is the mechanic finishes with woman rule):
@@ -433,25 +433,25 @@ To say WaitingFlav of (M - a mechanic):
 
 Chapter - Hotel Hypno Scene
 
-A time based rule (this is the woman hypno hotel rule):
-	if the woman-status of woman-player is 4 and woman-player is alive and the hypno-scene of woman-player is 0:
+A time based rule (this is the woman spiral hotel rule):
+	if the woman-status of woman-player is 4 and woman-player is alive and the spiral-scene of woman-player is 0:
 		if playerRegion is Hotel and woman-player is nearby:
-			let Y be a random hypno trap in the location of woman-player;
-			if Y is hypno trap:
+			let Y be a random spiral trap in the location of woman-player;
+			if Y is spiral trap:
 				now Y is revealed;
 				now Y is not untriggered;
 				now the reset-timer of Y is 250;
 				now the woman-status of woman-player is 94;
-				say "[bold type]You spot [NameDesc of woman-player] nearby![roman type] [big he of woman-player] appears to be standing there, oblivious to your presence, transfixed by a screen. On the screen is [hypno content of Y]. You suppose you could go and attempt to rescue [him of woman-player], but you might get stuck looking at the screen yourself...";
-				now the hypno-scene of woman-player is 1;
+				say "[bold type]You spot [NameDesc of woman-player] nearby![roman type] [big he of woman-player] appears to be standing there, oblivious to your presence, transfixed by a screen. On the screen is [spiral content of Y]. You suppose you could go and attempt to rescue [him of woman-player], but you might get stuck looking at the screen yourself...";
+				now the spiral-scene of woman-player is 1;
 				increase the delayed sluttification of woman-player by 2.
 
-To compute woman hypno shared progression:
+To compute woman spiral shared progression:
 	unless woman-player is angered:
 		say "[BigNameDesc of woman-player] stands next to you, staring with exactly the same vacant expression as you probably have.";
 		increase the delayed sluttification of woman-player by 1.
 
-To compute woman hypno solo progression:
+To compute woman spiral solo progression:
 	say "[BigNameDesc of woman-player] drools a bit as [he of woman-player] watches the screen.";
 	increase the delayed sluttification of woman-player by 1.
 

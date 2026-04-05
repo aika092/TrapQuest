@@ -189,19 +189,11 @@ To compute (M - pimp) seeking (D - a direction):
 	otherwise:
 		send M home.
 
-To satisfy (M - pimp) for (N - a number) seconds:
-	if M is interested:
-		bore M for N seconds;
-		if M is unfriendly, calm M;
-		otherwise FavourUp M;
-		if M is in the location of the player and M is awake:
-			say SatisfiedFlav of M;
-			progress quest of nice-quest;
-		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
-	otherwise:
-		bore M for N seconds;
-	compute unlock satisfaction of M;
-	send M home. [This makes sure the pimp always makes it back to his room.]
+To compute unique boredom of (M - pimp):
+	let R be Hotel44;
+	if portal-diaper is worn, now R is Hotel31;
+	if M is not in R:
+		send M home. [This makes sure the pimp always makes it back to his room.]
 
 To say SatisfiedFlav of (M - pimp):
 	say "[if portal-bra is not worn and portal-hotpants is not worn][BigNameDesc of M] grunts with satisfaction.[line break][speech style of M]'That'll do as payment for now.'[roman type][line break][end if][big he of M] walks away, leaving you to contemplate the consequences of your choices.".
@@ -799,7 +791,7 @@ This is the pedestal management rule:
 					dislodge portal-hotpants;
 					say "[BigFuckerDesc of M] is using your [variable F] as [his of M] personal [one of]onahole[or]cocksleeve[or]fuckhole[in random order]!";
 					ruin F;
-					if playerRegion is school or the charge of P > (a random number between 102 and 103) or (M is combative and the player is prone):
+					if playerRegion is facility or the charge of P > (a random number between 102 and 103) or (M is combative and the player is prone):
 						TimesSubmittedUp M by 1;
 						now the sex-length of M is 0;
 						now M is not interested; [to prevent orgasm satisfy function]
@@ -819,7 +811,7 @@ This is the pedestal management rule:
 						dislodge portal-bra;
 						say "[BigFuckerDesc of M] is [one of]massaging [his of M] [manly-penis] with your breasts[or]sliding [his of M] [manly-penis] in and out of your cleavage[or]roughly groping your breasts and fucking your cleavage[cycling]!";
 						stimulate breasts from M;
-						if playerRegion is school or the charge of P > (a random number between 102 and 103) or (M is combative and the player is prone):
+						if playerRegion is facility or the charge of P > (a random number between 102 and 103) or (M is combative and the player is prone):
 							TimesSubmittedUp M by 1;
 							say "[if the player is in Hotel44]With a satisfied grunt, [FuckerDesc of M] lets[otherwise]Suddenly you feel [FuckerDesc of M] let[end if] several ropes of [semen] loose from [his of M] tip, coating your breasts in a layer of glaze.";
 							BreastsSensitivityUp 1;
@@ -837,7 +829,7 @@ This is the pedestal management rule:
 					otherwise:
 						if the player is in Hotel44, say "You watch [FuckerDesc of M] [one of]continue to massage [his of M] [manly-penis] with [WomanName][']s breasts[or]sliding [his of M] [manly-penis] in and out of [WomanName][']s cleavage[or]roughly groping [WomanName][']s breasts and fucking [his of woman-player] cleavage[cycling] mounted on the pedestal.";
 						if woman-player is in the location of the player, say "[BigNameDesc of woman-player] [one of]whines with shame and discomfort[or]mewls sheepishly[or]whimpers with self-pity[cycling] and [one of]doubles over[or]grips [his of woman-player] chest tightly[or]visibly shudders[cycling] as [if P is user-identified][FuckerDesc of PU][otherwise][one of]an unknown [man of male-m][or]the [man of male-m] on the other end of the portal[or][his of woman-player] mystery assailant[or]the [man of male-m] in the [Hotel44][cycling][end if] [if the player is in Hotel44]fucks[otherwise]does something to[end if] [his of woman-player] tits.";
-						if playerRegion is school or (the charge of P > a random number between 102 and 103) or M is combative:
+						if playerRegion is facility or (the charge of P > a random number between 102 and 103) or M is combative:
 							if the player is in Hotel44, say "With a satisfied grunt, [FuckerDesc of M] lets several ropes of [semen] loose from [his of M] tip, coating [WomanName][']s breasts in a layer of glaze. [if pimp is in Hotel44][BigFuckerDesc of pimp][otherwise][BigFuckerDesc of M][end if] then wipes them clean, ready for the next customer.";
 							if woman-player is in the location of the player:
 								if the player is getting unlucky:

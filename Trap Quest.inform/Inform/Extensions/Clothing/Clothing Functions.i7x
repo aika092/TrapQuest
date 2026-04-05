@@ -14,7 +14,7 @@ To decide which number is the masturbation-bonus of (C - a thing):
 
 To compute periodic effect of (C - a wearthing):
 	do nothing.
-To compute school periodic effect of (C - a wearthing):
+To compute facility periodic effect of (C - a wearthing):
 	do nothing.
 
 To decide which number is the leniency-addition of (C - a clothing): [How much extra size is necessary to burst through a bra or corset?]

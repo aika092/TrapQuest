@@ -66,8 +66,8 @@ Carry out crafting:
 			increase times-crafted by 1;
 			reset alchemy charge;
 			let H be a random worn blue scrunchie;
-			if H is clothing and playerRegion is not school, MagicPowerUp 1;
-			if heart hairpin is worn, class summon cheeky schoolgirl outfit;
+			if H is clothing and playerRegion is not facility, MagicPowerUp 1;
+			if heart hairpin is worn, class summon cheeky alchemist outfit;
 		otherwise:
 			if there is a product-highlighted thing:
 				say "Nothing happens.";
@@ -80,8 +80,8 @@ Carry out crafting:
 To compute recipe specific cursing of (T - a thing):
 	let K be the alchemy key of T;
 	if Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 0:
-		if the class of the player is schoolgirl and the player is getting lucky:
-			now T is bland;[Schoolgirls can get very lucky and complete a potion recipe with the wrong ingredients.]
+		if the class of the player is alchemist and the player is getting lucky:
+			now T is bland;[Alchemists can get very lucky and complete a potion recipe with the wrong ingredients.]
 			say GotLuckyFlav;
 		otherwise:
 			now T is cursed;

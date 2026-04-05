@@ -335,7 +335,7 @@ To IntUp (X - a number):
 		decrease X by 1;
 		if the raw intelligence of the player < 30:
 			increase the raw intelligence of the player by 1;
-			if the class of the player is schoolgirl and the raw intelligence of the player < 15, increase the raw intelligence of the player by 1;[Dumb schoolgirls can double dip on intelligence gains.]
+			if the class of the player is alchemist and the raw intelligence of the player < 15, increase the raw intelligence of the player by 1;[Dumb alchemists can double dip on intelligence gains.]
 		if throbbing-tentacle is worn, compute intDrain of severed-tentacle.[once the tentacle wins, you can no longer gain intelligence]
 
 To IntDown (X - a number):

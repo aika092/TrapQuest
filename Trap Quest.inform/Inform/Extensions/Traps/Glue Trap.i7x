@@ -199,7 +199,9 @@ This is the glued fuckholes can't use hands rule:
 The glued fuckholes can't use hands rule is listed first in the hands restriction rules.
 
 An all time based rule (this is the glue fuckhole rule):
-	if there is a fuckhole-mode glue penetrating face:
+	if there is a fuckhole-mode glue grabbing the player:
+		let G be a random fuckhole-mode glue grabbing the player;
+		if the number of things penetrating face is 0, now G is penetrating face;
 		let M be a random patron in the location of the player;
 		if M is nothing and a random number between 1 and 2 is 1:
 			now M is a random off-stage generic-appropriate patron;
@@ -944,6 +946,7 @@ Used to try to tear off glued worn clothing. If the player is strong enough, the
 +!]
 Check tearing off:
 	if the noun is not worn glued clothing, say "That's not [if the noun is not clothing]something you can tear off[otherwise if the noun is not worn]worn[otherwise]glued[end if]." instead;
+	if the noun is not gluetearable, do nothing instead;
 	if the player is not able to manually use manual dexterity, do nothing instead.
 
 To decide which number is the glue threshold of (C - a clothing):

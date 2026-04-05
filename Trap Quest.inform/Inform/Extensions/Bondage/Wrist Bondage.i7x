@@ -6,7 +6,7 @@ Definition: a wrist bond is same-type:
 	if theme-share-target is wrist bond, decide yes;
 	decide no.
 Definition: a wrist bond is application appropriate:
-	if playerRegion is hotel or playerRegion is school, decide yes;
+	if playerRegion is hotel or playerRegion is facility, decide yes;
 	decide no.
 
 To say ClothingDesc of (W - a wrist bond):
@@ -28,7 +28,7 @@ To compute (C - a wrist bond) unique inheriting from (D - a wrist bond):
 pair of handcuffs is a wrist bond. The printed name of pair of handcuffs is "[clothing-title-before]pair of handcuffs[clothing-title-after]". The text-shortcut of pair of handcuffs is "hc".
 Definition: a pair of handcuffs is grey themed: decide yes.
 Definition: pair of handcuffs is IcarusScienceAppropriate:
-	if bondage protection < 2 and it is actually summonable, decide yes;
+	if bondage protection < 3 and it is actually summonable, decide yes;
 	decide no.
 Definition: a pair of handcuffs is application appropriate:
 	if playerRegion is dungeon or playerRegion is mansion, decide yes;
@@ -134,7 +134,7 @@ This is the overdress wrist bondage clash rule:
 The overdress wrist bondage clash rule is listed in the overdress wearability rules.
 
 This is the wrist bondage dress removal clash rule:
-	if the player is wrist bound and wearing-target is not wrist locked:
+	if the player is wrist bound and wearing-target is not wrist locked and gluetearing is false:
 		if summoning is 0 and autoremove is false, say "You won't be able to strip out of this dress whilst your wrists are bound...";
 		rule fails.
 The wrist bondage dress removal clash rule is listed in the overdress removability rules.
@@ -146,7 +146,7 @@ This is the corset wrist bondage clash rule:
 The corset wrist bondage clash rule is listed in the corset wearability rules.
 
 This is the wrist bondage corset removal clash rule:
-	if the player is wrist bound and wearing-target is not wrist locked:
+	if the player is wrist bound and wearing-target is not wrist locked and gluetearing is false:
 		if summoning is 0 and autoremove is false, say "You won't be able to get out of this corset whilst your wrists are bound...";
 		rule fails.
 The wrist bondage corset removal clash rule is listed in the corset removability rules.
@@ -158,7 +158,7 @@ This is the bra wrist bondage clash rule:
 The bra wrist bondage clash rule is listed in the bra wearability rules.
 
 This is the wrist bondage bra removal clash rule:
-	if the player is wrist bound and wearing-target is not wrist locked:
+	if the player is wrist bound and wearing-target is not wrist locked and gluetearing is false:
 		if summoning is 0 and autoremove is false, say "You won't be able to strip this off whilst your wrists are bound...";
 		rule fails.
 The wrist bondage bra removal clash rule is listed in the bra removability rules.

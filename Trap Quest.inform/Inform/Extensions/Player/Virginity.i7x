@@ -108,7 +108,7 @@ To virginreward:
 		progress quest of virginity-retention-quest;
 		if the class of the player is magical girl, MagicPowerUp 2;
 		increase the virgin bonus of the player by background-pure;
-	otherwise if flower hairclip is actually summonable or (heart hairpin is worn and the class of the player is not schoolgirl) or runic headband is worn:
+	otherwise if flower hairclip is actually summonable or (heart hairpin is worn and the class of the player is not alchemist) or runic headband is worn:
 		if background-pure > 0 or sword-of-purity is worn:
 			if heart hairpin is worn:
 				say "[bold type]You resolve to yourself that there is no way you are going to let this creepy game take away your virginity.[roman type][line break]";
@@ -153,16 +153,19 @@ The virginbonus pussy slut rule is listed in the pussy slut eligibility rules.
 Part - Virgin Punish (Sissification)
 
 Definition: yourself is a sissy:
-	if the player is gendered male and (the class of the player is sissyclass or the number of worn sissifying wearthings > 1), decide yes;
+	if the player is not gendered male, decide no;
+	if the class of the player is sissyclass or the number of worn sissifying wearthings > 1 or (virgincursed > 0 and there is a worn sissifying clothing), decide yes;
 	decide no.
 
 To virginpunish:
 	if virgincursed > 0 and transGender is 0 and the player is not in a predicament room and the player is gendered male:
-		let S be a random off-stage sissifying transformation-eligible actually summonable clothing;
+		let S be a random off-stage sissifying transformation-eligible class summonable clothing;
 		if S is clothing and virgincursed < 3:
 			say VirginFlav;
-			say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of S] appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy slut]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";
-			summon S cursed with quest;
+			say "[bold type]As if reacting to your feelings... [roman type][run paragraph on]";
+			unclash class summon S;
+			now S is strength stealing;
+			say "You can sense that [NameDesc of S] is [bold type][']strength stealing['].[line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy slut]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";
 			now the raw-magic-modifier of S is the number of worn sissifying wearthings - 2;
 			announce sissification;
 		otherwise if the mystical size of penis > min penis size:
@@ -184,7 +187,7 @@ To virginpunish:
 				SexAddictUp 1;
 		otherwise if the raw delicateness of the player < 15:
 			say VirginFlav;
-			say "You suddenly feel less able to stand up to the monsters you meet in this game.[line break][variable custom style]Maybe it's easier if I just [if the bimbo of the player < 10]do whatever I'm told![otherwise]fuck and suck till I'm a mindless whore and my [sissy-penis] is forgotten![end if][roman type][line break]";
+			say "You suddenly feel less able to stand up to the people and monsters you meet in this game.[line break][variable custom style]Maybe it's easier if I just [if the bimbo of the player < 10]do whatever I'm told![otherwise]fuck and suck till I'm a mindless whore and my [sissy-penis] is forgotten![end if][roman type][line break]";
 			SilentlyDelicateUp 1.
 
 To announce sissification:

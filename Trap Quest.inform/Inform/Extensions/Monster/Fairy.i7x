@@ -358,7 +358,7 @@ Definition: breasts (called XXX) is fairy targetable:
 	if a random number between 1 and the milk volume of breasts > 5:
 		now decideToSuckle is 1;
 		decide yes;
-	if earnings - last-lactated-time < 10 and the milk volume of breasts > 0:
+	if last-lactated-time - earnings < 60 and the milk volume of breasts > 0:
 		[Selkie: when I had this here instead of in the fairy-meddling-on-breasts function, it was triggering this text twice every time TQ decided what the fairy would target, even if she didn't end up deciding on the breasts. I don't understand why it always produced a pair of them!
 		say "[BigNameDesc of current-monster][']s eyes light up, and [he of current-monster] smacks [his of current-monster] little lips. 'Mmm, I smell milky goodness!'";]
 		now decideToSuckle is 1;

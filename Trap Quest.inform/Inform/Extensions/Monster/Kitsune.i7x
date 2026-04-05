@@ -67,14 +67,14 @@ To compute unique periodic effect of (M - kitsune):
 		let S be shopkeeper;
 		let C be a random clothing in Dungeon41;
 		if C is clothing and the owner of C is S and the times-met of S > 0 and the location of S is Dungeon41 and S is not dangerous:[`owner of C of S` is very important]
-			compute dungeon prank of M;
+			if the player is getting unlucky, compute dungeon prank of M;
 	otherwise if R is the location of the player and R is a jungle room:
 		let A be the location of woods altar;
 		let D be the distance of R from location of A;
 		let W be witch;
 		let V be a random off-stage fetish appropriate vessel;
 		if D is 1 and W is witch and the location of W is A and V is not nothing:
-			compute woods prank of M.
+			if the player is getting very unlucky, compute woods prank of M.
 
 To compute dungeon prank of (M - kitsune):
 	if the target-disguise of M is not M:
@@ -253,7 +253,7 @@ This is the spawn initial kitsune rule:
 The spawn initial kitsune rule is listed in the setting up mansion monsters rules.
 
 To compute unique unsimulated periodic effect of (M - kitsune):
-	if playerRegion is not school:
+	if playerRegion is not facility:
 		if (the target-disguise of M is not M and the target-disguise of M is in the location of M) or the vanish timer of M is 0 or the vanish timer of M < a random number between -100 and -50: [The former happens 10 turns after the player reveals them. The latter happens after a long number of turns in the same region.]
 			if M is in the location of the player:
 				if the target-disguise of M is not M:
@@ -410,7 +410,7 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 	alwayscutshow figure of kitsune interact 3 for M;
 	let BV be the bartering value of T for M;
 	FavourUp M by ((1 + BV) / 2);
-	if the favour of M > 8 and the special-gifted of M is 0 and fox ears is actually summonable:
+	if the favour of M > 8 and the special-gifted of M is 0:
 		say "[speech style of M]'How about something special this time? I know, these are cute!'[roman type][line break]";
 		set up fox ears;
 		now fox ears is in the location of M;

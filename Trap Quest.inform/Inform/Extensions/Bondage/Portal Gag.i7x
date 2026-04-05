@@ -22,7 +22,7 @@ To SilentSquirt (L - a liquid-object) on (C - portal gag) by (N - a number):
 		if breasts is unsoaked, say "[announced L] flows down to your chest.";
 		ContinuedDribble L on Breasts by N.
 
-To compute school periodic effect of (C - portal gag):
+To compute facility periodic effect of (C - portal gag):
 	compute periodic effect of C.
 
 To compute periodic effect of (C - portal gag):

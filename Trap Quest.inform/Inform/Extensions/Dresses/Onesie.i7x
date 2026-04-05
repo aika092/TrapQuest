@@ -40,6 +40,9 @@ Definition: a onesie is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
 Definition: a onesie is baby themed: decide yes.
+Definition: a onesie is uniquely priority babywear:
+	if current-monster is matron, decide yes;
+	decide no.
 
 [!<TheOnesieBlowjobSlutRule>+
 
@@ -149,6 +152,10 @@ Definition: trick-or-treat onesie is class-relevant:
 	if the class of the player is trick-or-treater, decide yes;
 	decide no.
 Definition: trick-or-treat onesie is halloween themed: decide yes.
+Definition: trick-or-treat onesie is uniquely priority babywear:
+	if halloween content is 1:
+		if current-monster is matron or current-monster is vampiress, decide yes;
+	decide no.
 
 
 tubesuit is a onesie. tubesuit is unique. tubesuit is latex. tubesuit is manly. tubesuit is totally-exclusive. The text-shortcut of tubesuit is "ts".
@@ -191,6 +198,8 @@ Definition: tubesuit is transformation-protected: decide yes.
 Definition: tubesuit is fetish appropriate:
 	if diaper quest is 1 and diaper messing >= 7, decide yes;
 	decide no.
+Definition: tubesuit is uniquely priority babywear: decide no.
+
 To compute periodic effect of (C - tubesuit):
 	now tubesuit is penetrating face;
 	if the player is prone and the body soreness of the player > 0:
@@ -219,7 +228,7 @@ To compute periodic effect of (C - tubesuit):
 		otherwise:
 			say "It smells a [one of]bit[or]tad[or]little[at random] [one of]sweaty[or]clammy[or]stuffy[or]musky[in random order].".
 
-To compute school periodic effect of (C - tubesuit):
+To compute facility periodic effect of (C - tubesuit):
 	compute periodic effect of C.
 
 Check wearing tubesuit:

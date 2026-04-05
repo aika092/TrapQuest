@@ -75,7 +75,7 @@ Check looking:
 		say "You can't see anything." instead.
 
 UrinalBlindfolded is a blindroom. "You are chained to the floor on your knees in between two urinals in the Hotel Bathroom, and your eyes have been covered with a blindfold. You can't see a thing!".
-DiamondLessonBlindfolded is a blindroom. "You are in the diamond classroom, but your eyes have been covered with a blindfold. You can't see a thing!".
+DiamondTrainingSessionBlindfolded is a blindroom. "You are in the diamond classroom, but your eyes have been covered with a blindfold. You can't see a thing!".
 DiaperFacehuggerBlindfolded is a blindroom. "Your face is completely engulfed by the [urine]-soaked padding of the diaper facehugger. You can't see a thing!". The printed name of DiaperFacehuggerBlindfolded is "Diaper Facehugger".
 DiaperPresentBoxBlindfolded is a blindroom. "You're tied up inside a cardboard box. You can't see a thing!". The printed name of DiaperPresentBoxBlindfolded is "Cardboard Box".
 Iron Maiden is a linkedroom. "You are trapped inside a claustrophobic metal cage! It has closed tightly around you, preventing you from moving a muscle. The walls of the cage seem to be lined with slimy tentacles.".

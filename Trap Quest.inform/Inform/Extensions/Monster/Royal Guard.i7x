@@ -1010,17 +1010,6 @@ To say SexSubmissionFlav of (M - a royal guard):
 		say "[if the relevant sex addiction of M < a random number between 4 and 7][one of]You lie still and accept the invasion.[or]You submit to being used as a plaything.[or]You don't resist being used.[in random order][otherwise][one of]You purposefully loosen up and accept the guard's thrusts to easily slide fully in and out.[or]You push back at the guard enthusiastically in the same rhythm that [he of M] is fucking you.[in random order][end if]";
 		say "[variable custom style][one of][if the relevant sex addiction of M > 12 and the player is able to speak]'Fuck me, stud!'[otherwise if the relevant sex addiction of M > 12 and the player is able to make sounds][muffled sounds][otherwise if the vaginalvirgin of the player is 1 and the player is possessing a vagina]At least I still have my virginity.[otherwise]Maybe if I relax, this will hurt less?[end if][or][if the relevant sex addiction of M > 10]This feels too good![otherwise if the relevant sex addiction of M > 5]Why am I letting [him of M] do this? Am I a whore?[otherwise]It still hurts![end if][or][if the relevant sex addiction of M > 13 and the player is able to speak]'That feels good! Go faster!'[otherwise if the relevant sex addiction of M > 13 and the player is able to make sounds][muffled sounds][otherwise if the relevant sex addiction of M > 8]Maybe I really am a slut?[otherwise]Let this be over quickly...[end if][or][if the player is able to make sounds][muffled sounds][otherwise if the relevant sex addiction of M > 14 and the player is able to speak]'Harder!'[otherwise if the relevant sex addiction of M > 14]I kind of wish [he of M]'d go even harder![otherwise if M is not penetrating vagina and the player is possessing a vagina]At least [he of M]'s not using my [vagina]...[otherwise if the relevant sex addiction of M > 6]Am I actually enjoying this?[otherwise]Oh just please finish fast! My [vagina] can't take much more.[end if][purely at random][roman type][line break]".
 
-To say SexResistFlav of (M - a royal guard):
-	if M is penetrating a fuckhole:
-		say "[if the relevant sex addiction of M < a random number between 8 and 13][one of]You struggle against [his of M] strong grip, but remain in place.[or]You attempt to crawl away, but [his of M] grip is just too strong![or]You squirm, attempting to loosen [his of M] grip, but with no success.[or]You try to kick back at [him of M] with your legs, only managing to get your foot caught in [his of M] cloak.[in random order][otherwise][one of]You resist, but your heart isn't really in it.[or]You kick back at [him of M] but it's more playful than violent.[in random order][end if]";
-	otherwise if M is penetrating a body part:
-		say "[one of]You struggle against [his of M] strong grip, but [his of M] [DickDesc of M] remains where it is.[or]You attempt to jerk away, but [his of M] grip is just too strong![or]You try to [if there is worn wrist-bound-behind clothing]pull[otherwise]push [FuckerDesc of M][end if] away, but [his of M] hold on your head is too strong.[or]You [if there is worn wrist-bound-behind clothing]squirm[otherwise]beat on [FuckerDesc of M]'s thighs[end if] in a futile attempt to break [his of M] grip.[in random order]";
-	otherwise:
-		say DefaultResistFlav of M;
-	if the player is able to speak:
-		say "[variable custom style]'[one of][if the relevant sex addiction of M > 13]Work for it, stud!'[otherwise if the class of the player is princess]Aren't you supposed to protect me?!'[otherwise]Hey! Somebody help me!'[end if][or][if the bimbo of the player > 10]You're so strong!'[otherwise if the bimbo of the player > 5]Let go of me!'[otherwise]Stop it, you brute!'[end if][or][if the delicateness of the player > 13]This is fun!'[otherwise if the delicateness of the player > 7]You're being too rough!'[otherwise]What the fuck, dude?!'[end if][purely at random][roman type][line break]";
-	otherwise if the player is able to make sounds:
-		say "[variable custom style][muffled sounds][roman type][line break]".
 
 Chapter 1 - Attack
 
@@ -1084,18 +1073,10 @@ To say SwallowDemand of (M - a royal guard):
 To get oral creampie image for (M - a royal guard):
 	cutshow figure of guard cutscene 4 for M.
 
-To satisfy (M - a royal guard) for (N - a number) seconds:
-	reset submissive wenches;
-	if M is interested:
-		bore M for N seconds;
-		FavourUp M;
-		if M is in the location of the player and M is awake:
-			say SatisfiedFlav of M;
-			progress quest of nice-quest;
-		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
-	otherwise:
-		bore M for N seconds; [We still want to dislodge etc. even if they weren't interested for some reason.]
-	compute unlock satisfaction of M.
+To compute early unique boredom of (M - a royal guard):
+	reset submissive wenches.
+To compute unique early satisfaction of (M - a royal guard):
+	reset submissive wenches.
 
 To get creampie image of (M - a royal guard) in (F - a fuckhole):
 	if the reaction of the player is 0 or lady fetish is 1, cutshow figure of guard cutscene 5 for M;
@@ -1449,15 +1430,15 @@ To say (M - a royal guard) sex reaction:
 		if the player is not able to speak:
 			say "[one of][if the relevant sex addiction of M < 8]It's even worse because I can't say no![otherwise if the relevant sex addiction of M < 12]I can't say no, but do I want to?[otherwise]It's so hot when I can't say no![end if][or][if the relevant sex addiction of M < 8]It's even more humiliating because I can't say no.[otherwise if the relevant sex addiction of M < 12][big he of M]'d listen to me if I was able to speak. Right?[otherwise]I love it when I can't say no![end if][or][if the relevant sex addiction of M < 8]I can't even call for help...[otherwise if the relevant sex addiction of M < 12]'MMMPH! MMhhmmMMPH!'[otherwise]It's even better because I can't say no![end if][at random]";
 		otherwise if the openness of F < the girth of M - (a random number between 1 and 3):
-			say "[one of][if the relevant sex addiction of M < 8]'You're too big!'[otherwise if the relevant sex addiction of M < 12][big he of M]'s so big![otherwise]'Hee hee! You're SO big!'[end if][or][if the relevant sex addiction of M < 8]Why does [he of M] have to be so big?[otherwise if the relevant sex addiction of M < 12]'It's too big, I can't handle it.'[otherwise]Mmm! Loosen me up, stud![end if][or][if the relevant sex addiction of M < 8]Why couldn't [he of M] be smaller?[otherwise if the relevant sex addiction of M < 12]I can feel myself getting stretched.[otherwise]'Yeah! TEAR ME UP!'[end if][at random]";
+			say "[one of][if legacy content is 1 and the relevant sex addiction of M < 8]'You're too big!'[otherwise if the relevant sex addiction of M < 12][big he of M]'s so big![otherwise]'Hee hee! You're SO big!'[end if][or][if the relevant sex addiction of M < 8]Why does [he of M] have to be so big?[otherwise if the relevant sex addiction of M < 12]'It's too big, I can't handle it.'[otherwise]Mmm! Loosen me up, stud![end if][or][if the relevant sex addiction of M < 8]Why couldn't [he of M] be smaller?[otherwise if the relevant sex addiction of M < 12]I can feel myself getting stretched.[otherwise]'Yeah! TEAR ME UP!'[end if][at random]";
 		otherwise if the player is gendered male:
-			if the relevant sex addiction of M < 8:
+			if legacy content is 1 and the relevant sex addiction of M < 8:
 				say "[one of]This feels so weird![or]'I'm not a chick! You don't have to be so rough!'[or][big he of M]'s treating me like a chick! [if M is friendly-fucking]I guess I was asking for it...[otherwise]What the fuck![end if][or]My [player-penis] feels weird.[in random order]";
 			otherwise if the relevant sex addiction of M < 12:
 				say "[one of]Is there a difference between me and a woman at this point?[or][if size of penis is less than 3]How can I feel so hard when it's so small?[otherwise]I'm so hard...[end if][or]'Oh! That felt good!'[or][if size of penis is less than 3]I'm so hard... but at least I'm so small, probably no one could even tell![otherwise]Why am I hard at a time like this?[end if][in random order]";
 			otherwise:
 				say "[one of][big he of M]'s hitting my G-spot! Tee-hee![or]'Make me jizz all over the floor!'[or]'Harder! I want to hands-free cum!'[in random order]";
-		otherwise if the relevant sex addiction of M < 8:
+		otherwise if legacy content is 1 and the relevant sex addiction of M < 8:
 			say "[one of]'Ow ow ow!'[or]'Shit!'[or][first custom style]'Slow down! I'm not just your fucktoy!'[or]It's like [he of M] doesn't care what I think at all![or][big he of M]'s using me like some sort of cheap floozy![or]This is insane![or]This feels so wrong![or]'[if M is friendly-fucking]Be gentle![otherwise]Stop this![end if] I'm not just a hole!'[or]Please let this be over soon...[in random order]";
 		otherwise if the relevant sex addiction of the player < 12:
 			say "[one of]It feels good. That's not my fault.[or]I know I shouldn't be enjoying this, but...[or]Why does it have to feel so good?[or]If I have to have sex, it might as well be with someone who does it right.[or]I wonder if [he of M]'ll cum a lot.[or]It actually feels kind of good.[or]I never realised sex could feel this good![or]I'm actually not sure if I want this to end.[in random order]";
@@ -1970,7 +1951,7 @@ Section 3 - Drink Requesting
 
 To compute friendly drink of (M - a royal guard):
 	say "[speech style of M]'Here, drink from my water pouch. It's not particularly [tasty] but it will keep you hydrated.'[roman type][line break]";
-	if hypno-trigger-tasty is 0:[if the hypno trigger is enabled then we want them to drop and present instead.]
+	if htrigger-tasty is 0:[if the hypno trigger is enabled then we want them to drop and present instead.]
 		say "You do so and feel completely refreshed!";
 		StomachUp 2.
 

@@ -113,12 +113,12 @@ Carry out slapping:
 			if the hindrance of H > 2:
 				now heel-H is 1;
 				say "[one of]You are feeling so unstable in your [ShortDesc of H] that you don't dare raise your feet.[or][stopping]";
-		say "[if punch is 1][one of]Clenching your fist tight, you[or]You[stopping] punch[otherwise]You slap[end if] [the noun][if heel-H is 1] instead[end if][if the latex-transformation of the player is 8] with your fingerless arms![end if]! ";
+		say "[if punch is 1][one of]Clenching your fist tight, you[or]You[stopping] punch[otherwise]You slap[end if] [the noun][if heel-H is 1] instead[end if][if the latex-transformation of the player is 8] with your fingerless arms[end if]! ";
 	unless there is a worn slap ready projectile equippable, say "[if the largeness of breasts >= 6 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and slightly reducing the power of your swing. [otherwise if the largeness of breasts > 12 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and significantly reducing the power of your swing. [end if][if the player is wrist bound]Unfortunately your wrists being bound significantly hampers the strength you can get into your slaps. [end if][if the player is zeroG and flight-attendant-top is not worn]Your body is weightless, meaning you can hardly get any force into your slap without sending yourself flying backwards. [otherwise if the player is on tiptoes and flight-attendant-top is not worn]Your body is so light that you don't have the grounding to put your full strength into the slap. [otherwise if living tentacles is worn]The tentacles wrapping around you flail about and strike the enemy as well! [end if]";
 	if there is a worn hostility clothing, compute hostileDamage;
 	damage A on the noun;
 	if the noun is combative, compute wrangle reaction of the noun;
-	if the noun is student, reset staff boredom.
+	if the noun is trainee, reset staff boredom.
 Understand "slap [something]", "hit [something]", "punch [something]", "slash [something]", "slash at [something]", "swipe [something]", "swipe at [something]", "scratch [something]", "thrust at [something]", "swing at [something]", "sa [something]", "sl [something]", "pu [something]" as slapping.
 
 noLineBreaksZapDamage is initially false.

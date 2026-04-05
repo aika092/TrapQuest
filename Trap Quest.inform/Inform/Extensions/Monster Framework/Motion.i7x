@@ -116,7 +116,7 @@ To compute room leaving of (M - a monster): [This CANNOT be replaced with a func
 		wait 200 ms before continuing;
 	if M is in Dungeon11 or M is in Dungeon10:
 		blockable move M to east;
-	otherwise if M is in School33 and M is uninterested:
+	otherwise if M is in Facility33 and M is uninterested:
 		blockable move M to west;
 	otherwise:
 		now neighbour finder is the location of M;
@@ -147,8 +147,8 @@ To set up toilet preference of (M - a monster):
 	let LR be a list of rooms;
 	let TR be Holding Pen;
 	if M is in an academic room:
-		add School10 to LR;
-		if School35 is seen and (M is not student or the current-rank of M >= 6), add School35 to LR; [non-gold students are unaware of secret area even after it is revealed]
+		add Facility10 to LR;
+		if Facility35 is seen and (M is not trainee or the current-rank of M >= 6), add Facility35 to LR; [non-gold trainees are unaware of secret area even after it is revealed]
 	otherwise if M is in a modern room:
 		repeat with R running through placed modern rooms:
 			if R is not use-the-floor, add R to LR;
@@ -181,11 +181,11 @@ To set up toilet preference of (M - a monster):
 Definition: a monster (called M) is able to use the toilet:
 	if M is woman-player and the woman-status of M >= 30, decide no;
 	if M is able to use a free use urinal, decide yes;
-	if the location of M is use-the-floor or (locked-toilets is true and M is in School10 and academy-toilet-key is not held by M), decide no;
+	if the location of M is use-the-floor or (locked-toilets is true and M is in Facility10 and facility-toilet-key is not held by M), decide no;
 	decide yes.
 
 Definition: a monster (called M) is able to use a free use urinal:
-	if playerRegion is school and M is intelligent and M is in the location of the player and M is interested and the assemblyCount of locked-toilets-shame-assembly > 0 and (watersports fetish is 1 or M is eager to use a diaper urinal), decide yes;
+	if playerRegion is facility and M is intelligent and M is in the location of the player and M is interested and the assemblyCount of locked-toilets-shame-assembly > 0 and (watersports fetish is 1 or M is eager to use a diaper urinal), decide yes;
 	decide no.
 
 To compute default toilet seeking of (M - a monster):
@@ -199,15 +199,15 @@ To compute default toilet seeking of (M - a monster):
 		if TR is nonregional and M is regional, set up toilet preference of M;
 		if TR is regional:
 			let A be down;
-			let X be the location of academy-toilet-key;
-			if locked-toilets is true and TR is School10 and academy-toilet-key is not held by M:
-				let KM be a random monster carrying academy-toilet-key;
+			let X be the location of facility-toilet-key;
+			if locked-toilets is true and TR is Facility10 and facility-toilet-key is not held by M:
+				let KM be a random monster carrying facility-toilet-key;
 				if KM is a monster:
 					now X is the location of KM;
 					now ATKM is KM;
 				if X is not a placed room:
-					now X is School10;
-					now academy-toilet-key is carried by M;
+					now X is Facility10;
+					now facility-toilet-key is carried by M;
 				if M is in the location of the player or M is nearby:
 					let XD be the best route from L to X through unbossed rooms;
 					if XD is a direction, now A is XD;
@@ -219,22 +219,22 @@ To compute default toilet seeking of (M - a monster):
 					if AD is a direction, now A is AD;
 				otherwise:
 					now M is in TR;
-			if M is student: [students can't go where they can't go]
+			if M is trainee: [trainees can't go where they can't go]
 				let P be the room A from L;
 				if the entry-rank of P > the entry-rank of L and the entry-rank of P > the current-rank of M, now A is down;
 			if A is not down and A is not up:
 				let P be the room A from L;
 				if the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-					if debugmode > 1, say "[BigNameDesc of M] is going [A] to try to use the toilet at [TR][if locked-toilets is true and TR is School10 and academy-toilet-key is not held by M] (needs to get key at [X])[end if][if locked-toilets is true and TR is School10 and academy-toilet-key is not held by M and there is a monster carrying academy-toilet-key] (key held by [random monster carrying academy-toilet-key])[end if][line break]";
+					if debugmode > 1, say "[BigNameDesc of M] is going [A] to try to use the toilet at [TR][if locked-toilets is true and TR is Facility10 and facility-toilet-key is not held by M] (needs to get key at [X])[end if][if locked-toilets is true and TR is Facility10 and facility-toilet-key is not held by M and there is a monster carrying facility-toilet-key] (key held by [random monster carrying facility-toilet-key])[end if][line break]";
 					blockable move M to A;
 					compute monstermotion reactions of M;
-					if ATKM is not M: [academy toilet key is held by another monster]
-						if ATKM is in L and the bladder of ATKM < 1000 and (M is not student or ATKM is not headmistress): [there's a special cutscene for a student asking the headmistress for the key]
-							if the player is in L, say "[BigNameDesc of M] takes [NameDesc of academy-toilet-key] from [NameDesc of ATKM].";
-							now academy-toilet-key is carried by M;
-					otherwise if academy-toilet-key is in L:
-						if the player is in L, say "[BigNameDesc of M] takes [NameDesc of academy-toilet-key] from the ground.";
-						now academy-toilet-key is carried by M;
+					if ATKM is not M: [facility toilet key is held by another monster]
+						if ATKM is in L and the bladder of ATKM < 1000 and (M is not trainee or ATKM is not mistress): [there's a special cutscene for a trainee asking the mistress for the key]
+							if the player is in L, say "[BigNameDesc of M] takes [NameDesc of facility-toilet-key] from [NameDesc of ATKM].";
+							now facility-toilet-key is carried by M;
+					otherwise if facility-toilet-key is in L:
+						if the player is in L, say "[BigNameDesc of M] takes [NameDesc of facility-toilet-key] from the ground.";
+						now facility-toilet-key is carried by M;
 			otherwise: [Failed to find a valid path to target]
 				compute room leaving of M;
 		otherwise: [Failed to find a legal toilet target]
@@ -244,17 +244,17 @@ To compute bladder cleanup:
 	repeat with M running through monsters:
 		if M is regional:
 			let unable-to-pee be false;
-			if playerRegion is school and locked-toilets is true:
-				if academy-toilet-key is held by the player:
+			if playerRegion is facility and locked-toilets is true:
+				if facility-toilet-key is held by the player:
 					now unable-to-pee is true;
 				otherwise:
-					let X be a random person carrying academy-toilet-key;
+					let X be a random person carrying facility-toilet-key;
 					if X is a person:
 						if X is nonregional, now unable-to-pee is true;
 					otherwise:
-						if academy-toilet-key is nonregional, now unable-to-pee is true;
+						if facility-toilet-key is nonregional, now unable-to-pee is true;
 			if unable-to-pee is true:
-				if a random number between 1 and 3 > 1, now M is in School10;
+				if a random number between 1 and 3 > 1, now M is in Facility10;
 			otherwise:
 				now the bladder of M is the remainder after dividing the bladder of M by 1060. [Everybody is assumed to have instantly gone to the toilet when they reached 1060 bladder]
 
@@ -264,7 +264,7 @@ To compute toilet use of (M - a monster): [If called during standard wandering m
 	otherwise:
 		if M is in the location of the player or (debugmode > 0 and verbose-debug > 0):
 			if M is not in the location of the player, say input-style;
-			if M is caged and the location of M is School35:
+			if M is caged and the location of M is Facility35:
 				say "[BigNameDesc of M] uses the toilet at the back of [his of M] cell to relieve [his of M] bladder.";
 			otherwise if the location of M is toilets:
 				say "[BigNameDesc of M] uses the toilet to relieve [his of M] bladder.";
@@ -416,7 +416,10 @@ To compute boredom reduction of (M - a monster):
 	if the boredom of M <= 0 and the boredom of M + seconds > 0, compute boredom reset of M;
 	if the waitress-boredom of M > 0:
 		decrease the waitress-boredom of M by seconds;
-		if the waitress-boredom of M <= 0, now the waitress-boredom of M is 0.
+		if the waitress-boredom of M <= 0, now the waitress-boredom of M is 0;
+	if the request-cooldown of M > 0:
+		decrease the request-cooldown of M by seconds;
+		if the request-cooldown of M <= 0, now the request-cooldown of M is 0.
 
 To compute boredom reset of (M - a monster):
 	now the boredom of M is 0.

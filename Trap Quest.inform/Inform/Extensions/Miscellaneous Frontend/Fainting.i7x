@@ -49,17 +49,17 @@ To Execute Fainting:
 	let OL be the location of the player;
 	if the player is in WoodsBoss01, now the player is in Woods16;
 	if the player is in a linkedroom, now the player is in the source-room of the location of the player;
-	if the player is in DiamondLessonBlindfolded, now the player is in School12;
+	if the player is in DiamondTrainingSessionBlindfolded, now the player is in Facility12;
 	if the player is in a predicament room:
-		now the player is in School01;
+		now the player is in Facility01;
 		repeat with T running through things in Predicament20:
 			if T is trophy:
-				if T is in the location of the player, now T is in School31;
+				if T is in the location of the player, now T is in Facility31;
 				otherwise destroy T;
 			otherwise:
-				now T is in School01;
+				now T is in Facility01;
 	if the player is in an elevator-room, now the player is in Hotel30;
-	if class-time < lessonFrequency, now class-time is lessonFrequency;
+	if class-time < trainingFrequency, now class-time is trainingFrequency;
 	if playerRegion is Mansion and there is an off-stage mindless acolyte:
 		let A be a random off-stage mindless acolyte;
 		set up A;
@@ -187,7 +187,7 @@ Some things don't get reset when the player faints.
 +!]
 Definition: a thing (called I) is immune to change:
 	if I is held or I is in the location of the player or I is in pink wardrobe or I is penetrating a body part or I is store or I is in a pedestal or the location of I is an itemstatic room, decide yes;
-	if I is in School15:
+	if I is in Facility15:
 		if I is predicament-fixed clothing, decide yes;
 	decide no.
 
@@ -427,7 +427,7 @@ To Recover the Player:
 		now the delayed bladder of the player is 0;
 	now the stance of the player is 1;
 	allocate 0 seconds;
-	now last-lactated-time is 0;
+	now last-lactated-time is earnings;
 	now milking is 0;
 	now the alert of the player is 0;
 	now delayed stand is 0;

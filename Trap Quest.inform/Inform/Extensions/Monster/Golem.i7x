@@ -389,7 +389,7 @@ Section 3 - Damage
 
 [Chance for the slimeball to completely dodge the attack.]
 To decide which number is the damage modifier of (M - a slimeball):
-	if (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player) < a random number between 3 and 12, decide on (attack-damage * -1);
+	if (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player) < a random number between 1 and 13, decide on (attack-damage * -1);
 	decide on 0.
 
 To say damage-flavour of (N - a number) on (M - a slimeball):

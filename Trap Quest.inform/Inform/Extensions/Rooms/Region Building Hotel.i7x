@@ -54,7 +54,6 @@ To Set Up The Hotel:
 	if diaper quest is 1:
 		remove laundry robots from play;
 		now hotel changing station is in Hotel20;
-	if matron is hotel dwelling, now nursery crib is in Hotel22;
 	[if diaper quest is 0:
 		if black-lace-bra is off-stage, now black-lace-bra is in Hotel20;
 		if black-lace-thong is off-stage, now black-lace-thong is in Hotel20;
@@ -88,14 +87,14 @@ To Set Up The Hotel:
 		if M is monster:
 			set up M;
 			if M is not in a placed modern room, now M is in a random placed unbossed modern room;
-	[change the down exit of School01 to Hotel29;]
-	if armband is off-stage and receptionist is undefeated: [Player can engage with the school side quest the first time they find this room]
+	[change the down exit of Facility01 to Hotel29;]
+	if armband is off-stage and receptionist is undefeated: [Player can engage with the facility side quest the first time they find this room]
 		if receptionist is in Dungeon10:
 			let W be a random warp portal in Dungeon10;
-			if the destination of W is the school, now the destination of W is the dungeon;
+			if the destination of W is the facility, now the destination of W is the dungeon;
 		set up receptionist;
 		now receptionist is in Hotel40;
-		now the destination of hotel portal is the school;
+		now the destination of hotel portal is the facility;
 	if the class of the player is berri, now the destination of hotel portal is the dungeon;
 	deploy a slimeball;
 	if debugmode is 0 and loading scenes is 1, clear the screen;

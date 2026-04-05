@@ -107,7 +107,7 @@ Chapter - Quest
 
 just-wait-quest is a headgear-clothing-quest. just-wait-quest has a number called main-reward. just-wait-quest has a number called wait-count.
 
-Definition: just-wait-quest is school-disabled: decide yes.
+Definition: just-wait-quest is facility-disabled: decide yes.
 
 To compute unique recycling of (C - black hood):
 	now the wait-count of just-wait-quest is 0;
@@ -124,7 +124,7 @@ To say QuestTitle of (Q - just-wait-quest):
 
 To compute unique periodic effect of (H - black hood):
 	if the quest of H is just-wait-quest:
-		unless the player is in a bossed room or playerRegion is school:
+		unless the player is in a bossed room or playerRegion is facility:
 			increase the wait-count of just-wait-quest by 1;
 			if the wait-count of just-wait-quest > a random number between (30 + (latex prisoner * 30)) and 1000:
 				progress quest of just-wait-quest;
@@ -395,34 +395,34 @@ To compute persistent reward of (Q - clown-quest) on (C - a clothing):
 
 Part - Trainee Hood
 
-trainee hood is a hood. trainee hood has a number called training-progress. The training-progress of trainee hood is 0. trainee hood can be magnetised. trainee hood is magnetised. trainee hood has a number called charge.
+trainee-hood is a hood. trainee-hood has a number called training-progress. The training-progress of trainee-hood is 0. trainee-hood can be magnetised. trainee-hood is magnetised. trainee-hood has a number called charge. Understand "trainee", "hood" as trainee-hood.
 
-The printed name of trainee hood is "[TQlink of item described][item style]trainee hood[clothing-title-after]". The text-shortcut of trainee hood is "th".
+The printed name of trainee-hood is "[TQlink of item described][item style]trainee hood[clothing-title-after]". The text-shortcut of trainee-hood is "th".
 
-To say ClothingDesc of (H - trainee hood):
+To say ClothingDesc of (H - trainee-hood):
 	say "This silicone hood completely covers your head, with holes only for your eyes, nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. Padding underneath your cheekbones and around your lips gives you an exaggerated feminine appearance. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open for anything someone might want to put in there. Metal accents make the hood seem futuristic and high-tech, containing magnetic sensors that keep it in place with a surprising amount of security[if H is worn and H is cursed and black-catsuit is worn and black-catsuit is cursed]. The bottom of the hood has merged with your catsuit.[end if]".
 
-To decide which number is the perceived-bimbo-influence of (C - trainee hood):
+To decide which number is the perceived-bimbo-influence of (C - trainee-hood):
 	decide on 2.
-Definition: a trainee hood is whore themed: decide yes.
-Definition: a trainee hood is removable:
+Definition: a trainee-hood is whore themed: decide yes.
+Definition: a trainee-hood is removable:
 	if it is not magnetised, decide yes;
 	decide no.
 
-trainee hood removability rules is a rulebook. The removability rules of trainee hood is trainee hood removability rules.
+trainee-hood removability rules is a rulebook. The removability rules of trainee-hood is trainee-hood removability rules.
 
-This is the magnetised trainee hood can't be removed rule:
+This is the magnetised trainee-hood can't be removed rule:
 	if the wearing-target is magnetised:
 		if summoning is 0 and autoremove is false, say "The magnetic latches keep the [printed name of the wearing-target] all but immobile. You'll need to find a way to deactivate it if you want to get it off.";
 		rule fails.
-The magnetised trainee hood can't be removed rule is listed in the trainee hood removability rules.
+The magnetised trainee-hood can't be removed rule is listed in the trainee-hood removability rules.
 
-Report wearing trainee hood:
+Report wearing trainee-hood:
 	say "The magnetic latches snap closed as you finish putting it on.";
 	now the noun is magnetised.
 
-To compute unique periodic effect of (H - trainee hood):[TODO: improve]
-	if playerRegion is not school and the location of the player is not bossed:
+To compute unique periodic effect of (H - trainee-hood):[TODO: improve]
+	if playerRegion is not facility and the location of the player is not bossed:
 		increase the charge of H by 1;
 		if the charge of H > 40:
 			if the training-progress of H is 3:
@@ -478,7 +478,7 @@ To decide which number is the cringe of (H - diaper-box):
 	if H is diaper-dumped, decide on 16;
 	decide on 10.
 
-To compute school periodic effect of (H - diaper-box):
+To compute facility periodic effect of (H - diaper-box):
 	if H is diaper-dumped and the player is able to breathe:
 		now H is dense;
 		if diaper messing >= 7:

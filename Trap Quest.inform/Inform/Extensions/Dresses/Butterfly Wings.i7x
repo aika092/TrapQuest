@@ -25,7 +25,7 @@ To say ClassSummonFlav of (C - butterfly wings):
 
 To compute periodic effect of (C - butterfly wings):
 	if the class of the player is not faerie, destroy C.
-To compute school periodic effect of (C - butterfly wings):
+To compute facility periodic effect of (C - butterfly wings):
 	if the player is not in a predicament room, compute periodic effect of C.
 
 To decide which number is the initial cringe of (C - butterfly wings):

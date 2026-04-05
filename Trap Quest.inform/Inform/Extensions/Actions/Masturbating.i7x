@@ -304,16 +304,16 @@ Piece of text to be displayed as part of the output for masturbation. Should not
 
 +!]
 To say PlayerFantasy:
-	let T be a random hypno trap in the location of the player;
+	let T be a random spiral trap in the location of the player;
 	let Fn be fancied-friend;
 	let Dn be distant-friend;
 	let Nn be nemesis-friend;
 	let Pn be platonic-friend;
-	if T is not expired and T is fucktoy hypno trap:
+	if T is not expired and T is fucktoy spiral trap:
 		say "[second custom style][one of][if pregnancy fetish is 1]GETTING PREGNANT[otherwise]GETTING FUCKED[end if][or]BIG COCKS[or]HORNY GUYS[or]HARD COCKS[or]SITTING ON COCKS[or]FUCKING GUYS[or][if the player is sexed male]PROSTATE ORGASMS[otherwise]DOUBLE PENETRATION[end if][or][if a2m fetish is 1]ASS TO MOUTH[otherwise]GETTING DOMINATED[end if][or][if pregnancy fetish is 1]CREAMPIES[otherwise]FORCED CUMDUMPS[end if][or]GANGBANGS[in random order][roman type]";[the player is masturbating because of the trap, more often than not, so it's affecting their ability to not think about slutty things.]
-	otherwise if T is not expired and T is diaper-hypno-trap:
+	otherwise if T is not expired and T is diaper-spiral-trap:
 		say "[second custom style][one of]GETTING BOUNCED ON MOMMY'S LAP WHILE WEARING A DIAPER[or]DADDY CUTTING A HOLE IN MY DIAPER AND FUCKING ME[or]GETTING PUNISHED BY MY BABYSITTER FOR BEING NAUGHTY[or]WETTING MY DIAPER UNTIL IT LEAKS[or]BEING DADDY'S LITTLE DIAPERSLUT[or]GETTING FINGERED BY MOMMY DURING A DIAPER CHANGE[or][if diaper messing >= 4]DROPPING A BIG LOAD IN MY DIAPER[end if][in random order][roman type]";
-	otherwise if T is not expired and T is cocksucker hypno trap:
+	otherwise if T is not expired and T is cocksucker spiral trap:
 		say "[second custom style][one of]CUM. YUMMY CUM[or]CUM. DELICIOUS CUM[or]THICK CUM[or]CUM DRINKING[or]GUZZLING CUM[or]CUM GUZZLING[or][if bukkake fetish is 1]SALTY MAKEUP[otherwise]SALTY MOUTHWASH[end if][or]SUCKING COCK[or]ACCEPTING HIS CUM[or]SWALLOWING HIS CUM[or]DEEPTHROATING COCKS[in random order][roman type]";
 	otherwise if diaper focus is 1 and the diaper addiction of the player > 14:
 		say "[one of]sitting on your mommy's lap as she rubs the front of your leaking diaper and degrades you for being such a baby[or]laying down as your daddy sticks his [manly-penis] into the leg-hole of your diaper and cums inside[or]bouncing on your daddy's knee in a [if diaper messing >= 4]messy diaper[otherwise]wet diaper[end if][or]drinking milk from your mommy's breasts while she lovingly rubs your [if diaper messing >= 4]messy diaper[otherwise]wet diaper[end if][or]being used and punished by an especially mean babysitter[in random order]";

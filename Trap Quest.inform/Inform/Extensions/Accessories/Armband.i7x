@@ -80,17 +80,17 @@ Definition: armband is yellow themed:
 
 Check taking off armband:
 	if areYouSure is 1:
-		say "You imagine that this might make you an [bold type]enemy of the academy[roman type]. Are you sure you want to do that? ";
+		say "You imagine that this might make you an [bold type]enemy of the Royal Training Halls[roman type]. Are you sure you want to do that? ";
 		unless the player is consenting, say "You change your mind." instead.
 
 Report taking off armband:
 	now armband is in Holding Pen;
 	say "As you remove the armband you watch it disintegrate into nothingness. Uh-oh, there's no going back now...";
-	repeat with M running through reactive students:
-		compute nonstudent perception of M;
+	repeat with M running through reactive trainees:
+		compute nontrainee perception of M;
 	repeat with M running through reactive staff members:
-		compute nonstudent perception of M;
-	if playerRegion is school, display entire map. [Some arrows might turn green]
+		compute nontrainee perception of M;
+	if playerRegion is facility, display entire map. [Some arrows might turn green]
 
 Carry out wearing armband:
 	say "You place the armband around your left bicep and strap it tight.";
@@ -107,7 +107,7 @@ To compute armband replacement:
 		compute M reacting to armband replacement.
 
 Check going:
-	if armband is worn and playerRegion is School:
+	if armband is worn and playerRegion is facility:
 		let D be the noun;
 		let R be the room D from the location of the player;
 		if the entry-rank of the location of the player < the entry-rank of R and the entry-rank of R > the rank of the player:

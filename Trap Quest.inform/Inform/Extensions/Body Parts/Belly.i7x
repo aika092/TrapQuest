@@ -1201,7 +1201,7 @@ To compute enema reactions:
 	repeat with M running through reactive people:
 		unless M is reacted-already:
 			if C is diaper:
-				if M is monster and M is not diaperMessReacted:
+				if M is monster and M is not diaperMessReacted and M is not urinal-rival of urinal-competition-punishment:
 					compute diaper mess reaction of M;
 					now M is diaperMessReacted;
 			otherwise if C is clothing:

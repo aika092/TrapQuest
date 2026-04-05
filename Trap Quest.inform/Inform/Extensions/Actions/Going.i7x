@@ -109,7 +109,7 @@ Carry out going (this is the changing-region-makes-monsters-have-time-out rule):
 	if the noun is up or the noun is down, check monster time out. [player region updates happens in Report phase, so this will happen to the region the player is leaving.]
 
 To check monster time out:
-	if playerRegion is not school and doomed < 5 and the number of regionalRelevant monsters >= the regionalMonsterCount of playerRegion:
+	if playerRegion is not facility and doomed < 5 and the number of regionalRelevant monsters >= the regionalMonsterCount of playerRegion:
 		let LM be the list of alive willing to have time out regional monsters;
 		let E be the number of entries in LM;
 		if E > 0: [choose the monster that's been alive the longest]
@@ -137,7 +137,7 @@ To compute time out of (M - a monster):
 Report going up:
 	update player region;
 	if map images > 0, display entire map;
-	if playerRegion is not school:
+	if playerRegion is not facility:
 		compute bladder cleanup;
 		compute puddle cleanup;
 		compute clothing cleanup.
@@ -145,7 +145,7 @@ Report going up:
 Report going down:
 	update player region;
 	if map images > 0, display entire map;
-	if playerRegion is not school:
+	if playerRegion is not facility:
 		compute bladder cleanup;
 		compute puddle cleanup;
 		compute clothing cleanup.
@@ -257,7 +257,7 @@ To decide which number is the movement reduction of the player:
 		increase X by 6;
 		if movement-reduction-flav-said is false:
 			now movement-reduction-flav-said is true;
-			now T is the substituted form of "The bondage connecting you to [student-name of the bound-target of quiz-partner] is severely hindering your movement!";
+			now T is the substituted form of "The bondage connecting you to [trainee-name of the bound-target of quiz-partner] is severely hindering your movement!";
 	if diaper-box is worn:
 		if diaper-box is diaper-dumped:
 			increase X by 25;
@@ -467,9 +467,9 @@ Check going:
 				unless ST is expired:
 					say "There is a sprinkler currently dispensing [SprinkleLiquid of ST] in that room, are you sure you want to try and go that way? ";
 					unless the player is in agreement, say "You change your mind." instead;
-			repeat with ST running through revealed hypno traps in L:
+			repeat with ST running through revealed spiral traps in L:
 				unless ST is expired:
-					say "There is a hypno trap currently displaying [hypno content of ST] in that room. Are you sure you want to try and go that way? ";
+					say "There is a spiral trap currently displaying [spiral content of ST] in that room. Are you sure you want to try and go that way? ";
 					unless the player is in agreement, say "You change your mind." instead;
 			repeat with ST running through revealed haunted mirror traps in L:
 				unless ST is expired:
@@ -607,11 +607,11 @@ Check going:
 	let W be a random warp portal in the location of the player;
 	if W is warp portal and the noun is the covered-direction of W:
 		if playerRegion is dungeon and location of hotel portal is not discovered and location of mansion portal is not discovered and class-time < 1000 and class-time > 0 and armband is worn and armband is not solid gold and the player is the donator:
-			say "Your armband hasn't beeped yet. If you enter the school before it's beeped even once, even if you take a lesson, you won't be able to access the Extra Credit Zone. Are you sure you want to enter the academy early?";
+			say "Your armband hasn't beeped yet. If you enter the royal training halls before it's beeped even once, even if you undergo a training session, you won't be able to access the Extra Credit Zone. Are you sure you want to enter the halls early?";
 			if the player is not consenting:
 				now seconds is 0;
 				say "Action cancelled." instead;
-		if W is school portal and (class-time is 1000 or class-time <= 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher, say "Your armband pulls you away, not wanting to let you leave! Perhaps you need to attend class first?" instead;
+		if W is facility portal and (class-time is 1000 or class-time <= 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked tutor, say "Your armband pulls you away, not wanting to let you leave! Perhaps you need to attend class first?" instead;
 		if the player is glue stuck:
 			say "You stretch and strain towards the portal, and finally feel it take a grip on you!";
 			compute raw glue escaping a random glue in the location of the player with 1;

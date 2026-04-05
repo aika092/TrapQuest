@@ -20,17 +20,35 @@ To bore (M - a monster):
 	bore M for 500 seconds.
 
 To bore (M - a monster) for (N - a number) seconds:
+	compute early unique boredom of M;
 	compute common boredom of M for N seconds;
 	compute unique boredom of M;
 	now M is uninterested;
 	now the boredom of M is N;
 	if M is diaper-instructing, now the boredom of M is the boredom of M / 2. [Diaper checks happen more frequently]
 
+To compute early unique boredom of (M - a monster):
+	do nothing.
 To compute unique boredom of (M - a monster):
 	do nothing.
 
+To aggravate (M - a monster):
+	if M is composed:
+		now M is aggravated;
+		if M is in the location of the player:
+			if M is interested:
+				say AggravatedFlav of M;
+				if M is intelligent and newbie tips is 1, say "[one of][newbie style]You've done something that's made this NPC particularly furious, for example attacking them. This just means that until they lose interest in you, certain more merciful actions they may have decided to perform on you are much less likely, or no longer possible[if diaper quest is 1]. For example, [he of M] won't just give you a diaper change upon getting you on your knees, but will instead do something more cruel[end if].[roman type][line break][or][stopping]";
+			otherwise if M is intelligent:
+				say "[BigNameDesc of M] starts scowling angrily! Looks like [he of M][']s in a bad mood now...".
+
+To say AggravatedFlav of (M - a monster):
+	if M is intelligent, say "[speech style of M]'[one of]I'm going to make you regret that!'[or]You've just crossed the line.'[or]That's it. No mercy for you.'[or]You'll suffer for this.'[in random order][roman type][line break][BigNameDesc of M] [one of]snarls[or]growls[or]spits angrily[at random].".
+
+
 To compute common boredom of (M - a monster) for (N - a number) seconds:
 	dislodge M;
+	now M is composed;
 	now M is not enticed;
 	now the throating of M is 0;
 	now the objectification of M is 0;
@@ -55,7 +73,7 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	reset orifice selection of M; [Otherwise they would be biased towards doing the same thing again, which is lame.]
 	repeat with K running through things rejected by M:
 		now M is not rejecting K;
-	if N >= 50 and playerRegion is not School and the player is not in Dungeon12:[Dungeon12 is the Royal Chambers. We don't want to let the player farm by going in and out of the Royal Chambers.]
+	if N >= 50 and playerRegion is not facility and the player is not in Dungeon12:[Dungeon12 is the Royal Chambers. We don't want to let the player farm by going in and out of the Royal Chambers.]
 		let R be a random number between 1 and 50;
 		decrease the charge of the dungeon altar by R;
 		decrease the charge of the elder altar by R;
@@ -65,21 +83,42 @@ To compute common latest appearance reset of (M - a monster):
 	now the latest-appearance of M is 0;
 	if diaper quest is 1, now the latest-cringe of M is 0.
 
+satisfaction-flavour-silenced is initially false.
+
+To punishment satisfy (M - a monster):
+	if M is awake and M is in the location of the player and the times-warned of M >= 3:
+		compute post sex punishment of M;
+		bore M;
+	otherwise:
+		satisfy M.
+
 To satisfy (M - a monster):
 	satisfy M for 500 seconds.
+To silently satisfy (M - a monster):
+	satisfy M for 500 seconds.
+
+To silently satisfy (M - a monster) for (N - a number) seconds:
+	now satisfaction-flavour-silenced is true;
+	satisfy M for N seconds;
+	now satisfaction-flavour-silenced is false.
 
 To satisfy (M - a monster) for (N - a number) seconds:
-	if M is interested:
+	if M is aggravated:
+		if M is in the location of the player and satisfaction-flavour-silenced is false, say BecomesBoredFlav of M;
 		bore M for N seconds;
-		FavourUp M;
-		if M is in the location of the player:
-			if M is awake, say SatisfiedFlav of M;
-			progress quest of nice-quest;
-		if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
 	otherwise:
-		bore M for N seconds; [We still want to dislodge etc. even if they weren't interested for some reason.]
-	compute unlock satisfaction of M;
-	compute unique satisfaction of M.
+		compute unique early satisfaction of M;
+		if M is interested:
+			bore M for N seconds;
+			FavourUp M;
+			if M is in the location of the player:
+				if M is awake and satisfaction-flavour-silenced is false, say SatisfiedFlav of M;
+				progress quest of nice-quest;
+			if the health of M <= the maxhealth of M / 2, progress quest of chosen-one-quest;
+		otherwise:
+			bore M for N seconds; [We still want to dislodge etc. even if they weren't interested for some reason.]
+		compute unlock satisfaction of M;
+		compute unique satisfaction of M.
 
 To check unlock timestamping of (M - a monster):
 	if M is currently keyholding:
@@ -113,8 +152,10 @@ To decide which number is the unlock threshold of (M - a monster):
 To say SatisfiedUnlockFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[one of]Actually[or]On second thoughts[cycling], [one of]I guess you've been locked in that for long enough, now[or]I shouldn't keep you locked in that forever now, should I[or]it would be excessively cruel to keep you locked up like that any longer[in random order].'[roman type][line break]".
 
-To compute unique satisfaction of (M - a monster):
+To compute unique early satisfaction of (M - a monster):
 	do nothing.
+To compute unique satisfaction of (M - a monster):
+	compute unique boredom of M.
 
 To say SatisfiedFlav of (M - a monster):
 	if M is in the location of the player and M is not dying:

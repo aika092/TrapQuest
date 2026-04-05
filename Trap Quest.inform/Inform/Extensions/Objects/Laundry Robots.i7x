@@ -78,7 +78,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 		if the player is possessing a penis or the player is not possessing a vagina, now F is asshole;
 		if the player is upright and robo vacuum cleaner is not penetrating a fuckhole:
 			let H be a random worn hood;
-			if H is a thing and (H is trainee hood or H is not blessed):
+			if H is a thing and (H is trainee-hood or H is not blessed):
 				now availableForBagDuty is true;
 			otherwise if black hood is off-stage and black hood is actually summonable and the number of pussy covering clothing is 0 and F is not actually occupied and the number of worn unremovable shoes is 0 and skirted-maid-corset is unclash summonable:
 				now availableForBagDuty is true;
@@ -111,7 +111,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 			let collecting be nothing;
 			say "[BigNameDesc of robo vacuum cleaner] hums loudly as it hovers over the puddle of [if the semen-puddle of (the location of robo vacuum cleaner) > 0][semen] [end if][if the semen-puddle of (the location of robo vacuum cleaner) > 0 and (the urine-puddle of (the location of robo vacuum cleaner) > 0 or the milk-puddle of (the location of robo vacuum cleaner) > 0)]and [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0][urine] [end if][if the urine-puddle of (the location of robo vacuum cleaner) > 0 and the milk-puddle of (the location of robo vacuum cleaner) > 0]and [end if][if the milk-puddle of (the location of robo vacuum cleaner) > 0][milk] [end if]in this room, sucking [if fluidRemaining > 6]some[otherwise]all[end if] of it up into the clear tube.";
 			decrease the question-cooldown of robo vacuum cleaner by 1;
-			if (robo vacuum cleaner is not penetrating face or (trainee hood is not worn and the number of worn unblessed hoods is 0)) and question-cooldown of robo vacuum cleaner <= 0:
+			if (robo vacuum cleaner is not penetrating face or (trainee-hood is not worn and the number of worn unblessed hoods is 0)) and question-cooldown of robo vacuum cleaner <= 0:
 				if robo vacuum cleaner is penetrating a fuckhole: [if there's something penetrating face that's not going to leave willingly, we are going to get into an infinite loop]
 					let C be a random clothing penetrating face;
 					if C is clothing and C is not autoremovable:
@@ -226,7 +226,7 @@ A later time based rule (this is the robo vacuum cleaner rule):
 					if robo vacuum cleaner is penetrating face:
 						now robo vacuum cleaner is not penetrating face;
 						say "Now that your hood is blessed, [bold type]you feel the tube's seal with your ring gag released, [roman type]and it slips out of your mouth to the ground!";
-						if H is trainee hood:
+						if H is trainee-hood:
 							now the charge of H is 100;
 							now the training-progress of H is 3;
 							compute unique periodic effect of H;

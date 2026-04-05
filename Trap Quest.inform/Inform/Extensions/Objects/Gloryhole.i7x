@@ -4,11 +4,11 @@ gloryhole is a thing. gloryhole is not portable. The printed name of gloryhole i
 
 gloryhole can be a-dick-detacher or a-non-detacher. gloryhole is a-non-detacher.
 
-Figure of gloryhole is the file "Env/School/gloryhole3a.jpg".
-Figure of empty gloryhole is the file "Env/School/gloryhole3b.jpg".
-Figure of top gloryhole is the file "Env/School/gloryhole3c.jpg".
-Figure of bottom gloryhole is the file "Env/School/gloryhole3d.jpg".
-Figure of double gloryhole is the file "Env/School/gloryhole3e.jpg".
+Figure of gloryhole is the file "Env/Facility/gloryhole3a.jpg".
+Figure of empty gloryhole is the file "Env/Facility/gloryhole3b.jpg".
+Figure of top gloryhole is the file "Env/Facility/gloryhole3c.jpg".
+Figure of bottom gloryhole is the file "Env/Facility/gloryhole3d.jpg".
+Figure of double gloryhole is the file "Env/Facility/gloryhole3e.jpg".
 
 To decide which figure-name is the examine-image of (G - gloryhole):
 	if G is penetrating face and the player is prone, decide on figure of bottom gloryhole;
@@ -80,7 +80,7 @@ Check entering gloryhole:
 				if C1 is crotch-displaced, now C1 is temporarily-displaced;
 			now C1 is a random top level protection clothing;
 		say "[if the player is possessing a penis]You stick your [ShortDesc of penis] into[otherwise if the player is possessing a vagina]You press your [vagina] against[end if] the waiting lips. ";
-		repeat with M running through reactive students:
+		repeat with M running through reactive trainees:
 			if the outrage tolerance of M <= 8:
 				FavourDown M;
 	otherwise:
@@ -92,7 +92,7 @@ Check entering gloryhole:
 				now gloryhole is glorywrapped;
 		if gloryhole is gloryunwrapped:
 			say "You expectantly put your mouth up to the hole. ";
-		repeat with M running through reactive students:
+		repeat with M running through reactive trainees:
 			if the outrage tolerance of M <= 10:
 				FavourDown M;
 	now gloryhole is grabbing the player;
@@ -222,7 +222,7 @@ To compute gloryhole genital modification:
 			PainUp 20;
 	compute gloryhole dislodging.
 
-To say SexResistFlav of (G - gloryhole):
+To say SexHoldBackFlav of (G - gloryhole):
 	if the player is prone:
 		if a random number between 3 and the oral sex addiction of the player > 6:
 			say "You can't bring yourself to stop right now! [SexSubmissionFlav of G]";
@@ -230,9 +230,9 @@ To say SexResistFlav of (G - gloryhole):
 			say "You shuffle backwards, removing the [manly-penis] from you mouth and giving the anonymous [man of male-m] blue balls.[line break][first custom style]'[one of]Fucking bitch! Come back here!'[or]What the fuck? You've got to be shitting me!'[or]Hey [bitch], I wasn't finished!'[or]You fucking [slut]! Finish sucking my [manly-penis] you little [bitch]!'[in random order][roman type][line break]He doesn't seem happy, but after a few seconds the [manly-penis] is removed from the hole.";
 			compute gloryhole dislodging;
 	otherwise if G is normal glory hole:
-		say "You try to pull away but the magical suction is holding you tightly against the wall!";
+		say "You push your head back against the magical forcing holding you in place, trying to gain as much space as possible to avoid getting deepthroated too far.";
 	otherwise if G is upper oral:
-		say "You refuse to suck on the [if the oral sex addiction of the player < 4]unwelcome [end if][manly-penis] in your mouth!";
+		say "You refuse to suck on the [manly-penis]!";
 	otherwise if G is blowjob portal:
 		if player-urinating is 0:
 			if the oral sex addiction of the player < 4:
@@ -388,6 +388,10 @@ To compute gloryhole dislodging:
 To say CondomPinFlav of (M - a fairy) on (C - a clothing):
 	say "[one of]Completely of its own accord[or]Once again[stopping], the used condom suddenly peels itself off and flies through the air until it hits your [C]. ".
 
+
+To say DefaultResistFlav of (T - gloryhole):
+	say "You press against the invisible force, but it holds you in place!".
+
 To construct normal buttons for (D - gloryhole):
 	if ButtonTableFull is 0:
 		if D is grabbing the player:
@@ -402,7 +406,7 @@ To construct normal buttons for (D - gloryhole):
 				if ButtonTableFull is 0 and the player is not broken:
 					choose a blank row in the Table of Buttons;
 					now the ButtonImage entry is Figure of ResistButton;
-					now the ButtonCommand entry is "resist";
+					now the ButtonCommand entry is "pull back";
 					now the ButtonColour entry is lightModeFullGreen;
 		otherwise:
 			choose a blank row in the Table of Buttons;
@@ -422,22 +426,22 @@ To construct normal buttons for (D - gloryhole):
 			if the player is immobile or the player is in danger, now the ButtonColour entry is lightModeFullRed. [turn red - player immobile]
 
 
-school-fuckhole is a thing. school-fuckhole is not portable. The printed name of school-fuckhole is "[TQlink of item described]fuckhole[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of school-fuckhole is "fkhl". Understand "fuckhole" as school-fuckhole. school-fuckhole has a person called fuckhole-person.
+facility-fuckhole is a thing. facility-fuckhole is not portable. The printed name of facility-fuckhole is "[TQlink of item described]fuckhole[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of facility-fuckhole is "fkhl". Understand "fuckhole" as facility-fuckhole. facility-fuckhole has a person called fuckhole-person.
 
-Definition: school-fuckhole is immune to change: decide yes.
+Definition: facility-fuckhole is immune to change: decide yes.
 
-school-fuckhole has a number called recently-used.
-school-fuckhole has a number called asscum.
-school-fuckhole has a number called pussycum.
-school-fuckhole has a number called buttcum.
-school-fuckhole has a number called buttcondoms.
-To decide which number is the bracum of (C - school-fuckhole):
+facility-fuckhole has a number called recently-used.
+facility-fuckhole has a number called asscum.
+facility-fuckhole has a number called pussycum.
+facility-fuckhole has a number called buttcum.
+facility-fuckhole has a number called buttcondoms.
+To decide which number is the bracum of (C - facility-fuckhole):
 	let N be 0;
 	repeat with B running through bras in the location of the player:
 		if N < the semen-soak of B, now N is the semen-soak of B;
 	decide on N.
 
-school-fuckhole has a number called fuckhole-rule.
+facility-fuckhole has a number called fuckhole-rule.
 [
 0: All permitted
 1: Creampie
@@ -448,55 +452,55 @@ school-fuckhole has a number called fuckhole-rule.
 ]
 
 To say FuckholeRuleDesc:
-	let M be the fuckhole-person of school-fuckhole;
-	say "'[if the fuckhole-rule of school-fuckhole is 0]Use [him of M] however you like[otherwise if the fuckhole-rule of school-fuckhole is 1]All ejaculations must be internal creampies[otherwise if the fuckhole-rule of school-fuckhole is 2]You must either give [his of M] an anal creampie or pull out and ejaculate on [his of M] bra. Do not steal the bra[otherwise if the fuckhole-rule of school-fuckhole is 3]You must pull out and ejaculate on [his of M] ass cheeks[otherwise if the fuckhole-rule of school-fuckhole is 4]You must use a condom[otherwise]You must use a condom and leave your used condom on top of [his of M] ass[end if].'".
+	let M be the fuckhole-person of facility-fuckhole;
+	say "'[if the fuckhole-rule of facility-fuckhole is 0]Use [him of M] however you like[otherwise if the fuckhole-rule of facility-fuckhole is 1]All ejaculations must be internal creampies[otherwise if the fuckhole-rule of facility-fuckhole is 2]You must either give [his of M] an anal creampie or pull out and ejaculate on [his of M] bra. Do not steal the bra[otherwise if the fuckhole-rule of facility-fuckhole is 3]You must pull out and ejaculate on [his of M] ass cheeks[otherwise if the fuckhole-rule of facility-fuckhole is 4]You must use a condom[otherwise]You must use a condom and leave your used condom on top of [his of M] ass[end if].'".
 
-Figure of school-fuckhole pale is the file "Env/School/fuckhole1a.jpg".
-[Figure of school-fuckhole mixed is the file "Env/School/fuckhole1b.jpg".]
-Figure of school-fuckhole dark is the file "Env/School/fuckhole1c.jpg".
+Figure of facility-fuckhole pale is the file "Env/Facility/fuckhole1a.jpg".
+[Figure of facility-fuckhole mixed is the file "Env/Facility/fuckhole1b.jpg".]
+Figure of facility-fuckhole dark is the file "Env/Facility/fuckhole1c.jpg".
 
-Figure of school-fuckhole asscum is the file "Env/School/fuckhole2a.png".
-Figure of school-fuckhole asscum jet is the file "Env/School/fuckhole2b.png".
-Figure of school-fuckhole pussycum is the file "Env/School/fuckhole3a.png".
-Figure of school-fuckhole buttcum is the file "Env/School/fuckhole4a.png".
-Figure of school-fuckhole condoms is the file "Env/School/fuckhole5a.png".
-Figure of school-fuckhole bra is the file "Env/School/fuckhole6a.png".
-Figure of school-fuckhole bracum is the file "Env/School/fuckhole6b.png".
+Figure of facility-fuckhole asscum is the file "Env/Facility/fuckhole2a.png".
+Figure of facility-fuckhole asscum jet is the file "Env/Facility/fuckhole2b.png".
+Figure of facility-fuckhole pussycum is the file "Env/Facility/fuckhole3a.png".
+Figure of facility-fuckhole buttcum is the file "Env/Facility/fuckhole4a.png".
+Figure of facility-fuckhole condoms is the file "Env/Facility/fuckhole5a.png".
+Figure of facility-fuckhole bra is the file "Env/Facility/fuckhole6a.png".
+Figure of facility-fuckhole bracum is the file "Env/Facility/fuckhole6b.png".
 
-To decide which figure-name is the examine-image of (G - school-fuckhole):
-	if the fuckhole-person of G is dark skinned monster, decide on Figure of school-fuckhole dark;
-	decide on Figure of school-fuckhole pale.
+To decide which figure-name is the examine-image of (G - facility-fuckhole):
+	if the fuckhole-person of G is dark skinned monster, decide on Figure of facility-fuckhole dark;
+	decide on Figure of facility-fuckhole pale.
 
-To ForegroundRender (G - school-fuckhole) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+To ForegroundRender (G - facility-fuckhole) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	if the buttcum of G > 0:
-		display the image Figure of school-fuckhole buttcum in the graphics-window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of facility-fuckhole buttcum in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	if the pussycum of G > 0:
-		display the image Figure of school-fuckhole pussycum in the graphics-window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of facility-fuckhole pussycum in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	if the buttcondoms of G > 0:
-		display the image Figure of school-fuckhole condoms in the graphics-window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of facility-fuckhole condoms in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	if the bracum of G is 1:
-		display the image Figure of school-fuckhole bra in the graphics-window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of facility-fuckhole bra in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	otherwise if the bracum of G > 0:
-		display the image Figure of school-fuckhole bracum in the graphics-window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of facility-fuckhole bracum in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	if the asscum of G is 1:
-		display the image Figure of school-fuckhole asscum in the graphics-window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of facility-fuckhole asscum in the graphics-window at X1 by Y1 with dimensions DX by DY;
 	otherwise if the asscum of G > 1:
-		display the image Figure of school-fuckhole asscum jet in the graphics-window at X1 by Y1 with dimensions DX by DY;
+		display the image Figure of facility-fuckhole asscum jet in the graphics-window at X1 by Y1 with dimensions DX by DY;
 
 An all time based rule (this is the fuckhole asscum rule):
-	if the asscum of school-fuckhole > 1:
-		decrease the asscum of school-fuckhole by 1;
-		if the player is in the location of school-fuckhole, say "The [semen] jetting out of [NameDesc of school-fuckhole][']s butthole gets all over [if the bracum of school-fuckhole > 0]the bra on [end if]the floor.";
-		SemenPuddleUp 2 in (the location of school-fuckhole);
-		repeat with B running through bras in the location of school-fuckhole:
+	if the asscum of facility-fuckhole > 1:
+		decrease the asscum of facility-fuckhole by 1;
+		if the player is in the location of facility-fuckhole, say "The [semen] jetting out of [NameDesc of facility-fuckhole][']s butthole gets all over [if the bracum of facility-fuckhole > 0]the bra on [end if]the floor.";
+		SemenPuddleUp 2 in (the location of facility-fuckhole);
+		repeat with B running through bras in the location of facility-fuckhole:
 			CumSoak 1 on B.
 
-To say ExamineDesc of (C - school-fuckhole):
+To say ExamineDesc of (C - facility-fuckhole):
 	let M be the fuckhole-person of C;
 	say "The lower half of a [man of M] is stuck in the wall here: [big his of M] hands, calves and butt are presented through five tight rubber-sealed holes in the wall. [big his of M] head, torso, arms and knees must be on the other side. It doesn't look like [he of M][']ll be getting out any time soon.";
-	say "[if the asscum of C is 1]The cum leaking out of [his of M] asshole is evidence that [he of M][']s recently been anally creampied. [otherwise if the asscum of C > 1]The cum shooting out of [his of M] asshole is evidence that [his of M] ass has recently been filled to the brim with [semen]. [end if][if the pussycum of C > 0]The cum leaking out of [his of M] cunt is evidence that [he of M][']s recently been vaginally creampied. [end if][if the buttcum of C > 0][big his of M] buttcheeks are coated in [semen]. [end if][if the buttcondoms of C > 0]Used condoms are piled on top of [his of C] butt. [end if][if the bracum of C > 0][big his of M] bra is lying on the ground by [his of M] feet. [end if][if the bracum of C is 2]It has been plastered by several ropes of [semen]. [end if]You remember [NameDesc of headmistress][']s instructions:[line break][speech style of headmistress][FuckholeRuleDesc][roman type][line break]".
+	say "[if the asscum of C is 1]The cum leaking out of [his of M] asshole is evidence that [he of M][']s recently been anally creampied. [otherwise if the asscum of C > 1]The cum shooting out of [his of M] asshole is evidence that [his of M] ass has recently been filled to the brim with [semen]. [end if][if the pussycum of C > 0]The cum leaking out of [his of M] cunt is evidence that [he of M][']s recently been vaginally creampied. [end if][if the buttcum of C > 0][big his of M] buttcheeks are coated in [semen]. [end if][if the buttcondoms of C > 0]Used condoms are piled on top of [his of C] butt. [end if][if the bracum of C > 0][big his of M] bra is lying on the ground by [his of M] feet. [end if][if the bracum of C is 2]It has been plastered by several ropes of [semen]. [end if]You remember [NameDesc of mistress][']s instructions:[line break][speech style of mistress][FuckholeRuleDesc][roman type][line break]".
 
-To construct normal buttons for (T - school-fuckhole):
+To construct normal buttons for (T - facility-fuckhole):
 	if the player is a bit horny:
 		choose a blank row in the Table of Buttons;
 		now the ButtonColour entry is lightModeFullGreen;
@@ -510,17 +514,17 @@ To construct normal buttons for (T - school-fuckhole):
 		now the ButtonCommand entry is "use [text-shortcut of T]";
 		if the player is immobile or the player is in danger, now the ButtonColour entry is lightModeFullRed. [turn red - player immobile]
 
-Check climbing school-fuckhole:
+Check climbing facility-fuckhole:
 	try entering the noun instead.
-Check dominating school-fuckhole:
+Check dominating facility-fuckhole:
 	try entering the noun instead.
-Check drinking school-fuckhole:
+Check drinking facility-fuckhole:
 	try entering the noun instead.
 
-Check entering school-fuckhole:
-	increase the recently-used of school-fuckhole by 1;
+Check entering facility-fuckhole:
+	increase the recently-used of facility-fuckhole by 1;
 	let ruleBreaker be false;
-	if the fuckhole-rule of school-fuckhole > 0, now ruleBreaker is true;
+	if the fuckhole-rule of facility-fuckhole > 0, now ruleBreaker is true;
 	if the player is not possessing a penis, say "You would need a penis." instead;
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
 	if the player is in danger, say "You would, but you are currently in a fight." instead;
@@ -542,10 +546,10 @@ Check entering school-fuckhole:
 			try displacing C1;
 			if C1 is crotch-displaced, now C1 is temporarily-displaced;
 		now C1 is a random top level protection clothing;
-	repeat with M running through reactive students:
+	repeat with M running through reactive trainees:
 		if the outrage tolerance of M <= 8:
 			FavourDown M;
-	let M be the fuckhole-person of school-fuckhole;
+	let M be the fuckhole-person of facility-fuckhole;
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 	set numerical response 1 to "Fuck anally[if there is a held condom-providing thing] (no condom)[end if]";
 	set numerical response 2 to "Fuck vaginally[if there is a held condom-providing thing] (no condom)[end if]";
@@ -560,12 +564,12 @@ Check entering school-fuckhole:
 	say "You [if O > 2]wrap your member then [end if]push inside the easily accessible [F] in front of you. It feels warm and tight - everything you could ever want in a fuckhole. It doesn't take long before you're groaning with pleasure and ";
 	if O > 2:
 		say "filling your condom with your [if the semen load of the player > 7]huge [otherwise if the semen load of the player < 4]small [end if]load.";
-		if the fuckhole-rule of school-fuckhole is 4, now ruleBreaker is false;
+		if the fuckhole-rule of facility-fuckhole is 4, now ruleBreaker is false;
 		orgasm quietly;
 		now player-numerical-response is 0;
 		let BL be a random off-stage bag lunch;
 		if BL is a thing:
-			if the buttcondoms of school-fuckhole > 0:
+			if the buttcondoms of facility-fuckhole > 0:
 				set numerical response 1 to "Keep the used condom";
 				set numerical response 2 to "Put the used condom on [his of M] butt";
 				compute multiple choice question;
@@ -578,32 +582,32 @@ Check entering school-fuckhole:
 			say "You keep [NameDesc of BL] for yourself.";
 		otherwise if player-numerical-response is 2:
 			say "You add the used condom to the countless used condoms already on [his of M] butt.";
-			if the fuckhole-rule of school-fuckhole is 5, now ruleBreaker is false;
+			if the fuckhole-rule of facility-fuckhole is 5, now ruleBreaker is false;
 	otherwise:
 		say "ready to cum.";
 		set numerical response 1 to "Cum inside";
 		set numerical response 2 to "Pull out and cum on [his of M] ass";
-		if the bracum of school-fuckhole > 0, set numerical response 3 to "Pull out and cum on [his of M] bra";
+		if the bracum of facility-fuckhole > 0, set numerical response 3 to "Pull out and cum on [his of M] bra";
 		compute multiple choice question;
 		orgasm quietly;
 		if player-numerical-response is 1:
-			if the fuckhole-rule of school-fuckhole is 1, now ruleBreaker is false;
+			if the fuckhole-rule of facility-fuckhole is 1, now ruleBreaker is false;
 			say "You fill the warm hole with your [if the semen load of the player > 7]huge [otherwise if the semen load of the player < 4]small [end if]hot sticky load.";
 			if F is vagina:
-				increase the pussycum of school-fuckhole by 1;
+				increase the pussycum of facility-fuckhole by 1;
 			otherwise:
-				if the fuckhole-rule of school-fuckhole is 2, now ruleBreaker is false;
-				increase the asscum of school-fuckhole by 2;
-				if the asscum of school-fuckhole > 2, say "As you pull out, cum starts shooting out from [his of M] asshole like a fire hydrant!";
+				if the fuckhole-rule of facility-fuckhole is 2, now ruleBreaker is false;
+				increase the asscum of facility-fuckhole by 2;
+				if the asscum of facility-fuckhole > 2, say "As you pull out, cum starts shooting out from [his of M] asshole like a fire hydrant!";
 		otherwise if player-numerical-response is 2:
-			say "You pull out with an audible SLURP, and spill your load over [his of M] [if the buttcum of school-fuckhole > 0]cum-covered [end if]ass. You watch [his of M] toes curl as [he of M] feels your warm [semen] painting [his of M] rear.";
-			increase the buttcum of school-fuckhole by 1;
-			if the fuckhole-rule of school-fuckhole is 3, now ruleBreaker is false;
+			say "You pull out with an audible SLURP, and spill your load over [his of M] [if the buttcum of facility-fuckhole > 0]cum-covered [end if]ass. You watch [his of M] toes curl as [he of M] feels your warm [semen] painting [his of M] rear.";
+			increase the buttcum of facility-fuckhole by 1;
+			if the fuckhole-rule of facility-fuckhole is 3, now ruleBreaker is false;
 		otherwise:
 			say "You pull out with an audible SLURP, and point your [ShortDesc of penis] towards the bra on the floor. You shoot your load all over it.";
-			repeat with B running through bras in the location of school-fuckhole:
+			repeat with B running through bras in the location of facility-fuckhole:
 				CumSoak (the semen load of the player) on B;
-			if the fuckhole-rule of school-fuckhole is 2, now ruleBreaker is false;
+			if the fuckhole-rule of facility-fuckhole is 2, now ruleBreaker is false;
 	if there is worn temporarily-displaced clothing, say "You replace your [ShortDesc of list of worn temporarily-displaced clothing].";
 	repeat with TDC running through temporarily-displaced clothing:
 		if TDC is worn:
@@ -611,9 +615,9 @@ Check entering school-fuckhole:
 			otherwise Replace TDC;
 		now TDC is not temporarily-displaced;
 	DelicateDown 1;
-	if ruleBreaker is true and headmistress is alive and headmistress is undefeated:
+	if ruleBreaker is true and mistress is alive and mistress is undefeated:
 		now M is a random staff member in the location of the player;
-		if M is nothing and the player is getting unlucky, now M is a random alive teacher;
+		if M is nothing and the player is getting unlucky, now M is a random alive tutor;
 		if M is a monster:
 			if M is not in the location of the player:
 				now M is in the location of the player;
@@ -621,12 +625,12 @@ Check entering school-fuckhole:
 			interest M;
 			anger M;
 			make M expectant;
-			say "[BigNameDesc of M] puts [his of M] hands on [his of M] hips.[line break][speech style of M]'I SAW THAT! How dare you break the headmistress's rules[if the recently-used of school-fuckhole > 1] by using the fuckhole more than once per visit[end if]. GET ON YOUR KNEES AT ONCE!'[roman type][line break]";
+			say "[BigNameDesc of M] puts [his of M] hands on [his of M] hips.[line break][speech style of M]'I SAW THAT! How dare you break the mistress's rules[if the recently-used of facility-fuckhole > 1] by using the fuckhole more than once per visit[end if]. GET ON YOUR KNEES AT ONCE!'[roman type][line break]";
 		otherwise:
 			say "You feel proud of yourself for breaking the rules but not getting caught.";
 			dignify 2500;
-			repeat with ST running through reactive students:
-				if ST is not nasty student, FavourDown ST;
+			repeat with ST running through reactive trainees:
+				if ST is not nasty trainee, FavourDown ST;
 	do nothing instead.
 
 

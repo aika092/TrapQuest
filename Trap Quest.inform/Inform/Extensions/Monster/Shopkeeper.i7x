@@ -27,7 +27,7 @@ Definition: shopkeeper is certain to do anilingus:
 
 shopkeeper has a number called discounts. [the discounts of shopkeeper is 1.]
 
-shopkeeper is in Dungeon41. Understand "shop", "keeper" as shopkeeper. The printed name of shopkeeper is "[if item described is in the location of the player][TQlink of item described][end if][input-style]well built shopkeeper[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of shopkeeper is "sh". Understand "well", "built" as shopkeeper.
+shopkeeper is in Dungeon41. Understand "shop", "keeper" as shopkeeper. The printed name of shopkeeper is "[if item described is in the location of the player][TQlink of item described][end if][input-style][if diaper quest is 1]babydoll[otherwise]well built[end if] shopkeeper[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of shopkeeper is "sh". Understand "well", "built" as shopkeeper when diaper quest is 0. Understand "babydoll" as shopkeeper when diaper quest is 1.
 
 Figure of female shopkeeper is the file "NPCs/Dungeon/Shopkeeper/shopkeeper5.png".
 
@@ -807,8 +807,7 @@ To compute cleavage climax of (M - shopkeeper):
 	TimesSubmittedUp M by 1;
 	BreastsSensitivityUp 1;
 	compute happy reward of M;
-	orgasm M;
-	send M home.
+	orgasm satisfy M.
 
 To say PenetrationFlav of (M - shopkeeper) in (F - vagina):
 	let H be the openness of F - the girth of M;
@@ -1673,7 +1672,7 @@ To set up store:
 			now T is in Dungeon41;
 			now the owner of T is shopkeeper;
 			if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [T] to the display.";
-	if designer handbag of holding is off-stage:
+	if designer handbag of holding is off-stage and diaper quest is 0:
 		now designer handbag of holding is in Dungeon41;
 		now the owner of designer handbag of holding is shopkeeper;
 		if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds a [designer handbag of holding] to the display.";
@@ -1684,7 +1683,7 @@ To set up store:
 	repeat with C running through worn locked clothing:
 		if the number of unlock-keys in Dungeon41 is 0:
 			let K be a random specific-key covering C;
-			if K is a thing and (the player is in Dungeon41 or a random number between 1 and 2 is 1):
+			if K is a thing and (K is not held by matron or matron is not alive) and (the player is in Dungeon41 or a random number between 1 and 2 is 1):
 				now K is in Dungeon41;
 				now the owner of K is shopkeeper;
 				if the player is in Dungeon41, say "[BigNameDesc of shopkeeper] adds the [K] to the display.";

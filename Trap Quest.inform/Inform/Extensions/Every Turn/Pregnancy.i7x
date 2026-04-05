@@ -286,7 +286,7 @@ To compute housewife domestication:
 		let D be a random worn overdress;
 		if D is housewife dress:
 			now D is charisma-influencing;
-			if the raw-magic-modifier of D < 5:
+			if the raw-magic-modifier of D < 5 and (successful-pregnancy is 1 or the raw-magic-modifier of D < 1):
 				say "Your [D] turns into a ";
 				increase the raw-magic-modifier of D by 1;
 				say "[D]!";
@@ -294,8 +294,7 @@ To compute housewife domestication:
 			transform D into housewife dress;
 		otherwise:
 			class summon housewife dress;
-		if D is worn:
-			say "[variable custom style]I've been domesticated and bred... Just like a good little housewife...[roman type][line break]".
+		if D is worn, say "[variable custom style]I've been domesticated and bred... Just like a good little housewife...[roman type][line break]".
 
 contractionTracker is a number that varies.
 To Delay Labour:
@@ -331,17 +330,16 @@ To check for extreme pregnancies:
 	if the womb volume of vagina is 31 and slow pregnancy > 2:
 		now the womb volume of vagina is 50;
 		cutshow figure of giant pregnancy for belly;
-	if the womb volume of vagina is 30:
-		cutshow figure of full term pregnancy for belly.
+	if the womb volume of vagina is 30, cutshow figure of full term pregnancy for belly.
 
 breastsEngorged is initially false.
 
 [Being pregnant is no walk in the park]
 To compute pregnancy annoyance:
 	if the class of the player is not fertility goddess:
-		if (the player is in Hotel18 or the player is in School17) and the stomach-food of the player < 2 and the player is able to eat and the player is not immobile and the player is not in danger:
+		if (the player is in Hotel18 or the player is in Facility17) and the stomach-food of the player < 2 and the player is able to eat and the player is not immobile and the player is not in danger:
 			let T be feeding bowls;
-			if the player is in School17, now T is food machine;
+			if the player is in Facility17, now T is food machine;
 			say "Your pregnancy-hormone-addled brain suddenly gives you a deep craving for the [MediumDesc of T] in this room. Do you obey your cravings and eat up? ";
 			if the player is bimbo consenting:
 				let saved-secs be seconds;

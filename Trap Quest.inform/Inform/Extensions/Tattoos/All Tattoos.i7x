@@ -33,7 +33,7 @@ To decide which number is the dexterity-influence of (T - abyssal tattoo):
 To decide which number is the intelligence-influence of (T - abyssal tattoo):
 	let X be 0;
 	if the player-class is cultist, increase X by 4;
-	if the player-class is schoolgirl, increase X by 2;
+	if the player-class is alchemist, increase X by 2;
 	if the player-class is catgirl, decrease X by 2;
 	if the player-class is priestess, increase X by 2;
 	if the player-class is princess, increase X by 2;
@@ -68,7 +68,7 @@ Broodmother - more wasps per egg
 Cheerleader - bonus that triggers while you are bottom exposed
 Cowgirl - bonus that triggers while your breasts are exposed and milky
 Royal Slave - bonus to do with retaining milk
-Schoolgirl - faster recharge on crafting?
+Alchemist - faster recharge on crafting?
 Priestess - get some of the benefits of being a cultist wrt cursed items
 Princess - make friendly monsters more effective at assisting you?
 Faerie/Fertility Goddess - increase stats while pregnant
@@ -208,7 +208,7 @@ Definition: babygirl tattoo is drawable:
 	if diaper lover <= 0, decide no;
 	decide yes.
 Definition: babygirl tattoo is eligible:
-	if the noun is schoolgirl outfit or the noun is scrunchie or the noun is cheerleader outfit or the noun is sissifying clothing or the noun is baby-dress or the noun is super-short clothing, decide yes;
+	if the noun is alchemist outfit or the noun is scrunchie or the noun is cheerleader outfit or the noun is sissifying clothing or the noun is baby-dress or the noun is super-short clothing, decide yes;
 	decide no.
 To say tattoo-desc of (T - babygirl tattoo):
 	say "The word 'Baby' is inked on the back your left leg and the word 'Girl' on the back of your right leg with scrawly handwriting.".
@@ -2711,7 +2711,7 @@ To decide which number is the initial outrage of (T - sissy cumslut tattoo):
 Definition: sissy cumslut tattoo (called C) is removal-blocking:
 	if wearing-target is a worn chastity bond, decide yes;
 	decide no.
-To compute school periodic effect of (C - sissy cumslut tattoo):
+To compute facility periodic effect of (C - sissy cumslut tattoo):
 	compute periodic effect of C.
 To compute periodic effect of (C - sissy cumslut tattoo):
 	if the player is not possessing a penis and the player is possessing a vagina:

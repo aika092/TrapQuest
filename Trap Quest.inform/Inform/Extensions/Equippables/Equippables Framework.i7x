@@ -144,14 +144,14 @@ The fingers gloves clash rule is listed in the gloves wearability rules.
 
 This is the equip after wearing gloves rule:
 	repeat with E running through worn hand ready clothing:
-		if E is clothing and E is not bag of holding:
+		if E is clothing and E is not bag of holding and gluetearing is false:
 			if summoning is 0 and autoremove is false, say "You would need to stop wielding [NameDesc of E] first[if wearing-target is not hand ready] (but you should be able to wield it again afterwards)[end if].";
 			rule fails.
 The equip after wearing gloves rule is listed in the gloves wearability rules.
 
 This is the unequip before removing gloves rule:
 	repeat with E running through worn hand ready clothing:
-		if E is clothing and E is not wearing-target:
+		if E is clothing and E is not wearing-target and gluetearing is false:
 			if summoning is 0 and autoremove is false, say "You would need to stop wielding [NameDesc of E] first.";
 			rule fails.
 The unequip before removing gloves rule is listed in the gloves removability rules.
@@ -227,8 +227,8 @@ To decide which number is the wornArmsRequired of (C - football-gloves):
 	if the game-state of team-football-predicament is 0, decide on 2;
 	decide on 0.
 To compute periodic effect of (C - football-gloves):
-	compute school periodic effect of C.
-To compute school periodic effect of (C - football-gloves):
+	compute facility periodic effect of C.
+To compute facility periodic effect of (C - football-gloves):
 	if the player is in Predicament20 or the player is not in a predicament room:
 		say "[BigNameDesc of football-gloves] fizzles from existence!";
 		only destroy football-gloves.
@@ -363,8 +363,8 @@ To decide which number is the initial outrage of (C - briefcase):
 To decide which number is the wornArmsRequired of (C - briefcase):
 	decide on 1.
 To compute periodic effect of (C - briefcase):
-	compute school periodic effect of C.
-To compute school periodic effect of (C - briefcase):
+	compute facility periodic effect of C.
+To compute facility periodic effect of (C - briefcase):
 	if the player is in Predicament20 or the player is not in a predicament room:
 		say "[BigNameDesc of briefcase] fizzles from existence!";
 		only destroy briefcase.
@@ -404,5 +404,54 @@ To construct unique buttons for (T - fake-baby):
 
 To construct unique icons for (T - fake-baby):
 	if T is not settled and the number of sat-on breastfeeding-bench is 0, add Figure of AlarmIcon to the list of icons.
+
+
+slut-lube is an equippable. slut-lube is unique. slut-lube is slap ready. slut-lube can be summon-ready. slut-lube is plastic. The printed name of slut-lube is "[clothing-title-before]SLUT lube[clothing-title-after]". The text-shortcut of slut-lube is "slb". Understand "slut", "lube" as slut-lube.
+
+To decide which number is the slap damage improvement of (W - slut-lube):
+	decide on 0.
+
+To decide which number is the initial outrage of (C - slut-lube):
+	decide on 12.
+
+To decide which figure-name is clothing-image of (C - slut-lube):
+	 decide on Figure of lubricant.
+
+To compute attack of (W - slut-lube) at (M - a monster):
+	say "[if punch is 1][one of]Clenching your fist tight, you[or]You[stopping] punch[otherwise]You slap[end if] [the noun][if the latex-transformation of the player is 8] with your fingerless arms[end if]! ".
+
+An all later time based rule (this is the slut-lube-handling rule):
+	if slut-lube is on-stage and slut-lube is not worn:
+		let P be a random person carrying slut-lube;
+		let L be a random lubricant in holding pen;
+		if L is not lubricant, now L is a random off-stage lubricant;
+		if L is a thing:
+			if P is a thing:
+				now P is carrying L;
+			otherwise:
+				now L is in the location of slut-lube;
+		otherwise:
+			say "BUG - lubricant not found in Holding Pen. Please report.";
+		only destroy slut-lube.
+
+To check slut lube forced hold of (C - a lubricant):
+	if diaper quest is 0 and slut-lube is summon-ready and slut-lube is off-stage and slut-lube is actually summonable and the player is getting unlucky:
+		say "[bold type]But wait - now that you've picked it up, it's somehow sealed itself to your hand. It's a cursed bottle of lube that's treating itself like a wielded weapon![roman type][line break]";
+		now C is in Holding Pen;
+		summon slut-lube cursed with quest;
+		say "[variable custom style]Oh crap, it seems like it won't even let me squeeze it until I uncurse it...[roman type][line break]";
+	now slut-lube is not summon-ready.
+
+To assign quest to (C - slut-lube):
+	now the quest of C is show-and-tell-quest;
+	set up the quest of C.
+
+To say ClothingDesc of (W - slut-lube):
+	say "This bottle of 'SLUT LUBE' is [if W is cursed]sealed to your hand. It won't even let you squeeze it![otherwise]now uncursed, and you can remove it whenever you want.[end if]".
+To say ShortDesc of (W - slut-lube):
+	say "SLUT lube".
+To say MediumDesc of (W - slut-lube):
+	say "bottle of SLUT lube".
+
 
 Equippables Framework ends here.

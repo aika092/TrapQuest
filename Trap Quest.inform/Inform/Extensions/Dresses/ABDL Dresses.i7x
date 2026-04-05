@@ -13,6 +13,11 @@ Definition: a baby-reins is baby themed: decide yes.
 To say ShortDesc of (C - a baby-reins):
 	say "baby reins".
 Definition: a baby-reins is subduing: decide yes.
+Definition: a baby-reins (called C) is uniquely priority babywear:
+	if current-monster is matron and the good-behaviour of behaviour-chart < the behaviour-unlock-threshold of C, decide yes;
+	decide no.
+To decide which number is the behaviour-unlock-threshold of (C - a baby-reins):
+	decide on 2.
 
 This is the baby-reins prevents player diaper removal rule:
 	if summoning is 0 and there is a worn baby-reins:
@@ -87,6 +92,11 @@ Definition: a baby-dress is disintegration-protected:
 	decide no.
 Definition: a baby-party-dress is end of transformation chain: decide yes.
 Definition: a baby-dress is baby themed: decide yes.
+Definition: a baby-dress (called C) is uniquely priority babywear:
+	if current-monster is matron and the good-behaviour of behaviour-chart < the behaviour-unlock-threshold of C, decide yes;
+	decide no.
+To decide which number is the behaviour-unlock-threshold of (C - a baby-party-dress):
+	decide on 2. [because they're more harsh than the others, they unlock sooner]
 
 To decide which object is the potential-upgrade-target of (C - a baby-dress):
 	now theme-share-target is C;
@@ -433,7 +443,7 @@ To compute class set up of (C - a berri-dress):
 To compute post transformation effect of (C - a berri-dress):
 	compute periodic effect of C.
 
-To compute school periodic effect of (C - a berri-dress):
+To compute facility periodic effect of (C - a berri-dress):
 	compute periodic effect of C.
 
 To compute periodic effect of (C - a berri-dress):
@@ -477,7 +487,7 @@ Report examining a berri-dress:
 	if debugmode > 0, say "Berri progression is at [latest-berri-stage].";
 
 [Report going:
-	if gold-hairclip is worn and (the noun is up or the noun is down) and playerRegion is not school and the number of worn berri-dress is 0:
+	if gold-hairclip is worn and (the noun is up or the noun is down) and playerRegion is not facility and the number of worn berri-dress is 0:
 		say "[BigNameDesc of gold-hairclip] [bold type]seems to be getting you ready for your next cutscene! [roman type]";
 		compute class outfit of gold-hairclip.]
 

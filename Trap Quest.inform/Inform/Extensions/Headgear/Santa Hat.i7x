@@ -205,7 +205,7 @@ To decide which number is the initial outrage of (H - conic santa hat):
 
 nice-quest is a headgear-clothing-quest. nice-quest has a number called nice-count.
 
-Definition: nice-quest is school-disabled: decide yes.
+Definition: nice-quest is facility-disabled: decide yes.
 
 To uniquely set up (C - christmas bonnet):
 	now the quest of C is nice-quest.
@@ -217,7 +217,7 @@ To set up (Q - nice-quest):
 	now the nice-count of Q is 0.
 
 To say QuestFlav of (Q - nice-quest):
-	say "You sense that it wants you to prove you are nice by [bold type]not attacking[if diaper quest is 0] or resisting[end if][roman type] until you have [if diaper quest is 0]sexually satisfied[otherwise]satisfied the whims of[end if] a few people, or at least let them follow you around for a while (does not progress while you're in the academy region).".
+	say "You sense that it wants you to prove you are nice by [bold type]not attacking[if diaper quest is 0] or holding back during sex[end if][roman type] until you have [if diaper quest is 0]sexually satisfied[otherwise]satisfied the whims of[end if] a few people, or at least let them follow you around for a while (does not progress while you're in the training facility).".
 
 To say QuestTitle of (Q - nice-quest):
 	say " (naughty or nice quest)".
@@ -225,7 +225,7 @@ To say QuestTitle of (Q - nice-quest):
 To progress quest of (Q - nice-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
-			if playerRegion is not school, increase nice-count of Q by 1;
+			if playerRegion is not facility, increase nice-count of Q by 1;
 			if nice-count of Q > a random number between 1 and 2:
 				compute quest completion of Q on C.
 

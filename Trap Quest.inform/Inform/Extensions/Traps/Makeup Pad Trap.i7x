@@ -206,19 +206,22 @@ To evade trigger (C - slime-trap-choice):
 				say "The ['][ChoiceFlav of C]['] punishment seems to miss, or fizzle, or something! [GotLuckyFlav]".
 
 
-hypno-trap-choice is a choice-trap-choice.
-To say ChoiceFlav of (C - hypno-trap-choice):
-	say "HYPNOSIS".
-To trigger (C - hypno-trap-choice):
-	let T be a random fetish appropriate hypno trap;
-	say "The screen changes, and is suddenly [hypno content of T]. It immediately captivates your attention!";
+spiral-trap-choice is a choice-trap-choice.
+Definition: spiral-trap-choice is appropriate:
+	if legacy content is 1, decide yes;
+	decide no.
+To say ChoiceFlav of (C - spiral-trap-choice):
+	say "SPIRAL VIDEO".
+To trigger (C - spiral-trap-choice):
+	let T be a random fetish appropriate spiral trap;
+	say "The screen changes, and is suddenly [spiral content of T]. It immediately captivates your attention!";
 	say video content of T;
-	compute specific hypno effect of T;
+	compute specific spiral effect of T;
 	say "The tablet then turns off.".
-To evade trigger (C - hypno-trap-choice):
-	let T be a random fetish appropriate hypno trap;
-	say "The screen changes, and is suddenly [hypno content of T].";
-	compute hypno effect of T; [chance of avoiding eye contact]
+To evade trigger (C - spiral-trap-choice):
+	let T be a random fetish appropriate spiral trap;
+	say "The screen changes, and is suddenly [spiral content of T].";
+	compute spiral effect of T; [chance of avoiding eye contact]
 	say "The tablet then turns off.".
 
 aphrodesiac-trap-choice is a choice-trap-choice.

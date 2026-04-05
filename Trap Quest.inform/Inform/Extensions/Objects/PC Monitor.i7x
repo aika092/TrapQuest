@@ -754,7 +754,7 @@ To compute disgrace punishment effect of (DP - public-disgrace-punishment-stat-d
 
 public-disgrace-punishment-bondage is a disgrace-punishment.
 Definition: public-disgrace-punishment-bondage is appropriate:
-	if punished public disgrace >= 2000 and bondage protection < 2 and the player is not wrist bound, decide yes;
+	if punished public disgrace >= 2000 and bondage protection < 3 and the player is not wrist bound, decide yes;
 	decide no.
 To say DPTitle of (DP - public-disgrace-punishment-bondage):
 	say "brutal bondage".
@@ -829,6 +829,7 @@ To compute disgrace punishment effect of (DP - public-disgrace-punishment-sissy)
 To CheckDisgracePunishment of (V - a video-monitor):
 	let NPDT be next-public-disgrace-threshold;
 	if the public disgrace of the player > NPDT:
+		now temporaryYesNoBackground is figure of mirror monitor on;
 		now currentlyPublicDisgracing is true;
 		let LDP be the list of eligible appropriate disgrace-punishments;
 		let T be "a really outrageous picture of you";
@@ -883,7 +884,7 @@ To CheckDisgracePunishment of (V - a video-monitor):
 			if DP is nothing:
 				sort LDP in random order;
 				now DP is entry 1 in LDP;
-			say "I think I'm gonna choose this one. Enjoy whatever exactly ['][DPTitle of DP]['] does to you. Hopefully they'll let me watch...'[roman type][line break]";
+			say "[speech style of M]'I think I'm gonna choose this one. Enjoy whatever exactly ['][DPTitle of DP]['] does to you. Hopefully they'll let me watch...'[roman type][line break]";
 			if the player is able to speak, compute single choice question "Wait, no, please [MediumDesc of M], I'll do anything!-'";
 			otherwise compute single choice question "Make urgent pleading sounds";
 			say "But it's too late, [he of M][']s already pressed the button. And as soon as [MediumDesc of M] has made [his of M] selection, the call goes dead.";
@@ -892,6 +893,7 @@ To CheckDisgracePunishment of (V - a video-monitor):
 		increase the times-called of the video-caller of V by 1;
 		now currentlyPublicDisgracing is false;
 		now the video-caller of V is the throne;
+		temporaryYesNoBackgroundReset;
 		cutshow figure of mirror monitor on for V;
 		now punished public disgrace is NPDT.
 

@@ -193,7 +193,7 @@ To compute periodic effect of (C - trashcan):
 	if C is not class-relevant:
 		say "[BigNameDesc of C] fizzles from existence!";
 		destroy C.
-To compute school periodic effect of (C - trashcan):
+To compute facility periodic effect of (C - trashcan):
 	compute periodic effect of C.
 
 Definition: trashcan is potentially vagina covering:

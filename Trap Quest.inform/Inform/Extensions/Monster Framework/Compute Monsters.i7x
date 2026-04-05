@@ -16,6 +16,9 @@ timedebug is a number that varies. timedebug is 0.
 To compute monsters:
 	now shocked-monsters is 0; [This is the variable that makes sure we don't spam the player with too much humiliation flavour if several monsters notice them at once]
 	now aroused-monsters is 0;
+	if diaper lover > 0 and matron is alive and matron is unleashed and the player is not in a nonstandard room and (playerRegion is dungeon or playerRegion is hotel or playerRegion is mansion) and matron is not regional:
+		let R be the default-local-room of matron;
+		if R is a dq-mandatory room and R is not vanished and R is not the location of the player and R is not nearby, now matron is in R;
 	let L be the list of alive simulated monsters;
 	if (a random number between 1 and combatSpeed) > 1 and the player is in danger:
 		repeat with M running through L:
@@ -31,18 +34,19 @@ To compute monsters:
 			progress quest of betrothal-quest;
 		unless M is seeked or (M is stalled and (M is nearby or M is in the location of the player)): [Monsters that already got a chance to chase the player get no further action. If the player is moving slowly so monsters get a double move, monsters in the location of the player or nearby who aren't already chasing the player lose their first action.]
 			now M is recently-unknown; [reset whether we think this NPC is friendly or not]
-			if M is moved, compute turn 3 of M; [Monsters that already moved don't move again, but get a perception check.]
-			otherwise compute turn 1 of M; [This is a full monster turn.]
+			unless M is the urinal-rival of urinal-competition-punishment and M is guarding:
+				if M is moved, compute turn 3 of M; [Monsters that already moved don't move again, but get a perception check.]
+				otherwise compute turn 1 of M; [This is a full monster turn.]
 	now shocked-monsters is 0;
 	now aroused-monsters is 0;
 	repeat with M running through monsters:
 		if M is dying alive monster, finally destroy M;
-		if M is not alive and academy-toilet-key is held by M:
-			if headmistress is alive, now academy-toilet-key is held by headmistress;
-			otherwise now academy-toilet-key is in School08.
+		if M is not alive and facility-toilet-key is held by M:
+			if mistress is alive, now facility-toilet-key is held by mistress;
+			otherwise now facility-toilet-key is in Facility08.
 
 To compute turn (N - a number) of (M - a monster):
-	unless M is student and current-predicament is joint-fuckhole-predicament and M is in Predicament01:
+	unless M is trainee and current-predicament is joint-fuckhole-predicament and M is in Predicament01:
 		if debugmode > 1, say "Computing turn [N] of [M].";
 		[If N is 1, this is a full action
 		if N is 2, this is a passive action (no attacking or perception) because the player moved and we're just making NPCs move at the same time
@@ -81,8 +85,8 @@ To compute turn (N - a number) of (M - a monster):
 				check perception of M;
 				if debugmode > 1, say "Finished checking perception.";
 				if M is interested and monster-engaged is 0, now N is 3; [The monster doesn't get an action if it detected the player in the perception round this turn.]
-			if M is student and M is in a predicament room:
-				if current-predicament is team-football-predicament: [in all other scenarios, students are just passive]
+			if M is trainee and M is in a predicament room:
+				if current-predicament is team-football-predicament: [in all other scenarios, trainees are just passive]
 					unless N is 2, compute football movement of M; [football moves don't happen at the same time as the player moving, they happen later]
 			otherwise if N < 3:
 				compute action N of M.
@@ -132,7 +136,7 @@ To compute action (N - a number) of (M - a monster):
 				otherwise if M is not distracted:
 					if M is undefeated and M is friendly:
 						compute friendly boredom of M; [Potentially make them bored]
-						if M is not interested and playerRegion is not school and M is threatening and M is regional:
+						if M is not interested and playerRegion is not facility and M is threatening and M is regional:
 							progress quest of nice-quest;
 					if M is interested, compute interaction of M; [If still interested, check if there's anything for them to do]
 					if M is toilet desiring and M is able to use the toilet and M is not combative, compute toilet use of M;
@@ -148,7 +152,7 @@ To compute action (N - a number) of (M - a monster):
 						check disapproval of M;
 						check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
 				otherwise:
-					if playerRegion is not school and M is threatening and M is regional, progress quest of nice-quest;
+					if playerRegion is not facility and M is threatening and M is regional, progress quest of nice-quest;
 	otherwise if M is guarding:
 		compute guarding action of M;
 	otherwise if M is not distracted and M is not caged and (M is undefeated or M is not motionless-when-defeated):
@@ -183,7 +187,7 @@ To check default chase boredom of (M - a monster):
 
 To compute chase boredom of (M - a monster):
 	deinterest M;
-	if M is not caged and playerRegion is not school and M is threatening and M is regional:
+	if M is not caged and playerRegion is not facility and M is threatening and M is regional:
 		say "You sense that [NameDesc of M] has [if M is survived]once again [end if]lost interest in chasing you.";
 		progress quest of nice-quest;
 		compute survival check of M.

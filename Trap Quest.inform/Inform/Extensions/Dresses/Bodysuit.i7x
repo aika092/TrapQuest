@@ -32,6 +32,10 @@ To say ShortDesc of (C - a bodysuit):
 To say MediumDesc of (C - a bodysuit):
 	say "bodysuit".
 
+Definition: a bodysuit (called C) is uniquely priority babywear:
+	if current-monster is matron and C is baby themed and the good-behaviour of behaviour-chart < the behaviour-unlock-threshold of C, decide yes;
+	decide no.
+
 
 Part - Unicorn Playsuit
 
@@ -689,6 +693,8 @@ To decide which number is the initial outrage of (C - full body babyromper):
 
 To decide which number is the initial cringe of (C - full body babyromper):
 	decide on 12.
+To decide which number is the behaviour-unlock-threshold of (C - full body babyromper):
+	decide on 2.
 
 Part - Wrestler Suit
 
@@ -1014,7 +1020,6 @@ Volume - Leotard
 A leotard is a kind of bodysuit. A leotard is usually sheer-when-wet. A leotard is usually erect-nipple-exposing. A leotard has a number called charge. A leotard is usually top-displacable.
 
 Definition: a leotard is ballet related: decide yes.
-Definition: a leotard is sissifying: decide yes.
 
 To set up influence of (C - a leotard):
 	now C is dexterity-influencing.
@@ -1061,6 +1066,8 @@ Figure of pink leotard is the file "Items/Clothes/Upper/Leotards/leotard1.png".
 
 There is 1 pink leotard.
 
+Definition: a pink leotard is sissifying: decide yes.
+
 To decide which figure-name is clothing-image of (C - a pink leotard):
 	decide on figure of pink leotard.
 
@@ -1076,6 +1083,9 @@ Definition: a pink leotard is potentially erection concealing: decide yes. [fril
 To decide which number is the crotch-tightness of (C - a pink leotard):
 	if there is a worn diaper, decide on 3; [frills don't conceal diapers]
 	decide on 0. [frills conceal cameltoes]
+Definition: a pink leotard (called C) is uniquely priority babywear:
+	if current-monster is matron and the good-behaviour of behaviour-chart < the behaviour-unlock-threshold of C, decide yes;
+	decide no.
 
 
 A sexy blue leotard is a kind of leotard.

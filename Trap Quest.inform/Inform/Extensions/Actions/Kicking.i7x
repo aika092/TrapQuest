@@ -105,7 +105,7 @@ Carry out kicking:
 				say "You kick [NameDesc of the noun] with all your might.";
 		repeat with C running through worn clothing:
 			if the front-skirt-length of C >= 4 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
-				say "The length of your [ShortDesc of C] [if the front-skirt-length of C is 6]severely [otherwise if the front-skirt-length of C is 5]greatly [end if][one of]restricts the movement of your leg[or]hampers your ability to put power behind the strike[or]weakens the blow[or]lowers the maximum damage of your attack[at random] ";
+				say "The length of your [ShortDesc of C] [if the front-skirt-length of C is 6]severely [otherwise if the front-skirt-length of C is 5]greatly [end if][one of]restricts the movement of your leg[or]hampers your ability to put power behind the strike[or]weakens the blow[or]lowers the maximum damage of your attack[at random].";
 	compute combat diaper squish;
 	damage A on the noun;
 	compute upright fatigue gain;

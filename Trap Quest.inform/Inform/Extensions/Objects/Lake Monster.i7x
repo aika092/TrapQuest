@@ -310,7 +310,7 @@ To compute lakeClimax of (L - a lake monster):
 	repeat with T running through lake monsters in the location of the player:
 		now R is 0;
 	if bukkake fetish is 0 or the latex-transformation of the player > 2, now R is 9999;
-	if (R * 40 < the semen-sniffing of L) or (R * 30 < the semen-sniffing of L and the class of the player is schoolgirl):
+	if (R * 40 < the semen-sniffing of L) or (R * 30 < the semen-sniffing of L and the class of the player is alchemist):
 		if the dexterity of the player + (the number of worn swimming themed wearthing * 10) < a random number between 7 and 25 or acolyte-chestpiece is worn:
 			allocate 6 seconds;
 			if R is 0, say "[line break]The tentacle monster sends one of its tentacles to grab your leg! You're caught!";
@@ -583,7 +583,7 @@ To compute LakeNotice (turns - a number) with (swim-location - a number):[TODO: 
 		increase the semen-sniffing of L by a random number between (turns * 5) and (swim-location * 10);[The longer you stick around, the higher the chance of being noticed.]
 		let R be a random number between 10 and 25 + a random number between 10 and 25;
 		if bukkake fetish is 0 or the latex-transformation of the player > 2, now R is 999999;[monster doesn't attack sex dolls]
-		if the class of the player is schoolgirl, now R is R * 10;[schoolgirls have the worst luck sometimes.]
+		if the class of the player is alchemist, now R is R * 10;[alchemists have the worst luck sometimes.]
 		if debugmode > 0, say "[input-style]Checking if player escapes notice... tracked semen is [T]; turns is [turns], R is [R]. R * 40 = [R * 40] | [semen-sniffing of L] (new semen sniffing)[roman type][line break]";
 		if (R * 40 < the semen-sniffing of L):[if a number between 800 and 1000 is less than the monster's "curiosity"]
 			if debugmode > 0, say "[bold type]FAILED[roman type]";

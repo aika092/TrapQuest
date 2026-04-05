@@ -105,12 +105,12 @@ Definition: rubber tube top is pink themed: decide yes.
 
 Part 4 - Tartan Tube Top
 
-tartan tube top is a tube top. tartan tube top is erect-nipple-exposing. Understand "apricot", "schoolgirl" as tartan tube top.
+tartan tube top is a tube top. tartan tube top is erect-nipple-exposing. Understand "apricot", "alchemist" as tartan tube top.
 
 tartan tube top is unique. tartan tube top is dense.
 
 Definition: tartan tube top is class-relevant:
-	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
+	if the class of the player is alchemist and the player is not pigtailed, decide yes;
 	decide no.
 
 To compute class set up of (C - tartan tube top):
@@ -118,15 +118,15 @@ To compute class set up of (C - tartan tube top):
 	now C is intelligence-influencing;
 	now the raw-magic-modifier of C is 1.
 
-The printed name of tartan tube top is "[clothing-title-before]schoolgirl tube top[clothing-title-after]". The text-shortcut of tartan tube top is "sgt".
+The printed name of tartan tube top is "[clothing-title-before][alchemist-text] tube top[clothing-title-after]". The text-shortcut of tartan tube top is "sgt".
 
-Figure of Schoolgirl Tube Top is the file "Items/Clothes/Upper/TubeTops/tubetop2.png".
+Figure of Alchemist Tube Top is the file "Items/Clothes/Upper/TubeTops/tubetop2.png".
 
 To decide which figure-name is clothing-image of (C - tartan tube top):
-	decide on figure of schoolgirl tube top.
+	decide on figure of alchemist tube top.
 
 To say ClothingDesc of (C - tartan tube top):
-	say "A tiny apricot tartan tube that clings tightly to your chest in order to stay in place. It carries a parody of a school's badge, shaped like a heart[if C is worn]. Your nipples can almost be seen through it[end if].".
+	say "A tiny apricot tartan tube that clings tightly to your chest in order to stay in place. It carries a parody of an academic institution's badge, shaped like a heart[if C is worn]. Your nipples can almost be seen through it[end if].".
 
 To say ShortDesc of (C - tartan tube top):
 	say "tartan boob tube".

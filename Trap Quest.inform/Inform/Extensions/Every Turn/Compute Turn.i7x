@@ -122,13 +122,13 @@ To run the engine:
 					if there is a fuckhole-mode glue penetrating face:
 						try submitting;
 					otherwise:
-						say "[if the player-reaction of the player is resisting]Keep resisting[otherwise]Do you want to resist[end if]? ";
+						say "[if the player-reaction of the player is resisting]Keep holding back[otherwise]Do you want to hold back and minimize your loss of dignity[end if]? ";
 						if the player is consenting, try resisting;
 						otherwise try submitting;
 			if player-breathing is false:
 				say "Keep holding your breath? ";
 				if the player is not consenting, try ManuallyBreathing;
-	display entire map.
+	if the graphics-window is g-present, display entire map.
 
 map-turn-stall is initially 0. [How many extra turns do we replace the map image with the temporary map image? For when we want to push a cutscene image to the map window but time is moving forward.]
 
@@ -215,7 +215,7 @@ To store previous sizes:
 
 [!<timeBased:Rulebook>*
 
-All the procedures that need to be called every turn, BEFORE monsters act. Will not tick down in the school.
+All the procedures that need to be called every turn, BEFORE monsters act. Will not tick down in the facility.
 
 *!]
 time based is a rulebook.
@@ -229,7 +229,7 @@ all time based is a rulebook.
 
 [!<laterTimeBased:Rulebook>*
 
-All the procedures that need to be called every turn, AFTER monsters act. Will not tick down in the school.
+All the procedures that need to be called every turn, AFTER monsters act. Will not tick down in the facility.
 
 *!]
 later time based is a rulebook.
@@ -297,7 +297,7 @@ To compute turn:
 	if timeBombTime > 0:
 		progress stopped time;
 	otherwise:
-		if playerRegion is not school, follow the time based rulebook;
+		if playerRegion is not facility, follow the time based rulebook;
 		follow the all time based rulebook;
 	if debugmode > 1, say "AFTER TIME BASED.[PredicamentPenCheck]";
 	if lagdebug is true:
@@ -317,7 +317,7 @@ To compute turn:
 		say "Computing later time.";
 		wait 200 ms before continuing;
 	if timeBombTime <= 0:
-		if playerRegion is not school, follow the later time based rulebook;
+		if playerRegion is not facility, follow the later time based rulebook;
 		follow the all later time based rulebook;
 	if lagdebug is true:
 		say "Resetting flags.";
@@ -330,7 +330,7 @@ To compute turn:
 
 To compute automatic actions:
 	if delayed stand is 1:
-		if there is a revealed hypno trap in the location of the player or there is a revealed haunted mirror trap in the location of the player or there is a revealed sprinkle trap in the location of the player or the location of the player is pink-smoky: [The player might prefer to move first]
+		if there is a revealed spiral trap in the location of the player or there is a revealed haunted mirror trap in the location of the player or there is a revealed sprinkle trap in the location of the player or the location of the player is pink-smoky: [The player might prefer to move first]
 			now delayed stand is 0;
 		otherwise:
 			let SA be auto;
@@ -464,7 +464,7 @@ To compute player standing:
 		otherwise:
 			if the player is drill stuck, compute drill damage;
 			if the player is dildo stuck, compute dildo damage;
-			if timeBombTime <= 0 and (the player is vine-cursed or the player is vine stuck or (diaper quest is 0 and (the location of the player is WoodsBoss01 or the class of the player is schoolgirl or the class of the player is magical girl))), compute vines standing; [EXPERIMENTAL]
+			if timeBombTime <= 0 and (the player is vine-cursed or the player is vine stuck or (diaper quest is 0 and (the location of the player is WoodsBoss01 or the class of the player is alchemist or the class of the player is magical girl))), compute vines standing; [EXPERIMENTAL]
 			if the player is glue stuck, compute glue escaping;
 	otherwise if timeBombTime <= 0:
 		compute vines fucking.
@@ -516,7 +516,7 @@ To compute player kneeling:
 			now delayed fainting is 1;
 			now the soreness of asshole is 7;
 			now the fainting reason of the player is 3;]
-	if the player is able to recover and detention chair is not grabbing the player:
+	if the player is able to recover and reconditioning chair is not grabbing the player:
 		compute fatigue loss;
 	if the player is not vine fucked, compute vines kneeling;
 	otherwise compute vines fucking.
@@ -668,7 +668,7 @@ To compute pink smoke:
 	if diaper quest is 1:
 		if the player is possessing a penis and a random number between 1 and 3 is 1, now R is 7; [penis shrink]
 		otherwise now R is 1; [arousal]
-	if the player is in School34 and a random number between 1 and 8 > 1, now R is 1; [arousal]
+	if the player is in Facility34 and a random number between 1 and 8 > 1, now R is 1; [arousal]
 	if game difficulty > 2 and R >= 10:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
 		RandomStatDown 1;
@@ -692,8 +692,8 @@ To compute pink smoke:
 	if R is not 0 and the number of dangerous gladiators in the location of the player is 0, say "(You might want to consider using [bold type]['][link]hold breath[end link]['][roman type])".
 
 To Compute Instinctive Actions:
-	if another-turn is 0, follow the hypno triggers rules;
-	now hypno-trigger is "";
+	if another-turn is 0, follow the speech triggers rules;
+	now htrigger is "";
 	if another-turn is 0, Compute Compulsions;
 	if another-turn is 0 and the player is in Dungeon31, compute podium action;
 	if another-turn is 0, Compute Broken Actions.
@@ -751,16 +751,16 @@ To Compute Compulsions:
 			say "You see a black veil and suddenly feel so ashamed that your worthless face is on display, as though you were a person and not simply a selection of holes to be used. You silently lift the veil over your face, as is proper.";
 			summon cultist veil;
 			now another-turn is 1;
-		if the traitor-hypno of hypno-lesson > 0:
+		if the traitor-h of traitor-training > 0:
 			if diaper quest is 0 and watersports fetish is 1 and the player is not incontinent and the player is desperate to pee and the player is able to use a urinal:
 				if (ex-princess is in the location of the player and ex-princess is caged) or (woman-player is in the location of the player and the woman-status of woman-player is 98):
-					decrease the traitor-hypno of hypno-lesson by 1;
-					say "Something inside you urges you to [second custom style]help your friend[roman type].";
+					decrease the traitor-h of traitor-training by 1;
+					say "You remember that it is your duty to [second custom style]help your friend[roman type].";
 					compute urinal use;
 					now another-turn is 1;
-		if another-turn is 0 and compulsion-tick <= 0 and refractoryperiod <= 0 and glittery-wand is worn and the player is not immobile and the player is able to use their hands and ((playerRegion is school and wand-delivery-event is event-started) or glittery-wand is cursed):
+		if another-turn is 0 and compulsion-tick <= 0 and refractoryperiod <= 0 and glittery-wand is worn and the player is not immobile and the player is able to use their hands and ((playerRegion is facility and wand-delivery-event is event-started) or glittery-wand is cursed):
 			now compulsion-tick is a random number between 1 and 4;
-			if playerRegion is not school, now compulsion-tick is a random number between 10 and 25;
+			if playerRegion is not facility, now compulsion-tick is a random number between 10 and 25;
 			say "[bold type]Suddenly, the cursed glittery wand sends a magical compulsion down your arm! [roman type]";
 			now another-turn is 1;
 			let BP be vagina;
@@ -826,20 +826,20 @@ To Compute Broken Actions:
 		otherwise if the thirst of the player is 5 and the player is in DiaperPresentBoxBlindfolded and straw-bottle is in DiaperPresentBoxBlindfolded:
 			now another-turn is 1;
 			now another-turn-action is the thirsty straw-bottle suck rule;
-		otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room and the player is able to automatically masturbate and the wanktime of the player <= 0:
+		otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room and the player is able to automatically masturbate and the wanktime of the player <= 0 and the class of the player is not symbiote:
 			now another-turn is 1;
 			now another-turn-action is the too horny masturbation rule.
 
-The hypno triggers rules is a rulebook.
+The speech triggers rules is a rulebook.
 
 This is the great ones hypno rule:
-	if hypno-trigger is "great one" and player-hypno-great is 1:
+	if htrigger is "great one" and player-h-great is 1:
 		say "Just thinking about the [great ones] makes you feel how powerless you are in comparison to them!";
 		slightHumiliate.
-The great ones hypno rule is listed in the hypno triggers rules.
+The great ones hypno rule is listed in the speech triggers rules.
 
 This is the present-for-oral hypno rule:
-	if hypno-trigger is "tasty" and hypno-trigger-tasty is 1 and diaper quest is 0:
+	if htrigger is "tasty" and htrigger-tasty is 1 and diaper quest is 0:
 		say "[bold type]Having heard the word 'tasty', you find yourself automatically [if face is actually occupied]trying to present[otherwise]presenting[end if] your mouth for use.[roman type][line break]";
 		if the player is upright, try silently kneeling;
 		let M be a random interested monster in the location of the player;
@@ -854,10 +854,10 @@ This is the present-for-oral hypno rule:
 			otherwise:
 				try direct-presenting face to M;
 		now another-turn is 1.
-The present-for-oral hypno rule is listed in the hypno triggers rules.
+The present-for-oral hypno rule is listed in the speech triggers rules.
 
 This is the eat-all-food hypno rule:
-	if hypno-trigger is "tasty" and hypno-trigger-tasty is 1 and diaper quest is 1:
+	if htrigger is "tasty" and htrigger-tasty is 1 and diaper quest is 1:
 		if the number of held food > 0 and face is not actually occupied and the player is able to eat:
 			say "[bold type]Having heard the word 'tasty', you find yourself automatically starting to eat everything you can.[roman type][line break]";
 			now auto is 1;
@@ -865,18 +865,18 @@ This is the eat-all-food hypno rule:
 				try TQeating F;
 			now auto is 0;
 			now another-turn is 1.
-The eat-all-food hypno rule is listed in the hypno triggers rules.
+The eat-all-food hypno rule is listed in the speech triggers rules.
 
 This is the autopush hypno rule:
-	if hypno-trigger is "maturity" and hypno-trigger-maturity is 1 and asshole is not actually occupied and there are worn soilable knickers:
+	if htrigger is "maturity" and htrigger-maturity is 1 and asshole is not actually occupied and there are worn soilable knickers:
 		say "[bold type]Having heard the word 'maturity', you find you automatically start [if the player is upright]squatting, grunting,[otherwise]grunting[end if] and pushing.[roman type][line break]";
 		now voluntarySquatting is 1;
 		compute partial messing.
-The autopush hypno rule is listed in the hypno triggers rules.
+The autopush hypno rule is listed in the speech triggers rules.
 
 This is the autospread hypno rule:
-	if (hypno-trigger is "pussy" or hypno-trigger is "cunt") and hypno-trigger-pussy is 1 and the player is possessing a vagina and vagina is not lewdly exposed:
-		say "[bold type]Having heard the word '[hypno-trigger]', you find yourself automatically trying to get your [vagina] on display.[roman type][line break]";
+	if (htrigger is "pussy" or htrigger is "cunt") and htrigger-pussy is 1 and the player is possessing a vagina and vagina is not lewdly exposed:
+		say "[bold type]Having heard the word '[htrigger]', you find yourself automatically trying to get your [vagina] on display.[roman type][line break]";
 		repeat with C running through worn potentially at least partially vagina covering skirted clothing: [We do skirted first to try and make sure that the order makes sense]
 			if C is displacable:
 				say "You pull up your [ShortDesc of C]!";
@@ -905,10 +905,10 @@ This is the autospread hypno rule:
 				say "You try to remove your [ShortDesc of C]!";
 				try taking off C;
 		now another-turn is 1.
-The autospread hypno rule is listed in the hypno triggers rules.
+The autospread hypno rule is listed in the speech triggers rules.
 
 This is the autopiss hypno rule:
-	if hypno-trigger is "please" and hypno-trigger-please is 1:
+	if htrigger is "please" and htrigger-please is 1:
 		if diaper lover > 0:
 			if the bladder of the player > 0 and the latex-transformation of the player <= 4:
 				say "[bold type]Having heard the word 'please', your bladder immediately lets itself go, completely without your conscious control.[roman type][line break]";
@@ -923,7 +923,7 @@ This is the autopiss hypno rule:
 				try masturbating;
 				now auto is 0;
 				now another-turn is 1.
-The autopiss hypno rule is listed in the hypno triggers rules.
+The autopiss hypno rule is listed in the speech triggers rules.
 
 A later time based rule (this is the throne charge decay rule):
 	if the charge of the throne > 0, decrease the charge of the throne by time-seconds.
@@ -957,7 +957,7 @@ A later time based rule (this is the alchemy charge decay rule):
 	if the charge of alchemist's table > 0:
 		decrease the charge of alchemist's table by time-seconds;
 		if the charge of alchemist's table <= 0:
-			say "[if alchemist's table is in the location of the player][bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type] It must be ready for another ingredient to transform![otherwise if the class of the player is schoolgirl][bold type]You have a sudden thought that the wooden bowl on the alchemist's table is probably ready for use again.[roman type][line break][end if]".
+			say "[if alchemist's table is in the location of the player][bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type] It must be ready for another ingredient to transform![otherwise if the class of the player is alchemist][bold type]You have a sudden thought that the wooden bowl on the alchemist's table is probably ready for use again.[roman type][line break][end if]".
 
 A later time based rule (this is the science charge decay rule):
 	if the charge of science table > 0, decrease the charge of science table by time-seconds;
@@ -1040,7 +1040,7 @@ To Reset Flags:
 	vary stickman counters;
 	now target-poster is nothing;
 	now feeding bowls is in Hotel18; [The inbuilt shit within I6 means all edible items must be portable to work. This way, even if the player picks it up, it goes back down on the floor immediately.]
-	now food machine is in School17; [same for the school food machine]
+	now food machine is in Facility17; [same for the facility food machine]
 	if surrendered is 1 and the player is not in danger, now surrendered is 0;
 	now the travel-direction of the player is up;
 	now the travel-opposite of the player is down;
@@ -1058,6 +1058,6 @@ To Reset Flags:
 To say other tips:
 	if the player is not immobile and the body soreness of the player > 6 and the player is prone, say "[one of][newbie style]Newbie tip: You're quite sore, so you should look out for furniture to rest on, which will heal you. If you can't find any, you can always rest on the royal bed in the starting room, but this will increase your sex addiction, so it's best used as a last resort.[roman type][line break][or][stopping]";
 	if the player is not immobile and the soreness of asshole > 6 or the soreness of vagina > 6, say "[one of][newbie style]Newbie tip: Your hole is quite sore. It'll slowly go down over time, but you can heal it a bit instantly with lubricant. Also, you can drink from the statue in the statue hall to heal loads instantly, but don't do this too much - every time you do, you'll have to swallow some semen, and too much will make you become addicted.[roman type][line break][or][stopping]";
-	if the player is monster stuck and the number of friendly-fucking monsters is 0, say "[one of][newbie style]Newbie tip: There's no way to escape until they're done with you. You can now pretty much only choose between 'submit' and 'resist'. Submitting increases humiliation but generally helps prevent other [']bad['] stats [if diaper quest is 1]increasing and prevents angering the enemy further, meaning hopefully they'll be friendly the next time they meet you, rather than hold a grudge[otherwise](mainly soreness) increasing[end if].[roman type][line break][or][stopping]".
+	if the player is monster stuck and the number of friendly-fucking monsters is 0, say "[one of][newbie style]Newbie tip: There's no way to escape until they're done with you. You can now pretty much only choose between 'submit' and 'resist'. Submitting increases humiliation but generally helps prevent other [']bad['] stats [if diaper quest is 1]increasing and prevents angering the enemy further, meaning hopefully they'll not punish you further, and perhaps even be friendly the next time they meet you, rather than hold a grudge[otherwise](mainly soreness) increasing[end if].[roman type][line break][or][stopping]".
 
 Compute Turn ends here.

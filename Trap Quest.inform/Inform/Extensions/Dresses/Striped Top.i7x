@@ -43,7 +43,7 @@ To compute periodic effect of (C - a striped top):
 			now C is biological;
 			now C is spikey.
 
-To compute school periodic effect of (C - a striped top):
+To compute facility periodic effect of (C - a striped top):
 	compute periodic effect of C.
 
 Definition: a striped top is class-transformation-protected:

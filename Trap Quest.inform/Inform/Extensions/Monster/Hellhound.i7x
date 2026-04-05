@@ -55,7 +55,7 @@ To say LongDickDesc of (M - hellhound):
 	otherwise if mythical creature fetish is 1:
 		say "[one of]demonic[or]infernal[or]red[at random] [one of]canine cock[or]doggy dick[at random]";
 	otherwise:
-		say "[girth of M] inch [manly-penis]".
+		say "[GirthLength of M] inch [manly-penis]".
 
 To say MonsterComment of (M - hellhound):
 	if diaper quest is 1:
@@ -173,10 +173,6 @@ To decide which text is him of (M - hellhound):
 
 To decide which text is himself of (M - hellhound):
 	decide on "[if mythical creature fetish is 1]itself[otherwise if lady fetish is 1]herself[otherwise]himself[end if]".
-
-To say LongDickDesc of (M - hellhound):
-	if mythical creature fetish is 1, say "[one of]slippery[or]slick[or]oily[in random order] canine [DickDesc of M]";
-	otherwise say "hard [DickDesc of M]".
 
 To say cockhead of (M - hellhound):
 	if mythical creature fetish is 1, say "[one of]tapered[or]narrow[or]slender[in random order][if full-lady fetish is 1], plastic[otherwise] [one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]";

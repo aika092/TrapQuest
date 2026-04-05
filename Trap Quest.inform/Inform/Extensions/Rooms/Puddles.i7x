@@ -69,7 +69,7 @@ To SemenPuddleUp (X - a number) in (R - HoleInWall):
 To SemenPuddleUp (X - a number) in (R - DiaperPail):
 	increase the semen-puddle of the location of most-recent-pail by X.
 
-To SemenPuddleUp (X - a number) in (R - School34):
+To SemenPuddleUp (X - a number) in (R - Facility34):
 	if ex-princess is in R and the player is in R:
 		say "Suddenly a condom soars in from the hallway. The [semen] on the ground begins to rise into the air, and is soon filling the condom!";
 		let C be a random worn condom pinnable clothing;

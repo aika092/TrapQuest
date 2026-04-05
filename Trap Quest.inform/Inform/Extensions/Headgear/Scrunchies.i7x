@@ -195,7 +195,7 @@ To compute class outfit of (H - a blue scrunchie):
 		if the silicone volume of breasts > 0:
 			class summon daddy issues dress;
 		otherwise:
-			class summon cheeky schoolgirl outfit;
+			class summon cheeky alchemist outfit;
 			class summon frilly stockings;
 		if the number of worn knickers + the number of worn trousers is 0, class summon purple-pom-pom.
 
@@ -287,7 +287,7 @@ Definition: a monkey scrunchie is roleplay:
 
 To compute class outfit of (H - a monkey scrunchie):
 	if the silicone volume of breasts > 0, class summon daddy issues dress;
-	otherwise class summon cheeky schoolgirl outfit;
+	otherwise class summon cheeky alchemist outfit;
 	class summon frilly stockings.
 
 Part - Pigtail Scrunchies
@@ -304,7 +304,7 @@ To transform (D - a scrunchie) into (C - a pigtail-scrunchie):
 To compute class outfit of (C - a pigtail-scrunchie):
 	if the quest of C is recipe-quest:
 		if the silicone volume of breasts > 0, class summon daddy issues dress;
-		otherwise class summon cheeky schoolgirl outfit;
+		otherwise class summon cheeky alchemist outfit;
 		class summon frilly stockings;
 	otherwise:
 		class summon blue-rubber-cheerleader-outfit;

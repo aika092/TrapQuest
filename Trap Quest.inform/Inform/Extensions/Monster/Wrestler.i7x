@@ -161,6 +161,9 @@ To say GroundPeeReaction of (M - a wrestler):
 	say "[speech style of M]'[if diaper lover > 0]Uh-oh! Looks like someone should be diapered, like me! Maybe I should take you to Mommy[otherwise]What a waste! If you piss in a cup, then you can savour the smell for as long as you want, and then when you get thirsty, you can practice being a good little toilet! Hmm, maybe you need help learning to be a better toilet[end if]...'[roman type][line break]";
 	FavourDown M with consequences.
 
+To say DefaultLockCommentFlav of (M - a wrestler):
+	say "[speech style of M]'I'll let you have the key eventually... Probably~'[roman type][line break]".
+
 Part 2 - Perception
 
 To decide which number is the outrage tolerance of (M - a wrestler):
@@ -383,7 +386,7 @@ This is the wrestler feeds you to master rule:
 	let N be a random alive dominatrix;
 	if N is not monster and the times-met of M <= 1, now N is a random alive matron; [We don't want to do this if the wrestler has already dragged the player to the dominatrix earlier in the game] [The test is <= 1 because times-met gets set to 1 as soon as the wrestler first perceives the player. This action will come directly after that, hence a times-met of 1 means this is their first interaction, and anything higher than that means it's a future interaction.]
 	if N is monster and the times-met of N is 0 and the times-met of M < 2 and the number of barriers in the location of the player is 0:
-		let Q be Hotel22;
+		let Q be HotelNursery;
 		if N is dominatrix, now Q is Hotel37;
 		if Q is not the location of M:
 			say "[one of][line break][speech style of M]'I'm going to take you to meet my owner!'[roman type][line break][or][stopping]";
@@ -908,7 +911,7 @@ Definition: a wrestler is willing to diaper facesit: decide yes.
 Definition: a wrestler is only willing to masturbate horny players: decide no.
 
 To decide which number is the masturbation skill of (M - a wrestler):
-	decide on the difficulty of M * 250.
+	decide on (the difficulty of M * 5) / 2.
 
 To decide which number is the masturbation length of (M - a wrestler):
 	decide on a random number between 2 and 3.

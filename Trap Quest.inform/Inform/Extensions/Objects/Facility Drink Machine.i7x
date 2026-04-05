@@ -1,16 +1,16 @@
-School Drink Machine by Objects begins here.
+Facility Drink Machine by Objects begins here.
 
-drink-machine is a dispenser. The printed name of drink-machine is "[TQlink of item described]drink machine[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of drink-machine is "drm". Understand "drink", "machine" as drink-machine. drink-machine is in School17.
+drink-machine is a dispenser. The printed name of drink-machine is "[TQlink of item described]drink machine[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of drink-machine is "drm". Understand "drink", "machine" as drink-machine. drink-machine is in Facility17.
 
 Definition: drink-machine is immune to change: decide yes.
 
-Figure of school drink machine is the file "Env/School/drinkmachine1.jpg".
+Figure of facility drink machine is the file "Env/Facility/drinkmachine1.jpg".
 
 To say ShortDesc of (C - drink-machine):
 	say "drink machine".
 
 To decide which figure-name is the examine-image of (C - drink-machine):
-	decide on figure of school drink machine.
+	decide on figure of facility drink machine.
 
 To say ExamineDesc of (C - drink-machine):
 	say "This drinks dispenser is a lot like what you might expect to see at a fast food joint. However instead of there being a normal button to press to start the flow of liquid, instead there's a large 'Sybian' style vibrator that someone must sit on in order to open the nozzle.".
@@ -53,16 +53,16 @@ To compute sybian sitting:
 To decide which number is the stimulation of (D - drink-machine) on (B - a body part):
 	decide on 10. [Something like 4 or 5 is more common]
 
-Report going when the player is in School17: [We automatically get a bully if possible]
-	if the number of unfriendly uninterested students in the location of the player is 0:
+Report going when the player is in Facility17: [We automatically get a bully if possible]
+	if the number of unfriendly uninterested trainees in the location of the player is 0:
 		let M be nothing;
-		repeat with ST running through alive students:
-			if ST is uninterested and ST is not amicable student and the boredom of ST <= 0 and ST is unfriendly:
+		repeat with ST running through alive trainees:
+			if ST is uninterested and ST is not amicable trainee and the boredom of ST <= 0 and ST is unfriendly:
 				now M is ST;
-		if M is student:
+		if M is trainee:
 			if M is not in the location of the player:
-				let NR be School24;
-				let SR be School02;
+				let NR be Facility24;
+				let SR be Facility02;
 				if the noun is north:
 					if M is in SR:
 						try M going north;
@@ -77,4 +77,4 @@ Report going when the player is in School17: [We automatically get a bully if po
 						try M going north;
 			if M is in the location of the player, check guaranteed perception of M.
 
-School Drink Machine ends here.
+Facility Drink Machine ends here.

@@ -110,7 +110,7 @@ To decide which text is ObstacledDesc of (R - a dress-painting-room):
 	decide on "It's so dark and dingy that it takes a little longer than normal to navigate your way through the doorway.".
 
 To compute painting entrance of (P - dress-painting):
-	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
+	now playerRegion is facility; [any time based events that don't happen in the facility should also not happen here]
 	change the south exit of DressPainting08 to the location of P;
 	let R be a random number between 1 and 9;
 	repeat with DPR running through dress-painting-rooms:
@@ -242,7 +242,7 @@ An all time based rule (this is the toilet monster rule):
 
 
 To compute painting entrance of (P - toilet-painting):
-	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
+	now playerRegion is facility; [any time based events that don't happen in the facility should also not happen here]
 	let R be a random number between 3 and 8;
 	repeat with TPR running through toilet-painting-rooms:
 		decrease R by 1;
@@ -447,7 +447,7 @@ An all time based rule (this is the cock monster rule):
 					otherwise try CM going north.
 
 To compute painting entrance of (P - cock-painting):
-	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
+	now playerRegion is facility; [any time based events that don't happen in the facility should also not happen here]
 	let N be 0;
 	repeat with CPR running through cock-painting-rooms:
 		let J be a random off-stage plentiful accessory;
@@ -691,7 +691,7 @@ To compute boring spit reaction of (M - zap-bot):
 		say "[first custom style]'INTRUDER ALERT. PREPARE TO BE INCAPACITATED...'[roman type][line break][BigNameDesc of zap-bot][']s eyes light up red as it announces that it has noticed you!".
 
 To compute painting entrance of (P - heist-painting):
-	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
+	now playerRegion is facility; [any time based events that don't happen in the facility should also not happen here]
 	now P is not rippling;
 	let LP be the location of P;
 	change the south exit of HeistPainting08 to LP;
@@ -752,7 +752,7 @@ To compute painting entrance of (P - heist-painting):
 	now the player is in HeistPainting08.
 
 An all time based rule (this is the heist painting rule):
-	if playerRegion is school and the player is in a heist-painting-room:
+	if playerRegion is facility and the player is in a heist-painting-room:
 		if the player is in HeistPainting01:
 			say "[one of][bold type]All four walls of this room are giant screens, which have hypnotic sex loops playing on repeat![roman type][line break][HeistHypnoOrgasm][or][if the player is prone]You keep your eyes downcast, avoiding looking at the screens.[otherwise]The giant screens continue to play hypnotic porn.[line break][HeistHypnoOrgasm][end if][stopping]";
 		if zap-bot is not in the location of the player or (zap-bot is uninterested and a random number between 1 and 2 is 1):
@@ -1009,7 +1009,7 @@ To say UniqueExamineDesc of (P - bowsette-painting):
 BowsettePainting01 is a painting-room. The grid position of BowsettePainting01 is <11,8,8>. The shape of BowsettePainting01 is L11/0-0-0-0-0-0.
 
 To compute painting entrance of (P - bowsette-painting):
-	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
+	now playerRegion is facility; [any time based events that don't happen in the facility should also not happen here]
 	change the south exit of BowsettePainting01 to the location of P;
 	add south to the Nviables of BowsettePainting01;
 	repeat with N running from 1 to 2:

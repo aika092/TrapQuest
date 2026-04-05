@@ -125,7 +125,7 @@ To update arousal:
 		now previous-horny is 0.
 
 An all later time based rule (this is the compute arousal rule):
-	if playerRegion is not school or (the player is in a predicament room and the player is not in Predicament19 and the player is not in Predicament20 and the player is not in Toilet01 and the player is not in Toilet02) or the player is grossed out or the player is perturbed: [Can't just chill in a safe part of the school until all arousal is gone]
+	if playerRegion is not facility or (the player is in a predicament room and the player is not in Predicament19 and the player is not in Predicament20 and the player is not in Toilet01 and the player is not in Toilet02) or the player is grossed out or the player is perturbed: [Can't just chill in a safe part of the facility until all arousal is gone]
 		if the player is not in Toilet01: [Can't just chill in the gross toilet until you can safely wank again]
 			if the wanktime of the player > time-seconds, decrease the wanktime of the player by time-seconds;
 			otherwise now the wanktime of the player is 0;
@@ -254,7 +254,7 @@ Definition: yourself is upset about unclean toilets:
 
 Definition: yourself is magically horny: [Player gets horny even if grossed out]
 	if the class of the player is faerie, decide yes;
-	if the player is in School34 or the player is in School13 or the player is in School21 or the player is in a nonstandard room, decide yes; [School dungeon room, school detention room, hot tub, iron maiden]
+	if the player is in Facility34 or the player is in Facility13 or the player is in Facility21 or the player is in a nonstandard room, decide yes; [facility dungeon room, facility reconditioning room, hot tub, iron maiden]
 	if there is a rocking horse grabbing the player, decide yes;
 	if diaper quest is 1:
 		if there is a dildo trap grabbing the player, decide yes;

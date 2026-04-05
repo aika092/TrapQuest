@@ -37,7 +37,7 @@ To say QuestFlav of (Q - adult-baby-quest):
 To say QuestTitle of (Q - adult-baby-quest):
 	say " (incontinence quest)".
 
-matron-obey-quest is a headgear-clothing-quest.
+matron-obey-quest is a headgear-clothing-quest. matron-obey-quest has a number called serve-count.
 
 To say QuestFlav of (Q - matron-obey-quest):
 	say "You sense that it wants you to please the matron by always doing what [he of matron] says.".
@@ -45,21 +45,14 @@ To say QuestFlav of (Q - matron-obey-quest):
 To say QuestTitle of (Q - matron-obey-quest):
 	say " (matron obedience quest)".
 
-To compute generic first time class reward of (Q - matron-obey-quest) on (C - a clothing):
-	if the player is getting lucky:
-		let D be a random off-stage plentiful ring;
-		if D is ring:
-			now D is pink diamond;
-			set shortcut of D;
-			if D is actually summonable:
-				summon D;
+To progress quest of (Q - matron-obey-quest):
+	repeat with C running through worn clothing:
+		if the quest of C is Q:
+			increase serve-count of Q by 1;
+			if serve-count of Q > a random number between 1 and 3:
+				compute quest completion of Q on C;
 			otherwise:
-				now D is in the location of the player;
-			say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]! [GotLuckyFlav]";
-		otherwise:
-			compute generic second time class reward of Q on C;
-	otherwise:
-		say "[BigNameDesc of C] pulses, but the curse does not lift! [GotUnluckyFlav]".
+				say "[BigNameDesc of C] rumbles happily. Keep it up!".
 
 Part - Variations
 
@@ -102,8 +95,10 @@ To decide which number is the initial cringe of (H - rubber-baby-bonnet):
 
 To uniquely set up (C - rubber-baby-bonnet):
 	if matron is alive, now the quest of C is matron-obey-quest;
-	now the quest of C is adult-baby-quest.
+	otherwise now the quest of C is adult-baby-quest.
 
+To compute unique recycling of (C - rubber-baby-bonnet):
+	now the serve-count of matron-obey-quest is 0.
 
 Part - Berri Clip
 

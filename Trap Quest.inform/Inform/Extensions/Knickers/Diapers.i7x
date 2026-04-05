@@ -23,7 +23,7 @@ To say ClothingDesc of (C - plain-massive-diaper):
 	say "An extremely large white adult diaper, with huge amounts of extra puffy padding. It doesn't have any kind of humiliating pattern on it.".
 Definition: plain-massive-diaper is white themed: decide yes.
 To decide which number is the unique outrage of (C - plain-massive-diaper):
-	decide on -2.
+	decide on -1.
 
 portal-diaper is a massive diaper. portal-diaper is unique. The text-shortcut of portal-diaper is "ptd". Understand "portal" as portal-diaper.
 portal-diaper has a number called portal-charge.
@@ -37,7 +37,7 @@ To say ClothingDesc of (C - portal-diaper):
 Definition: portal-diaper is white themed: decide yes.
 Definition: portal-diaper is removable: decide no.
 To decide which number is the unique outrage of (C - portal-diaper):
-	decide on -2.
+	decide on -1.
 To compute periodic effect of (C - portal-diaper):
 	increase the portal-charge of C by 1;
 	if the portal-charge of C > a random number between 20 and 250 and Hotel31 is not within vision:
@@ -82,7 +82,7 @@ To say ClothingDesc of (C - teddy-massive-diaper):
 Definition: teddy-massive-diaper is bear themed: decide yes.
 Definition: teddy-massive-diaper is green themed: decide yes.
 To decide which number is the unique outrage of (C - teddy-massive-diaper):
-	decide on 2.
+	decide on 1.
 
 animal-massive-diaper is a massive diaper. The text-shortcut of animal-massive-diaper is "apmd". Understand "animaly", "pattern" as animal-massive-diaper.
 Figure of animal massive diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper1d.png".
@@ -376,8 +376,6 @@ To say selfexamineuniquetitle of (K - plain-cloth-diaper):
 Definition: plain-cloth-diaper is white themed: decide yes.
 To say ClothingDesc of (C - plain-cloth-diaper):
 	say "A thinner white diaper made predominantly from cloth with a waterproof outer lining. It uses safety pins to hold the tabs in place. There's no special pattern.".
-To decide which number is the unique outrage of (C - plain-cloth-diaper):
-	decide on -2.
 
 dotted-cloth-diaper is a cloth diaper. The text-shortcut of dotted-cloth-diaper is "dcld". Understand "dotted" as dotted-cloth-diaper.
 Figure of dotted cloth diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper6b.png".
@@ -448,7 +446,7 @@ Chapter 8 Large Diaper
 largish diaper is a kind of disposable diaper. Understand "large" as largish diaper.
 The DQFigure of largish diaper is DQLarge.
 To say ShortDesc of (K - a largish diaper):
-	say "largish diaper".
+	say "large diaper".
 
 plain-largish-diaper is a largish diaper. The text-shortcut of plain-largish-diaper is "lpd". Understand "plain" as plain-largish-diaper.
 Figure of plain largish diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper8a.png".
@@ -460,7 +458,7 @@ Definition: plain-largish-diaper is white themed: decide yes.
 To say ClothingDesc of (C - plain-largish-diaper):
 	say "A large white disposable diaper with rather thick padding, for heavy wetters. There's no special pattern.".
 To decide which number is the unique outrage of (C - plain-largish-diaper):
-	decide on -2.
+	decide on -1.
 
 unicorn-largish-diaper is a largish diaper. The text-shortcut of unicorn-largish-diaper is "lupd". Understand "unicorn", "patterned" as unicorn-largish-diaper.
 Figure of unicorn largish diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper8b.png".
@@ -471,6 +469,8 @@ To say selfexamineuniquetitle of (K - unicorn-largish-diaper):
 Definition: unicorn-largish-diaper is white themed: decide yes.
 To say ClothingDesc of (C - unicorn-largish-diaper):
 	say "A large white disposable diaper with rather thick padding, for heavy wetters. It has a pattern of very cute cartoon unicorns leaping around.".
+To decide which number is the unique outrage of (C - unicorn-largish-diaper):
+	decide on 1.
 
 black-largish-diaper is a largish diaper. The text-shortcut of black-largish-diaper is "lbd". Understand "black" as black-largish-diaper.
 Figure of black largish diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper8c.png".
@@ -499,8 +499,6 @@ To say selfexamineuniquetitle of (K - plain-medium-diaper):
 Definition: plain-medium-diaper is white themed: decide yes.
 To say ClothingDesc of (C - plain-medium-diaper):
 	say "An average sized white disposable diaper with a decent amount of padding, for average wetters. There's no special pattern.".
-To decide which number is the unique outrage of (C - plain-medium-diaper):
-	decide on -2.
 
 purple-medium-diaper is a medium diaper. The text-shortcut of purple-medium-diaper is "mpwd". Understand "purple", "white", "and white" as purple-medium-diaper.
 Figure of purple medium diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper9b.png".
@@ -514,7 +512,7 @@ Definition: purple-medium-diaper is flower themed: decide yes.
 To say ClothingDesc of (C - purple-medium-diaper):
 	say "An average sized purple and white disposable diaper with a decent amount of padding, for average wetters. There's a subtle pattern of flowers down at the crotch.".
 To decide which number is the unique outrage of (C - purple-medium-diaper):
-	decide on -1.
+	decide on 1.
 
 baby-medium-diaper is a medium diaper. The text-shortcut of baby-medium-diaper is "mbpd". Understand "baby", "pattern" as baby-medium-diaper.
 Figure of baby medium diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper9c.png".
@@ -526,7 +524,7 @@ Definition: baby-medium-diaper is white themed: decide yes.
 To say ClothingDesc of (C - baby-medium-diaper):
 	say "An average sized white disposable diaper with a decent amount of padding, for average wetters. There's an adorable pattern of onesies and pacifiers across the main part of the fabric.".
 To decide which number is the unique outrage of (C - baby-medium-diaper):
-	decide on 3.
+	decide on 2.
 
 Chapter 10 Small Diaper
 
@@ -544,8 +542,6 @@ To say selfexamineuniquetitle of (K - plain-small-diaper):
 Definition: plain-small-diaper is white themed: decide yes.
 To say ClothingDesc of (C - plain-small-diaper):
 	say "An smaller than average white disposable diaper with a slightly reduced amount of padding, for light wetters. There's no special pattern.".
-To decide which number is the unique outrage of (C - plain-small-diaper):
-	decide on -2.
 
 blue-small-diaper is a small diaper. The text-shortcut of blue-small-diaper is "sbwd". Understand "blue", "white", "and white" as blue-small-diaper.
 Figure of blue small diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper10b.png".
@@ -559,6 +555,8 @@ Definition: blue-small-diaper is heart themed: decide yes.
 Definition: blue-small-diaper is food themed: decide yes.
 To say ClothingDesc of (C - blue-small-diaper):
 	say "An smaller than average blue and white disposable diaper with a slightly reduced amount of padding, for light wetters. It has a pattern of cherries and heart-shaped buttons.".
+To decide which number is the unique outrage of (C - blue-small-diaper):
+	decide on 1.
 
 pink-small-diaper is a small diaper. The text-shortcut of pink-small-diaper is "spkd". Understand "pink" as pink-small-diaper.
 Figure of pink small diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper10c.png".
@@ -570,32 +568,26 @@ Definition: pink-small-diaper is pink themed: decide yes.
 Definition: pink-small-diaper is food themed: decide yes.
 To say ClothingDesc of (C - pink-small-diaper):
 	say "An smaller than average pink disposable diaper with a slightly reduced amount of padding, for light wetters. There's a subtle pattern of ice cream and cupcakes.".
+To decide which number is the unique outrage of (C - pink-small-diaper):
+	decide on 1.
 
 Chapter 11 Training Pants
 
-A training pants is a kind of knickers. There is 1 unique training pants. The printed name of training pants is usually "[clothing-title-before]pair of [if the urine-soak of item described > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if][clothing-title-after]". Understand "padded", "underwear", "pair", "pair of" as training pants. The text-shortcut of training pants is "pa".
+A training pants is a kind of knickers. A training pants is plentiful. The printed name of training pants is "[clothing-title-before]pair of [selfexamineuniquetitle of item described][clothing-title-after]". Understand "padded", "underwear", "pair", "pair of" as training pants.
+The DQFigure of training pants is usually DQTrainingPants.
 
 To decide which number is the default-soak-limit of (C - a training pants):
 	decide on the penis-capacity of C * 2.
 To decide which number is the crotch-tightness of (C - a training pants):
 	decide on 0.
-To decide which figure-name is clothing-image of (C - a training pants):
-	decide on figure of training pants.
-
-To say ClothingDesc of (C - a training pants):
-	say "A pair of relatively plain purple and white underwear with [if the bimbo of the player <= 4 and the urine-soak of C <= 0 and C is worn]weirdly thick padding, which makes it a little bit awkward to wear[otherwise if the bimbo of the player <= 4 and the urine-soak of C <= 0]weirdly thick padding, which looks like it would be a little bit awkward to wear[otherwise]thick padding to catch any little accidents that the wearer might have[end if].".
-
-To say selfexamineuniquetitle of (K - a training pants):
-	say "pair of [if the urine-soak of K > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if]".
-
-Figure of training pants is the file "Items/Clothes/Lower/Underwear/Diapers/TrainingPants/trainingpants1.png".
-Figure of sexy training pants is the file "Items/Clothes/Lower/Underwear/Diapers/TrainingPants/trainingpants2.png".
-The DQFigure of training pants is usually DQTrainingPants.
+Definition: a training pants is same-type:
+	if theme-share-target is training pants or theme-share-target is undies, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (D - a training pants):
-	decide on 6.
+	decide on 3.
 To decide which number is the initial cringe of (D - a training pants):
-	decide on 6.
+	decide on 3.
 To decide which number is the initial armour of (C - a training pants):
 	decide on 11.
 
@@ -605,22 +597,83 @@ To decide which number is the fluid cringe of (C - a training pants):
 Definition: a training pants is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
-Definition: a training pants is purple themed: decide yes.
 Definition: a training pants is displacable: decide yes.
 
-sexy training pants is a kind of training pants. The printed name of sexy training pants is usually "[clothing-title-before]pair of sexy [if the urine-soak of item described > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if][clothing-title-after]". There is 1 unique sexy training pants.
+To say selfexamineuniquetitle of (K - a training pants):
+	say "pair of [if the urine-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
+To say ShortDesc of (K - a training pants):
+	say "training pants".
+To say MediumDesc of (K - a training pants):
+	say selfexamineuniquetitle of K.
+
+To say ClothingDesc of (C - a training pants):
+	say "A pair of [UniqueTrainingPantsDesc of C]with [if the bimbo of the player <= 4 and the urine-soak of C <= 0 and C is worn]weirdly thick padding, which makes it a little bit awkward to wear[otherwise if the bimbo of the player <= 4 and the urine-soak of C <= 0]weirdly thick padding, which looks like it would be a little bit awkward to wear[otherwise]thick padding to catch any little accidents that the wearer might have[end if].".
+
+To say UniqueTrainingPantsDesc of (C - a training pants):
+	say "relatively plain purple and white underwear ".
+
+Figure of purple training pants is the file "Items/Clothes/Lower/Underwear/Diapers/TrainingPants/trainingpants1.png".
+Figure of bunny training pants is the file "Items/Clothes/Lower/Underwear/Diapers/TrainingPants/trainingpants2.png".
+Figure of starcorn training pants is the file "Items/Clothes/Lower/Underwear/Diapers/TrainingPants/trainingpants3.png".
+Figure of hearts training pants is the file "Items/Clothes/Lower/Underwear/Diapers/TrainingPants/trainingpants4.png".
+Figure of sexy training pants is the file "Items/Clothes/Lower/Underwear/Diapers/TrainingPants/trainingpants5.png".
+
+purple training pants is a training pants. The text-shortcut of purple training pants is "pa".
+Definition: purple training pants is purple themed: decide yes.
+To decide which figure-name is clothing-image of (C - a training pants):
+	decide on figure of purple training pants.
+bunnyrabbit training pants is a training pants. bunnyrabbit training pants is transformation-rare. The text-shortcut of bunnyrabbit training pants is "brpa". Understand "bunny", "rabbit" as bunnyrabbit training pants.
+To say selfexamineuniquetitle of (K - bunnyrabbit training pants):
+	say "pair of bunny rabbit [if the urine-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
+To say UniqueTrainingPantsDesc of (C - bunnyrabbit training pants):
+	say "white underwear with a light blue seam and a gentle pattern of cartoon bunnies holding flowers, ".
+To decide which figure-name is clothing-image of (C - bunnyrabbit training pants):
+	decide on figure of bunny training pants.
+Definition: bunnyrabbit training pants is bunny themed: decide yes.
+Definition: bunnyrabbit training pants is flower themed: decide yes.
+To decide which number is the initial cringe of (D - bunnyrabbit training pants):
+	decide on 5.
+
+starcorn training pants is a training pants. starcorn training pants is transformation-rare. The text-shortcut of starcorn training pants is "upa". Understand "unicorn" as starcorn training pants.
+To say selfexamineuniquetitle of (K - starcorn training pants):
+	say "pair of unicorn [if the urine-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
+To say UniqueTrainingPantsDesc of (C - starcorn training pants):
+	say "white underwear with a light green seam and a pastel-coloured pattern of cartoon unicorns with stars on their butts, ".
+To decide which figure-name is clothing-image of (C - starcorn training pants):
+	decide on figure of starcorn training pants.
+Definition: starcorn training pants is horse themed: decide yes.
+Definition: starcorn training pants is star themed: decide yes.
+To decide which number is the initial cringe of (D - starcorn training pants):
+	decide on 6.
+
+lovehearts training pants is a training pants. lovehearts training pants is transformation-rare. The text-shortcut of lovehearts training pants is "lhpa". Understand "love", "hearts" as lovehearts training pants.
+To say selfexamineuniquetitle of (K - lovehearts training pants):
+	say "pair of love hearts [if the urine-soak of K > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
+To say UniqueTrainingPantsDesc of (C - lovehearts training pants):
+	say "pink underwear with a soft, subtle pattern of love hearts, ".
+To decide which figure-name is clothing-image of (C - lovehearts training pants):
+	decide on figure of hearts training pants.
+Definition: lovehearts training pants is pink themed: decide yes.
+Definition: lovehearts training pants is heart themed: decide yes.
+To decide which number is the initial cringe of (D - lovehearts training pants):
+	decide on 4.
+
+sexy training pants is a training pants. The printed name of sexy training pants is "[clothing-title-before][clothing-title-after]".
+
+To say selfexamineuniquetitle of (K - lovehearts training pants):
+	say "pair of sexy [if the urine-soak of item described > 0 or the diaper addiction of the player > 1]training pants[otherwise]padded underwear[end if]".
 The text-shortcut of sexy training pants is "sxt".
 
 To decide which number is the initial outrage of (D - a sexy training pants):
 	decide on 7.
+Definition: sexy training pants is purple themed: decide yes.
 
 To decide which figure-name is clothing-image of (C - a sexy training pants):
 	decide on figure of sexy training pants.
 
 To say ClothingDesc of (C - a sexy training pants):
-	say "A pair of frilly purple underwear with [if the bimbo of the player <= 4 and the urine-soak of C <= 0 and C is worn]weird padding in the centre, which makes it a little bit awkward to wear[otherwise if the bimbo of the player <= 4 and the urine-soak of C <= 0]weird padding in the centre, which looks like it would be a little bit awkward to wear[otherwise]absorbent padding in the centre to catch any little accidents that the wearer might have[end if].".
+	say "A pair of frilly purple underwear with [if the diaper addiction of the player <= 1 and the urine-soak of C <= 0 and C is worn]weird padding in the centre, which makes it a little bit awkward to wear[otherwise if the diaper addiction of the player <= 1 and the urine-soak of C <= 0]weird padding in the centre, which looks like it would be a little bit awkward to wear[otherwise]absorbent padding in the centre to catch any little accidents that the wearer might have[end if].".
 
-Definition: a training pants is transformation-protected: decide yes.
 
 Chapter 25 Latex Diaper
 

@@ -1,11 +1,11 @@
-School Food Machine by Objects begins here.
+Facility Food Machine by Objects begins here.
 
-food machine is a thing. The printed name of food machine is "[TQlink of item described]food machine[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of food machine is "fdm". food machine is in School17.
+food machine is a thing. The printed name of food machine is "[TQlink of item described]food machine[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of food machine is "fdm". food machine is in Facility17.
 
 Definition: food machine is immune to change: decide yes.
 
 To decide which figure-name is the examine-image of (C - food machine):
-	decide on Figure of school foodhall.
+	decide on Figure of facility foodhall.
 
 To say MediumDesc of (C - food machine):
 	say "mushy [if diaper quest is 0][semen]-glazed [end if]food machine".
@@ -21,7 +21,7 @@ Check TQEating food machine:
 Definition: a food machine is TQEdible: decide yes.
 
 Check MachineFeeding:
-	now food machine is in School17;
+	now food machine is in Facility17;
 	if the player is immobile, say "You're a bit tied up at the moment!" instead;
 	if the player is in danger, say "You can't do that while in combat!" instead;
 	if the player is not able to eat, say "You are currently unable to eat." instead;
@@ -45,4 +45,4 @@ Carry out MachineFeeding:
 			summon H cursed;
 			say "[bold type]Suddenly, a pair of [ShortDesc of H][bold type] appear on your head[if the bimbo of the player < 9]![line break][variable custom style]I am NOT a dog[end if]![roman type][line break]".
 
-School Food Machine ends here.
+Facility Food Machine ends here.

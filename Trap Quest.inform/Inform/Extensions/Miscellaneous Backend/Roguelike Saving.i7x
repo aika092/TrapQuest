@@ -11,11 +11,14 @@ Before reading a command when save game limit > 0 (this is the automatically sav
 When play begins (this is the restore if we have a savefile rule):
 	initialise variables;
 	reset the Glulx timer;
+	say "checkpoint 5a.";
 	if loading scenes is 1:
 		if images visible is 1:
 			if choice in row 49 of Table of Settings > -1 and (diaper quest is 1 or choice in row 48 of the Table of Player Options > -1): [mythical creatures must be enabled to see the gargoyle]
+				say "checkpoint 5b.";
 				let A be a random initial animation track;
 				commence animation of A;
+				say "checkpoint 5c.";
 			otherwise:
 				if berri fetish is 1:
 					display Figure of berri loading;
@@ -25,6 +28,7 @@ When play begins (this is the restore if we have a savefile rule):
 					display figure of dq dungeon loading;
 				say "Now loading...";
 	wait until animations are over;
+	say "checkpoint 5d.";
 	if the file of save data exists:
 		read file of save data into memory.
 

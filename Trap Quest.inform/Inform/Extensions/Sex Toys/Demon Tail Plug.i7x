@@ -75,6 +75,7 @@ Figure of nintendolls flag plug is the file "Items/Accessories/Toys/flag1.png".
 Figure of nintendolls flag plug cutscene is the file "Items/Accessories/Toys/flag2.jpg".
 
 To decide which figure-name is clothing-image of (C - nintendolls flag plug):
+	if flag-wave-predicament is cutshown, decide on Figure of nintendolls flag plug cutscene;
 	decide on figure of nintendolls flag plug.
 
 To say UniquePlugDesc of (P - nintendolls flag plug):

@@ -59,7 +59,7 @@ To StomachDown (X - a number):
 		if the stomach-water of the player >= the stomach-milk of the player:
 			if the stomach-water of the player >= the stomach-urine of the player:
 				if the stomach-water of the player >= the stomach-semen of the player:
-					decrease the stomach-water of the player by 1;
+					if the stomach-water of the player > 0, decrease the stomach-water of the player by 1;
 					if watersports mechanics is 1, increase the delayed bladder of the player by 1;
 				otherwise:
 					increase S by 1;

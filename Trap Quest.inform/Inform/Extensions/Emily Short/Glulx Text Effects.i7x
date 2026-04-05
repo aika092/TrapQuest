@@ -336,7 +336,7 @@ Example: ** The Gallic War - An excuse to print a large, fancily-formatted bit o
 
 	The story headline is "An interactive campaign".
 
-	Lessons is a room.
+	TrainingSessions is a room.
 
 	Include Glulx Text Effects by Emily Short.
 	Include Basic Screen Effects by Emily Short.

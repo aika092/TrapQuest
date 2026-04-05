@@ -1,14 +1,14 @@
 Swimming Pool by Objects begins here.
 
-swimming-pool is a water-body-scenery. swimming-pool is not portable. The printed name of swimming-pool is "[TQlink of item described]swimming pool[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of swimming-pool is "swp". swimming-pool is in School20. Understand "swimming", "pool", "swimming pool" as swimming-pool.
+swimming-pool is a water-body-scenery. swimming-pool is not portable. The printed name of swimming-pool is "[TQlink of item described]swimming pool[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of swimming-pool is "swp". swimming-pool is in Facility20. Understand "swimming", "pool", "swimming pool" as swimming-pool.
 
 Definition: swimming-pool is made-of-cum:
-	if diaper quest is 0 and School20 is visited and woman-player is not in School20, decide yes;
+	if diaper quest is 0 and Facility20 is visited and woman-player is not in Facility20, decide yes;
 	decide no.
 
 To decide which figure-name is the examine-image of (C - swimming-pool):
-	if swimming-pool is made-of-cum, decide on Figure of school swimming pool cum;
-	decide on Figure of school swimming pool.
+	if swimming-pool is made-of-cum, decide on Figure of facility swimming pool cum;
+	decide on Figure of facility swimming pool.
 
 To say ExamineDesc of (S - swimming-pool):
 	if swimming-pool is made-of-cum, say "This swimming pool isn't full of water, but instead strong-smelling warm [semen].[line break][variable custom style][if the semen taste addiction of the player < 10 and the semen addiction of the player < 10]What the FUCK is this place?![otherwise]That's... impressive...[end if][roman type][line break]";
@@ -31,13 +31,13 @@ To compute swimming in (S - swimming-pool):
 	otherwise:
 		compute DQ swimmingpool swimming at 0 with 0;
 
-[During the lesson, the pool has 10 different "locations". That's a lot, so we'll cut it down to 5 for the normal swimming: shallow, medium1, medium2, deep1, deep2(under the diving board)]
+[During the training session, the pool has 10 different "locations". That's a lot, so we'll cut it down to 5 for the normal swimming: shallow, medium1, medium2, deep1, deep2(under the diving board)]
 To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-turns - a number):
 	let swimming be 1;
 	allocate 6 seconds;
 	while swimming is 1:
 		if swim-turns is 0 and water-peeing is false:
-			if the location of the player is School22:[Near the diving board]
+			if the location of the player is Facility22:[Near the diving board]
 				say "Do you want to use the diving board?";
 				if the player consents:[the player enters the pool from deep1, instead of shallow]
 					say "You leap off the diving board, creating a splash as you enter the water.";
@@ -88,11 +88,11 @@ To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 			if armband is worn:
 				let M be a random staff member in the location of the player;
 				if M is nothing and a random number between 3 and 15 < swim-turns:
-					now M is a random alive undefeated teacher;
+					now M is a random alive undefeated tutor;
 					say "[BigNameDesc of M] walks into the room and sees you in the pool!";
 				if M is monster:
 					say "[speech style of M]'Um, NO! No going in the swimming pool without permission!'[roman type][line break][BigNameDesc of M] drags you out of the pool!";
-					compute detention of M;
+					compute reconditioning of M;
 					now swimming is 0;
 			if swimming is 1:
 				[compute cum pool coating;]
@@ -109,7 +109,7 @@ To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 	allocate 6 seconds;
 	while swimming is 1:
 		if swim-turns is 0 and water-peeing is false:
-			if the location of the player is School22:[Near the diving board]
+			if the location of the player is Facility22:[Near the diving board]
 				say "Do you want to use the diving board?";
 				if the player consents:
 					say "You leap off the diving board, creating a splash as you land inside the pool.";
@@ -154,11 +154,11 @@ To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 			if armband is worn:
 				let M be a random staff member in the location of the player;
 				if M is nothing and a random number between 1 and 10 < swim-turns:
-					now M is a random alive undefeated teacher;[in the DQ pool a teacher is much likelier to show up.]
+					now M is a random alive undefeated tutor;[in the DQ pool a tutor is much likelier to show up.]
 					say "[BigNameDesc of M] walks into the room and sees you in the pool!";
 				if M is monster:
 					say "[speech style of M]'Um, NO! No use of the swimming pool without permission!'[roman type][line break][BigNameDesc of M] drags you out of the pool!";
-					compute detention of M;
+					compute reconditioning of M;
 					now swimming is 0;
 			if swimming is 1:
 				compute bathing;

@@ -87,7 +87,7 @@ To compute periodic effect of (C - gape-gloves):
 		if S is clothing:
 			say "Your [ShortDesc of S] quickly bunches up at the back thanks to the position of your hands on your [AssDesc].";
 			displace S.
-To compute school periodic effect of (C - gape-gloves):
+To compute facility periodic effect of (C - gape-gloves):
 	compute periodic effect of C.
 
 Gape Gloves ends here.

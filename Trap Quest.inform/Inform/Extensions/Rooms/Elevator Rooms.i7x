@@ -132,7 +132,8 @@ To compute elevator entrance of (ER - SurgeryRoom01):
 	let able-to-strip-naked be true;
 	repeat with C running through worn clothing:
 		if C is nudism-disabling or (diaper quest is 0 and C is chastity bond):
-			if able-to-strip-naked is true and C is usually unautoremovable, now able-to-strip-naked is false;
+			if able-to-strip-naked is true and C is usually unautoremovable:
+				unless C is uncursed unglued unlocked diaper and the class of the player is berri, now able-to-strip-naked is false;
 	if able-to-strip-naked is false, say "It doesn't really matter anyway right now, as you can't remove all your clothes. You'll have to return another time.";
 	reset multiple choice questions;
 	set numerical response 1 to "Leave the machine alone";
@@ -271,12 +272,12 @@ Definition: NurseRoom01 is appropriate:
 	if diaper quest is 1 and the player is an april 2025 diaper donator, decide yes;
 	decide no.
 
-Figure of mad nurse scene is the file "NPCs/School/nurse4.jpg".
+Figure of mad nurse scene is the file "NPCs/Facility/nurse4.jpg".
 
 To compute elevator entrance of (ER - NurseRoom01):
 	now temporaryYesNoResetNeeded is false;
 	now temporaryYesNoBackground is Figure of mad nurse scene;
-	let nurse-room be School11;
+	let nurse-room be Facility11;
 	if nurse is alive, now nurse-room is the location of nurse;
 	now nurse is in NurseRoom01;
 	now nurse is interested;
@@ -371,7 +372,7 @@ To construct normal buttons for (T - facial-room-machine):
 		if ButtonTableFull is 0:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of ResistButton;
-			now the ButtonCommand entry is "resist";
+			now the ButtonCommand entry is "hold back";
 			now the ButtonColour entry is lightModeFullGreen;
 
 To compute elevator entrance of (ER - FacialRoom01):
@@ -536,9 +537,9 @@ A later time based rule (this is the facial room machine rule):
 							if matron is alive:
 								now SK is carried by matron;
 							otherwise:
-								let CNT be a random container in Hotel22;
+								let CNT be a random container in HotelNursery;
 								if CNT is a thing, now SK is in CNT;
-								otherwise now SK is in Hotel22;
+								otherwise now SK is in HotelNursery;
 						otherwise:
 							say "You feel [NameDesc of M] squirting something inside [NameDesc of thing-to-lock].[line break][speech style of M]'This'll make sure you stay pampered for a while~'[roman type][line break]";
 							gluify thing-to-lock;
@@ -668,7 +669,7 @@ To construct normal buttons for (T - belly-room-gloryhole):
 		if ButtonTableFull is 0:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of ResistButton;
-			now the ButtonCommand entry is "resist";
+			now the ButtonCommand entry is "hold back";
 			now the ButtonColour entry is lightModeFullGreen;
 		if ButtonTableFull is 0:
 			choose a blank row in the Table of Buttons;
@@ -855,7 +856,7 @@ To compute elevator entrance of (ER - BellyRoom01):
 		now room-version is 1; [pregnancy room]
 	otherwise if egg laying fetish is 1 and the pregnancy of the player is not 1 and the pregnancy of the player is not 2 and a random number between 1 and 3 is 1:
 		now room-version is 2; [egg laying room]
-	otherwise if the player is not able to expel or the trophy-mode of expel-trophy is 1: [needs to be pregnancy or egg]
+	otherwise if diaper quest is 0 and the player is not able to expel or the trophy-mode of expel-trophy is 1: [needs to be pregnancy or egg]
 		if pregnancy fetish is 1 and the player is possessing a vagina and the pregnancy of the player <= 2, now room-version is 1;
 		otherwise now room-version is 2;
 	if room-version > 0:
@@ -906,6 +907,10 @@ To compute elevator entrance of (ER - BellyRoom01):
 		compute single choice question "Return to the hotel";
 		compute elevator return;
 	otherwise:
+		let AP be a random thing penetrating asshole;
+		if AP is a thing:
+			say "[BigNameDesc of AP] fizzles into nothingness!";
+			destroy AP;
 		compute maximum belly liquid fill;
 		now the squirt timer of belly is a random number between 6 and 30;
 		if the number of on-stage pedestals <= 1, lock pedestals; [this should mean we haven't set up the pedestals yet, probably because the mansion isn't placed yet]

@@ -167,20 +167,21 @@ stockings removability rules is a rulebook. The removability rules of stockings 
 
 This is the cursed suspenders prevents removal of stockings rule:
 	repeat with C running through worn cursed suspenders:
-		if summoning is 0:
+		if summoning is 0 and gluetearing is false:
 			if autoremove is false, say "Your [C] are somehow preventing you!";
 			rule fails.
 The cursed suspenders prevents removal of stockings rule is listed in the stockings removability rules.
 
 This is the worn shoes prevents removal of stockings rule:
 	repeat with C running through worn shoes:
-		if summoning is 0 and autoremove is false, say "You would need to remove your [C] first.";
-		if autolayerremove is false, rule fails.
+		if gluetearing is false:
+			if summoning is 0 and autoremove is false, say "You would need to remove your [C] first.";
+			if autolayerremove is false, rule fails.
 The worn shoes prevents removal of stockings rule is listed in the stockings removability rules.
 
 [This is the worn leg covering clothing prevents removal of stockings rule:
 	repeat with C running through worn leg covering clothing:
-		unless C is wearing-target:
+		if C is not wearing-target and gluetearing is false:
 			if summoning is 0 and autoremove is false, say "You would need to remove your [C] first.";
 			if autolayerremove is false, rule fails.
 The worn leg covering clothing prevents removal of stockings rule is listed in the stockings removability rules.]
@@ -448,7 +449,7 @@ Definition: business socks is black themed: decide yes.
 frilly stockings is a stockings. frilly stockings is cotton. frilly stockings is sheer-when-wet. The text-shortcut of frilly stockings is "fst".
 
 Definition: frilly stockings is class-relevant:
-	if the class of the player is schoolgirl and the player is pigtailed, decide yes;
+	if the class of the player is alchemist and the player is pigtailed, decide yes;
 	decide no.
 
 Figure of cotton stockings is the file "Items/Clothes/Lower/Legs/cottonstockings1.png".
@@ -582,7 +583,7 @@ A heart stockings is a kind of stockings. There is 1 transformation-rare heart s
 fishnet stockings is a stockings. fishnet stockings is transformation-rare. fishnet stockings is mesh. The text-shortcut of fishnet stockings is "fs". The printed name of fishnet stockings is "[clothing-title-before]pair of fishnet stockings[clothing-title-after]". Understand "fish", "net" as fishnet stockings.
 
 Definition: fishnet stockings is class-relevant:
-	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
+	if the class of the player is alchemist and the player is not pigtailed, decide yes;
 	decide no.
 
 To decide which figure-name is clothing-image of (C - fishnet stockings):

@@ -388,7 +388,7 @@ When the player attacks a monster, determines whether the player will automatica
 
 +!]
 Definition: a monster (called M) is too intimidating:
-	if playerRegion is school, decide no;
+	if playerRegion is facility, decide no;
 	if the class of the player is worshipper:
 		if M is infernal:
 			let G be a random worn headgear;
@@ -469,7 +469,7 @@ To compute slaying bonus of (T - a thing):
 		DelicateDown 1.]
 
 To compute failed damage of (M - a monster):
-	do nothing.
+	say "You fail to hit [NameDesc of M]!".
 
 To compute standard damage of (M - a monster):
 	if the health of M > 0:
@@ -594,6 +594,7 @@ To damage (A - a number) on (M - a monster):
 	[Call the damage function of the monster]
 	if attack-damage > 0:
 		compute standard damage of M;
+		aggravate M;
 	otherwise:
 		if the health of M < 1: [This could happen if an allied NPC damages it this turn, but the player fails to do any damage.]
 			now the health of M is 1;

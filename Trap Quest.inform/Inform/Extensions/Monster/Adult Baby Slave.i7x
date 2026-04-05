@@ -61,8 +61,8 @@ To set up (M - an adult baby slave):
 	reset M;
 	now the monstersetup of M is 1;
 	if M is angelic adult baby slave:
-		add bubblegum to the taxableItems of M;
-		add bubblegum to the tradableItems of M;
+		add bubblegum to the taxableItems of M, if absent;
+		add bubblegum to the tradableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
@@ -72,7 +72,7 @@ To decide which number is adultBabyMessTimer:
 	decide on 235.
 
 Definition: an adult baby slave is messy:
-	if it is diaper-enslaved and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 6 and playerRegion is not school:
+	if it is diaper-enslaved and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 6 and playerRegion is not facility:
 		decide yes;
 	otherwise if it is caged and it is in the location of dominatrix-cage and the mess of dominatrix-cage > 0:
 		decide yes;
@@ -149,7 +149,7 @@ To compute MasturbationReaction of (M - an adult baby slave):
 		now the sex-length of M is 3.
 
 To compute BabyChairReaction of (M - an adult baby slave):
-	say "[BigNameDesc of M] looks at you and giggles.[line break][speech style of M]'[one of]Someone's trying way too hard to become teacher's pet!'[or]You want praise just for sitting on a chair? You're even more attention seeking than me!'[or]Did you sit on the babytalk seat? You big fat idiot!'[at random][roman type][line break]";
+	say "[BigNameDesc of M] looks at you and giggles.[line break][speech style of M]'[one of]Someone's trying way too hard to become a teacher's pet!'[or]You want praise just for sitting on a chair? You're even more attention seeking than me!'[or]Did you sit on the babytalk seat? You big fat idiot!'[at random][roman type][line break]";
 	moderateHumiliate.
 
 To say MonsterOfferRejectFlav of (M - an adult baby slave) to (T - a diaper):
@@ -307,7 +307,7 @@ This is the adult baby slave shows you to mommy rule:
 	let M be current-monster;
 	if M is eager to feed to master:
 		let N be a random alive matron;
-		now the target-room of M is Hotel22;
+		now the target-room of M is HotelNursery;
 		anger M;
 		if the player is not in the target-room of M:
 			say "[one of][line break][second custom style]'We're gonna go see [daddytitle of N]!'[roman type][line break][or][stopping]";

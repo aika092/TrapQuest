@@ -249,7 +249,7 @@ To decide which number is the initial outrage of (C - bimbo monokini):
 To decide which number is the assModesty of (C - bimbo monokini):
 	decide on 3.
 
-Definition: bimbo monokini is brat themed: decide yes. [schoolgirl + silicone queen]
+Definition: bimbo monokini is brat themed: decide yes. [alchemist + silicone queen]
 
 
 Part 9 - Gris Monokini

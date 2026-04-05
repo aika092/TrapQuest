@@ -246,9 +246,15 @@ To decide which object is the concealer of (K - a knickers):
 [This hides the wet status of the underwear but not the shape.]
 To decide which object is the at least partial concealer of (K - a knickers):
 	if water-fountain is penetrating asshole, decide on water-fountain;
+	let DC be K;
 	repeat with C running through worn diaper covering clothing:
 		[if debugmode > 1, say "considering concealment of [ShortDesc of C].";]
-		if C is not K and (the bottom-layer of C > the bottom-layer of K or C is skirted), decide on C;
+		if C is not K and (the bottom-layer of C > the bottom-layer of K or C is skirted):
+			if K is diaper:
+				if DC is K or C is not actually sheer, now DC is C;
+			otherwise:
+				decide on C;
+	if DC is not K, decide on DC; [this will be something that is NOT sheer if possible, which allows us to check the 'at least partial concealer' of a diaper and confidently determine if it's just the shape that is visible, or the item itself is indeed partially visible through sheer clothing.]
 	if K is listed in the armUses of arms, decide on arms;
 	decide on nothing.
 

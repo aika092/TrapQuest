@@ -10,7 +10,7 @@ This is the variable text that controls whether hypnosis is triggered
 
 *!]
 
-hypno-trigger is a text that varies.
+htrigger is a text that varies.
 
 To say feet:
 	say "[if there are worn boots]boots[otherwise if there are worn heels]heels[otherwise if there are worn shoes]shoes[otherwise]feet[end if]".
@@ -43,7 +43,7 @@ To say big literalMistress of (M - a monster):
 If the player is impressed with the (assumed female) NPC
 
 +!]
-To say mistress:
+To say maam:
 	if the class of the player is santa's little helper:
 		say "Mrs. Santa";
 	if the player is feeling dominant:
@@ -59,7 +59,7 @@ If the player is impressed with the NPC (unknown gender)
 
 +!]
 To say stud of (M - a person):
-	if M is presenting as female, say mistress;
+	if M is presenting as female, say maam;
 	otherwise say stud.
 
 [!<SayWormOfMonster>+
@@ -492,6 +492,13 @@ To say DickDesc of (M - a monster):
 	otherwise:
 		say manly-penis.
 
+To decide which number is the GirthLength of (M - a monster):
+	let G be the girth of M;
+	if G <= 3, decide on G * 2;
+	if G <= 8, decide on G + 3;
+	decide on (G * 2) - 4.
+
+
 [!<SayLongDickDescOfMonster>+
 
 Specific method of referring to a monster "M"'s penis. Should only be used every once in a while.
@@ -499,11 +506,11 @@ Specific method of referring to a monster "M"'s penis. Should only be used every
 +!]
 To say LongDickDesc of (M - a monster):
 	if full-lady fetish is 1:
-		say "[girth of M] inch strap-on dildo";
+		say "[GirthLength of M] inch strap-on dildo";
 	otherwise if M is fairy:
 		say "tiny, locked-away penis";
 	otherwise: [There's no 'if lady fetish is 2' case here since full-lady fetish is 1 means that lady fetish is 1 and futanari fetish is 0.]
-		say "[girth of M] inch [manly-penis]".
+		say "[GirthLength of M] inch [manly-penis]".
 
 To say HoleDesc of (M - a monster):
 	if M is presenting as male, say "asshole";
@@ -631,8 +638,16 @@ To say big brothas of (M - a person):
 		if M is presenting as male, say "Dudes";
 		otherwise say "Bitches".
 
-To say slut school:
-	say "[if diaper quest is 1]Attitude[otherwise]Slut[end if] Academy".
+To say training halls:
+	say "Royal Training Halls".
+To say prince:
+	say "prince[unless lady fetish is 2]ss[end if]";
+To say big prince:
+	say "Prince[unless lady fetish is 2]ss[end if]";
+To say princes:
+	say "prince[if lady fetish is 2]s[otherwise]sses[end if]";
+To say big princes:
+	say "Prince[if lady fetish is 2]s[otherwise]sses[end if]";
 
 To say muffled sounds:
 	if the player is able to make sounds:
@@ -754,23 +769,23 @@ In support of a hypnosis test, you can be indoctrinated by the cultists to react
 +!]
 To say great one:
 	say "Great One";
-	if player-hypno-great is 1:
-		now hypno-trigger is "great one".
+	if player-h-great is 1:
+		now htrigger is "great one".
 
 To say caps great one:
 	say "GREAT ONE";
-	if player-hypno-great is 1:
-		now hypno-trigger is "great one".
+	if player-h-great is 1:
+		now htrigger is "great one".
 
 To say great ones:
 	say "Great Ones";
-	if player-hypno-great is 1:
-		now hypno-trigger is "great one".
+	if player-h-great is 1:
+		now htrigger is "great one".
 
 To say caps great ones:
 	say "GREAT ONES";
-	if player-hypno-great is 1:
-		now hypno-trigger is "great one".
+	if player-h-great is 1:
+		now htrigger is "great one".
 
 [!<SayTasty>+
 
@@ -779,15 +794,15 @@ Aika's first hypnosis test
 +!]
 To say tasty:
 	say "tasty";
-	now hypno-trigger is "tasty".
+	now htrigger is "tasty".
 
 To say big tasty:
 	say "Tasty";
-	now hypno-trigger is "tasty".
+	now htrigger is "tasty".
 
 To say caps tasty:
 	say "TASTY";
-	now hypno-trigger is "tasty".
+	now htrigger is "tasty".
 
 [!<SayMaturity>+
 
@@ -796,50 +811,50 @@ Aika's first DQ hypnosis test
 +!]
 To say maturity:
 	say "maturity";
-	now hypno-trigger is "maturity".
+	now htrigger is "maturity".
 
 To say big maturity:
 	say "Maturity";
-	now hypno-trigger is "maturity".
+	now htrigger is "maturity".
 
 To say caps maturity:
 	say "MATURITY";
-	now hypno-trigger is "maturity".
+	now htrigger is "maturity".
 
 To say pussy:
 	say "pussy";
-	now hypno-trigger is "pussy".
+	now htrigger is "pussy".
 
 To say big pussy:
 	say "Pussy";
-	now hypno-trigger is "pussy".
+	now htrigger is "pussy".
 
 To say caps pussy:
 	say "PUSSY";
-	now hypno-trigger is "pussy".
+	now htrigger is "pussy".
 
 To say cunt:
 	say "cunt";
-	now hypno-trigger is "cunt".
+	now htrigger is "cunt".
 
 To say big cunt:
 	say "Cunt";
-	now hypno-trigger is "cunt".
+	now htrigger is "cunt".
 
 To say caps cunt:
 	say "CUNT";
-	now hypno-trigger is "cunt".
+	now htrigger is "cunt".
 
 To say please:
 	say "please";
-	now hypno-trigger is "please".
+	now htrigger is "please".
 
 To say big please:
 	say "Please";
-	now hypno-trigger is "please".
+	now htrigger is "please".
 
 To say caps please:
 	say "PLEASE";
-	now hypno-trigger is "please".
+	now htrigger is "please".
 
 Variable Text ends here.

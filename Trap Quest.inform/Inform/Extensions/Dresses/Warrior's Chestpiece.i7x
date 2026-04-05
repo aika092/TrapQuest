@@ -308,6 +308,7 @@ To compute class set up of (C - virgin princess outfit):
 Definition: virgin princess outfit is gem themed: decide yes.
 Definition: virgin princess outfit is white themed: decide yes.
 Definition: virgin princess outfit is displacable: decide yes.
+Definition: virgin princess outfit is short-skirt-exception: decide yes.
 
 To decide which number is the penis-capacity of (H - virgin princess outfit):
 	decide on 2.

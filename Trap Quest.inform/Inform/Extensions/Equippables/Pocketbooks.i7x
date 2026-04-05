@@ -417,7 +417,7 @@ Definition: notebook is fetish appropriate:
 
 To say UniqueClothingDesc of (W - notebook):
 	let X be the number of notebook-studied monsters;
-	say "This hardcover book has the words [']SEX NOTE['] embroidered on the front, with a blurb on the back that reads 'Paying attention in class? Fooling around with the girls? Showing the boys what you've been learning about in school? This book has your back! Thanks to state of the art magic or whatever, this book takes care of everything completely hands free, just for YOU!' [if X < 4]The paper is soft, almost damp. It would probably be tough to write on by hand[otherwise if X < 8]The pages are soft, almost damp. The words on the pages glow faintly, seeming to shift between English and some inscrutable ancient script.[otherwise if X < 12]The pages are soft, yet crisp, and you can feel warmth and energy when you brush it with your fingertips. The words on the pages glow faintly, shifting unpredictably between English and some inscrutable ancient script[otherwise]The pages are flexible, yet crisp, warm with energy as the glowing words shift rapidly between what appears to be English and some inscrutable ancient script[end if].".
+	say "This hardcover book has the words [']SEX NOTE['] embroidered on the front, with a blurb on the back that reads 'Paying attention in class? Fooling around with the girls? Showing the boys what you've been learning about in sex ed? This book has your back! Thanks to state of the art magic or whatever, this book takes care of everything completely hands free, just for YOU!' [if X < 4]The paper is soft, almost damp. It would probably be tough to write on by hand[otherwise if X < 8]The pages are soft, almost damp. The words on the pages glow faintly, seeming to shift between English and some inscrutable ancient script.[otherwise if X < 12]The pages are soft, yet crisp, and you can feel warmth and energy when you brush it with your fingertips. The words on the pages glow faintly, shifting unpredictably between English and some inscrutable ancient script[otherwise]The pages are flexible, yet crisp, warm with energy as the glowing words shift rapidly between what appears to be English and some inscrutable ancient script[end if].".
 
 To say ShortDesc of (W - notebook):
 	say "notebook".
@@ -458,7 +458,7 @@ To compute spell consequences of (Z - notebook):
 [You can only study monsters you finish off with the book, or monsters you have sex with more than once.]
 To compute studying (N - a number) of (M - a monster):
 	let C be 3;
-	if the class of the player is schoolgirl, decrease C by the number of worn scrunchies;
+	if the class of the player is alchemist, decrease C by the number of worn scrunchies;
 	if N is 0:[sex]
 		if M is notebook-studied:
 			say "A yellow bolt shoots out of the [printed name of notebook] and disappears into [NameDesc of M][']s chest. [big his of M] expression changes slightly, and somehow you know [he of M] looks more favourably on you now.";

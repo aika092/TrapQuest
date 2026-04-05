@@ -733,10 +733,10 @@ Displayed when the player greets a monster that is already paying attention to t
 
 +!]
 To say VanityGreeting to (M - a monster):
-	if M is teacher and locked-toilets is true and academy-toilet-key is held:
+	if M is tutor and locked-toilets is true and facility-toilet-key is held:
 		say "'[if the player is proud]I can't believe I'm saying this, but would you please accompany me so that I can use the toilet?'[otherwise if the diaper addiction of the player < 5]Please could you supervise me while I use the toilet?'[otherwise]Please can you help me use the potty?'[end if]";
 	otherwise if the player is toilet traumatised bursting:
-		say "'I need the toilet, but [if academy-toilet-key is held and M is teacher]academy rules say I need supervision[otherwise]I'm too scared to go alone[end if]. Would you please come with me?'";
+		say "'I need the toilet, but [if facility-toilet-key is held and M is tutor]the rules say I need supervision[otherwise]I'm too scared to go alone[end if]. Would you please come with me?'";
 	otherwise if the player is a masochist:
 		say "'[one of]Are you getting used to seeing the back of my head?'[or]Maybe you and I should head somewhere more private, hmm?'[or]Where am I taking you, I wonder?'[at random]";
 	otherwise:
@@ -1434,7 +1434,7 @@ speakingOutLoud is a number that varies. [For tracking whether the player chose 
 talk-dismiss is a talk-object.
 
 To consider (T - talk-dismiss) for (M - a monster):
-	if M is intelligent and M is interested and M is not caged and the player is not in a predicament room:
+	if tutorial is 0 and M is intelligent and M is interested and M is not caged and the player is not in a predicament room:
 		if M is defeated:
 			now the printed name of T is the substituted form of "[DefeatedDismissal of M]";
 		otherwise:
@@ -1697,6 +1697,7 @@ To say DefeatedDismissal of (M - a monster):
 
 [We put this talk object before the fluff questions to make sure it's never blocked by the fluff questions.]
 talk-request is a talk-object.
+search-request is a talk-object.
 
 
 
@@ -1940,7 +1941,7 @@ Definition: vine-egg-errand is completed:
 	decide no.
 To decide which number is the errand-weight of (E - vine-egg-errand) for (P - a person):
 	if playerRegion is Woods, decide on 0; [they can get it themselves]
-	if P is a robot or P is a student, decide on 0;
+	if P is a robot or P is a trainee, decide on 0;
 	decide on 1.
 To decide which number is the errand-desire of (E - vine-egg-errand) for (P - a person):
 	decide on 20.
@@ -1966,7 +1967,7 @@ Definition: fertility-idol-errand is completed:
 	if fertility idol is held, decide yes;
 	decide no.
 To decide which number is the errand-weight of (E - fertility-idol-errand) for (P - a monster):
-	if P is a robot or P is a student, decide on 0;
+	if P is a robot or P is a trainee, decide on 0;
 	decide on 1.
 To decide which number is the errand-desire of (E - fertility-idol-errand) for (P - a person):
 	decide on 100.
@@ -2170,6 +2171,7 @@ To compute instant effect of (E - portal-clothes-errand) for (P - a person):
 			say "[line break][speech style of pimp]'Now I can sell you for sex at any time, and take ALL the profits for myself[if the player is not in Hotel44]. You'll see what I mean soon enough[end if].'[roman type][line break]";
 		FavourSet pimp to the aggro limit of pimp - 7;
 		compute errand reward of E for P;
+		now the current-errand of P is no-errand;
 		if P is interested monster, satisfy P;
 	otherwise:
 		say "[variable custom style]'I'm sorry, but I don't like the sound of that.'[line break][speech style of P]'Well then, this was a waste of my time.'[roman type][line break][BigNameDesc of P] shrugs with annoyance.";
@@ -2767,7 +2769,7 @@ Definition: energy-cup-errand is completed:
 		if diaper quest is 0 and the fill-type of B is 3, decide yes;
 		if diaper quest is 1 and the fill-colour of B is white, decide yes;
 	decide no.
-To decide which number is the errand-weight of (E - energy-cup-errand) for (P - a student):
+To decide which number is the errand-weight of (E - energy-cup-errand) for (P - a trainee):
 	decide on 9999999.
 To decide which number is the errand-desire of (E - energy-cup-errand) for (P - a person):
 	decide on 100.
@@ -2805,7 +2807,7 @@ To decide which number is the errand-desire of (E - chastity-errand) for (P - a 
 To say ErrandFlav of (E - chastity-errand) for (P - a person):
 	say "I have a fun idea I thought we could try out... I want you to wear this chastity device for me. Just for a while... You'll be able to get the key back soon, I promise! It'll be like a fun kinky scavenger hunt. ".
 To compute instant effect of (E - chastity-errand) for (P - a person):
-	say "Do you let [NameDesc of P] lock you in a chastity cage?";
+	say "Do you let [NameDesc of P] lock you in a chastity [if the player is possessing a vagina]belt[otherwise]cage[end if]?";
 	if the player is bimbo consenting:
 		let C be a random off-stage fetish appropriate chastity cage;
 		if the player is possessing a vagina,	now C is chastity-belt;
@@ -2935,7 +2937,7 @@ To decide which number is the errand-weight of (E - wisp-errand) for (P - a glad
 To decide which number is the errand-weight of (E - wisp-errand) for (P - a royal guard):
 	decide on 2.
 To decide which number is the errand-weight of (E - wisp-errand) for (P - a person):
-	if P is robot or P is student, decide on 0;
+	if P is robot or P is trainee, decide on 0;
 	if P is infernal monster, decide on 5;
 	decide on 1.
 To say ErrandFlav of (E - wisp-errand) for (P - a person):
@@ -3057,6 +3059,41 @@ To compute instant effect of (E - baby-bonnet-errand) for (P - a person):
 	now the current-reward of P is no-reward.
 
 
+anilingus-errand is an errand.
+Definition: anilingus-errand is appropriate:
+	if a2m fetish >= 1 and face is not actually occupied, decide yes;
+	decide no.
+To decide which number is the errand-weight of (E - anilingus-errand) for (P - familiar):
+	decide on 100.
+To decide which number is the errand-weight of (E - anilingus-errand) for (P - a wrestler):
+	decide on 10.
+To decide which number is the errand-weight of (E - anilingus-errand) for (P - a wench):
+	decide on 2.
+To decide which number is the errand-weight of (E - anilingus-errand) for (P - a demoness):
+	decide on 2.
+To say ErrandFlav of (E - anilingus-errand) for (P - a person):
+	say "Sure... [if P is familiar]But I've got this really annoying itch inside my butthole, and I need someone to help me scratch it, with [his of the player] tongue[otherwise]But only if you shove your tongue deep inside my butthole in the next... Six seconds[end if]. ".
+To compute instant effect of (E - anilingus-errand) for (P - a person):
+	say "Do you [if the player is upright]drop to your knees and [end if]shove your tongue inside [his of P] butthole?";
+	if the player is bimbo consenting:
+		if the player is upright:
+			now auto is 1;
+			try kneeling;
+			now auto is 0;
+		say "You hurry to grab [NameDesc of P][']s buttcheeks and spread them wide, revealing their pulsating little pucker. Hesitating only for the briefest of moments, you shove your head forwards and bury your tongue inside.";
+		let F be the asslick-monster-image of P;
+		if F is not figure of Missing NPC, cutshow F for P;
+		TasteGrossOut 7;
+		say "[speech style of P]'Ooh yes, that's the spot! Get in there real good!'[roman type][line break][BigNameDesc of P] grabs your head and pushes you deeper, making sure that your tongue goes as deep as humanly possible into [his of P] tight brown star. [strongHumiliateReflect][line break][BigNameDesc of P] holds you there for a few seconds, making sure that your tongue is truly marinated in [his of P] ass juices, before releasing you and letting you pull away.";
+		TasteGrossOut 7;
+		compute errand reward of E for P;
+		now the current-errand of P is no-errand;
+	otherwise:
+		say "[speech style of P]'Five... Four... Three... Two...'[line break][variable custom style]'What? No! You've got to give me more time to think than...'[line break][speech style of P]'One... Zero. Too late. I guess you really didn't want my help after all, huh?'[roman type][line break]";
+		now the current-errand of P is rejected-errand;
+	now the current-reward of P is no-reward.
+
+
 A requestable is a kind of object.
 Definition: a requestable is appropriate: decide no. [Gamestate wise, should this be able to request this right now?]
 To decide which number is the requestability of (C - an object): [How 'expensive' is the request?]
@@ -3075,7 +3112,7 @@ To say RewardFlav of (P - a person):
 	let R be the current-reward of P;
 	if R is a person, say "help you out with that";
 	otherwise say RewardFlav of R.
-To compute errand rewarding of (R - an object) for (P - a person):
+To compute errand rewarding of (R - an object) from (P - a person):
 	say "BUG - this errand reward doesn't yet have a reward function.".
 [basic-item-request is a requestable.
 Definition: basic-item-request is appropriate: decide yes.
@@ -3083,15 +3120,20 @@ To say RequestFlav of (C - basic-item-request):
 	say "'Is there anything I could do for you in exchange for a useful item?'".
 To say RewardFlav of (C - basic-item-request):
 	say "give you a little something".]
+To compute freebie rewarding of (T - an object) from (P - a person):
+	compute errand rewarding of T from P. [for anything except asking for an item, we redirect to the errand function]
+To compute freebie rewarding of (T - a thing) from (P - a person): [no speech here]
+	if T is unsure clothing and T is unidentified clothing, blandify and reveal T;
+	if T is bra, cupsizefix T;
+	say "[BigNameDesc of P] produces the [T], and places it on the ground in front of you.";
+	now T is in the location of P;
+	compute autotaking T;
+	if P is monster and T is listed in the tradableItems of P, remove T from the tradableItems of P.
+
 To compute errand rewarding of (T - a thing) from (P - a person):
 	if T is off-stage or T is carried by P:
 		say ErrandThanksFlav of T from P;
-		if T is unsure clothing and T is unidentified clothing, blandify and reveal T;
-		if T is bra, cupsizefix T;
-		say "[BigNameDesc of P] produces the [T], and places it on the ground in front of you.";
-		now T is in the location of P;
-		compute autotaking T;
-		if P is monster and T is listed in the tradableItems of P, remove T from the tradableItems of P;
+		compute freebie rewarding of T from P; [this is always a THING so doesn't cause an infinite loop with the redirect above]
 	otherwise:
 		say "[speech style of P]'That's very kind of you, but I'm afraid I don't have the [ShortDesc of T] in my possession any more. Sorry hun, you snooze, you lose.'[roman type][line break]".
 To say ErrandThanksFlav of (T - a thing) from (P - a person):
@@ -3147,7 +3189,7 @@ To decide which number is the requestability of (C - be-my-urinal):
 Definition: be-my-urinal is appropriate:
 	if watersports fetish is 0 or the player is not bursting, decide no;
 	if the noun is wrestler or the noun is wench, decide yes;
-	if the noun is student and the current-rank of the noun >= 5, decide yes;
+	if the noun is trainee and the current-rank of the noun >= 5, decide yes;
 	decide no.
 To say RequestFlav of (C - be-my-urinal):
 	say "'I really need to pee... Would you mind letting me use your mouth?'".
@@ -3175,7 +3217,7 @@ To decide which number is the requestability of (C - be-my-diaper):
 Definition: be-my-diaper is appropriate:
 	if watersports fetish is 0 or the player is not bursting, decide no;
 	if the noun is wrestler or the noun is adult baby slave, decide yes;
-	if diaper quest is 1 and the noun is student and the current-rank of the noun >= 5, decide yes;
+	if diaper quest is 1 and the noun is trainee and the current-rank of the noun >= 5, decide yes;
 	decide no.
 To say RequestFlav of (C - be-my-diaper):
 	say "'I really need to pee... Would you mind letting me use your diaper?'".
@@ -3202,11 +3244,14 @@ To decide which number is the requestability of (C - unlock-my-clothing):
 Definition: unlock-my-clothing is appropriate:
 	if use-your-key is appropriate, decide no;
 	if the unlock-clothing-target of unlock-my-clothing is a clothing:
-		if the unlock-clothing-target of unlock-my-clothing is worn locked clothing, decide no;
-		repeat with P running through people:
-			if the current-reward of P is unlock-my-clothing, now the current-reward of P is no-reward;
-		now the unlock-clothing-target of unlock-my-clothing is nothing;
+		if the unlock-clothing-target of unlock-my-clothing is not worn or the unlock-clothing-target of unlock-my-clothing is not locked: [if the live errand is now pointless, wipe it from existing errands]
+			repeat with P running through people:
+				if the current-reward of P is unlock-my-clothing:
+					now the current-reward of P is no-reward;
+					now the current-errand of P is no-errand;
+			now the unlock-clothing-target of unlock-my-clothing is nothing;
 	if the noun is generic-unlocker monster:
+		if the unlock-clothing-target of unlock-my-clothing is clothing, decide yes; [has to be the same item otherwise we'll lose track of the existing live request]
 		repeat with C running through worn locked clothing:
 			if bondage protection > 0 or the number of unlock-keys covering C is 0:
 				now the unlock-clothing-target of unlock-my-clothing is C;
@@ -3285,6 +3330,11 @@ To consider (T - talk-request) for (M - a monster):
 		now the printed name of T is the substituted form of "Request something from [him of M]...";
 		set next numerical response to the substituted form of "[printed name of T]";
 
+To consider (T - search-request) for (M - a monster):
+	if M is familiar and M is friendly:
+		now the printed name of T is the substituted form of "Request [he of M] search for something specific...";
+		set next numerical response to the substituted form of "[printed name of T]";
+
 To execute (T - talk-request) for (M - a monster):
 	reset multiple choice questions;
 	now errand-giver is M;
@@ -3315,6 +3365,10 @@ To execute (T - talk-request) for (M - a monster):
 			say "[speech style of M]'I have nothing I can teach you right now.'[roman type][line break]";
 		otherwise if M is woman-player and R is not a requestable:
 			say "[speech style of M]'If I could afford to, I'd give you that for free.'[roman type][line break]";
+		otherwise if M is matron and (R is use-your-key or R is a specific-key):
+			compute full unlock assessment of M;
+		otherwise if the request-cooldown of M > 0:
+			say "[speech style of M]'I just gave you something. Maybe slow down with the requests.'[roman type][line break]";
 		otherwise if the current-errand of M is no-errand:
 			now the current-reward of M is R;
 			let CH be the charisma of the player;
@@ -3325,10 +3379,11 @@ To execute (T - talk-request) for (M - a monster):
 			if debuginfo > 0, say "[input-style]Errand needed check: [if RR is 9999]Request level ([RQ]) too high for player with a charisma score of [CH]; automatic success. Errand is required.[otherwise]Request level d[RQ] ([RR]) | [CH].5 player charisma[end if][roman type][line break]";
 			if CH >= RR:
 				say RequestAcceptanceForFree of M;
-				compute errand rewarding of R from M;
+				compute freebie rewarding of R from M;
 				if R is listed in the tradableItems of M, remove R from the tradableItems of M;
-				say "[one of]Wow! Being extra-charismatic has really paid off[or]Once again, your high charisma score has scored you a freebie[stopping]!";
+				say RequestAcceptanceForFreeFlav of M;
 				now the current-reward of M is no-reward;
+				now the request-cooldown of M is 300;
 			otherwise:
 				choose an errand for M;
 				if the current-errand of M is no-errand:
@@ -3365,5 +3420,8 @@ To say RequestDuplicationRejection of (M - a monster):
 
 To say RequestAcceptanceForFree of (M - a monster):
 	say "[speech style of M]'[one of]Ugh... I'm probably being too kind, but go on, I'll [RewardFlav of M][or]Just this once, I'll [RewardFlav of M] for free[or]I don't need anything in return to [RewardFlav of M][or]No worries, I'll [RewardFlav of M]. You can just owe me one[in random order].'[roman type][line break]".
+
+To say RequestAcceptanceForFreeFlav of (M - a monster):
+	say "[one of]Wow! Being extra-charismatic has really paid off[or]Once again, your high charisma score has scored you a freebie[stopping]!".
 
 Conversation ends here.

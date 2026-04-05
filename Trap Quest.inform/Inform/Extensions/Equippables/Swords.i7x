@@ -463,7 +463,7 @@ To compute periodic effect of (C - gladiator-sword):
 		say "You are forced to immediately drop it to the ground.";
 		now C is in the location of the player.
 
-To compute school periodic effect of (C - gladiator-sword):
+To compute facility periodic effect of (C - gladiator-sword):
 	compute periodic effect of C.
 
 This is the gladiator sword wants puppies to breathe rule:

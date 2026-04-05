@@ -179,7 +179,7 @@ Definition: green-thong is green themed: decide yes.
 To decide which number is the crotch-tightness of (C - green-thong):
 	decide on 4.
 
-black-lace-thong is a thong. black-lace-thong is unique. black-lace-thong is silk. The text-shortcut of black-lace-thong is "blth". Understand "black", "lace" as black-lace-thong.
+black-lace-thong is a thong. black-lace-thong is unique. black-lace-thong is crotch-assless. black-lace-thong is silk. The text-shortcut of black-lace-thong is "blth". Understand "black", "lace" as black-lace-thong.
 Definition: black-lace-thong is class-relevant:
 	if the class of the player is stripper, decide yes;
 	decide no.
@@ -188,9 +188,9 @@ Definition: black-lace-thong is whore themed:
 	if black-lace-thong is monified, decide yes;
 	decide no.
 To say selfexamineuniquetitle of (G - black-lace-thong):
-	say "black lace thong".
+	say "backless lace thong".
 To say UniqueClothingDesc of (G - black-lace-thong):
-	say "A sexy black thong with a waistband that's low at the front and high at the back to accentuate the wearer's hips[if G is monified]. Several paper bills are sewn into the crotch section in a manner that makes it look like they have been tucked in[end if]. You can sense that it makes your hip-based seductive acts more stimulating, but only when it is completely visible.".
+	say "A sexy black thong with a waistband that's low at the front and high at the back to accentuate the wearer's hips. The crotch section ends before [if G is worn]your[otherwise]the wearer[']s[end if] [asshole][if G is monified]. Several paper bills are sewn into the crotch section in a manner that makes it look like they have been tucked in[end if]. You can sense that it makes your hip-based seductive acts more stimulating, but only when it is completely visible.".
 Definition: black-lace-thong is black themed: decide yes.
 Definition: black-lace-thong is fetish appropriate:
 	if diaper quest is 0, decide yes;

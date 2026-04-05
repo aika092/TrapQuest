@@ -348,7 +348,8 @@ The strongDoom random rule is listed in the random handicap rules.
 
 
 To decide which number is realisticArms:
-	if the player is in a predicament room and (the player is not in Predicament01 or current-predicament is vibe-photo-predicament or current-predicament is snitch-predicament) and the player is not in Predicament20, decide on 1;
+	if playerRegion is not facility, decide on 0; [minimises computational expense when not in the facility]
+	if the player is in a predicament room and current-predicament is realistic-arms-requiring and (the player is not in Predicament01 or current-predicament is vibe-photo-predicament or current-predicament is snitch-predicament) and the player is not in Predicament20, decide on 1;
 	decide on 0.
 	[if tutorial is 1, decide on 0;
 	if choice in row 81 of the Table of Player Options <= 0, decide on 0;

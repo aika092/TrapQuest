@@ -68,7 +68,7 @@ Chapter - Quest
 
 follow-me-quest is a headgear-clothing-quest.
 
-Definition: follow-me-quest is school-disabled: decide yes.
+Definition: follow-me-quest is facility-disabled: decide yes.
 
 To uniquely set up (C - cat-ears):
 	now the quest of C is follow-me-quest.

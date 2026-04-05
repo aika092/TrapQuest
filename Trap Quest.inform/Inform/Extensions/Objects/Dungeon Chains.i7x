@@ -1,11 +1,11 @@
 Dungeon Chains by Objects begins here.
 
-dungeon chains is an ankle bond. dungeon chains is in School34. dungeon chains is sure. dungeon chains is identified. dungeon chains is stuck.
+dungeon chains is an ankle bond. dungeon chains is in Facility34. dungeon chains is sure. dungeon chains is identified. dungeon chains is stuck.
 
 Definition: dungeon chains is immune to change: decide yes.
 Definition: dungeon chains is actually summonable: decide no.
 
-Figure of dungeon chains is the file "Env/School/dungeonchains1.jpg".
+Figure of dungeon chains is the file "Env/Facility/dungeonchains1.jpg".
 
 To decide which figure-name is the examine-image of (C - dungeon chains):
 	decide on figure of dungeon chains.

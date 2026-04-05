@@ -146,8 +146,8 @@ To Set Up The Dungeon:
 			set up M;
 			if M is not in a placed labyrinth room, now M is in a random placed sandy room;
 	if a random number between 1 and 3 is 1, now gladiatorcurse is 1;
-	set up the school;
-	now the destination of dungeon portal is the school;
+	set up the facility;
+	now the destination of dungeon portal is the facility;
 	now DogPetName is the substituted form of "[PossiblePetName]";
 	if debugmode is 0 and loading scenes is 1, clear the screen.
 

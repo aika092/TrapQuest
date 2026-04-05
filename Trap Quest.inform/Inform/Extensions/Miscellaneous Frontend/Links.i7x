@@ -225,7 +225,7 @@ Definition: yourself is consenting:
 	if inputNumber is 89 or inputNumber is 121, decide yes;
 	decide no.
 
-bigGameLoop is a number that varies. [If this is above 0, we are flagging that a long series of yes/no questions are about to be asked, and there's no need to refresh the map window between each one. We must remember to set it back to 0 and refresh the windows at the end of the lesson or whatever it is. Easiest way is with a 'conclude consenting' after 'now bigGameLoop is 0'.
+bigGameLoop is a number that varies. [If this is above 0, we are flagging that a long series of yes/no questions are about to be asked, and there's no need to refresh the map window between each one. We must remember to set it back to 0 and refresh the windows at the end of the training sesson or whatever it is. Easiest way is with a 'conclude consenting' after 'now bigGameLoop is 0'.
 0: Normal behaviour
 1: Skip refreshing map window
 2: Skip refreshing map window, including after multiple choice
@@ -235,6 +235,7 @@ bigGameLoop is a number that varies. [If this is above 0, we are flagging that a
 
 To conclude consenting:
 	now currentlyConsenting is 0;
+	now emptyYesNoBG is false;
 	if gameover-flag is 0:
 		[say "temporaryYesNoBackground is [temporaryYesNoBackground]. temporaryYesNoResetNeeded is [if temporaryYesNoResetNeeded is false]not [end if]true.";]
 		if temporaryYesNoResetNeeded is true and temporaryYesNoBackground is not figure of no-image-yet, now temporaryYesNoBackground is figure of small image;
@@ -260,8 +261,8 @@ Definition: yourself is bimbo consenting:
 	if the player is consenting:
 		decide yes;
 	otherwise:
-		if the player is not in a predicament room and (pledge-lesson-yes is implanted or the bimbo of the player >= a random number between 16 and 20):
-			say "[if pledge-lesson-yes is implanted]The magic pledge activates.[line break][second custom style][otherwise][second custom style]Huh? [end if]Good [boy of the player]s always say yes! I pick yes![roman type][line break]";
+		if the player is not in a predicament room and (pledge-training-yes is implanted or the bimbo of the player >= a random number between 16 and 20):
+			say "[if pledge-training-yes is implanted]The magic pledge activates.[line break][second custom style][otherwise][second custom style]Huh? [end if]Good [boy of the player]s always say yes! I pick yes![roman type][line break]";
 			decide yes;
 		decide no.
 
@@ -277,60 +278,64 @@ Definition: yourself is reverse bimbo consenting:
 
 temporaryYesNoResetNeeded is initially true.
 
+emptyYesNoBG is initially false.
+
 To render YesNoBackground:
-	let F be YesNoBackground;
-	if F is Figure of PokerCardDraw:
-		display poker interface;
-	otherwise if F is not Figure of no-image-yet:
-		let H be map-window-height;
-		let W be map-window-width;
-		repeat with G running through g-animated animation tracks:
-			now G is g-paused; [stops things like the need-to-use-toilet animations from animating on top] [GUITODO - might no longer be necessary]
-		let XRatio be (W * 1.0) / the pixel-width of F;
-		let FY be the pixel-height of F * XRatio;
-		let FYi be FY to the nearest whole number;
-		let FXi be W;
-		let X1 be map-window-x-root;
-		let Y1 be 0;
-		if FYi > H:
-			let YRatio be (H * 1.0) / the pixel-height of F;
-			let FX be the pixel-width of F * YRatio;
-			now FXi is FX to the nearest whole number;
-			now FYi is H;
-			increase X1 by (W - FXi) / 2; [centred horizontally]
-		otherwise:
-			increase Y1 by (H - FYi) / 2; [centred vertically]
-		clear the map zone; [GUITODOMAYBE a bad idea?]
-		display the image F in the graphics-window at X1 by Y1 with dimensions FXi by FYi.
+	if emptyYesNoBG is false:
+		let F be YesNoBackground;
+		if F is Figure of PokerCardDraw:
+			display poker interface;
+		otherwise if F is not Figure of no-image-yet:
+			let H be map-window-height;
+			let W be map-window-width;
+			repeat with G running through g-animated animation tracks:
+				now G is g-paused; [stops things like the need-to-use-toilet animations from animating on top] [GUITODO - might no longer be necessary]
+			let XRatio be (W * 1.0) / the pixel-width of F;
+			let FY be the pixel-height of F * XRatio;
+			let FYi be FY to the nearest whole number;
+			let FXi be W;
+			let X1 be map-window-x-root;
+			let Y1 be 0;
+			if FYi > H:
+				let YRatio be (H * 1.0) / the pixel-height of F;
+				let FX be the pixel-width of F * YRatio;
+				now FXi is FX to the nearest whole number;
+				now FYi is H;
+				increase X1 by (W - FXi) / 2; [centred horizontally]
+			otherwise:
+				increase Y1 by (H - FYi) / 2; [centred vertically]
+			clear the map zone; [GUITODOMAYBE a bad idea?]
+			display the image F in the graphics-window at X1 by Y1 with dimensions FXi by FYi.
 
 To render YesNoButtons:
-	let F be YesNoBackground;
-	if F is Figure of no-image-yet, display entire map; [We have flagged that we still want to show the player the map in the background]
-	otherwise clear the map zone;
-	zero map-link-table;
-	zero map-button-table;
-	if F is Figure of PokerCardDraw:
-		display poker interface;
-	otherwise:
-		let H be map-window-height;
-		let W be map-window-width;
-		render YesNoBackground;
-		[Calculate button image sizes and locations]
-		let buttonSize be H / 3;
-		if W < H, now buttonSize is W / 3;
-		let Z be (W - (buttonSize * 2)) / 3;
-		let X be Z + map-window-x-root;
-		let Y be (H / 2) - (buttonSize / 2);
-		if actual inline hyperlinks >= 1 and YesNoPreference > 0:
-			display the image Figure of YesButton in the graphics-window at X by Y with dimensions buttonSize by buttonSize;
-			set a graphlink in the graphics-window identified as hypermapyes from X by Y to (X + buttonSize) by (Y + buttonSize) as "yes";
-			draw a box lightModeFullGreen in the graphics-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
-			increase X by buttonSize + Z;
-			display the image Figure of NoButton in the graphics-window at X by Y with dimensions buttonSize by buttonSize;
-			set a graphlink in the graphics-window identified as hypermapno from X by Y to (X + buttonSize) by (Y + buttonSize) as "no";
-			draw a box lightModeFullRed in the graphics-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
-			repeat through the Table of Graphlink Glulx Replacement Commands: [if there's a big skip hyperlink taking up the whole area, remove it]
-				if linkid entry is hypermapskip, blank out the whole row.
+	if emptyYesNoBG is false:
+		let F be YesNoBackground;
+		if F is Figure of no-image-yet, display entire map; [We have flagged that we still want to show the player the map in the background]
+		otherwise clear the map zone;
+		zero map-link-table;
+		zero map-button-table;
+		if F is Figure of PokerCardDraw:
+			display poker interface;
+		otherwise:
+			let H be map-window-height;
+			let W be map-window-width;
+			render YesNoBackground;
+			[Calculate button image sizes and locations]
+			let buttonSize be H / 3;
+			if W < H, now buttonSize is W / 3;
+			let Z be (W - (buttonSize * 2)) / 3;
+			let X be Z + map-window-x-root;
+			let Y be (H / 2) - (buttonSize / 2);
+			if actual inline hyperlinks >= 1 and YesNoPreference > 0:
+				display the image Figure of YesButton in the graphics-window at X by Y with dimensions buttonSize by buttonSize;
+				set a graphlink in the graphics-window identified as hypermapyes from X by Y to (X + buttonSize) by (Y + buttonSize) as "yes";
+				draw a box lightModeFullGreen in the graphics-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
+				increase X by buttonSize + Z;
+				display the image Figure of NoButton in the graphics-window at X by Y with dimensions buttonSize by buttonSize;
+				set a graphlink in the graphics-window identified as hypermapno from X by Y to (X + buttonSize) by (Y + buttonSize) as "no";
+				draw a box lightModeFullRed in the graphics-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
+				repeat through the Table of Graphlink Glulx Replacement Commands: [if there's a big skip hyperlink taking up the whole area, remove it]
+					if linkid entry is hypermapskip, blank out the whole row.
 
 
 Part 3 - Multiple Choice
@@ -458,7 +463,7 @@ To say unique-verb-desc of (T - mystical wardrobe):
 To say unique-verb-desc of (T - a clothing):
 	let H be a random worn bag of holding;
 	let Z be a random carried magic-zipper;
-	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if T is held and T is not piercing and (T is not cursed or T is not worn)] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise if T is not held] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if T is worn and T is not piercing and (T is not cursed or newbie tips is 1)] [link][bracket]r[close bracket][as]rm [text-shortcut of T][end link][otherwise if T is not worn] [link][bracket]we[close bracket][as]we [text-shortcut of T][end link][end if][displacelinks of T][if the player is in Dungeon28 or the player is in Tutorial05] [link][bracket]altar[close bracket][as]put [text-shortcut of T] on altar[end link][end if][if the player is in Woods30 and T is not worn and T is dirty and the giant-statue is active] [link][bracket]statue[close bracket][as]place [text-shortcut of T] in front of statue[end link][end if][if the player is in Dungeon33 and T is not worn and T is dirty and the summoning-circle is active] [link][bracket]circle[close bracket][as]throw [text-shortcut of T] in circle[end link][end if][if the player is in Hotel19 and T is worn and the charge of a random knife <= 0] [link][bracket]cut[close bracket][as]cut [text-shortcut of T] with knife[end link][end if][if (the player is in Dungeon35 or the player is in Woods05 or the player is in Hotel19 or the player is in Mansion25 or the player is in School21) and T is carried and T is dirty] [link][bracket]wash[close bracket][as]wash [text-shortcut of T] in water[end link][end if][wipelinks of T][if there is glue in the location of the player and the stickiness of the player > 0 and T is not glued] [link][bracket]brush glue[close bracket][as]rub glue on [text-shortcut of T][end link][end if][if T is carried and H is a thing and the hunger-declared of H > 0] [link][bracket]feed bag[close bracket][as]feed [text-shortcut of T] to [text-shortcut of H][end link][end if][if T is diaper and the known-urine-soak of T + the perceived-mess of T > 0 and witch is in the location of the player and witch is friendly] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to [text-shortcut of witch][end link][end if][if T is crotch-intact and Z is magic-zipper] [link][bracket]add zip[close bracket][as]put [text-shortcut of Z] on [text-shortcut of T][end link][end if]".
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if T is held and T is not piercing and (T is not cursed or T is not worn)] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise if T is not held] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if T is worn and T is not piercing and (T is not cursed or newbie tips is 1)] [link][bracket]r[close bracket][as]rm [text-shortcut of T][end link][otherwise if T is not worn] [link][bracket]we[close bracket][as]we [text-shortcut of T][end link][end if][displacelinks of T][if the player is in Dungeon28 or the player is in Tutorial05] [link][bracket]altar[close bracket][as]put [text-shortcut of T] on altar[end link][end if][if the player is in Woods30 and T is not worn and T is dirty and the giant-statue is active] [link][bracket]statue[close bracket][as]place [text-shortcut of T] in front of statue[end link][end if][if the player is in Dungeon33 and T is not worn and T is dirty and the summoning-circle is active] [link][bracket]circle[close bracket][as]throw [text-shortcut of T] in circle[end link][end if][if the player is in Hotel19 and T is worn and the charge of a random knife <= 0] [link][bracket]cut[close bracket][as]cut [text-shortcut of T] with knife[end link][end if][if (the player is in Dungeon35 or the player is in Woods05 or the player is in Hotel19 or the player is in Mansion25 or the player is in Facility21) and T is carried and T is dirty] [link][bracket]wash[close bracket][as]wash [text-shortcut of T] in water[end link][end if][wipelinks of T][if there is glue in the location of the player and the stickiness of the player > 0 and T is not glued] [link][bracket]brush glue[close bracket][as]rub glue on [text-shortcut of T][end link][end if][if T is carried and H is a thing and the hunger-declared of H > 0] [link][bracket]feed bag[close bracket][as]feed [text-shortcut of T] to [text-shortcut of H][end link][end if][if T is diaper and the known-urine-soak of T + the perceived-mess of T > 0 and witch is in the location of the player and witch is friendly] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to [text-shortcut of witch][end link][end if][if T is crotch-intact and Z is magic-zipper] [link][bracket]add zip[close bracket][as]put [text-shortcut of Z] on [text-shortcut of T][end link][end if]".
 
 To say displacelinks of (T - a clothing):
 	say "[if T is skirted and T is worn and T is displacable and T is crotch-in-place] [link][bracket]raise skirt[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is worn and T is displacable and T is crotch-in-place] [link][bracket]displace[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is skirted and T is worn and T is displacable] [link][bracket]fix skirt[close bracket][as]replace [text-shortcut of T][end link][otherwise if T is worn and T is displacable] [link][bracket]replace[close bracket][as]replace [text-shortcut of T][end link][end if][if diaper quest is 0 and T is currently top-displacable and T is actually breast covering] [link][bracket]expose chest[close bracket][as]pull open [text-shortcut of T][end link][otherwise if diaper quest is 0 and T is worn top-displaced clothing] [link][bracket]cover chest[close bracket][as]fix [text-shortcut of T][end link][end if][if T is worn and T is crotch-zipped] [link][bracket]unzip[close bracket][as]unzip [text-shortcut of T][end link][otherwise if T is worn and T is crotch-unzipped] [link][bracket]zip[close bracket][as]zip [text-shortcut of T][end link][end if]".
@@ -671,11 +676,11 @@ To compute smart links:
 		now the noun is catalogued;
 	now Neighbour Finder is the location of the player;
 	say "[line break]";
-	if the player is virtual or the player is in Tutorial04, say "[if the player is prone and the player is not immobile][link]stand[end link] [link]rest[end link] [end if][if the player is upright][link]kneel[end link] [end if][if the player is in School34][link]long wait[end link][otherwise][link]wait[end link][end if] ";
+	if the player is virtual or the player is in Tutorial04, say "[if the player is prone and the player is not immobile][link]stand[end link] [link]rest[end link] [end if][if the player is upright][link]kneel[end link] [end if][if the player is in Facility34][link]long wait[end link][otherwise][link]wait[end link][end if] ";
 	unless the player is immobile, say "[if west is N-viable][link]west[end link] [end if][if north is N-viable][link]north[end link] [end if][if south is N-viable][link]south[end link] [end if][if east is N-viable][link]east[end link] [end if][if the room up of the location is a room][link]up[end link] [end if][if the room down of the location is a room][link]down[end link] [end if]";
 	if the player is prone and pink-spraybottle is worn and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
-	if the player is in Dungeon35 or the player is in Woods05 or the player is in Mansion25 or the player is in School21:
-		if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0) or the player is in School21, say "[link]enter water[end link] ";
+	if the player is in Dungeon35 or the player is in Woods05 or the player is in Mansion25 or the player is in Facility21:
+		if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0) or the player is in Facility21, say "[link]enter water[end link] ";
 	say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the player is able to automatically masturbate][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player or there is a live thing wrangling a body part) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [otherwise if there is a live thing wrangling a body part][link]escape[end link] [end if][link]look[end link]";
 	if inline hyperlinks >= 3 and the player is not immobile:
 		say "[line break]";

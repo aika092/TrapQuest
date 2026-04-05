@@ -25,7 +25,10 @@ To assign quest to (C - a headgear):
 
 A game universe initialisation rule:
 	repeat with H running through on-stage headgear:
-		set up H. [otherwise they don't get their quests]
+		set up H; [otherwise they don't get their quests]
+		if H is worn:
+			now H is sure;
+			now H is identified.
 
 To compute persistent reward of (Q - a headgear-clothing-quest) on (C - a clothing):
 	if C is cursed:
@@ -115,7 +118,7 @@ To say ShortDesc of (C - a headgear):
 	say "headwear".
 
 To compute hair colour change of (H - a headgear):
-	if frozen hair is 0:
+	if frozen hair is 0 and diaper quest is 0:
 		let flav-said be 0;
 		if the brightness of hair < 3 and H is brightness-positive:
 			say "[if flav-said is 0]You feel your [ShortDesc of H] changing your hair colour, making it[otherwise] and[end if] brighter";
@@ -430,6 +433,7 @@ To UniquePinkWardrobeUnclash (C - a clothing):
 
 Definition: a clothing is uniquely class summonable: decide yes. [needs to match UniquePinkWardrobeUnclash]
 Definition: a clothing is class-relevant: [should we avoid non-unique transformations, and avoid replacing this during an attempted class summon?]
+	if it is sissifying and (the class of the player is sissyclass or (virgincursed > 0 and there is a worn sissifying clothing)), decide yes;
 	if it is latex and the class of the player is latex fetish model, decide yes;
 	decide no.
 

@@ -45,7 +45,8 @@ To decide which number is the stimulation of (O - an object) on (F - a body part
 	decide on 0.
 
 To decide which number is the stimulation of (M - a monster) on (F - a body part):
-	if diaper quest is 1 or F is penis, decide on 4 + (the difficulty of M / 8);
+	if M is masturbating the player, decide on 4 + (the masturbation skill of M / 5);
+	if diaper quest is 1 or F is penis, decide on 4 + (the difficulty of M / 5);
 	if F is fuckhole:
 		let S be 2;
 		if M is penetrating F:
@@ -66,7 +67,7 @@ To decide which number is the stimulation of (T - a thing) on (F - a body part):
 	if wanking is 1, increase X by the masturbation-bonus of T;
 	if F is fuckhole:
 		if the girth of T > 1 or T is insertable:
-			increase X by (the girth of T * 2) / 3;
+			increase X by the square root of (the girth of T);
 		otherwise if diaper quest is 1:
 			increase X by 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
 		if wanking is 0 and T is worn clothing, decrease X by X / 2;
@@ -180,8 +181,8 @@ To communicate struggling of (F - a fuckhole):
 				say ".".
 
 To RuinRoll (F - a fuckhole):
-	let T be a random thing penetrating F;
 	if diaper quest is 0:
+		let T be a random thing penetrating F;
 		let X be the tolerance of F;
 		if X < 1, now X is 1; [Always a small chance of avoiding soreness]
 		if X > 9 and the latex-transformation of the player <= 3, now X is 9; [Minimum chance is 10%]

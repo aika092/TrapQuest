@@ -33,7 +33,7 @@ To decide which number is stomach-period:
 	if the player is in a predicament room: [Happens much more frequently in the predicament world]
 		if suppository > 0, decide on 10;
 		otherwise decide on 30;
-	if the player is in School34 and ex-princess is in the location of the player, decide on 20;
+	if the player is in Facility34 and ex-princess is in the location of the player, decide on 20;
 	let T be 24;
 	if the player is not overly full, now T is T * 2; [48]
 	let R be the number of worn respiration-enhancing wearthings;
@@ -50,7 +50,7 @@ Time in between bladder increases
 To decide which number is bladder-period:
 	if the player is in a predicament room, decide on 23; [Happens much more frequently in the predicament world]
 	if fixed-vibrator is grabbing the player or urinal is grabbing the player, decide on 4;
-	if the player is in School34 and ex-princess is in the location of the player, decide on 23;
+	if the player is in Facility34 and ex-princess is in the location of the player, decide on 23;
 	let T be 16;
 	if the delayed bladder of the player < 5, now T is T * 2; [32]
 	let R be the number of worn respiration-enhancing wearthings;
@@ -89,7 +89,7 @@ Definition: yourself is digesting: [sometimes we don't want digestion to happen]
 An all time based rule (this is the compute stomach rule):
 	if the player is digesting:
 		compute corset strain;
-		if playerRegion is not school:
+		if playerRegion is not facility:
 			repeat with L running through liquid-objects:
 				increase the cold turkey of L by time-seconds;
 				if the relevant taste addiction of L > 13 and the cold turkey of L >= the cold turkey limit of L:
@@ -164,7 +164,7 @@ To compute bladder growth:
 	if xavier-throat-link is 1 and the delayed bladder of the player > 0:
 		bladderup (1 + xavier-belt-link) * the delayed bladder of the player;
 		now the delayed bladder of the player is 0;
-	otherwise if (the remainder after dividing time-earnings by bladder-period < time-seconds or (chess table is grabbing the player and the chess-victor of chess-lesson is 0)) and the delayed bladder of the player > 0:
+	otherwise if (the remainder after dividing time-earnings by bladder-period < time-seconds or (chess table is grabbing the player and the chess-victor of chess-training is 0)) and the delayed bladder of the player > 0:
 		bladderup 1 + xavier-belt-link;
 		decrease the delayed bladder of the player by 1.
 

@@ -429,7 +429,7 @@ A white microskirt is a kind of microskirt. There is 1 latex white microskirt. P
 Definition: a white microskirt is white themed: decide yes.
 A tartan microskirt is a kind of microskirt.
 Definition: a tartan microskirt is class-relevant:
-	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
+	if the class of the player is alchemist and the player is not pigtailed, decide yes;
 	decide no.
 Definition: a tartan microskirt is tartan themed: decide yes.
 brown tartan microskirt is a tartan microskirt. The printed name of brown tartan microskirt is "[clothing-title-before]brown tartan microskirt[clothing-title-after]". The text-shortcut of brown tartan microskirt is "btms". Figure of brown tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt2.png".
@@ -512,7 +512,7 @@ To say ShortDesc of (Y - a miniskirt):
 tartan miniskirt is a miniskirt. tartan miniskirt is unique. Printed name of tartan miniskirt is "[clothing-title-before]tartan miniskirt[clothing-title-after]". The text-shortcut of tartan miniskirt is "tm". Figure of tartan miniskirt is the file "Items/Clothes/Lower/Skirts/Mini/miniskirt2.png".
 
 Definition: tartan miniskirt is class-relevant:
-	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
+	if the class of the player is alchemist and the player is not pigtailed, decide yes;
 	decide no.
 
 To compute class set up of (C - tartan miniskirt):
@@ -523,7 +523,7 @@ To decide which figure-name is the clothing-image of (C - tartan miniskirt):
 	decide on figure of tartan miniskirt.
 
 To say ClothingDesc of (C - tartan miniskirt):
-	say "This tiny apricot skirt is has a tartan pattern, you could imagine a skirt four times the length being part of a school uniform but this version is clearly never acceptable attire. It barely covers your crotch, and even bending over slightly would reveal everything to anyone behind you. It sits very low on your hips, so doesn't even completely cover up most underwear, even when you're standing.".
+	say "This tiny apricot skirt is has a tartan pattern, you could imagine a skirt four times the length being part of a normal smart uniform, but this version is clearly never acceptable attire. It barely covers your crotch, and even bending over slightly would reveal everything to anyone behind you. It sits very low on your hips, so doesn't even completely cover up most underwear, even when you're standing.".
 
 To decide which number is the initial outrage of (C - a miniskirt):
 	decide on 2.

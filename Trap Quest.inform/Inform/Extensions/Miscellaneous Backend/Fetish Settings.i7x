@@ -468,21 +468,21 @@ FETISH MENU ID CHEAT SHEET
 1) Bukkake / Cum Splatter
 2) Pregnancy
 3) Lactation
-4) Watersports
-5) Egg Laying
-6) Air Inflation
-7) Weight Gain
-8) Artificial Enhancements
-9) Extreme Body Proportions
-10) Big Black Cocks
-11) Mythical Creatures
-12) Tentacle Monsters Everywhere
-13) Gross Licking
-14) Condoms
-15) NPC Gender Preference
-16) Alcohol
-17) TG
-18) Infamy
+4) Egg Laying
+5) Air Inflation
+6) Weight Gain
+7) Artificial Enhancements
+8) Extreme Body Proportions
+9) Big Black Cocks
+10) Tentacle Monsters Everywhere
+11) Gross Licking
+12) Condoms
+13) NPC Gender Preference
+14) Infamy
+15) Watersports
+16) Mythical Creatures
+17) Alcohol
+18 or 15) TG
 ]
 
 fetishMenuInProgress is a number that varies.
@@ -621,8 +621,8 @@ Figure of yes_this_time_off_buttons is the file "Special/Menus/FetishSelection/y
 Figure of yes_this_time_on_buttons is the file "Special/Menus/FetishSelection/yes_this_time_on_buttons.png".
 
 To decide which number is fetishSelectionTotalOptions:
-	if the player is sexed male, decide on 18; [THE LAST OPTION MUST BE TG, so it's the one that gets cut off if the player chooses to start female]
-	decide on 17.
+	if the player is sexed male, decide on 15 + (3 * legacy content); [THE LAST OPTION MUST BE TG, so it's the one that gets cut off if the player chooses to start female]
+	decide on 14 + (3 * legacy content).
 
 To decide which number is fetishSelectionTotalButtons:
 	decide on fetishSelectionTotalOptions + 3.
@@ -671,34 +671,34 @@ To decide which number is fetishMenuRow of (X - a number):
 	otherwise if X is 3:
 		now N is 6;
 	otherwise if X is 4:
-		now N is 7;
-	otherwise if X is 5:
 		now N is 8;
-	otherwise if X is 6:
+	otherwise if X is 5:
 		now N is 11;
-	otherwise if X is 7:
+	otherwise if X is 6:
 		now N is 12;
-	otherwise if X is 8:
+	otherwise if X is 7:
 		now N is 13;
-	otherwise if X is 9:
+	otherwise if X is 8:
 		now N is 9;
-	otherwise if X is 10:
+	otherwise if X is 9:
 		now N is 45;
-	otherwise if X is 11:
-		now N is 48;
-	otherwise if X is 12:
+	otherwise if X is 10:
 		now N is 61;
-	otherwise if X is 13:
+	otherwise if X is 11:
 		now N is 83;
-	otherwise if X is 14:
+	otherwise if X is 12:
 		now N is 53;
-	otherwise if X is 15:
+	otherwise if X is 13:
 		now N is 70;
-	otherwise if X is 16:
-		now N is 69;
-	otherwise if X is 17:
+	otherwise if X is 14:
 		now N is 96;
-	otherwise if X is 18:
+	otherwise if legacy content is 1 and X is 15:
+		now N is 7;
+	otherwise if legacy content is 1 and X is 16:
+		now N is 48;
+	otherwise if legacy content is 1 and X is 17:
+		now N is 69;
+	otherwise:
 		now N is 10;
 	decide on N.
 
@@ -721,9 +721,9 @@ To decide which number is convert-to-new-menu (N - a number):
 To compute fetish toggle (D - a direction):
 	let N be fetishMenuRow of current menu selection;
 	if N > 0:
-		if the player is not the donator and (current menu selection is 15 or current menu selection is 16):
-			do nothing; [NPC gender and alcohol are donators only]
-		otherwise if current menu selection is 13 or current menu selection is 14 or current menu selection is 15:
+		if the player is not the donator and current menu selection is 13:
+			do nothing; [NPC gender is donators only]
+		otherwise if current menu selection is 11 or current menu selection is 12 or current menu selection is 13:
 			if D is down:
 				if choice in row N of the Table of Player Options is 6:
 					now choice in row N of the Table of Player Options is 0;
@@ -779,48 +779,47 @@ To decide which figure-name is fetish menu banner:
 	otherwise if CMS is 3:
 		decide on figure of lactation;
 	otherwise if CMS is 4:
-		decide on figure of watersports;
-	otherwise if CMS is 5:
 		decide on figure of Egg Laying;
-	otherwise if CMS is 6:
+	otherwise if CMS is 5:
 		decide on figure of Air Inflation;
-	otherwise if CMS is 7:
+	otherwise if CMS is 6:
 		decide on figure of Weight Gain;
-	otherwise if CMS is 8:
+	otherwise if CMS is 7:
 		decide on figure of AI Enhance;
-	otherwise if CMS is 9:
+	otherwise if CMS is 8:
 		decide on figure of Extreme Body;
-	otherwise if CMS is 10:
+	otherwise if CMS is 9:
 		decide on figure of Big Black Cocks;
-	otherwise if CMS is 11:
-		if egg laying fetish is 1, decide on figure of Mythical Creatures Eggs;
-		decide on figure of Mythical Creatures;
-	otherwise if CMS is 12:
+	otherwise if CMS is 10:
 		decide on figure of Tentacle;
-	otherwise if CMS is 13:
+	otherwise if CMS is 11:
 		if grossness fetish <= 1:
 			decide on figure of Gross Licking 1;
 		otherwise if grossness fetish is 2:
 			decide on figure of Gross Licking 2;
 		otherwise:
 			decide on figure of Gross Licking 3;
-	otherwise if CMS is 14:
+	otherwise if CMS is 12:
 		if condom fetish <= 1:
 			decide on figure of Condoms 1;
 		otherwise if condom fetish is 2:
 			decide on figure of Condoms 2;
 		otherwise:
 			decide on figure of Condoms 3;
-	otherwise if CMS is 15:
+	otherwise if CMS is 13:
 		if the player is not the donator, decide on figure of NPC Gender Patreon;
 		if lady fetish is 0, decide on figure of NPC Gender 2;
 		if lady fetish is 1, decide on figure of NPC Gender 3;
 		decide on figure of NPC Gender 1;
-	otherwise if CMS is 16:
-		if the player is not the donator, decide on figure of Alcohol Patreon;
-		decide on figure of Alcohol;
-	otherwise if CMS is 17:
+	otherwise if CMS is 14:
 		decide on figure of Infamy;
+	otherwise if legacy content is 1 and CMS is 15:
+		decide on figure of watersports;
+	otherwise if legacy content is 1 and CMS is 16:
+		if egg laying fetish is 1, decide on figure of Mythical Creatures Eggs;
+		decide on figure of Mythical Creatures;
+	otherwise if legacy content is 1 and CMS is 17:
+		decide on figure of Alcohol;
 	otherwise:
 		decide on figure of TG.
 
@@ -900,15 +899,6 @@ To render full new fetish selection menu:
 				now F is figure of lactation_always;
 		otherwise if X is 4:
 			if C is -1:
-				now F is figure of watersports_never;
-			otherwise if C is 0:
-				now F is figure of watersports_not_now;
-			otherwise if C is 1:
-				now F is figure of watersports_this_time;
-			otherwise:
-				now F is figure of watersports_always;
-		otherwise if X is 5:
-			if C is -1:
 				now F is figure of egg_laying_never;
 			otherwise if C is 0:
 				now F is figure of egg_laying_not_now;
@@ -916,7 +906,7 @@ To render full new fetish selection menu:
 				now F is figure of egg_laying_this_time;
 			otherwise:
 				now F is figure of egg_laying_always;
-		otherwise if X is 6:
+		otherwise if X is 5:
 			if C is -1:
 				now F is figure of air_inflation_never;
 			otherwise if C is 0:
@@ -925,7 +915,7 @@ To render full new fetish selection menu:
 				now F is figure of air_inflation_this_time;
 			otherwise:
 				now F is figure of air_inflation_always;
-		otherwise if X is 7:
+		otherwise if X is 6:
 			if C is -1:
 				now F is figure of weight_gain_never;
 			otherwise if C is 0:
@@ -934,7 +924,7 @@ To render full new fetish selection menu:
 				now F is figure of weight_gain_this_time;
 			otherwise:
 				now F is figure of weight_gain_always;
-		otherwise if X is 8:
+		otherwise if X is 7:
 			if C is -1:
 				now F is figure of AI_Enhance_never;
 			otherwise if C is 0:
@@ -943,7 +933,7 @@ To render full new fetish selection menu:
 				now F is figure of AI_Enhance_this_time;
 			otherwise:
 				now F is figure of AI_Enhance_always;
-		otherwise if X is 9:
+		otherwise if X is 8:
 			if C is -1:
 				now F is figure of extreme_body_never;
 			otherwise if C is 0:
@@ -952,7 +942,7 @@ To render full new fetish selection menu:
 				now F is figure of extreme_body_this_time;
 			otherwise:
 				now F is figure of extreme_body_always;
-		otherwise if X is 10:
+		otherwise if X is 9:
 			if C is -1:
 				now F is figure of big_black_cocks_never;
 			otherwise if C is 0:
@@ -961,16 +951,7 @@ To render full new fetish selection menu:
 				now F is figure of big_black_cocks_this_time;
 			otherwise:
 				now F is figure of big_black_cocks_always;
-		otherwise if X is 11:
-			if C is -1:
-				now F is figure of mythical_never;
-			otherwise if C is 0:
-				now F is figure of mythical_not_now;
-			otherwise if C is 1:
-				now F is figure of mythical_this_time;
-			otherwise:
-				now F is figure of mythical_always;
-		otherwise if X is 12:
+		otherwise if X is 10:
 			if C is -1:
 				now F is figure of tentacle_never;
 			otherwise if C is 0:
@@ -979,7 +960,7 @@ To render full new fetish selection menu:
 				now F is figure of tentacle_this_time;
 			otherwise:
 				now F is figure of tentacle_always;
-		otherwise if X is 13:
+		otherwise if X is 11:
 			if C <= 1:
 				decrease C by 1; [this function expects -1 and 0 for never / not now]
 			otherwise if the remainder after dividing C by 2 is 1:
@@ -1001,7 +982,7 @@ To render full new fetish selection menu:
 				now F is figure of gross_licking_3_this_time;
 			otherwise:
 				now F is figure of gross_licking_3_always;
-		otherwise if X is 14:
+		otherwise if X is 12:
 			if C <= 1:
 				decrease C by 1; [this function expects -1 and 0 for never / not now]
 			otherwise if the remainder after dividing C by 2 is 1:
@@ -1023,7 +1004,7 @@ To render full new fetish selection menu:
 				now F is figure of condoms_3_this_time;
 			otherwise:
 				now F is figure of condoms_3_always;
-		otherwise if X is 15:
+		otherwise if X is 13:
 			if C <= 1:
 				decrease C by 1; [this function expects -1 and 0 for never / not now]
 			otherwise if the remainder after dividing C by 2 is 1:
@@ -1041,16 +1022,7 @@ To render full new fetish selection menu:
 				now F is figure of NPC_gender_2_this_time;
 			otherwise:
 				now F is figure of NPC_gender_2_always;
-		otherwise if X is 16:
-			if C is -1 or the player is not the donator:
-				now F is figure of alcohol_never;
-			otherwise if C is 0:
-				now F is figure of alcohol_not_now;
-			otherwise if C is 1:
-				now F is figure of alcohol_this_time;
-			otherwise:
-				now F is figure of alcohol_always;
-		otherwise if X is 17:
+		otherwise if X is 14:
 			if C is -1:
 				now F is figure of infamy_never;
 			otherwise if C is 0:
@@ -1059,7 +1031,34 @@ To render full new fetish selection menu:
 				now F is figure of infamy_this_time;
 			otherwise:
 				now F is figure of infamy_always;
-		otherwise if X is 18:
+		otherwise if legacy content is 1 and X is 15:
+			if C is -1:
+				now F is figure of watersports_never;
+			otherwise if C is 0:
+				now F is figure of watersports_not_now;
+			otherwise if C is 1:
+				now F is figure of watersports_this_time;
+			otherwise:
+				now F is figure of watersports_always;
+		otherwise if legacy content is 1 and X is 16:
+			if C is -1:
+				now F is figure of mythical_never;
+			otherwise if C is 0:
+				now F is figure of mythical_not_now;
+			otherwise if C is 1:
+				now F is figure of mythical_this_time;
+			otherwise:
+				now F is figure of mythical_always;
+		otherwise if legacy content is 1 and X is 17:
+			if C is -1:
+				now F is figure of alcohol_never;
+			otherwise if C is 0:
+				now F is figure of alcohol_not_now;
+			otherwise if C is 1:
+				now F is figure of alcohol_this_time;
+			otherwise:
+				now F is figure of alcohol_always;
+		otherwise:
 			if C is -1:
 				now F is figure of TG_never;
 			otherwise if C is 0:
@@ -1113,7 +1112,7 @@ To render full new fetish selection menu:
 	let buttonNR be 101.0 * W  / 1920.0;
 	let buttonN be buttonNR to the nearest whole number;
 	[render 4 buttons, and add links]
-	unless the player is not the donator and (CMS is 15 or CMS is 16):
+	unless the player is not the donator and CMS is 13:
 		repeat with X running from FBTN to BTNS:
 			if X is 1:
 				if CC < 0, now F is figure of never_on_buttons;

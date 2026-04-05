@@ -473,7 +473,7 @@ To compute anal sex of (M - gargoyle):
 	if there is a lubricant covering asshole, increase L by 2;
 	if the reaction of the player is 0, decrease L by 1;
 	if the tail-depth of M is 0:
-		say "[one of]The tip of [FuckerDesc of M]'s tail continues to press against your tight sphincter[or][BigFuckerDesc of M] continues to push the tip of [his of M] tail against your sphincter.[or][BigFuckerDesc of M] stares at you curiously as [he of M] continues trying to force open your sphincter with [his of M] tail.[or][BigFuckerDesc of M] gives you a curious look as [his of M] tail continues pressing against your tight sphincter.[in random order]";
+		say "[one of]The tip of [FuckerDesc of M]'s tail continues to press against your tight sphincter.[or][BigFuckerDesc of M] continues to push the tip of [his of M] tail against your sphincter.[or][BigFuckerDesc of M] stares at you curiously as [he of M] continues trying to force open your sphincter with [his of M] tail.[or][BigFuckerDesc of M] gives you a curious look as [his of M] tail continues pressing against your tight sphincter.[in random order]";
 		if L > the girth of M:
 			let N be a random number between 1 and 2;
 			if the openness of asshole is 1, now N is 1;

@@ -47,6 +47,9 @@ neckwear wearability rules is a rulebook. The wearability rules of neckwear is u
 This is the neckwear already worn rule:
 	repeat with O running through worn neck covering clothing:
 		if summoning is 0 and autowear is false, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+		rule fails;
+	repeat with O running through worn neckwear:
+		if summoning is 0 and autowear is false, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
 		rule fails.
 The neckwear already worn rule is listed in the neckwear wearability rules.
 
@@ -123,7 +126,7 @@ To reflect on (A - clanking-cowbell):
 Carry out going when there is a worn cowbelled clothing:
 	if the player is upright or a random number between 1 and 5 is 1, compute clank.
 
-Report resisting when there is a worn cowbelled clothing:
+Report submitting when there is a worn cowbelled clothing:
 	compute clank.
 
 Report submitting when there is a worn cowbelled clothing:
@@ -193,7 +196,7 @@ To decide which figure-name is clothing-image of (C - cowbell):
 	decide on figure of cowbell.
 
 To say ClothingDesc of (C - cowbell):
-	say "This large metal bell is connected to a white collar by a pink ribbon. When worn, this bell makes lots of noise and makes it much easier for monsters to notice you and find you. You realise that [bold type]walking and resisting[roman type] will probably create a lot of noise whereas [bold type]crawling and submitting[roman type] will make it much more likely that you can avoid the bell ringing. However you can also sense that it has the magic ability to prevent the wearer from rapidly gaining fatigue when their breasts are too full of milk.".
+	say "This large metal bell is connected to a white collar by a pink ribbon. When worn, this bell makes lots of noise and makes it much easier for monsters to notice you and find you. You realise that [bold type]walking and submitting during sex[roman type] will probably create a lot of noise whereas [bold type]crawling and holding back during sex[roman type] will make it much more likely that you can avoid the bell ringing. However you can also sense that it has the magic ability to prevent the wearer from rapidly gaining fatigue when their breasts are too full of milk.".
 To say ShortDesc of (C - cowbell):
 	say "cowbell".
 
@@ -222,7 +225,7 @@ To decide which figure-name is clothing-image of (C - meowcowbell):
 	decide on figure of meowcowbell.
 
 To say ClothingDesc of (C - meowcowbell):
-	say "This large shiny metal cowbell is connected to a brown collar. Instead of a single clanger on the inside, there are several small catbells. When worn, this bell makes lots of noise and makes it much easier for monsters to notice you and find you. You realise that [bold type]walking and resisting[roman type] will probably create a lot of noise whereas [bold type]crawling and submitting[roman type] will make it much more likely that you can avoid the bell ringing. However you can also sense it has the magic ability to prevent the wearer from rapidly gaining fatigue when their breasts are too full of milk. It also makes enough noise to help unfriendly monsters keep chasing you.".
+	say "This large shiny metal cowbell is connected to a brown collar. Instead of a single clanger on the inside, there are several small catbells. When worn, this bell makes lots of noise and makes it much easier for monsters to notice you and find you. You realise that [bold type]walking and submitting during sex[roman type] will probably create a lot of noise whereas [bold type]crawling and holding back during sex[roman type] will make it much more likely that you can avoid the bell ringing. However you can also sense it has the magic ability to prevent the wearer from rapidly gaining fatigue when their breasts are too full of milk. It also makes enough noise to help unfriendly monsters keep chasing you.".
 To say ShortDesc of (C - meowcowbell):
 	say "meow cow bell".
 
@@ -276,7 +279,7 @@ Definition: mystical amulet is immune to change: decide yes.
 necktie is a neckwear. The printed name of necktie is "[clothing-title-before]necktie[clothing-title-after]". Understand "tie" as necktie. The text-shortcut of necktie is "nt". necktie is unique. necktie is cotton.
 
 Definition: necktie is class-relevant:
-	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
+	if the class of the player is alchemist and the player is not pigtailed, decide yes;
 	decide no.
 
 To compute class set up of (C - necktie):
@@ -298,7 +301,7 @@ To decide which figure-name is clothing-image of (C - necktie):
 	decide on figure of necktie.
 
 To say ClothingDesc of (C - necktie):
-	say "A tiny apricot tartan necktie, the perfect completion to any slutty schoolgirl outfit.".
+	say "A tiny apricot tartan necktie, the perfect completion to any slutty alchemist outfit.".
 
 To say ShortDesc of (C - necktie):
 	say "necktie".
@@ -520,7 +523,7 @@ Carry out wearing scarf:
 
 To compute periodic effect of (C - scarf):
 	if there is an embodied thing penetrating face, now C is not mouth-mode.
-To compute school periodic effect of (C - scarf):
+To compute facility periodic effect of (C - scarf):
 	compute periodic effect of C.
 
 Necklaces ends here.

@@ -45,7 +45,7 @@ To say ModestyDesc of (K - a clothing):
 	otherwise if penis is exposed:
 		say "It is failing to conceal your [ShortDesc of penis]. ";
 	otherwise:
-		say ". ".
+		say line break.
 
 To compute SelfExamineDesc of (K - a knickers):
 	say "A [selfexamineuniquetitle of K] [ModestyDesc of K]".

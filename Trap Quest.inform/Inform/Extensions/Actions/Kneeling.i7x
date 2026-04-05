@@ -90,6 +90,7 @@ Carry out kneeling:
 					increase the cakes-taken of skirt-tray-vibrator by D;
 					say "[if D is 1]Another cupcake falls off its pressure plate[otherwise][D] more cupcakes fall off their pressure plates[end if] and onto the ground. [skirtTrayBuzzFlav]";
 					now the charge of skirt-tray-vibrator is 3;
+		if familiar is in the location of the player, check familiar trip;
 	let R be a random number between (the bimbo of the player / 2) and the bimbo of the player;
 	if there is a dangerous intelligent monster in the location of the player and seconds > 0 and the fatigue of the player > the buckle threshold of the player:
 		say "[bold type]You drop to your knees, [if the bimbo of the player < 12]trying not to make eye contact[otherwise]quivering in anticipation[end if].[roman type][line break]";

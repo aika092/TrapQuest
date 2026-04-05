@@ -295,106 +295,108 @@ Check drinking time-bomb:
 	allocate 6 seconds;
 	say "You throw [NameDesc of the noun] at the ground where it shatters! ";
 	if the noun is cursed and diaper quest is 0:
-		wait 1200 ms before continuing;
-		clear the screen;
-		say "[first custom style]'What do we have here? Is [he of the player]... ";
-		wait 2500 ms before continuing;
-		say "frozen? ";
-		wait 2500 ms before continuing;
-		say "Well... ";
-		wait 1000 ms before continuing;
-		say "Don't mind if I do...'[roman type][line break]";
-		wait 1000 ms before continuing;
-		say "[italic type]Schlick ";
-		repeat with N running from 1 to 4:
-			wait 500 - (100 * N) ms before continuing;
-			say "schlick ";
-		reset the Glulx timer;
-		repeat with N running from 1 to 10:
+		now imminent-sex-desc is "Spoiler warning - that time bomb was cursed, and you are about to get fucked";
+		if the player is enthusiastically consenting:
+			wait 1200 ms before continuing;
+			clear the screen;
+			say "[first custom style]'What do we have here? Is [he of the player]... ";
+			wait 2500 ms before continuing;
+			say "frozen? ";
+			wait 2500 ms before continuing;
+			say "Well... ";
+			wait 1000 ms before continuing;
+			say "Don't mind if I do...'[roman type][line break]";
+			wait 1000 ms before continuing;
+			say "[italic type]Schlick ";
+			repeat with N running from 1 to 4:
+				wait 500 - (100 * N) ms before continuing;
+				say "schlick ";
+			reset the Glulx timer;
+			repeat with N running from 1 to 10:
+				wait before continuing;
+				say "schlick";
 			wait before continuing;
-			say "schlick";
-		wait before continuing;
-		say " spurt spurt spurt[line break]";
-		wait 1000 ms before continuing;
-		say "[first custom style]'Fuck yes, that was just what I needed. Well, I guess you can stay here until somebody else finds you...'[paragraph break]";
-		wait 5000 ms before continuing;
-		say "'What the... ";
-		wait 1000 ms before continuing;
-		say "Why is [he of the player] in that position...? ";
-		wait 1000 ms before continuing;
-		say "Is [he of the player]...? ";
-		wait 1000 ms before continuing;
-		say "Oh my god, [he of the player][']s stuck like that?";
-		wait 1000 ms before continuing;
-		say "Is [his of the player] asshole really stuck open like that?!'[line break]";
-		repeat with N running from 1 to 15:
-			wait 150 * (16 - N) ms before continuing;
-			say "[first custom style]'[one of]Well I'm not going to wait any longer!' [or]Is [he of the player] going to be able to feel this when [he of the player] wakes up?' [or]Cumming!' [or]This is hilarious!' [or]My turn!' [or]Is this for real?' [or]I hope [he of the player] doesn't mind too much...' [or]Can I really put it up [his of the player] butt?' [or]I think I'll do it this way...' [or][big he of the player] probably dropped a cursed time bomb, the poor fool...' [or]... looks like it won't wear off for a fair while yet...' [in random order][if N < 6][line break][end if][roman type][one of]Shlick shlick shlick[or]Slap slap slap[or]Fap fap fap[or]Shluck shlick shluck[or]thud thud thud thud[purely at random][if N < 10][line break][otherwise] [end if]";
-		wait 1 ms before continuing;
-		repeat with N running from 1 to 200:
-			if N < 10 or (N < 20 and the remainder after dividing N by 3 is 0) or (N < 40 and the remainder after dividing N by 9 is 0) or (the remainder after dividing N by 27 is 0), wait before continuing;
-			say "[first custom style]'[one of]Hello there...' [or]One more for the road...' [or]Cumming!' [or]One more time!' [or]My turn!' [or]This is my favourite part of the day.' [or]Juicy...' [or]Fuck yeah!' [or]Lovely...' [or]Wonderful!' [or]Yum.' [or]Come to [daddytitle of male-m].' [or]Boo-ya.' [or]Anal?' [or]Again.' [or]More.' [or]Yes.' [or]Feels so good!' [or]Crikey!' [or]Ooh!' [or]Here we are again.' [or]My name is Buck. I like to fuck.' [or]Ew, slimy.' [or]Someone should probably clean up this mess.' [or]Cool!' [or]Gross!' [or]How deplorable.' [or]I'm glad I'm not you.' [or]Nice.' [or]Delightful.' [or]How interesting.' [or]This is unique.' [or]Open wide, honey.' [or]Rad!' [or]Wow...' [at random] [roman type][one of]Shlick[or]Slap[or]Fap[or]Shluck[or]Thud[or]Spurt[or]Squirt[purely at random] ";
-		say line break;
-		wait 800 ms before continuing;
-		reset the Glulx timer;
-		clear the screen;
-		say "You [if the player is upright]suddenly find yourself bent at the waist, in a standing doggy position[otherwise]blink in confusion[end if]. Suddenly the experience and stimulation from countless fuckings hits your [fuckholes] at the same moment, forcing you to instantly cum harder than you have in your life! ";
-		anally orgasm shamefully;
-		if the location of the player is bossed: [We're not willing to displace the NPCs from this room.]
-			repeat with M running through awake monsters in the location of the player:
-				deinterest M;
-		otherwise:
-			let here-monsters be the list of monsters in the location of the player;
-			let E be the number of entries in here-monsters;
-			if E > 0:
-				repeat with M running through here-monsters:
-					regionally place M;
+			say " spurt spurt spurt[line break]";
+			wait 1000 ms before continuing;
+			say "[first custom style]'Fuck yes, that was just what I needed. Well, I guess you can stay here until somebody else finds you...'[paragraph break]";
+			wait 5000 ms before continuing;
+			say "'What the... ";
+			wait 1000 ms before continuing;
+			say "Why is [he of the player] in that position...? ";
+			wait 1000 ms before continuing;
+			say "Is [he of the player]...? ";
+			wait 1000 ms before continuing;
+			say "Oh my god, [he of the player][']s stuck like that?";
+			wait 1000 ms before continuing;
+			say "Is [his of the player] asshole really stuck open like that?!'[line break]";
+			repeat with N running from 1 to 15:
+				wait 150 * (16 - N) ms before continuing;
+				say "[first custom style]'[one of]Well I'm not going to wait any longer!' [or]Is [he of the player] going to be able to feel this when [he of the player] wakes up?' [or]Cumming!' [or]This is hilarious!' [or]My turn!' [or]Is this for real?' [or]I hope [he of the player] doesn't mind too much...' [or]Can I really put it up [his of the player] butt?' [or]I think I'll do it this way...' [or][big he of the player] probably dropped a cursed time bomb, the poor fool...' [or]... looks like it won't wear off for a fair while yet...' [in random order][if N < 6][line break][end if][roman type][one of]Shlick shlick shlick[or]Slap slap slap[or]Fap fap fap[or]Shluck shlick shluck[or]thud thud thud thud[purely at random][if N < 10][line break][otherwise] [end if]";
+			wait 1 ms before continuing;
+			repeat with N running from 1 to 200:
+				if N < 10 or (N < 20 and the remainder after dividing N by 3 is 0) or (N < 40 and the remainder after dividing N by 9 is 0) or (the remainder after dividing N by 27 is 0), wait before continuing;
+				say "[first custom style]'[one of]Hello there...' [or]One more for the road...' [or]Cumming!' [or]One more time!' [or]My turn!' [or]This is my favourite part of the day.' [or]Juicy...' [or]Fuck yeah!' [or]Lovely...' [or]Wonderful!' [or]Yum.' [or]Come to [daddytitle of male-m].' [or]Boo-ya.' [or]Anal?' [or]Again.' [or]More.' [or]Yes.' [or]Feels so good!' [or]Crikey!' [or]Ooh!' [or]Here we are again.' [or]My name is Buck. I like to fuck.' [or]Ew, slimy.' [or]Someone should probably clean up this mess.' [or]Cool!' [or]Gross!' [or]How deplorable.' [or]I'm glad I'm not you.' [or]Nice.' [or]Delightful.' [or]How interesting.' [or]This is unique.' [or]Open wide, honey.' [or]Rad!' [or]Wow...' [at random] [roman type][one of]Shlick[or]Slap[or]Fap[or]Shluck[or]Thud[or]Spurt[or]Squirt[purely at random] ";
+			say line break;
+			wait 800 ms before continuing;
+			reset the Glulx timer;
+			clear the screen;
+			say "You [if the player is upright]suddenly find yourself bent at the waist, in a standing doggy position[otherwise]blink in confusion[end if]. Suddenly the experience and stimulation from countless fuckings hits your [fuckholes] at the same moment, forcing you to instantly cum harder than you have in your life! ";
+			anally orgasm shamefully;
+			if the location of the player is bossed: [We're not willing to displace the NPCs from this room.]
+				repeat with M running through awake monsters in the location of the player:
 					deinterest M;
-				repeat with M running through monsters in the location of the player: [Sometimes the NPC is still there, e.g. shopkeeper in the shop]
-					remove M from here-monsters;
-					decrease E by 1;
+			otherwise:
+				let here-monsters be the list of monsters in the location of the player;
+				let E be the number of entries in here-monsters;
 				if E > 0:
-					say "The ";
 					repeat with M running through here-monsters:
-						say "[NameDesc of M][if E > 2], [otherwise if E is 2] and [end if]";
+						regionally place M;
+						deinterest M;
+					repeat with M running through monsters in the location of the player: [Sometimes the NPC is still there, e.g. shopkeeper in the shop]
+						remove M from here-monsters;
 						decrease E by 1;
-					say " [if the number of entries in here-monsters is 1]is[otherwise]are[end if] nowhere to be seen. ";
-		repeat with T running through things penetrating an orifice:
-			say "[BigNameDesc of T] is on the ground next to you. ";
-			dislodge T;
-			now T is in the location of the player;
-		repeat with C running through worn displacable clothing:
-			displace C;
-		repeat with C running through worn top-displacable clothing:
-			topdisplace C;
-		repeat with C running through pussy covering clothing:
-			say "Your [ShortDesc of C] is on the ground next to you. ";
-			now C is in the location of the player;
-		if bukkake fetish is 1:
-			say "Your entire body and clothes are completely caked in [semen].";
-			now the water-drench of hair is 0;
-			now the semen coating of hair is the largeness of hair;
-			now the semen coating of face is 10;
-			now the semen coating of breasts is 10;
-			now the semen coating of belly is 10;
-			now the semen coating of thighs is 10;
-			repeat with C running through worn fluid vulnerable clothing:
-				increase the semen-soak of C by the soak-limit of C - the total-soak of C;
-		say "Gallons of [semen] leak from your every orifice as you try to make sense of all these sensations. There's only one explanation for all of this - you were stopped in time, for who knows how many minutes or centuries, while all the beings of this world had their way with you!";
-		increase the stomach-semen of the player by 20;
-		now the soreness of asshole is 10;
-		now the semen volume of belly is 30;
-		if the player is possessing a vagina:
-			now the semen volume of vagina is 30;
-			now the womb volume of vagina is 5;
-			now a random creampie pole trap is inseminating vagina;
-			now the soreness of vagina is 10;
-			if the vaginalvirgin of the player is 1, compute virginity loss;
-			check sudden pregnancy;
-		compute puking;
-		AssSquirt;
-		if doom counter > 0 and doomed < 5, resolve doom;
-		reset the Glulx timer;
+					if E > 0:
+						say "The ";
+						repeat with M running through here-monsters:
+							say "[NameDesc of M][if E > 2], [otherwise if E is 2] and [end if]";
+							decrease E by 1;
+						say " [if the number of entries in here-monsters is 1]is[otherwise]are[end if] nowhere to be seen. ";
+			repeat with T running through things penetrating an orifice:
+				say "[BigNameDesc of T] is on the ground next to you. ";
+				dislodge T;
+				now T is in the location of the player;
+			repeat with C running through worn displacable clothing:
+				displace C;
+			repeat with C running through worn top-displacable clothing:
+				topdisplace C;
+			repeat with C running through pussy covering clothing:
+				say "Your [ShortDesc of C] is on the ground next to you. ";
+				now C is in the location of the player;
+			if bukkake fetish is 1:
+				say "Your entire body and clothes are completely caked in [semen].";
+				now the water-drench of hair is 0;
+				now the semen coating of hair is the largeness of hair;
+				now the semen coating of face is 10;
+				now the semen coating of breasts is 10;
+				now the semen coating of belly is 10;
+				now the semen coating of thighs is 10;
+				repeat with C running through worn fluid vulnerable clothing:
+					increase the semen-soak of C by the soak-limit of C - the total-soak of C;
+			say "Gallons of [semen] leak from your every orifice as you try to make sense of all these sensations. There's only one explanation for all of this - you were stopped in time, for who knows how many minutes or centuries, while all the beings of this world had their way with you!";
+			increase the stomach-semen of the player by 20;
+			now the soreness of asshole is 10;
+			now the semen volume of belly is 30;
+			if the player is possessing a vagina:
+				now the semen volume of vagina is 30;
+				now the womb volume of vagina is 5;
+				now a random creampie pole trap is inseminating vagina;
+				now the soreness of vagina is 10;
+				if the vaginalvirgin of the player is 1, compute virginity loss;
+				check sudden pregnancy;
+			compute puking;
+			AssSquirt;
+			if doom counter > 0 and doomed < 5, resolve doom;
+			reset the Glulx timer;
 	otherwise:
 		let here-monsters be the list of monsters in the location of the player;
 		let E be the number of entries in here-monsters;
@@ -869,7 +871,7 @@ To compute recipe specific cursing of (T - bull-strength-potion):
 	if the noun is bottle:
 		if the fill-colour of the noun is white and the noun is horn and the noun is not boring-origin:
 			now T is bland;
-			if the noun is blessed or (a random number between 1 and 4 <= the number of worn blue scrunchies and the class of the player is schoolgirl):
+			if the noun is blessed or (a random number between 1 and 4 <= the number of worn blue scrunchies and the class of the player is alchemist):
 				now T is blessed;
 		otherwise:
 			now T is cursed;

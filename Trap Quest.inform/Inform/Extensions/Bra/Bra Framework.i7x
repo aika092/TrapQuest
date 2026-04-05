@@ -145,8 +145,8 @@ Report going: [Let's make sure that all bras are a sensible size when encountere
 	repeat with C running through containers in the location of the player:
 		repeat with B running through bras in C:
 			compute found size of B;
-	if the player is in School06: [Room below junk room]
-		repeat with B running through bras in School15: [Junk room]
+	if the player is in Facility06: [Room below junk room]
+		repeat with B running through bras in Facility15: [Junk room]
 			compute found size of B.
 
 To compute bra strain:

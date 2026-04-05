@@ -63,7 +63,7 @@ An all time based rule (this is the tongued clothing licking rule):
 		let C be a random worn tongued clothing;
 		if the player is not a bit horny or refractoryperiod > 0:
 			if refractoryperiod > 0 and tonguesActive < 0, now tonguesActive is -30; [As soon as refractory period is over, tongues will start]
-		otherwise if playerRegion is not school:
+		otherwise if playerRegion is not facility:
 			increase the rounds-horny of no-orgasm-quest by 1;
 		if tonguesActive <= -30 and refractoryperiod <= 0: [It's been 30 rounds since they were licking, so they start again]
 			say "[bold type]The tongues under your [if N is 1][ShortDesc of C][otherwise]clothing[end if] [if the player is not a bit horny]seem disappointed that you're [one of]not[or]no longer[stopping] aroused, and [end if]begin to salivate and lick you wherever they can reach![roman type][line break]";
@@ -87,7 +87,7 @@ An all time based rule (this is the tongued clothing licking rule):
 			otherwise:
 				say "[one of]The tongues under your [if N is 1][ShortDesc of C][otherwise]clothing[end if] continue to lick you with their sloppy, salivating tongues.[or][or][or][or][cycling]";
 				arouse 25 * N;
-		if playerRegion is not school and the rounds-horny of no-orgasm-quest >= a random number between (45 - the sex addiction of the player) and 200: [It's more difficult for a sex addicted player to avoid orgasms]
+		if playerRegion is not facility and the rounds-horny of no-orgasm-quest >= a random number between (45 - the sex addiction of the player) and 200: [It's more difficult for a sex addicted player to avoid orgasms]
 			progress quest of no-orgasm-quest;
 			now the rounds-horny of no-orgasm-quest is 0;
 	otherwise:
@@ -144,7 +144,7 @@ Chapter - Quest
 
 no-orgasm-quest is a headgear-clothing-quest. no-orgasm-quest has a number called rounds-horny.
 
-Definition: no-orgasm-quest is school-disabled: decide yes.
+Definition: no-orgasm-quest is facility-disabled: decide yes.
 
 To uniquely set up (C - spiked-tiara):
 	now the quest of C is no-orgasm-quest.
@@ -156,7 +156,7 @@ To say QuestTitle of (Q - no-orgasm-quest):
 	say " (orgasm avoiding quest)".
 
 This is the symbiote shouldn't orgasm rule:
-	now the rounds-horny of no-orgasm-quest is 0.
+	now the rounds-horny of no-orgasm-quest is the rounds-horny of no-orgasm-quest / 2.
 The symbiote shouldn't orgasm rule is listed in the orgasm resolution rules.
 
 Spiked Tiara ends here.

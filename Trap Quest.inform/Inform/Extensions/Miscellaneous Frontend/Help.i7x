@@ -14,13 +14,13 @@ Several extensions the game uses were written by Third Party Extensions.
 
 Narse (valorphoenix.blogspot.co.uk) has been invaluable to the development of this project, offering both ideas for the game content, advice on how to implement features in Inform, help with debugging, and preliminary alpha testing on all releases.
 
-The Trap Quest cover art was made by blackshirtboy (http://blackshirtboy.deviantart.com/).
+The [Trap Quest] cover art was made by blackshirtboy (http://blackshirtboy.deviantart.com/).
 
 There are two drawn character windows; one is hand drawn by Danaume and one was made in Photoshop by Keriax, using an image drawn by Sarath as the base (with permission).
 
 Beta testing on all releases was done by the good people at www.tfgamessite.com. They have also helped steer the game in the direction it has taken, with their feedback. Similarly the fans have
 
-Trap Quest itself and 90% of all the descriptions, storyline and flavour you see in the game were all written by Aika. The other 10% of flavour was done by volunteer contributors, the most notable of whom is MG.
+[Trap Quest] itself and 90% of all the descriptions, storyline and flavour you see in the game were all written by Aika. The other 10% of flavour was done by volunteer contributors, the most notable of whom is MG.
 
 The game's own code and art is owned by Lame Games Limited, registered in England and Wales."	--
 "Contacting the Author"	--	"Feel free to contact me at aika092@gmail.com. Also you can visit my alternative hentai forum at www.ulmf.org."	--
@@ -42,7 +42,7 @@ title	subtable	description	toggle
 
 [bold type]Tank Traps:[roman type] Some tanks will be trapped, and when you try to fill your drinking vessel from them the trap will trigger. These traps will often reset if you leave the room and the tank isn't empty, so try and remember where they are!"	--
 "Clothing"	--	"[ClothingHelp]"	--
-"NPCs (Monsters)"	--	"Monsters will be roaming the Trap Quest world, and also sometimes be spawned during the game.
+"NPCs (Monsters)"	--	"Monsters will be roaming the [Trap Quest] world, and also sometimes be spawned during the game.
 
 They will each have different rules for if they notice you, if they are friendly, and what they try to do to you if they're not.
 
@@ -118,7 +118,7 @@ To refresh the map if it glitches, use [']map[']."	--
 "Fetishes"	--	"[FetishHelp]"	--
 
 To say ClothingHelp:
-	say "There are several different kinds of clothing that you can find and wear in Trap Quest. There are some unique items that are not listed here, you can find out what they do by playing the game or checking the wiki!
+	say "There are several different kinds of clothing that you can find and wear in [Trap Quest]. There are some unique items that are not listed here, you can find out what they do by playing the game or checking the wiki!
 
 [bold type]Bras:[roman type] These support your boobs and reduce their effective weight for in-game calculations. If you're a girl, you can use them to protect your dignity.
 

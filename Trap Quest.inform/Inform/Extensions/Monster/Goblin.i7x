@@ -111,7 +111,7 @@ To say UniqueExamineDesc of (P - goblin-painting):
 GoblinPainting01 is a painting-room. The printed name of GoblinPainting01 is "Goblin Room". The grid position of GoblinPainting01 is <11,8,12>. The shape of GoblinPainting01 is L11/0-0-0-0-0-0.
 
 To compute painting entrance of (P - goblin-painting):
-	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
+	now playerRegion is facility; [any time based events that don't happen in the facility should also not happen here]
 	let RG be a random goblin; [right goblin]
 	now RG is female;
 	repeat with M running through goblins:

@@ -73,7 +73,7 @@ To MapDraw:
 						say "{g}";
 					otherwise if R is discovered and R is Hotel19:
 						say "{k}";
-					otherwise if R is discovered and R is Hotel22 and diaper lover >= 1:
+					otherwise if R is discovered and R is HotelNursery and diaper lover >= 1:
 						say "{n}";
 					otherwise if R is discovered and R is Hotel37:
 						say "{d}";

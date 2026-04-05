@@ -369,7 +369,7 @@ To compute wedding night:
 			orgasm bore bride-consort;
 			say "[speech style of bride-consort]'Being inside you... is the best feeling of my life! We must do this again soon. Until then, I trust you will be faithful to me.'[roman type][line break][if L is not Hotel06][BigNameDesc of bride-consort] leaves the way [he of bride-consort] came.[end if]";
 			now bride-consort is in L;
-		if F is asshole and bondage protection < 2:
+		if F is asshole and bondage protection < 3:
 			let CC be a random off-stage chastity cage;
 			if CC is actually summonable:
 				summon CC locked;

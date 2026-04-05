@@ -496,7 +496,7 @@ This is the obedient wench rule:
 					otherwise say "[line break][speech style of W]'[one of]I'm not getting punished alone!'[or]No weaseling out of it, whore!'[or]You're going down with me!'[or]We're in this together, you fucking slut!'[at random][roman type][line break]";
 					if R > B, silently try kneeling;
 					if the player is prone, say "[BigNameDesc of W] grabs you [one of]by the wrists[or]from behind[at random], dragging you down with [him of W]!";
-					otherwise say "[BigNameDesc of W] grabs you [one of]by the wrists[or]from behind[at random], but you shake [him of W] off before [he of W] can drag you down with [him of W]";
+					otherwise say "[BigNameDesc of W] grabs you [one of]by the wrists[or]from behind[at random], but you shake [him of W] off before [he of W] can drag you down with [him of W].";
 				otherwise:
 					say "[BigNameDesc of W] [one of]obediently[or]instantly[or]silently[or]immediately[in random order] drops to the ground, and lying face down, assumes [one of]a submissive position with [his of W] hands behind [his of W] head, like a prisoner[or]the position[stopping].";
 			rule succeeds;
@@ -829,7 +829,7 @@ To say AnilingusSubmissionResponse of (M - a wench):
 		if the creampieTimer of M < 0, now the creampieTimer of M is 0;
 		progress quest of creampie-drinking-quest.
 
-To say AnilingusResistingResponse of (M - a monster):
+To say AnilingusResistingResponse of (M - a wench):
 	if the creampieTimer of M <= 0:
 		say "[BigFuckerDesc of M] grapples your head by the hair and [one of]rubs [his of M] butthole into your lips as roughly as [he of M] can[or]shoves your nose into [his of M] sweaty pink sphincter[or]smushes [his of M] ass into your face[or]does [his of M] best to suffocate you with [his of M] ass cheeks[in random order]. You can't breathe!";
 	otherwise:
@@ -1853,7 +1853,7 @@ To say WhoAnswer of (M - workaholic wench):
 	alwayscutshow figure of wench interact 7 for M.
 
 To say StoryAnswer of (M - workaholic wench):
-	say "[speech style of M]'I'm trying to pay off my student loans!'[roman type][line break]";
+	say "[speech style of M]'I'm trying to pay off my trainee loans!'[roman type][line break]";
 	alwayscutshow figure of wench interact 10 for M.
 
 To say EscapeAnswer of (M - workaholic wench):
@@ -1937,13 +1937,6 @@ To say LongDickDesc of (M - a QoS wench):
 To say StrapOnDesc of (M - QoS wench):
 	say "a very large black strap-on dildo, probably 8 inches thick and 10 inches long. It's made to be as realistic as possible with an engorged head and veins snaking all the way down its length".
 
-To say SexResistFlav of (M - QoS wench):
-	if M is penetrating face and M is not friendly-fucking:
-		say "[variable custom style]'Mngggggghhhhh!'[roman type][line break]You squirm in discomfort as the head of [his of M]'s strapon is rammed down your throat yet again!";
-	otherwise if M is penetrating asshole:
-		say "[if the anal sex addiction of the player < 3][one of]You fight back against [NameDesc of M], desperate to break out of [his of M] grip.[or]You struggle as much as you can. Orgasming is the last thing on your mind![or]You try to throw [NameDesc of M] off, but [he of M]'s too strong![or]You move away from [NameDesc of M] as [he of M] pushes into you, to try to minimise the impact of [his of M] thrusts.[in random order][otherwise if the anal sex addiction of the player < 5][one of]You fight back against [NameDesc of M], desperate not to let [him of M] win and make you orgasm![or]You move away from [NameDesc of M] as [he of M] pushes into you, to try to minimise the impact of [his of M] thrusts.[or]You grit your teeth together and try to wiggle away.[in random order][otherwise][one of]You playfully wiggle away from [NameDesc of M], making it more difficult for [him of M] to fuck you properly.[or]You hold still, refusing to join in your butt love session properly.[or]You hold still, concentrating on trying not to cum.[in random order][end if]";
-	otherwise:
-		say "You struggle in vain to free yourself!";
 
 To compute kneeling reaction of (M - QoS wench):
 	say "[BigNameDesc of M] [one of]raises an eyebrow[or]smiles knowingly[or]grins[at random].[line break][speech style of M]'[one of]If you feel a rush right now, that's your body telling you that you belong on your knees beneath a [BlackCock].'[or]Feeling properly submissive to [BlackCock] now? Good, I like it when my girlfriends know what a good time is.'[or]Through playing games? Ready to worship [BlackCock]?'[or]I only put this cock of mine in holes that belong to BBC, slave. So, why don't you show me how you'd treat a black god?'[in random order][roman type][line break][strongHumiliateReflect]";
@@ -2030,7 +2023,7 @@ To compute unique climax of (M - QoS wench) in (F - asshole):
 To compute (M - a QoS wench) demanding erection:
 	say "[BigFuckerDesc of M] holds you down firmly as [he of M] pulls out a small tape measure.[line break][speech style of M]'All right hun let's see how you measure up. Sure would be a shame if your [sissy-penis] is too small to be of any use to anyone.'[roman type][line break]";
 	let C be a random off-stage fetish appropriate chastity cage;
-	if the size of penis < 4 and bondage protection < 2 and C is a thing:
+	if the size of penis < 4 and bondage protection < 3 and C is a thing:
 		say "[speech style of M]'Pfft. Well, I don't need a tape measure to see what needs to be done here. I'm doing you a favour hun, having a [BlackCock] dominate you is simply the best, you just need to taste it once. And you're not getting out of this cage for a long time because I'll be keeping the key nice and safe for you!'[roman type][line break]";
 		say "[BigFuckerDesc of M] grabs your [sissy-penis] and crams it into the [ShortDesc of C]!";
 		summon C locked;
@@ -2044,7 +2037,7 @@ To compute (M - a QoS wench) demanding erection:
 		say "[speech style of M]'Wow you clearly enjoyed that! Soon I'll take you to [daddytitle of shopkeeper] to give you a fresh load of [semen] all over your face. See you later babe.'[roman type][line break]";
 		bore M;
 	otherwise if the size of penis < 8 and the size of penis > min penis size:
-		say "[BigFuckerDesc of M] raises an eyebrow as your [sissy-penis] falls painfully short of the 8 inch mark.[line break][speech style of M]'Hun, you're small but not that small... yet. Tell you what sweetie, since we all know you're destined to be a submissive slut anyway, let me help you along!'[roman type][line break][BigFuckerDesc of M] pulls out what looks to be a small tube of moisturiser from [his of M] handbag. [BigFuckerDesc of M] then rubs it all over your [sissy-penis]. It tingles pleasantly, but to your [horror the delicateness of the player] your [sissy-penis] starts to shrink![line break][speech style of M]'Better be careful hun, get too much smaller and I [if bondage protection < 2]will lock away that little worm forever[otherwise]will stretch out that little asshole with my big black strapon[end if]. See ya later hun.'[line break][roman type]";
+		say "[BigFuckerDesc of M] raises an eyebrow as your [sissy-penis] falls painfully short of the 8 inch mark.[line break][speech style of M]'Hun, you're small but not that small... yet. Tell you what sweetie, since we all know you're destined to be a submissive slut anyway, let me help you along!'[roman type][line break][BigFuckerDesc of M] pulls out what looks to be a small tube of moisturiser from [his of M] handbag. [BigFuckerDesc of M] then rubs it all over your [sissy-penis]. It tingles pleasantly, but to your [horror the delicateness of the player] your [sissy-penis] starts to shrink![line break][speech style of M]'Better be careful hun, get too much smaller and I [if bondage protection < 3]will lock away that little worm forever[otherwise]will stretch out that little asshole with my big black strapon[end if]. See ya later hun.'[line break][roman type]";
 		penisdown 1;
 		SilentlyDelicateUp 1;
 		bore M;
@@ -2087,7 +2080,7 @@ This is the QoS wench shares you with BBC rule:
 			otherwise say "[variable custom style][if the bimbo of the player < 8]If I could speak I could tell [him of N] it's all a big mistake!![otherwise]Who is [he of N]?[end if]";
 			say "[roman type][line break]";
 			say "[BigNameDesc of M] sneaks up behind you and pushes you to your knees in front of [NameDesc of N], and then starts to nibble on your ear[line break].";
-			if bondage protection < 2 and BBC Collar is off-stage and BBC Collar is actually summonable:
+			if bondage protection < 3 and BBC Collar is off-stage and BBC Collar is actually summonable:
 				Say "Suddenly you feel [NameDesc of M] slip something around your neck and secure it in place with the click of a lock.[line break]";
 				summon BBC Collar locked;
 			check tiara-of-spades transformation;

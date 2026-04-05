@@ -59,7 +59,7 @@ To decide which figure-name is the anal-sex-monster-image of (M - agent):
 To decide which figure-name is the vaginal-sex-monster-image of (M - agent):
 	decide on figure of agent doggy angry.
 
-Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3b.png".
+Figure of bianca defeated is the file "NPCs/Facility/Tutor/tutor3b.png".
 
 Figure of breastfeeding predicament milk mead is the file "Special/Cutscene/cutscene-predicament-breastfeeding2.jpg".
 Figure of breastfeeding predicament milk lax is the file "Special/Cutscene/cutscene-predicament-breastfeeding3a.jpg".
@@ -284,9 +284,9 @@ To decide which figure-name is figure of princess final battle final chance:
 
 Figure of Shopkeeper 1 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png".
 
-Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5b.png".
-Figure of Slave Hannah is the file "NPCs/School/Teacher/teacher5d.png".
-Figure of Teacher Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.jpg".
+Figure of Tutor Hannah is the file "NPCs/Facility/Tutor/tutor5b.png".
+Figure of Slave Hannah is the file "NPCs/Facility/Tutor/tutor5d.png".
+Figure of Tutor Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.jpg".
 
 Figure of hotel toilet room 2 is the file "Map/Hotel/HotelBath2.png".
 Figure of human toilet is the file "Env/MultiFloor/toilet2.png".
@@ -300,47 +300,47 @@ Figure of hellhound is the file "NPCs/Mansion/Hound/hound1.png".
 
 Figure of hotel bed cutscene 1 is the file "Special/Cutscene/cutscene-hotel-bed1.jpg".
 
-Figure of rank 2 candy normal is the file "NPCs/School/Student/student5b.png".
-Figure of rank 2 candy pierced is the file "NPCs/School/Student/student5bP.png".
+Figure of rank 2 candy normal is the file "NPCs/Facility/Trainee/trainee5b.png".
+Figure of rank 2 candy pierced is the file "NPCs/Facility/Trainee/trainee5bP.png".
 To decide which figure-name is Figure of rank 2 candy:
-	if student-candy is clitLeaded, decide on figure of rank 2 candy pierced;
+	if trainee-candy is clitLeaded, decide on figure of rank 2 candy pierced;
 	otherwise decide on figure of rank 2 candy normal.
-Figure of rank 3 candy normal is the file "NPCs/School/Student/student5d.png".
-Figure of rank 3 candy pierced is the file "NPCs/School/Student/student5dP.png".
+Figure of rank 3 candy normal is the file "NPCs/Facility/Trainee/trainee5d.png".
+Figure of rank 3 candy pierced is the file "NPCs/Facility/Trainee/trainee5dP.png".
 To decide which figure-name is Figure of rank 3 candy:
-	if student-candy is clitLeaded, decide on figure of rank 3 candy pierced;
+	if trainee-candy is clitLeaded, decide on figure of rank 3 candy pierced;
 	otherwise decide on figure of rank 3 candy normal.
-Figure of rank 4 candy normal is the file "NPCs/School/Student/student5f.png".
-Figure of rank 4 candy pierced is the file "NPCs/School/Student/student5fP.png".
-Figure of rank 4 candy cum covered is the file "NPCs/School/Student/student5fC.png".
-Figure of rank 4 candy pierced cum covered is the file "NPCs/School/Student/student5fPC.png".
+Figure of rank 4 candy normal is the file "NPCs/Facility/Trainee/trainee5f.png".
+Figure of rank 4 candy pierced is the file "NPCs/Facility/Trainee/trainee5fP.png".
+Figure of rank 4 candy cum covered is the file "NPCs/Facility/Trainee/trainee5fC.png".
+Figure of rank 4 candy pierced cum covered is the file "NPCs/Facility/Trainee/trainee5fPC.png".
 To decide which figure-name is Figure of rank 4 candy:
-	if student-candy is cumCovered:
-		if student-candy is clitLeaded, decide on figure of rank 4 candy pierced cum covered;
+	if trainee-candy is cumCovered:
+		if trainee-candy is clitLeaded, decide on figure of rank 4 candy pierced cum covered;
 		otherwise decide on figure of rank 4 candy cum covered;
 	otherwise:
-		if student-candy is clitLeaded, decide on figure of rank 4 candy pierced;
+		if trainee-candy is clitLeaded, decide on figure of rank 4 candy pierced;
 		otherwise decide on figure of rank 4 candy normal.
 
-Figure of rank 2 laci normal is the file "NPCs/School/Student/student3b.png".
-Figure of rank 2 laci pierced is the file "NPCs/School/Student/student3bp.png".
+Figure of rank 2 laci normal is the file "NPCs/Facility/Trainee/trainee3b.png".
+Figure of rank 2 laci pierced is the file "NPCs/Facility/Trainee/trainee3bp.png".
 To decide which figure-name is Figure of rank 2 laci:
-	if student-laci is clitLeaded, decide on figure of rank 2 laci pierced;
+	if trainee-laci is clitLeaded, decide on figure of rank 2 laci pierced;
 	otherwise decide on figure of rank 2 laci normal.
-Figure of rank 3 laci normal is the file "NPCs/School/Student/student3c.png".
-Figure of rank 3 laci pierced is the file "NPCs/School/Student/student3cp.png".
+Figure of rank 3 laci normal is the file "NPCs/Facility/Trainee/trainee3c.png".
+Figure of rank 3 laci pierced is the file "NPCs/Facility/Trainee/trainee3cp.png".
 To decide which figure-name is Figure of rank 3 laci:
-	if student-laci is clitLeaded, decide on figure of rank 3 laci pierced;
+	if trainee-laci is clitLeaded, decide on figure of rank 3 laci pierced;
 	otherwise decide on figure of rank 3 laci normal.
-Figure of rank 4 laci normal is the file "NPCs/School/Student/student3d.png".
-Figure of rank 4 laci pierced is the file "NPCs/School/Student/student3dp.png".
+Figure of rank 4 laci normal is the file "NPCs/Facility/Trainee/trainee3d.png".
+Figure of rank 4 laci pierced is the file "NPCs/Facility/Trainee/trainee3dp.png".
 To decide which figure-name is Figure of rank 4 laci:
-	if student-laci is clitLeaded, decide on figure of rank 4 laci pierced;
+	if trainee-laci is clitLeaded, decide on figure of rank 4 laci pierced;
 	otherwise decide on figure of rank 4 laci normal.
-Figure of rank 5 laci normal is the file "NPCs/School/Student/student3e.png".
-Figure of rank 5 laci pierced is the file "NPCs/School/Student/student3ep.png".
+Figure of rank 5 laci normal is the file "NPCs/Facility/Trainee/trainee3e.png".
+Figure of rank 5 laci pierced is the file "NPCs/Facility/Trainee/trainee3ep.png".
 To decide which figure-name is Figure of rank 5 laci:
-	if student-laci is clitLeaded, decide on figure of rank 5 laci pierced;
+	if trainee-laci is clitLeaded, decide on figure of rank 5 laci pierced;
 	otherwise decide on figure of rank 5 laci normal.
 
 Figure of lake predicament 2 is the file "Special/Cutscene/cutscene-lake-predicament2.jpg".
@@ -349,38 +349,38 @@ Figure of lake predicament 3 is the file "Special/Cutscene/cutscene-lake-predica
 Figure of lecture 2 is the file "Special/Cutscene/cutscene-lecture2.jpg".
 Figure of lecture 3 is the file "Special/Cutscene/cutscene-lecture3.jpg".
 
-Figure of rank 2 misty normal is the file "NPCs/School/Student/student4b.png".
+Figure of rank 2 misty normal is the file "NPCs/Facility/Trainee/trainee4b.png".
 To decide which figure-name is Figure of rank 2 misty:
-	if student-misty is clitLeaded, decide on figure of rank 4 misty pierced;
+	if trainee-misty is clitLeaded, decide on figure of rank 4 misty pierced;
 	otherwise decide on figure of rank 2 misty normal.
-Figure of rank 3 misty normal is the file "NPCs/School/Student/student4d.png".
+Figure of rank 3 misty normal is the file "NPCs/Facility/Trainee/trainee4d.png".
 To decide which figure-name is Figure of rank 3 misty:
-	if student-misty is clitLeaded, decide on figure of rank 4 misty pierced;
+	if trainee-misty is clitLeaded, decide on figure of rank 4 misty pierced;
 	otherwise decide on figure of rank 3 misty normal.
-Figure of rank 4 misty normal is the file "NPCs/School/Student/student4f.png".
-Figure of rank 4 misty pierced is the file "NPCs/School/Student/student4fP.png".
-Figure of rank 4 misty cum is the file "NPCs/School/Student/student4fC.png".
-Figure of rank 4 misty pierced cum is the file "NPCs/School/Student/student4fPC.png".
+Figure of rank 4 misty normal is the file "NPCs/Facility/Trainee/trainee4f.png".
+Figure of rank 4 misty pierced is the file "NPCs/Facility/Trainee/trainee4fP.png".
+Figure of rank 4 misty cum is the file "NPCs/Facility/Trainee/trainee4fC.png".
+Figure of rank 4 misty pierced cum is the file "NPCs/Facility/Trainee/trainee4fPC.png".
 To decide which figure-name is Figure of rank 4 misty:
-	if student-misty is clitLeaded:
-		if student-misty is cumCovered, decide on figure of rank 4 misty pierced cum;
+	if trainee-misty is clitLeaded:
+		if trainee-misty is cumCovered, decide on figure of rank 4 misty pierced cum;
 		otherwise decide on figure of rank 4 misty pierced;
 	otherwise:
-		if student-misty is cumCovered, decide on figure of rank 4 misty cum;
+		if trainee-misty is cumCovered, decide on figure of rank 4 misty cum;
 		otherwise decide on figure of rank 4 misty normal.
 To decide which figure-name is Figure of rank 5 misty:
-	if student-misty is cumCovered, decide on figure of rank 4 misty cum;
+	if trainee-misty is cumCovered, decide on figure of rank 4 misty cum;
 	otherwise decide on figure of rank 4 misty normal.
 
-Figure of rank 1 small lips rosie is the file "NPCs/School/Student/student1a.png".
-Figure of rank 1 big lips rosie is the file "NPCs/School/Student/student1aL.png".
+Figure of rank 1 small lips rosie is the file "NPCs/Facility/Trainee/trainee1a.png".
+Figure of rank 1 big lips rosie is the file "NPCs/Facility/Trainee/trainee1aL.png".
 To decide which figure-name is Figure of rank 1 rosie:
-	if student-rosie is kissPunished, decide on figure of rank 1 big lips rosie;
+	if trainee-rosie is kissPunished, decide on figure of rank 1 big lips rosie;
 	otherwise decide on figure of rank 1 small lips rosie.
-Figure of rank 2 small lips rosie is the file "NPCs/School/Student/student1b.png".
-Figure of rank 2 big lips rosie is the file "NPCs/School/Student/student1bL.png".
+Figure of rank 2 small lips rosie is the file "NPCs/Facility/Trainee/trainee1b.png".
+Figure of rank 2 big lips rosie is the file "NPCs/Facility/Trainee/trainee1bL.png".
 To decide which figure-name is Figure of rank 2 rosie:
-	if student-rosie is kissPunished, decide on figure of rank 2 big lips rosie;
+	if trainee-rosie is kissPunished, decide on figure of rank 2 big lips rosie;
 	otherwise decide on figure of rank 2 small lips rosie.
 
 Figure of Surgery Trapped Bored is the file "Special/Cutscene/cutscene-elevator-surgery3a.jpg".
@@ -523,7 +523,7 @@ Figure of Cumshot Reaction 3 is the file "Special/Cutscene/cutscene-cumshot-reac
 Figure of Cumshot Reaction 4 is the file "Special/Cutscene/cutscene-cumshot-reaction4.png".
 Figure of Cumshot Reaction 5 is the file "Special/Cutscene/cutscene-cumshot-reaction5.png".
 
-Figure of detention chair is the file "Env/School/detentionchair1.jpg".
+Figure of reconditioning chair is the file "Env/Facility/reconditioningchair1.jpg".
 Figure of DungeonScenery01a is the file "Env/Dungeon/statue1a.jpg".
 Figure of DungeonScenery01b is the file "Env/Dungeon/statue1b.jpg".
 To decide which figure-name is Figure of DungeonScenery01:
@@ -547,15 +547,15 @@ Figure of enema tag 2 finish line is the file "Special/Cutscene/cutscene-enema-t
 Figure of enema tag 3 is the file "Special/Cutscene/cutscene-enema-tag-3a.jpg".
 Figure of enema tag 3 finish line is the file "Special/Cutscene/cutscene-enema-tag-3c.jpg".
 
-Figure of enslaved angela is the file "NPCs/School/Teacher/teacher2b.png".
-Figure of enslaved headmistress unjizzed is the file "NPCs/School/headmistress2a.png".
-Figure of enslaved headmistress jizzed is the file "NPCs/School/headmistress2b.png".
-To decide which figure-name is Figure of Enslaved Headmistress:
-	if the teaseTimer of headmistress > 0, decide on figure of enslaved headmistress jizzed;
-	decide on figure of enslaved headmistress unjizzed.
-Figure of enslaved nurse is the file "NPCs/School/nurse2.png".
-Figure of enslaved receptionist is the file "NPCs/School/receptionist2.png".
-Figure of enslaved serenity is the file "NPCs/School/Teacher/teacher1b.png".
+Figure of enslaved angela is the file "NPCs/Facility/Tutor/tutor2b.png".
+Figure of enslaved mistress unjizzed is the file "NPCs/Facility/mistress2a.png".
+Figure of enslaved mistress jizzed is the file "NPCs/Facility/mistress2b.png".
+To decide which figure-name is Figure of Enslaved mistress:
+	if the teaseTimer of mistress > 0, decide on figure of enslaved mistress jizzed;
+	decide on figure of enslaved mistress unjizzed.
+Figure of enslaved nurse is the file "NPCs/Facility/nurse2.png".
+Figure of enslaved receptionist is the file "NPCs/Facility/receptionist2.png".
+Figure of enslaved serenity is the file "NPCs/Facility/Tutor/tutor1b.png".
 
 Figure of Full Term Pregnancy is the file "Special/Cutscene/cutscene-pregnancy1.png".
 Figure of Giant Pregnancy is the file "Special/Cutscene/cutscene-pregnancy2.png".
@@ -1489,697 +1489,697 @@ To decide which figure-name is the examine-image of (T - hips):
 	[if the total volume of hips < 17, decide on figure of HipsObject8;]
 	decide on figure of HipsObject7.
 
-Figure of HypnoBBCAnimation001 is the file "Special/Animations/HypnoBBC/frame_001.jpg".
-Figure of HypnoBBCAnimation002 is the file "Special/Animations/HypnoBBC/frame_002.jpg".
-Figure of HypnoBBCAnimation003 is the file "Special/Animations/HypnoBBC/frame_003.jpg".
-Figure of HypnoBBCAnimation004 is the file "Special/Animations/HypnoBBC/frame_004.jpg".
-Figure of HypnoBBCAnimation005 is the file "Special/Animations/HypnoBBC/frame_005.jpg".
-Figure of HypnoBBCAnimation006 is the file "Special/Animations/HypnoBBC/frame_006.jpg".
-Figure of HypnoBBCAnimation007 is the file "Special/Animations/HypnoBBC/frame_007.jpg".
-Figure of HypnoBBCAnimation008 is the file "Special/Animations/HypnoBBC/frame_008.jpg".
-Figure of HypnoBBCAnimation009 is the file "Special/Animations/HypnoBBC/frame_009.jpg".
-Figure of HypnoBBCAnimation010 is the file "Special/Animations/HypnoBBC/frame_010.jpg".
-Figure of HypnoBBCAnimation011 is the file "Special/Animations/HypnoBBC/frame_011.jpg".
-Figure of HypnoBBCAnimation012 is the file "Special/Animations/HypnoBBC/frame_012.jpg".
-Figure of HypnoBBCAnimation013 is the file "Special/Animations/HypnoBBC/frame_013.jpg".
-Figure of HypnoBBCAnimation014 is the file "Special/Animations/HypnoBBC/frame_014.jpg".
-Figure of HypnoBBCAnimation015 is the file "Special/Animations/HypnoBBC/frame_015.jpg".
-Figure of HypnoBBCAnimation016 is the file "Special/Animations/HypnoBBC/frame_016.jpg".
-Figure of HypnoBBCAnimation017 is the file "Special/Animations/HypnoBBC/frame_017.jpg".
-Figure of HypnoBBCAnimation018 is the file "Special/Animations/HypnoBBC/frame_018.jpg".
-Figure of HypnoBBCAnimation019 is the file "Special/Animations/HypnoBBC/frame_019.jpg".
-Figure of HypnoBBCAnimation020 is the file "Special/Animations/HypnoBBC/frame_020.jpg".
-Figure of HypnoBBCAnimation021 is the file "Special/Animations/HypnoBBC/frame_021.jpg".
-Figure of HypnoBBCAnimation022 is the file "Special/Animations/HypnoBBC/frame_022.jpg".
-Figure of HypnoBBCAnimation023 is the file "Special/Animations/HypnoBBC/frame_023.jpg".
-Figure of HypnoBBCAnimation024 is the file "Special/Animations/HypnoBBC/frame_024.jpg".
-Figure of HypnoBBCAnimation025 is the file "Special/Animations/HypnoBBC/frame_025.jpg".
-Figure of HypnoBBCAnimation026 is the file "Special/Animations/HypnoBBC/frame_026.jpg".
-Figure of HypnoBBCAnimation027 is the file "Special/Animations/HypnoBBC/frame_027.jpg".
-Figure of HypnoBBCAnimation028 is the file "Special/Animations/HypnoBBC/frame_028.jpg".
-Figure of HypnoBBCAnimation029 is the file "Special/Animations/HypnoBBC/frame_029.jpg".
-Figure of HypnoBBCAnimation030 is the file "Special/Animations/HypnoBBC/frame_030.jpg".
-Figure of HypnoBBCAnimation031 is the file "Special/Animations/HypnoBBC/frame_031.jpg".
-Figure of HypnoBBCAnimation032 is the file "Special/Animations/HypnoBBC/frame_032.jpg".
-Figure of HypnoBBCAnimation033 is the file "Special/Animations/HypnoBBC/frame_033.jpg".
-Figure of HypnoBBCAnimation034 is the file "Special/Animations/HypnoBBC/frame_034.jpg".
-Figure of HypnoBBCAnimation035 is the file "Special/Animations/HypnoBBC/frame_035.jpg".
-Figure of HypnoBBCAnimation036 is the file "Special/Animations/HypnoBBC/frame_036.jpg".
-Figure of HypnoBBCAnimation037 is the file "Special/Animations/HypnoBBC/frame_037.jpg".
-Figure of HypnoBBCAnimation038 is the file "Special/Animations/HypnoBBC/frame_038.jpg".
-Figure of HypnoBBCAnimation039 is the file "Special/Animations/HypnoBBC/frame_039.jpg".
-Figure of HypnoBBCAnimation040 is the file "Special/Animations/HypnoBBC/frame_040.jpg".
-Figure of HypnoBBCAnimation041 is the file "Special/Animations/HypnoBBC/frame_041.jpg".
-Figure of HypnoBBCAnimation042 is the file "Special/Animations/HypnoBBC/frame_042.jpg".
-Figure of HypnoBBCAnimation043 is the file "Special/Animations/HypnoBBC/frame_043.jpg".
-Figure of HypnoBBCAnimation044 is the file "Special/Animations/HypnoBBC/frame_044.jpg".
-Figure of HypnoBBCAnimation045 is the file "Special/Animations/HypnoBBC/frame_045.jpg".
-Figure of HypnoBBCAnimation046 is the file "Special/Animations/HypnoBBC/frame_046.jpg".
-Figure of HypnoBBCAnimation047 is the file "Special/Animations/HypnoBBC/frame_047.jpg".
-Figure of HypnoBBCAnimation048 is the file "Special/Animations/HypnoBBC/frame_048.jpg".
-Figure of HypnoBBCAnimation049 is the file "Special/Animations/HypnoBBC/frame_049.jpg".
-Figure of HypnoBBCAnimation050 is the file "Special/Animations/HypnoBBC/frame_050.jpg".
-Figure of HypnoBBCAnimation051 is the file "Special/Animations/HypnoBBC/frame_051.jpg".
-Figure of HypnoBBCAnimation052 is the file "Special/Animations/HypnoBBC/frame_052.jpg".
-Figure of HypnoBBCAnimation053 is the file "Special/Animations/HypnoBBC/frame_053.jpg".
-Figure of HypnoBBCAnimation054 is the file "Special/Animations/HypnoBBC/frame_054.jpg".
-Figure of HypnoBBCAnimation055 is the file "Special/Animations/HypnoBBC/frame_055.jpg".
-Figure of HypnoBBCAnimation056 is the file "Special/Animations/HypnoBBC/frame_056.jpg".
-Figure of HypnoBBCAnimation057 is the file "Special/Animations/HypnoBBC/frame_057.jpg".
-Figure of HypnoBBCAnimation058 is the file "Special/Animations/HypnoBBC/frame_058.jpg".
-Figure of HypnoBBCAnimation059 is the file "Special/Animations/HypnoBBC/frame_059.jpg".
-Figure of HypnoBBCAnimation060 is the file "Special/Animations/HypnoBBC/frame_060.jpg".
-Figure of HypnoBBCAnimation061 is the file "Special/Animations/HypnoBBC/frame_061.jpg".
-Figure of HypnoBBCAnimation062 is the file "Special/Animations/HypnoBBC/frame_062.jpg".
-Figure of HypnoBBCAnimation063 is the file "Special/Animations/HypnoBBC/frame_063.jpg".
-Figure of HypnoBBCAnimation064 is the file "Special/Animations/HypnoBBC/frame_064.jpg".
-Figure of HypnoBBCAnimation065 is the file "Special/Animations/HypnoBBC/frame_065.jpg".
-Figure of HypnoBBCAnimation066 is the file "Special/Animations/HypnoBBC/frame_066.jpg".
-Figure of HypnoBBCAnimation067 is the file "Special/Animations/HypnoBBC/frame_067.jpg".
-Figure of HypnoBBCAnimation068 is the file "Special/Animations/HypnoBBC/frame_068.jpg".
-Figure of HypnoBBCAnimation069 is the file "Special/Animations/HypnoBBC/frame_069.jpg".
-Figure of HypnoBBCAnimation070 is the file "Special/Animations/HypnoBBC/frame_070.jpg".
-Figure of HypnoBBCAnimation071 is the file "Special/Animations/HypnoBBC/frame_071.jpg".
-Figure of HypnoBBCAnimation072 is the file "Special/Animations/HypnoBBC/frame_072.jpg".
-Figure of HypnoBBCAnimation073 is the file "Special/Animations/HypnoBBC/frame_073.jpg".
-Figure of HypnoBBCAnimation074 is the file "Special/Animations/HypnoBBC/frame_074.jpg".
-Figure of HypnoBBCAnimation075 is the file "Special/Animations/HypnoBBC/frame_075.jpg".
-Figure of HypnoBBCAnimation076 is the file "Special/Animations/HypnoBBC/frame_076.jpg".
-Figure of HypnoBBCAnimation077 is the file "Special/Animations/HypnoBBC/frame_077.jpg".
-Figure of HypnoBBCAnimation078 is the file "Special/Animations/HypnoBBC/frame_078.jpg".
-Figure of HypnoBBCAnimation079 is the file "Special/Animations/HypnoBBC/frame_079.jpg".
-Figure of HypnoBBCAnimation080 is the file "Special/Animations/HypnoBBC/frame_080.jpg".
-Figure of HypnoBBCAnimation081 is the file "Special/Animations/HypnoBBC/frame_081.jpg".
-Figure of HypnoBBCAnimation082 is the file "Special/Animations/HypnoBBC/frame_082.jpg".
-Figure of HypnoBBCAnimation083 is the file "Special/Animations/HypnoBBC/frame_083.jpg".
-Figure of HypnoBBCAnimation084 is the file "Special/Animations/HypnoBBC/frame_084.jpg".
-Figure of HypnoBBCAnimation085 is the file "Special/Animations/HypnoBBC/frame_085.jpg".
-Figure of HypnoBBCAnimation086 is the file "Special/Animations/HypnoBBC/frame_086.jpg".
-Figure of HypnoBBCAnimation087 is the file "Special/Animations/HypnoBBC/frame_087.jpg".
-Figure of HypnoBBCAnimation088 is the file "Special/Animations/HypnoBBC/frame_088.jpg".
-Figure of HypnoBBCAnimation089 is the file "Special/Animations/HypnoBBC/frame_089.jpg".
-Figure of HypnoBBCAnimation090 is the file "Special/Animations/HypnoBBC/frame_090.jpg".
-Figure of HypnoBBCAnimation091 is the file "Special/Animations/HypnoBBC/frame_091.jpg".
-Figure of HypnoBBCAnimation092 is the file "Special/Animations/HypnoBBC/frame_092.jpg".
-Figure of HypnoBBCAnimation093 is the file "Special/Animations/HypnoBBC/frame_093.jpg".
-Figure of HypnoBBCAnimation094 is the file "Special/Animations/HypnoBBC/frame_094.jpg".
-Figure of HypnoBBCAnimation095 is the file "Special/Animations/HypnoBBC/frame_095.jpg".
-Figure of HypnoBBCAnimation096 is the file "Special/Animations/HypnoBBC/frame_096.jpg".
-Figure of HypnoBBCAnimation097 is the file "Special/Animations/HypnoBBC/frame_097.jpg".
-Figure of HypnoBBCAnimation098 is the file "Special/Animations/HypnoBBC/frame_098.jpg".
-Figure of HypnoBBCAnimation099 is the file "Special/Animations/HypnoBBC/frame_099.jpg".
-Figure of HypnoBBCAnimation100 is the file "Special/Animations/HypnoBBC/frame_100.jpg".
-Figure of HypnoBBCAnimation101 is the file "Special/Animations/HypnoBBC/frame_101.jpg".
-Figure of HypnoBBCAnimation102 is the file "Special/Animations/HypnoBBC/frame_102.jpg".
-Figure of HypnoBBCAnimation103 is the file "Special/Animations/HypnoBBC/frame_103.jpg".
-Figure of HypnoBBCAnimation104 is the file "Special/Animations/HypnoBBC/frame_104.jpg".
-Figure of HypnoBBCAnimation105 is the file "Special/Animations/HypnoBBC/frame_105.jpg".
-Figure of HypnoBBCAnimation106 is the file "Special/Animations/HypnoBBC/frame_106.jpg".
-Figure of HypnoBBCAnimation107 is the file "Special/Animations/HypnoBBC/frame_107.jpg".
-Figure of HypnoBBCAnimation108 is the file "Special/Animations/HypnoBBC/frame_108.jpg".
-Figure of HypnoBBCAnimation109 is the file "Special/Animations/HypnoBBC/frame_109.jpg".
-Figure of HypnoBBCAnimation110 is the file "Special/Animations/HypnoBBC/frame_110.jpg".
-Figure of HypnoBBCAnimation111 is the file "Special/Animations/HypnoBBC/frame_111.jpg".
-Figure of HypnoBBCAnimation112 is the file "Special/Animations/HypnoBBC/frame_112.jpg".
-Figure of HypnoBBCAnimation113 is the file "Special/Animations/HypnoBBC/frame_113.jpg".
-Figure of HypnoBBCAnimation114 is the file "Special/Animations/HypnoBBC/frame_114.jpg".
-Figure of HypnoBBCAnimation115 is the file "Special/Animations/HypnoBBC/frame_115.jpg".
-Figure of HypnoBBCAnimation116 is the file "Special/Animations/HypnoBBC/frame_116.jpg".
-Figure of HypnoBBCAnimation117 is the file "Special/Animations/HypnoBBC/frame_117.jpg".
-Figure of HypnoBBCAnimation118 is the file "Special/Animations/HypnoBBC/frame_118.jpg".
-Figure of HypnoBBCAnimation119 is the file "Special/Animations/HypnoBBC/frame_119.jpg".
-Figure of HypnoBBCAnimation120 is the file "Special/Animations/HypnoBBC/frame_120.jpg".
-Figure of HypnoBBCAnimation121 is the file "Special/Animations/HypnoBBC/frame_121.jpg".
-Figure of HypnoBBCAnimation122 is the file "Special/Animations/HypnoBBC/frame_122.jpg".
-Figure of HypnoBBCAnimation123 is the file "Special/Animations/HypnoBBC/frame_123.jpg".
-Figure of HypnoBBCAnimation124 is the file "Special/Animations/HypnoBBC/frame_124.jpg".
-Figure of HypnoBBCAnimation125 is the file "Special/Animations/HypnoBBC/frame_125.jpg".
-Figure of HypnoBBCAnimation126 is the file "Special/Animations/HypnoBBC/frame_126.jpg".
-Figure of HypnoBBCAnimation127 is the file "Special/Animations/HypnoBBC/frame_127.jpg".
-Figure of HypnoBBCAnimation128 is the file "Special/Animations/HypnoBBC/frame_128.jpg".
-Figure of HypnoBBCAnimation129 is the file "Special/Animations/HypnoBBC/frame_129.jpg".
-Figure of HypnoBBCAnimation130 is the file "Special/Animations/HypnoBBC/frame_130.jpg".
-Figure of HypnoBBCAnimation131 is the file "Special/Animations/HypnoBBC/frame_131.jpg".
-Figure of HypnoBBCAnimation132 is the file "Special/Animations/HypnoBBC/frame_132.jpg".
-Figure of HypnoBBCAnimation133 is the file "Special/Animations/HypnoBBC/frame_133.jpg".
-Figure of HypnoBBCAnimation134 is the file "Special/Animations/HypnoBBC/frame_134.jpg".
-Figure of HypnoBBCAnimation135 is the file "Special/Animations/HypnoBBC/frame_135.jpg".
-Figure of HypnoBBCAnimation136 is the file "Special/Animations/HypnoBBC/frame_136.jpg".
-Figure of HypnoBBCAnimation137 is the file "Special/Animations/HypnoBBC/frame_137.jpg".
-Figure of HypnoBBCAnimation138 is the file "Special/Animations/HypnoBBC/frame_138.jpg".
-Figure of HypnoBBCAnimation139 is the file "Special/Animations/HypnoBBC/frame_139.jpg".
-Figure of HypnoBBCAnimation140 is the file "Special/Animations/HypnoBBC/frame_140.jpg".
-Figure of HypnoBBCAnimation141 is the file "Special/Animations/HypnoBBC/frame_141.jpg".
-Figure of HypnoBBCAnimation142 is the file "Special/Animations/HypnoBBC/frame_142.jpg".
-Figure of HypnoBBCAnimation143 is the file "Special/Animations/HypnoBBC/frame_143.jpg".
-Figure of HypnoBBCAnimation144 is the file "Special/Animations/HypnoBBC/frame_144.jpg".
-Figure of HypnoBBCAnimation145 is the file "Special/Animations/HypnoBBC/frame_145.jpg".
-Figure of HypnoBBCAnimation146 is the file "Special/Animations/HypnoBBC/frame_146.jpg".
-Figure of HypnoBBCAnimation147 is the file "Special/Animations/HypnoBBC/frame_147.jpg".
-Figure of HypnoBBCAnimation148 is the file "Special/Animations/HypnoBBC/frame_148.jpg".
-Figure of HypnoBBCAnimation149 is the file "Special/Animations/HypnoBBC/frame_149.jpg".
-Figure of HypnoBBCAnimation150 is the file "Special/Animations/HypnoBBC/frame_150.jpg".
-Figure of HypnoBBCAnimation151 is the file "Special/Animations/HypnoBBC/frame_151.jpg".
-Figure of HypnoBBCAnimation152 is the file "Special/Animations/HypnoBBC/frame_152.jpg".
-Figure of HypnoBBCAnimation153 is the file "Special/Animations/HypnoBBC/frame_153.jpg".
-Figure of HypnoBBCAnimation154 is the file "Special/Animations/HypnoBBC/frame_154.jpg".
-Figure of HypnoBBCAnimation155 is the file "Special/Animations/HypnoBBC/frame_155.jpg".
-Figure of HypnoBBCAnimation156 is the file "Special/Animations/HypnoBBC/frame_156.jpg".
-Figure of HypnoBBCAnimation157 is the file "Special/Animations/HypnoBBC/frame_157.jpg".
-Figure of HypnoBBCAnimation158 is the file "Special/Animations/HypnoBBC/frame_158.jpg".
-Figure of HypnoBBCAnimation159 is the file "Special/Animations/HypnoBBC/frame_159.jpg".
-Figure of HypnoBBCAnimation160 is the file "Special/Animations/HypnoBBC/frame_160.jpg".
-Figure of HypnoBBCAnimation161 is the file "Special/Animations/HypnoBBC/frame_161.jpg".
-Figure of HypnoBBCAnimation162 is the file "Special/Animations/HypnoBBC/frame_162.jpg".
-Figure of HypnoBBCAnimation163 is the file "Special/Animations/HypnoBBC/frame_163.jpg".
-Figure of HypnoBBCAnimation164 is the file "Special/Animations/HypnoBBC/frame_164.jpg".
-Figure of HypnoBBCAnimation165 is the file "Special/Animations/HypnoBBC/frame_165.jpg".
-Figure of HypnoBBCAnimation166 is the file "Special/Animations/HypnoBBC/frame_166.jpg".
-Figure of HypnoBBCAnimation167 is the file "Special/Animations/HypnoBBC/frame_167.jpg".
-Figure of HypnoBBCAnimation168 is the file "Special/Animations/HypnoBBC/frame_168.jpg".
+Figure of SpiralBBCAnimation001 is the file "Special/Animations/SpiralBBC/frame_001.jpg".
+Figure of SpiralBBCAnimation002 is the file "Special/Animations/SpiralBBC/frame_002.jpg".
+Figure of SpiralBBCAnimation003 is the file "Special/Animations/SpiralBBC/frame_003.jpg".
+Figure of SpiralBBCAnimation004 is the file "Special/Animations/SpiralBBC/frame_004.jpg".
+Figure of SpiralBBCAnimation005 is the file "Special/Animations/SpiralBBC/frame_005.jpg".
+Figure of SpiralBBCAnimation006 is the file "Special/Animations/SpiralBBC/frame_006.jpg".
+Figure of SpiralBBCAnimation007 is the file "Special/Animations/SpiralBBC/frame_007.jpg".
+Figure of SpiralBBCAnimation008 is the file "Special/Animations/SpiralBBC/frame_008.jpg".
+Figure of SpiralBBCAnimation009 is the file "Special/Animations/SpiralBBC/frame_009.jpg".
+Figure of SpiralBBCAnimation010 is the file "Special/Animations/SpiralBBC/frame_010.jpg".
+Figure of SpiralBBCAnimation011 is the file "Special/Animations/SpiralBBC/frame_011.jpg".
+Figure of SpiralBBCAnimation012 is the file "Special/Animations/SpiralBBC/frame_012.jpg".
+Figure of SpiralBBCAnimation013 is the file "Special/Animations/SpiralBBC/frame_013.jpg".
+Figure of SpiralBBCAnimation014 is the file "Special/Animations/SpiralBBC/frame_014.jpg".
+Figure of SpiralBBCAnimation015 is the file "Special/Animations/SpiralBBC/frame_015.jpg".
+Figure of SpiralBBCAnimation016 is the file "Special/Animations/SpiralBBC/frame_016.jpg".
+Figure of SpiralBBCAnimation017 is the file "Special/Animations/SpiralBBC/frame_017.jpg".
+Figure of SpiralBBCAnimation018 is the file "Special/Animations/SpiralBBC/frame_018.jpg".
+Figure of SpiralBBCAnimation019 is the file "Special/Animations/SpiralBBC/frame_019.jpg".
+Figure of SpiralBBCAnimation020 is the file "Special/Animations/SpiralBBC/frame_020.jpg".
+Figure of SpiralBBCAnimation021 is the file "Special/Animations/SpiralBBC/frame_021.jpg".
+Figure of SpiralBBCAnimation022 is the file "Special/Animations/SpiralBBC/frame_022.jpg".
+Figure of SpiralBBCAnimation023 is the file "Special/Animations/SpiralBBC/frame_023.jpg".
+Figure of SpiralBBCAnimation024 is the file "Special/Animations/SpiralBBC/frame_024.jpg".
+Figure of SpiralBBCAnimation025 is the file "Special/Animations/SpiralBBC/frame_025.jpg".
+Figure of SpiralBBCAnimation026 is the file "Special/Animations/SpiralBBC/frame_026.jpg".
+Figure of SpiralBBCAnimation027 is the file "Special/Animations/SpiralBBC/frame_027.jpg".
+Figure of SpiralBBCAnimation028 is the file "Special/Animations/SpiralBBC/frame_028.jpg".
+Figure of SpiralBBCAnimation029 is the file "Special/Animations/SpiralBBC/frame_029.jpg".
+Figure of SpiralBBCAnimation030 is the file "Special/Animations/SpiralBBC/frame_030.jpg".
+Figure of SpiralBBCAnimation031 is the file "Special/Animations/SpiralBBC/frame_031.jpg".
+Figure of SpiralBBCAnimation032 is the file "Special/Animations/SpiralBBC/frame_032.jpg".
+Figure of SpiralBBCAnimation033 is the file "Special/Animations/SpiralBBC/frame_033.jpg".
+Figure of SpiralBBCAnimation034 is the file "Special/Animations/SpiralBBC/frame_034.jpg".
+Figure of SpiralBBCAnimation035 is the file "Special/Animations/SpiralBBC/frame_035.jpg".
+Figure of SpiralBBCAnimation036 is the file "Special/Animations/SpiralBBC/frame_036.jpg".
+Figure of SpiralBBCAnimation037 is the file "Special/Animations/SpiralBBC/frame_037.jpg".
+Figure of SpiralBBCAnimation038 is the file "Special/Animations/SpiralBBC/frame_038.jpg".
+Figure of SpiralBBCAnimation039 is the file "Special/Animations/SpiralBBC/frame_039.jpg".
+Figure of SpiralBBCAnimation040 is the file "Special/Animations/SpiralBBC/frame_040.jpg".
+Figure of SpiralBBCAnimation041 is the file "Special/Animations/SpiralBBC/frame_041.jpg".
+Figure of SpiralBBCAnimation042 is the file "Special/Animations/SpiralBBC/frame_042.jpg".
+Figure of SpiralBBCAnimation043 is the file "Special/Animations/SpiralBBC/frame_043.jpg".
+Figure of SpiralBBCAnimation044 is the file "Special/Animations/SpiralBBC/frame_044.jpg".
+Figure of SpiralBBCAnimation045 is the file "Special/Animations/SpiralBBC/frame_045.jpg".
+Figure of SpiralBBCAnimation046 is the file "Special/Animations/SpiralBBC/frame_046.jpg".
+Figure of SpiralBBCAnimation047 is the file "Special/Animations/SpiralBBC/frame_047.jpg".
+Figure of SpiralBBCAnimation048 is the file "Special/Animations/SpiralBBC/frame_048.jpg".
+Figure of SpiralBBCAnimation049 is the file "Special/Animations/SpiralBBC/frame_049.jpg".
+Figure of SpiralBBCAnimation050 is the file "Special/Animations/SpiralBBC/frame_050.jpg".
+Figure of SpiralBBCAnimation051 is the file "Special/Animations/SpiralBBC/frame_051.jpg".
+Figure of SpiralBBCAnimation052 is the file "Special/Animations/SpiralBBC/frame_052.jpg".
+Figure of SpiralBBCAnimation053 is the file "Special/Animations/SpiralBBC/frame_053.jpg".
+Figure of SpiralBBCAnimation054 is the file "Special/Animations/SpiralBBC/frame_054.jpg".
+Figure of SpiralBBCAnimation055 is the file "Special/Animations/SpiralBBC/frame_055.jpg".
+Figure of SpiralBBCAnimation056 is the file "Special/Animations/SpiralBBC/frame_056.jpg".
+Figure of SpiralBBCAnimation057 is the file "Special/Animations/SpiralBBC/frame_057.jpg".
+Figure of SpiralBBCAnimation058 is the file "Special/Animations/SpiralBBC/frame_058.jpg".
+Figure of SpiralBBCAnimation059 is the file "Special/Animations/SpiralBBC/frame_059.jpg".
+Figure of SpiralBBCAnimation060 is the file "Special/Animations/SpiralBBC/frame_060.jpg".
+Figure of SpiralBBCAnimation061 is the file "Special/Animations/SpiralBBC/frame_061.jpg".
+Figure of SpiralBBCAnimation062 is the file "Special/Animations/SpiralBBC/frame_062.jpg".
+Figure of SpiralBBCAnimation063 is the file "Special/Animations/SpiralBBC/frame_063.jpg".
+Figure of SpiralBBCAnimation064 is the file "Special/Animations/SpiralBBC/frame_064.jpg".
+Figure of SpiralBBCAnimation065 is the file "Special/Animations/SpiralBBC/frame_065.jpg".
+Figure of SpiralBBCAnimation066 is the file "Special/Animations/SpiralBBC/frame_066.jpg".
+Figure of SpiralBBCAnimation067 is the file "Special/Animations/SpiralBBC/frame_067.jpg".
+Figure of SpiralBBCAnimation068 is the file "Special/Animations/SpiralBBC/frame_068.jpg".
+Figure of SpiralBBCAnimation069 is the file "Special/Animations/SpiralBBC/frame_069.jpg".
+Figure of SpiralBBCAnimation070 is the file "Special/Animations/SpiralBBC/frame_070.jpg".
+Figure of SpiralBBCAnimation071 is the file "Special/Animations/SpiralBBC/frame_071.jpg".
+Figure of SpiralBBCAnimation072 is the file "Special/Animations/SpiralBBC/frame_072.jpg".
+Figure of SpiralBBCAnimation073 is the file "Special/Animations/SpiralBBC/frame_073.jpg".
+Figure of SpiralBBCAnimation074 is the file "Special/Animations/SpiralBBC/frame_074.jpg".
+Figure of SpiralBBCAnimation075 is the file "Special/Animations/SpiralBBC/frame_075.jpg".
+Figure of SpiralBBCAnimation076 is the file "Special/Animations/SpiralBBC/frame_076.jpg".
+Figure of SpiralBBCAnimation077 is the file "Special/Animations/SpiralBBC/frame_077.jpg".
+Figure of SpiralBBCAnimation078 is the file "Special/Animations/SpiralBBC/frame_078.jpg".
+Figure of SpiralBBCAnimation079 is the file "Special/Animations/SpiralBBC/frame_079.jpg".
+Figure of SpiralBBCAnimation080 is the file "Special/Animations/SpiralBBC/frame_080.jpg".
+Figure of SpiralBBCAnimation081 is the file "Special/Animations/SpiralBBC/frame_081.jpg".
+Figure of SpiralBBCAnimation082 is the file "Special/Animations/SpiralBBC/frame_082.jpg".
+Figure of SpiralBBCAnimation083 is the file "Special/Animations/SpiralBBC/frame_083.jpg".
+Figure of SpiralBBCAnimation084 is the file "Special/Animations/SpiralBBC/frame_084.jpg".
+Figure of SpiralBBCAnimation085 is the file "Special/Animations/SpiralBBC/frame_085.jpg".
+Figure of SpiralBBCAnimation086 is the file "Special/Animations/SpiralBBC/frame_086.jpg".
+Figure of SpiralBBCAnimation087 is the file "Special/Animations/SpiralBBC/frame_087.jpg".
+Figure of SpiralBBCAnimation088 is the file "Special/Animations/SpiralBBC/frame_088.jpg".
+Figure of SpiralBBCAnimation089 is the file "Special/Animations/SpiralBBC/frame_089.jpg".
+Figure of SpiralBBCAnimation090 is the file "Special/Animations/SpiralBBC/frame_090.jpg".
+Figure of SpiralBBCAnimation091 is the file "Special/Animations/SpiralBBC/frame_091.jpg".
+Figure of SpiralBBCAnimation092 is the file "Special/Animations/SpiralBBC/frame_092.jpg".
+Figure of SpiralBBCAnimation093 is the file "Special/Animations/SpiralBBC/frame_093.jpg".
+Figure of SpiralBBCAnimation094 is the file "Special/Animations/SpiralBBC/frame_094.jpg".
+Figure of SpiralBBCAnimation095 is the file "Special/Animations/SpiralBBC/frame_095.jpg".
+Figure of SpiralBBCAnimation096 is the file "Special/Animations/SpiralBBC/frame_096.jpg".
+Figure of SpiralBBCAnimation097 is the file "Special/Animations/SpiralBBC/frame_097.jpg".
+Figure of SpiralBBCAnimation098 is the file "Special/Animations/SpiralBBC/frame_098.jpg".
+Figure of SpiralBBCAnimation099 is the file "Special/Animations/SpiralBBC/frame_099.jpg".
+Figure of SpiralBBCAnimation100 is the file "Special/Animations/SpiralBBC/frame_100.jpg".
+Figure of SpiralBBCAnimation101 is the file "Special/Animations/SpiralBBC/frame_101.jpg".
+Figure of SpiralBBCAnimation102 is the file "Special/Animations/SpiralBBC/frame_102.jpg".
+Figure of SpiralBBCAnimation103 is the file "Special/Animations/SpiralBBC/frame_103.jpg".
+Figure of SpiralBBCAnimation104 is the file "Special/Animations/SpiralBBC/frame_104.jpg".
+Figure of SpiralBBCAnimation105 is the file "Special/Animations/SpiralBBC/frame_105.jpg".
+Figure of SpiralBBCAnimation106 is the file "Special/Animations/SpiralBBC/frame_106.jpg".
+Figure of SpiralBBCAnimation107 is the file "Special/Animations/SpiralBBC/frame_107.jpg".
+Figure of SpiralBBCAnimation108 is the file "Special/Animations/SpiralBBC/frame_108.jpg".
+Figure of SpiralBBCAnimation109 is the file "Special/Animations/SpiralBBC/frame_109.jpg".
+Figure of SpiralBBCAnimation110 is the file "Special/Animations/SpiralBBC/frame_110.jpg".
+Figure of SpiralBBCAnimation111 is the file "Special/Animations/SpiralBBC/frame_111.jpg".
+Figure of SpiralBBCAnimation112 is the file "Special/Animations/SpiralBBC/frame_112.jpg".
+Figure of SpiralBBCAnimation113 is the file "Special/Animations/SpiralBBC/frame_113.jpg".
+Figure of SpiralBBCAnimation114 is the file "Special/Animations/SpiralBBC/frame_114.jpg".
+Figure of SpiralBBCAnimation115 is the file "Special/Animations/SpiralBBC/frame_115.jpg".
+Figure of SpiralBBCAnimation116 is the file "Special/Animations/SpiralBBC/frame_116.jpg".
+Figure of SpiralBBCAnimation117 is the file "Special/Animations/SpiralBBC/frame_117.jpg".
+Figure of SpiralBBCAnimation118 is the file "Special/Animations/SpiralBBC/frame_118.jpg".
+Figure of SpiralBBCAnimation119 is the file "Special/Animations/SpiralBBC/frame_119.jpg".
+Figure of SpiralBBCAnimation120 is the file "Special/Animations/SpiralBBC/frame_120.jpg".
+Figure of SpiralBBCAnimation121 is the file "Special/Animations/SpiralBBC/frame_121.jpg".
+Figure of SpiralBBCAnimation122 is the file "Special/Animations/SpiralBBC/frame_122.jpg".
+Figure of SpiralBBCAnimation123 is the file "Special/Animations/SpiralBBC/frame_123.jpg".
+Figure of SpiralBBCAnimation124 is the file "Special/Animations/SpiralBBC/frame_124.jpg".
+Figure of SpiralBBCAnimation125 is the file "Special/Animations/SpiralBBC/frame_125.jpg".
+Figure of SpiralBBCAnimation126 is the file "Special/Animations/SpiralBBC/frame_126.jpg".
+Figure of SpiralBBCAnimation127 is the file "Special/Animations/SpiralBBC/frame_127.jpg".
+Figure of SpiralBBCAnimation128 is the file "Special/Animations/SpiralBBC/frame_128.jpg".
+Figure of SpiralBBCAnimation129 is the file "Special/Animations/SpiralBBC/frame_129.jpg".
+Figure of SpiralBBCAnimation130 is the file "Special/Animations/SpiralBBC/frame_130.jpg".
+Figure of SpiralBBCAnimation131 is the file "Special/Animations/SpiralBBC/frame_131.jpg".
+Figure of SpiralBBCAnimation132 is the file "Special/Animations/SpiralBBC/frame_132.jpg".
+Figure of SpiralBBCAnimation133 is the file "Special/Animations/SpiralBBC/frame_133.jpg".
+Figure of SpiralBBCAnimation134 is the file "Special/Animations/SpiralBBC/frame_134.jpg".
+Figure of SpiralBBCAnimation135 is the file "Special/Animations/SpiralBBC/frame_135.jpg".
+Figure of SpiralBBCAnimation136 is the file "Special/Animations/SpiralBBC/frame_136.jpg".
+Figure of SpiralBBCAnimation137 is the file "Special/Animations/SpiralBBC/frame_137.jpg".
+Figure of SpiralBBCAnimation138 is the file "Special/Animations/SpiralBBC/frame_138.jpg".
+Figure of SpiralBBCAnimation139 is the file "Special/Animations/SpiralBBC/frame_139.jpg".
+Figure of SpiralBBCAnimation140 is the file "Special/Animations/SpiralBBC/frame_140.jpg".
+Figure of SpiralBBCAnimation141 is the file "Special/Animations/SpiralBBC/frame_141.jpg".
+Figure of SpiralBBCAnimation142 is the file "Special/Animations/SpiralBBC/frame_142.jpg".
+Figure of SpiralBBCAnimation143 is the file "Special/Animations/SpiralBBC/frame_143.jpg".
+Figure of SpiralBBCAnimation144 is the file "Special/Animations/SpiralBBC/frame_144.jpg".
+Figure of SpiralBBCAnimation145 is the file "Special/Animations/SpiralBBC/frame_145.jpg".
+Figure of SpiralBBCAnimation146 is the file "Special/Animations/SpiralBBC/frame_146.jpg".
+Figure of SpiralBBCAnimation147 is the file "Special/Animations/SpiralBBC/frame_147.jpg".
+Figure of SpiralBBCAnimation148 is the file "Special/Animations/SpiralBBC/frame_148.jpg".
+Figure of SpiralBBCAnimation149 is the file "Special/Animations/SpiralBBC/frame_149.jpg".
+Figure of SpiralBBCAnimation150 is the file "Special/Animations/SpiralBBC/frame_150.jpg".
+Figure of SpiralBBCAnimation151 is the file "Special/Animations/SpiralBBC/frame_151.jpg".
+Figure of SpiralBBCAnimation152 is the file "Special/Animations/SpiralBBC/frame_152.jpg".
+Figure of SpiralBBCAnimation153 is the file "Special/Animations/SpiralBBC/frame_153.jpg".
+Figure of SpiralBBCAnimation154 is the file "Special/Animations/SpiralBBC/frame_154.jpg".
+Figure of SpiralBBCAnimation155 is the file "Special/Animations/SpiralBBC/frame_155.jpg".
+Figure of SpiralBBCAnimation156 is the file "Special/Animations/SpiralBBC/frame_156.jpg".
+Figure of SpiralBBCAnimation157 is the file "Special/Animations/SpiralBBC/frame_157.jpg".
+Figure of SpiralBBCAnimation158 is the file "Special/Animations/SpiralBBC/frame_158.jpg".
+Figure of SpiralBBCAnimation159 is the file "Special/Animations/SpiralBBC/frame_159.jpg".
+Figure of SpiralBBCAnimation160 is the file "Special/Animations/SpiralBBC/frame_160.jpg".
+Figure of SpiralBBCAnimation161 is the file "Special/Animations/SpiralBBC/frame_161.jpg".
+Figure of SpiralBBCAnimation162 is the file "Special/Animations/SpiralBBC/frame_162.jpg".
+Figure of SpiralBBCAnimation163 is the file "Special/Animations/SpiralBBC/frame_163.jpg".
+Figure of SpiralBBCAnimation164 is the file "Special/Animations/SpiralBBC/frame_164.jpg".
+Figure of SpiralBBCAnimation165 is the file "Special/Animations/SpiralBBC/frame_165.jpg".
+Figure of SpiralBBCAnimation166 is the file "Special/Animations/SpiralBBC/frame_166.jpg".
+Figure of SpiralBBCAnimation167 is the file "Special/Animations/SpiralBBC/frame_167.jpg".
+Figure of SpiralBBCAnimation168 is the file "Special/Animations/SpiralBBC/frame_168.jpg".
 When play begins:
-	fill BBCHypnoAnimation from Figure of HypnoBBCAnimation001 to 167. [It starts at 1 rather than 0 so ends at 167 rather than 168]
+	fill BBCSpiralAnimation from Figure of SpiralBBCAnimation001 to 167. [It starts at 1 rather than 0 so ends at 167 rather than 168]
 
-Figure of HypnoOralAnimation000 is the file "Special/Animations/HypnoOral/frame_000.jpg".
-Figure of HypnoOralAnimation001 is the file "Special/Animations/HypnoOral/frame_001.jpg".
-Figure of HypnoOralAnimation002 is the file "Special/Animations/HypnoOral/frame_002.jpg".
-Figure of HypnoOralAnimation003 is the file "Special/Animations/HypnoOral/frame_003.jpg".
-Figure of HypnoOralAnimation004 is the file "Special/Animations/HypnoOral/frame_004.jpg".
-Figure of HypnoOralAnimation005 is the file "Special/Animations/HypnoOral/frame_005.jpg".
-Figure of HypnoOralAnimation006 is the file "Special/Animations/HypnoOral/frame_006.jpg".
-Figure of HypnoOralAnimation007 is the file "Special/Animations/HypnoOral/frame_007.jpg".
-Figure of HypnoOralAnimation008 is the file "Special/Animations/HypnoOral/frame_008.jpg".
-Figure of HypnoOralAnimation009 is the file "Special/Animations/HypnoOral/frame_009.jpg".
-Figure of HypnoOralAnimation010 is the file "Special/Animations/HypnoOral/frame_010.jpg".
-Figure of HypnoOralAnimation011 is the file "Special/Animations/HypnoOral/frame_011.jpg".
-Figure of HypnoOralAnimation012 is the file "Special/Animations/HypnoOral/frame_012.jpg".
-Figure of HypnoOralAnimation013 is the file "Special/Animations/HypnoOral/frame_013.jpg".
-Figure of HypnoOralAnimation014 is the file "Special/Animations/HypnoOral/frame_014.jpg".
-Figure of HypnoOralAnimation015 is the file "Special/Animations/HypnoOral/frame_015.jpg".
-Figure of HypnoOralAnimation016 is the file "Special/Animations/HypnoOral/frame_016.jpg".
-Figure of HypnoOralAnimation017 is the file "Special/Animations/HypnoOral/frame_017.jpg".
-Figure of HypnoOralAnimation018 is the file "Special/Animations/HypnoOral/frame_018.jpg".
-Figure of HypnoOralAnimation019 is the file "Special/Animations/HypnoOral/frame_019.jpg".
-Figure of HypnoOralAnimation020 is the file "Special/Animations/HypnoOral/frame_020.jpg".
-Figure of HypnoOralAnimation021 is the file "Special/Animations/HypnoOral/frame_021.jpg".
-Figure of HypnoOralAnimation022 is the file "Special/Animations/HypnoOral/frame_022.jpg".
-Figure of HypnoOralAnimation023 is the file "Special/Animations/HypnoOral/frame_023.jpg".
-Figure of HypnoOralAnimation024 is the file "Special/Animations/HypnoOral/frame_024.jpg".
-Figure of HypnoOralAnimation025 is the file "Special/Animations/HypnoOral/frame_025.jpg".
-Figure of HypnoOralAnimation026 is the file "Special/Animations/HypnoOral/frame_026.jpg".
-Figure of HypnoOralAnimation027 is the file "Special/Animations/HypnoOral/frame_027.jpg".
-Figure of HypnoOralAnimation028 is the file "Special/Animations/HypnoOral/frame_028.jpg".
-Figure of HypnoOralAnimation029 is the file "Special/Animations/HypnoOral/frame_029.jpg".
-Figure of HypnoOralAnimation030 is the file "Special/Animations/HypnoOral/frame_030.jpg".
-Figure of HypnoOralAnimation031 is the file "Special/Animations/HypnoOral/frame_031.jpg".
-Figure of HypnoOralAnimation032 is the file "Special/Animations/HypnoOral/frame_032.jpg".
-Figure of HypnoOralAnimation033 is the file "Special/Animations/HypnoOral/frame_033.jpg".
-Figure of HypnoOralAnimation034 is the file "Special/Animations/HypnoOral/frame_034.jpg".
-Figure of HypnoOralAnimation035 is the file "Special/Animations/HypnoOral/frame_035.jpg".
-Figure of HypnoOralAnimation036 is the file "Special/Animations/HypnoOral/frame_036.jpg".
-Figure of HypnoOralAnimation037 is the file "Special/Animations/HypnoOral/frame_037.jpg".
-Figure of HypnoOralAnimation038 is the file "Special/Animations/HypnoOral/frame_038.jpg".
-Figure of HypnoOralAnimation039 is the file "Special/Animations/HypnoOral/frame_039.jpg".
-Figure of HypnoOralAnimation040 is the file "Special/Animations/HypnoOral/frame_040.jpg".
-Figure of HypnoOralAnimation041 is the file "Special/Animations/HypnoOral/frame_041.jpg".
-Figure of HypnoOralAnimation042 is the file "Special/Animations/HypnoOral/frame_042.jpg".
-Figure of HypnoOralAnimation043 is the file "Special/Animations/HypnoOral/frame_043.jpg".
-Figure of HypnoOralAnimation044 is the file "Special/Animations/HypnoOral/frame_044.jpg".
-Figure of HypnoOralAnimation045 is the file "Special/Animations/HypnoOral/frame_045.jpg".
-Figure of HypnoOralAnimation046 is the file "Special/Animations/HypnoOral/frame_046.jpg".
-Figure of HypnoOralAnimation047 is the file "Special/Animations/HypnoOral/frame_047.jpg".
-Figure of HypnoOralAnimation048 is the file "Special/Animations/HypnoOral/frame_048.jpg".
-Figure of HypnoOralAnimation049 is the file "Special/Animations/HypnoOral/frame_049.jpg".
-Figure of HypnoOralAnimation050 is the file "Special/Animations/HypnoOral/frame_050.jpg".
-Figure of HypnoOralAnimation051 is the file "Special/Animations/HypnoOral/frame_051.jpg".
-Figure of HypnoOralAnimation052 is the file "Special/Animations/HypnoOral/frame_052.jpg".
-Figure of HypnoOralAnimation053 is the file "Special/Animations/HypnoOral/frame_053.jpg".
-Figure of HypnoOralAnimation054 is the file "Special/Animations/HypnoOral/frame_054.jpg".
-Figure of HypnoOralAnimation055 is the file "Special/Animations/HypnoOral/frame_055.jpg".
-Figure of HypnoOralAnimation056 is the file "Special/Animations/HypnoOral/frame_056.jpg".
-Figure of HypnoOralAnimation057 is the file "Special/Animations/HypnoOral/frame_057.jpg".
-Figure of HypnoOralAnimation058 is the file "Special/Animations/HypnoOral/frame_058.jpg".
-Figure of HypnoOralAnimation059 is the file "Special/Animations/HypnoOral/frame_059.jpg".
-Figure of HypnoOralAnimation060 is the file "Special/Animations/HypnoOral/frame_060.jpg".
-Figure of HypnoOralAnimation061 is the file "Special/Animations/HypnoOral/frame_061.jpg".
-Figure of HypnoOralAnimation062 is the file "Special/Animations/HypnoOral/frame_062.jpg".
-Figure of HypnoOralAnimation063 is the file "Special/Animations/HypnoOral/frame_063.jpg".
-Figure of HypnoOralAnimation064 is the file "Special/Animations/HypnoOral/frame_064.jpg".
-Figure of HypnoOralAnimation065 is the file "Special/Animations/HypnoOral/frame_065.jpg".
-Figure of HypnoOralAnimation066 is the file "Special/Animations/HypnoOral/frame_066.jpg".
-Figure of HypnoOralAnimation067 is the file "Special/Animations/HypnoOral/frame_067.jpg".
-Figure of HypnoOralAnimation068 is the file "Special/Animations/HypnoOral/frame_068.jpg".
-Figure of HypnoOralAnimation069 is the file "Special/Animations/HypnoOral/frame_069.jpg".
-Figure of HypnoOralAnimation070 is the file "Special/Animations/HypnoOral/frame_070.jpg".
-Figure of HypnoOralAnimation071 is the file "Special/Animations/HypnoOral/frame_071.jpg".
-Figure of HypnoOralAnimation072 is the file "Special/Animations/HypnoOral/frame_072.jpg".
-Figure of HypnoOralAnimation073 is the file "Special/Animations/HypnoOral/frame_073.jpg".
-Figure of HypnoOralAnimation074 is the file "Special/Animations/HypnoOral/frame_074.jpg".
-Figure of HypnoOralAnimation075 is the file "Special/Animations/HypnoOral/frame_075.jpg".
-Figure of HypnoOralAnimation076 is the file "Special/Animations/HypnoOral/frame_076.jpg".
-Figure of HypnoOralAnimation077 is the file "Special/Animations/HypnoOral/frame_077.jpg".
-Figure of HypnoOralAnimation078 is the file "Special/Animations/HypnoOral/frame_078.jpg".
-Figure of HypnoOralAnimation079 is the file "Special/Animations/HypnoOral/frame_079.jpg".
-Figure of HypnoOralAnimation080 is the file "Special/Animations/HypnoOral/frame_080.jpg".
-Figure of HypnoOralAnimation081 is the file "Special/Animations/HypnoOral/frame_081.jpg".
-Figure of HypnoOralAnimation082 is the file "Special/Animations/HypnoOral/frame_082.jpg".
-Figure of HypnoOralAnimation083 is the file "Special/Animations/HypnoOral/frame_083.jpg".
-Figure of HypnoOralAnimation084 is the file "Special/Animations/HypnoOral/frame_084.jpg".
-Figure of HypnoOralAnimation085 is the file "Special/Animations/HypnoOral/frame_085.jpg".
-Figure of HypnoOralAnimation086 is the file "Special/Animations/HypnoOral/frame_086.jpg".
-Figure of HypnoOralAnimation087 is the file "Special/Animations/HypnoOral/frame_087.jpg".
-Figure of HypnoOralAnimation088 is the file "Special/Animations/HypnoOral/frame_088.jpg".
-Figure of HypnoOralAnimation089 is the file "Special/Animations/HypnoOral/frame_089.jpg".
-Figure of HypnoOralAnimation090 is the file "Special/Animations/HypnoOral/frame_090.jpg".
-Figure of HypnoOralAnimation091 is the file "Special/Animations/HypnoOral/frame_091.jpg".
-Figure of HypnoOralAnimation092 is the file "Special/Animations/HypnoOral/frame_092.jpg".
-Figure of HypnoOralAnimation093 is the file "Special/Animations/HypnoOral/frame_093.jpg".
-Figure of HypnoOralAnimation094 is the file "Special/Animations/HypnoOral/frame_094.jpg".
-Figure of HypnoOralAnimation095 is the file "Special/Animations/HypnoOral/frame_095.jpg".
-Figure of HypnoOralAnimation096 is the file "Special/Animations/HypnoOral/frame_096.jpg".
-Figure of HypnoOralAnimation097 is the file "Special/Animations/HypnoOral/frame_097.jpg".
-Figure of HypnoOralAnimation098 is the file "Special/Animations/HypnoOral/frame_098.jpg".
-Figure of HypnoOralAnimation099 is the file "Special/Animations/HypnoOral/frame_099.jpg".
-Figure of HypnoOralAnimation100 is the file "Special/Animations/HypnoOral/frame_100.jpg".
-Figure of HypnoOralAnimation101 is the file "Special/Animations/HypnoOral/frame_101.jpg".
-Figure of HypnoOralAnimation102 is the file "Special/Animations/HypnoOral/frame_102.jpg".
-Figure of HypnoOralAnimation103 is the file "Special/Animations/HypnoOral/frame_103.jpg".
-Figure of HypnoOralAnimation104 is the file "Special/Animations/HypnoOral/frame_104.jpg".
-Figure of HypnoOralAnimation105 is the file "Special/Animations/HypnoOral/frame_105.jpg".
-Figure of HypnoOralAnimation106 is the file "Special/Animations/HypnoOral/frame_106.jpg".
-Figure of HypnoOralAnimation107 is the file "Special/Animations/HypnoOral/frame_107.jpg".
-Figure of HypnoOralAnimation108 is the file "Special/Animations/HypnoOral/frame_108.jpg".
-Figure of HypnoOralAnimation109 is the file "Special/Animations/HypnoOral/frame_109.jpg".
-Figure of HypnoOralAnimation110 is the file "Special/Animations/HypnoOral/frame_110.jpg".
-Figure of HypnoOralAnimation111 is the file "Special/Animations/HypnoOral/frame_111.jpg".
-Figure of HypnoOralAnimation112 is the file "Special/Animations/HypnoOral/frame_112.jpg".
-Figure of HypnoOralAnimation113 is the file "Special/Animations/HypnoOral/frame_113.jpg".
-Figure of HypnoOralAnimation114 is the file "Special/Animations/HypnoOral/frame_114.jpg".
-Figure of HypnoOralAnimation115 is the file "Special/Animations/HypnoOral/frame_115.jpg".
-Figure of HypnoOralAnimation116 is the file "Special/Animations/HypnoOral/frame_116.jpg".
-Figure of HypnoOralAnimation117 is the file "Special/Animations/HypnoOral/frame_117.jpg".
-Figure of HypnoOralAnimation118 is the file "Special/Animations/HypnoOral/frame_118.jpg".
-Figure of HypnoOralAnimation119 is the file "Special/Animations/HypnoOral/frame_119.jpg".
-Figure of HypnoOralAnimation120 is the file "Special/Animations/HypnoOral/frame_120.jpg".
-Figure of HypnoOralAnimation121 is the file "Special/Animations/HypnoOral/frame_121.jpg".
-Figure of HypnoOralAnimation122 is the file "Special/Animations/HypnoOral/frame_122.jpg".
-Figure of HypnoOralAnimation123 is the file "Special/Animations/HypnoOral/frame_123.jpg".
-Figure of HypnoOralAnimation124 is the file "Special/Animations/HypnoOral/frame_124.jpg".
-Figure of HypnoOralAnimation125 is the file "Special/Animations/HypnoOral/frame_125.jpg".
-Figure of HypnoOralAnimation126 is the file "Special/Animations/HypnoOral/frame_126.jpg".
-Figure of HypnoOralAnimation127 is the file "Special/Animations/HypnoOral/frame_127.jpg".
-Figure of HypnoOralAnimation128 is the file "Special/Animations/HypnoOral/frame_128.jpg".
-Figure of HypnoOralAnimation129 is the file "Special/Animations/HypnoOral/frame_129.jpg".
-Figure of HypnoOralAnimation130 is the file "Special/Animations/HypnoOral/frame_130.jpg".
-Figure of HypnoOralAnimation131 is the file "Special/Animations/HypnoOral/frame_131.jpg".
-Figure of HypnoOralAnimation132 is the file "Special/Animations/HypnoOral/frame_132.jpg".
-Figure of HypnoOralAnimation133 is the file "Special/Animations/HypnoOral/frame_133.jpg".
-Figure of HypnoOralAnimation134 is the file "Special/Animations/HypnoOral/frame_134.jpg".
-Figure of HypnoOralAnimation135 is the file "Special/Animations/HypnoOral/frame_135.jpg".
-Figure of HypnoOralAnimation136 is the file "Special/Animations/HypnoOral/frame_136.jpg".
-Figure of HypnoOralAnimation137 is the file "Special/Animations/HypnoOral/frame_137.jpg".
-Figure of HypnoOralAnimation138 is the file "Special/Animations/HypnoOral/frame_138.jpg".
-Figure of HypnoOralAnimation139 is the file "Special/Animations/HypnoOral/frame_139.jpg".
-Figure of HypnoOralAnimation140 is the file "Special/Animations/HypnoOral/frame_140.jpg".
-Figure of HypnoOralAnimation141 is the file "Special/Animations/HypnoOral/frame_141.jpg".
-Figure of HypnoOralAnimation142 is the file "Special/Animations/HypnoOral/frame_142.jpg".
-Figure of HypnoOralAnimation143 is the file "Special/Animations/HypnoOral/frame_143.jpg".
-Figure of HypnoOralAnimation144 is the file "Special/Animations/HypnoOral/frame_144.jpg".
-Figure of HypnoOralAnimation145 is the file "Special/Animations/HypnoOral/frame_145.jpg".
-Figure of HypnoOralAnimation146 is the file "Special/Animations/HypnoOral/frame_146.jpg".
-Figure of HypnoOralAnimation147 is the file "Special/Animations/HypnoOral/frame_147.jpg".
-Figure of HypnoOralAnimation148 is the file "Special/Animations/HypnoOral/frame_148.jpg".
-Figure of HypnoOralAnimation149 is the file "Special/Animations/HypnoOral/frame_149.jpg".
-Figure of HypnoOralAnimation150 is the file "Special/Animations/HypnoOral/frame_150.jpg".
-Figure of HypnoOralAnimation151 is the file "Special/Animations/HypnoOral/frame_151.jpg".
-Figure of HypnoOralAnimation152 is the file "Special/Animations/HypnoOral/frame_152.jpg".
-Figure of HypnoOralAnimation153 is the file "Special/Animations/HypnoOral/frame_153.jpg".
-Figure of HypnoOralAnimation154 is the file "Special/Animations/HypnoOral/frame_154.jpg".
-Figure of HypnoOralAnimation155 is the file "Special/Animations/HypnoOral/frame_155.jpg".
-Figure of HypnoOralAnimation156 is the file "Special/Animations/HypnoOral/frame_156.jpg".
-Figure of HypnoOralAnimation157 is the file "Special/Animations/HypnoOral/frame_157.jpg".
-Figure of HypnoOralAnimation158 is the file "Special/Animations/HypnoOral/frame_158.jpg".
-Figure of HypnoOralAnimation159 is the file "Special/Animations/HypnoOral/frame_159.jpg".
-Figure of HypnoOralAnimation160 is the file "Special/Animations/HypnoOral/frame_160.jpg".
-Figure of HypnoOralAnimation161 is the file "Special/Animations/HypnoOral/frame_161.jpg".
-Figure of HypnoOralAnimation162 is the file "Special/Animations/HypnoOral/frame_162.jpg".
-Figure of HypnoOralAnimation163 is the file "Special/Animations/HypnoOral/frame_163.jpg".
-Figure of HypnoOralAnimation164 is the file "Special/Animations/HypnoOral/frame_164.jpg".
-Figure of HypnoOralAnimation165 is the file "Special/Animations/HypnoOral/frame_165.jpg".
-Figure of HypnoOralAnimation166 is the file "Special/Animations/HypnoOral/frame_166.jpg".
-Figure of HypnoOralAnimation167 is the file "Special/Animations/HypnoOral/frame_167.jpg".
+Figure of SpiralOralAnimation000 is the file "Special/Animations/SpiralOral/frame_000.jpg".
+Figure of SpiralOralAnimation001 is the file "Special/Animations/SpiralOral/frame_001.jpg".
+Figure of SpiralOralAnimation002 is the file "Special/Animations/SpiralOral/frame_002.jpg".
+Figure of SpiralOralAnimation003 is the file "Special/Animations/SpiralOral/frame_003.jpg".
+Figure of SpiralOralAnimation004 is the file "Special/Animations/SpiralOral/frame_004.jpg".
+Figure of SpiralOralAnimation005 is the file "Special/Animations/SpiralOral/frame_005.jpg".
+Figure of SpiralOralAnimation006 is the file "Special/Animations/SpiralOral/frame_006.jpg".
+Figure of SpiralOralAnimation007 is the file "Special/Animations/SpiralOral/frame_007.jpg".
+Figure of SpiralOralAnimation008 is the file "Special/Animations/SpiralOral/frame_008.jpg".
+Figure of SpiralOralAnimation009 is the file "Special/Animations/SpiralOral/frame_009.jpg".
+Figure of SpiralOralAnimation010 is the file "Special/Animations/SpiralOral/frame_010.jpg".
+Figure of SpiralOralAnimation011 is the file "Special/Animations/SpiralOral/frame_011.jpg".
+Figure of SpiralOralAnimation012 is the file "Special/Animations/SpiralOral/frame_012.jpg".
+Figure of SpiralOralAnimation013 is the file "Special/Animations/SpiralOral/frame_013.jpg".
+Figure of SpiralOralAnimation014 is the file "Special/Animations/SpiralOral/frame_014.jpg".
+Figure of SpiralOralAnimation015 is the file "Special/Animations/SpiralOral/frame_015.jpg".
+Figure of SpiralOralAnimation016 is the file "Special/Animations/SpiralOral/frame_016.jpg".
+Figure of SpiralOralAnimation017 is the file "Special/Animations/SpiralOral/frame_017.jpg".
+Figure of SpiralOralAnimation018 is the file "Special/Animations/SpiralOral/frame_018.jpg".
+Figure of SpiralOralAnimation019 is the file "Special/Animations/SpiralOral/frame_019.jpg".
+Figure of SpiralOralAnimation020 is the file "Special/Animations/SpiralOral/frame_020.jpg".
+Figure of SpiralOralAnimation021 is the file "Special/Animations/SpiralOral/frame_021.jpg".
+Figure of SpiralOralAnimation022 is the file "Special/Animations/SpiralOral/frame_022.jpg".
+Figure of SpiralOralAnimation023 is the file "Special/Animations/SpiralOral/frame_023.jpg".
+Figure of SpiralOralAnimation024 is the file "Special/Animations/SpiralOral/frame_024.jpg".
+Figure of SpiralOralAnimation025 is the file "Special/Animations/SpiralOral/frame_025.jpg".
+Figure of SpiralOralAnimation026 is the file "Special/Animations/SpiralOral/frame_026.jpg".
+Figure of SpiralOralAnimation027 is the file "Special/Animations/SpiralOral/frame_027.jpg".
+Figure of SpiralOralAnimation028 is the file "Special/Animations/SpiralOral/frame_028.jpg".
+Figure of SpiralOralAnimation029 is the file "Special/Animations/SpiralOral/frame_029.jpg".
+Figure of SpiralOralAnimation030 is the file "Special/Animations/SpiralOral/frame_030.jpg".
+Figure of SpiralOralAnimation031 is the file "Special/Animations/SpiralOral/frame_031.jpg".
+Figure of SpiralOralAnimation032 is the file "Special/Animations/SpiralOral/frame_032.jpg".
+Figure of SpiralOralAnimation033 is the file "Special/Animations/SpiralOral/frame_033.jpg".
+Figure of SpiralOralAnimation034 is the file "Special/Animations/SpiralOral/frame_034.jpg".
+Figure of SpiralOralAnimation035 is the file "Special/Animations/SpiralOral/frame_035.jpg".
+Figure of SpiralOralAnimation036 is the file "Special/Animations/SpiralOral/frame_036.jpg".
+Figure of SpiralOralAnimation037 is the file "Special/Animations/SpiralOral/frame_037.jpg".
+Figure of SpiralOralAnimation038 is the file "Special/Animations/SpiralOral/frame_038.jpg".
+Figure of SpiralOralAnimation039 is the file "Special/Animations/SpiralOral/frame_039.jpg".
+Figure of SpiralOralAnimation040 is the file "Special/Animations/SpiralOral/frame_040.jpg".
+Figure of SpiralOralAnimation041 is the file "Special/Animations/SpiralOral/frame_041.jpg".
+Figure of SpiralOralAnimation042 is the file "Special/Animations/SpiralOral/frame_042.jpg".
+Figure of SpiralOralAnimation043 is the file "Special/Animations/SpiralOral/frame_043.jpg".
+Figure of SpiralOralAnimation044 is the file "Special/Animations/SpiralOral/frame_044.jpg".
+Figure of SpiralOralAnimation045 is the file "Special/Animations/SpiralOral/frame_045.jpg".
+Figure of SpiralOralAnimation046 is the file "Special/Animations/SpiralOral/frame_046.jpg".
+Figure of SpiralOralAnimation047 is the file "Special/Animations/SpiralOral/frame_047.jpg".
+Figure of SpiralOralAnimation048 is the file "Special/Animations/SpiralOral/frame_048.jpg".
+Figure of SpiralOralAnimation049 is the file "Special/Animations/SpiralOral/frame_049.jpg".
+Figure of SpiralOralAnimation050 is the file "Special/Animations/SpiralOral/frame_050.jpg".
+Figure of SpiralOralAnimation051 is the file "Special/Animations/SpiralOral/frame_051.jpg".
+Figure of SpiralOralAnimation052 is the file "Special/Animations/SpiralOral/frame_052.jpg".
+Figure of SpiralOralAnimation053 is the file "Special/Animations/SpiralOral/frame_053.jpg".
+Figure of SpiralOralAnimation054 is the file "Special/Animations/SpiralOral/frame_054.jpg".
+Figure of SpiralOralAnimation055 is the file "Special/Animations/SpiralOral/frame_055.jpg".
+Figure of SpiralOralAnimation056 is the file "Special/Animations/SpiralOral/frame_056.jpg".
+Figure of SpiralOralAnimation057 is the file "Special/Animations/SpiralOral/frame_057.jpg".
+Figure of SpiralOralAnimation058 is the file "Special/Animations/SpiralOral/frame_058.jpg".
+Figure of SpiralOralAnimation059 is the file "Special/Animations/SpiralOral/frame_059.jpg".
+Figure of SpiralOralAnimation060 is the file "Special/Animations/SpiralOral/frame_060.jpg".
+Figure of SpiralOralAnimation061 is the file "Special/Animations/SpiralOral/frame_061.jpg".
+Figure of SpiralOralAnimation062 is the file "Special/Animations/SpiralOral/frame_062.jpg".
+Figure of SpiralOralAnimation063 is the file "Special/Animations/SpiralOral/frame_063.jpg".
+Figure of SpiralOralAnimation064 is the file "Special/Animations/SpiralOral/frame_064.jpg".
+Figure of SpiralOralAnimation065 is the file "Special/Animations/SpiralOral/frame_065.jpg".
+Figure of SpiralOralAnimation066 is the file "Special/Animations/SpiralOral/frame_066.jpg".
+Figure of SpiralOralAnimation067 is the file "Special/Animations/SpiralOral/frame_067.jpg".
+Figure of SpiralOralAnimation068 is the file "Special/Animations/SpiralOral/frame_068.jpg".
+Figure of SpiralOralAnimation069 is the file "Special/Animations/SpiralOral/frame_069.jpg".
+Figure of SpiralOralAnimation070 is the file "Special/Animations/SpiralOral/frame_070.jpg".
+Figure of SpiralOralAnimation071 is the file "Special/Animations/SpiralOral/frame_071.jpg".
+Figure of SpiralOralAnimation072 is the file "Special/Animations/SpiralOral/frame_072.jpg".
+Figure of SpiralOralAnimation073 is the file "Special/Animations/SpiralOral/frame_073.jpg".
+Figure of SpiralOralAnimation074 is the file "Special/Animations/SpiralOral/frame_074.jpg".
+Figure of SpiralOralAnimation075 is the file "Special/Animations/SpiralOral/frame_075.jpg".
+Figure of SpiralOralAnimation076 is the file "Special/Animations/SpiralOral/frame_076.jpg".
+Figure of SpiralOralAnimation077 is the file "Special/Animations/SpiralOral/frame_077.jpg".
+Figure of SpiralOralAnimation078 is the file "Special/Animations/SpiralOral/frame_078.jpg".
+Figure of SpiralOralAnimation079 is the file "Special/Animations/SpiralOral/frame_079.jpg".
+Figure of SpiralOralAnimation080 is the file "Special/Animations/SpiralOral/frame_080.jpg".
+Figure of SpiralOralAnimation081 is the file "Special/Animations/SpiralOral/frame_081.jpg".
+Figure of SpiralOralAnimation082 is the file "Special/Animations/SpiralOral/frame_082.jpg".
+Figure of SpiralOralAnimation083 is the file "Special/Animations/SpiralOral/frame_083.jpg".
+Figure of SpiralOralAnimation084 is the file "Special/Animations/SpiralOral/frame_084.jpg".
+Figure of SpiralOralAnimation085 is the file "Special/Animations/SpiralOral/frame_085.jpg".
+Figure of SpiralOralAnimation086 is the file "Special/Animations/SpiralOral/frame_086.jpg".
+Figure of SpiralOralAnimation087 is the file "Special/Animations/SpiralOral/frame_087.jpg".
+Figure of SpiralOralAnimation088 is the file "Special/Animations/SpiralOral/frame_088.jpg".
+Figure of SpiralOralAnimation089 is the file "Special/Animations/SpiralOral/frame_089.jpg".
+Figure of SpiralOralAnimation090 is the file "Special/Animations/SpiralOral/frame_090.jpg".
+Figure of SpiralOralAnimation091 is the file "Special/Animations/SpiralOral/frame_091.jpg".
+Figure of SpiralOralAnimation092 is the file "Special/Animations/SpiralOral/frame_092.jpg".
+Figure of SpiralOralAnimation093 is the file "Special/Animations/SpiralOral/frame_093.jpg".
+Figure of SpiralOralAnimation094 is the file "Special/Animations/SpiralOral/frame_094.jpg".
+Figure of SpiralOralAnimation095 is the file "Special/Animations/SpiralOral/frame_095.jpg".
+Figure of SpiralOralAnimation096 is the file "Special/Animations/SpiralOral/frame_096.jpg".
+Figure of SpiralOralAnimation097 is the file "Special/Animations/SpiralOral/frame_097.jpg".
+Figure of SpiralOralAnimation098 is the file "Special/Animations/SpiralOral/frame_098.jpg".
+Figure of SpiralOralAnimation099 is the file "Special/Animations/SpiralOral/frame_099.jpg".
+Figure of SpiralOralAnimation100 is the file "Special/Animations/SpiralOral/frame_100.jpg".
+Figure of SpiralOralAnimation101 is the file "Special/Animations/SpiralOral/frame_101.jpg".
+Figure of SpiralOralAnimation102 is the file "Special/Animations/SpiralOral/frame_102.jpg".
+Figure of SpiralOralAnimation103 is the file "Special/Animations/SpiralOral/frame_103.jpg".
+Figure of SpiralOralAnimation104 is the file "Special/Animations/SpiralOral/frame_104.jpg".
+Figure of SpiralOralAnimation105 is the file "Special/Animations/SpiralOral/frame_105.jpg".
+Figure of SpiralOralAnimation106 is the file "Special/Animations/SpiralOral/frame_106.jpg".
+Figure of SpiralOralAnimation107 is the file "Special/Animations/SpiralOral/frame_107.jpg".
+Figure of SpiralOralAnimation108 is the file "Special/Animations/SpiralOral/frame_108.jpg".
+Figure of SpiralOralAnimation109 is the file "Special/Animations/SpiralOral/frame_109.jpg".
+Figure of SpiralOralAnimation110 is the file "Special/Animations/SpiralOral/frame_110.jpg".
+Figure of SpiralOralAnimation111 is the file "Special/Animations/SpiralOral/frame_111.jpg".
+Figure of SpiralOralAnimation112 is the file "Special/Animations/SpiralOral/frame_112.jpg".
+Figure of SpiralOralAnimation113 is the file "Special/Animations/SpiralOral/frame_113.jpg".
+Figure of SpiralOralAnimation114 is the file "Special/Animations/SpiralOral/frame_114.jpg".
+Figure of SpiralOralAnimation115 is the file "Special/Animations/SpiralOral/frame_115.jpg".
+Figure of SpiralOralAnimation116 is the file "Special/Animations/SpiralOral/frame_116.jpg".
+Figure of SpiralOralAnimation117 is the file "Special/Animations/SpiralOral/frame_117.jpg".
+Figure of SpiralOralAnimation118 is the file "Special/Animations/SpiralOral/frame_118.jpg".
+Figure of SpiralOralAnimation119 is the file "Special/Animations/SpiralOral/frame_119.jpg".
+Figure of SpiralOralAnimation120 is the file "Special/Animations/SpiralOral/frame_120.jpg".
+Figure of SpiralOralAnimation121 is the file "Special/Animations/SpiralOral/frame_121.jpg".
+Figure of SpiralOralAnimation122 is the file "Special/Animations/SpiralOral/frame_122.jpg".
+Figure of SpiralOralAnimation123 is the file "Special/Animations/SpiralOral/frame_123.jpg".
+Figure of SpiralOralAnimation124 is the file "Special/Animations/SpiralOral/frame_124.jpg".
+Figure of SpiralOralAnimation125 is the file "Special/Animations/SpiralOral/frame_125.jpg".
+Figure of SpiralOralAnimation126 is the file "Special/Animations/SpiralOral/frame_126.jpg".
+Figure of SpiralOralAnimation127 is the file "Special/Animations/SpiralOral/frame_127.jpg".
+Figure of SpiralOralAnimation128 is the file "Special/Animations/SpiralOral/frame_128.jpg".
+Figure of SpiralOralAnimation129 is the file "Special/Animations/SpiralOral/frame_129.jpg".
+Figure of SpiralOralAnimation130 is the file "Special/Animations/SpiralOral/frame_130.jpg".
+Figure of SpiralOralAnimation131 is the file "Special/Animations/SpiralOral/frame_131.jpg".
+Figure of SpiralOralAnimation132 is the file "Special/Animations/SpiralOral/frame_132.jpg".
+Figure of SpiralOralAnimation133 is the file "Special/Animations/SpiralOral/frame_133.jpg".
+Figure of SpiralOralAnimation134 is the file "Special/Animations/SpiralOral/frame_134.jpg".
+Figure of SpiralOralAnimation135 is the file "Special/Animations/SpiralOral/frame_135.jpg".
+Figure of SpiralOralAnimation136 is the file "Special/Animations/SpiralOral/frame_136.jpg".
+Figure of SpiralOralAnimation137 is the file "Special/Animations/SpiralOral/frame_137.jpg".
+Figure of SpiralOralAnimation138 is the file "Special/Animations/SpiralOral/frame_138.jpg".
+Figure of SpiralOralAnimation139 is the file "Special/Animations/SpiralOral/frame_139.jpg".
+Figure of SpiralOralAnimation140 is the file "Special/Animations/SpiralOral/frame_140.jpg".
+Figure of SpiralOralAnimation141 is the file "Special/Animations/SpiralOral/frame_141.jpg".
+Figure of SpiralOralAnimation142 is the file "Special/Animations/SpiralOral/frame_142.jpg".
+Figure of SpiralOralAnimation143 is the file "Special/Animations/SpiralOral/frame_143.jpg".
+Figure of SpiralOralAnimation144 is the file "Special/Animations/SpiralOral/frame_144.jpg".
+Figure of SpiralOralAnimation145 is the file "Special/Animations/SpiralOral/frame_145.jpg".
+Figure of SpiralOralAnimation146 is the file "Special/Animations/SpiralOral/frame_146.jpg".
+Figure of SpiralOralAnimation147 is the file "Special/Animations/SpiralOral/frame_147.jpg".
+Figure of SpiralOralAnimation148 is the file "Special/Animations/SpiralOral/frame_148.jpg".
+Figure of SpiralOralAnimation149 is the file "Special/Animations/SpiralOral/frame_149.jpg".
+Figure of SpiralOralAnimation150 is the file "Special/Animations/SpiralOral/frame_150.jpg".
+Figure of SpiralOralAnimation151 is the file "Special/Animations/SpiralOral/frame_151.jpg".
+Figure of SpiralOralAnimation152 is the file "Special/Animations/SpiralOral/frame_152.jpg".
+Figure of SpiralOralAnimation153 is the file "Special/Animations/SpiralOral/frame_153.jpg".
+Figure of SpiralOralAnimation154 is the file "Special/Animations/SpiralOral/frame_154.jpg".
+Figure of SpiralOralAnimation155 is the file "Special/Animations/SpiralOral/frame_155.jpg".
+Figure of SpiralOralAnimation156 is the file "Special/Animations/SpiralOral/frame_156.jpg".
+Figure of SpiralOralAnimation157 is the file "Special/Animations/SpiralOral/frame_157.jpg".
+Figure of SpiralOralAnimation158 is the file "Special/Animations/SpiralOral/frame_158.jpg".
+Figure of SpiralOralAnimation159 is the file "Special/Animations/SpiralOral/frame_159.jpg".
+Figure of SpiralOralAnimation160 is the file "Special/Animations/SpiralOral/frame_160.jpg".
+Figure of SpiralOralAnimation161 is the file "Special/Animations/SpiralOral/frame_161.jpg".
+Figure of SpiralOralAnimation162 is the file "Special/Animations/SpiralOral/frame_162.jpg".
+Figure of SpiralOralAnimation163 is the file "Special/Animations/SpiralOral/frame_163.jpg".
+Figure of SpiralOralAnimation164 is the file "Special/Animations/SpiralOral/frame_164.jpg".
+Figure of SpiralOralAnimation165 is the file "Special/Animations/SpiralOral/frame_165.jpg".
+Figure of SpiralOralAnimation166 is the file "Special/Animations/SpiralOral/frame_166.jpg".
+Figure of SpiralOralAnimation167 is the file "Special/Animations/SpiralOral/frame_167.jpg".
 When play begins:
-	fill OralHypnoAnimation from Figure of HypnoOralAnimation000 to 167.
+	fill OralSpiralAnimation from Figure of SpiralOralAnimation000 to 167.
 
-Figure of HypnoShemaleAnimation000 is the file "Special/Animations/HypnoShemale/frame_000.jpg".
-Figure of HypnoShemaleAnimation001 is the file "Special/Animations/HypnoShemale/frame_001.jpg".
-Figure of HypnoShemaleAnimation002 is the file "Special/Animations/HypnoShemale/frame_002.jpg".
-Figure of HypnoShemaleAnimation003 is the file "Special/Animations/HypnoShemale/frame_003.jpg".
-Figure of HypnoShemaleAnimation004 is the file "Special/Animations/HypnoShemale/frame_004.jpg".
-Figure of HypnoShemaleAnimation005 is the file "Special/Animations/HypnoShemale/frame_005.jpg".
-Figure of HypnoShemaleAnimation006 is the file "Special/Animations/HypnoShemale/frame_006.jpg".
-Figure of HypnoShemaleAnimation007 is the file "Special/Animations/HypnoShemale/frame_007.jpg".
-Figure of HypnoShemaleAnimation008 is the file "Special/Animations/HypnoShemale/frame_008.jpg".
-Figure of HypnoShemaleAnimation009 is the file "Special/Animations/HypnoShemale/frame_009.jpg".
-Figure of HypnoShemaleAnimation010 is the file "Special/Animations/HypnoShemale/frame_010.jpg".
-Figure of HypnoShemaleAnimation011 is the file "Special/Animations/HypnoShemale/frame_011.jpg".
-Figure of HypnoShemaleAnimation012 is the file "Special/Animations/HypnoShemale/frame_012.jpg".
-Figure of HypnoShemaleAnimation013 is the file "Special/Animations/HypnoShemale/frame_013.jpg".
-Figure of HypnoShemaleAnimation014 is the file "Special/Animations/HypnoShemale/frame_014.jpg".
-Figure of HypnoShemaleAnimation015 is the file "Special/Animations/HypnoShemale/frame_015.jpg".
-Figure of HypnoShemaleAnimation016 is the file "Special/Animations/HypnoShemale/frame_016.jpg".
-Figure of HypnoShemaleAnimation017 is the file "Special/Animations/HypnoShemale/frame_017.jpg".
-Figure of HypnoShemaleAnimation018 is the file "Special/Animations/HypnoShemale/frame_018.jpg".
-Figure of HypnoShemaleAnimation019 is the file "Special/Animations/HypnoShemale/frame_019.jpg".
-Figure of HypnoShemaleAnimation020 is the file "Special/Animations/HypnoShemale/frame_020.jpg".
-Figure of HypnoShemaleAnimation021 is the file "Special/Animations/HypnoShemale/frame_021.jpg".
-Figure of HypnoShemaleAnimation022 is the file "Special/Animations/HypnoShemale/frame_022.jpg".
-Figure of HypnoShemaleAnimation023 is the file "Special/Animations/HypnoShemale/frame_023.jpg".
-Figure of HypnoShemaleAnimation024 is the file "Special/Animations/HypnoShemale/frame_024.jpg".
-Figure of HypnoShemaleAnimation025 is the file "Special/Animations/HypnoShemale/frame_025.jpg".
-Figure of HypnoShemaleAnimation026 is the file "Special/Animations/HypnoShemale/frame_026.jpg".
-Figure of HypnoShemaleAnimation027 is the file "Special/Animations/HypnoShemale/frame_027.jpg".
-Figure of HypnoShemaleAnimation028 is the file "Special/Animations/HypnoShemale/frame_028.jpg".
-Figure of HypnoShemaleAnimation029 is the file "Special/Animations/HypnoShemale/frame_029.jpg".
-Figure of HypnoShemaleAnimation030 is the file "Special/Animations/HypnoShemale/frame_030.jpg".
-Figure of HypnoShemaleAnimation031 is the file "Special/Animations/HypnoShemale/frame_031.jpg".
+Figure of SpiralTransAnimation000 is the file "Special/Animations/SpiralTrans/frame_000.jpg".
+Figure of SpiralTransAnimation001 is the file "Special/Animations/SpiralTrans/frame_001.jpg".
+Figure of SpiralTransAnimation002 is the file "Special/Animations/SpiralTrans/frame_002.jpg".
+Figure of SpiralTransAnimation003 is the file "Special/Animations/SpiralTrans/frame_003.jpg".
+Figure of SpiralTransAnimation004 is the file "Special/Animations/SpiralTrans/frame_004.jpg".
+Figure of SpiralTransAnimation005 is the file "Special/Animations/SpiralTrans/frame_005.jpg".
+Figure of SpiralTransAnimation006 is the file "Special/Animations/SpiralTrans/frame_006.jpg".
+Figure of SpiralTransAnimation007 is the file "Special/Animations/SpiralTrans/frame_007.jpg".
+Figure of SpiralTransAnimation008 is the file "Special/Animations/SpiralTrans/frame_008.jpg".
+Figure of SpiralTransAnimation009 is the file "Special/Animations/SpiralTrans/frame_009.jpg".
+Figure of SpiralTransAnimation010 is the file "Special/Animations/SpiralTrans/frame_010.jpg".
+Figure of SpiralTransAnimation011 is the file "Special/Animations/SpiralTrans/frame_011.jpg".
+Figure of SpiralTransAnimation012 is the file "Special/Animations/SpiralTrans/frame_012.jpg".
+Figure of SpiralTransAnimation013 is the file "Special/Animations/SpiralTrans/frame_013.jpg".
+Figure of SpiralTransAnimation014 is the file "Special/Animations/SpiralTrans/frame_014.jpg".
+Figure of SpiralTransAnimation015 is the file "Special/Animations/SpiralTrans/frame_015.jpg".
+Figure of SpiralTransAnimation016 is the file "Special/Animations/SpiralTrans/frame_016.jpg".
+Figure of SpiralTransAnimation017 is the file "Special/Animations/SpiralTrans/frame_017.jpg".
+Figure of SpiralTransAnimation018 is the file "Special/Animations/SpiralTrans/frame_018.jpg".
+Figure of SpiralTransAnimation019 is the file "Special/Animations/SpiralTrans/frame_019.jpg".
+Figure of SpiralTransAnimation020 is the file "Special/Animations/SpiralTrans/frame_020.jpg".
+Figure of SpiralTransAnimation021 is the file "Special/Animations/SpiralTrans/frame_021.jpg".
+Figure of SpiralTransAnimation022 is the file "Special/Animations/SpiralTrans/frame_022.jpg".
+Figure of SpiralTransAnimation023 is the file "Special/Animations/SpiralTrans/frame_023.jpg".
+Figure of SpiralTransAnimation024 is the file "Special/Animations/SpiralTrans/frame_024.jpg".
+Figure of SpiralTransAnimation025 is the file "Special/Animations/SpiralTrans/frame_025.jpg".
+Figure of SpiralTransAnimation026 is the file "Special/Animations/SpiralTrans/frame_026.jpg".
+Figure of SpiralTransAnimation027 is the file "Special/Animations/SpiralTrans/frame_027.jpg".
+Figure of SpiralTransAnimation028 is the file "Special/Animations/SpiralTrans/frame_028.jpg".
+Figure of SpiralTransAnimation029 is the file "Special/Animations/SpiralTrans/frame_029.jpg".
+Figure of SpiralTransAnimation030 is the file "Special/Animations/SpiralTrans/frame_030.jpg".
+Figure of SpiralTransAnimation031 is the file "Special/Animations/SpiralTrans/frame_031.jpg".
 When play begins:
-	fill ShemaleHypnoAnimation from Figure of HypnoShemaleAnimation000 to 31.
+	fill TransSpiralAnimation from Figure of SpiralTransAnimation000 to 31.
 
-Figure of HypnoDPAnimation000 is the file "Special/Animations/HypnoDP/frame_000.jpg".
-Figure of HypnoDPAnimation001 is the file "Special/Animations/HypnoDP/frame_001.jpg".
-Figure of HypnoDPAnimation002 is the file "Special/Animations/HypnoDP/frame_002.jpg".
-Figure of HypnoDPAnimation003 is the file "Special/Animations/HypnoDP/frame_003.jpg".
-Figure of HypnoDPAnimation004 is the file "Special/Animations/HypnoDP/frame_004.jpg".
-Figure of HypnoDPAnimation005 is the file "Special/Animations/HypnoDP/frame_005.jpg".
-Figure of HypnoDPAnimation006 is the file "Special/Animations/HypnoDP/frame_006.jpg".
-Figure of HypnoDPAnimation007 is the file "Special/Animations/HypnoDP/frame_007.jpg".
-Figure of HypnoDPAnimation008 is the file "Special/Animations/HypnoDP/frame_008.jpg".
-Figure of HypnoDPAnimation009 is the file "Special/Animations/HypnoDP/frame_009.jpg".
-Figure of HypnoDPAnimation010 is the file "Special/Animations/HypnoDP/frame_010.jpg".
-Figure of HypnoDPAnimation011 is the file "Special/Animations/HypnoDP/frame_011.jpg".
-Figure of HypnoDPAnimation012 is the file "Special/Animations/HypnoDP/frame_012.jpg".
-Figure of HypnoDPAnimation013 is the file "Special/Animations/HypnoDP/frame_013.jpg".
-Figure of HypnoDPAnimation014 is the file "Special/Animations/HypnoDP/frame_014.jpg".
-Figure of HypnoDPAnimation015 is the file "Special/Animations/HypnoDP/frame_015.jpg".
-Figure of HypnoDPAnimation016 is the file "Special/Animations/HypnoDP/frame_016.jpg".
-Figure of HypnoDPAnimation017 is the file "Special/Animations/HypnoDP/frame_017.jpg".
-Figure of HypnoDPAnimation018 is the file "Special/Animations/HypnoDP/frame_018.jpg".
-Figure of HypnoDPAnimation019 is the file "Special/Animations/HypnoDP/frame_019.jpg".
-Figure of HypnoDPAnimation020 is the file "Special/Animations/HypnoDP/frame_020.jpg".
-Figure of HypnoDPAnimation021 is the file "Special/Animations/HypnoDP/frame_021.jpg".
-Figure of HypnoDPAnimation022 is the file "Special/Animations/HypnoDP/frame_022.jpg".
-Figure of HypnoDPAnimation023 is the file "Special/Animations/HypnoDP/frame_023.jpg".
-Figure of HypnoDPAnimation024 is the file "Special/Animations/HypnoDP/frame_024.jpg".
-Figure of HypnoDPAnimation025 is the file "Special/Animations/HypnoDP/frame_025.jpg".
-Figure of HypnoDPAnimation026 is the file "Special/Animations/HypnoDP/frame_026.jpg".
-Figure of HypnoDPAnimation027 is the file "Special/Animations/HypnoDP/frame_027.jpg".
-Figure of HypnoDPAnimation028 is the file "Special/Animations/HypnoDP/frame_028.jpg".
-Figure of HypnoDPAnimation029 is the file "Special/Animations/HypnoDP/frame_029.jpg".
-Figure of HypnoDPAnimation030 is the file "Special/Animations/HypnoDP/frame_030.jpg".
-Figure of HypnoDPAnimation031 is the file "Special/Animations/HypnoDP/frame_031.jpg".
-Figure of HypnoDPAnimation032 is the file "Special/Animations/HypnoDP/frame_032.jpg".
-Figure of HypnoDPAnimation033 is the file "Special/Animations/HypnoDP/frame_033.jpg".
-Figure of HypnoDPAnimation034 is the file "Special/Animations/HypnoDP/frame_034.jpg".
-Figure of HypnoDPAnimation035 is the file "Special/Animations/HypnoDP/frame_035.jpg".
-Figure of HypnoDPAnimation036 is the file "Special/Animations/HypnoDP/frame_036.jpg".
-Figure of HypnoDPAnimation037 is the file "Special/Animations/HypnoDP/frame_037.jpg".
-Figure of HypnoDPAnimation038 is the file "Special/Animations/HypnoDP/frame_038.jpg".
-Figure of HypnoDPAnimation039 is the file "Special/Animations/HypnoDP/frame_039.jpg".
-Figure of HypnoDPAnimation040 is the file "Special/Animations/HypnoDP/frame_040.jpg".
-Figure of HypnoDPAnimation041 is the file "Special/Animations/HypnoDP/frame_041.jpg".
-Figure of HypnoDPAnimation042 is the file "Special/Animations/HypnoDP/frame_042.jpg".
-Figure of HypnoDPAnimation043 is the file "Special/Animations/HypnoDP/frame_043.jpg".
-Figure of HypnoDPAnimation044 is the file "Special/Animations/HypnoDP/frame_044.jpg".
-Figure of HypnoDPAnimation045 is the file "Special/Animations/HypnoDP/frame_045.jpg".
-Figure of HypnoDPAnimation046 is the file "Special/Animations/HypnoDP/frame_046.jpg".
-Figure of HypnoDPAnimation047 is the file "Special/Animations/HypnoDP/frame_047.jpg".
-Figure of HypnoDPAnimation048 is the file "Special/Animations/HypnoDP/frame_048.jpg".
-Figure of HypnoDPAnimation049 is the file "Special/Animations/HypnoDP/frame_049.jpg".
-Figure of HypnoDPAnimation050 is the file "Special/Animations/HypnoDP/frame_050.jpg".
-Figure of HypnoDPAnimation051 is the file "Special/Animations/HypnoDP/frame_051.jpg".
-Figure of HypnoDPAnimation052 is the file "Special/Animations/HypnoDP/frame_052.jpg".
-Figure of HypnoDPAnimation053 is the file "Special/Animations/HypnoDP/frame_053.jpg".
-Figure of HypnoDPAnimation054 is the file "Special/Animations/HypnoDP/frame_054.jpg".
-Figure of HypnoDPAnimation055 is the file "Special/Animations/HypnoDP/frame_055.jpg".
-Figure of HypnoDPAnimation056 is the file "Special/Animations/HypnoDP/frame_056.jpg".
-Figure of HypnoDPAnimation057 is the file "Special/Animations/HypnoDP/frame_057.jpg".
-Figure of HypnoDPAnimation058 is the file "Special/Animations/HypnoDP/frame_058.jpg".
-Figure of HypnoDPAnimation059 is the file "Special/Animations/HypnoDP/frame_059.jpg".
-Figure of HypnoDPAnimation060 is the file "Special/Animations/HypnoDP/frame_060.jpg".
-Figure of HypnoDPAnimation061 is the file "Special/Animations/HypnoDP/frame_061.jpg".
-Figure of HypnoDPAnimation062 is the file "Special/Animations/HypnoDP/frame_062.jpg".
-Figure of HypnoDPAnimation063 is the file "Special/Animations/HypnoDP/frame_063.jpg".
-Figure of HypnoDPAnimation064 is the file "Special/Animations/HypnoDP/frame_064.jpg".
-Figure of HypnoDPAnimation065 is the file "Special/Animations/HypnoDP/frame_065.jpg".
-Figure of HypnoDPAnimation066 is the file "Special/Animations/HypnoDP/frame_066.jpg".
-Figure of HypnoDPAnimation067 is the file "Special/Animations/HypnoDP/frame_067.jpg".
-Figure of HypnoDPAnimation068 is the file "Special/Animations/HypnoDP/frame_068.jpg".
-Figure of HypnoDPAnimation069 is the file "Special/Animations/HypnoDP/frame_069.jpg".
-Figure of HypnoDPAnimation070 is the file "Special/Animations/HypnoDP/frame_070.jpg".
-Figure of HypnoDPAnimation071 is the file "Special/Animations/HypnoDP/frame_071.jpg".
-Figure of HypnoDPAnimation072 is the file "Special/Animations/HypnoDP/frame_072.jpg".
-Figure of HypnoDPAnimation073 is the file "Special/Animations/HypnoDP/frame_073.jpg".
-Figure of HypnoDPAnimation074 is the file "Special/Animations/HypnoDP/frame_074.jpg".
-Figure of HypnoDPAnimation075 is the file "Special/Animations/HypnoDP/frame_075.jpg".
-Figure of HypnoDPAnimation076 is the file "Special/Animations/HypnoDP/frame_076.jpg".
-Figure of HypnoDPAnimation077 is the file "Special/Animations/HypnoDP/frame_077.jpg".
-Figure of HypnoDPAnimation078 is the file "Special/Animations/HypnoDP/frame_078.jpg".
-Figure of HypnoDPAnimation079 is the file "Special/Animations/HypnoDP/frame_079.jpg".
-Figure of HypnoDPAnimation080 is the file "Special/Animations/HypnoDP/frame_080.jpg".
-Figure of HypnoDPAnimation081 is the file "Special/Animations/HypnoDP/frame_081.jpg".
-Figure of HypnoDPAnimation082 is the file "Special/Animations/HypnoDP/frame_082.jpg".
-Figure of HypnoDPAnimation083 is the file "Special/Animations/HypnoDP/frame_083.jpg".
-Figure of HypnoDPAnimation084 is the file "Special/Animations/HypnoDP/frame_084.jpg".
-Figure of HypnoDPAnimation085 is the file "Special/Animations/HypnoDP/frame_085.jpg".
-Figure of HypnoDPAnimation086 is the file "Special/Animations/HypnoDP/frame_086.jpg".
-Figure of HypnoDPAnimation087 is the file "Special/Animations/HypnoDP/frame_087.jpg".
-Figure of HypnoDPAnimation088 is the file "Special/Animations/HypnoDP/frame_088.jpg".
-Figure of HypnoDPAnimation089 is the file "Special/Animations/HypnoDP/frame_089.jpg".
-Figure of HypnoDPAnimation090 is the file "Special/Animations/HypnoDP/frame_090.jpg".
-Figure of HypnoDPAnimation091 is the file "Special/Animations/HypnoDP/frame_091.jpg".
-Figure of HypnoDPAnimation092 is the file "Special/Animations/HypnoDP/frame_092.jpg".
-Figure of HypnoDPAnimation093 is the file "Special/Animations/HypnoDP/frame_093.jpg".
-Figure of HypnoDPAnimation094 is the file "Special/Animations/HypnoDP/frame_094.jpg".
-Figure of HypnoDPAnimation095 is the file "Special/Animations/HypnoDP/frame_095.jpg".
-Figure of HypnoDPAnimation096 is the file "Special/Animations/HypnoDP/frame_096.jpg".
-Figure of HypnoDPAnimation097 is the file "Special/Animations/HypnoDP/frame_097.jpg".
-Figure of HypnoDPAnimation098 is the file "Special/Animations/HypnoDP/frame_098.jpg".
-Figure of HypnoDPAnimation099 is the file "Special/Animations/HypnoDP/frame_099.jpg".
-Figure of HypnoDPAnimation100 is the file "Special/Animations/HypnoDP/frame_100.jpg".
-Figure of HypnoDPAnimation101 is the file "Special/Animations/HypnoDP/frame_101.jpg".
-Figure of HypnoDPAnimation102 is the file "Special/Animations/HypnoDP/frame_102.jpg".
-Figure of HypnoDPAnimation103 is the file "Special/Animations/HypnoDP/frame_103.jpg".
-Figure of HypnoDPAnimation104 is the file "Special/Animations/HypnoDP/frame_104.jpg".
-Figure of HypnoDPAnimation105 is the file "Special/Animations/HypnoDP/frame_105.jpg".
-Figure of HypnoDPAnimation106 is the file "Special/Animations/HypnoDP/frame_106.jpg".
-Figure of HypnoDPAnimation107 is the file "Special/Animations/HypnoDP/frame_107.jpg".
-Figure of HypnoDPAnimation108 is the file "Special/Animations/HypnoDP/frame_108.jpg".
-Figure of HypnoDPAnimation109 is the file "Special/Animations/HypnoDP/frame_109.jpg".
-Figure of HypnoDPAnimation110 is the file "Special/Animations/HypnoDP/frame_110.jpg".
-Figure of HypnoDPAnimation111 is the file "Special/Animations/HypnoDP/frame_111.jpg".
-Figure of HypnoDPAnimation112 is the file "Special/Animations/HypnoDP/frame_112.jpg".
-Figure of HypnoDPAnimation113 is the file "Special/Animations/HypnoDP/frame_113.jpg".
-Figure of HypnoDPAnimation114 is the file "Special/Animations/HypnoDP/frame_114.jpg".
-Figure of HypnoDPAnimation115 is the file "Special/Animations/HypnoDP/frame_115.jpg".
-Figure of HypnoDPAnimation116 is the file "Special/Animations/HypnoDP/frame_116.jpg".
-Figure of HypnoDPAnimation117 is the file "Special/Animations/HypnoDP/frame_117.jpg".
-Figure of HypnoDPAnimation118 is the file "Special/Animations/HypnoDP/frame_118.jpg".
-Figure of HypnoDPAnimation119 is the file "Special/Animations/HypnoDP/frame_119.jpg".
-Figure of HypnoDPAnimation120 is the file "Special/Animations/HypnoDP/frame_120.jpg".
-Figure of HypnoDPAnimation121 is the file "Special/Animations/HypnoDP/frame_121.jpg".
-Figure of HypnoDPAnimation122 is the file "Special/Animations/HypnoDP/frame_122.jpg".
-Figure of HypnoDPAnimation123 is the file "Special/Animations/HypnoDP/frame_123.jpg".
-Figure of HypnoDPAnimation124 is the file "Special/Animations/HypnoDP/frame_124.jpg".
-Figure of HypnoDPAnimation125 is the file "Special/Animations/HypnoDP/frame_125.jpg".
-Figure of HypnoDPAnimation126 is the file "Special/Animations/HypnoDP/frame_126.jpg".
-Figure of HypnoDPAnimation127 is the file "Special/Animations/HypnoDP/frame_127.jpg".
-Figure of HypnoDPAnimation128 is the file "Special/Animations/HypnoDP/frame_128.jpg".
-Figure of HypnoDPAnimation129 is the file "Special/Animations/HypnoDP/frame_129.jpg".
-Figure of HypnoDPAnimation130 is the file "Special/Animations/HypnoDP/frame_130.jpg".
-Figure of HypnoDPAnimation131 is the file "Special/Animations/HypnoDP/frame_131.jpg".
-Figure of HypnoDPAnimation132 is the file "Special/Animations/HypnoDP/frame_132.jpg".
-Figure of HypnoDPAnimation133 is the file "Special/Animations/HypnoDP/frame_133.jpg".
-Figure of HypnoDPAnimation134 is the file "Special/Animations/HypnoDP/frame_134.jpg".
-Figure of HypnoDPAnimation135 is the file "Special/Animations/HypnoDP/frame_135.jpg".
-Figure of HypnoDPAnimation136 is the file "Special/Animations/HypnoDP/frame_136.jpg".
-Figure of HypnoDPAnimation137 is the file "Special/Animations/HypnoDP/frame_137.jpg".
-Figure of HypnoDPAnimation138 is the file "Special/Animations/HypnoDP/frame_138.jpg".
-Figure of HypnoDPAnimation139 is the file "Special/Animations/HypnoDP/frame_139.jpg".
-Figure of HypnoDPAnimation140 is the file "Special/Animations/HypnoDP/frame_140.jpg".
-Figure of HypnoDPAnimation141 is the file "Special/Animations/HypnoDP/frame_141.jpg".
-Figure of HypnoDPAnimation142 is the file "Special/Animations/HypnoDP/frame_142.jpg".
-Figure of HypnoDPAnimation143 is the file "Special/Animations/HypnoDP/frame_143.jpg".
-Figure of HypnoDPAnimation144 is the file "Special/Animations/HypnoDP/frame_144.jpg".
-Figure of HypnoDPAnimation145 is the file "Special/Animations/HypnoDP/frame_145.jpg".
-Figure of HypnoDPAnimation146 is the file "Special/Animations/HypnoDP/frame_146.jpg".
-Figure of HypnoDPAnimation147 is the file "Special/Animations/HypnoDP/frame_147.jpg".
-Figure of HypnoDPAnimation148 is the file "Special/Animations/HypnoDP/frame_148.jpg".
-Figure of HypnoDPAnimation149 is the file "Special/Animations/HypnoDP/frame_149.jpg".
-Figure of HypnoDPAnimation150 is the file "Special/Animations/HypnoDP/frame_150.jpg".
-Figure of HypnoDPAnimation151 is the file "Special/Animations/HypnoDP/frame_151.jpg".
-Figure of HypnoDPAnimation152 is the file "Special/Animations/HypnoDP/frame_152.jpg".
-Figure of HypnoDPAnimation153 is the file "Special/Animations/HypnoDP/frame_153.jpg".
-Figure of HypnoDPAnimation154 is the file "Special/Animations/HypnoDP/frame_154.jpg".
-Figure of HypnoDPAnimation155 is the file "Special/Animations/HypnoDP/frame_155.jpg".
-Figure of HypnoDPAnimation156 is the file "Special/Animations/HypnoDP/frame_156.jpg".
-Figure of HypnoDPAnimation157 is the file "Special/Animations/HypnoDP/frame_157.jpg".
-Figure of HypnoDPAnimation158 is the file "Special/Animations/HypnoDP/frame_158.jpg".
-Figure of HypnoDPAnimation159 is the file "Special/Animations/HypnoDP/frame_159.jpg".
-Figure of HypnoDPAnimation160 is the file "Special/Animations/HypnoDP/frame_160.jpg".
-Figure of HypnoDPAnimation161 is the file "Special/Animations/HypnoDP/frame_161.jpg".
-Figure of HypnoDPAnimation162 is the file "Special/Animations/HypnoDP/frame_162.jpg".
-Figure of HypnoDPAnimation163 is the file "Special/Animations/HypnoDP/frame_163.jpg".
-Figure of HypnoDPAnimation164 is the file "Special/Animations/HypnoDP/frame_164.jpg".
-Figure of HypnoDPAnimation165 is the file "Special/Animations/HypnoDP/frame_165.jpg".
-Figure of HypnoDPAnimation166 is the file "Special/Animations/HypnoDP/frame_166.jpg".
-Figure of HypnoDPAnimation167 is the file "Special/Animations/HypnoDP/frame_167.jpg".
-Figure of HypnoDPAnimation168 is the file "Special/Animations/HypnoDP/frame_168.jpg".
-Figure of HypnoDPAnimation169 is the file "Special/Animations/HypnoDP/frame_169.jpg".
-Figure of HypnoDPAnimation170 is the file "Special/Animations/HypnoDP/frame_170.jpg".
-Figure of HypnoDPAnimation171 is the file "Special/Animations/HypnoDP/frame_171.jpg".
-Figure of HypnoDPAnimation172 is the file "Special/Animations/HypnoDP/frame_172.jpg".
-Figure of HypnoDPAnimation173 is the file "Special/Animations/HypnoDP/frame_173.jpg".
-Figure of HypnoDPAnimation174 is the file "Special/Animations/HypnoDP/frame_174.jpg".
-Figure of HypnoDPAnimation175 is the file "Special/Animations/HypnoDP/frame_175.jpg".
-Figure of HypnoDPAnimation176 is the file "Special/Animations/HypnoDP/frame_176.jpg".
-Figure of HypnoDPAnimation177 is the file "Special/Animations/HypnoDP/frame_177.jpg".
-Figure of HypnoDPAnimation178 is the file "Special/Animations/HypnoDP/frame_178.jpg".
-Figure of HypnoDPAnimation179 is the file "Special/Animations/HypnoDP/frame_179.jpg".
-Figure of HypnoDPAnimation180 is the file "Special/Animations/HypnoDP/frame_180.jpg".
-Figure of HypnoDPAnimation181 is the file "Special/Animations/HypnoDP/frame_181.jpg".
-Figure of HypnoDPAnimation182 is the file "Special/Animations/HypnoDP/frame_182.jpg".
-Figure of HypnoDPAnimation183 is the file "Special/Animations/HypnoDP/frame_183.jpg".
-Figure of HypnoDPAnimation184 is the file "Special/Animations/HypnoDP/frame_184.jpg".
-Figure of HypnoDPAnimation185 is the file "Special/Animations/HypnoDP/frame_185.jpg".
-Figure of HypnoDPAnimation186 is the file "Special/Animations/HypnoDP/frame_186.jpg".
-Figure of HypnoDPAnimation187 is the file "Special/Animations/HypnoDP/frame_187.jpg".
-Figure of HypnoDPAnimation188 is the file "Special/Animations/HypnoDP/frame_188.jpg".
-Figure of HypnoDPAnimation189 is the file "Special/Animations/HypnoDP/frame_189.jpg".
-Figure of HypnoDPAnimation190 is the file "Special/Animations/HypnoDP/frame_190.jpg".
-Figure of HypnoDPAnimation191 is the file "Special/Animations/HypnoDP/frame_191.jpg".
-Figure of HypnoDPAnimation192 is the file "Special/Animations/HypnoDP/frame_192.jpg".
-Figure of HypnoDPAnimation193 is the file "Special/Animations/HypnoDP/frame_193.jpg".
-Figure of HypnoDPAnimation194 is the file "Special/Animations/HypnoDP/frame_194.jpg".
-Figure of HypnoDPAnimation195 is the file "Special/Animations/HypnoDP/frame_195.jpg".
-Figure of HypnoDPAnimation196 is the file "Special/Animations/HypnoDP/frame_196.jpg".
-Figure of HypnoDPAnimation197 is the file "Special/Animations/HypnoDP/frame_197.jpg".
-Figure of HypnoDPAnimation198 is the file "Special/Animations/HypnoDP/frame_198.jpg".
-Figure of HypnoDPAnimation199 is the file "Special/Animations/HypnoDP/frame_199.jpg".
-Figure of HypnoDPAnimation200 is the file "Special/Animations/HypnoDP/frame_200.jpg".
-Figure of HypnoDPAnimation201 is the file "Special/Animations/HypnoDP/frame_201.jpg".
-Figure of HypnoDPAnimation202 is the file "Special/Animations/HypnoDP/frame_202.jpg".
-Figure of HypnoDPAnimation203 is the file "Special/Animations/HypnoDP/frame_203.jpg".
-Figure of HypnoDPAnimation204 is the file "Special/Animations/HypnoDP/frame_204.jpg".
-Figure of HypnoDPAnimation205 is the file "Special/Animations/HypnoDP/frame_205.jpg".
-Figure of HypnoDPAnimation206 is the file "Special/Animations/HypnoDP/frame_206.jpg".
-Figure of HypnoDPAnimation207 is the file "Special/Animations/HypnoDP/frame_207.jpg".
-Figure of HypnoDPAnimation208 is the file "Special/Animations/HypnoDP/frame_208.jpg".
-Figure of HypnoDPAnimation209 is the file "Special/Animations/HypnoDP/frame_209.jpg".
-Figure of HypnoDPAnimation210 is the file "Special/Animations/HypnoDP/frame_210.jpg".
-Figure of HypnoDPAnimation211 is the file "Special/Animations/HypnoDP/frame_211.jpg".
-Figure of HypnoDPAnimation212 is the file "Special/Animations/HypnoDP/frame_212.jpg".
-Figure of HypnoDPAnimation213 is the file "Special/Animations/HypnoDP/frame_213.jpg".
-Figure of HypnoDPAnimation214 is the file "Special/Animations/HypnoDP/frame_214.jpg".
-Figure of HypnoDPAnimation215 is the file "Special/Animations/HypnoDP/frame_215.jpg".
-Figure of HypnoDPAnimation216 is the file "Special/Animations/HypnoDP/frame_216.jpg".
-Figure of HypnoDPAnimation217 is the file "Special/Animations/HypnoDP/frame_217.jpg".
-Figure of HypnoDPAnimation218 is the file "Special/Animations/HypnoDP/frame_218.jpg".
-Figure of HypnoDPAnimation219 is the file "Special/Animations/HypnoDP/frame_219.jpg".
-Figure of HypnoDPAnimation220 is the file "Special/Animations/HypnoDP/frame_220.jpg".
-Figure of HypnoDPAnimation221 is the file "Special/Animations/HypnoDP/frame_221.jpg".
-Figure of HypnoDPAnimation222 is the file "Special/Animations/HypnoDP/frame_222.jpg".
-Figure of HypnoDPAnimation223 is the file "Special/Animations/HypnoDP/frame_223.jpg".
-Figure of HypnoDPAnimation224 is the file "Special/Animations/HypnoDP/frame_224.jpg".
-Figure of HypnoDPAnimation225 is the file "Special/Animations/HypnoDP/frame_225.jpg".
-Figure of HypnoDPAnimation226 is the file "Special/Animations/HypnoDP/frame_226.jpg".
-Figure of HypnoDPAnimation227 is the file "Special/Animations/HypnoDP/frame_227.jpg".
-Figure of HypnoDPAnimation228 is the file "Special/Animations/HypnoDP/frame_228.jpg".
+Figure of SpiralDPAnimation000 is the file "Special/Animations/SpiralDP/frame_000.jpg".
+Figure of SpiralDPAnimation001 is the file "Special/Animations/SpiralDP/frame_001.jpg".
+Figure of SpiralDPAnimation002 is the file "Special/Animations/SpiralDP/frame_002.jpg".
+Figure of SpiralDPAnimation003 is the file "Special/Animations/SpiralDP/frame_003.jpg".
+Figure of SpiralDPAnimation004 is the file "Special/Animations/SpiralDP/frame_004.jpg".
+Figure of SpiralDPAnimation005 is the file "Special/Animations/SpiralDP/frame_005.jpg".
+Figure of SpiralDPAnimation006 is the file "Special/Animations/SpiralDP/frame_006.jpg".
+Figure of SpiralDPAnimation007 is the file "Special/Animations/SpiralDP/frame_007.jpg".
+Figure of SpiralDPAnimation008 is the file "Special/Animations/SpiralDP/frame_008.jpg".
+Figure of SpiralDPAnimation009 is the file "Special/Animations/SpiralDP/frame_009.jpg".
+Figure of SpiralDPAnimation010 is the file "Special/Animations/SpiralDP/frame_010.jpg".
+Figure of SpiralDPAnimation011 is the file "Special/Animations/SpiralDP/frame_011.jpg".
+Figure of SpiralDPAnimation012 is the file "Special/Animations/SpiralDP/frame_012.jpg".
+Figure of SpiralDPAnimation013 is the file "Special/Animations/SpiralDP/frame_013.jpg".
+Figure of SpiralDPAnimation014 is the file "Special/Animations/SpiralDP/frame_014.jpg".
+Figure of SpiralDPAnimation015 is the file "Special/Animations/SpiralDP/frame_015.jpg".
+Figure of SpiralDPAnimation016 is the file "Special/Animations/SpiralDP/frame_016.jpg".
+Figure of SpiralDPAnimation017 is the file "Special/Animations/SpiralDP/frame_017.jpg".
+Figure of SpiralDPAnimation018 is the file "Special/Animations/SpiralDP/frame_018.jpg".
+Figure of SpiralDPAnimation019 is the file "Special/Animations/SpiralDP/frame_019.jpg".
+Figure of SpiralDPAnimation020 is the file "Special/Animations/SpiralDP/frame_020.jpg".
+Figure of SpiralDPAnimation021 is the file "Special/Animations/SpiralDP/frame_021.jpg".
+Figure of SpiralDPAnimation022 is the file "Special/Animations/SpiralDP/frame_022.jpg".
+Figure of SpiralDPAnimation023 is the file "Special/Animations/SpiralDP/frame_023.jpg".
+Figure of SpiralDPAnimation024 is the file "Special/Animations/SpiralDP/frame_024.jpg".
+Figure of SpiralDPAnimation025 is the file "Special/Animations/SpiralDP/frame_025.jpg".
+Figure of SpiralDPAnimation026 is the file "Special/Animations/SpiralDP/frame_026.jpg".
+Figure of SpiralDPAnimation027 is the file "Special/Animations/SpiralDP/frame_027.jpg".
+Figure of SpiralDPAnimation028 is the file "Special/Animations/SpiralDP/frame_028.jpg".
+Figure of SpiralDPAnimation029 is the file "Special/Animations/SpiralDP/frame_029.jpg".
+Figure of SpiralDPAnimation030 is the file "Special/Animations/SpiralDP/frame_030.jpg".
+Figure of SpiralDPAnimation031 is the file "Special/Animations/SpiralDP/frame_031.jpg".
+Figure of SpiralDPAnimation032 is the file "Special/Animations/SpiralDP/frame_032.jpg".
+Figure of SpiralDPAnimation033 is the file "Special/Animations/SpiralDP/frame_033.jpg".
+Figure of SpiralDPAnimation034 is the file "Special/Animations/SpiralDP/frame_034.jpg".
+Figure of SpiralDPAnimation035 is the file "Special/Animations/SpiralDP/frame_035.jpg".
+Figure of SpiralDPAnimation036 is the file "Special/Animations/SpiralDP/frame_036.jpg".
+Figure of SpiralDPAnimation037 is the file "Special/Animations/SpiralDP/frame_037.jpg".
+Figure of SpiralDPAnimation038 is the file "Special/Animations/SpiralDP/frame_038.jpg".
+Figure of SpiralDPAnimation039 is the file "Special/Animations/SpiralDP/frame_039.jpg".
+Figure of SpiralDPAnimation040 is the file "Special/Animations/SpiralDP/frame_040.jpg".
+Figure of SpiralDPAnimation041 is the file "Special/Animations/SpiralDP/frame_041.jpg".
+Figure of SpiralDPAnimation042 is the file "Special/Animations/SpiralDP/frame_042.jpg".
+Figure of SpiralDPAnimation043 is the file "Special/Animations/SpiralDP/frame_043.jpg".
+Figure of SpiralDPAnimation044 is the file "Special/Animations/SpiralDP/frame_044.jpg".
+Figure of SpiralDPAnimation045 is the file "Special/Animations/SpiralDP/frame_045.jpg".
+Figure of SpiralDPAnimation046 is the file "Special/Animations/SpiralDP/frame_046.jpg".
+Figure of SpiralDPAnimation047 is the file "Special/Animations/SpiralDP/frame_047.jpg".
+Figure of SpiralDPAnimation048 is the file "Special/Animations/SpiralDP/frame_048.jpg".
+Figure of SpiralDPAnimation049 is the file "Special/Animations/SpiralDP/frame_049.jpg".
+Figure of SpiralDPAnimation050 is the file "Special/Animations/SpiralDP/frame_050.jpg".
+Figure of SpiralDPAnimation051 is the file "Special/Animations/SpiralDP/frame_051.jpg".
+Figure of SpiralDPAnimation052 is the file "Special/Animations/SpiralDP/frame_052.jpg".
+Figure of SpiralDPAnimation053 is the file "Special/Animations/SpiralDP/frame_053.jpg".
+Figure of SpiralDPAnimation054 is the file "Special/Animations/SpiralDP/frame_054.jpg".
+Figure of SpiralDPAnimation055 is the file "Special/Animations/SpiralDP/frame_055.jpg".
+Figure of SpiralDPAnimation056 is the file "Special/Animations/SpiralDP/frame_056.jpg".
+Figure of SpiralDPAnimation057 is the file "Special/Animations/SpiralDP/frame_057.jpg".
+Figure of SpiralDPAnimation058 is the file "Special/Animations/SpiralDP/frame_058.jpg".
+Figure of SpiralDPAnimation059 is the file "Special/Animations/SpiralDP/frame_059.jpg".
+Figure of SpiralDPAnimation060 is the file "Special/Animations/SpiralDP/frame_060.jpg".
+Figure of SpiralDPAnimation061 is the file "Special/Animations/SpiralDP/frame_061.jpg".
+Figure of SpiralDPAnimation062 is the file "Special/Animations/SpiralDP/frame_062.jpg".
+Figure of SpiralDPAnimation063 is the file "Special/Animations/SpiralDP/frame_063.jpg".
+Figure of SpiralDPAnimation064 is the file "Special/Animations/SpiralDP/frame_064.jpg".
+Figure of SpiralDPAnimation065 is the file "Special/Animations/SpiralDP/frame_065.jpg".
+Figure of SpiralDPAnimation066 is the file "Special/Animations/SpiralDP/frame_066.jpg".
+Figure of SpiralDPAnimation067 is the file "Special/Animations/SpiralDP/frame_067.jpg".
+Figure of SpiralDPAnimation068 is the file "Special/Animations/SpiralDP/frame_068.jpg".
+Figure of SpiralDPAnimation069 is the file "Special/Animations/SpiralDP/frame_069.jpg".
+Figure of SpiralDPAnimation070 is the file "Special/Animations/SpiralDP/frame_070.jpg".
+Figure of SpiralDPAnimation071 is the file "Special/Animations/SpiralDP/frame_071.jpg".
+Figure of SpiralDPAnimation072 is the file "Special/Animations/SpiralDP/frame_072.jpg".
+Figure of SpiralDPAnimation073 is the file "Special/Animations/SpiralDP/frame_073.jpg".
+Figure of SpiralDPAnimation074 is the file "Special/Animations/SpiralDP/frame_074.jpg".
+Figure of SpiralDPAnimation075 is the file "Special/Animations/SpiralDP/frame_075.jpg".
+Figure of SpiralDPAnimation076 is the file "Special/Animations/SpiralDP/frame_076.jpg".
+Figure of SpiralDPAnimation077 is the file "Special/Animations/SpiralDP/frame_077.jpg".
+Figure of SpiralDPAnimation078 is the file "Special/Animations/SpiralDP/frame_078.jpg".
+Figure of SpiralDPAnimation079 is the file "Special/Animations/SpiralDP/frame_079.jpg".
+Figure of SpiralDPAnimation080 is the file "Special/Animations/SpiralDP/frame_080.jpg".
+Figure of SpiralDPAnimation081 is the file "Special/Animations/SpiralDP/frame_081.jpg".
+Figure of SpiralDPAnimation082 is the file "Special/Animations/SpiralDP/frame_082.jpg".
+Figure of SpiralDPAnimation083 is the file "Special/Animations/SpiralDP/frame_083.jpg".
+Figure of SpiralDPAnimation084 is the file "Special/Animations/SpiralDP/frame_084.jpg".
+Figure of SpiralDPAnimation085 is the file "Special/Animations/SpiralDP/frame_085.jpg".
+Figure of SpiralDPAnimation086 is the file "Special/Animations/SpiralDP/frame_086.jpg".
+Figure of SpiralDPAnimation087 is the file "Special/Animations/SpiralDP/frame_087.jpg".
+Figure of SpiralDPAnimation088 is the file "Special/Animations/SpiralDP/frame_088.jpg".
+Figure of SpiralDPAnimation089 is the file "Special/Animations/SpiralDP/frame_089.jpg".
+Figure of SpiralDPAnimation090 is the file "Special/Animations/SpiralDP/frame_090.jpg".
+Figure of SpiralDPAnimation091 is the file "Special/Animations/SpiralDP/frame_091.jpg".
+Figure of SpiralDPAnimation092 is the file "Special/Animations/SpiralDP/frame_092.jpg".
+Figure of SpiralDPAnimation093 is the file "Special/Animations/SpiralDP/frame_093.jpg".
+Figure of SpiralDPAnimation094 is the file "Special/Animations/SpiralDP/frame_094.jpg".
+Figure of SpiralDPAnimation095 is the file "Special/Animations/SpiralDP/frame_095.jpg".
+Figure of SpiralDPAnimation096 is the file "Special/Animations/SpiralDP/frame_096.jpg".
+Figure of SpiralDPAnimation097 is the file "Special/Animations/SpiralDP/frame_097.jpg".
+Figure of SpiralDPAnimation098 is the file "Special/Animations/SpiralDP/frame_098.jpg".
+Figure of SpiralDPAnimation099 is the file "Special/Animations/SpiralDP/frame_099.jpg".
+Figure of SpiralDPAnimation100 is the file "Special/Animations/SpiralDP/frame_100.jpg".
+Figure of SpiralDPAnimation101 is the file "Special/Animations/SpiralDP/frame_101.jpg".
+Figure of SpiralDPAnimation102 is the file "Special/Animations/SpiralDP/frame_102.jpg".
+Figure of SpiralDPAnimation103 is the file "Special/Animations/SpiralDP/frame_103.jpg".
+Figure of SpiralDPAnimation104 is the file "Special/Animations/SpiralDP/frame_104.jpg".
+Figure of SpiralDPAnimation105 is the file "Special/Animations/SpiralDP/frame_105.jpg".
+Figure of SpiralDPAnimation106 is the file "Special/Animations/SpiralDP/frame_106.jpg".
+Figure of SpiralDPAnimation107 is the file "Special/Animations/SpiralDP/frame_107.jpg".
+Figure of SpiralDPAnimation108 is the file "Special/Animations/SpiralDP/frame_108.jpg".
+Figure of SpiralDPAnimation109 is the file "Special/Animations/SpiralDP/frame_109.jpg".
+Figure of SpiralDPAnimation110 is the file "Special/Animations/SpiralDP/frame_110.jpg".
+Figure of SpiralDPAnimation111 is the file "Special/Animations/SpiralDP/frame_111.jpg".
+Figure of SpiralDPAnimation112 is the file "Special/Animations/SpiralDP/frame_112.jpg".
+Figure of SpiralDPAnimation113 is the file "Special/Animations/SpiralDP/frame_113.jpg".
+Figure of SpiralDPAnimation114 is the file "Special/Animations/SpiralDP/frame_114.jpg".
+Figure of SpiralDPAnimation115 is the file "Special/Animations/SpiralDP/frame_115.jpg".
+Figure of SpiralDPAnimation116 is the file "Special/Animations/SpiralDP/frame_116.jpg".
+Figure of SpiralDPAnimation117 is the file "Special/Animations/SpiralDP/frame_117.jpg".
+Figure of SpiralDPAnimation118 is the file "Special/Animations/SpiralDP/frame_118.jpg".
+Figure of SpiralDPAnimation119 is the file "Special/Animations/SpiralDP/frame_119.jpg".
+Figure of SpiralDPAnimation120 is the file "Special/Animations/SpiralDP/frame_120.jpg".
+Figure of SpiralDPAnimation121 is the file "Special/Animations/SpiralDP/frame_121.jpg".
+Figure of SpiralDPAnimation122 is the file "Special/Animations/SpiralDP/frame_122.jpg".
+Figure of SpiralDPAnimation123 is the file "Special/Animations/SpiralDP/frame_123.jpg".
+Figure of SpiralDPAnimation124 is the file "Special/Animations/SpiralDP/frame_124.jpg".
+Figure of SpiralDPAnimation125 is the file "Special/Animations/SpiralDP/frame_125.jpg".
+Figure of SpiralDPAnimation126 is the file "Special/Animations/SpiralDP/frame_126.jpg".
+Figure of SpiralDPAnimation127 is the file "Special/Animations/SpiralDP/frame_127.jpg".
+Figure of SpiralDPAnimation128 is the file "Special/Animations/SpiralDP/frame_128.jpg".
+Figure of SpiralDPAnimation129 is the file "Special/Animations/SpiralDP/frame_129.jpg".
+Figure of SpiralDPAnimation130 is the file "Special/Animations/SpiralDP/frame_130.jpg".
+Figure of SpiralDPAnimation131 is the file "Special/Animations/SpiralDP/frame_131.jpg".
+Figure of SpiralDPAnimation132 is the file "Special/Animations/SpiralDP/frame_132.jpg".
+Figure of SpiralDPAnimation133 is the file "Special/Animations/SpiralDP/frame_133.jpg".
+Figure of SpiralDPAnimation134 is the file "Special/Animations/SpiralDP/frame_134.jpg".
+Figure of SpiralDPAnimation135 is the file "Special/Animations/SpiralDP/frame_135.jpg".
+Figure of SpiralDPAnimation136 is the file "Special/Animations/SpiralDP/frame_136.jpg".
+Figure of SpiralDPAnimation137 is the file "Special/Animations/SpiralDP/frame_137.jpg".
+Figure of SpiralDPAnimation138 is the file "Special/Animations/SpiralDP/frame_138.jpg".
+Figure of SpiralDPAnimation139 is the file "Special/Animations/SpiralDP/frame_139.jpg".
+Figure of SpiralDPAnimation140 is the file "Special/Animations/SpiralDP/frame_140.jpg".
+Figure of SpiralDPAnimation141 is the file "Special/Animations/SpiralDP/frame_141.jpg".
+Figure of SpiralDPAnimation142 is the file "Special/Animations/SpiralDP/frame_142.jpg".
+Figure of SpiralDPAnimation143 is the file "Special/Animations/SpiralDP/frame_143.jpg".
+Figure of SpiralDPAnimation144 is the file "Special/Animations/SpiralDP/frame_144.jpg".
+Figure of SpiralDPAnimation145 is the file "Special/Animations/SpiralDP/frame_145.jpg".
+Figure of SpiralDPAnimation146 is the file "Special/Animations/SpiralDP/frame_146.jpg".
+Figure of SpiralDPAnimation147 is the file "Special/Animations/SpiralDP/frame_147.jpg".
+Figure of SpiralDPAnimation148 is the file "Special/Animations/SpiralDP/frame_148.jpg".
+Figure of SpiralDPAnimation149 is the file "Special/Animations/SpiralDP/frame_149.jpg".
+Figure of SpiralDPAnimation150 is the file "Special/Animations/SpiralDP/frame_150.jpg".
+Figure of SpiralDPAnimation151 is the file "Special/Animations/SpiralDP/frame_151.jpg".
+Figure of SpiralDPAnimation152 is the file "Special/Animations/SpiralDP/frame_152.jpg".
+Figure of SpiralDPAnimation153 is the file "Special/Animations/SpiralDP/frame_153.jpg".
+Figure of SpiralDPAnimation154 is the file "Special/Animations/SpiralDP/frame_154.jpg".
+Figure of SpiralDPAnimation155 is the file "Special/Animations/SpiralDP/frame_155.jpg".
+Figure of SpiralDPAnimation156 is the file "Special/Animations/SpiralDP/frame_156.jpg".
+Figure of SpiralDPAnimation157 is the file "Special/Animations/SpiralDP/frame_157.jpg".
+Figure of SpiralDPAnimation158 is the file "Special/Animations/SpiralDP/frame_158.jpg".
+Figure of SpiralDPAnimation159 is the file "Special/Animations/SpiralDP/frame_159.jpg".
+Figure of SpiralDPAnimation160 is the file "Special/Animations/SpiralDP/frame_160.jpg".
+Figure of SpiralDPAnimation161 is the file "Special/Animations/SpiralDP/frame_161.jpg".
+Figure of SpiralDPAnimation162 is the file "Special/Animations/SpiralDP/frame_162.jpg".
+Figure of SpiralDPAnimation163 is the file "Special/Animations/SpiralDP/frame_163.jpg".
+Figure of SpiralDPAnimation164 is the file "Special/Animations/SpiralDP/frame_164.jpg".
+Figure of SpiralDPAnimation165 is the file "Special/Animations/SpiralDP/frame_165.jpg".
+Figure of SpiralDPAnimation166 is the file "Special/Animations/SpiralDP/frame_166.jpg".
+Figure of SpiralDPAnimation167 is the file "Special/Animations/SpiralDP/frame_167.jpg".
+Figure of SpiralDPAnimation168 is the file "Special/Animations/SpiralDP/frame_168.jpg".
+Figure of SpiralDPAnimation169 is the file "Special/Animations/SpiralDP/frame_169.jpg".
+Figure of SpiralDPAnimation170 is the file "Special/Animations/SpiralDP/frame_170.jpg".
+Figure of SpiralDPAnimation171 is the file "Special/Animations/SpiralDP/frame_171.jpg".
+Figure of SpiralDPAnimation172 is the file "Special/Animations/SpiralDP/frame_172.jpg".
+Figure of SpiralDPAnimation173 is the file "Special/Animations/SpiralDP/frame_173.jpg".
+Figure of SpiralDPAnimation174 is the file "Special/Animations/SpiralDP/frame_174.jpg".
+Figure of SpiralDPAnimation175 is the file "Special/Animations/SpiralDP/frame_175.jpg".
+Figure of SpiralDPAnimation176 is the file "Special/Animations/SpiralDP/frame_176.jpg".
+Figure of SpiralDPAnimation177 is the file "Special/Animations/SpiralDP/frame_177.jpg".
+Figure of SpiralDPAnimation178 is the file "Special/Animations/SpiralDP/frame_178.jpg".
+Figure of SpiralDPAnimation179 is the file "Special/Animations/SpiralDP/frame_179.jpg".
+Figure of SpiralDPAnimation180 is the file "Special/Animations/SpiralDP/frame_180.jpg".
+Figure of SpiralDPAnimation181 is the file "Special/Animations/SpiralDP/frame_181.jpg".
+Figure of SpiralDPAnimation182 is the file "Special/Animations/SpiralDP/frame_182.jpg".
+Figure of SpiralDPAnimation183 is the file "Special/Animations/SpiralDP/frame_183.jpg".
+Figure of SpiralDPAnimation184 is the file "Special/Animations/SpiralDP/frame_184.jpg".
+Figure of SpiralDPAnimation185 is the file "Special/Animations/SpiralDP/frame_185.jpg".
+Figure of SpiralDPAnimation186 is the file "Special/Animations/SpiralDP/frame_186.jpg".
+Figure of SpiralDPAnimation187 is the file "Special/Animations/SpiralDP/frame_187.jpg".
+Figure of SpiralDPAnimation188 is the file "Special/Animations/SpiralDP/frame_188.jpg".
+Figure of SpiralDPAnimation189 is the file "Special/Animations/SpiralDP/frame_189.jpg".
+Figure of SpiralDPAnimation190 is the file "Special/Animations/SpiralDP/frame_190.jpg".
+Figure of SpiralDPAnimation191 is the file "Special/Animations/SpiralDP/frame_191.jpg".
+Figure of SpiralDPAnimation192 is the file "Special/Animations/SpiralDP/frame_192.jpg".
+Figure of SpiralDPAnimation193 is the file "Special/Animations/SpiralDP/frame_193.jpg".
+Figure of SpiralDPAnimation194 is the file "Special/Animations/SpiralDP/frame_194.jpg".
+Figure of SpiralDPAnimation195 is the file "Special/Animations/SpiralDP/frame_195.jpg".
+Figure of SpiralDPAnimation196 is the file "Special/Animations/SpiralDP/frame_196.jpg".
+Figure of SpiralDPAnimation197 is the file "Special/Animations/SpiralDP/frame_197.jpg".
+Figure of SpiralDPAnimation198 is the file "Special/Animations/SpiralDP/frame_198.jpg".
+Figure of SpiralDPAnimation199 is the file "Special/Animations/SpiralDP/frame_199.jpg".
+Figure of SpiralDPAnimation200 is the file "Special/Animations/SpiralDP/frame_200.jpg".
+Figure of SpiralDPAnimation201 is the file "Special/Animations/SpiralDP/frame_201.jpg".
+Figure of SpiralDPAnimation202 is the file "Special/Animations/SpiralDP/frame_202.jpg".
+Figure of SpiralDPAnimation203 is the file "Special/Animations/SpiralDP/frame_203.jpg".
+Figure of SpiralDPAnimation204 is the file "Special/Animations/SpiralDP/frame_204.jpg".
+Figure of SpiralDPAnimation205 is the file "Special/Animations/SpiralDP/frame_205.jpg".
+Figure of SpiralDPAnimation206 is the file "Special/Animations/SpiralDP/frame_206.jpg".
+Figure of SpiralDPAnimation207 is the file "Special/Animations/SpiralDP/frame_207.jpg".
+Figure of SpiralDPAnimation208 is the file "Special/Animations/SpiralDP/frame_208.jpg".
+Figure of SpiralDPAnimation209 is the file "Special/Animations/SpiralDP/frame_209.jpg".
+Figure of SpiralDPAnimation210 is the file "Special/Animations/SpiralDP/frame_210.jpg".
+Figure of SpiralDPAnimation211 is the file "Special/Animations/SpiralDP/frame_211.jpg".
+Figure of SpiralDPAnimation212 is the file "Special/Animations/SpiralDP/frame_212.jpg".
+Figure of SpiralDPAnimation213 is the file "Special/Animations/SpiralDP/frame_213.jpg".
+Figure of SpiralDPAnimation214 is the file "Special/Animations/SpiralDP/frame_214.jpg".
+Figure of SpiralDPAnimation215 is the file "Special/Animations/SpiralDP/frame_215.jpg".
+Figure of SpiralDPAnimation216 is the file "Special/Animations/SpiralDP/frame_216.jpg".
+Figure of SpiralDPAnimation217 is the file "Special/Animations/SpiralDP/frame_217.jpg".
+Figure of SpiralDPAnimation218 is the file "Special/Animations/SpiralDP/frame_218.jpg".
+Figure of SpiralDPAnimation219 is the file "Special/Animations/SpiralDP/frame_219.jpg".
+Figure of SpiralDPAnimation220 is the file "Special/Animations/SpiralDP/frame_220.jpg".
+Figure of SpiralDPAnimation221 is the file "Special/Animations/SpiralDP/frame_221.jpg".
+Figure of SpiralDPAnimation222 is the file "Special/Animations/SpiralDP/frame_222.jpg".
+Figure of SpiralDPAnimation223 is the file "Special/Animations/SpiralDP/frame_223.jpg".
+Figure of SpiralDPAnimation224 is the file "Special/Animations/SpiralDP/frame_224.jpg".
+Figure of SpiralDPAnimation225 is the file "Special/Animations/SpiralDP/frame_225.jpg".
+Figure of SpiralDPAnimation226 is the file "Special/Animations/SpiralDP/frame_226.jpg".
+Figure of SpiralDPAnimation227 is the file "Special/Animations/SpiralDP/frame_227.jpg".
+Figure of SpiralDPAnimation228 is the file "Special/Animations/SpiralDP/frame_228.jpg".
 When play begins:
-	fill DPHypnoAnimation from Figure of HypnoDPAnimation000 to 228.
+	fill DPSpiralAnimation from Figure of SpiralDPAnimation000 to 228.
 
 
 
-Figure of HypnoMilkAnimation00 is the file "Special/Animations/HypnoMilk/frame00.jpg".
-Figure of HypnoMilkAnimation01 is the file "Special/Animations/HypnoMilk/frame01.jpg".
-Figure of HypnoMilkAnimation02 is the file "Special/Animations/HypnoMilk/frame02.jpg".
-Figure of HypnoMilkAnimation03 is the file "Special/Animations/HypnoMilk/frame03.jpg".
-Figure of HypnoMilkAnimation04 is the file "Special/Animations/HypnoMilk/frame04.jpg".
-Figure of HypnoMilkAnimation05 is the file "Special/Animations/HypnoMilk/frame05.jpg".
-Figure of HypnoMilkAnimation06 is the file "Special/Animations/HypnoMilk/frame06.jpg".
-Figure of HypnoMilkAnimation07 is the file "Special/Animations/HypnoMilk/frame07.jpg".
-Figure of HypnoMilkAnimation08 is the file "Special/Animations/HypnoMilk/frame08.jpg".
-Figure of HypnoMilkAnimation09 is the file "Special/Animations/HypnoMilk/frame09.jpg".
-Figure of HypnoMilkAnimation10 is the file "Special/Animations/HypnoMilk/frame10.jpg".
-Figure of HypnoMilkAnimation11 is the file "Special/Animations/HypnoMilk/frame11.jpg".
-Figure of HypnoMilkAnimation12 is the file "Special/Animations/HypnoMilk/frame12.jpg".
-Figure of HypnoMilkAnimation13 is the file "Special/Animations/HypnoMilk/frame13.jpg".
-Figure of HypnoMilkAnimation14 is the file "Special/Animations/HypnoMilk/frame14.jpg".
-Figure of HypnoMilkAnimation15 is the file "Special/Animations/HypnoMilk/frame15.jpg".
-Figure of HypnoMilkAnimation16 is the file "Special/Animations/HypnoMilk/frame16.jpg".
-Figure of HypnoMilkAnimation17 is the file "Special/Animations/HypnoMilk/frame17.jpg".
-Figure of HypnoMilkAnimation18 is the file "Special/Animations/HypnoMilk/frame18.jpg".
-Figure of HypnoMilkAnimation19 is the file "Special/Animations/HypnoMilk/frame19.jpg".
-Figure of HypnoMilkAnimation20 is the file "Special/Animations/HypnoMilk/frame20.jpg".
-Figure of HypnoMilkAnimation21 is the file "Special/Animations/HypnoMilk/frame21.jpg".
-Figure of HypnoMilkAnimation22 is the file "Special/Animations/HypnoMilk/frame22.jpg".
-Figure of HypnoMilkAnimation23 is the file "Special/Animations/HypnoMilk/frame23.jpg".
-Figure of HypnoMilkAnimation24 is the file "Special/Animations/HypnoMilk/frame24.jpg".
-Figure of HypnoMilkAnimation25 is the file "Special/Animations/HypnoMilk/frame25.jpg".
-Figure of HypnoMilkAnimation26 is the file "Special/Animations/HypnoMilk/frame26.jpg".
-Figure of HypnoMilkAnimation27 is the file "Special/Animations/HypnoMilk/frame27.jpg".
-Figure of HypnoMilkAnimation28 is the file "Special/Animations/HypnoMilk/frame28.jpg".
-Figure of HypnoMilkAnimation29 is the file "Special/Animations/HypnoMilk/frame29.jpg".
-Figure of HypnoMilkAnimation30 is the file "Special/Animations/HypnoMilk/frame30.jpg".
-Figure of HypnoMilkAnimation31 is the file "Special/Animations/HypnoMilk/frame31.jpg".
-Figure of HypnoMilkAnimation32 is the file "Special/Animations/HypnoMilk/frame32.jpg".
-Figure of HypnoMilkAnimation33 is the file "Special/Animations/HypnoMilk/frame33.jpg".
-Figure of HypnoMilkAnimation34 is the file "Special/Animations/HypnoMilk/frame34.jpg".
-Figure of HypnoMilkAnimation35 is the file "Special/Animations/HypnoMilk/frame35.jpg".
-Figure of HypnoMilkAnimation36 is the file "Special/Animations/HypnoMilk/frame36.jpg".
-Figure of HypnoMilkAnimation37 is the file "Special/Animations/HypnoMilk/frame37.jpg".
-Figure of HypnoMilkAnimation38 is the file "Special/Animations/HypnoMilk/frame38.jpg".
-Figure of HypnoMilkAnimation39 is the file "Special/Animations/HypnoMilk/frame39.jpg".
-Figure of HypnoMilkAnimation40 is the file "Special/Animations/HypnoMilk/frame40.jpg".
-Figure of HypnoMilkAnimation41 is the file "Special/Animations/HypnoMilk/frame41.jpg".
-Figure of HypnoMilkAnimation42 is the file "Special/Animations/HypnoMilk/frame42.jpg".
-Figure of HypnoMilkAnimation43 is the file "Special/Animations/HypnoMilk/frame43.jpg".
-Figure of HypnoMilkAnimation44 is the file "Special/Animations/HypnoMilk/frame44.jpg".
-Figure of HypnoMilkAnimation45 is the file "Special/Animations/HypnoMilk/frame45.jpg".
-Figure of HypnoMilkAnimation46 is the file "Special/Animations/HypnoMilk/frame46.jpg".
-Figure of HypnoMilkAnimation47 is the file "Special/Animations/HypnoMilk/frame47.jpg".
-Figure of HypnoMilkAnimation48 is the file "Special/Animations/HypnoMilk/frame48.jpg".
-Figure of HypnoMilkAnimation49 is the file "Special/Animations/HypnoMilk/frame49.jpg".
-Figure of HypnoMilkAnimation50 is the file "Special/Animations/HypnoMilk/frame50.jpg".
-Figure of HypnoMilkAnimation51 is the file "Special/Animations/HypnoMilk/frame51.jpg".
-Figure of HypnoMilkAnimation52 is the file "Special/Animations/HypnoMilk/frame52.jpg".
-Figure of HypnoMilkAnimation53 is the file "Special/Animations/HypnoMilk/frame53.jpg".
-Figure of HypnoMilkAnimation54 is the file "Special/Animations/HypnoMilk/frame54.jpg".
-Figure of HypnoMilkAnimation55 is the file "Special/Animations/HypnoMilk/frame55.jpg".
-Figure of HypnoMilkAnimation56 is the file "Special/Animations/HypnoMilk/frame56.jpg".
-Figure of HypnoMilkAnimation57 is the file "Special/Animations/HypnoMilk/frame57.jpg".
-Figure of HypnoMilkAnimation58 is the file "Special/Animations/HypnoMilk/frame58.jpg".
-Figure of HypnoMilkAnimation59 is the file "Special/Animations/HypnoMilk/frame59.jpg".
-Figure of HypnoMilkAnimation60 is the file "Special/Animations/HypnoMilk/frame60.jpg".
-Figure of HypnoMilkAnimation61 is the file "Special/Animations/HypnoMilk/frame61.jpg".
-Figure of HypnoMilkAnimation62 is the file "Special/Animations/HypnoMilk/frame62.jpg".
-Figure of HypnoMilkAnimation63 is the file "Special/Animations/HypnoMilk/frame63.jpg".
-Figure of HypnoMilkAnimation64 is the file "Special/Animations/HypnoMilk/frame64.jpg".
-Figure of HypnoMilkAnimation65 is the file "Special/Animations/HypnoMilk/frame65.jpg".
-Figure of HypnoMilkAnimation66 is the file "Special/Animations/HypnoMilk/frame66.jpg".
-Figure of HypnoMilkAnimation67 is the file "Special/Animations/HypnoMilk/frame67.jpg".
-Figure of HypnoMilkAnimation68 is the file "Special/Animations/HypnoMilk/frame68.jpg".
-Figure of HypnoMilkAnimation69 is the file "Special/Animations/HypnoMilk/frame69.jpg".
-Figure of HypnoMilkAnimation70 is the file "Special/Animations/HypnoMilk/frame70.jpg".
-Figure of HypnoMilkAnimation71 is the file "Special/Animations/HypnoMilk/frame71.jpg".
-Figure of HypnoMilkAnimation72 is the file "Special/Animations/HypnoMilk/frame72.jpg".
-Figure of HypnoMilkAnimation73 is the file "Special/Animations/HypnoMilk/frame73.jpg".
-Figure of HypnoMilkAnimation74 is the file "Special/Animations/HypnoMilk/frame74.jpg".
-Figure of HypnoMilkAnimation75 is the file "Special/Animations/HypnoMilk/frame75.jpg".
-Figure of HypnoMilkAnimation76 is the file "Special/Animations/HypnoMilk/frame76.jpg".
-Figure of HypnoMilkAnimation77 is the file "Special/Animations/HypnoMilk/frame77.jpg".
+Figure of SpiralMilkAnimation00 is the file "Special/Animations/SpiralMilk/frame00.jpg".
+Figure of SpiralMilkAnimation01 is the file "Special/Animations/SpiralMilk/frame01.jpg".
+Figure of SpiralMilkAnimation02 is the file "Special/Animations/SpiralMilk/frame02.jpg".
+Figure of SpiralMilkAnimation03 is the file "Special/Animations/SpiralMilk/frame03.jpg".
+Figure of SpiralMilkAnimation04 is the file "Special/Animations/SpiralMilk/frame04.jpg".
+Figure of SpiralMilkAnimation05 is the file "Special/Animations/SpiralMilk/frame05.jpg".
+Figure of SpiralMilkAnimation06 is the file "Special/Animations/SpiralMilk/frame06.jpg".
+Figure of SpiralMilkAnimation07 is the file "Special/Animations/SpiralMilk/frame07.jpg".
+Figure of SpiralMilkAnimation08 is the file "Special/Animations/SpiralMilk/frame08.jpg".
+Figure of SpiralMilkAnimation09 is the file "Special/Animations/SpiralMilk/frame09.jpg".
+Figure of SpiralMilkAnimation10 is the file "Special/Animations/SpiralMilk/frame10.jpg".
+Figure of SpiralMilkAnimation11 is the file "Special/Animations/SpiralMilk/frame11.jpg".
+Figure of SpiralMilkAnimation12 is the file "Special/Animations/SpiralMilk/frame12.jpg".
+Figure of SpiralMilkAnimation13 is the file "Special/Animations/SpiralMilk/frame13.jpg".
+Figure of SpiralMilkAnimation14 is the file "Special/Animations/SpiralMilk/frame14.jpg".
+Figure of SpiralMilkAnimation15 is the file "Special/Animations/SpiralMilk/frame15.jpg".
+Figure of SpiralMilkAnimation16 is the file "Special/Animations/SpiralMilk/frame16.jpg".
+Figure of SpiralMilkAnimation17 is the file "Special/Animations/SpiralMilk/frame17.jpg".
+Figure of SpiralMilkAnimation18 is the file "Special/Animations/SpiralMilk/frame18.jpg".
+Figure of SpiralMilkAnimation19 is the file "Special/Animations/SpiralMilk/frame19.jpg".
+Figure of SpiralMilkAnimation20 is the file "Special/Animations/SpiralMilk/frame20.jpg".
+Figure of SpiralMilkAnimation21 is the file "Special/Animations/SpiralMilk/frame21.jpg".
+Figure of SpiralMilkAnimation22 is the file "Special/Animations/SpiralMilk/frame22.jpg".
+Figure of SpiralMilkAnimation23 is the file "Special/Animations/SpiralMilk/frame23.jpg".
+Figure of SpiralMilkAnimation24 is the file "Special/Animations/SpiralMilk/frame24.jpg".
+Figure of SpiralMilkAnimation25 is the file "Special/Animations/SpiralMilk/frame25.jpg".
+Figure of SpiralMilkAnimation26 is the file "Special/Animations/SpiralMilk/frame26.jpg".
+Figure of SpiralMilkAnimation27 is the file "Special/Animations/SpiralMilk/frame27.jpg".
+Figure of SpiralMilkAnimation28 is the file "Special/Animations/SpiralMilk/frame28.jpg".
+Figure of SpiralMilkAnimation29 is the file "Special/Animations/SpiralMilk/frame29.jpg".
+Figure of SpiralMilkAnimation30 is the file "Special/Animations/SpiralMilk/frame30.jpg".
+Figure of SpiralMilkAnimation31 is the file "Special/Animations/SpiralMilk/frame31.jpg".
+Figure of SpiralMilkAnimation32 is the file "Special/Animations/SpiralMilk/frame32.jpg".
+Figure of SpiralMilkAnimation33 is the file "Special/Animations/SpiralMilk/frame33.jpg".
+Figure of SpiralMilkAnimation34 is the file "Special/Animations/SpiralMilk/frame34.jpg".
+Figure of SpiralMilkAnimation35 is the file "Special/Animations/SpiralMilk/frame35.jpg".
+Figure of SpiralMilkAnimation36 is the file "Special/Animations/SpiralMilk/frame36.jpg".
+Figure of SpiralMilkAnimation37 is the file "Special/Animations/SpiralMilk/frame37.jpg".
+Figure of SpiralMilkAnimation38 is the file "Special/Animations/SpiralMilk/frame38.jpg".
+Figure of SpiralMilkAnimation39 is the file "Special/Animations/SpiralMilk/frame39.jpg".
+Figure of SpiralMilkAnimation40 is the file "Special/Animations/SpiralMilk/frame40.jpg".
+Figure of SpiralMilkAnimation41 is the file "Special/Animations/SpiralMilk/frame41.jpg".
+Figure of SpiralMilkAnimation42 is the file "Special/Animations/SpiralMilk/frame42.jpg".
+Figure of SpiralMilkAnimation43 is the file "Special/Animations/SpiralMilk/frame43.jpg".
+Figure of SpiralMilkAnimation44 is the file "Special/Animations/SpiralMilk/frame44.jpg".
+Figure of SpiralMilkAnimation45 is the file "Special/Animations/SpiralMilk/frame45.jpg".
+Figure of SpiralMilkAnimation46 is the file "Special/Animations/SpiralMilk/frame46.jpg".
+Figure of SpiralMilkAnimation47 is the file "Special/Animations/SpiralMilk/frame47.jpg".
+Figure of SpiralMilkAnimation48 is the file "Special/Animations/SpiralMilk/frame48.jpg".
+Figure of SpiralMilkAnimation49 is the file "Special/Animations/SpiralMilk/frame49.jpg".
+Figure of SpiralMilkAnimation50 is the file "Special/Animations/SpiralMilk/frame50.jpg".
+Figure of SpiralMilkAnimation51 is the file "Special/Animations/SpiralMilk/frame51.jpg".
+Figure of SpiralMilkAnimation52 is the file "Special/Animations/SpiralMilk/frame52.jpg".
+Figure of SpiralMilkAnimation53 is the file "Special/Animations/SpiralMilk/frame53.jpg".
+Figure of SpiralMilkAnimation54 is the file "Special/Animations/SpiralMilk/frame54.jpg".
+Figure of SpiralMilkAnimation55 is the file "Special/Animations/SpiralMilk/frame55.jpg".
+Figure of SpiralMilkAnimation56 is the file "Special/Animations/SpiralMilk/frame56.jpg".
+Figure of SpiralMilkAnimation57 is the file "Special/Animations/SpiralMilk/frame57.jpg".
+Figure of SpiralMilkAnimation58 is the file "Special/Animations/SpiralMilk/frame58.jpg".
+Figure of SpiralMilkAnimation59 is the file "Special/Animations/SpiralMilk/frame59.jpg".
+Figure of SpiralMilkAnimation60 is the file "Special/Animations/SpiralMilk/frame60.jpg".
+Figure of SpiralMilkAnimation61 is the file "Special/Animations/SpiralMilk/frame61.jpg".
+Figure of SpiralMilkAnimation62 is the file "Special/Animations/SpiralMilk/frame62.jpg".
+Figure of SpiralMilkAnimation63 is the file "Special/Animations/SpiralMilk/frame63.jpg".
+Figure of SpiralMilkAnimation64 is the file "Special/Animations/SpiralMilk/frame64.jpg".
+Figure of SpiralMilkAnimation65 is the file "Special/Animations/SpiralMilk/frame65.jpg".
+Figure of SpiralMilkAnimation66 is the file "Special/Animations/SpiralMilk/frame66.jpg".
+Figure of SpiralMilkAnimation67 is the file "Special/Animations/SpiralMilk/frame67.jpg".
+Figure of SpiralMilkAnimation68 is the file "Special/Animations/SpiralMilk/frame68.jpg".
+Figure of SpiralMilkAnimation69 is the file "Special/Animations/SpiralMilk/frame69.jpg".
+Figure of SpiralMilkAnimation70 is the file "Special/Animations/SpiralMilk/frame70.jpg".
+Figure of SpiralMilkAnimation71 is the file "Special/Animations/SpiralMilk/frame71.jpg".
+Figure of SpiralMilkAnimation72 is the file "Special/Animations/SpiralMilk/frame72.jpg".
+Figure of SpiralMilkAnimation73 is the file "Special/Animations/SpiralMilk/frame73.jpg".
+Figure of SpiralMilkAnimation74 is the file "Special/Animations/SpiralMilk/frame74.jpg".
+Figure of SpiralMilkAnimation75 is the file "Special/Animations/SpiralMilk/frame75.jpg".
+Figure of SpiralMilkAnimation76 is the file "Special/Animations/SpiralMilk/frame76.jpg".
+Figure of SpiralMilkAnimation77 is the file "Special/Animations/SpiralMilk/frame77.jpg".
 When play begins:
-	fill MilkHypnoAnimation from Figure of HypnoMilkAnimation00 to 77.
+	fill MilkSpiralAnimation from Figure of SpiralMilkAnimation00 to 77.
 
 [Figure of PussyExpelAnimation000 is the file "Special/Animations/PussyExpel/frame_000.jpg".
 Figure of PussyExpelAnimation001 is the file "Special/Animations/PussyExpel/frame_001.jpg".

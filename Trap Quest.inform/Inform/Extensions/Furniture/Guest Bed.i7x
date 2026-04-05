@@ -40,7 +40,7 @@ To compute furniture resting on (F - a guest bed):
 		say "You slip into the bed and pull up the covers.";
 	compute normal rest of F.
 
-player-hypno-great is a number that varies. player-hypno-great is usually 0.
+player-h-great is a number that varies. player-h-great is usually 0.
 
 [!<computeUniqueFurnitureFatigueEffect>+
 
@@ -84,7 +84,7 @@ To say RestingDesc of (F - a guest bed):
 		say "You continue to rest on the comfortable mattress, [one of]silently repeating [NameDesc of M][']s words.[or]watching every movement of [NameDesc of M][']s lips.[or], feeling yourself drifting to rhythm of [NameDesc of M][']s voice.[or], hanging onto [NameDesc of M][']s every word.[at random]";
 	otherwise if N < 11 or diaper quest is 1:
 		say "[if N is 10]You continue resting, [one of]treasuring the soothing blankness in your mind.[or]whispering to yourself into a language you do not know.[or]anticipating... them.[at random][end if]";
-		now player-hypno-great is 1;
+		now player-h-great is 1;
 	otherwise:
 		if the remainder after dividing N by 4 is 1:[every four turns, add another tentacle.]
 			let O be a random orifice;

@@ -17,9 +17,9 @@ To compute poking of (M - a monster):
 	say "You poke [NameDesc of M][if handU is 0] with your nose[end if].";
 	if M is awake or M is defeated:
 		now the boredom of M is 0;
-		if M is not student, FavourDown M with consequences;
+		if M is not trainee, FavourDown M with consequences;
 		if M is interested:
-			if M is student and M is friendly:
+			if M is trainee and M is friendly:
 				HappinessDown M;
 				if M is unfriendly, distract M;
 			otherwise if M is orc:

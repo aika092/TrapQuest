@@ -24,6 +24,7 @@ This is the second procedure the game runs when the game is opened, the first on
 +!]
 When play begins:
 	clear the screen;
+	now gameover-flag is 0;
 	repeat with N running from 1 to 20:
 		add 0 to the list of special passwords;
 	[the armUses of arms needs to have 2 entries right away to avoid errors when outrage or appearance is checked]
@@ -103,6 +104,7 @@ Some variables need giving certain values right from the start.
 
 +!]
 To initialise variables:
+	say "initialising variables.";
 	[now debugmode is 2;]
 	now earnings is starting-earnings;
 	[now description in row 1 of the Table of Basic Help Options is "[bold type][story title][roman type][paragraph break][story description]";
@@ -122,7 +124,8 @@ To initialise variables:
 	if new-seed is 1:
 		now choice in row 17 of Table of Settings is a random number between 1 and 1000; [This should only happen once and is used to validate against cheaters.]
 	check donators status with 0; [check for a donators file]
-	if diaper quest is 1 and choice in row 19 of the Table of Player Options is -1, now choice in row 19 of the Table of Player Options is 0; [player will now be asked about diapers in Trap Quest]
+	check for legacy debug;
+	if diaper quest is 1 and choice in row 19 of the Table of Player Options is -1, now choice in row 19 of the Table of Player Options is 0; [player will now be asked about diapers in TQ]
 	now random slow pregnancy is a random number between 0 and 3;
 	now random slow birth is a random number between -1 and 3.
 
@@ -159,7 +162,9 @@ To fill in fake table blanks:
 		unless there is a choice in row 65 of the Table of Settings, now choice in row 65 of Table of Settings is 0;
 		unless there is a choice in row 66 of the Table of Settings, now choice in row 66 of Table of Settings is 45;
 		unless there is a choice in row 67 of the Table of Settings, now choice in row 67 of Table of Settings is 0;
-		unless there is a choice in row 68 of the Table of Settings, now choice in row 68 of Table of Settings is 1.
+		unless there is a choice in row 68 of the Table of Settings, now choice in row 68 of Table of Settings is 1;
+		unless there is a choice in row 69 of the Table of Settings, now choice in row 69 of Table of Settings is 3;
+		unless there is a choice in row 70 of the Table of Settings, now choice in row 70 of Table of Settings is 0.
 
 To fill in legacy table blanks:
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
@@ -256,9 +261,9 @@ To correct table entries:
 		blank out the whole row;
 		choose the row with a toggle of custom name rule in the Table of Female Name Diaper Quest Options;
 		blank out the whole row;
-	if the player is not the donator:
+	[if the player is not the donator:
 		choose the row with a toggle of simulated internet toggle rule in the Table of Optional Text Settings;
-		blank out the whole row;
+		blank out the whole row;]
 	if diaper quest is 0:
 		choose the row with a toggle of easter content toggle rule in the Table of Festive Options;
 		blank out the whole row;

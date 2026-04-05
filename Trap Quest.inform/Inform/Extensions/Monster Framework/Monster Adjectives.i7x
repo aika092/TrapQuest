@@ -4,6 +4,7 @@ A monster is a kind of animal. A dungeon boss is a kind of monster.
 Definition: a dungeon boss is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a dungeon boss is a urinater: decide no.
 A monster can be interested or uninterested. A monster is usually uninterested. [Are they currently actively looking to interact with the player?]
+A monster can be composed or aggravated. A monster is usually composed. [Have you recently done something that means they won't show mercy?]
 A monster has a number called sleep. [The number of seconds until they wake up.]
 Definition: a monster is awake rather than asleep:
 	if the sleep of it <= 0 and timeBombTime <= 0, decide yes;
@@ -192,7 +193,7 @@ Definition: a monster is musky: decide no.
 Definition: a monster is a generic-unlocker: decide no. [Does it have access to keys to unlock clothing?]
 Definition: a monster is a clothes-destroyer: decide no. [Does it have enough strength to easily rip clothes apart, even ones with a metal chain and lock?]
 
-A monster can be doing nothing special, spanking the player, tickling the player, changing the player, feeding the player, whipping the player, masturbating the player, enema-filling the player, diaper-facesitting the player (this is the punishment-attack-state property).
+A monster can be doing nothing special, spanking the player, tickling the player, changing the player, feeding the player, whipping the player, masturbating the player, knee bouncing the player, enema-filling the player, diaper-facesitting the player (this is the punishment-attack-state property).
 A monster can be tickle-testing.
 A monster has a number called paralyse-status. [paralyse status of -1 makes you immune]
 Definition: A monster is paralysed rather than not-paralysed:
@@ -217,6 +218,8 @@ A monster can be wrapped or unwrapped. A monster is usually unwrapped. [Are they
 A monster has a number called selection-frustration. [Have they tried the same body part several times without success, or waited several turns to be able to fuck without success?]
 A monster can be mating. [Has the player given birth to their spawn?]
 A monster has a number called waitress-boredom.
+A monster has a number called request-cooldown.
+
 
 Definition: a monster is blocker: decide yes.
 
@@ -306,7 +309,7 @@ Definition: a monster is defeated rather than undefeated:
 	decide no. [It's got knocked down, it's not getting up again, it's always going to let you keep it down]
 
 Definition: a monster is messy:
-	if it is diaper-enslaved and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 6 and playerRegion is not school, decide yes;
+	if it is diaper-enslaved and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 6 and playerRegion is not facility, decide yes;
 	if it is caged and it is in the location of dominatrix-cage and the mess of dominatrix-cage > 0, decide yes;
 	decide no.
 Definition: a monster is messy-seeker: decide yes. [Does this NPC follow the player around like a fly when messy?]
@@ -356,7 +359,7 @@ A game universe initialisation rule:
 		add M to L, if absent;
 	sort L in random order;
 	repeat with M running through intelligent monsters:
-		unless M is student or M is staff member or M is ex-princess or M is goblin:
+		unless M is trainee or M is staff member or M is ex-princess or M is goblin:
 			if the number of entries in L > 0:
 				let X be entry 1 in L;
 				add X to the tradableItems of M;

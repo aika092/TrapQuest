@@ -69,8 +69,8 @@ To summon (M - a monster):
 		summon M in the hotel;
 	otherwise if M is mansion dwelling:
 		summon M in the mansion;
-	otherwise if M is in the School:
-		summon M in the school;
+	otherwise if M is in the facility:
+		summon M in the facility;
 	otherwise if M is in the dungeon: [This is used during fainting to reset monster that don't spawn normally]
 		summon M in the dungeon;
 	otherwise if M is in the woods:
@@ -114,9 +114,9 @@ To summon (M - a monster) in (D - the mansion):
 			now M is in a random placed unbossed haunted room.
 			[if the number of placed haunted rooms is the number of discovered haunted rooms, SilentlyDifficultyUp M by 5.]
 
-[Most NPCs aren't allowed in the school]
-To summon (M - a monster) in (D - the school):
-	if M is student or M is staff member:
+[Most NPCs aren't allowed in the facility]
+To summon (M - a monster) in (D - the facility):
+	if M is trainee or M is staff member:
 		let failsafe be 0;
 		while failsafe < 50 and (M is off-stage or M is nearby or M is in the location of the player or the entry-rank of (the location of M) > the current-rank of M):
 			increase failsafe by 1;

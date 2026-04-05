@@ -62,12 +62,27 @@ To say ExamineDesc of (C - a tentacle-breeder):
 		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with [magic-cost of C] eldritch seals etched into the ground below it. [if the divinationskill of the player > 0 and R is 1]You can sense that your current magic power is enough to [otherwise if the divinationskill of the player > 0]You can sense that your current magic power is currently not enough to[otherwise]You don't have a clue how to[end if] [bold type]purify[roman type] the corrupted seals and destroy it.";
 
 Report going when there is a tentacle-breeder in the location:
-	if inhuman pregnancy >= 2, compute addiction reflection on "pregnancy".
+	if inhuman pregnancy >= 2, compute addiction reflection on "pregnancy" with 1 flavour.
 
-A later time based rule (this is the tentacle breeder makes you horny rule):
-	if inhuman pregnancy >= 2:
-		let TB be a random active tentacle-breeder in the location of the player;
-		if TB is a thing and the player is not a bit horny and the player is able to get horny:
+A later time based rule (this is the tentacle breeder becomes active and makes you horny rule):
+	let TB be a random tentacle-breeder in the location of the player;
+	if TB is a thing:
+		if TB is not active:
+			let A be a random explorer;
+			say "[bold type]You feel [if the divinationskill of the player > 0]a strong tug on your magical energy[otherwise]a tingle run down your spine[end if] as [if inhuman pregnancy >= 2]the mass of tentacles surrounding [end if][NameDesc of TB] emits a piercing screech that reverberates through the dungeon... and beyond.[roman type][paragraph break]";
+			if inhuman pregnancy >= 2, say "The [man of A] being used as a living tentacle breeder [one of]stirs awake, all semblance of sleep vanishing from [his of A] face as [he of A] lays [his of A] eyes on you.[line break][speech style of A]'H-hey. You... y-you can use magic, right? Listen, you've got to get me out of this! I can't give up now, but the tentacles, they keep-! GLMPH! MMPH! MMMMPH!'[roman type][line break]The [man of A][']s voice grows faster and more desperate with every word, until finally being cut off by a fat tentacle shoving its way into [his of A] mouth midsentence.[or]spots you, and [his of A] eyes go a bit wider.[line break][speech style of A]'GLMPH! MMPH! MMMMPH!'[roman type][line break]Just like the other tentacle breeders, you imagine that if [he of A] didn't have a tentacle pumping in and out of [his of A] mouth, [he of A] would be saying something like 'Please rescue me when you can! I don't want to have to use my safe word if I can avoid it!'[line break][stopping]";
+			otherwise say "[BigNameDesc of TB] shudders, its bizarre selection of orifices beginning to pulsate faster and faster.";
+			if the total magic power of the player < 1:
+				let M be the summonChoice of TB;
+				if M is monster:
+					compute TB summoning M;
+					set up M;
+					compute portal reset of TB;
+				say "You feel yourself filling up with a new sensation... Unmistakable magical energy descends upon you in this time of need!";
+				MagicPowerUp 3;
+			if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Tentacle breeders are special summoning portals that only spawn tentacle monsters. You can shut them off permanently if you can convince the witch[if the player is not an april 2025 top donator] or the neuromancer[end if] to teach you how to sense magical energy... or you can leave them alone, if you're fine dealing with the monsters.[roman type][line break][or][stopping]";
+			now TB is active;
+		if inhuman pregnancy >= 2 and the player is not a bit horny and the player is able to get horny:
 			say "As you watch the tentacles rhythmically plunging into [NameDesc of TB][']s holes, you feel your own [fuckholes] tingling, and [if the player is not a pervert]despite yourself, [end if]you can feel your body becoming more aroused.";
 			now the arousal of the player is 3100;
 			if the player is not a pervert:
@@ -75,7 +90,10 @@ A later time based rule (this is the tentacle breeder makes you horny rule):
 			otherwise if the player is not nympho:
 				say "[variable custom style]I don't want that to happen to me... Do I?[roman type][line break]";
 			otherwise:
-				say "[variable custom style]I [one of]kind of wish that was me up there... I must be crazy, haha![or]totally wish that was me up there...[stopping][roman type][line break]".
+				say "[variable custom style]I [one of]kind of wish that was me up there... I must be crazy, haha![or]totally wish that was me up there...[stopping][roman type][line break]";
+		if the magic power of the player >= the magic-cost of magic-purify + the magic-cost of TB and heart hairpin is off-stage and heart hairpin is actually summonable:
+			say "A heart hairpin appears in your hair!";
+			summon heart hairpin cursed.
 
 Purifying is an action applying to one thing.
 
@@ -136,7 +154,7 @@ To MagicPurify (B - a tentacle-breeder):
 	if the class of the player is "virgin warrior" and virgin magical girl outfit is off-stage:
 		class summon virgin magical girl outfit;
 	otherwise if heart hairpin is off-stage:
-		if the class of the player is "schoolgirl" and the number of worn scrunchies is 1:
+		if the class of the player is "alchemist" and the number of worn scrunchies is 1:
 			let S be a random worn scrunchie;
 			say "Your [S] explodes in a shower of cartoon lovehearts!";
 			destroy S;
@@ -152,24 +170,10 @@ To MagicPurify (B - a tentacle-breeder):
 	if playerRegion is Dungeon, progress quest of royal-quest.
 
 To compute summoning check of (T - a tentacle-breeder):
-	if the total magic power of the player > 0 and T is regional:
+	if the total magic power of the player > 0 and T is active and T is regional:
 		let TS be time-seconds - the number of alive regional tentacle monsters;
 		if TS > 0, decrease the charge of T by TS;
-		unless T is active:
-			if T is in the location of the player:
-				let A be a random explorer;
-				say "[bold type]You feel [if the divinationskill of the player > 0]a strong tug on your magical energy[otherwise]a tingle run down your spine[end if] as [if inhuman pregnancy >= 2]the mass of tentacles surrounding [end if][NameDesc of T] emits a piercing screech that reverberates through the dungeon... and beyond.[roman type][paragraph break]";
-				if inhuman pregnancy >= 2, say "The [man of A] being used as a living tentacle breeder stirs awake, all semblance of sleep vanishing from [his of A] face as [he of A] lays [his of A] eyes on you.[line break][speech style of A]'H-hey. You... y-you can use magic, right? Listen, you've got to get me out of this! I can't give up now, but the tentacles, they keep-! GLMPH! MMPH! MMMMPH!'[roman type][line break]The [man of A][']s voice grows faster and more desperate with every word, until finally being cut off by a fat tentacle shoving its way into [his of A] mouth midsentence.";
-				otherwise say "[BigNameDesc of T] shudders, its bizarre selection of orifices beginning to pulsate faster and faster.";
-				let M be the summonChoice of T;
-				if M is monster:
-					compute T summoning M;
-					set up M;
-					compute portal reset of T;
-				repeat with B running through tentacle-breeders:
-					now B is active;
-				if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Tentacle breeders are special summoning portals that only spawn tentacle monsters. You can shut them off permanently if you can convince the witch[if the player is not an april 2025 top donator] or the neuromancer[end if] to teach you how to sense magical energy... or you can leave them alone, if you're fine dealing with the monsters.[roman type][or][stopping]";
-		otherwise if the charge of T < 1:
+		if the charge of T < 1:
 			let M be the summonChoice of T;
 			if M is monster:
 				compute T summoning M;
@@ -177,9 +181,6 @@ To compute summoning check of (T - a tentacle-breeder):
 				compute portal reset of T;
 			otherwise:
 				increase the charge of T by 30;
-		otherwise if the magic power of the player >= the magic-cost of magic-purify + the magic-cost of T and heart hairpin is off-stage and heart hairpin is actually summonable:
-			say "A heart hairpin appears in your hair!";
-			summon heart hairpin cursed.
 
 To decide which object is the summonChoice of (T - a tentacle-breeder):
 	let M be a random off-stage tentacle monster;

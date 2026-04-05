@@ -38,7 +38,7 @@ Fanning is an action applying to one thing.
 Check fanning:
 	if the noun is candy machine, try CandyObtaining the noun instead;
 	if the noun is not electric fan, say "This verb is used for turning on a fan!" instead;
-	if playerRegion is School or the location of the player is Dungeon12, say "Something tells you that some kind of ancient magic is preventing that from working properly here." instead;
+	if playerRegion is facility or the location of the player is Dungeon12, say "Something tells you that some kind of ancient magic is preventing that from working properly here." instead;
 	if the player is at least partially immobile, say "Aren't you a bit busy?" instead.
 
 Carry out fanning:

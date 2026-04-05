@@ -125,12 +125,13 @@ To say DiaperCheckReactionFlav of (M - a monster):
 To compute BulkAssessment of (M - a monster):
 	if the diaper-bulk-memory of M < 8:
 		let DQB be the DQBulk of the player;
+		if DQB > 8, now DQB is 8;
 		if DQB >= 1 and the diaper-bulk-memory of M is 0:
 			say FirstTimeBulkLearningFlav of M;
+			now the diaper-bulk-memory of M is DQB;
 		otherwise if the diaper-bulk-memory of M < DQB:
 			say NewBulkLearningFlav of M;
-		now the diaper-bulk-memory of M is DQB;
-		if the diaper-bulk-memory of M > 8, now the diaper-bulk-memory of M is 8.
+			now the diaper-bulk-memory of M is DQB.
 
 To say FirstTimeBulkLearningFlav of (M - a monster):
 	let DQB be the DQBulk of the player;
@@ -373,7 +374,7 @@ To compute diaper change of (M - a monster):
 		if (current-diaper-change-top-level is nothing or current-diaper-change-top-level is not urination blocking) and there is a worn tailed clothing, now current-diaper-change-top-level is a random worn tail plug;
 		if current-diaper-change-top-level is unmessed urination blocking diaper change blocking clothing:
 			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper-change-top-level]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
-			satisfy M;
+			bore M;
 			dislodge M;
 			repeat with C running through diapers carried by M:
 				only destroy C;
@@ -436,20 +437,29 @@ To compute diaper change of (M - a monster):
 		if new-diaper is nothing: [If we just did a double diaper then we skip all this]
 			say DiaperPowderFlav of M;
 			[if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, now new-diaper is a random dry unmessed disposable diaper carried by the player;]
+			if debugmode > 0, say "Checking if [MediumDesc of M] needs to update [his of M] diaper bulk memory...";
 			if M is not bulkier-diaper-committed and the diaper-bulk-memory of M < 8: [NPC learns the new diaper size and comments on this]
 				let DQB be the DQBulk of the player;
+				if debugmode > 0, say "Diaper bulk memory is below maximum ([diaper-bulk-memory of M]) and current diaper bulk is [DQB].";
 				if DQB >= 1 and the diaper-bulk-memory of M is 0:
 					say FirstChangeBulkLearningFlav of M;
+					now the diaper-bulk-memory of M is DQB;
 				otherwise if the diaper-bulk-memory of M < DQB:
 					say ChangeBulkLearningFlav of M;
-				now the diaper-bulk-memory of M is DQB;
+					now the diaper-bulk-memory of M is DQB;
 				if the diaper-bulk-memory of M > 8, now the diaper-bulk-memory of M is 8;
 			if the diaper-bulk-memory of M < 1: [if the player is getting changed out of knickers, we start at 1]
 				now the diaper-bulk-memory of M is 1;
 			otherwise if M is bulkier-diaper-committed and the diaper-bulk-memory of M < 8: [NPC is outraged, and increases the bulk, and comments on this]
+				let DQB be the DQBulk of the player;
+				if debugmode > 0, say "Diaper bulk memory is [diaper-bulk-memory of M] and current diaper bulk is [DQB].";
+				if the diaper-bulk-memory of M < DQB, now the diaper-bulk-memory of M is DQB;
 				say BulkIncreaseFlav of M;
 				increase the diaper-bulk-memory of M by 1;
 			otherwise if the class of the player is berri and latest-berri-stage < 5 and the diaper-bulk-memory of M < 5: [upgrade berri further]
+				let DQB be the DQBulk of the player;
+				if debugmode > 0, say "Diaper bulk memory is [diaper-bulk-memory of M] and current diaper bulk is [DQB].";
+				if the diaper-bulk-memory of M < DQB, now the diaper-bulk-memory of M is DQB;
 				say BerriBulkIncreaseFlav of M;
 				increase the diaper-bulk-memory of M by 1;
 			if the diaper-bulk-memory of M > 8, now the diaper-bulk-memory of M is 8; [should never happen, but just in case]
@@ -626,7 +636,7 @@ To compute diaper change of (M - a monster):
 			if M is diaper change after special ready: [the monster does something unique after a diaper change and replacing other clothes]
 				compute diaper change after special of M;
 		if M is changing the player: [the above function may have hijacked what's going on]
-			satisfy M;
+			punishment satisfy M;
 			let vm be a random video-monitor in the location of the player;
 			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
 				now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
@@ -870,9 +880,25 @@ To compute masturbation of (M - a monster):
 	otherwise if masturbation-swimming is true:
 		compute bathing.
 
+To compute knee bouncing of (M - a monster):
+	if there is worn total protection knickers:
+		if M is not knee bouncing the player:
+			initiate knee bounce of M;
+		if the latex-transformation of the player > 3:
+			say "You hardly feel anything thanks to your rubbery genitals.";
+		otherwise if the sex-length of M > 0:
+			progress knee bounce of M; [handles a turn of knee bouncing]
+		decrease the sex-length of M by 1;
+		if the sex-length of M <= 0, compute knee bounce aftermath of M;
+	otherwise: [failsafe]
+		now the sex-length of M is 0;
+		say "[BigNameDesc of M] notices that you are no longer properly wearing any underwear, and, with a disappointed frown, stops bouncing you on [his of M] knee.[paragraph break][BigNameDesc of M] loses interest.";
+		bore M.
+
 To initiate masturbation of (M - a monster):
 	say MasturbationDeclarationFlav of M;
-	if there is a worn diaper, compute automatic state check of a random worn diaper;
+	let K be a random worn knickers;
+	if K is a thing, compute automatic state check of K;
 	now the sex-length of M is the masturbation length of M;
 	now M is grabbing the player;
 	now M is masturbating the player;
@@ -889,6 +915,31 @@ To say MasturbationDeclarationFlav of (M - a monster):
 To say MasturbationStartFlav of (M - a monster):
 	say "[BigNameDesc of M] pushes down on your back with one powerful hand to keep you still, and places [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is herm]your [genitals][otherwise if the player is possessing a vagina]your [vagina][otherwise if the player is possessing a penis]your [ShortDesc of penis][otherwise]your crotch[end if]!".
 
+player-knee-grinding is initially false.
+
+To initiate knee bounce of (M - a monster):
+	now player-knee-grinding is false;
+	say KneeBounceDeclarationFlav of M;
+	if there is a worn diaper, compute automatic state check of a random worn diaper;
+	now the sex-length of M is the knee bounce length of M;
+	now M is grabbing the player;
+	now M is knee bouncing the player;
+	say KneeBounceStartFlav of M;
+	let K be a random worn knickers;
+	if K is perceived unmessed messed knickers or K is perceived dry wet knickers, compute state check of K.
+
+To say KneeBounceDeclarationFlav of (M - a monster):
+	if M is intelligent:
+		say "[speech style of M]'[one of]Time for your bouncies!'[or]Hop up on my knee, darling, let's do some bouncing!'[or]Come on cutie, let's have some bouncy fun!'[in random order][roman type][line break][BigNameDesc of M] coos.";
+		if there is a worn messed knickers:
+			if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
+			if the player is able to speak and the player is not tolerating messy diapers, say "[variable custom style]'Oh god, no, please change me first!'[roman type][line break]But [NameDesc of M] doesn't listen. ";
+			otherwise say "[variable custom style][if the player is enjoying messy diapers]Oh my...[roman type][line break]You feel your body flush with arousal in anticipation of the gross mushy bouncing you're about to experience.[otherwise if the player is tolerating messy diapers]It's gonna be so squishy and gross...[otherwise]No way... [big he of M] can't be serious...[end if][roman type][line break]";
+
+To say KneeBounceStartFlav of (M - a monster):
+	let K be a random worn knickers;
+	say "[if M is intelligent][big he of M][otherwise][BigNameDesc of M][end if] picks you up and plonks you down on [his of M] thigh, with [his of M] hard kneecap pressed tightly into your [ShortDesc of K].".
+
 To progress masturbation of (M - a monster):
 	say MasturbationFlav of M;
 	stimulate vagina from M;
@@ -901,11 +952,40 @@ To compute unique masturbation effect of (M - a monster):
 		say "[one of]The gross squishiness of your messy [ShortDesc of D] being rubbed makes you shudder as it oozes around your loins.[or][or][cycling]";
 		SlowGrossOut 9.
 
+To progress knee bounce of (M - a monster):
+	say KneeBounceFlav of M;
+	if the reaction of the player > 0 and the number of worn chastity bond is 0:
+		if player-knee-grinding is true or a random number between 1 and the difficulty of M > a random number between 1 and 8, stimulate vagina from M;
+		otherwise passively stimulate vagina from M;
+	if refractoryperiod > 0 and player-knee-grinding is true:
+		say KneeGrindOrgasmFlav of M;
+		now player-knee-grinding is false;
+	display knee bounce cutscene of M;
+	compute unique knee bounce effect of M;
+	check for arousal change;
+	if M is intelligent and refractoryperiod <= 0 and player-knee-grinding is false and the player is horny:
+		say KneeGrindDemandFlav of M;
+		increase the sex-length of M by 1;
+		say "[bold type]From now on, if you [']submit['], you'll grind on [his of M] knee.[roman type][line break]";
+		now player-knee-grinding is true;
+
+
+To compute unique knee bounce effect of (M - a monster):
+	let D be a random worn knickers;
+	if D is perceived messed knickers:
+		say "[one of]The feeling of the mess in your [ShortDesc of D] squelching around underneath you makes you shudder.[or][or][cycling]";
+		SlowGrossOut messyDiaperSmellGrossnessLevel;
+	otherwise if D is perceived wet knickers:
+		say "[one of]Your [ShortDesc of D] squelches noisily.[or]The liquid in your [if D is diaper]padding[otherwise][ShortDesc of D][end if] oozes against your crotch.[or]Your [ShortDesc of D] feels gross and slimy against your crotch.[at random]";
+		SlowGrossOut wetDiaperSmellGrossnessLevel.
+
 To decide which number is the masturbation length of (M - a monster):
 	decide on a random number between 4 and 7.
+To decide which number is the knee bounce length of (M - a monster):
+	decide on the masturbation length of M.
 
 To decide which number is the masturbation skill of (M - a monster):
-	decide on the difficulty of M * 100.
+	decide on the difficulty of M.
 
 To say MasturbationFlav of (M - a monster):
 	if there is a worn diaper, say DiaperMasturbationFlav of M;
@@ -917,6 +997,28 @@ To say VanillaMasturbationFlav of (M - a monster):
 To say DiaperMasturbationFlav of (M - a monster):
 	let D be a random worn diaper;
 	say "[one of][BigNameDesc of M] rubs passionately at the front of your [MediumDesc of D][or][BigNameDesc of M] [if the player is possessing a penis]grips your [player-penis] as well as [he of M] can through your padding and strokes it up and down[otherwise]presses the tips of [his of M] fingers against your clit as firmly as [he of M] can through your padding[end if][or][BigNameDesc of M] shudders [his of M] fingertips as rapidly as [he of M] can while pushing up towards your [genitals] through your [if DQBulk of D > 3]thick [end if]padding[at random].".
+
+To say KneeBounceFlav of (M - a monster):
+	if the reaction of the player is 0, say ResistedKneeBounceFlav of M;
+	otherwise say SubmittedKneeBounceFlav of M.
+
+To say ResistedKneeBounceFlav of (M - a monster):
+	let D be a random worn knickers;
+	say "[BigNameDesc of M] [one of]easily[or]holds you tight and[or]maintains [his of M] hold on your arms and[at random] [one of]bounces[or]jostles[or]jiggles[at random] you up and down on [his of M] thigh, [one of]despite your struggles[or]ignoring your protests[or]with a dominant smile[at random][if D is perceived dry perceived unmessed diaper]. Your diaper [one of]crinkles[or]rustles[purely at random] [one of]noisily[or]loudly[purely at random][end if].".
+
+To say SubmittedKneeBounceFlav of (M - a monster):
+	let D be a random worn knickers;
+	let C be a random worn chastity bond;
+	if player-knee-grinding is false:
+		say "Thanks to your [one of]submission[or]obedience[or]lack of reistance[at random], [NameDesc of M] is able to [one of]dig [his of M] knee into your [if C is a thing][ShortDesc of C][otherwise][genitals][end if][or][if C is a thing]tease you through your [ShortDesc of C][otherwise]stimulate your [genitals] with [his of M] knee[end if][in random order] as [he of M] bounces you up and down.";
+	otherwise:
+		say "[BigNameDesc of M] [one of]makes little sounds of encouragement[or]chuckles at your humiliating display[or]is visibly enjoying watching you debase yourself[in random order]. [moderateHumiliateReflect]"; [yep, double humiliation, the normal one from the submitting verb function, plus this one]
+
+To say KneeGrindDemandFlav of (M - a monster):
+	say "[BigNameDesc of M] looks at your flushed face and grins.[line break][speech style of M]'Oh, are you feeling good down there, sweetie? Well then, you can keep going yourself. Be a good little [boy of the player] and grind your [if the player is possessing a penis]little [sissy-penis][otherwise][one of]Fi-Fi[or]kitty[cycling][end if] into my knee.'[roman type][line break]".
+
+To say KneeGrindOrgasmFlav of (M - a monster):
+	if M is intelligent, say "[BigNameDesc of M] looks at you with a sadistic, patronising smirk.[line break][speech style of M]'You look like you enjoyed that. My sweet, dirty little [boy of the player].'[roman type][line break][severeHumiliateReflect]".
 
 [The purpose of this function is simply to allow us to override the default flavour for female orgasms, and of course to do the same for male orgasms.]
 To compute masturbation climax of (M - a monster):
@@ -945,13 +1047,38 @@ To compute vanilla masturbation climax of (M - a monster):
 		say "The fact that [NameDesc of M] was able to make you orgasm while wearing wet underwear makes it feel extra-dirty.";
 		GrossOut 4.
 
+To compute knee bounce aftermath of (M - a monster):
+	dislodge M;
+	if M is diaper-committed or M is bulkier-diaper-committed or M is double-diaper-committed:
+		say KneeBounceChangeFlav of M;
+		compute diaper change of M;
+	otherwise if the times-warned of M >= 3:
+		say KneeBouncePunishFlav of M;
+		compute post sex punishment of M;
+		bore M;
+	otherwise:
+		say KneeBounceAfterFlav of M;
+		silently satisfy M.
+
+To say KneeBounceChangeFlav of (M - a monster):
+	say KneeBounceAfterFlav of M;
+	say "But instead of letting you go, [he of M] continues to hold you tight. ";
+
+To say KneeBounceAfterFlav of (M - a monster):
+	say "After this [he of M] seems satisfied, and lowers you to the ground.[if M is composed][line break][speech style of M]'[one of]Wasn't that fun?'[or]Good [boy of the player]! It looks like you enjoyed yourself.'[or]Come back for another bounce soon!'[in random order][roman type][line break]".
+
+To say KneeBouncePunishFlav of (M - a monster):
+	say "After this, [he of M] frowns, and shoves you off [his of M] leg.".
 
 To compute masturbation aftermath of (M - a monster):
 	say MasturbationAfterFlav of M;
-	dislodge M;
-	FavourUp M;
-	say MasturbationAftermath of M;
-	bore M.
+	if the times-warned of M >= 3:
+		say MasturbationPunishFlav of M;
+		compute post sex punishment of M;
+		bore M;
+	otherwise:
+		say MasturbationAftermath of M;
+		silently satisfy M.
 
 To say MasturbationAftermath of (M - a monster):
 	if there is a worn diaper, say DiaperMasturbationAftermath of M;
@@ -972,6 +1099,9 @@ To say MasturbationAfterFlav of (M - a monster):
 To say MasturbationTeaseFlav of (M - a monster):
 	if M is intelligent, say "smiles as [he of M] sees your flustered face.[line break][speech style of M]'[one of]Aww, is the little baby all hot and bothered under [his of the player] nappy? I think I'll leave you that way.'[or]I guess you'll have to finish yourself off if you want release.'[or]I think I'll leave you like that, all hot and flustered, desperate for a Mommy or Daddy to finish you off.'[or]That's right, I'm stopping there. No cummies for you today, hah!'[in random order][roman type][line break]";
 	otherwise say "leaves you alone with your arousal.".
+
+To say MasturbationPunishFlav of (M - a monster):
+	say "After this, [he of M] frowns, and[if refractoryperiod > 0], flexing [his of M] wrist muscles in pride,[end if] stands over you menacingly.".
 
 Section - Enema
 
@@ -995,7 +1125,7 @@ To compute enema of (M - a monster):
 			now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
 			let T be the substituted form of "being given an enema."; [note that the video-event always needs to be a present participle]
 			now the video-event of vm is T;
-		satisfy M.
+		punishment satisfy M.
 
 To compute enema start of (M - a monster):
 	now the sex-length of M is the enema quarts of M;
@@ -1128,6 +1258,7 @@ To compute forcefeed of (M - a monster):
 		otherwise:
 			say "You refuse to consume this stuff out of a pet bowl!";
 			say "[speech style of M]'Bad [if the class of the player is puppygirl]doggy[otherwise if the class of the player is catgirl]kitty[otherwise]pet[end if]!'[roman type][line break]";
+			aggravate M;
 			compute angry punishment of M;
 			say "[BigNameDesc of M] loses interest for now.";
 			bore M;
@@ -1148,7 +1279,7 @@ To compute forcefeed of (M - a monster):
 					now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
 					let T be the substituted form of "being fed like a baby."; [note that the video-event always needs to be a present participle]
 					now the video-event of vm is T;
-			if M is not grabbing the player, satisfy M. [this allows for us to have transitioned into another punishment during the aftermath]
+			if M is not grabbing the player, punishment satisfy M. [this allows for us to have transitioned into another punishment during the aftermath]
 
 To compute forcefeed start of (M - a monster):
 	now the sex-length of M is the forcefeed-length of M;
@@ -1273,7 +1404,7 @@ To compute suppository of (M - a monster):
 	say SuppositoryAftermath of M;
 	say SuppositoryAfterFlav of M;
 	replace any buttplugs;
-	unless M is grabbing the player:
+	unless M is grabbing the player: [Sometimes a suppository will combo straight into a diaper change, e.g. the adult baby slave]
 		replace any chastity;
 		replace any diapers;
 		replace any clothes;
@@ -1282,7 +1413,7 @@ To compute suppository of (M - a monster):
 			now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
 			let T be the substituted form of "having a suppository pushed into your bottom."; [note that the video-event always needs to be a present participle]
 			now the video-event of vm is T;
-		satisfy M. [Sometimes a suppository will combo straight into a diaper change, e.g. the adult baby slave]
+		punishment satisfy M.
 
 To compute suppository prep of (M - a monster):
 	say "[SuppositoryDeclarationFlav of M]";
@@ -1317,7 +1448,7 @@ To compute confiscate of (M - a monster):
 		now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
 		let T be the substituted form of "having your adult clothes confiscated."; [note that the video-event always needs to be a present participle]
 		now the video-event of vm is T;
-	satisfy M.
+	punishment satisfy M.
 
 To say ConfiscationDeclarationFlav of (M - a monster) on (C - a clothing):
 	if M is intelligent, say "[speech style of M]'[if C is plentiful accessory]Where did you get this jewellery, little one? Babies can't be trusted with expensive items like these. I'll have to confiscate it.'[otherwise if C is equippable]What are you doing handling something this dangerous? Little kids can't be trusted to not hurt themselves. I'll have to take it off of you.'[otherwise]This is not clothing for babies! I'm confiscating it.'[end if][roman type][line break]".
@@ -1358,24 +1489,60 @@ To say ConfiscationAfterFlav of (M - a monster) on (C - a clothing):
 
 Section - Babywear Donation
 
+Definition: a clothing (called C) is babylockable:
+	if C is bondage or C is diaper cover or C is dress or C is submissive collar:
+		if C is babywearable, decide yes;
+	decide no.
+
+babywear-donation-target is an object that varies.
+
 To compute babywear donation of (M - a monster):
-	let C be a random babywearable clothing;
-	if C is clothing:
-		say BabywearDonationDeclarationFlav of M on C;
-		compute M babywear donating C;
-		say BabywearDonationReaction of M on C;
-		say BabywearDonationAfterFlav of M on C;
-		let vm be a random video-monitor in the location of the player;
-		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
-			now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
-			let T be the substituted form of "being made to dress in baby clothing."; [note that the video-event always needs to be a present participle]
-			now the video-event of vm is T;
-		satisfy M;
+	now babywear-donation-target is a random babylockable clothing;
+	if babywear-donation-target is nothing or M is not intelligent, now babywear-donation-target is a random babywearable clothing;
+	if babywear-donation-target is nothing or a random number between 1 and 2 is 1, set priority babywear donation target;
+	if babywear-donation-target is clothing:
+		compute M full babywear donating babywear-donation-target;
+		punishment satisfy M;
 	otherwise:
 		say "BUG - couldn't find appropriate clothing to put on the player.".
 
+To set priority babywear donation target:
+	let LX be the list of priority babywear clothing;
+	if the number of entries in LX > 0:
+		sort LX in random order;
+		repeat with X running through LX:
+			if babywear-donation-target is not clothing or babywear-donation-target is not listed in LX:
+				if X is actually summonable:
+					now babywear-donation-target is X;
+				otherwise if X is dress:
+					let Z be a random worn tearable dress; [non-baby dresses can be removed to make room for priority dresses]
+					if Z is a thing and Z is not babywear:
+						now Z is in Holding Pen;
+						if X is actually summonable:
+							now Z is worn by the player;
+							now babywear-donation-target is X;
+							say "[BigNameDesc of current-monster] rips off [NameDesc of Z]!";
+							destroy Z;
+						otherwise:
+							now Z is worn by the player;
+
+To compute (M - a monster) full babywear donating (C - a clothing):
+	now M is composed;
+	now the times-warned of M is 0;
+	say BabywearDonationDeclarationFlav of M on C;
+	compute M babywear donating C;
+	say BabywearDonationReaction of M on C;
+	say BabywearDonationAfterFlav of M on C;
+	let vm be a random video-monitor in the location of the player;
+	if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+		now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+		let T be the substituted form of "being made to dress in baby clothing."; [note that the video-event always needs to be a present participle]
+		now the video-event of vm is T.
+
 To say BabywearDonationDeclarationFlav of (M - a monster) on (C - a clothing):
-	if M is intelligent, say "[speech style of M]'Let's put you in something a bit more appropriate for a [if the health of M < the maxhealth of M]little brat[otherwise]diaper-dependent baby[end if].'[roman type][line break]".
+	if M is intelligent:
+		if M is aggravated or the times-warned of M >= 3, say "[speech style of M]'[one of]Let's put you in something that'll help you learn how to act right[or]You deserve this for your poor behaviour[or]Maybe you'll feel a little more obedient after a while wearing this[in random order].'[roman type][line break]";
+		otherwise say "[speech style of M]'Let's put you in something a bit more appropriate for a [if the health of M < the maxhealth of M]little brat[otherwise]diaper-dependent baby[end if].'[roman type][line break]".
 
 To compute (M - a monster) babywear donating (C - a clothing):
 	say BabywearDonationFlav of M on C;
@@ -1383,7 +1550,7 @@ To compute (M - a monster) babywear donating (C - a clothing):
 	if M is not intelligent or K is nothing:
 		summon C cursed;
 		compute quest of C; [we do this silently since the quest will be displayed in the examine call below]
-	otherwise if C is bondage or C is diaper cover or C is dress or C is submissive collar:
+	otherwise if bondage protection < 3 and C is babylockable:
 		summon C uncursed;
 		compute M locking C with K;
 	otherwise:
@@ -1418,7 +1585,7 @@ To compute untidiness punishment of (M - a monster):
 				now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
 				let T be the substituted form of "being forced head-first into a disgusting diaper pail."; [note that the video-event always needs to be a present participle]
 				now the video-event of vm is T;
-			satisfy M;
+			bore M;
 		otherwise:
 			compute soiled diaper dropping of M;
 			say DiaperUntidyPunishCommenceFlav of M;
@@ -1512,7 +1679,7 @@ To compute diaper facesit of (M - a monster):
 		if the sex-length of M <= 0:
 			say DiaperFacesitFinish of M;
 			say DiaperFacesitFinishFlav of M;
-			satisfy M;
+			punishment satisfy M;
 			if player-breathing is false, suggest breathing;
 	otherwise:
 		now M is diaper-facesitting the player;

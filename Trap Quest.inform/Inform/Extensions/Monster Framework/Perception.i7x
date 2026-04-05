@@ -86,9 +86,13 @@ To check perception of (M - a monster):
 					say "[BigNameDesc of M] notices you![line break][big he of M] seems to be waiting for something...";[Waiting for you to give birth to their baby]
 					now father-wait is true;
 			if father-wait is false:
+				let SS be 0;
+				if stealthActive is true and (the player is stealthy or the blind-status of M > 0 or (M is woman-player and the woman-status of woman-player is 80)) and the player is not in a bossed room and the player is not in danger:
+					now SS is a random number between 1 and the stealth of the player;
+					if debuginfo > 0 and (the scared of M <= 0 or M is not scarable), say "[input-style]Stealth check: stealth d[the stealth of the player] ([SS]) | (1.5) [MediumDesc of M] perception[roman type][line break]";
 				if the scared of M > 0 and M is scarable:
 					compute scared perception of M;
-				otherwise if stealthActive is true and (the player is stealthy or the blind-status of M > 0 or (M is woman-player and the woman-status of woman-player is 80)) and the player is not in a bossed room and the player is not in danger and a random number between 1 and the stealth of the player > 1:
+				otherwise if SS > 1:
 					say PerceptionFail of M;
 					if the blind-status of M > 0, decrease the blind-status of M by 1;
 					deinterest M;

@@ -201,7 +201,7 @@ To decide which number is the cringe tolerance of (M - mechanic):
 	decide on 10.
 
 To say BecomesAggressive of (M - mechanic):
-	say "[big he of M] [if diaper quest is 0]unzips [his of M] jeans[otherwise if the wrench-timer of M <= 0]grips [his of M] wrench menacingly[otherwise]cracks [his of M] fingers[end if][line break][speech style of M]'[one of]I guess I've reached my limit.'[or]I think it's time we take our relationship to the next level.'[or]It'd be a crime NOT to do this, really...'[in random order][roman type][line break]".
+	say "[big he of M] [if diaper quest is 0]unzips [his of M] jeans[otherwise if the wrench-timer of M <= 0]grips [his of M] wrench menacingly[otherwise]cracks [his of M] fingers[end if].[line break][speech style of M]'[one of]I guess I've reached my limit.'[or]I think it's time we take our relationship to the next level.'[or]It'd be a crime NOT to do this, really...'[in random order][roman type][line break]".
 
 To compute perception of (M - mechanic):
 	if the class of the player is berri and latest-berri-stage is 0 and the number of worn diaper is 0 and (stripy-blue-dress is not worn or plain-white-briefs is not worn), fix berri outfit;
@@ -294,7 +294,7 @@ Definition: mechanic is distracted:
 		anger mechanic;
 		if the changing-station-tank-scene of woman-player < -1, now the changing-station-tank-scene of woman-player is -1;
 		decide yes;
-	otherwise if mechanic is female and mechanic is uninterested and the bladder of mechanic > 500 and there is an off-stage soiled-diaper:
+	otherwise if mechanic is female and mechanic is uninterested and mechanic is in the location of the player and the bladder of mechanic > 500 and there is an off-stage soiled-diaper:
 		let SD be a random off-stage soiled-diaper;
 		now the diaper-origin of SD is "disposable diaper discarded by the mechanic";
 		say "You watch as [NameDesc of mechanic], who doesn't seem to think you are watching, [']subtly['] discard a used diaper onto the ground behind [him of mechanic].[if diaper messing >= 6][line break][variable custom style]Gross. I hope nobody thinks that's mine...[roman type][line break]";
@@ -1073,11 +1073,11 @@ To say PowerBottomComment of (M - mechanic):
 		say "[second custom style]'[one of]Lie down, baby. I'm going to take care of everything.'[or]Lie down. I'm dying to have you inside me.'[or]Don't worry baby, I'll do everything. Lie down for me.'[or]Lie down and don't worry about a thing. You're in [NameBimbo][']s hands now, honey.'[at random][roman type][line break]";
 
 To compute failed dominance punishment of (M - mechanic):
-	let H be trainee hood;
+	let H be trainee-hood;
 	if H is alive or H is not actually summonable or the player is a trained hooker, now H is black maid headdress;
-	let B be trainee bra;
+	let B be trainee-bra;
 	if B is not clothing or the player is a trained hooker, now B is a random off-stage pasties;
-	let E be a random off-stage trainee thigh highs;
+	let E be a random off-stage trainee-thigh-highs;
 	if E is not clothing or the player is a trained hooker, now E is a random off-stage rollerskates;
 	if H is off-stage and H is actually summonable:
 		say "[big he of M] forces a [ShortDesc of H] onto your head! ";
@@ -1520,7 +1520,7 @@ To compute domination aftermath of (M - mechanic) for (J - throne):
 [The rewards for failing to dominate the mechanic should be better than the rewards for sex, since it's way more humiliating, creampie chance is 100%, and he gets a difficulty boost]
 To say AfterDominationComment (N - a number) of (M - mechanic):
 	if N is 1:[the player cleaned him off after sex]
-		let H be trainee hood;
+		let H be trainee-hood;
 		unless H is off-stage and H is actually summonable, now H is black maid headdress;
 		increase the employee-record of senior robobellboy by 2;[Worth more than a normal review!]
 		if the player is hotel employed:
@@ -1531,7 +1531,7 @@ To say AfterDominationComment (N - a number) of (M - mechanic):
 		otherwise:
 			say "[speech style of M]'[one of]If this were an interview you would have ACED it. I'd love to creampie you again sometime.'[or]You know, I'd be glad to have a fuckhole like you on my staff. Let's do this again sometime.'[or]Come work for me sometime. It pays well, and I'll let you have clean-up duty whenever you want.'[at random][roman type][line break]";
 	otherwise if N is 2:[the player didn't have the option to clean him off]
-		let H be trainee hood;
+		let H be trainee-hood;
 		unless H is off-stage and H is actually summonable, now H is black maid headdress;
 		if the player is hotel employed:
 			increase the employee-record of senior robobellboy by 1;

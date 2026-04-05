@@ -100,8 +100,8 @@ Definition: A room is mansionplaced:
 	if it is placed and it is in the Mansion, decide yes;
 	decide no.
 
-Definition: A room is schoolplaced:
-	if it is placed and it is not predicament room and it is in the School, decide yes;
+Definition: A room is facilityplaced:
+	if it is placed and it is not predicament room and it is in the facility, decide yes;
 	decide no.
 
 

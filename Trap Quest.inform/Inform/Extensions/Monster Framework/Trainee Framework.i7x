@@ -1,76 +1,76 @@
-Student Framework by Monster Framework begins here.
+Trainee Framework by Monster Framework begins here.
 
-A student is a kind of monster. A student is intelligent. A student is usually female. A student has a number called timesBullied. A student has a number called teacher-obedience. A student can be unexpelled or expelled. A student is usually unexpelled.
+A trainee is a kind of monster. A trainee is intelligent. A trainee is usually female. A trainee has a number called timesBullied. A trainee has a number called tutor-obedience. A trainee can be unexpelled or expelled. A trainee is usually unexpelled.
 
-To decide which number is the aggro limit of (M - a student): [The number at which they turn unfriendly]
+To decide which number is the aggro limit of (M - a trainee): [The number at which they turn unfriendly]
 	decide on 10.
 
 
-A student has a number called lessonInt1. [Can be used to track various things in a lesson]
-A student has a number called lessonInt2. [Can be used to track various things in a lesson]
-A student has a number called condom-count. [How many used condoms are pinned to her outfit?]
-A student can be kissPunished. [Used in kissing lesson to track punishments]
-A student can be clitLeaded. [Do they have a clit lead permanently attached to their clit piercing?]
-A student can be cumCovered. [Are they covered in cum from the swimming lesson?]
-A student has a number called student-diaper-mess.
-A student has a number called student-extra-diapers. [Diaper layers above 1]
-Definition: a student is messy:
-	if diaper quest is 1 and the student-diaper-mess of it > 0 and diaper messing >= 3, decide yes;
+A trainee has a number called trainingInt1. [Can be used to track various things in a training session]
+A trainee has a number called trainingInt2. [Can be used to track various things in a training session]
+A trainee has a number called condom-count. [How many used condoms are pinned to her outfit?]
+A trainee can be kissPunished. [Used in kissing training session to track punishments]
+A trainee can be clitLeaded. [Do they have a clit lead permanently attached to their clit piercing?]
+A trainee can be cumCovered. [Are they covered in cum from the swimming training session?]
+A trainee has a number called trainee-diaper-mess.
+A trainee has a number called trainee-extra-diapers. [Diaper layers above 1]
+Definition: a trainee is messy:
+	if diaper quest is 1 and the trainee-diaper-mess of it > 0 and diaper messing >= 3, decide yes;
 	decide no.
-Definition: a student is just messing: decide no.
-To LessonReset (M - a student):
-	now the lessonInt1 of M is 0;
-	now the lessonInt2 of M is 0;
+Definition: a trainee is just messing: decide no.
+To TrainingSessionReset (M - a trainee):
+	now the trainingInt1 of M is 0;
+	now the trainingInt2 of M is 0;
 	now M is not cumCovered;
-	now the student-diaper-mess of M is 0;
-	now the student-extra-diapers of M is 0.
+	now the trainee-diaper-mess of M is 0;
+	now the trainee-extra-diapers of M is 0.
 
-Definition: a student is messy-seeker: decide no. [Doesn't stalk the player when messy]
-Definition: a student is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
-Definition: a student is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
-Definition: a student (called M) is willing to potion forcefeed:
-	if M is amicable student, decide no;
+Definition: a trainee is messy-seeker: decide no. [Doesn't stalk the player when messy]
+Definition: a trainee is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+Definition: a trainee is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
+Definition: a trainee (called M) is willing to potion forcefeed:
+	if M is amicable trainee, decide no;
 	decide yes.
 
-To say ShortDesc of (M - a student):
-	say student-name of M.
-To say MediumDesc of (M - a student):
-	say "[rank-colour of M] student [student-name of M]".
+To say ShortDesc of (M - a trainee):
+	say trainee-name of M.
+To say MediumDesc of (M - a trainee):
+	say "[rank-colour of M] trainee [trainee-name of M]".
 
-To decide which number is the starting difficulty of (M - a student):
+To decide which number is the starting difficulty of (M - a trainee):
 	decide on 6 + the current-rank of M.
 
-Definition: a student is blocker: decide no.
+Definition: a trainee is blocker: decide no.
 
-To say FullMonsterDesc of (M - a student):
+To say FullMonsterDesc of (M - a trainee):
 	say ImageDesc of M;
 	say MonsterDesc of M;
-	say StudentDesc of M;
+	say TraineeDesc of M;
 	say CondomDesc of M.
 
-To say MonsterDesc of (M - a student):
-	say "This student seems to be missing [his of M] description!".
+To say MonsterDesc of (M - a trainee):
+	say "This trainee seems to be missing [his of M] description!".
 
-To say StudentDesc of (M - a student):
-	say "[if student-diaper-mess of M > 0 or the student-extra-diapers of M > 0][DiaperStateDesc of M][end if][if M is kissPunished][KissPunishDesc of M][end if][if M is clitLeaded][ClitLeadDesc of M][end if][if M is cumCovered][CumCoveredDesc of M][end if][big he of M] is wearing an armband which says '[student-name of M] the [student-print of M]' in large [rank-colour of M] letters.".
+To say TraineeDesc of (M - a trainee):
+	say "[if trainee-diaper-mess of M > 0 or the trainee-extra-diapers of M > 0][DiaperStateDesc of M][end if][if M is kissPunished][KissPunishDesc of M][end if][if M is clitLeaded][ClitLeadDesc of M][end if][if M is cumCovered][CumCoveredDesc of M][end if][big he of M] is wearing an armband which says '[trainee-name of M] the [trainee-print of M]' in large [rank-colour of M] letters.".
 
-To say DiaperStateDesc of (M - a student):
-	if the student-extra-diapers of M > 0, say "[big he of M] is wearing an abnormally massive white diaper[if the student-extra-diapers of M > 1], with what looks like [the student-extra-diapers of M] extra layers of padding[end if][if M is messy]. The diaper is bloated and discoloured brown, which is clear evidence that [he of M] has made the most massive of messes inside it[end if]. ";
+To say DiaperStateDesc of (M - a trainee):
+	if the trainee-extra-diapers of M > 0, say "[big he of M] is wearing an abnormally massive white diaper[if the trainee-extra-diapers of M > 1], with what looks like [the trainee-extra-diapers of M] extra layers of padding[end if][if M is messy]. The diaper is bloated and discoloured brown, which is clear evidence that [he of M] has made the most massive of messes inside it[end if]. ";
 	otherwise say "[big his of M] diaper is bloated and discoloured brown, which is clear evidence that [he of M] has made the most massive of messes inside it. ".
 
-To say KissPunishDesc of (M - a student):
-	say "[big his of M] lips have been permanently swollen as punishment for under-performing in the kissing lesson. ".
+To say KissPunishDesc of (M - a trainee):
+	say "[big his of M] lips have been permanently swollen as punishment for under-performing in the kissing training session. ".
 
-To say ClitLeadDesc of (M - a student):
+To say ClitLeadDesc of (M - a trainee):
 	say "A thin silver chain dangling from [his of M] groin confirms that [he of M] is still wearing [his of M] new permanent clitoris lead piercing. ".
 
-To say CumCoveredDesc of (M - a student):
+To say CumCoveredDesc of (M - a trainee):
 	say "[big he of M] is covered in [semen] from head to toe. ".
 
-To say CondomDesc of (M - a student):
+To say CondomDesc of (M - a trainee):
 	if the condom-count of M > 0, say "[big he of M] has [if the condom-count of M is 1]one [semen]-filled condom[otherwise][condom-count of M] [semen]-filled condoms[end if] dangling from [his of M] outfit.".
 
-To construct unique icons for (M - a student):
+To construct unique icons for (M - a trainee):
 	if the condom-count of M >= 10:
 		now condomIconCount is the condom-count of M;
 		add figure of Condom10Icon to the list of icons;
@@ -93,115 +93,115 @@ To construct unique icons for (M - a student):
 	otherwise if the condom-count of M is 1:
 		add figure of Condom1Icon to the list of icons.
 
-To set up (M - a student):
+To set up (M - a trainee):
 	reset M;
 	now the monstersetup of M is 1;
-	while M is in School01 or M is in School33 or M is in School34 or M is in School35 or M is off-stage:
+	while M is in Facility01 or M is in Facility33 or M is in Facility34 or M is in Facility35 or M is off-stage:
 		now M is in a random placed academic room;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	if the current-rank of M < the min-rank of M, now the current-rank of M is the min-rank of M;
 	update name of M.
 
-To regionally place (M - a student):
+To regionally place (M - a trainee):
 	now neighbour finder is the location of the player;
-	while M is not in the school or M is in the location of the player or M is nearby:
-		now M is in a random schoolplaced room.
+	while M is not in the facility or M is in the location of the player or M is nearby:
+		now M is in a random facilityplaced room.
 
-Definition: a student is human: decide yes.
+Definition: a trainee is human: decide yes.
 
-Definition: a student is uniquely unfriendly: decide no.
-To decide which number is the bimbo tolerance of (M - a student):
+Definition: a trainee is uniquely unfriendly: decide no.
+To decide which number is the bimbo tolerance of (M - a trainee):
 	decide on 100. [If we don't make this prohibitively high, there can be some weird difficult-to-debug outcomes surrounding the overriding of uniquely unfriendly above, where the NPC is objectifying but friendly, and somehow attacking while friendly.]
-To decide which number is the bab tolerance of (M - a student):
+To decide which number is the bab tolerance of (M - a trainee):
 	decide on 100.
 
-To say NameDesc of (M - a student):
-	say "[input-style][student-name of M][roman type]".
-To say BigNameDesc of (M - a student):
-	say "[input-style][student-name of M][roman type]".
-To say FuckerDesc of (M - a student):
-	say "[student-name of M]".
-To say BigFuckerDesc of (M - a student):
-	say "[student-name of M]".
+To say NameDesc of (M - a trainee):
+	say "[input-style][trainee-name of M][roman type]".
+To say BigNameDesc of (M - a trainee):
+	say "[input-style][trainee-name of M][roman type]".
+To say FuckerDesc of (M - a trainee):
+	say "[trainee-name of M]".
+To say BigFuckerDesc of (M - a trainee):
+	say "[trainee-name of M]".
 
-retiredStudents is a number that varies. [How many students have been 'retired' and imprisoned in the staff room?]
+retiredTrainees is a number that varies. [How many trainees have been 'retired' and imprisoned in the staff room?]
 
 Part - Rank, Name and Print
 
-A student has a number called current-rank. The current-rank of a student is usually 1.
-A student has a number called min-rank. The min-rank of a student is usually 1.
-A student has a number called max-rank. The max-rank of a student is usually 6.
+A trainee has a number called current-rank. The current-rank of a trainee is usually 1.
+A trainee has a number called min-rank. The min-rank of a trainee is usually 1.
+A trainee has a number called max-rank. The max-rank of a trainee is usually 6.
 
-Definition: a student (called M) is rank1:
+Definition: a trainee (called M) is rank1:
 	if the current-rank of M is 1, decide yes;
 	decide no.
-Definition: a student (called M) is rank2:
+Definition: a trainee (called M) is rank2:
 	if the current-rank of M is 2, decide yes;
 	decide no.
-Definition: a student (called M) is rank3:
+Definition: a trainee (called M) is rank3:
 	if the current-rank of M is 3, decide yes;
 	decide no.
-Definition: a student (called M) is rank4:
+Definition: a trainee (called M) is rank4:
 	if the current-rank of M is 4, decide yes;
 	decide no.
-Definition: a student (called M) is rank5:
+Definition: a trainee (called M) is rank5:
 	if the current-rank of M is 5, decide yes;
 	decide no.
-Definition: a student (called M) is same-rank:
+Definition: a trainee (called M) is same-rank:
 	if current-rank of M is the rank of the player, decide yes;
 	decide no.
-Definition: a student (called M) is rank-relevant:
+Definition: a trainee (called M) is rank-relevant:
 	if max-rank of M > the rank of the player, decide yes;
 	decide no.
 
-A student has a text called student-name. The student-name of a student is usually "Anonymous".
-A student has a text called student-print. The student-print of a student is usually "student".
+A trainee has a text called trainee-name. The trainee-name of a trainee is usually "Anonymous".
+A trainee has a text called trainee-print. The trainee-print of a trainee is usually "trainee".
 
-Understand the student-name property as describing a student.
+Understand the trainee-name property as describing a trainee.
 
-To say rank-colour of (M - a student):
+To say rank-colour of (M - a trainee):
 	say rank-colour of the current-rank of M.
 
-Definition: a student (called M) is demotable:
+Definition: a trainee (called M) is demotable:
 	if the min-rank of M < the current-rank of M:
-		repeat with ST running through alive students:
-			if ST is not M and the current-rank of ST is the current-rank of M, decide yes; [There must be at least 1 student of each rank. So we can't demote this person unless they're not the only one left.]
+		repeat with ST running through alive trainees:
+			if ST is not M and the current-rank of ST is the current-rank of M, decide yes; [There must be at least 1 trainee of each rank. So we can't demote this person unless they're not the only one left.]
 	decide no.
 
-Definition: a student (called M) is promotable:
+Definition: a trainee (called M) is promotable:
 	if the current-rank of M is 5, decide yes; [everyone can become solid gold from pure diamond]
 	if the max-rank of M > the current-rank of M:
-		repeat with ST running through alive students:
-			if ST is not M and the current-rank of ST is the current-rank of M, decide yes; [There must be at least 1 student of each rank. So we can't promote this person unless they're not the only one left.]
+		repeat with ST running through alive trainees:
+			if ST is not M and the current-rank of ST is the current-rank of M, decide yes; [There must be at least 1 trainee of each rank. So we can't promote this person unless they're not the only one left.]
 	decide no.
 
-To update name of (M - a student):
+To update name of (M - a trainee):
 	do nothing.
 
-To silently promote (M - a student):
+To silently promote (M - a trainee):
 	if M is promotable:
 		increase the current-rank of M by 1;
 		update name of M.
 
-To silently demote (M - a student):
+To silently demote (M - a trainee):
 	if M is demotable:
 		decrease the current-rank of M by 1;
 		update name of M.
 
-To promote (M - a student):
+To promote (M - a trainee):
 	if M is promotable:
 		say "[BigNameDesc of M][']s armband transforms and [he of M] becomes ";
 		silently promote M;
 		say "[NameDesc of M]!".
 
-To demote (M - a student):
+To demote (M - a trainee):
 	if M is demotable:
 		say "[BigNameDesc of M][']s armband transforms and [he of M] becomes ";
 		silently demote M;
 		say "[NameDesc of M]!".
 
-Definition: a student (called M) is lesson-appropriate:
+Definition: a trainee (called M) is training-appropriate:
 	if the current-rank of M is 1 and armband is sapphire, decide yes;
 	if the current-rank of M is 2 and armband is emerald, decide yes;
 	if the current-rank of M is 3 and armband is ruby, decide yes;
@@ -209,7 +209,7 @@ Definition: a student (called M) is lesson-appropriate:
 	if the current-rank of M is 5 and armband is pure diamond, decide yes;
 	decide no.
 
-To update background colour of (M - a student):
+To update background colour of (M - a trainee):
 	if the current-rank of M is 2:
 		now the backgroundColour of M is 5294200; [emerald]
 	otherwise if the current-rank of M is 3:
@@ -223,16 +223,16 @@ To update background colour of (M - a student):
 	otherwise:
 		now the backgroundColour of M is 1004218. [sapphire]
 
-Part - Updating Students
+Part - Updating Trainees
 
-school-earnings-latest is a number that varies. [let's track how long it's been since the player last stepped into the school]
+facility-earnings-latest is a number that varies. [let's track how long it's been since the player last stepped into the facility]
 
-To optimise students: [happens just before class starts]
+To optimise trainees: [happens just before class starts]
 	let RK be the rank of the player;
 	while RK > 1:
 		let LST be a list of people;
 		let LSTP be a list of people;
-		repeat with ST running through alive students:
+		repeat with ST running through alive trainees:
 			if the current-rank of ST is RK:
 				if the max-rank of ST > RK, add ST to LST; [needs to be able to promote once]
 				otherwise destroy ST; [has reached max promotion]
@@ -248,43 +248,43 @@ To optimise students: [happens just before class starts]
 				remove ST from LSTP;
 				silently promote ST;
 			otherwise:
-				let M be a random off-stage unexpelled fetish appropriate rank-relevant same-rank student;
-				if M is student, set up M;
+				let M be a random off-stage unexpelled fetish appropriate rank-relevant same-rank trainee;
+				if M is trainee, set up M;
 		decrease RK by 1;
 
 
-To update students: [happens after the player is promoted]
+To update trainees: [happens after the player is promoted]
 	force clothing-focus redraw; [armband has changed colour]
 	if the rank of the player is 1:
-		set up rank one students;
+		set up rank one trainees;
 	if the rank of the player is 2:
-		set up rank two students;
+		set up rank two trainees;
 	if the rank of the player is 3:
-		set up rank three students;
+		set up rank three trainees;
 	if the rank of the player is 4:
-		set up rank four students;
+		set up rank four trainees;
 	if the rank of the player is 5:
-		set up rank five students;
-	let LT be the list of alive undefeated teachers;
+		set up rank five trainees;
+	let LT be the list of alive undefeated tutors;
 	sort LT in random order;
-	repeat with M running through LT: [permanently remove one now-irrelevant teacher from the zone]
+	repeat with M running through LT: [permanently remove one now-irrelevant tutor from the zone]
 		if M is not in the location of the player:
-			if M is sapphire-teacher or (M is emerald-teacher and the rank of the player > 2) or (M is ruby-teacher and the rank of the player > 3):
+			if M is sapphire-tutor or (M is emerald-tutor and the rank of the player > 2) or (M is ruby-tutor and the rank of the player > 3):
 				destroy M;
 				break.
 
 Part - Stats
 
-To decide which number is the heel-skill of (M - a student):
+To decide which number is the heel-skill of (M - a trainee):
 	decide on 1.
 
-To decide which number is the dedication of (M - a student): [We can use this for various calculations to check which students do what]
+To decide which number is the dedication of (M - a trainee): [We can use this for various calculations to check which trainees do what]
 	decide on a random number between 1 and 3.
 
-To decide which number is the unique vindictiveness of (M - a student): [We can use this for various calculations to check which students do what]
+To decide which number is the unique vindictiveness of (M - a trainee): [We can use this for various calculations to check which trainees do what]
 	decide on a random number between 1 and 2.
 
-To decide which number is the vindictiveness of (M - a student): [Angry students are even more vindictive.]
+To decide which number is the vindictiveness of (M - a trainee): [Angry trainees are even more vindictive.]
 	let F be 0;
 	if M is unfriendly, now F is the aggro limit of M - the favour of M;
 	decide on the unique vindictiveness of M + F.
@@ -292,36 +292,36 @@ To decide which number is the vindictiveness of (M - a student): [Angry students
 
 Part - Motion
 
-To decide which object is the default-local-room of (M - a student):
+To decide which object is the default-local-room of (M - a trainee):
 	if the current-rank of M is 1:
-		decide on School14;
+		decide on Facility14;
 	otherwise if the current-rank of M is 2:
-		decide on School18;
+		decide on Facility18;
 	otherwise if the current-rank of M is 3:
-		decide on School29;
+		decide on Facility29;
 	otherwise if the current-rank of M is 4:
-		decide on School30;
+		decide on Facility30;
 	otherwise:
-		decide on School32.
+		decide on Facility32.
 
-To compute monstermotion of (M - a student):
-	if playerRegion is not school:
-		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a detailed description of your what happened in most recent visit to the school. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
-		now M is in School01;
+To compute monstermotion of (M - a trainee):
+	if playerRegion is not facility:
+		say "BUG: [BigNameDesc of M] has followed the player out of the facility. Please report along with a detailed description of your what happened in most recent visit to the facility. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
+		now M is in Facility01;
 	otherwise if M is in a predicament room:
 		do nothing;
 	otherwise if M is guarding: [send them to their classroom if they are in a boring state]
 		let R be the default-local-room of M;
 		if the location of M is not R, now M is in R;
-	otherwise if academy-toilet-key is held by M: [got to take the key back]
+	otherwise if facility-toilet-key is held by M: [got to take the key back]
 		let A be down;
-		let KM be headmistress;
+		let KM be mistress;
 		if KM is off-stage or KM is defeated:
 			if nurse is alive and nurse is undefeated, now KM is receptionist;
 			if receptionist is alive and receptionist is undefeated, now KM is receptionist;
 		let AD be nothing;
-		if KM is alive and KM is undefeated and headmistress is in an academic room, now AD is the best route from the location of M to the location of headmistress through unbossed rooms;
-		otherwise now AD is the best route from the location of M to School08 through unbossed rooms;
+		if KM is alive and KM is undefeated and mistress is in an academic room, now AD is the best route from the location of M to the location of mistress through unbossed rooms;
+		otherwise now AD is the best route from the location of M to Facility08 through unbossed rooms;
 		if AD is a direction, now A is AD;
 		let P be the room A from the location of M;
 		if the entry-rank of P > the entry-rank of the location of M and the entry-rank of P > the current-rank of M, now A is down;
@@ -329,35 +329,35 @@ To compute monstermotion of (M - a student):
 			blockable move M to A;
 			compute monstermotion reactions of M;
 		if M is in the location of KM and KM is undefeated:
-			if M is in the location of the player, say "[BigNameDesc of M] hands [NameDesc of academy-toilet-key] back to [NameDesc of KM].";
-			now academy-toilet-key is carried by KM;
-		otherwise if M is in School08:
-			if M is in the location of the player, say "[BigNameDesc of M] places [NameDesc of academy-toilet-key] onto [NameDesc of headmistress][']s desk.";
-			now academy-toilet-key is in School08;
-	otherwise if a random number between 1 and 4 is 1 or (M is in School35 and a random number between 1 and 5 > 2) or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
+			if M is in the location of the player, say "[BigNameDesc of M] hands [NameDesc of facility-toilet-key] back to [NameDesc of KM].";
+			now facility-toilet-key is carried by KM;
+		otherwise if M is in Facility08:
+			if M is in the location of the player, say "[BigNameDesc of M] places [NameDesc of facility-toilet-key] onto [NameDesc of mistress][']s desk.";
+			now facility-toilet-key is in Facility08;
+	otherwise if a random number between 1 and 4 is 1 or (M is in Facility35 and a random number between 1 and 5 > 2) or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a tutor in the location of M)):
 		compute room leaving of M.
 
-To compute (M - a student) seeking (D - a direction):
-	if M is in a predicament room or M is friendly: [Friendly students don't stalk the player]
+To compute (M - a trainee) seeking (D - a direction):
+	if M is in a predicament room or M is friendly: [Friendly trainees don't stalk the player]
 		compute monstermotion of M;
 	otherwise:
 		blockable move M to D;
 		compute monstermotion reactions of M.
 
-To compute room leaving of (M - a student): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
-	if M is in School11:
+To compute room leaving of (M - a trainee): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
+	if M is in Facility11:
 		blockable move M to north;
 	otherwise:
 		now neighbour finder is the location of M;
 		let LA be the list of N-viable directions;
 		let LD be a list of directions;
-		repeat with A running through LA: [The student can only go where their armband allows]
+		repeat with A running through LA: [The trainee can only go where their armband allows]
 			if neighbour finder is an academic room: [It should always be, but just in case...]
 				let P be the room A from the location of M;
 				unless the entry-rank of P > the entry-rank of neighbour finder and the entry-rank of P > the current-rank of M, add A to LD;
 			otherwise:
 				add A to LD;
-		if the number of entries in LD is 0: [student has found themselves with 0 valid moves]
+		if the number of entries in LD is 0: [trainee has found themselves with 0 valid moves]
 			say "BUG - [NameDesc of M] has nowhere legal to walk. How did [he of M] get here?! ([location of M])[line break]";
 			add LA to LD;
 		let A be entry (a random number between 1 and the number of entries in LD) in LD;
@@ -367,7 +367,7 @@ To compute room leaving of (M - a student): [This CANNOT be replaced with a func
 				blockable move M to A;
 				compute monstermotion reactions of M.
 
-To compute fleeing of (M - a student):
+To compute fleeing of (M - a trainee):
 	if the player is in danger or the health of M < the maxhealth of M:
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
@@ -375,7 +375,7 @@ To compute fleeing of (M - a student):
 			let P be the room A from the location of M;
 			if P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
 				blockable move M to A;
-		repeat with N running through staff members in the location of M: [Students alert teachers if they have been hurt.]
+		repeat with N running through staff members in the location of M: [Trainees alert tutors if they have been hurt.]
 			interest M;
 			unless M is in the location of the player:
 				distract M;
@@ -386,46 +386,46 @@ To compute fleeing of (M - a student):
 		now the scared of M is 0;
 		calm M.
 
-Definition: a student (called M) is uniquely distracted:
-	if headmistress is in the location of M:
-		if M is a urinater and the bladder of M >= 1000 and academy-toilet-key is held by headmistress and (M is not interested or M is friendly) and (headmistress is not interested or headmistress is friendly):
-			if M is in the location of the player, say "[BigNameDesc of M] awkwardly presents [himself of M] to [NameDesc of headmistress][if diaper lover > 0], while doing a little [']potty dance['][end if].[line break][speech style of M]'Please could I have the key to the toilets, Ma[']am?'[roman type][line break]";
-			if 0 is 1 and (the current-rank of M >= 5 or a random number between 2 and 5 < the current-rank of M): [TODO add this back in but make students actually able to pee this way]
-				if M is in the location of the player, say "[BigNameDesc of headmistress] frowns.[line break][speech style of M]'[if the current-rank of M >= 5]You're a high enough rank that you should be using your peers as urinals, not the normal boring toilet[otherwise]No, I think not. I expect you to hold it for a while longer than this[end if].'[roman type][line break]";
-				compute mandatory room leaving of headmistress;
-				now headmistress is moved;
+Definition: a trainee (called M) is uniquely distracted:
+	if mistress is in the location of M:
+		if M is a urinater and the bladder of M >= 1000 and facility-toilet-key is held by mistress and (M is not interested or M is friendly) and (mistress is not interested or mistress is friendly):
+			if M is in the location of the player, say "[BigNameDesc of M] awkwardly presents [himself of M] to [NameDesc of mistress][if diaper lover > 0], while doing a little [']potty dance['][end if].[line break][speech style of M]'Please could I have the key to the toilets, Ma[']am?'[roman type][line break]";
+			if 0 is 1 and (the current-rank of M >= 5 or a random number between 2 and 5 < the current-rank of M): [TODO add this back in but make trainees actually able to pee this way]
+				if M is in the location of the player, say "[BigNameDesc of mistress] frowns.[line break][speech style of M]'[if the current-rank of M >= 5]You're a high enough rank that you should be using your peers as urinals, not the normal boring toilet[otherwise]No, I think not. I expect you to hold it for a while longer than this[end if].'[roman type][line break]";
+				compute mandatory room leaving of mistress;
+				now mistress is moved;
 			otherwise:
-				if M is in the location of the player, say "[BigNameDesc of headmistress] nods and gives [him of M] the key.[line break][speech style of M]'Bring it back after you're done. And don't forget to bring a teacher with you to supervise you.'[roman type][line break]";
-				now M is carrying academy-toilet-key;
+				if M is in the location of the player, say "[BigNameDesc of mistress] nods and gives [him of M] the key.[line break][speech style of M]'Bring it back after you're done. And don't forget to bring a tutor with you to supervise you.'[roman type][line break]";
+				now M is carrying facility-toilet-key;
 				compute mandatory room leaving of M;
 				now M is moved;
-				now headmistress is moved;
+				now mistress is moved;
 			decide yes;
-		if academy-toilet-key is held by M and (M is not interested or M is friendly) and (headmistress is not interested or headmistress is friendly):
-			if M is in the location of the player, say "[BigNameDesc of headmistress] holds out [his of M] hand expectantly.[line break][speech style of headmistress]'The toilet key.'[line break][if M is urinater and the bladder of M >= 1000][speech style of M]'B-but I haven't had a chance to-'[line break][speech style of headmistress]'You had your chance. TOILET KEY. NOW.'[line break][end if][speech style of M]'Y-Yes headmistress...'[roman type][line break][BigNameDesc of M] hands the academy toilet key back to [NameDesc of headmistress].";
-			now headmistress is carrying academy-toilet-key;
-			compute mandatory room leaving of headmistress;
-			now headmistress is moved;
+		if facility-toilet-key is held by M and (M is not interested or M is friendly) and (mistress is not interested or mistress is friendly):
+			if M is in the location of the player, say "[BigNameDesc of mistress] holds out [his of M] hand expectantly.[line break][speech style of mistress]'The toilet key.'[line break][if M is urinater and the bladder of M >= 1000][speech style of M]'B-but I haven't had a chance to-'[line break][speech style of mistress]'You had your chance. TOILET KEY. NOW.'[line break][end if][speech style of M]'Y-Yes mistress...'[roman type][line break][BigNameDesc of M] hands the toilet key back to [NameDesc of mistress].";
+			now mistress is carrying facility-toilet-key;
+			compute mandatory room leaving of mistress;
+			now mistress is moved;
 			now the bladder of M is 800;
 			decide yes;
 	decide no.
 
-To say ErrandThanksFlav of (T - academy-toilet-key) from (M - a student):
-	say "[speech style of M]'I'm going to tell [NameDesc of headmistress] [speech style of M]that I gave it to you, so you'd better remember to return it to [him of headmistress] after you're done.'[roman type][line break]".
+To say ErrandThanksFlav of (T - facility-toilet-key) from (M - a trainee):
+	say "[speech style of M]'I'm going to tell [NameDesc of mistress] [speech style of M]that I gave it to you, so you'd better remember to return it to [him of mistress] after you're done.'[roman type][line break]".
 
 
 Part - Perception
 
-To compute perception of (M - a student):
+To compute perception of (M - a trainee):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if detention chair is grabbing the player:
-		compute detention chair tease of M;
+	if reconditioning chair is grabbing the player:
+		compute reconditioning chair tease of M;
 	otherwise if armband is worn:
 		unless there is an active assembly:
 			if the bladder of M >= 1000 and M is able to use a free use urinal:
 				compute free use urinal perception of M;
 			otherwise if M is friendly:
-				compute student perception of M;
+				compute trainee perception of M;
 			otherwise:
 				let SM be a random undefeated staff member in the location of the player;
 				if SM is monster:
@@ -434,27 +434,27 @@ To compute perception of (M - a student):
 				otherwise:
 					compute bully perception of M;
 	otherwise:
-		compute nonstudent perception of M.
+		compute nontrainee perception of M.
 
-To decide which number is the outrage tolerance of (M - a student): [What number of outrage they are unimpressed and lose favour.]
+To decide which number is the outrage tolerance of (M - a trainee): [What number of outrage they are unimpressed and lose favour.]
 	decide on 4 + (the current-rank of M * 2).
 
-To decide which number is the cringe tolerance of (M - a student):
+To decide which number is the cringe tolerance of (M - a trainee):
 	decide on the outrage tolerance of M.
 
-To say DisapprovalFlav of (M - a student):
+To say DisapprovalFlav of (M - a trainee):
 	say "[BigNameDesc of M] [one of]looks shocked[or]makes a disgusted face[or]almost chokes[in random order].[line break][speech style of M]'[one of]What the fuck is wrong with you?!'[or]Get away from me, you messed up weirdo!'[or]That's just too far!'[or]What do you think you're doing?!'[in random order][roman type][line break]".
 
-To say CringeDisapprovalFlav of (M - a student):
+To say CringeDisapprovalFlav of (M - a trainee):
 	say DisapprovalFlav of M.
 
-To compute student perception of (M - a student):
+To compute trainee perception of (M - a trainee):
 	if gloryhole is grabbing the player and (the current-rank of M < 3 or (gloryhole is penetrating face and the current-rank of M < 5)):
 		say LewdTrapReactFlav of M;
 	otherwise:
 		compute appearance assessment of M.
 
-To compute appearance assessment of (M - a student):
+To compute appearance assessment of (M - a trainee):
 	if diaper quest is 1 and the saved cringe appearance of the player >= the saved appearance of the player:
 		if there is currently at least partially visible messed knickers:
 			say MessyBabAppearanceAssessment of M;
@@ -476,134 +476,138 @@ To compute appearance assessment of (M - a student):
 			if M is normally acquaintance, FavourDown M by 2;
 			distract M;
 		otherwise if the saved appearance of the player > the outrage tolerance of M:
-			if M is nasty student and diaper quest is 0, compute grope of M;
+			if M is nasty trainee and diaper quest is 0, compute grope of M;
 			otherwise say LewdAppearanceAssessment of M;
 			if M is normally acquaintance, FavourDown M;
 			if M is unfriendly, distract M;
 		otherwise if the player is top-wardrobe-malfunctioning:
 			compute tq nip slip reaction of M;
-		otherwise if M is tryhard student and M is groping:
+		otherwise if M is tryhard trainee and M is groping:
 			compute grope of M.
 
-To say FarGoneAppearanceAssessment of (M - a student):
+To say FarGoneAppearanceAssessment of (M - a trainee):
 	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking at a getup as outrageous as that! My poor eyes!'[or]Holy cow, do you know how nasty you look right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
 
-To say LewdAppearanceAssessment of (M - a student):
-	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. [big please] don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
+To say LewdAppearanceAssessment of (M - a trainee):
+	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the tutors.'[or]Ugh. [big please] don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
 
-To say MessyBabAppearanceAssessment of (M - a student):
+To say MessyBabAppearanceAssessment of (M - a trainee):
 	say "[BigNameDesc of M] looks at the state of your soiled undergarments.[line break][speech style of M]'[one of]Oh my god, YUCK!'[or]Oh my god, I need mental preparation before breathing anywhere near you! My poor nose!'[or]Did you really shit yourself?! Stay the fuck away from me!'[in random order][roman type][line break]".
 
-To say FarGoneBabAppearanceAssessment of (M - a student):
+To say FarGoneBabAppearanceAssessment of (M - a trainee):
 	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking at a getup as outrageous as that! My poor eyes!'[or]Holy cow, do you know how extreme your outfit is right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
 
-To say BabAppearanceAssessment of (M - a student):
-	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. [big please] don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? None of the rest of us'd wanna be seen dead like that!'[in random order][roman type][line break]".
+To say BabAppearanceAssessment of (M - a trainee):
+	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the tutors.'[or]Ugh. [big please] don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? None of the rest of us'd wanna be seen dead like that!'[in random order][roman type][line break]".
 
-To say BreastsGropeFlav of (M - a nasty student):
+To say BreastsGropeFlav of (M - a nasty trainee):
 	say "[speech style of M]'[one of]You've only just arrived and you're already exposing yourself like a cheap whore.'[or]Whoops, my hands must have slipped...'[or]You're nothing but a piece of meat. Remember that.'[stopping][roman type][line break]".
 
-To say BreastsGropeFlav of (M - a tryhard student):
+To say BreastsGropeFlav of (M - a tryhard trainee):
 	say "[speech style of M]'[one of]Just as I suspected, they're really soft too. I'm jealous.'[or]I just had to check if they were real. You can feel mine too, if you like.'[in random order][roman type][line break]".
 
-To say AssholeGropeFlav of (M - a nasty student):
+To say AssholeGropeFlav of (M - a nasty trainee):
 	say "[speech style of M]'[one of]Surprise, [bitch][or]Look alive, slut[in random order]!'[roman type][line break]".
 
-To say AssholeGropeFlav of (M - a tryhard student):
-	say "[speech style of M]'[one of]Teacher said that this is how I should try to greet people from now on. [or][stopping]Hello.'[roman type][line break]".
+To say AssholeGropeFlav of (M - a tryhard trainee):
+	say "[speech style of M]'[one of]Tutor said that this is how I should try to greet people from now on. [or][stopping]Hello.'[roman type][line break]".
 
-To say VaginaGropeFlav of (M - a nasty student):
+To say VaginaGropeFlav of (M - a nasty trainee):
 	say "[speech style of M]'If you act like a cumdumpster, I'm going to treat you like a cumdumpster!'[roman type][line break]".
 
-To say VaginaGropeFlav of (M - a tryhard student):
+To say VaginaGropeFlav of (M - a tryhard trainee):
 	say "[speech style of M]'[if vagina is lewdly exposed]You're so brave, to have this completely on display[otherwise if vagina is at least partially lewdly exposed]You look so sexy like this. I can even partially see your [cunt][otherwise]I can't wait for our next class. I'm all wet down there. Are you wet too, I wonder[end if].'[roman type][line break]".
 
-To compute face grope of (M - a nasty student):
+To compute face grope of (M - a nasty trainee):
 	say "[BigNameDesc of M] [if face is actually occupied]grabs you by the ear and pulls sharply[otherwise]sticks two fingers in your mouth, hooking your cheek[end if].[line break][speech style of M]'Watch where you're looking, slut. I am not your friend.'[roman type][line break]".
 
-To compute face grope of (M - a tryhard student):
+To compute face grope of (M - a tryhard trainee):
 	say "[BigNameDesc of M] [if face is actually occupied]licks you on the cheek[otherwise]presses against you and pushes [his of M] tongue into your mouth, tasting you[end if], before taking a step back and beaming.[line break][speech style of M]'Hi.'[roman type][line break]".
 
-To say ThighsGropeFlav of (M - a nasty student):
-	say "[speech style of M]'[one of]You're not even hot. Who did you blow to get let in here, slut?'[or]You look like a whore, and you feel like a whore... I wonder what that makes you?'[or]What is it about this ugly, whorish body that makes the [ShortDesc of headmistress] take such an interest in you?'[in random order][roman type][line break]".
+To say ThighsGropeFlav of (M - a nasty trainee):
+	say "[speech style of M]'[one of]You're not even hot. Who did you blow to get let in here, slut?'[or]You look like a whore, and you feel like a whore... I wonder what that makes you?'[or]What is it about this ugly, whorish body that makes the [ShortDesc of mistress] take such an interest in you?'[in random order][roman type][line break]".
 
-To say ThighsGropeFlav of (M - a tryhard student):
+To say ThighsGropeFlav of (M - a tryhard trainee):
 	say "[speech style of M]'[one of]I'm so jealous of your legs...'[or]How do you manage to look so sexy without looking too slutty? I must know your secret!'[in random order][roman type][line break]".
 
-To say AssGropeFlav of (M - a nasty student):
+To say AssGropeFlav of (M - a nasty trainee):
 	say "[speech style of M]'[one of]With a fat slutty ass like this, no wonder you're looking to learn to become a whore.'[or]Fuckmeat. But not even top quality fuckmeat, just mid-shelf dime-a-dozen fuckmeat.'[or]What's up, fuckmeat?'[stopping][roman type][line break]".
 
-To say AssGropeFlav of (M - a tryhard student):
+To say AssGropeFlav of (M - a tryhard trainee):
 	say "[speech style of M]'[one of]Ooh, nice and perky.'[or]Hey there sweet-cheeks.'[cycling][roman type][line break]".
 
-To compute nonstudent perception of (M - a student):
-	say "[speech style of M]'[one of]What the hell[or]Oh my god[or]Erm[or]Wait a second[or]Hold on a minute[or]OMFG[in random order], where is your armband?!'[roman type][line break][BigNameDesc of M] starts to run away!";
-	anger M;
-	now the scared of M is 100.
+To compute nontrainee perception of (M - a trainee):
+	if dungeon chains is worn and dungeon chains is stuck:
+		say "[speech style of M]'[one of]Yikes[or]Rather you than me[or]You must have really pissed them off[cycling].'[roman type][line break][BigNameDesc of M] turns to leave you to your sentence.";
+		bore M;
+	otherwise:
+		say "[speech style of M]'[one of]What the hell[or]Oh my god[or]Erm[or]Wait a second[or]Hold on a minute[or]OMFG[in random order], where is your armband?!'[roman type][line break][BigNameDesc of M] starts to run away!";
+		anger M;
+		now the scared of M is 100.
 
-To compute (M - a student) reacting to armband replacement:
+To compute (M - a trainee) reacting to armband replacement:
 	if M is in the location of the player, say ArmbandCalming of M;
 	calm M.
 
-To say ArmbandCalming of (M - a student):
+To say ArmbandCalming of (M - a trainee):
 	if the health of M >= the maxhealth of M:
 		if M is unfriendly, say "[BigNameDesc of M] calms down.";
 		now the scared of M is 0.
 
-To say SatisfiedFlav of (M - a student):
+To say SatisfiedFlav of (M - a trainee):
 	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[if M is friendly][line break][speech style of M]'Okay, we're cool now. Just don't you dare piss me off again.'[roman type][line break]".
 
-To say SatisfiedFlav of (M - a nasty student):
+To say SatisfiedFlav of (M - a nasty trainee):
 	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is gendered male]sissy[otherwise]pathetic little [boy of the player][end if][in random order].'[roman type][line break]".
 
-To FavourUp (M - a student) by (N - a number):
+To FavourUp (M - a trainee) by (N - a number):
 	RespectUp M by N.
 
-To RespectUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
+To RespectUp (M - a trainee) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if N > 0 and M is alive:
 		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		increase the favour of M by N;
 		say "You can tell that [NameDesc of M] [one of]is impressed with you[or]has [if M is not acquaintance]regained some[otherwise]gained[end if] respect for you[or]is happy with what [he of M] sees[or]approves[in random order].".
 
-To FavourDown (M - a student) by (N - a number):
+To FavourDown (M - a trainee) by (N - a number):
 	RespectDown M by N.
 
-To RespectDown (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
+To RespectDown (M - a trainee) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if latest-top-malfunction is not 0 and M is reactive, now latest-top-malfunction is earnings; [If an intelligent interested NPC has lost favour with the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0 and M is alive:
 		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		decrease the favour of M by N;
-		say "You can tell that [NameDesc of M] [if M is amicable student][one of]is feeling sorry for you[or]is pitying you[in random order][otherwise if M is friendly][one of]is unimpressed with you[or]has lost respect for you[or]is disgusted by what [he of M] sees[in random order][otherwise][one of]is utterly appalled by what [he of M] sees[or]has lost all respect for you[or]is deeply disgusted by you[in random order][end if].".
+		say "You can tell that [NameDesc of M] [if M is amicable trainee][one of]is feeling sorry for you[or]is pitying you[in random order][otherwise if M is friendly][one of]is unimpressed with you[or]has lost respect for you[or]is disgusted by what [he of M] sees[in random order][otherwise][one of]is utterly appalled by what [he of M] sees[or]has lost all respect for you[or]is deeply disgusted by you[in random order][end if].".
 
-To HappinessUp (M - a student):
+To HappinessUp (M - a trainee):
 	HappinessUp M by 1.
 
-To HappinessUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
+To HappinessUp (M - a trainee) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if N > 0 and M is alive:
 		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		increase the favour of M by N;
 		say "You can tell that [NameDesc of M] is [if M is not acquaintance][one of]pleased by that[or]trying to hide a smile[in random order][otherwise][one of]smiling about that[or]happy with you[in random order][end if].".
 
-To HappinessDown (M - a student):
+To HappinessDown (M - a trainee):
 	HappinessDown M by 1.
 
-To HappinessDown (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
+To HappinessDown (M - a trainee) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0 and M is alive:
 		now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 		decrease the favour of M by N;
-		say "You can tell that [NameDesc of M] is [if M is amicable student][one of]a little disappointed[or]a tad vexed[in random order][otherwise if M is friendly][one of]not happy[or]irritated[or]frustrated[in random order][otherwise][one of]pissed off[or]furious[or]angry[in random order] with you[end if].".
+		say "You can tell that [NameDesc of M] is [if M is amicable trainee][one of]a little disappointed[or]a tad vexed[in random order][otherwise if M is friendly][one of]not happy[or]irritated[or]frustrated[in random order][otherwise][one of]pissed off[or]furious[or]angry[in random order] with you[end if].".
 
-To CheerUp (M - a student):
+To CheerUp (M - a trainee):
 	CheerUp M by 1.
 
-To CheerUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour. Mainly for when the student pulls pranks or similar]
+To CheerUp (M - a trainee) by (N - a number): [This is the same mechanically as favour but with different flavour. Mainly for when the trainee pulls pranks or similar]
 	if N > 0 and M is alive:
 		increase the favour of M by N;
 		say "You can tell that [NameDesc of M] [if M is not acquaintance][one of]is feeling a bit better now[or]has cheered up a little bit[in random order][otherwise][one of]is even happier now[or]is feeling cheerful, thanks to that[in random order][end if].".
 
-To FavourDown (M - a student) by (N - a number) with consequences:
+To FavourDown (M - a trainee) by (N - a number) with consequences:
 	if M is alive:
 		let P be 0;
 		if M is unfriendly, now P is 1;
@@ -611,14 +615,14 @@ To FavourDown (M - a student) by (N - a number) with consequences:
 		if P is 0 and M is unfriendly: [monster was friendly but now is unfriendly]
 			distract M.
 
-To say BecomesAggressive of (M - a student):
+To say BecomesAggressive of (M - a trainee):
 	compute bully perception of M.
 
-To compute combatProvoked of (M - a student):
+To compute combatProvoked of (M - a trainee):
 	HappinessDown M;
 	now M is unleashed.
 
-To compute toilet reaction of (M - a student):
+To compute toilet reaction of (M - a trainee):
 	if the current-rank of M is 2:
 		say "[BigNameDesc of M] politely looks away.";
 	otherwise:
@@ -626,7 +630,7 @@ To compute toilet reaction of (M - a student):
 		otherwise say "[BigNameDesc of M] stares directly at you, smirking.";
 		say strongHumiliateReflect.
 
-To say ClothesPeeReaction of (M - a student):
+To say ClothesPeeReaction of (M - a trainee):
 	if M is interested:
 		if diaper quest is 1:
 			if M is friendly:
@@ -641,12 +645,12 @@ To say ClothesPeeReaction of (M - a student):
 	otherwise:
 		say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [his of M] reaction.".
 
-To compute diaper mess reaction of (M - a student):
+To compute diaper mess reaction of (M - a trainee):
 	if diaper quest is 1:
 		let D be the dedication of M + the current-rank of M;
-		say "[BigNameDesc of M] looks at you with a [if M is nasty student][one of]smug expression[or]sneer[cycling][otherwise if M is a tryhard student][one of]frown[or]pout[cycling][otherwise if M is an amicable student][one of]caring expression[or]smile[cycling][otherwise if M is a ditzy student][one of]smirk[or]grin[cycling][otherwise][one of]grimace[or]hesitant expression[cycling][end if].[line break][speech style of M]'[if D >= 6][one of]You're getting good at this.'[or]That was impressive, but my next one's gonna be even louder than that.'[or]Save some attention for the rest of us!'[in random order][otherwise if D is 5][one of]You like being watched, don't you?'[or]Is it weird that I found that really hot?'[in random order][otherwise if D is 4][one of]Wow, what did you eat?'[or]You are a bold one.'[in random order][otherwise if D is 3][one of]You filthy fucking baby.'[or]Jeez! Warn me next time...'[or]I was not mentally prepared for that.'[in random order][otherwise if D is 2][one of]Haha, that was fucking gross.'[or]I'm going to try and pretend that didn't just happen in front of me!'[or]That reeks!'[in random order][otherwise][one of]Oh my god! Do you have NO self-respect?!'[or]Get away from me!'[or]I'm gonna hurl...'[or][caps please] tell me that what I think just happened isn't what happened.'[or]No way, no way, NO WAY! That's so fucked up!'[in random order][end if][roman type][line break][strongHumiliateReflect]";
+		say "[BigNameDesc of M] looks at you with a [if M is nasty trainee][one of]smug expression[or]sneer[cycling][otherwise if M is a tryhard trainee][one of]frown[or]pout[cycling][otherwise if M is an amicable trainee][one of]caring expression[or]smile[cycling][otherwise if M is a ditzy trainee][one of]smirk[or]grin[cycling][otherwise][one of]grimace[or]hesitant expression[cycling][end if].[line break][speech style of M]'[if D >= 6][one of]You're getting good at this.'[or]That was impressive, but my next one's gonna be even louder than that.'[or]Save some attention for the rest of us!'[in random order][otherwise if D is 5][one of]You like being watched, don't you?'[or]Is it weird that I found that really hot?'[in random order][otherwise if D is 4][one of]Wow, what did you eat?'[or]You are a bold one.'[in random order][otherwise if D is 3][one of]You filthy fucking baby.'[or]Jeez! Warn me next time...'[or]I was not mentally prepared for that.'[in random order][otherwise if D is 2][one of]Haha, that was fucking gross.'[or]I'm going to try and pretend that didn't just happen in front of me!'[or]That reeks!'[in random order][otherwise][one of]Oh my god! Do you have NO self-respect?!'[or]Get away from me!'[or]I'm gonna hurl...'[or][caps please] tell me that what I think just happened isn't what happened.'[or]No way, no way, NO WAY! That's so fucked up!'[in random order][end if][roman type][line break][strongHumiliateReflect]";
 	otherwise:
-		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes].[line break][speech style of M]'[one of]I'm trying to learn to be kinky, but that's just way too far.'[or]Please please [caps please] tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What is wrong with you?!'[or]Did the teachers make you do that, or are you just fucked up in the head all on your own?'[or]This can't be real. Gross!'[cycling][roman type][line break]";
+		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes].[line break][speech style of M]'[one of]I'm trying to learn to be kinky, but that's just way too far.'[or]Please please [caps please] tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What is wrong with you?!'[or]Did the tutors make you do that, or are you just fucked up in the head all on your own?'[or]This can't be real. Gross!'[cycling][roman type][line break]";
 		if voluntarySquatting is 1, say obsceneHumiliateReflect;
 		otherwise say severeHumiliateReflect;
 		if M is monster and (M is friendly or M is uninterested):
@@ -654,18 +658,18 @@ To compute diaper mess reaction of (M - a student):
 			bore M;
 			compute mandatory room leaving of M.
 
-To say NastyTrapReactFlav of (M - a student):
+To say NastyTrapReactFlav of (M - a trainee):
 	if the current-rank of M >= 3:
 		say "[BigNameDesc of M] [one of]cringes[or]makes a pitying sound[at random].[line break][speech style of M]'[one of]Rather you than me.'[or]I wondered if that might happen.'[or]That's just how things are around here.'[in random order][roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] [one of]makes a disgusted sound[or]almost chokes in surprise[or]grimaces[at random].[line break][speech style of M]'[one of]Yuck.'[or]How could you let that happen to you? Do you have no shame?'[or]Oh my lord! What a disgrace.'[in random order][roman type][line break]";
 		FavourDown M with consequences.
 
-To compute disgusting spit reaction of (M - a student):
+To compute disgusting spit reaction of (M - a trainee):
 	say "[BigNameDesc of M] [one of]frowns[or]wrinkles [his of M] nose[or]winces[in random order].[line break][speech style of M]'Eww!'[roman type][line break][slightHumiliateReflect]";
 	if M is monster, FavourDown M with consequences.
 
-To check attack of (M - a student):
+To check attack of (M - a trainee):
 	if the player is not in a predicament room:
 		let ST be a random undefeated friendly staff member in the location of the player;
 		if ST is monster and the number of interested unfriendly staff members in the location of the player is 0:
@@ -675,98 +679,98 @@ To check attack of (M - a student):
 
 Part - Protection
 
-To compute (M - a student) protecting against (X - a monster):
+To compute (M - a trainee) protecting against (X - a monster):
 	unless X is nurse:
 		say "[BigNameDesc of M] sees that you and [NameDesc of X] [if the health of X < the maxhealth of X]are in combat[otherwise]have adopted fighting stances[end if].";
-		say "[speech style of M]'[if X is staff member]Eek! [NameBimbo] is fighting the teachers!'[otherwise][one of]Eek! I'm telling a teacher[or]Stay there, I'm getting a teacher[at random]!'[end if][roman type][line break][BigNameDesc of M] turns to run away.";
+		say "[speech style of M]'[if X is staff member]Eek! [NameBimbo] is fighting the tutors!'[otherwise][one of]Eek! I'm telling a tutor[or]Stay there, I'm getting a tutor[at random]!'[end if][roman type][line break][BigNameDesc of M] turns to run away.";
 		now the scared of M is 100;
 		anger M.
 
-dq-student-flee is a diaper punishment. the priority of dq-student-flee is 8.
+dq-trainee-flee is a diaper punishment. the priority of dq-trainee-flee is 8.
 
-To compute punishment of (P - dq-student-flee):
+To compute punishment of (P - dq-trainee-flee):
 	now the scared of current-monster is 100;
 	compute fleeing of current-monster.
 
-Definition: dq-student-flee is appropriate:
-	if current-monster is student and armband is not worn, decide yes;
+Definition: dq-trainee-flee is appropriate:
+	if current-monster is trainee and armband is not worn, decide yes;
 	decide no.
 
-The student priority attack rules is a rulebook. The priority attack rules of a student is usually the student priority attack rules.
+The trainee priority attack rules is a rulebook. The priority attack rules of a trainee is usually the trainee priority attack rules.
 
-This is the student obeys teacher rule:
+This is the trainee obeys tutor rule:
 	let N be current-monster;
 	let S be a random undefeated awake unfriendly staff member in the location of the player;
 	if S is nothing, now S is a random undefeated awake staff member in the location of the player;
 	if S is monster:
-		if the teacher-obedience of N is 1:
+		if the tutor-obedience of N is 1:
 			rule succeeds;
 		otherwise if the health of N < the maxhealth of N:
 			if S is friendly, say "[BigNameDesc of S] yells angrily.[line break][speech style of S]'NO FIGHTING! BOTH OF YOU DOWN ON THE GROUND, NOW!'[roman type][line break]";
 			repeat with M running through staff members in the location of the player:
 				anger M;
 				interest M;
-			repeat with M running through awake unfriendly interested students in the location of the player:
-				now the teacher-obedience of M is 1;
+			repeat with M running through awake unfriendly interested trainees in the location of the player:
+				now the tutor-obedience of M is 1;
 				say "[BigNameDesc of M] [one of]obediently[or]instantly[or]silently[or]immediately[in random order] drops to the ground, and lying face down, assumes [one of]a submissive position with [his of N] hands behind [his of N] head, like a prisoner[or]the position[stopping].";
 			rule succeeds;
-	otherwise if the teacher-obedience of N is 1:
-		now the teacher-obedience of N is 0.
-The student obeys teacher rule is listed in the student priority attack rules.
+	otherwise if the tutor-obedience of N is 1:
+		now the tutor-obedience of N is 0.
+The trainee obeys tutor rule is listed in the trainee priority attack rules.
 
-To compute striking success effect of (M - a student) on (B - a body part):
+To compute striking success effect of (M - a trainee) on (B - a body part):
 	let N be a random staff member in the location of M;
 	if N is a monster:
 		if N is uninterested, check guaranteed perception of N;
 		if N is interested and the health of M >= the maxhealth of M, now the health of M is the maxhealth of M - 1; [This is how we flag to the game that the staff member has witnessed the fight and can demand that it stops]
 
-To say AllyDamageFlav of (X - a student) on (M - a monster):
+To say AllyDamageFlav of (X - a trainee) on (M - a monster):
 	say "[BigNameDesc of X] slaps [NameDesc of M] as hard as [he of X] can!".
 
 Part - Bullying
 
-Report going when the player is in School10:
+Report going when the player is in Facility10:
 	if watersports mechanics is 1:
-		let M be a random student in School10;
-		if M is student and the total puddle of School10 is 0 and the number of monsters in the location of the player is 1 and M is not normally buddy and M is not amicable student and M is not combative and black maid headdress is off-stage and pink-spraybottle is actually summonable and black maid headdress is actually summonable:
-			now pink-spraybottle is in School10;
+		let M be a random trainee in Facility10;
+		if M is trainee and the total puddle of Facility10 is 0 and the number of monsters in the location of the player is 1 and M is not normally buddy and M is not amicable trainee and M is not combative and black maid headdress is off-stage and pink-spraybottle is actually summonable and black maid headdress is actually summonable:
+			now pink-spraybottle is in Facility10;
 			now pink-spraybottle is spray;
 			if M is not interested, say "[BigNameDesc of M] notices you!";
 			say "You watch with [horror the urine taste addiction of the player] as [NameDesc of M] pisses on the floor in front of you. And then... Flashing you a cruel expression, [he of M] runs out into the hallway.";
 			now the bladder of M is 0;
-			UrinePuddleUp 10 in School10;
+			UrinePuddleUp 10 in Facility10;
 			try M going north;
 			now M is moved;
 			bore M;
-			deinterest headmistress;
-			now headmistress is puddle-investigating;
-			say "[speech style of M]'Headmistress! Headmistress! [NameBimbo] is pissing on the floor in the toilets!'[line break][speech style of headmistress]'WHAT?! Let me see!'[roman type][line break]Oh SHIT - it sounds like you're being framed for floor pissing! But... There is a spray bottle and cloth on the floor next to you... Perhaps you can wipe it up in time?";
+			deinterest mistress;
+			now mistress is puddle-investigating;
+			say "[speech style of M]'mistress! mistress! [NameBimbo] is pissing on the floor in the toilets!'[line break][speech style of mistress]'WHAT?! Let me see!'[roman type][line break]Oh SHIT - it sounds like you're being framed for floor pissing! But... There is a spray bottle and cloth on the floor next to you... Perhaps you can wipe it up in time?";
 
 
-[This is where we input flavour for all the other bullying students in the crowd.]
-To compute crowd jeering of (M - a student):
-	let LST be the list of unfriendly students in the location of M;
+[This is where we input flavour for all the other bullying trainees in the crowd.]
+To compute crowd jeering of (M - a trainee):
+	let LST be the list of unfriendly trainees in the location of M;
 	remove M from LST;
 	repeat with ST running through LST:
 		compute jeering of ST.
 
-To compute jeering of (M - a student):
+To compute jeering of (M - a trainee):
 	say "[BigNameDesc of M] [one of]points and laughs[or]doubles over with laughter[or]cackles vindictively at your suffering[or]jeers[in random order]!".
 
-To compute crowd boredom of (M - a student):
-	let LST be the list of unfriendly students in the location of M;
+To compute crowd boredom of (M - a trainee):
+	let LST be the list of unfriendly trainees in the location of M;
 	remove M from LST;
 	repeat with ST running through LST:
 		bore ST.
 
-To compute crowd satisfaction of (M - a student):
-	let LST be the list of unfriendly students in the location of M;
+To compute crowd satisfaction of (M - a trainee):
+	let LST be the list of unfriendly trainees in the location of M;
 	remove M from LST;
 	repeat with ST running through LST:
 		satisfy ST.
 
-To compute group bullying of (M - a student):
-	let LST be the list of alive unfriendly students;
+To compute group bullying of (M - a trainee):
+	let LST be the list of alive unfriendly trainees;
 	repeat with ST running through LST:
 		now ST is in the location of the player;
 		interest ST;
@@ -778,60 +782,60 @@ To compute group bullying of (M - a student):
 		say "[NameDesc of ST][if E > 2], [otherwise if E is 2] and [end if]";
 	now Neighbour Finder is the location of the player;
 	say "[if E is 1]is[otherwise]are[end if] blocking the [if the number of N-viable directions > 1]exits[otherwise]exit[end if] to the room. Uh-oh.[paragraph break]Your bullies circle in on you, easily overpowering you and wrenching your hands behind your back.";
-	if student-bully-swimming-pool is appropriate and bukkake fetish is 1: [Swimming pool dunk]
-		compute punishment of student-bully-swimming-pool;
-	otherwise if student-bully-wedgie is appropriate and M is not in School10: [Wedgie]
+	if trainee-bully-swimming-pool is appropriate and bukkake fetish is 1: [Swimming pool dunk]
+		compute punishment of trainee-bully-swimming-pool;
+	otherwise if trainee-bully-wedgie is appropriate and M is not in Facility10: [Wedgie]
 		repeat with ST running through LST:
-			now ST is in School19;
-		compute punishment of student-bully-wedgie;
+			now ST is in Facility19;
+		compute punishment of trainee-bully-wedgie;
 	otherwise: [Swirlie]
 		repeat with ST running through LST:
-			now ST is in School10;
-		compute punishment of student-bully-swirlie;
+			now ST is in Facility10;
+		compute punishment of trainee-bully-swirlie;
 
-[Called when a student beats a player in combat.]
+[Called when a trainee beats a player in combat.]
 This is the bullying rule:
 	increase the timesBullied of current-monster by 1;
-	if the player is in School17: [Food Hall]
+	if the player is in Facility17: [Food Hall]
 		compute food hall bullying of current-monster;
-	otherwise if the player is in School10: [Toilets]
-		compute punishment of student-bully-swirlie;
-	otherwise if the player is in School19 and student-bully-wedgie is appropriate: [Changing Room]
-		compute punishment of student-bully-wedgie;
-	otherwise if the player is in School20 and student-bully-swimming-pool is appropriate: [Swimming Pool]
-		compute punishment of student-bully-swimming-pool;
-	otherwise if the number of alive unfriendly students > 2:
+	otherwise if the player is in Facility10: [Toilets]
+		compute punishment of trainee-bully-swirlie;
+	otherwise if the player is in Facility19 and trainee-bully-wedgie is appropriate: [Changing Room]
+		compute punishment of trainee-bully-wedgie;
+	otherwise if the player is in Facility20 and trainee-bully-swimming-pool is appropriate: [Swimming Pool]
+		compute punishment of trainee-bully-swimming-pool;
+	otherwise if the number of alive unfriendly trainees > 2:
 		compute group bullying of current-monster;
 	otherwise:
 		compute default bullying of current-monster;
 	rule succeeds.
-The unique punishment rule of a student is usually the bullying rule.
+The unique punishment rule of a trainee is usually the bullying rule.
 
-student-bully-food-hall is a diaper punishment. The priority of student-bully-food-hall is 5.
-Definition: student-bully-food-hall is appropriate:
-	if current-monster is student and the player is in School17, decide yes;
+trainee-bully-food-hall is a diaper punishment. The priority of trainee-bully-food-hall is 5.
+Definition: trainee-bully-food-hall is appropriate:
+	if current-monster is trainee and the player is in Facility17, decide yes;
 	decide no.
-To compute punishment of (P - student-bully-food-hall):
+To compute punishment of (P - trainee-bully-food-hall):
 	compute food hall bullying of current-monster.
 
-student-bully-toilet-key is a diaper punishment. The priority of student-bully-toilet-key is 5.
-Definition: student-bully-toilet-key is appropriate:
-	if current-monster is student and academy-toilet-key is held, decide yes;
+trainee-bully-toilet-key is a diaper punishment. The priority of trainee-bully-toilet-key is 5.
+Definition: trainee-bully-toilet-key is appropriate:
+	if current-monster is trainee and facility-toilet-key is held, decide yes;
 	decide no.
-To compute punishment of (P - student-bully-toilet-key):
+To compute punishment of (P - trainee-bully-toilet-key):
 	say "[speech style of current-monster]'I'm taking this, and you're NEVER having it back!'[roman type][line break][BigNameDesc of current-monster] takes the key for the toilets!";
-	now academy-toilet-key is carried by current-monster;
+	now facility-toilet-key is carried by current-monster;
 	satisfy current-monster.
 
-student-bully-swimming-pool is a diaper punishment. The priority of student-bully-swimming-pool is 4.
-Definition: student-bully-swimming-pool is appropriate:
-	if current-monster is student and the player is not at least partially immobile and the player is not flying and the rank of the player >= the entry-rank of School20 and the current-rank of current-monster >= the entry-rank of School20 and the semen coating of thighs < 9 and the number of staff member in School20 is 0, decide yes;
+trainee-bully-swimming-pool is a diaper punishment. The priority of trainee-bully-swimming-pool is 4.
+Definition: trainee-bully-swimming-pool is appropriate:
+	if current-monster is trainee and the player is not at least partially immobile and the player is not flying and the rank of the player >= the entry-rank of Facility20 and the current-rank of current-monster >= the entry-rank of Facility20 and the semen coating of thighs < 9 and the number of staff member in Facility20 is 0, decide yes;
 	decide no.
-To compute punishment of (P - student-bully-swimming-pool):
-	if the location of the player is not School20:
-		repeat with ST running through students in the location of the player:
-			if ST is interested and ST is not current-monster and ST is unfriendly, now ST is in School20;
-		drag to School20 by current-monster;
+To compute punishment of (P - trainee-bully-swimming-pool):
+	if the location of the player is not Facility20:
+		repeat with ST running through trainees in the location of the player:
+			if ST is interested and ST is not current-monster and ST is unfriendly, now ST is in Facility20;
+		drag to Facility20 by current-monster;
 	say "[speech style of current-monster]'[one of]Watch your step, [bitch][or]You stink - you could use a wash[in random order]!'[roman type][line break][BigNameDesc of current-monster] shoves you into the pool!";
 	compute crowd jeering of current-monster;
 	if diaper quest is 0:
@@ -842,26 +846,26 @@ To compute punishment of (P - student-bully-swimming-pool):
 	compute crowd satisfaction of current-monster;
 	satisfy current-monster.
 
-Check going when the player is in School20:
-	let M be a random alive unfriendly student;
-	if M is student, now current-monster is M;
-	if number of alive unfriendly students > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0 and student-bully-swimming-pool is appropriate:
+Check going when the player is in Facility20:
+	let M be a random alive unfriendly trainee;
+	if M is trainee, now current-monster is M;
+	if number of alive unfriendly trainees > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0 and trainee-bully-swimming-pool is appropriate:
 		allocate 6 seconds;
-		now M is in School20;
+		now M is in Facility20;
 		say "[bold type]Suddenly, [NameDesc of M] [bold type]appears, blocking the way![roman type][line break]";
 		compute group bullying of M instead;
 		do nothing instead. [failsafe]
 
-student-bully-wedgie is a diaper punishment. The priority of student-bully-wedgie is 1.
-Definition: student-bully-wedgie is appropriate:
-	if current-monster is student and the player is not at least partially immobile and the player is not flying and the rank of the player >= the entry-rank of School19 and the current-rank of current-monster >= the entry-rank of School19 and there is an off-stage ass hook and there is worn displacable knickers, decide yes;
+trainee-bully-wedgie is a diaper punishment. The priority of trainee-bully-wedgie is 1.
+Definition: trainee-bully-wedgie is appropriate:
+	if current-monster is trainee and the player is not at least partially immobile and the player is not flying and the rank of the player >= the entry-rank of Facility19 and the current-rank of current-monster >= the entry-rank of Facility19 and there is an off-stage ass hook and there is worn displacable knickers, decide yes;
 	decide no.
-To compute punishment of (P - student-bully-wedgie):
-	repeat with M running through staff members in School19:
+To compute punishment of (P - trainee-bully-wedgie):
+	repeat with M running through staff members in Facility19:
 		compute room leaving of M;
-	if the location of the player is not School19, drag to School19 by current-monster;
+	if the location of the player is not Facility19, drag to Facility19 by current-monster;
 	let K be a random worn knickers;
-	say "[speech style of current-monster]'[one of]Up we go[or]This is where you belong[stopping]!'[roman type][line break][if the number of unfriendly students in the location of the player > 1]The bullies lift[otherwise][BigNameDesc of current-monster] lifts[end if] you up by your [ShortDesc of K], pinning the back onto one of the changing room hooks!";
+	say "[speech style of current-monster]'[one of]Up we go[or]This is where you belong[stopping]!'[roman type][line break][if the number of unfriendly trainees in the location of the player > 1]The bullies lift[otherwise][BigNameDesc of current-monster] lifts[end if] you up by your [ShortDesc of K], pinning the back onto one of the changing room hooks!";
 	let A be a random off-stage ass hook;
 	now A is in the location of the player;
 	now A is revealed;
@@ -873,41 +877,41 @@ To compute punishment of (P - student-bully-wedgie):
 	compute crowd satisfaction of current-monster;
 	satisfy current-monster;
 	say "It looks like you'll need to [bold type]jump[roman type] and try and rip your underwear, or [bold type]wait[roman type] for someone to rescue you.";
-	let M be a random unfriendly student in the location of the player;
-	if M is student, say "[BigNameDesc of M] puts [his of M] hands on [his of M] hips and smirks up at you.[line break][speech style of M]'You better pray your panties hold, [bitch]. If they snap before I leave, I'm going to blame you.'[roman type][line break]".
+	let M be a random unfriendly trainee in the location of the player;
+	if M is trainee, say "[BigNameDesc of M] puts [his of M] hands on [his of M] hips and smirks up at you.[line break][speech style of M]'You better pray your panties hold, [bitch]. If they snap before I leave, I'm going to blame you.'[roman type][line break]".
 
-Check going when the player is in School19:
-	let M be a random alive unfriendly student;
-	if M is student, now current-monster is M;
-	if number of alive unfriendly students > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0 and student-bully-wedgie is appropriate:
+Check going when the player is in Facility19:
+	let M be a random alive unfriendly trainee;
+	if M is trainee, now current-monster is M;
+	if number of alive unfriendly trainees > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0 and trainee-bully-wedgie is appropriate:
 		allocate 6 seconds;
-		now M is in School19;
+		now M is in Facility19;
 		say "[bold type]Suddenly, [NameDesc of M] [bold type]appears, blocking the way![roman type][line break]";
 		compute group bullying of M instead;
 		do nothing instead. [failsafe]
 
-student-bully-swirlie is a diaper punishment. The priority of student-bully-swirlie is 3.
-Definition: student-bully-swirlie is appropriate:
-	if current-monster is not student, decide no;
+trainee-bully-swirlie is a diaper punishment. The priority of trainee-bully-swirlie is 3.
+Definition: trainee-bully-swirlie is appropriate:
+	if current-monster is not trainee, decide no;
 	if locked-toilets is true, decide no;
 	if grossness fetish is 0, decide no;
 	if there is worn wet knickers or the location of the player is toilets, decide yes;
 	decide no.
-To compute punishment of (P - student-bully-swirlie):
-	repeat with M running through staff members in School10:
+To compute punishment of (P - trainee-bully-swirlie):
+	repeat with M running through staff members in Facility10:
 		compute room leaving of M;
-	if the location of the player is not toilets, drag to School10 by current-monster;
+	if the location of the player is not toilets, drag to Facility10 by current-monster;
 	let K be a random worn knickers;
-	say "[speech style of current-monster]'[if there is worn wet knickers][one of]Dumb baby! This is where you're supposed to go potty, not in your pants!'[or]Why are your [ShortDesc of K] wet? Don't you know you're supposed to piss in here?'[or]You're such a pathetic baby you couldn't make it to this toilet without wetting your [ShortDesc of K]!'[in random order][otherwise if the number of unfriendly students in the location of the player > 1]Let's play a fun little game, [bitch]. If you want us to treat you with respect... first you have to kiss the toilet like you love it.'[otherwise if diaper focus > 0]Oh yes, let's take a good look at big [boy of the player] potty, the one you probably can't even make it to in time!'[otherwise][one of]Trying to get a good look at the toilet? How about an even closer one!'[or]Seeing you here gives me an idea...'[in random order][end if][roman type][line break]";
+	say "[speech style of current-monster]'[if there is worn wet knickers][one of]Dumb baby! This is where you're supposed to go potty, not in your pants!'[or]Why are your [ShortDesc of K] wet? Don't you know you're supposed to piss in here?'[or]You're such a pathetic baby you couldn't make it to this toilet without wetting your [ShortDesc of K]!'[in random order][otherwise if the number of unfriendly trainees in the location of the player > 1]Let's play a fun little game, [bitch]. If you want us to treat you with respect... first you have to kiss the toilet like you love it.'[otherwise if diaper focus > 0]Oh yes, let's take a good look at big [boy of the player] potty, the one you probably can't even make it to in time!'[otherwise][one of]Trying to get a good look at the toilet? How about an even closer one!'[or]Seeing you here gives me an idea...'[in random order][end if][roman type][line break]";
 	compute swirlie of current-monster.
 
-Check going when the player is in School10:
-	let M be a random alive unfriendly student;
-	if student-laci is alive and student-laci is unfriendly, now M is student-laci;
-	if M is student, now current-monster is M;
-	if student-bully-swirlie is appropriate and number of alive unfriendly students > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0:
+Check going when the player is in Facility10:
+	let M be a random alive unfriendly trainee;
+	if trainee-laci is alive and trainee-laci is unfriendly, now M is trainee-laci;
+	if M is trainee, now current-monster is M;
+	if trainee-bully-swirlie is appropriate and number of alive unfriendly trainees > (a random number between 2 and 3) and the number of friendly monsters in the location of the player is 0:
 		allocate 6 seconds;
-		now M is in School10;
+		now M is in Facility10;
 		say "[bold type]Suddenly, [NameDesc of M] [bold type]appears, blocking the way![roman type][line break]";
 		compute group bullying of M instead;
 		do nothing instead. [failsafe]
@@ -930,11 +934,11 @@ To compute swirlie of (M - a monster):
 			now FG is Figure of swirlie diaper clean;
 	otherwise if D is knickers and the known-urine-soak of D > 0:
 		now FG is Figure of swirlie knickers wet;
-	if M is student-laci, cutshow FG for M;
+	if M is trainee-laci, cutshow FG for M;
 	now temporaryYesNoBackground is FG;
 	compute crowd jeering of M;
-	let ST be a random unfriendly nasty student in the location of M;
-	if ST is student and ST is not M:
+	let ST be a random unfriendly nasty trainee in the location of M;
+	if ST is trainee and ST is not M:
 		if watersports fetish is 1:
 			say "[BigNameDesc of ST] takes the opportunity to squat above the toilet and urinate, pissing straight down onto your hair and the back of your neck. The toilet water quickly gets mixed with [his of ST] [urine], and still [NameDesc of M] holds your face in it.";
 			let N be the largeness of hair - (the semen coating of hair + the urine coating of hair + the water-drench of hair);
@@ -970,20 +974,20 @@ To compute swirlie of (M - a monster):
 		satisfy M;
 	now temporaryYesNoBackground is figure of small image.
 
-student-bully is a diaper punishment. The priority of student-bully is 1.
-Definition: student-bully is appropriate:
-	if current-monster is student, decide yes;
+trainee-bully is a diaper punishment. The priority of trainee-bully is 1.
+Definition: trainee-bully is appropriate:
+	if current-monster is trainee, decide yes;
 	decide no.
-To compute punishment of (P - student-bully):
+To compute punishment of (P - trainee-bully):
 	compute default bullying of current-monster;
 	satisfy current-monster.
 
-To compute bully perception of (M - a student):
+To compute bully perception of (M - a trainee):
 	now current-monster is M; [failsafe]
 	anger M;
 	if the player is upright:
-		if the player is in School20 and student-bully-swimming-pool is appropriate:
-			compute punishment of student-bully-swimming-pool;
+		if the player is in Facility20 and trainee-bully-swimming-pool is appropriate:
+			compute punishment of trainee-bully-swimming-pool;
 		otherwise:
 			if the timesBullied of M is 0, say FirstTimeBullyDemandFlav of M;
 			otherwise say RepeatBullyDemandFlav of M;
@@ -1004,19 +1008,19 @@ To compute bully perception of (M - a student):
 		otherwise:
 			say BullyCombatFlav of M.
 
-To say FirstTimeBullyDemandFlav of (M - a student):
+To say FirstTimeBullyDemandFlav of (M - a trainee):
 	say "[speech style of M]'[one of]Oh it's you. I'm so fucking angry with you. You know what, I think I want you on your knees, [bitch], to get what's coming to you.'[or]I've been looking for you, [bitch]. It's time for revenge. Get on your knees.'[or]I'm going to show you why it was a bad idea to make an enemy of me. Get on your knees.'[in random order][roman type][line break]".
 
-To say FirstTimeBullyFlav of (M - a student):
+To say FirstTimeBullyFlav of (M - a trainee):
 	say "[speech style of M]'[one of]Oh good, you're on your knees already. That makes it easy for me to give you what you've had coming for a while now.'[or]Oh good, on your knees, begging for forgiveness without me even having to ask. That's a good step in the right direction. This is the next.'[or]Well, well, well, look who's come crawling along, looking for forgiveness. Let me see, how should I thank you properly?'[in random order][roman type][line break]".
 
-To say RepeatBullyDemandFlav of (M - a student):
+To say RepeatBullyDemandFlav of (M - a trainee):
 	say "[speech style of M]'[one of]Hmph, you're still around? I'll teach you to show your face around here again. Knees. Now.'[or]I'm still mad with you. Clearly you still haven't learned how to win friends and influence people. Get on your knees.'[or]Show me how much you want to earn my friendship back, [NameBimbo]. Beg for my forgiveness.'[in random order][roman type][line break]".
 
-To say RepeatBullyFlav of (M - a student):
+To say RepeatBullyFlav of (M - a trainee):
 	say "[speech style of M]'[one of]Well since you're already on your knees, I guess you know I haven't forgiven you yet.'[or]I'm still mad with you.'[or][NameBimbo] the traitor. Seeking forgiveness, hmm?'[in random order][roman type][line break]".
 
-To say BullyCombatFlav of (M - a student):
+To say BullyCombatFlav of (M - a trainee):
 	say "[speech style of M]'[one of]I guess you really want to fight.'[or]Oops, looks like you pissed me off.'[or]Now I'm mad. Come on then.'[at random][roman type][line break]".
 
 a bully-action is a kind of object.
@@ -1024,7 +1028,7 @@ Definition: a bully-action is eligible: decide yes.
 To execute (A - a bully-action):
 	do nothing.
 
-To compute default bullying of (M - a student):
+To compute default bullying of (M - a trainee):
 	now current-monster is M;
 	let A be a random eligible bully-action;
 	if A is nothing or there is a staff member in the location of M:
@@ -1117,23 +1121,23 @@ To execute (A - bully-donate):
 
 bully-gloryhole is a bully-action.
 Definition: bully-gloryhole is eligible:
-	if the rank of the player >= 3 and gloryhole is in School19 and face is not actually occupied, decide yes;
+	if the rank of the player >= 3 and gloryhole is in Facility19 and face is not actually occupied, decide yes;
 	decide no.
 To execute (A - bully-gloryhole):
-	compute gloryhole lesson of current-monster.
+	compute gloryhole training session of current-monster.
 
-bully-schoolgirl is a bully-action.
-Definition: bully-schoolgirl is eligible:
-	if there is a worn schoolgirl outfit:
-		if diaper quest is 0 and minimalist schoolgirl outfit is off-stage, decide yes;
-		if diaper quest is 1 and gingham schoolgirl outfit is off-stage, decide yes;
+bully-alchemist is a bully-action.
+Definition: bully-alchemist is eligible:
+	if there is a worn alchemist outfit:
+		if diaper quest is 0 and minimalist alchemist outfit is off-stage, decide yes;
+		if diaper quest is 1 and gingham alchemist outfit is off-stage, decide yes;
 	decide no.
-To execute (A - bully-schoolgirl):
-	let C be a random worn schoolgirl outfit;
+To execute (A - bully-alchemist):
+	let C be a random worn alchemist outfit;
 	say "[BigNameDesc of current-monster] scoffs.[line break][speech style of current-monster]'You think that outfit is appropriate for a [boy of the player] like you? I don't think so.'[roman type][line break][big he of current-monster] rips off your [ShortDesc of C]!";
 	destroy C;
-	if diaper quest is 0, now C is minimalist schoolgirl outfit;
-	otherwise now C is gingham schoolgirl outfit;
+	if diaper quest is 0, now C is minimalist alchemist outfit;
+	otherwise now C is gingham alchemist outfit;
 	say "[speech style of current-monster]'You should wear something like this!'[roman type][line break][big he of current-monster] forces you to wear a [MediumDesc of C]!";
 	summon C uncursed;
 	say "And [he of current-monster][']s not finished with you yet! [big he of current-monster] takes the collar of [NameDesc of C] and coats the inside with a tube of glue. Now it's stuck to you - you won't be able to remove it until you can peel away the glued collar!";
@@ -1174,7 +1178,7 @@ To execute (A - bully-sharpie):
 	let C be a random worn actually breast covering fully covering clothing;
 	say "[BigNameDesc of current-monster] takes out a permanent marker, [if C is clothing]pulls up your [ShortDesc of C], [end if]and writes something on your [if there is worn actually breast covering clothing]cleavage[otherwise]chest[end if]!";
 	summon marker chest tattoo;
-	if weight gain fetish is 1 and current-monster is nasty student:
+	if weight gain fetish is 1 and current-monster is nasty trainee:
 		now the tattoo-title of marker chest tattoo is "DISGUSTING FAT UGLY PIG";
 		now the tattoo-outrage of marker chest tattoo is 14;
 	otherwise:
@@ -1184,16 +1188,16 @@ To execute (A - bully-sharpie):
 	try examining marker chest tattoo;
 	say "[speech style of current-monster]'There you go, now you look like the trashy [if diaper quest is 0]whore[otherwise]submissive[end if] you're destined to be!'[roman type][line break]".
 
-To say angry punishment insult of (M - a student):
+To say angry punishment insult of (M - a trainee):
 	say "[speech style of M]'Your outfit is fucking ugly.'[roman type][line break]".
 
-To say angry punishment accessory confiscation of (M - a student):
+To say angry punishment accessory confiscation of (M - a trainee):
 	say "[speech style of M]'[one of]Give me your lunch money, [bitch][or]Haha, YOINK[cycling]!'[roman type][line break]".
 
-To say angry punishment clothing destruction of (M - a student) on (C - a clothing):
+To say angry punishment clothing destruction of (M - a trainee) on (C - a clothing):
 	say "[speech style of M]'Trust me, you're going to look way hotter like this!'[roman type][line break]".
 
-To compute food hall bullying of (M - a student):
+To compute food hall bullying of (M - a trainee):
 	say "[speech style of M]'[one of]I'm thirsty, [bitch], which means you're going to get some soda for me[or]Come over here, [bitch]. You'll be my drink dispenser today[or]I'm thirsty. You know what to do, [bitch][then at random]!'[roman type][line break][BigNameDesc of M] drags you over to the [drink-machine] by your [MediumDesc of hair] and places [his of M] paper cup under the nozzle. [big he of M] tugs sharply on your [ShortDesc of hair] and you wince with pain.";
 	compute sybian sitting;
 	compute crowd jeering of M;
@@ -1208,7 +1212,7 @@ Definition: a prank-action is eligible: decide yes.
 To execute (A - a prank-action):
 	say "BUG - chosen prank action has no execution function.".
 
-To compute default prank of (M - a student):
+To compute default prank of (M - a trainee):
 	now current-monster is M;
 	let A be a random eligible prank-action;
 	if A is nothing or there is an undefeated staff member in the location of M:
@@ -1272,7 +1276,7 @@ To execute (P - prank-photo):
 	let A be the appearance of the player;
 	say "Suddenly, [current-monster] puts [his of current-monster] arm over your shoulder.[line break][speech style of current-monster]'Say cheese!'[roman type][line break][BigNameDesc of current-monster] has taken a quick photograph of you both with [his of current-monster] smartphone.[line break][if the player is modest][variable custom style]What?! No, not while I look like this![line break][end if][speech style of current-monster]'I just couldn't resist taking a selfie with you when you look so [if diaper quest is 1]cute[otherwise if A < 10]cute and slutty[otherwise]utterly whorish[end if] like this!'[roman type][line break]";
 	if infamy fetish > 0, say "Before you can object, [NameDesc of current-monster] has uploaded the photo of you both somewhere.[line break][variable custom style]Wait, was that to the REAL Internet? How many people will see it?![line break][speech style of current-monster]'I bet this one gets lots of upvotes!'[roman type][line break][BigNameDesc of current-monster] giggles happily.";
-	let T be "in a selfie with your fellow student [student-name of current-monster]";
+	let T be "in a selfie with your fellow trainee [trainee-name of current-monster]";
 	if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
 	if infamy fetish > 0, compute digital reputation damage T strength (A) quality (a random number between 1 and 2).
 
@@ -1294,6 +1298,11 @@ To execute (A - prank-spank):
 		summon spank tattoo;
 		say "Your skin stings with pain as a 'Spank Me' tattoo is suddenly burned onto your butt!".
 
+prank-dust is a prank-action.
+To execute (A - prank-dust):
+	say "[speech style of current-monster]'Glitter attack!'[roman type][line break][BigNameDesc of current-monster] suddenly throws a handful of glitter at you. ";
+	compute magic dust.
+
 prank-grope is a prank-action.
 Definition: prank-grope is eligible:
 	if the largeness of breasts > 2, decide yes;
@@ -1313,12 +1322,12 @@ To execute (A - prank-skirt):
 	let S be a random worn displacable crotch-in-place skirt;
 	say "[speech style of current-monster]'FLIP SURPRISE!!!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak behind you and flip up your [ShortDesc of S]. ";
 	displace S;
-	repeat with M running through students in the location of the player:
+	repeat with M running through trainees in the location of the player:
 		if M is not current-monster:
 			if M is uninterested or M is friendly:
 				check guaranteed perception of M;
 	FearUp 10;
-	say "[BigNameDesc of current-monster]'Oh my god, look, everybody's looking at you!'[roman type][line break][big he of current-monster] points behind you[if the number of students in the location of the player is 1], but when you look that way, there's nobody there[end if]. [big he of current-monster] was just distracting you!";
+	say "[BigNameDesc of current-monster]'Oh my god, look, everybody's looking at you!'[roman type][line break][big he of current-monster] points behind you[if the number of trainees in the location of the player is 1], but when you look that way, there's nobody there[end if]. [big he of current-monster] was just distracting you!";
 	if prank-wedgie is eligible:
 		execute prank-wedgie;
 	otherwise:
@@ -1332,12 +1341,12 @@ To execute (A - prank-pants):
 	let S be a random worn displacable crotch-in-place trousers;
 	say "[speech style of current-monster]'SURPRISE, NERD!!!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak behind you and yank down your [ShortDesc of S]. ";
 	displace S;
-	repeat with M running through students in the location of the player:
+	repeat with M running through trainees in the location of the player:
 		if M is not current-monster:
 			if M is uninterested or M is friendly:
 				check guaranteed perception of M;
 	FearUp 10;
-	say "[BigNameDesc of current-monster]'Oh my god, look, everybody's looking at you!'[roman type][line break][big he of current-monster] points behind you[if the number of students in the location of the player is 1], but when you look that way, there's nobody there[end if]. [big he of current-monster] was just distracting you!";
+	say "[BigNameDesc of current-monster]'Oh my god, look, everybody's looking at you!'[roman type][line break][big he of current-monster] points behind you[if the number of trainees in the location of the player is 1], but when you look that way, there's nobody there[end if]. [big he of current-monster] was just distracting you!";
 	update appearance level;
 	if prank-photo is eligible:
 		execute prank-photo;
@@ -1365,18 +1374,18 @@ To execute (A - prank-tickle):
 	check sudden spit and expulsion with reason T.
 
 
-To check sneaky bullying of (M - a student):
+To check sneaky bullying of (M - a trainee):
 	let SN be the number of undefeated friendly staff members in the location of the player;
 	let S be a random undefeated interested friendly staff member in the location of the player;
 	if S is nothing, now S is a random undefeated friendly staff member in the location of the player;
 	if a random number between 1 and (SN * 5) is 1:
 		let R be a random number between 1 and 5;
 		if R is 1:
-			say "[BigNameDesc of M] finds a moment when [if SN > 1]the teachers aren't[otherwise][NameDesc of S] isn't[end if] looking to punch you in the arm!";
+			say "[BigNameDesc of M] finds a moment when [if SN > 1]the tutors aren't[otherwise][NameDesc of S] isn't[end if] looking to punch you in the arm!";
 			compute M striking arms;
 			check sneaky bullying caught of M by S;
 		otherwise if R is 2:
-			say "[BigNameDesc of M] finds a moment when [if SN > 1]the teachers aren't[otherwise][NameDesc of S] isn't[end if] looking to kick you in the shin!";
+			say "[BigNameDesc of M] finds a moment when [if SN > 1]the tutors aren't[otherwise][NameDesc of S] isn't[end if] looking to kick you in the shin!";
 			compute M striking thighs;
 		otherwise if the dedication of M >= 2 and there is an undefended fuckhole:
 			let F be a random undefended fuckhole;
@@ -1392,67 +1401,67 @@ To check sneaky bullying of (M - a student):
 
 To check sneaky bullying caught of (M - a monster) by (S - a monster):
 	if the player is getting very lucky:
-		say "[BigNameDesc of S] gasps.[line break][speech style of S]'[student-name of M], I saw that! It's detention for you!'[roman type][paragraph break][speech style of M]'No, wait, I'm sorry-!'[roman type][line break]But no matter what [he of M] says it doesn't stop [NameDesc of S] from grabbing [him of M] by the ear and marching [him of M] from the room.";
+		say "[BigNameDesc of S] gasps.[line break][speech style of S]'[trainee-name of M], I saw that! It's reconditioning for you!'[roman type][paragraph break][speech style of M]'No, wait, I'm sorry-!'[roman type][line break]But no matter what [he of M] says it doesn't stop [NameDesc of S] from grabbing [him of M] by the ear and marching [him of M] from the room.";
 		bore S;
 		bore M;
 		regionally place S;
 		regionally place M.
 
 
-Part - Student Interactions
+Part - Trainee Interactions
 
-student-interaction-time is initially 4. [the closer this gets to 0, the higher the chance of there being an interaction]
+trainee-interaction-time is initially 4. [the closer this gets to 0, the higher the chance of there being an interaction]
 
-A student-interaction is a kind of object.
-A student-interaction can be one-off or repeatable.
+A trainee-interaction is a kind of object.
+A trainee-interaction can be one-off or repeatable.
 
-recent-student-interactions is a list of student-interactions that varies.
+recent-trainee-interactions is a list of trainee-interactions that varies.
 
-Definition: a student-interaction is student-eligible: decide yes. [Usually restricted to one student or one type of student.]
-Definition: a student-interaction is appropriate: decide yes. [Fetish settings]
-Definition: a student-interaction is eligible: decide yes. [Situational requirements]
+Definition: a trainee-interaction is trainee-eligible: decide yes. [Usually restricted to one trainee or one type of trainee.]
+Definition: a trainee-interaction is appropriate: decide yes. [Fetish settings]
+Definition: a trainee-interaction is eligible: decide yes. [Situational requirements]
 
-Definition: a student-interaction is selectable:
-	if it is listed in recent-student-interactions, decide no;
-	if it is appropriate and it is student-eligible and it is eligible, decide yes;
+Definition: a trainee-interaction is selectable:
+	if it is listed in recent-trainee-interactions, decide no;
+	if it is appropriate and it is trainee-eligible and it is eligible, decide yes;
 	decide no.
 
-To resolve (SI - a student-interaction):
+To resolve (SI - a trainee-interaction):
 	do nothing.
 
-To compute unique interaction of (M - a student):
+To compute unique interaction of (M - a trainee):
 	unless the player is in a predicament room:
 		let prank-happened be false;
-		if student-interaction-time > 0:
-			if a random number between 1 and student-interaction-time is 1:
-				let SI be a random selectable student-interaction;
-				if SI is student-interaction:
-					add SI to recent-student-interactions, if absent;
-					while the number of entries in recent-student-interactions > 2:
-						let C be entry 1 in recent-student-interactions;
-						remove C from recent-student-interactions;
+		if trainee-interaction-time > 0:
+			if a random number between 1 and trainee-interaction-time is 1:
+				let SI be a random selectable trainee-interaction;
+				if SI is trainee-interaction:
+					add SI to recent-trainee-interactions, if absent;
+					while the number of entries in recent-trainee-interactions > 2:
+						let C be entry 1 in recent-trainee-interactions;
+						remove C from recent-trainee-interactions;
 					resolve SI;
-					now student-interaction-time is a random number between 30 and 60;
+					now trainee-interaction-time is a random number between 30 and 60;
 					now prank-happened is true;
 		if prank-happened is false:
-			if student-interaction-time > 1, decrease student-interaction-time by 1;
-			if M is a ditzy student:
+			if trainee-interaction-time > 1, decrease trainee-interaction-time by 1;
+			if M is a ditzy trainee:
 				let F be the aggro limit of M - the favour of M; [gets larger the more she is angry with the player]
 				let R be a random number between 1 and 20;
-				if debuginfo > 0, say "[input-style][MediumDesc of M] prank check: [student-name of M] anger ([F]) | ([R].5) d20[roman type][line break]";
+				if debuginfo > 0, say "[input-style][MediumDesc of M] prank check: [trainee-name of M] anger ([F]) | ([R].5) d20[roman type][line break]";
 				if F > R:
 					compute default prank of M.
 
 
-student-interaction-genitals-inspection is a student-interaction. student-interaction-genitals-inspection is repeatable.
+trainee-interaction-genitals-inspection is a trainee-interaction. trainee-interaction-genitals-inspection is repeatable.
 
-Definition: student-interaction-genitals-inspection is student-eligible:
-	if current-monster is tryhard student and the current-rank of current-monster > the rank of the player, decide yes;
+Definition: trainee-interaction-genitals-inspection is trainee-eligible:
+	if current-monster is tryhard trainee and the current-rank of current-monster > the rank of the player, decide yes;
 	decide no.
-Definition: student-interaction-genitals-inspection is appropriate:
+Definition: trainee-interaction-genitals-inspection is appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
-Definition: student-interaction-genitals-inspection is eligible:
+Definition: trainee-interaction-genitals-inspection is eligible:
 	if there is pussy covering actually unavoidable clothing, decide no;
 	if the player is possessing a penis:
 		if penis is not exposed, decide yes;
@@ -1460,24 +1469,24 @@ Definition: student-interaction-genitals-inspection is eligible:
 		if vagina is not exposed, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-genitals-inspection):
+To resolve (SI - trainee-interaction-genitals-inspection):
 	let M be current-monster;
-	say "[BigNameDesc of M] snaps [his of M] finger in front of your face, and then points down to your crotch.[line break][speech style of M]'Genitals inspection. Teachers have given me permission to inspect the genitals of all lower ranked students. Come on, show me what you've got.'[roman type][line break]Do you get your [genitals] out for [NameDesc of M] to inspect?";
+	say "[BigNameDesc of M] snaps [his of M] finger in front of your face, and then points down to your crotch.[line break][speech style of M]'Genitals inspection. Tutors have given me permission to inspect the genitals of all lower ranked trainees. Come on, show me what you've got.'[roman type][line break]Do you get your [genitals] out for [NameDesc of M] to inspect?";
 	if the player is bimbo consenting:
-		say "You obediently expose your [genitals] to [NameDesc of M]. [big he of M] gives it a little pinch as [he of M] pulls [his of M] face close to inspect it. [if the number of students in the location of the player > 2]The other students snicker. [otherwise if the number of interested students in the location of the player is 2]The other student snickers. [end if][strongHumiliateReflect][line break][speech style of M]'Everything seems to be in order here.'[roman type][line break][BigNameDesc of M] nods, and allows you to put your [genitals] away again.[if the player is not shameless][line break][variable custom style]That was really humiliating...[roman type][line break][end if]";
+		say "You obediently expose your [genitals] to [NameDesc of M]. [big he of M] gives it a little pinch as [he of M] pulls [his of M] face close to inspect it. [if the number of trainees in the location of the player > 2]The other trainees snicker. [otherwise if the number of interested trainees in the location of the player is 2]The other trainee snickers. [end if][strongHumiliateReflect][line break][speech style of M]'Everything seems to be in order here.'[roman type][line break][BigNameDesc of M] nods, and allows you to put your [genitals] away again.[if the player is not shameless][line break][variable custom style]That was really humiliating...[roman type][line break][end if]";
 	otherwise:
 		say "[if the player is able to speak][variable custom style]'No way.'[roman type][line break][end if]You shake your head with refusal.[line break][speech style of M]'Ugh! You need a lesson in respecting your superiors.'[roman type][line break][BigNameDesc of M] looks outraged, in a prissy, haughty sort of way.";
 		FavourDown M with consequences.
 
-student-interaction-diaper-inspection is a student-interaction. student-interaction-diaper-inspection is repeatable.
+trainee-interaction-diaper-inspection is a trainee-interaction. trainee-interaction-diaper-inspection is repeatable.
 
-Definition: student-interaction-diaper-inspection is student-eligible:
-	if current-monster is tryhard student and the current-rank of current-monster > the rank of the player, decide yes;
+Definition: trainee-interaction-diaper-inspection is trainee-eligible:
+	if current-monster is tryhard trainee and the current-rank of current-monster > the rank of the player, decide yes;
 	decide no.
-Definition: student-interaction-diaper-inspection is appropriate:
+Definition: trainee-interaction-diaper-inspection is appropriate:
 	if diaper quest is 1, decide yes;
 	decide no.
-Definition: student-interaction-diaper-inspection is eligible:
+Definition: trainee-interaction-diaper-inspection is eligible:
 	let K be a random worn knickers;
 	if K is not knickers, decide no;
 	if K is currently visible, decide no;
@@ -1485,40 +1494,40 @@ Definition: student-interaction-diaper-inspection is eligible:
 		if C is not knickers, decide no;
 	decide no.
 
-Definition: a student is eager to change diapers: decide no.
+Definition: a trainee is eager to change diapers: decide no.
 
-To resolve (SI - student-interaction-diaper-inspection):
+To resolve (SI - trainee-interaction-diaper-inspection):
 	let M be current-monster;
 	let K be a random worn knickers;
-	say "[BigNameDesc of M] snaps [his of M] finger in front of your face, and then points down to your crotch.[line break][speech style of M]'Underwear inspection. Teachers have given me permission to inspect the underwear of all lower ranked students. Come on, show me what you've got on.'[roman type][line break]Do you expose your [K] for [NameDesc of M] to inspect?";
+	say "[BigNameDesc of M] snaps [his of M] finger in front of your face, and then points down to your crotch.[line break][speech style of M]'Underwear inspection. Tutors have given me permission to inspect the underwear of all lower ranked trainees. Come on, show me what you've got on.'[roman type][line break]Do you expose your [K] for [NameDesc of M] to inspect?";
 	if the player is bimbo consenting:
 		say "You obediently expose your [MediumDesc of K] to [NameDesc of M]. ";
 		if K is diaper:
 			compute diaper check of K;
 		otherwise if K is messed or K is wet:
-			say "[BigNameDesc of M] recoils.[line break][speech style of M]'You dirty, filthy [boy of M]! This is EXACTLY why the teachers want us to wear diapers! You better believe that I'm reporting you to the headmistress.'[roman type][line break]";
+			say "[BigNameDesc of M] recoils.[line break][speech style of M]'You dirty, filthy [boy of M]! This is EXACTLY why the tutors want us to wear diapers! You better believe that I'm reporting you to the mistress.'[roman type][line break]";
 		otherwise:
-			say "[big he of M] gives it a little pinch as [he of M] pulls [his of M] face close to inspect it. [if the number of students in the location of the player > 2]The other students snicker. [otherwise if the number of interested students in the location of the player is 2]The other student snickers. [end if][strongHumiliateReflect][line break][speech style of M]'Everything seems to be in order here.'[roman type][line break][BigNameDesc of M] nods, and allows you to put your undies away again.[if the player is not shameless][line break][variable custom style]That was really humiliating...[roman type][line break][end if]";
+			say "[big he of M] gives it a little pinch as [he of M] pulls [his of M] face close to inspect it. [if the number of trainees in the location of the player > 2]The other trainees snicker. [otherwise if the number of interested trainees in the location of the player is 2]The other trainee snickers. [end if][strongHumiliateReflect][line break][speech style of M]'Everything seems to be in order here.'[roman type][line break][BigNameDesc of M] nods, and allows you to put your undies away again.[if the player is not shameless][line break][variable custom style]That was really humiliating...[roman type][line break][end if]";
 	otherwise:
 		say "[if the player is able to speak][variable custom style]'No way.'[roman type][line break][end if]You shake your head with refusal.[line break][speech style of M]'Ugh! You need a lesson in respecting your superiors.'[roman type][line break][BigNameDesc of M] looks outraged, in a prissy, haughty sort of way.";
 		FavourDown M with consequences.
 
 
-student-interaction-kiss is a student-interaction. student-interaction-kiss is repeatable.
+trainee-interaction-kiss is a trainee-interaction. trainee-interaction-kiss is repeatable.
 
-Definition: student-interaction-kiss is student-eligible:
-	if current-monster is ditzy student and the current-rank of current-monster >= 2, decide yes;
+Definition: trainee-interaction-kiss is trainee-eligible:
+	if current-monster is ditzy trainee and the current-rank of current-monster >= 2, decide yes;
 	decide no.
-Definition: student-interaction-kiss is eligible:
+Definition: trainee-interaction-kiss is eligible:
 	if face is actually occupied or the total volume of face > 0, decide no;
 	if the lips of face > 0 or diaper quest is 1, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-kiss):
+To resolve (SI - trainee-interaction-kiss):
 	let M be current-monster;
 	say "[BigNameDesc of M] stares at your face.[line break][speech style of M]'I love your lips. Could I... Please...'[roman type][line break][big he of M] puts one hand on your chin, and, closing [his of M] eyes, moves in to kiss you. Do you let the kiss happen?";
 	if the player is bimbo consenting:
-		say "You close your eyes and accept [NameDesc of M][']s lips on yours.[speech style of M]'Mmmmm...'[roman type][line break][big he of M] gives a gentle moan of pleasure as [he of M] licks your [LipDesc] with [his of M] tongue.[line break][if the number of students in the location of the player > 2]The other students giggle. [otherwise if the number of interested students in the location of the player is 2]The other student whistles at you. [end if][moderateHumiliateReflect]";
+		say "You close your eyes and accept [NameDesc of M][']s lips on yours.[speech style of M]'Mmmmm...'[roman type][line break][big he of M] gives a gentle moan of pleasure as [he of M] licks your [LipDesc] with [his of M] tongue.[line break][if the number of trainees in the location of the player > 2]The other trainees giggle. [otherwise if the number of interested trainees in the location of the player is 2]The other trainee whistles at you. [end if][moderateHumiliateReflect]";
 		passively stimulate face from M;
 		if a random number between 4 and 6 <= the current-rank of M:
 			let LQ be semen;
@@ -1555,19 +1564,19 @@ To resolve (SI - student-interaction-kiss):
 		FavourDown M with consequences.
 
 
-student-interaction-sweat is a student-interaction.
+trainee-interaction-sweat is a trainee-interaction.
 
-Definition: student-interaction-sweat is student-eligible:
-	if current-monster is nasty student, decide yes;
+Definition: trainee-interaction-sweat is trainee-eligible:
+	if current-monster is nasty trainee, decide yes;
 	decide no.
-Definition: student-interaction-sweat is appropriate:
+Definition: trainee-interaction-sweat is appropriate:
 	if grossness fetish > 0, decide yes;
 	decide no.
-Definition: student-interaction-sweat is eligible:
-	if the player is in School19 or the player is in School20 or the player is in School23, decide yes;
+Definition: trainee-interaction-sweat is eligible:
+	if the player is in Facility19 or the player is in Facility20 or the player is in Facility23, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-sweat):
+To resolve (SI - trainee-interaction-sweat):
 	let M be current-monster;
 	say "[BigNameDesc of M] is breathing heavily, and stretching [his of M] muscles. Apparently, [he of M] has just finished a workout.[line break][speech style of M]'You. Wimp. Come lick my armpits clean.'[roman type][line break]Obey [his of M] gross demand?";
 	if the player is bimbo consenting:
@@ -1580,16 +1589,16 @@ To resolve (SI - student-interaction-sweat):
 
 
 
-student-interaction-kick is a student-interaction. student-interaction-kick is repeatable.
+trainee-interaction-kick is a trainee-interaction. trainee-interaction-kick is repeatable.
 
-Definition: student-interaction-kick is student-eligible:
-	if current-monster is nasty student, decide yes;
+Definition: trainee-interaction-kick is trainee-eligible:
+	if current-monster is nasty trainee, decide yes;
 	decide no.
-Definition: student-interaction-kick is eligible:
+Definition: trainee-interaction-kick is eligible:
 	if the player is prone and the number of staff members in the location of the player is 0, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-kick):
+To resolve (SI - trainee-interaction-kick):
 	let M be current-monster;
 	say "[BigNameDesc of M] suddenly steps up behind you and kicks you hard on your [AssDesc]!";
 	PainUp 15;
@@ -1597,16 +1606,16 @@ To resolve (SI - student-interaction-kick):
 
 
 
-student-interaction-mass-collectible is a student-interaction. student-interaction-mass-collectible is repeatable.
+trainee-interaction-mass-collectible is a trainee-interaction. trainee-interaction-mass-collectible is repeatable.
 
-Definition: student-interaction-mass-collectible is student-eligible:
-	if current-monster is a ditzy student, decide yes;
+Definition: trainee-interaction-mass-collectible is trainee-eligible:
+	if current-monster is a ditzy trainee, decide yes;
 	decide no.
-Definition: student-interaction-mass-collectible is eligible:
+Definition: trainee-interaction-mass-collectible is eligible:
 	if there is an off-stage mass collectible, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-mass-collectible):
+To resolve (SI - trainee-interaction-mass-collectible):
 	let M be current-monster;
 	let MC be a random off-stage mass collectible;
 	say "[BigNameDesc of M] offers you a [MC].[line break][speech style of M]'Would you like this? I'm not really sure what I'm supposed to do with it. I feel like someone smarter should have it.'[roman type][line break]";
@@ -1615,16 +1624,16 @@ To resolve (SI - student-interaction-mass-collectible):
 	say "[variable custom style][one of]Score[or]Nice[at random]![roman type][line break]".
 
 
-student-interaction-mechanic-id-card is a student-interaction.
+trainee-interaction-mechanic-id-card is a trainee-interaction.
 
-Definition: student-interaction-mechanic-id-card is student-eligible:
+Definition: trainee-interaction-mechanic-id-card is trainee-eligible:
 	if the current-rank of current-monster >= 6 and the rank of the player >= 4, decide yes;
 	decide no.
-Definition: student-interaction-mechanic-id-card is eligible:
+Definition: trainee-interaction-mechanic-id-card is eligible:
 	if mechanic-id-card is off-stage, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-mechanic-id-card):
+To resolve (SI - trainee-interaction-mechanic-id-card):
 	let M be current-monster;
 	say "[BigNameDesc of M] offers you a [mechanic-id-card].[line break][speech style of M]'I went snooping around the staff room earlier, and found this. Since you're always sneaking off to the hotel, I thought you might find a use for it...'[roman type][line break]";
 	now mechanic-id-card is in the location of the player;
@@ -1632,17 +1641,17 @@ To resolve (SI - student-interaction-mechanic-id-card):
 	say "[variable custom style]Holy crap... This might turn out to be REALLY useful![roman type][line break]".
 
 
-student-interaction-plug-swap is a student-interaction.
+trainee-interaction-plug-swap is a trainee-interaction.
 
-Definition: student-interaction-plug-swap is student-eligible:
+Definition: trainee-interaction-plug-swap is trainee-eligible:
 	let C be a random plug penetrating asshole;
 	if C is not plug or C is not actually unavoidable, decide no;
-	if current-monster is not innocent student and current-monster is not nasty student and the current-rank of current-monster >= 3:
+	if current-monster is not innocent trainee and current-monster is not nasty trainee and the current-rank of current-monster >= 3:
 		let P be the next-plug-up of C;
 		if P is an off-stage plug, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-plug-swap):
+To resolve (SI - trainee-interaction-plug-swap):
 	let M be current-monster;
 	say "[BigNameDesc of M] gives you a friendly wink.[line break][speech style of M]'My homework is to swap butt plugs with someone. Want to swap butt plugs with me?'[roman type][line break]";
 	if the player is consenting:
@@ -1662,13 +1671,13 @@ To resolve (SI - student-interaction-plug-swap):
 	otherwise:
 		say "[BigNameDesc of M] shrugs.[line break][speech style of M]'Fair enough.'[roman type][line break]".
 
-student-interaction-plug-drop is a student-interaction.
+trainee-interaction-plug-drop is a trainee-interaction.
 
-Definition: student-interaction-plug-drop is student-eligible:
-	if diaper quest is 0 and current-monster is innocent student and the player is in School15, decide yes;
+Definition: trainee-interaction-plug-drop is trainee-eligible:
+	if diaper quest is 0 and current-monster is innocent trainee and the player is in Facility15, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-plug-drop):
+To resolve (SI - trainee-interaction-plug-drop):
 	let M be current-monster;
 	let P be a random off-stage fetish appropriate basic plug;
 	if P is plug:
@@ -1676,21 +1685,21 @@ To resolve (SI - student-interaction-plug-drop):
 		now P is anal-sex-addiction-influencing;
 		now P is refreshment;
 		say "[BigNameDesc of M] grunts as [he of M] removes a [P] from [his of M] asshole![line break][speech style of M]'Too... much... lube!'[roman type][line break][big he of M] tosses [NameDesc of P] onto the ground. A moment later, [he of M] grunts as a loud dollop of lube bubbles out of [his of M] asshole and oozes down [his of M] thighs.[line break][speech style of M]'Definitely not worth it. Who would be crazy enough to need a permanently lubed butthole anyway?!'[roman type][line break]";
-		increase the donations of School15 by 1;
-		say "The magic runes around the ceiling and doorway pulse and vibrate brilliantly [if the donations of School15 is 1]once[otherwise][donations of School15] times[end if] before [if the donations of School15 < 5]returning to their previous slower rhythm[otherwise if the donations of School15 is 5]becoming grey and inactive[otherwise]returning to being grey and inactive[end if].".
+		increase the donations of Facility15 by 1;
+		say "The magic runes around the ceiling and doorway pulse and vibrate brilliantly [if the donations of Facility15 is 1]once[otherwise][donations of Facility15] times[end if] before [if the donations of Facility15 < 5]returning to their previous slower rhythm[otherwise if the donations of Facility15 is 5]becoming grey and inactive[otherwise]returning to being grey and inactive[end if].".
 
 
 
 
-student-interaction-kraken-bell is a student-interaction.
+trainee-interaction-kraken-bell is a trainee-interaction.
 
-Definition: student-interaction-kraken-bell is student-eligible:
-	if current-monster is student-calamity or current-monster is student-rachel, decide yes;
+Definition: trainee-interaction-kraken-bell is trainee-eligible:
+	if [current-monster is trainee-calamity or] current-monster is trainee-rachel, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-kraken-bell):
+To resolve (SI - trainee-interaction-kraken-bell):
 	let M be current-monster;
-	say "[BigNameDesc of M] taps you on the shoulder.[line break][speech style of M]'So, um, some of the other students felt like they needed to [']teach me a lesson['] by helping me [']go for a swim[']... Anyway I ended up finding this at the bottom of the swimming pool.'[roman type][line break][big he of M] holds up a very old looking handheld metal bell.[line break][speech style of M]'I was going to keep it, but it's actually creeping me out a bit. And then I was going to give it to a teacher, but I didn't want to find out that I wasn't supposed to have it, and get into trouble. So, um, I guess what I'm asking, is do you want it?'[roman type][line break]";
+	say "[BigNameDesc of M] taps you on the shoulder.[line break][speech style of M]'So, um, some of the other trainees felt like they needed to [']teach me a lesson['] by helping me [']go for a swim[']... Anyway I ended up finding this at the bottom of the swimming pool.'[roman type][line break][big he of M] holds up a very old looking handheld metal bell.[line break][speech style of M]'I was going to keep it, but it's actually creeping me out a bit. And then I was going to give it to a tutor, but I didn't want to find out that I wasn't supposed to have it, and get into trouble. So, um, I guess what I'm asking, is do you want it?'[roman type][line break]";
 	now temporaryYesNoBackground is the examine-image of kraken bell;
 	if the player is consenting:
 		say "[BigNameDesc of M] hands over [NameDesc of kraken bell].[line break][speech style of M]'Thanks. I feel like a weight has lifted already.'[roman type][line break]";
@@ -1700,17 +1709,17 @@ To resolve (SI - student-interaction-kraken-bell):
 		HappinessDown M by 1.
 
 
-student-interaction-belinda-scrunchie is a student-interaction. student-interaction-belinda-scrunchie is repeatable. student-interaction-belinda-scrunchie has a number called scrunchies-donated.
+trainee-interaction-belinda-scrunchie is a trainee-interaction. trainee-interaction-belinda-scrunchie is repeatable. trainee-interaction-belinda-scrunchie has a number called scrunchies-donated.
 
-Definition: student-interaction-belinda-scrunchie is student-eligible:
-	if current-monster is scrunchie-giving student and the scrunchies-donated of student-interaction-belinda-scrunchie < 2:
+Definition: trainee-interaction-belinda-scrunchie is trainee-eligible:
+	if current-monster is scrunchie-giving trainee and the scrunchies-donated of trainee-interaction-belinda-scrunchie < 2:
 		let C be a random off-stage pink scrunchie;
 		if C is a thing:
 			if the number of worn pink scrunchies is 1, decide yes;
 			if C is actually summonable, decide yes;
 	decide no.
 
-To resolve (SI - student-interaction-belinda-scrunchie):
+To resolve (SI - trainee-interaction-belinda-scrunchie):
 	let M be current-monster;
 	say "[BigNameDesc of M] takes a pink scrunchie off of [his of M] wrist.[line break][speech style of M]'You look so cringe! Here, please wear this. It'll make you so much less of a dork!'[roman type][line break]Do you wear the scrunchie?";
 	if the player is bimbo consenting:
@@ -1726,16 +1735,16 @@ To resolve (SI - student-interaction-belinda-scrunchie):
 		say BecomesBoredFlav of M;
 		bore M.
 
-[student-interaction-dominate-me is a student-interaction.
+[trainee-interaction-dominate-me is a trainee-interaction.
 
-Definition: student-interaction-dominate-me is student-eligible:
-	if current-monster is a nasty student and the current-rank of current-monster > 1, decide yes;
+Definition: trainee-interaction-dominate-me is trainee-eligible:
+	if current-monster is a nasty trainee and the current-rank of current-monster > 1, decide yes;
 	decide no.
-Definition: student-interaction-dominate-me is eligible:
+Definition: trainee-interaction-dominate-me is eligible:
 	if the player is feeling submissive, decide no;
 	decide yes.
 
-To resolve (SI - student-interaction-dominate-me):
+To resolve (SI - trainee-interaction-dominate-me):
 	let M be current-monster;
 	say "[BigNameDesc of M] storms up to you angrily.[line break][speech style of M]'You! You took my key, didn't you?'[roman type][line break]";]
 
@@ -1744,7 +1753,7 @@ To resolve (SI - student-interaction-dominate-me):
 
 Part - Damage
 
-To compute damage reaction of (M - a student):
+To compute damage reaction of (M - a trainee):
 	if M is friendly:
 		say "[big he of M] [if M is asleep]wakes up, [end if]screams, and turns to run away!";
 		now the scared of M is 100;
@@ -1756,87 +1765,87 @@ To compute damage reaction of (M - a student):
 		say "[big he of M] screams [if M is uninterested]in fury[otherwise]even louder[end if]!";
 	now the sleep of M is 0.
 
-Definition: a student is automatically banishable: decide yes. [Will this NPC automatically resolve their disappearance rather than giving the player options on what to do?]
-To say BanishFleeFlav of (M - a student):
-	say "[speech style of M]'This school sucks! I'm never coming back!'[roman type][line break][BigNameDesc of M] sprints for the exit!".
-To compute unique banishment of (M - a student):
+Definition: a trainee is automatically banishable: decide yes. [Will this NPC automatically resolve their disappearance rather than giving the player options on what to do?]
+To say BanishFleeFlav of (M - a trainee):
+	say "[speech style of M]'This place sucks! I'm never coming back!'[roman type][line break][BigNameDesc of M] sprints for the exit!".
+To compute unique banishment of (M - a trainee):
 	let N be a random staff member in the location of the player;
 	if N is monster and armband is held:
-		say "[BigNameDesc of N] growls with anger.[line break][speech style of N]'You've lost us [one of]a[or]another[stopping] student, [bitch]!'[roman type][line break][NameDesc of N] mutters some words under [his of N] breath. Suddenly your [armband] fizzles into thin air!";
+		say "[BigNameDesc of N] growls with anger.[line break][speech style of N]'You've lost us [one of]a[or]another[stopping] trainee, [bitch]!'[roman type][line break][NameDesc of N] mutters some words under [his of N] breath. Suddenly your [armband] fizzles into thin air!";
 		now armband is in Holding Pen.
 
 Part - Conversation
 
-Definition: a student is fluff-question-appropriate:
+Definition: a trainee is fluff-question-appropriate:
 	if the player is in a predicament room, decide no;
 	decide yes.
 
-To say FirstResponse of (M - a student):
+To say FirstResponse of (M - a trainee):
 	say "[speech style of M]'Hello.'[roman type][line break]".
 
-To say RepeatResponse of (M - a student):
+To say RepeatResponse of (M - a trainee):
 	say "[speech style of M]'Hello again.'[roman type][line break]".
 
-To say WhoQuestion of (M - a student):
+To say WhoQuestion of (M - a trainee):
 	say "[variable custom style]'What's your name?'[roman type][line break]".
 
-To say WhereQuestion of (M - a student):
+To say WhereQuestion of (M - a trainee):
 	say "[variable custom style]'[if the rank of the player <= 1]Where [one of]are we?'[or]am I?'[at random][otherwise]What's the best way to increase my rank?'[end if][roman type][line break]".
 
-To say EscapeQuestion of (M - a student):
-	say "[variable custom style]'What stuff is there to find deeper in the school?'[roman type][line break]".
+To say EscapeQuestion of (M - a trainee):
+	say "[variable custom style]'What stuff is there to find deeper in these Training Grounds?'[roman type][line break]".
 
-To say AdviceQuestion of (M - a student):
-	say "[variable custom style]'Any advice for an eager student?'[roman type][line break]".
+To say AdviceQuestion of (M - a trainee):
+	say "[variable custom style]'Any advice for an eager trainee?'[roman type][line break]".
 
-To say WhoAnswer of (M - a student):
-	say "[speech style of M]'My name is [student-name of M], at least until a teacher changes it!'[roman type][line break]".
+To say WhoAnswer of (M - a trainee):
+	say "[speech style of M]'My name is [trainee-name of M], at least until a tutor changes it!'[roman type][line break]".
 
-To say WhereAnswer of (M - a student):
-	say "[speech style of M]'[if the rank of the player <= 1]We're in [slut school].'[otherwise]The better you are at being a good girl, the higher rank you'll be able to reach.'[end if][roman type][line break]".
+To say WhereAnswer of (M - a trainee):
+	say "[speech style of M]'[if the rank of the player <= 1]We're in the [training halls].'[otherwise]The better you are at being a princess, the higher rank you'll be able to reach.'[end if][roman type][line break]".
 
-To say StoryAnswer of (M - a student):
-	say "[speech style of M]'I came to this school to learn to be a better [if diaper quest is 1]girl[otherwise]slut[end if]. What more do you need to know?'[roman type][line break]".
+To say StoryAnswer of (M - a trainee):
+	say "[speech style of M]'I came to this place to learn to be a better prince[unless lady fetish is 2]ss[end if]. What more do you need to know?'[roman type][line break]".
 
-To say EscapeAnswer of (M - a student):
+To say EscapeAnswer of (M - a trainee):
 	say "[speech style of M]'Nicer, cosier rooms, that's for sure. And maybe even some cool items.'[roman type][line break]".
 
-To say AdviceAnswer of (M - a student):
+To say AdviceAnswer of (M - a trainee):
 	say "[speech style of M]'You should try and pace yourself. Trying to jump in the deep end before you're ready probably won't go well.'[roman type][line break]".
 
-To compute teaching of (M - a student):
-	say "[speech style of M]'Err, that's what the teachers are here for...'[roman type][line break]".
+To compute teaching of (M - a trainee):
+	say "[speech style of M]'Err, that's what the instructors are here for...'[roman type][line break]".
 
-To say DismissalRequestVixen of (M - a student):
-	say "'[if the player is a nympho and diaper quest is 0]Look! Over there! Those students are having unauthorised sex[otherwise if the player is a nympho]Look! Over there! That student is going in [his of a random student] nappy[otherwise if the intelligence of the player < 6]Look, over there! A distraction[otherwise]Didn't you hear? There's a fight going on over there[end if]!'".
+To say DismissalRequestVixen of (M - a trainee):
+	say "'[if the player is a nympho and diaper quest is 0]Look! Over there! Those trainees are having unauthorised sex[otherwise if the player is a nympho]Look! Over there! That trainee is going in [his of a random trainee] nappy[otherwise if the intelligence of the player < 6]Look, over there! A distraction[otherwise]Didn't you hear? There's a fight going on over there[end if]!'".
 
-To say DismissalResponseVixen of (M - a student):
+To say DismissalResponseVixen of (M - a trainee):
 	say "[speech style of M]'[if M is interested]Haha, pull the other one.'[otherwise]OMG! I'll be right there!'[end if][roman type][line break]".
 
-To decide which number is the DismissalPowerToilet of (M - a student):
+To decide which number is the DismissalPowerToilet of (M - a trainee):
 	if the rank of the player <= 1, decide on 100;
 	decide on 2.
 
-To say DismissalResponseToilet of (M - a student):
-	say "[speech style of M]'[if M is interested]Nu-uh. If you're going to go, you're going to have to let me watch[otherwise if diaper quest is 0]Bo-oring. Fine[otherwise]Fine. But you should really think about using diapers, it'll make the teachers more happy with you[end if].'[roman type][line break]".
+To say DismissalResponseToilet of (M - a trainee):
+	say "[speech style of M]'[if M is interested]Nu-uh. If you're going to go, you're going to have to let me watch[otherwise if diaper quest is 0]Bo-oring. Fine[otherwise]Fine. But you should really think about using diapers, it'll make the staff more happy with you[end if].'[roman type][line break]".
 
-To say ToiletReactionFlav of (M - a student):
+To say ToiletReactionFlav of (M - a trainee):
 	if diaper quest is 0:
 		say "[BigNameDesc of M] touches [himself of M] as [he of M] watches.[line break][speech style of M]'[one of]I don't know why I find this so hot, but I do. What's wrong with me[or]Are you getting off on the fact that I'm watching you[or]Do you know how hot you look right now[in random order]?'[roman type][line break][moderateHumiliateReflect]";
-	otherwise if the diaper-duration of headmistress > 0:
-		say "[BigNameDesc of M] frowns.[line break][speech style of M]'In the future, I'll rat you out to a teacher, probably.'[roman type][line break]";
+	otherwise if the diaper-duration of mistress > 0:
+		say "[BigNameDesc of M] frowns.[line break][speech style of M]'In the future, I'll rat you out to a tutor, probably.'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] [one of]pouts[or]whines quietly[or]harrumphs[then at random].[line break][speech style of M]'[one of]How come you can make it so easily and I'm still struggling?'[or]I was sure you weren't going to make in time.'[or][big he of the player] made it. Drat.'[then at random][roman type][line break]";
 		HappinessDown M.
 
-To decide which number is the DismissalPowerBursting of (M - a student):
+To decide which number is the DismissalPowerBursting of (M - a trainee):
 	decide on 2.
 
-To say DismissalResponseBursting of (M - a student):
+To say DismissalResponseBursting of (M - a trainee):
 	if there is a worn diaper:
 		say "[speech style of M]'[if M is interested]Ooh, goody! I can't wait to watch your face as you wet your nappy in front of me[otherwise]Fair enough[end if].'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[if M is interested]Uh-oh, [NameBimbo][']s gonna wet [himself of the player]! Come and see[otherwise]Don't let the teachers catch you having an accident[end if]!'[roman type][line break]".
+		say "[speech style of M]'[if M is interested]Uh-oh, [NameBimbo][']s gonna wet [himself of the player]! Come and see[otherwise]Don't let the tutors catch you having an accident[end if]!'[roman type][line break]".
 
 
 most-recent-leaver is an object that varies.
@@ -1846,11 +1855,11 @@ recent-leavers is a list of people that varies.
 An all time based rule (this is the cycle leavers rule):
 	if most-recent-leaver is nothing and the remainder after dividing time-earnings by 739 < time-seconds and the number of entries in recent-leavers > 0, now most-recent-leaver is entry 1 in recent-leavers.
 
-To uniquely destroy (M - a student):
+To uniquely destroy (M - a trainee):
 	add M to recent-leavers, if absent;
 	now most-recent-leaver is M.
 
-[This is the object used for the team predicament where the student is bound behind the player]
+[This is the object used for the team predicament where the trainee is bound behind the player]
 
 quiz-partner is a clothing. quiz-partner is unique. quiz-partner has a person called the bound-target.
 quiz-partner is crotch-intact. [This flags that it covers the pussy and ass]
@@ -1859,7 +1868,7 @@ Definition: quiz-partner is removable: decide no.
 Definition: quiz-partner is fluid vulnerable: decide no.
 Definition: quiz-partner is live: decide yes.
 Definition: quiz-partner is nudism-enabling: decide yes.
-The printed name of quiz-partner is "[if bound-target of item described is student][student-name of (bound-target of item described)][otherwise]ERROR: no target for quiz-partner clothing item[end if]". The text-shortcut of quiz-partner is "qzp".
+The printed name of quiz-partner is "[if bound-target of item described is trainee][trainee-name of (bound-target of item described)][otherwise]ERROR: no target for quiz-partner clothing item[end if]". The text-shortcut of quiz-partner is "qzp".
 
 To decide which figure-name is clothing-image of (C - quiz-partner):
 	if diaper quest is 0 and the player is in Predicament01 and the questionFails of team-quiz-predicament < 2, decide on figure of quiz predicament room;
@@ -1867,7 +1876,7 @@ To decide which figure-name is clothing-image of (C - quiz-partner):
 
 To say ClothingDesc of (C - quiz-partner):
 	let ST be the bound-target of C;
-	if ST is a student:
+	if ST is a trainee:
 		if diaper quest is 0, say "[BigNameDesc of ST] has [his of ST] tongue piercing tightly attached to your [if the player is possessing a scrotum]testicle cuffs[otherwise if the player is possessing a vagina]clit piercing[end if]. This means that you can't stand up and [he of ST] has to follow you around wherever you go.";
 		otherwise say "[BigNameDesc of ST] has [his of ST] collar connected to your ankles with a short length of rope that runs through D-rings in your thigh bindings, which means [his of ST] face presses into the seat of your diaper with every crawling movement you make.".
 
@@ -1882,8 +1891,8 @@ To compute SelfExamineDesc of (C - quiz-partner):
 
 To say ShortDesc of (C - quiz-partner):
 	let ST be the bound-target of C;
-	if ST is a student, say "[student-name of ST]";
-	otherwise say "BUGGED STUDENT".
+	if ST is a trainee, say "[trainee-name of ST]";
+	otherwise say "BUGGED TRAINEE".
 
 To say NameDesc of (C - quiz-partner):
 	say ShortDesc of C.
@@ -1892,8 +1901,8 @@ To say BigNameDesc of (C - quiz-partner):
 
 To say MediumDesc of (C - quiz-partner):
 	let ST be the bound-target of C;
-	if ST is a student, say "student called [student-name of ST] bound [if diaper quest is 0]attached to your [asshole][otherwise]face-first into your diaper[end if]";
-	otherwise say "BUGGED STUDENT".
+	if ST is a trainee, say "trainee called [trainee-name of ST] bound [if diaper quest is 0]attached to your [asshole][otherwise]face-first into your diaper[end if]";
+	otherwise say "BUGGED TRAINEE".
 
 To compute squirt declarations into (C - quiz-partner):
 	let ST be the bound-target of C;
@@ -1915,7 +1924,7 @@ Check standing when quiz-partner is worn:
 
 To compute quiz partner messing:
 	let ST be the bound-target of quiz-partner;
-	if diaper messing < 7 or (rectum >= 30 and asshole is not actually occupied), say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if diaper messing >= 7]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [student-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding covering[end if] [his of ST] eyes, nose and mouth.";
+	if diaper messing < 7 or (rectum >= 30 and asshole is not actually occupied), say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if diaper messing >= 7]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [trainee-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding covering[end if] [his of ST] eyes, nose and mouth.";
 	otherwise say "You emit a pained whine as you deposit several more chunks of mess on top of [NameDesc of ST][']s face. [big he of ST] wails through the disgusting soiled padding still engulfing [his of ST] face, still only able to breathe what oxygen [he of ST] can get through the fouled fabric.[line break][variable custom style]'I'm really really sorry!'[roman type][line break]You continue to profusely apologise as you empty your bowels directly on top of [his of ST] nostrils and face.";
 	let D be a random worn diaper;
 	if rectum >= 30 and asshole is not actually occupied:
@@ -1925,7 +1934,7 @@ To compute quiz partner messing:
 	now the bladder of the player is 0;
 	HappinessDown ST by 5.
 
-To compute school periodic effect of (C - quiz-partner):
+To compute facility periodic effect of (C - quiz-partner):
 	force clothing-focus redraw; [because the image can change]
 	[cutshow (clothing-image of C) for C;]
 	if the player is not in a predicament room or the player is in Predicament20:
@@ -1937,4 +1946,4 @@ To compute school periodic effect of (C - quiz-partner):
 To say CurrentlyVisibleFlav of (C - quiz-partner):
 	say "".
 
-Student Framework ends here.
+Trainee Framework ends here.

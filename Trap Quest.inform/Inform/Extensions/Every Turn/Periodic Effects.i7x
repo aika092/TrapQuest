@@ -24,7 +24,7 @@ An all time based rule (this is the compute clothing rule):
 				if C is expansion and the player is not in a predicament room, compute periodic expansion effect of C;
 				if C is rejuvenation and the player is not in a predicament room, compute periodic rejuvenation effect of C;
 				if C is augmentation and the player is not in a predicament room, compute periodic augmentation effect of C;
-		if playerRegion is school, compute school periodic effect of C;
+		if playerRegion is facility, compute facility periodic effect of C;
 		otherwise compute periodic effect of C.
 
 To compute periodic expansion effect of (C - a clothing):
@@ -106,8 +106,8 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		say DefaultSexChangeFlav;
 		sexchange the player;
 	[Real world changes]
-	if the remainder after dividing local-earnings by (750 / (fast breast expansion + 1)) < local-seconds:
-		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (1500 / (fast breast expansion + 1)) < local-seconds:
+	if the remainder after dividing local-earnings by (1500 / (fast breast expansion + 1)) < local-seconds:
+		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (3000 / (fast breast expansion + 1)) < local-seconds:
 			if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts:
 				repeat with N running from 1 to 2:
 					if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts, increase the real flesh volume of breasts by 1;
@@ -145,10 +145,10 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		otherwise if the player is possessing a vagina and the vaginalvirgin of the player is 1 and (virginity-valued is 1 or flower hairclip is worn):
 			virginreward;
 	[Virgin Curse]
-	if the remainder after dividing local-earnings by 297 < local-seconds and the player is possessing a penis and the penetrativevirgin of the player is 1 and virgincursed > 0 and transGender is 0 and the player is not in a predicament room:
+	if the remainder after dividing local-earnings by 897 < local-seconds and the player is possessing a penis and the penetrativevirgin of the player is 1 and virgincursed > 0 and transGender is 0 and the player is not in a predicament room:
 		virginpunish;
 	[Various periodic decays]
-	if playerRegion is not school:
+	if playerRegion is not facility:
 		if the remainder after dividing local-earnings by 611 < local-seconds:
 			compute hair colour decay;
 		if the remainder after dividing local-earnings by 49 < local-seconds:
@@ -159,7 +159,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 			compute magic regeneration;
 		if the remainder after dividing local-earnings by 49 < local-seconds and temp_str_dam + temp_dex_dam + temp_int_dam > 0:
 			compute stat healing;
-	if playerRegion is not school or the player is flying:
+	if playerRegion is not facility or the player is flying:
 		let inflation-decay-rate be 38;
 		if the player is flying, now inflation-decay-rate is 9;
 		if the remainder after dividing local-earnings by inflation-decay-rate < local-seconds:
@@ -178,7 +178,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 				if M is monster:
 					set up M;
 					summon M in the dungeon;
-		if the number of alive golem is 0 and diaper quest is 0 and playerRegion is not school:
+		if the number of alive golem is 0 and diaper quest is 0 and playerRegion is not facility:
 			let M be a random off-stage golem;
 			let S be the thickness of hips + the largeness of breasts;
 			let SR be a random number between 1 and time-tracking;
@@ -206,7 +206,7 @@ Part 2 - Specific Procedures
 
 To compute hair colour decay:
 	let R be 1;
-	if bright-hair tattoo is worn or diaper quest is 1 or playerRegion is school, now R is 0; [This tattoo stops hair from decaying]
+	if bright-hair tattoo is worn or diaper quest is 1 or playerRegion is facility, now R is 0; [This tattoo stops hair from decaying]
 	let X be 0;
 	while R > 0:
 		now R is a random number between 1 and 3;
@@ -229,7 +229,7 @@ To compute hair colour decay:
 		if X > 20, now R is 0.
 
 To compute makeup decay:
-	if a random number between 0 and diaper quest is 0 and permanent makeup is 0 and playerRegion is not school and the latex-transformation of the player < 7:
+	if a random number between 0 and diaper quest is 0 and permanent makeup is 0 and playerRegion is not facility and the latex-transformation of the player < 7:
 		if the make-up of face > 1:
 			say "Your make-up partially fades.";
 			FaceDown 1;

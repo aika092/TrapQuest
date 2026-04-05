@@ -16,7 +16,7 @@ To decide what number is the actual-quest-weighting of (Q - a clothing-quest) fo
 	decide on the quest-weighting of Q for C.
 
 Definition: a clothing-quest is appropriate: decide yes. [Does it make sense for this quest to appear on an item right now?]
-Definition: a clothing-quest is school-disabled: decide no. [Is this quest temporarily deactivated when the player is in the school region? (Some quests would be too easy in this region)]
+Definition: a clothing-quest is facility-disabled: decide no. [Is this quest temporarily deactivated when the player is in the facility region? (Some quests would be too easy in this region)]
 
 To decide which number is the total-quest-weighting of (C - a clothing): [In order to use the weightings to choose a random quest, we need to know the sum of the weighting of all quests]
 	let N be 0;
@@ -93,7 +93,7 @@ To say QuestFlav of (C - a clothing):
 	say QuestFlav of the quest of C.
 
 To say FullQuestFlav of (Q - a clothing-quest):
-	unless Q is no-clothing-quest, say "[QuestFlav of Q][if armband is worn and Q is school-disabled][line break][bold type]This quest cannot be completed while you are in the [slut school] region.[line break][roman type][end if]".
+	unless Q is no-clothing-quest, say "[QuestFlav of Q][if armband is worn and Q is facility-disabled][line break][bold type]This quest cannot be completed while you are in the [training halls].[line break][roman type][end if]".
 
 To say QuestFlav of (Q - a clothing-quest): [The long description. Must be replaced for each quest.]
 	say "This quest is missing its long description.".
@@ -230,7 +230,7 @@ To say QuestCompleteFlav of (Q - a clothing-quest) on (C - a clothing):
 
 [This is the bread and butter of resolving a quest. This is the function we call all around the rest of the code when a quest should be considered triggered.]
 To progress quest of (Q - a clothing-quest):
-	if playerRegion is not school or Q is not school-disabled:
+	if playerRegion is not facility or Q is not facility-disabled:
 		unless the player is in a predicament room:
 			if debugmode > 0, say "Checking for[QuestTitle of Q].";
 			repeat with C running through worn clothing:
@@ -275,7 +275,7 @@ chest-exposing-quest is a clothing-quest. chest-exposing-quest has a number call
 Definition: chest-exposing-quest is appropriate:
 	if diaper quest is 0 and the largeness of breasts >= 2, decide yes;
 	decide no.
-Definition: chest-exposing-quest is school-disabled: decide yes.
+Definition: chest-exposing-quest is facility-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - chest-exposing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -295,7 +295,7 @@ To say QuestTitle of (Q - chest-exposing-quest):
 	say " (topless greeting quest)".
 
 To progress quest of (Q - chest-exposing-quest) from (M - a monster):
-	unless M is the latest-monster of Q or the player is in a predicament room or playerRegion is school:
+	unless M is the latest-monster of Q or the player is in a predicament room or playerRegion is facility:
 		increase the greet-count of Q by 1;
 		now the latest-monster of Q is M;
 		repeat with C running through worn cursed clothing:
@@ -759,7 +759,7 @@ Part - Kicking Quest
 kicking-quest is a clothing-quest. kicking-quest is persistent. kicking-quest has an object called latest-kick.
 
 Definition: kicking-quest is appropriate: decide yes.
-Definition: kicking-quest is school-disabled: decide yes.
+Definition: kicking-quest is facility-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - kicking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -899,7 +899,7 @@ Part - Crawling Quest
 crawling-quest is a clothing-quest.
 
 Definition: crawling-quest is appropriate: decide yes.
-Definition: crawling-quest is school-disabled: decide yes.
+Definition: crawling-quest is facility-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - crawling-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -964,7 +964,7 @@ upskirt-quest is a clothing-quest. upskirt-quest is persistent.
 Definition: upskirt-quest is appropriate:
 	if there is worn short-or-longer displacable clothing, decide yes;
 	decide no.
-Definition: upskirt-quest is school-disabled: decide yes.
+Definition: upskirt-quest is facility-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - upskirt-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -998,7 +998,7 @@ Definition: tentacle-quest is appropriate:
 	decide no.
 
 To decide what number is the quest-weighting of (Q - tentacle-quest) for (C - a clothing):
-	decide on 0. [Only occurs when the code specifies (e.g. when schoolgirl outfit is summoned)]
+	decide on 0. [Only occurs when the code specifies (e.g. when alchemist outfit is summoned)]
 
 To say QuestFlav of (Q - tentacle-quest):
 	say "You sense that it wants you to get fucked by tentacles.".
@@ -1110,7 +1110,7 @@ Part - Show and Tell Quest
 
 show-and-tell-quest is a clothing-quest. show-and-tell-quest is persistent.
 
-Definition: show-and-tell-quest is school-disabled: decide yes.
+Definition: show-and-tell-quest is facility-disabled: decide yes.
 
 show-and-tell-quest has an object called latest-exposee.
 show-and-tell-quest has a number called expose-count.
@@ -1125,7 +1125,7 @@ To say QuestTitle of (Q - show-and-tell-quest):
 	say " (carry around quest)".
 
 To progress quest of (Q - show-and-tell-quest) for (M - a monster):
-	if playerRegion is not school or Q is not school-disabled:
+	if playerRegion is not facility or Q is not facility-disabled:
 		unless the player is in a predicament room:
 			if debugmode > 0, say "Checking for[QuestTitle of Q].";
 			repeat with C running through worn clothing:
@@ -1162,7 +1162,7 @@ plug-quest is a clothing-quest. plug-quest has a number called plug-count.
 Definition: plug-quest is appropriate:
 	if asshole is not actually occupied, decide yes;
 	decide no.
-Definition: plug-quest is school-disabled: decide yes.
+Definition: plug-quest is facility-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - plug-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -1265,7 +1265,7 @@ Part - Attack Provocation Quest
 
 attack-quest is a clothing-quest. attack-quest is persistent.
 
-Definition: attack-quest is school-disabled: decide yes.
+Definition: attack-quest is facility-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - attack-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -1362,7 +1362,7 @@ Part - Mouthful Quest
 
 mouthful-quest is a clothing-quest. mouthful-quest is persistent.
 
-Definition: mouthful-quest is school-disabled: decide yes.
+Definition: mouthful-quest is facility-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - mouthful-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -1588,7 +1588,7 @@ Definition: use-urinal-wisp-quest is appropriate:
 bowl-wisp-quest is a wisp quest. The printed name of bowl-wisp-quest is "eat food from a bowl".
 Definition: bowl-wisp-quest is appropriate:
 	if the total volume of face > 0, decide no; [otherwise player can get a quest to hold a mouthful until they eat]
-	if Hotel01 is placed or School01 is discovered, decide yes;
+	if Hotel01 is placed or Facility01 is discovered, decide yes;
 	decide no.
 
 banish-wisp-quest is a wisp quest. The printed name of banish-wisp-quest is "choose to banish a defeated enemy".
@@ -1795,8 +1795,8 @@ Carry out QuestRecalling:
 	repeat with M running through alive undefeated intelligent monsters:
 		if the current-errand of M is not no-errand and the current-errand of M is not rejected-errand:
 			say "You were given a quest by [NameDesc of M]: [RequestAssign of M]";
-	repeat with E running through event-started academy-events:
-		say AcademyEventDesc of E;
+	repeat with E running through event-started facility-events:
+		say FacilityEventDesc of E;
 	repeat with C running through worn clothing:
 		let Q be the quest of C;
 		if Q is not no-clothing-quest and (Q is persistent or C is cursed):
@@ -1814,6 +1814,7 @@ Understand "recall quests", "quests", "quest", "curses", "curse quests", "uncurs
 This is the predicament quest list rule:
 	if the player is in a predicament room:
 		say PredicamentDescription of current-predicament;
+		if current-predicament is realistic-arms-requiring, say "[bold type]I can sense that right now, unless they are otherwise occupied, I am able to use my arms to cover up the most humiliating parts of my appearance.[roman type][line break]";
 		increase total-quests-listed by 1.
 The predicament quest list rule is listed in the quest listing rules.
 
@@ -1971,14 +1972,14 @@ This is the piercing humility quest list rule:
 	if the player is an april 2025 top donator and piercing-stone is not worn and (piercing-stone is challenged or the piercing-stone-progress of the player > 0):[TODO: donor lock]
 		say "The [if piercing-stone-progress of the player > 10]Piercing [otherwise]???????? [end if] Master: [run paragraph on]";
 		if piercing-stone is challenged:
-			say "You found a bossy [ShortDesc of piercing-stone] in the Slut School, and it told you to defeat an npc at the most inconvenient time, like when a guard has his shield up, an aeromancer who has her boobs inflated, or a ghost that's still intangible. The ring seemed to think you weren't capable of following its instructions... is that really true? ([piercing-stone-progress of the player]/10)[line break]";
+			say "You found a bossy [ShortDesc of piercing-stone] in the Royal Training Halls, and it told you to defeat an npc at the most inconvenient time, like when a guard has his shield up, an aeromancer who has her boobs inflated, or a ghost that's still intangible. The ring seemed to think you weren't capable of following its instructions... is that really true? ([piercing-stone-progress of the player]/10)[line break]";
 		otherwise:
 			if the location of the player is Park11:
 				say "Was that ring always there?[line break]";
 			if the location of the player is an academic room:
 				say "You feel a mysterious pull towards the Head Office...";
 			otherwise:
-				say "You feel a mysterious pull towards the Slut School";
+				say "You feel a mysterious pull towards the Royal Training Halls";
 		increase total-quests-listed by 1.
 The piercing humility quest list rule is listed in the quest listing rules.
 
@@ -2042,7 +2043,7 @@ To say ColourDesc of (W - a wisp):
 		say "pink".
 
 Figure of Wisp is the file "Env/MultiFloor/wisp1.png".
-Figure of Nice Wisp is the file "Env/MultiFloor/wisp1.png".
+Figure of Nice Wisp is the file "Env/MultiFloor/wisp2.png".
 To decide which figure-name is the examine-image of (W - a wisp):
 	decide on Figure of Wisp.
 
@@ -2100,7 +2101,7 @@ To notice a wisp:
 [A curse wisp is  type of wisp that will punish you if you complete its "trigger" before completing its "quest". ]
 A evil-wisp is a kind of wisp. A wisp has an object called the wisp-quest. A wisp has an object called a wisp-punishment.
 
-evil-wisp-1 is a evil-wisp. Understand "leftmost" as evil-wisp-1. evil-wisp-2 is a evil-wisp. Understand "left" as evil-wisp-2. evil-wisp-3 is a evil-wisp. Understand "rightmost" as evil-wisp-3. evil-wisp-4 is a evil-wisp. Understand "rightmost" as evil-wisp-4.
+evil-wisp-1 is a evil-wisp. Understand "leftmost" as evil-wisp-1. evil-wisp-2 is a evil-wisp. Understand "left" as evil-wisp-2. evil-wisp-3 is a evil-wisp. Understand "right" as evil-wisp-3. evil-wisp-4 is a evil-wisp. Understand "rightmost" as evil-wisp-4.
 
 To say ExamineDesc of (W - an evil-wisp):
 	say "A [ColourDesc of W] cursed wisp is following you. You must [wisp-quest of W] before you next [wisp-trigger of W], or else you will [wisp-punishment of W].".
@@ -2146,6 +2147,7 @@ To deploy an evil wisp:
 
 [A blessing wisp is a type of wisp that will grant you a stat boost until you complete its "trigger"]
 A nice-wisp is a kind of wisp. A nice-wisp can be strength-buffing, dexterity-buffing, intelligence-buffing or not-buffing (this is the wisp-buff property). A nice-wisp is usually not-buffing.
+The printed name of a nice-wisp is "fiery wisp".
 
 nice-wisp-1 is a nice-wisp. Understand "lower left" as nice-wisp-1. nice-wisp-2 is a nice-wisp. Understand "upper left" as nice-wisp-2. nice-wisp-3 is a nice-wisp. Understand "lower right" as nice-wisp-3. nice-wisp-4 is a nice-wisp. Understand "upper right" as nice-wisp-4.
 
@@ -2281,7 +2283,7 @@ During combat, sometimes portals can shoot attacks at enemies, but depending on 
 
 Portal wisps can also drag you into the portal temporarily and fuck you. (TODO)
 
-Portal wisps can spawn imps/slimeballs (TODO)
+Portal wisps can spawn imps/slimeballs
 ]
 
 [A portal is a temporary follower that runs out of life as it does things. Sometimes these things are beneficial, sometimes, they're bad.]
@@ -2327,29 +2329,39 @@ To ChargeUp (W - a mini-portal) by (N - a number):
 	if the charge of W < 0, now the charge of W is 0;
 	if the charge of W > 100, now the charge of W is 100.
 
+To decide which number is portal-spawn-frequency:
+	decide on 100.
+
 monster-chase-counter is a number that varies. monster-chase-counter is 0.
 An all later time based rule (this is the portal spawn rule):
 	let W be a random warp portal in the location of the player;
 	unless W is warp portal, now W is a random stalking mini-portal;
 	if W is a thing:
-		if monster-chase-counter < 30 / combatSpeed:
+		if W is warp portal and familiar is alive and playerRegion is not facility and familiar is not regional:
+			deinterest familiar;
+			say "[BigNameDesc of familiar] emerges from the giant, swirling portal.";
+			now familiar is in the location of the player;
+			check perception of familiar;
+		otherwise if monster-chase-counter < portal-spawn-frequency / combatSpeed:
 			increase monster-chase-counter by 1;
-		otherwise if playerRegion is not School:
+			let M be a random alive nonregional imp;
+			if M is imp, increase monster-chase-counter by 2;
+		otherwise if playerRegion is not facility and the player is not in a bossed room:
 			let M be a random alive nonregional imp;
 			if W is mini-portal and W is infernal-portal and M is not a monster, now M is a random off-stage imp;
 			unless M is monster:
 				let T be a random alive nonregional tentacle monster;
-				if 2 + the size-rank of T >= doomed or W is eldritch-portal, now M is T;
+				if T is tentacle monster and (2 + the size-rank of T >= doomed or W is eldritch-portal), now M is T;
 			unless M is monster and egg laying fetish is 1, now M is a random alive nonregional facehugger;
 			unless M is monster, now M is a random nonregional slimeball;
 			if M is monster:
 				now M is in the location of the player;
 				if the monstersetup of M is 0, set up M;
 				if W is warp portal:
-					say "A [NameDesc of M] emerges from the giant, swirling portal.";
+					say "A [MediumDesc of M] emerges from the giant, swirling portal.";
 				otherwise:
 					if M is imp, ChargeUp W by 10;
-					otherwise ChargeUp W by 30;
+					otherwise ChargeUp W by 40;
 					say "A ripple passes through your surroundings, and you look back to see [if the number of stalking mini-portal > 1]one of the portals[otherwise]the portal[end if] dropping to the ground, yawning open as a [NameDesc of M] crawls through.";
 				if M is not slimeball and M is not imp, say "[line break][variable custom style][one of]Is that the one from before?![or]Did [he of M] follow me here?![or]I think I recognize [him of M] from before![in random order][roman type][line break][GotUnluckyFlav]";
 				now monster-chase-counter is 0;

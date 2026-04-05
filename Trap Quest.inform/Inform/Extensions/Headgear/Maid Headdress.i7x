@@ -22,7 +22,7 @@ To decide which number is the initial cringe of (C - a maid headdress):
 	decide on 2.
 
 Report going:
-	unless playerRegion is school:
+	unless playerRegion is facility:
 		if the player is prone:
 			increase the crawl count of the player by 1;
 			let M be black maid headdress;

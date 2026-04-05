@@ -132,7 +132,7 @@ To construct normal buttons for (T - predicament-painted-cutoffs):
 		now the ButtonImage entry is the examine-image of painted-vibrator-hands;
 		now the ButtonColour entry is lightModeFullGreen.
 
-To compute school periodic effect of (C - predicament-painted-cutoffs):
+To compute facility periodic effect of (C - predicament-painted-cutoffs):
 	if current-predicament is vibe-photo-predicament:
 		if the player is in Predicament20 or the player is not in a predicament room:
 			say "[bold type]The paint on your loins fades from existence![roman type][line break]";

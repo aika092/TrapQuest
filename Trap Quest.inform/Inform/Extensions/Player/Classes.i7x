@@ -256,53 +256,53 @@ a class explaining rule (this is the explaining warrior rule):
 		now warriorExplained is false;
 		say "[bold type]Now that you are no longer the [']virgin warrior['] class, you no longer feel that your power is so closely entwined with your vaginal virginity.[roman type][line break]".
 
-This is the schoolgirl class rule:
+This is the alchemist class rule:
 	if there is a worn blue scrunchie:
-		now player-class is "schoolgirl";
-		if there is a worn magical dress, now player-class is "magical schoolgirl";
+		now player-class is the substituted form of "[alchemist]";
+		if there is a worn magical dress, now player-class is the substituted form of "magical [alchemist]";
 		let TUC be total used condoms;
-		if there is worn cheerleader outfit or there is worn pom-poms, now player-class is "class bully"; [schoolgirl + cheerleader]
-		if player-class is "class bully" and TUC > 0: [schoolgirl + cheerleader + condom collector]
+		if there is worn cheerleader outfit or there is worn pom-poms, now player-class is "potion class bully"; [alchemist + cheerleader]
+		if player-class is "potion class bully" and TUC > 0: [alchemist + cheerleader + condom collector]
 			now player-class is "fraternity's sperm bank";
 			if there is a worn brat themed clothing, now player-class is "mathlete team's plastic cum collector"; [+ silicone queen + cumdumpster]
-		otherwise if there is a worn brat themed clothing: [schoolgirl + silicone queen]
-			if player-class is "class bully":
+		otherwise if there is a worn brat themed clothing: [alchemist + silicone queen]
+			if player-class is "potion class bully":
 				now player-class is "plastic bully"; [+ cheerleader]
 			otherwise:
-				now player-class is "plastic schoolgirl";
+				now player-class is the substituted form of "plastic [alchemist]";
 				if TUC > 0, now player-class is "walking talking condom"; [+ condom collector]
-		otherwise if TUC > 0: [schoolgirl + condom collector]
-			now player-class is "class sperm bank";
+		otherwise if TUC > 0: [alchemist + condom collector]
+			now player-class is "potion class sperm bank";
 		rule succeeds.
-The schoolgirl class rule is listed in the player class rules.
+The alchemist class rule is listed in the player class rules.
 
-[!<TextIsSchoolgirl>+
+[!<TextIsAlchemist>+
 
-Thanks to the various schoolgirl multi-classes, we have multiple different texts that need to be able to return true for the class of the player being schoolgirl.
+Thanks to the various alchemist multi-classes, we have multiple different texts that need to be able to return true for the class of the player being alchemist.
 
 +!]
-Definition: a text (called T) is schoolgirl:
-	if T matches the text "school" or T matches the text "class" or T matches the text "bully" or T matches the text "fraternity" or T is "walking talking condom" or T matches the text "mathlete" or T matches the text "teacher", decide yes;
+Definition: a text (called T) is alchemist:
+	if T matches the text alchmest-text or T matches the text "class" or T matches the text "bully" or T matches the text "fraternity" or T is "walking talking condom" or T matches the text "mathlete" or T matches the text "teacher", decide yes;
 	decide no.
 
 This is the pigtail class rule:
 	if condom pigtails is worn: [cheerleader + condom collector]
-		if there is a worn brat themed clothing: [+ silicone queen + schoolgirl + cumdumpster]
+		if there is a worn brat themed clothing: [+ silicone queen + alchemist + cumdumpster]
 			now player-class is "mathlete team's plastic cum collector";
 		otherwise:
 			let C be a random worn pigtail-scrunchie;
-			if the quest of C is recipe-quest: [+ schoolgirl]
+			if the quest of C is recipe-quest: [+ alchemist]
 				now player-class is "fraternity's sperm bank";
 			otherwise:
 				now player-class is "locker room trashcan";
 				if there is a worn rubber cheerleader outfit and the silicone volume of breasts > 0, now player-class is "football team's plastic cum collector"; [+ silicone queen + cumdumpster]
 		rule succeeds;
 	otherwise if there is a worn pigtail-scrunchie: [cheerleader + cumdumpster]
-		if there is a worn brat themed clothing: [+ silicone queen + schoolgirl]
+		if there is a worn brat themed clothing: [+ silicone queen + alchemist]
 			now player-class is "mathlete team's plastic cumdump";
 		otherwise:
 			let C be a random worn pigtail-scrunchie;
-			if the quest of C is recipe-quest: [+ schoolgirl]
+			if the quest of C is recipe-quest: [+ alchemist]
 				now player-class is "fraternity's bicycle";
 			otherwise:
 				now player-class is "locker room fucktoy";
@@ -310,22 +310,22 @@ This is the pigtail class rule:
 		rule succeeds.
 The pigtail class rule is listed in the player class rules.
 
-magicalSchoolgirlExplained is initially false.
-a class explaining rule (this is the explaining magicalSchoolgirl rule):
-	if magicalSchoolgirlExplained is false and the class of the player is "magical schoolgirl":
-		now magicalSchoolgirlExplained is true;
-		say "[bold type]Now that you have become the [']magical girl' AND 'schoolgirl['] classes, when a tentacle monster drains you of magic, your intelligence will permanently increase.[roman type][line break]";
-	otherwise if magicalSchoolgirlExplained is true and the class of the player is not "magical schoolgirl":
-		now magicalSchoolgirlExplained is false.
+magicalAlchemistExplained is initially false.
+a class explaining rule (this is the explaining magicalAlchemist rule):
+	if magicalAlchemistExplained is false and the class of the player is "magical alchemist":
+		now magicalAlchemistExplained is true;
+		say "[bold type]Now that you have become the [']magical girl' AND 'alchemist['] classes, when a tentacle monster drains you of magic, your intelligence will permanently increase.[roman type][line break]";
+	otherwise if magicalAlchemistExplained is true and the class of the player is not "magical alchemist":
+		now magicalAlchemistExplained is false.
 
-schoolgirlExplained is initially false.
-a class explaining rule (this is the explaining schoolgirl rule):
-	if schoolgirlExplained is false and the class of the player is schoolgirl:
-		now schoolgirlExplained is true;
-		say "[bold type]Now that you have become the [']schoolgirl['] class, you sense that your ability to gain intelligence and to craft better versions of items has improved. You also sense that you might more easily attract the attention of anything with tentacles...[roman type][line break]";
-	otherwise if schoolgirlExplained is true and the class of the player is not schoolgirl:
-		now schoolgirlExplained is false;
-		say "[bold type]Now that you are no longer the [']schoolgirl['] class, you no longer feel so competent at learning or crafting.[roman type][line break]".
+alchemistExplained is initially false.
+a class explaining rule (this is the explaining alchemist rule):
+	if alchemistExplained is false and the class of the player is alchemist:
+		now alchemistExplained is true;
+		say "[bold type]Now that you have become the [']alchemist['] class, you sense that your ability to gain intelligence and to craft better versions of items has improved. You also sense that you might more easily attract the attention of anything with tentacles...[roman type][line break]";
+	otherwise if alchemistExplained is true and the class of the player is not alchemist:
+		now alchemistExplained is false;
+		say "[bold type]Now that you are no longer the [']alchemist['] class, you no longer feel so competent at learning or crafting.[roman type][line break]".
 
 This is the cheerleader class rule:
 	if there is a worn pink scrunchie:
@@ -342,7 +342,7 @@ This is the cheerleader class rule:
 		rule succeeds.
 The cheerleader class rule is listed in the player class rules.
 Definition: a text (called T) is cheerleader:
-	if T matches the text "cheer" or T matches the text "bully" or T matches the text "fraternity" or T matches the text "locker" or T is "deepthroat princess" or T matches the text "plastic cumdump" or T matches the text "mathlete" or T matches the text "teacher" or T matches the text "country", decide yes;
+	if T matches the text "cheer" or T matches the text "bully" or T matches the text "fraternity" or T matches the text "locker" or T is "deepthroat princess" or T matches the text "plastic cumdump" or T matches the text "mathlete" or T matches the text "tutor" or T matches the text "country", decide yes;
 	decide no.
 
 cheerleaderExplained is initially false.
@@ -465,7 +465,7 @@ This is the silicone queen class rule:
 	if rubber top hat is worn:
 		now player-class is "silicone queen";
 		if condoms dress is worn or giant condom is worn, now player-class is "walking condom";
-		if there is a worn brat themed clothing, now player-class is "plastic schoolgirl";
+		if there is a worn brat themed clothing, now player-class is "plastic alchemist";
 		if rubber-royal-dress is worn, now player-class is "plastic princess";
 		if anime superheroine top is worn, now player-class is "magic plastigirl";
 		rule succeeds.
@@ -1118,7 +1118,7 @@ This is the magical girl class rule:
 		now player-class is the substituted form of "magical [boy of the player]";
 		if there is a worn dark magician girl dress, now player-class is "dark magician [boy of the player]";
 		if exposing-magical-dress is worn, now player-class is "magical neko";
-		if there is a worn schoolgirl outfit or tartan tube top is worn, now player-class is "magical schoolgirl";
+		if there is a worn alchemist outfit or tartan tube top is worn, now player-class is "magical alchemist";
 		if anime superheroine top is worn, now player-class is "magic plastigirl";
 		rule succeeds.
 The magical girl class rule is listed in the player class rules.
@@ -1296,7 +1296,7 @@ This is the hooker in training class rule:
 The hooker in training class rule is listed first in the player class rules.
 
 Definition: yourself is a hooker in training:
-	if trainee hood is worn or trainee bra is worn or there is a worn trainee thigh highs, decide yes.
+	if trainee-hood is worn or trainee-bra is worn or there is a worn trainee-thigh-highs, decide yes.
 
 [!<TheTrainedHookerClassRule>+
 

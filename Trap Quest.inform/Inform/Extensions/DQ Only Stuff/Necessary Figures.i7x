@@ -8,14 +8,14 @@ Figure of agent angry is the file "NPCs/MultiFloor/Agent/agent2b.png".
 Figure of agent camera cutscene 1 is the file "NPCs/MultiFloor/Agent/cutscene-agent4.jpg".
 Figure of agent camera cutscene 2 is the file "NPCs/MultiFloor/Agent/cutscene-agent5.jpg".
 
-Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
+Figure of bianca defeated is the file "NPCs/Facility/Tutor/tutor3c.png".
 
 Figure of breastfeeding predicament mead is the file "Special/Cutscene/cutscene-predicament-breastfeeding2.jpg".
 Figure of breastfeeding predicament lax is the file "Special/Cutscene/cutscene-predicament-breastfeeding3b.jpg".
 Figure of breastfeeding predicament piss is the file "Special/Cutscene/cutscene-predicament-breastfeeding4b.jpg".
 
 Figure of demoness cutscene 15 is the file "NPCs/Forest/Demoness/cutscene-demoness-dq-facesit1.jpg".
-Figure of detention chair is the file "Env/School/detentionchair2.jpg".
+Figure of reconditioning chair is the file "Env/Facility/reconditioningchair2.jpg".
 
 Figure of DiaperPresentBoxBlindfoldedBackground is the file "Map/blindfolded3.jpg".
 Figure of DiaperPresentBoxBlindfoldedMessyBackground is the file "Map/blindfolded3b.jpg".
@@ -111,6 +111,48 @@ Figure of hotel toilet room 2 is the file "Map/Hotel/HotelBath3.png".
 
 Figure of IronMaidenBackground is the file "Map/maiden2.png".
 
+Figure of Knee Bounce 1 dry is the file "Special/Cutscene/kneebounce/knee_bounce_1_dry.jpg".
+Figure of Knee Bounce 1 wet is the file "Special/Cutscene/kneebounce/knee_bounce_1_wet.jpg".
+Figure of Knee Bounce 1 messy is the file "Special/Cutscene/kneebounce/knee_bounce_1_messy.jpg".
+Figure of Knee Bounce 1 wam is the file "Special/Cutscene/kneebounce/knee_bounce_1_wam.jpg".
+Figure of Knee Bounce 2 dry is the file "Special/Cutscene/kneebounce/knee_bounce_2_dry.jpg".
+Figure of Knee Bounce 2 wet is the file "Special/Cutscene/kneebounce/knee_bounce_2_wet.jpg".
+Figure of Knee Bounce 2 messy is the file "Special/Cutscene/kneebounce/knee_bounce_2_messy.jpg".
+Figure of Knee Bounce 3 dry is the file "Special/Cutscene/kneebounce/knee_bounce_3_dry.jpg".
+Figure of Knee Bounce 3 wet is the file "Special/Cutscene/kneebounce/knee_bounce_3_wet.jpg".
+Figure of Knee Bounce 3 messy is the file "Special/Cutscene/kneebounce/knee_bounce_3_messy.jpg".
+Figure of Knee Bounce 3 wam is the file "Special/Cutscene/kneebounce/knee_bounce_3_wam.jpg".
+
+To display knee bounce cutscene of (M - a monster):
+	let D be a random worn knickers;
+	if player-knee-grinding is true and the reaction of the player > 0:
+		if D is perceived messed knickers:
+			if D is perceived wet knickers:
+				cutshow Figure of Knee Bounce 3 wam for M;
+			otherwise:
+				cutshow Figure of Knee Bounce 3 messy for M;
+		otherwise if D is perceived wet knickers:
+			cutshow Figure of Knee Bounce 3 wet for M;
+		otherwise:
+			cutshow Figure of Knee Bounce 3 dry for M;
+	otherwise if M is male:
+		if D is perceived messed knickers:
+			cutshow Figure of Knee Bounce 2 messy for M;
+		otherwise if D is perceived wet knickers:
+			cutshow Figure of Knee Bounce 2 wet for M;
+		otherwise:
+			cutshow Figure of Knee Bounce 2 dry for M;
+	otherwise:
+		if D is perceived messed knickers:
+			if D is perceived wet knickers:
+				cutshow Figure of Knee Bounce 1 wam for M;
+			otherwise:
+				cutshow Figure of Knee Bounce 1 messy for M;
+		otherwise if D is perceived wet knickers:
+			cutshow Figure of Knee Bounce 1 wet for M;
+		otherwise:
+			cutshow Figure of Knee Bounce 1 dry for M.
+
 Figure of lake predicament 2 is the file "Special/Cutscene/cutscene-lake-predicament4.jpg".
 Figure of lake predicament 3 is the file "Special/Cutscene/cutscene-lake-predicament5.jpg".
 
@@ -180,35 +222,35 @@ Figure of Podium Cutscene 2 is the file "Special/Cutscene/cutscene-podium2.jpg".
 
 Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz2.jpg".
 
-Figure of rank 2 candy is the file "NPCs/School/Student/student5c.png".
-Figure of rank 3 candy dry is the file "NPCs/School/Student/student5e.png".
-Figure of rank 3 candy messy is the file "NPCs/School/Student/student5eM.png".
-Figure of rank 3 candy double diaper is the file "NPCs/School/Student/student5eD.png".
+Figure of rank 2 candy is the file "NPCs/Facility/Trainee/trainee5c.png".
+Figure of rank 3 candy dry is the file "NPCs/Facility/Trainee/trainee5e.png".
+Figure of rank 3 candy messy is the file "NPCs/Facility/Trainee/trainee5eM.png".
+Figure of rank 3 candy double diaper is the file "NPCs/Facility/Trainee/trainee5eD.png".
 To decide which figure-name is figure of rank 3 candy:
-	if student-candy is messy, decide on figure of rank 3 candy messy;
-	if the student-diaper-mess of student-candy is 1, decide on figure of rank 3 candy double diaper;
+	if trainee-candy is messy, decide on figure of rank 3 candy messy;
+	if the trainee-diaper-mess of trainee-candy is 1, decide on figure of rank 3 candy double diaper;
 	decide on figure of rank 3 candy dry.
-Figure of rank 4 candy is the file "NPCs/School/Student/student5g.png".
+Figure of rank 4 candy is the file "NPCs/Facility/Trainee/trainee5g.png".
 
-Figure of rank 2 laci is the file "NPCs/School/Student/student3f.png".
-Figure of rank 3 laci dry is the file "NPCs/School/Student/student3g.png".
-Figure of rank 3 laci messy is the file "NPCs/School/Student/student3gm.png".
-Figure of rank 3 laci double diaper messy is the file "NPCs/School/Student/student3gmd.png".
+Figure of rank 2 laci is the file "NPCs/Facility/Trainee/trainee3f.png".
+Figure of rank 3 laci dry is the file "NPCs/Facility/Trainee/trainee3g.png".
+Figure of rank 3 laci messy is the file "NPCs/Facility/Trainee/trainee3gm.png".
+Figure of rank 3 laci double diaper messy is the file "NPCs/Facility/Trainee/trainee3gmd.png".
 To decide which figure-name is figure of rank 3 laci:
-	if student-laci is messy:
-		if the student-extra-diapers of student-laci > 0, decide on figure of rank 3 laci double diaper messy;
+	if trainee-laci is messy:
+		if the trainee-extra-diapers of trainee-laci > 0, decide on figure of rank 3 laci double diaper messy;
 		decide on figure of rank 3 laci messy;
 	decide on figure of rank 3 laci dry.
-Figure of rank 4 laci is the file "NPCs/School/Student/student3h.png".
-Figure of rank 5 laci is the file "NPCs/School/Student/student3i.png".
+Figure of rank 4 laci is the file "NPCs/Facility/Trainee/trainee3h.png".
+Figure of rank 5 laci is the file "NPCs/Facility/Trainee/trainee3i.png".
 
-Figure of rank 2 misty is the file "NPCs/School/Student/student4c.png".
-Figure of rank 3 misty is the file "NPCs/School/Student/student4e.png".
-Figure of rank 4 misty is the file "NPCs/School/Student/student4g.png".
-Figure of rank 5 misty is the file "NPCs/School/Student/student4h.png".
+Figure of rank 2 misty is the file "NPCs/Facility/Trainee/trainee4c.png".
+Figure of rank 3 misty is the file "NPCs/Facility/Trainee/trainee4e.png".
+Figure of rank 4 misty is the file "NPCs/Facility/Trainee/trainee4g.png".
+Figure of rank 5 misty is the file "NPCs/Facility/Trainee/trainee4h.png".
 
-Figure of rank 1 rosie is the file "NPCs/School/Student/student1a.png".
-Figure of rank 2 rosie is the file "NPCs/School/Student/student1c.png".
+Figure of rank 1 rosie is the file "NPCs/Facility/Trainee/trainee1a.png".
+Figure of rank 2 rosie is the file "NPCs/Facility/Trainee/trainee1c.png".
 
 Figure of shopkeeper 1a is the file "NPCs/Dungeon/Shopkeeper/shopkeeper4.jpg".
 Figure of shopkeeper 1b is the file "NPCs/Dungeon/Shopkeeper/shopkeeper4b.jpg".
@@ -228,7 +270,7 @@ Figure of Surgery Trapped Sensed is the file "Special/Cutscene/cutscene-elevator
 Figure of swirlie knickers clean is the file "Special/Cutscene/cutscene-swirlie3.jpg".
 Figure of swirlie knickers wet is the file "Special/Cutscene/cutscene-swirlie4.jpg".
 
-Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5a.png".
+Figure of Tutor Hannah is the file "NPCs/Facility/Tutor/tutor5a.png".
 
 Figure of three legged race nobody messy is the file "Special/Cutscene/cutscene-predicament-three-legged-race5.jpg".
 Figure of three legged race player messy is the file "Special/Cutscene/cutscene-predicament-three-legged-race6.jpg".
@@ -311,8 +353,9 @@ Figure of vibrator urinal is the file "Map/urinals1.jpg".
 
 To decide which figure-name is the examine-image of (T - urinal):
 	if T is grabbing the player or the urinal-rival of urinal-competition-punishment is guarding monster, decide on Figure of vibrator urinal;
+	if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31 and the hotel-urinal-scene of woman-player < 10, decide on Figure of vibrator urinal;
 	if the player is in Dungeon41, decide on figure of babified shopkeeper urinal;
-	if the player is in School27, decide on figure of staff room urinal;
+	if the player is in Facility27, decide on figure of staff room urinal;
 	if the player is in Hotel31:
 		if portal-diaper is worn:
 			decide on Figure of hotel urinal portal;

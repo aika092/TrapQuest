@@ -119,7 +119,7 @@ Check kneeing egg:
 Check kicking egg:
 	try attacking the noun instead.
 Check dropping egg:
-	if the location of the player is toilets and (locked-toilets is false or the player is not in School10 or academy-toilet-key is held):
+	if the location of the player is toilets and (locked-toilets is false or the player is not in Facility10 or facility-toilet-key is held):
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "drop [NameDesc of the noun] on the ground";
 		set numerical response 2 to "flush [NameDesc of the noun] down the toilet";
@@ -202,6 +202,10 @@ To compute ghost hatch of (E - an egg):
 
 To compute bunny hatch of (E - an egg):
 	if E is held or E is in the location of the player, say "[BigNameDesc of E] cracks open, and [if the egg-origin of E is bowsette]a small half-turtle, half-human[otherwise][one of]the tiniest, cutest little bunny rabbit you've ever seen[or]another tiny little bunny rabbit[stopping][end if] pops out and hops away. [BigNameDesc of E] fizzles into nothingness.";
+	if the egg-origin of E is bowsette and bowsette is off-stage and bowsette is not permanently banished:
+		set up bowsette;
+		now bowsette is in the location of the player;
+		compute mandatory room leaving of bowsette;
 	destroy E.
 
 To compute default hatch of (E - an egg):

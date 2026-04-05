@@ -5,6 +5,9 @@ Definition: a monster is permanently banishable: [Can't be summoned again once b
 	decide no.
 
 To compute banishment of (M - a monster):
+	compute default banishment of M.
+
+To compute default banishment of (M - a monster):
 	compute unique banishment of M;
 	[-- First, if the monster has it, drop an intensely personal item --]
 	compute maybe drop dick by M;

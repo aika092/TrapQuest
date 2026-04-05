@@ -330,8 +330,9 @@ To compute furniture resting on (G - an automated changing station):
 				now diaperChangeAllowed is 0;
 				say "Nothing happens. Perhaps the robots don't have a way to deal with the glue.";
 	if diaperChangeAllowed > 0:
-		if diaperChangeAllowed is not 2 and there is a currently uncovered diaper and plain-largish-diaper is off-stage and plain-largish-diaper is DQBulkier and the player is getting unlucky:
+		if the player is not in a predicament room and diaperChangeAllowed is not 2 and there is a currently uncovered diaper and plain-largish-diaper is off-stage and plain-largish-diaper is DQBulkier and the player is getting unlucky:
 			say "Instead of first removing your old diaper, the robotic arms just immediately begin to add the new diaper on top.[line break][second custom style]'ERROR, ERROR, ERROR. DIAPER MISALIGNED. APPLYING SEALANT.'[roman type][line break]A polite female robotic voice speaks loudly and calmly from a speaker above you. Then robotic arms ending in nozzles descend, forcing their way underneath your layers of padding, to apply glue to each layer.";
+			blandify and reveal plain-largish-diaper;
 			DiaperAdd plain-largish-diaper;
 			gluify diaper-stack;
 			repeat with D running through the list of stacked diapers:

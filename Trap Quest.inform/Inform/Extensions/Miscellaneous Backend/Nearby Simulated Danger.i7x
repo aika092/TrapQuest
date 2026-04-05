@@ -14,7 +14,7 @@ Definition: a room (called R) is next door:
 	let L be the location of the player;
 	repeat with D running through the Nviables of R:
 		if the room D from R is L:
-			if R is School33: [Gotta hack this because it's an unrevealed pathway until later]
+			if R is Facility33: [Gotta hack this because it's an unrevealed pathway until later]
 				let DD be the opposite-direction of D;
 				if the room DD from L is R, decide yes;
 				decide no;
@@ -82,7 +82,7 @@ Definition: a monster (called M) is dangerous:
 Fighting the player or already fucking the player.
 
 +!]
-Definition: a monster is combative:
+Definition: a monster is combative rather than noncombative:
 	if it is in the location of the player and it is dangerous, decide yes;
 	decide no.
 
@@ -128,7 +128,7 @@ To decide which region is the currentRegion of (T - a thing):
 	decide on noRegion.
 Definition: a region is loaded: decide no.
 Definition: Dungeon is loaded: decide yes.
-Definition: School is loaded: decide yes.
+Definition: Facility is loaded: decide yes.
 Definition: Woods is loaded:
 	if Woods01 is placed, decide yes;
 	decide no.

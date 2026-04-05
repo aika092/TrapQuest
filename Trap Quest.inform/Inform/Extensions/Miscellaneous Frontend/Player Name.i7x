@@ -1,7 +1,7 @@
 Player Name by Miscellaneous Frontend begins here.
 
 To decide which text is NameBimbo:
-	if schoolNames is 1 and armband is worn and the armband-print of armband is not "new recruit" and the armband-print of armband is not "slut in training" and the armband-print of armband is not "submissive in training" and the armband-title of armband is not "":
+	if facilityNames is 1 and armband is worn and the armband-print of armband is not "new recruit" and the armband-print of armband is not "slut in training" and the armband-print of armband is not "submissive in training" and the armband-title of armband is not "":
 		decide on "[armband-title of armband]";
 	otherwise if the player-name is 1000:
 		if the player is originally female or transGender is 1:

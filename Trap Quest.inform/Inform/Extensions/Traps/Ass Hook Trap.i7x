@@ -13,17 +13,17 @@ Figure of ass hook is the file "Env/Dungeon/asshook1.jpg".
 Figure of ass hook dungeon wedgie is the file "Env/Dungeon/asshook2.jpg".
 Figure of ass hook collar is the file "Env/Dungeon/asshook3a.jpg".
 Figure of ass hook collar zoom is the file "Env/Dungeon/asshook3b.jpg".
-Figure of ass hook academy wedgie is the file "Env/School/asshook1.jpg".
-Figure of ass hook academy wedgie pissed is the file "Env/School/asshook2.jpg".
+Figure of ass hook facility wedgie is the file "Env/Facility/asshook1.jpg".
+Figure of ass hook facility wedgie pissed is the file "Env/Facility/asshook2.jpg".
 
 To say ExamineDesc of (C - an ass hook):
-	say "[if playerRegion is school]A strong hook that is usually used to hang gym clothes.[otherwise]An ass hook is connected to a rope that goes through a small hole in the ceiling. Maybe you could manage to [bold type]pull[roman type] it out of your [asshole]?[end if]".
+	say "[if playerRegion is facility]A strong hook that is usually used to hang gym clothes.[otherwise]An ass hook is connected to a rope that goes through a small hole in the ceiling. Maybe you could manage to [bold type]pull[roman type] it out of your [asshole]?[end if]".
 
 To decide which figure-name is the examine-image of (C - an ass hook):
-	if playerRegion is school:
+	if playerRegion is facility:
 		let K be a random worn knickers;
-		if K is knickers and the urine-soak of K > 0, decide on figure of ass hook academy wedgie pissed;
-		decide on figure of ass hook academy wedgie;
+		if K is knickers and the urine-soak of K > 0, decide on figure of ass hook facility wedgie pissed;
+		decide on figure of ass hook facility wedgie;
 	if C is penetrating asshole:
 		if the player is not possessing a vagina, decide on figure of hook cutscene 1;
 		otherwise decide on figure of hook cutscene 2;
@@ -156,16 +156,16 @@ Check taking off knickers when the player is wedgie hook stuck:
 		if the wedgie-target of H is the noun, say "There's no way you can raise your feet high enough to do that while it's hooked up in a powerful dangling wedgie!" instead.
 
 Check pulling knickers when the player is wedgie hook stuck:
-	if playerRegion is school, say "That won't work, the hook is fixed in place." instead;
+	if playerRegion is facility, say "That won't work, the hook is fixed in place." instead;
 	HookPull instead.
 
 Check pulling an ass hook:
-	if playerRegion is school, say "That won't work, the hook is fixed in place." instead;
+	if playerRegion is facility, say "That won't work, the hook is fixed in place." instead;
 	HookPull instead.
 
 To HookPull:
 	if the player is wrist bound in front or (gape-gloves is worn and gape-gloves is wrist-bound-behind):
-		say "Your wrist bondage prevents you from reaching[if playerRegion is school]! This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move! It may be best to just [bold type]wait[roman type] and see what happens[end if].";
+		say "Your wrist bondage prevents you from reaching[if playerRegion is facility]! This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move! It may be best to just [bold type]wait[roman type] and see what happens[end if].";
 	otherwise:
 		let H be the noun;
 		if the player is wedgie hook stuck, now H is a random ass hook grabbing the player;
@@ -266,9 +266,9 @@ To Jump From The Hook:
 		BodyRuin 1;
 		now H is unrevealed;
 		dislodge H;
-		if playerRegion is school:
+		if playerRegion is facility:
 			destroy H;
-			repeat with M running through unfriendly students in the location of the player:
+			repeat with M running through unfriendly trainees in the location of the player:
 				FavourDown M;
 				interest M.
 
@@ -277,12 +277,12 @@ An all time based rule (this is the ass hook wedgie pain rule):
 	if H is ass hook:
 		say "The pressure of the wedgie on your ass crack is causing you significant pain!";
 		PainUp 10;
-		if playerRegion is school and the number of students in the location of the player is 0:
-			let M be a random alive amicable student;
+		if playerRegion is facility and the number of trainees in the location of the player is 0:
+			let M be a random alive amicable trainee;
 			if M is nothing, now M is a random alive staff member;
 			now M is in the location of the player;
 			interest M;
-			say "[BigNameDesc of M] [bold type]enters the room, and immediately spots you. [big he of M] helps release your underwear and get you down from the hook.[roman type][line break][speech style of M]'[if M is student][big please] don't tell them I helped you down[otherwise]I hope you know that whoever did this to you is not your friend[end if].'[roman type][line break]";
+			say "[BigNameDesc of M] [bold type]enters the room, and immediately spots you. [big he of M] helps release your underwear and get you down from the hook.[roman type][line break][speech style of M]'[if M is trainee][big please] don't tell them I helped you down[otherwise]I hope you know that whoever did this to you is not your friend[end if].'[roman type][line break]";
 			now H is unrevealed;
 			dislodge H;
 			destroy H;

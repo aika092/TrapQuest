@@ -94,7 +94,7 @@ Understand "climb through [something]", "climb into [something]", "crawl into [s
 
 To say StickyTriggerFlav of (T - hole-in-wall):
 	now T is revealed;
-	if playerRegion is Hotel: [could have just been portaled to the academy by the receptionist]
+	if playerRegion is Hotel: [could have just been portaled to the facility by the receptionist]
 		say "You find yourself sliding straight for the hole in the opposite wall at an alarming speed!";
 		if diaper quest is 1 and hole-in-wall-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and woman-player is relaxed redeploy appropriate:
 			now woman-player is in HoleInWall;
@@ -112,7 +112,7 @@ To say StickyTriggerFail of (T - hole-in-wall):
 		say "[bold type]In the hole in the wall in front of you, someone is stuck. [roman type]You can't see their head, but their lower half consists of pink frilly socks and an absolutely massive diaper with a childish pattern[if diaper messing >= 7]. At their feet, two empty enema syringes make it clear that their belly is full of water[end if].".
 
 To trigger (Y - hole-in-wall):
-	if playerRegion is Hotel: [could have just been portaled to the academy by the receptionist]
+	if playerRegion is Hotel: [could have just been portaled to the facility by the receptionist]
 		if the hole-in-wall-scene of woman-player >= 1 and woman-player is in HoleInWall:
 			say "And you're heading straight for them! Your face smashes straight into the back of that ultra-thick padding. Fortunately it's dry. For now.";
 			let H be a random worn headgear;
@@ -331,14 +331,15 @@ To compute punishment of (P - hole-enema):
 	say "You feel the tip of some kind of thin hard cold object pushed inside your [asshole]. Moments later a warm liquid starts to fill you up! It must be some kind of enema syringe[if diaper quest is 0]! Somehow, maybe from the texture or consistency, you can tell you are being given a huge [L] enema[end if]!";
 	assfill (belly limit / 2) with L;
 	say "When the enema is finally complete, your head feels a lot lighter and your belly gurgles uncomfortably[if the humiliation of the player < public-squatting-limit]. But you can't bring yourself to expel it because you don't know who could be watching[end if]!";
-	let K be random worn knickers;
-	if K is knickers:
-		if K is crotch-displaced:
-			say "Finally, the assailant replaces your [K]![line break][variable custom style]They want me to mess myself...[roman type][line break]";
-			replace K;
-	otherwise:
-		summon animal-massive-diaper uncursed;
-		say "Finally, the assailant tapes a massive diaper around your crotch![line break][variable custom style]They want me to mess myself...[roman type][line break]".
+	if diaper messing >= 4:
+		let K be random worn knickers;
+		if K is knickers:
+			if K is crotch-displaced:
+				say "Finally, the assailant replaces your [K]![line break][variable custom style]They want me to mess myself...[roman type][line break]";
+				replace K;
+		otherwise:
+			summon animal-massive-diaper uncursed;
+			say "Finally, the assailant tapes a massive diaper around your crotch![line break][variable custom style]They want me to mess myself...[roman type][line break]".
 
 hole-tattoo is hole-in-wall punishment.
 Definition: hole-tattoo (called P) is appropriate:

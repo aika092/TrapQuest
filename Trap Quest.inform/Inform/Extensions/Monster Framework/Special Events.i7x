@@ -285,7 +285,7 @@ To say NearingAnilingusResponse of (M - a monster):
 		if M is intelligent, say "[speech style of M]'[one of]Useless good-for-nothing [slut][or]Get your tongue inside my ass already, you [whore][or]That's not how you give a rimjob, you idiot[or]Dumb bitch, come taste my ass properly[in random order]!'[roman type][line break]";
 		otherwise say "It feels like [NameDesc of M] is growing impatient!";
 	otherwise:
-		if M is intelligent, say "[speech style of M]'[one of]That's a good ass-licker.'[or]Yes, get in there[or]That's right, taste my asshole, [slut][or]What a lovely treat I've given you[in random order]!'[roman type][line break]";
+		if M is intelligent, say "[speech style of M]'[one of]That's a good ass-licker.'[or]Yes, get in there!'[or]That's right, taste my asshole, [slut]!'[or]What a lovely treat I've given you.'[in random order][roman type][line break]";
 		otherwise say "It feels like [NameDesc of M] is nearly satisfied!";
 
 To say AnilingusResisting of (M - a monster):
@@ -698,6 +698,7 @@ This function is called whenever a monster ejaculates in the player's mouth and 
 To compute auto swallow of (M - a monster):
 	say AutomaticSwallow of M;
 	compute silent swallowing;
+	if M is not penetrating face, progress quest of cum-swallowing-quest;
 	compute happy oral sex reward of M.
 
 [!<ComputeVoluntarySwallowOfMonster>+
@@ -710,6 +711,7 @@ This function is called whenever a monster ejaculates in the player's mouth and 
 To compute voluntary swallow of (M - a monster):
 	say VoluntarySwallow of M;
 	compute silent swallowing;
+	if M is not penetrating face, progress quest of cum-swallowing-quest;
 	compute happy oral sex reward of M.
 
 [!<ComputeVoluntarySpittingOfMonster>+
@@ -1028,31 +1030,37 @@ To compute default angry punishment of (M - a monster):
 	now bondage-successfully-applied is false;
 	if M is a bondage applier, compute bondage application check of M;
 	if bondage-successfully-applied is false:
-		let C be a random worn nudism-disabling currently at least partially visible stealable clothing; [ideally it wants to confiscate not destroy]
-		let stealableFound be 1;
-		if C is nothing:
-			now stealableFound is 0;
-			now C is a random worn nudism-disabling currently at least partially visible tearable clothing;
-		let D be a random top level protection nudism-disabling currently at least partially visible tearable clothing;
-		if stealableFound is 1:
-			let D be a random top level protection nudism-disabling currently at least partially visible stealable clothing;
-			if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible stealable clothing;
+		if diaper quest is 1 and M is able to donate babywear:
+			let CM be current-monster;
+			now current-monster is M;
+			compute babywear donation of M;
+			now current-monster is CM;
 		otherwise:
-			if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible tearable clothing;
-		if D is clothing, now C is D;
-		if stealableFound is 1:
-			compute M confiscating C;
-			if C is accessory and C is plentiful:
-				say angry punishment accessory confiscation of M;
+			let C be a random worn nudism-disabling currently at least partially visible unlocked stealable clothing; [ideally it wants to confiscate not destroy]
+			let stealableFound be 1;
+			if C is nothing:
+				now stealableFound is 0;
+				now C is a random worn nudism-disabling currently at least partially visible tearable clothing;
+			let D be a random top level protection nudism-disabling currently at least partially visible unlocked tearable clothing;
+			if stealableFound is 1:
+				let D be a random top level protection nudism-disabling currently at least partially visible stealable clothing;
+				if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible stealable clothing;
 			otherwise:
-				say angry punishment clothing confiscation of M on C;
-		otherwise if C is clothing:
-			say "[BigNameDesc of M] brutally rips your [C] from your [body area of C]. It is completely destroyed!";
-			say angry punishment clothing destruction of M on C;
-			destroy C;
-		otherwise:
-			SilentlyDifficultyUp M by 1;
-			say angry punishment difficulty gain of M.
+				if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible tearable clothing;
+			if D is clothing, now C is D;
+			if stealableFound is 1:
+				compute M confiscating C;
+				if C is accessory and C is plentiful:
+					say angry punishment accessory confiscation of M;
+				otherwise:
+					say angry punishment clothing confiscation of M on C;
+			otherwise if C is clothing:
+				say "[BigNameDesc of M] brutally rips your [C] from your [body area of C]. It is completely destroyed!";
+				say angry punishment clothing destruction of M on C;
+				destroy C;
+			otherwise:
+				SilentlyDifficultyUp M by 1;
+				say angry punishment difficulty gain of M.
 
 To compute sissy punishment of (M - a monster):
 	let rule-failed be false;
@@ -1178,7 +1186,7 @@ To say angry punishment clothing confiscation of (M - a monster) on (C - a cloth
 	say angry punishment clothing destruction of M on C.
 
 To say angry punishment difficulty gain of (M - a monster):
-	say "You have a feeling [he of M]'ll be harder on you in the future.".
+	say "You have a feeling [he of M][']ll be stronger, and harder on you, in the future.".
 
 [!<SayMouthPenetrationFlavOfMonster>+
 

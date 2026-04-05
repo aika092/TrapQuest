@@ -135,7 +135,7 @@ To compute service spill punishment:
 		if the number of worn breast covering clothing is 1 and the number of worn neck covering clothing is the number of worn neck covering breast covering clothing:
 			let M be a random worn breast covering clothing;
 			if M is not milkmaid-outfit, transform M into milkmaid-outfit;
-	otherwise if bondage protection < 2 and the player is not immobile and the number of things wrangling a body part is 0 and there is a held waitress vessel:
+	otherwise if bondage protection < 3 and the player is not immobile and the number of things wrangling a body part is 0 and there is a held waitress vessel:
 		let STV be 0;
 		if there is worn serving-bondage, now STV is 1;
 		if STV is 0 and serving tray is off-stage:
@@ -332,7 +332,7 @@ To progress quest of (Q - bunny-waitress-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
 			increase serve-count of Q by 1;
-			if playerRegion is not school, increase serve-count of Q by 1;
+			if playerRegion is not facility, increase serve-count of Q by 1;
 			if serve-count of Q > 4:
 				compute quest completion of Q on C.
 

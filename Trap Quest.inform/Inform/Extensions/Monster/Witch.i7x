@@ -740,12 +740,12 @@ To compute teaching of (M - witch):
 					decrease failsafe by 1;
 					now the witch-target of M is a random on-stage human monster;
 					let W be the witch-target of M;
-					if W is student or W is staff member or W is ex-princess or W is djinn or W is kitsune, now the witch-target of M is M;
+					if W is trainee or W is staff member or W is ex-princess or W is unconcerned or W is djinn or W is kitsune or W is shopkeeper or W is slutty sister, now the witch-target of M is M;
 				if the witch-target of M is M:
 					say "[speech style of M]'...Actually, never mind, I can't seem to think of anyone for you to banish.'[roman type][line break]";
 				otherwise:
 					say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target of M][speech style of M] and banish [him of witch-target of M]. I'll know when you've succeeded.'[roman type][line break]";
-					SilentlyDifficultyUp witch-target of M by 5;
+					[SilentlyDifficultyUp witch-target of M by 5;]
 			otherwise:
 				say "[speech style of M]'Then fuck off. [big please] and thank you!'[roman type][line break]".
 

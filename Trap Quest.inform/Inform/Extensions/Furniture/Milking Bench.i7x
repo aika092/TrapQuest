@@ -42,9 +42,8 @@ To construct normal buttons for (T - a milking bench lever):
 To say verb-desc of (T - a milking bench lever):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [unique-verb-desc of T][link][bracket]pull[close bracket][as]pull [text-shortcut of T][end link]".
 
-
 Report going when there is a milking bench in the location:
-	if lactation fetish is 1, compute addiction reflection on "milk".
+	if lactation fetish is 1, compute addiction reflection on "milk" with 1 flavour.
 
 mansion-milking-bench is a milking bench.
 mansion-milking-bench-lever is a milking bench lever.

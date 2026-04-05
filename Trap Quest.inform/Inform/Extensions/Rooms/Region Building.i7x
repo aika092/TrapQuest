@@ -9,6 +9,7 @@ chosen-puzzle-direction is an object that varies.
 closing-forbidden is a number that varies.
 
 Definition: a room (called R) is puzzle piece:
+	if R is dq-mandatory and diaper lover is 0, decide no;
 	if target-floor is in the Dungeon and R is a labyrinth room, decide yes;
 	if target-floor is in the Woods and R is jungle room, decide yes;
 	if target-floor is in the Hotel and R is modern room, decide yes;
@@ -87,7 +88,7 @@ To solve the puzzle:
 			repeat with R running through puzzle piece rooms:
 				make all directions possible for R;
 			now P is a random solvable room;
-		if debugmode > 0, say "P is [P] ([grid position of P]). ";
+		if debugmode > 0, say "P is [P][if P is a room] ([grid position of P])[end if]. ";
 		if P is room:
 			increase solvableRoomAttempts by 1;
 			now target-puzzle-piece is P;
@@ -126,7 +127,7 @@ To solve the puzzle:
 		otherwise:
 			[We either have finished or need to reset]
 			if debugmode > 0, say "[bold type][line break]REGION COMPLETE. [number of unplaced puzzle piece rooms] rooms unused: [list of unplaced puzzle piece rooms][roman type][line break]";
-			if there are unplaced puzzle piece mandatory rooms:
+			if there are unplaced puzzle piece actually mandatory rooms:
 				increase puzzleAttempts by 1;
 				flip the table around target-floor; [Reset all the rooms, we need to start again!]
 				now only-singles-left is 0;
@@ -275,7 +276,7 @@ Definition: a room (called R) is closing tile:
 
 Definition: a room (called R) is mostly ready:
 	if R is placed or R is not puzzle piece, decide no;
-	if R is closing tile and closing-forbidden is 1 and R is not mandatory, decide no;
+	if R is closing tile and closing-forbidden is 1 and R is not actually mandatory, decide no;
 	if chosen-puzzle-direction is east and W part of the shape of R is 0, decide no;
 	if chosen-puzzle-direction is west and E part of the shape of R is 0, decide no;
 	if chosen-puzzle-direction is north and S part of the shape of R is 0, decide no;

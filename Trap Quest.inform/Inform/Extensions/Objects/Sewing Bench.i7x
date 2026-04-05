@@ -1,6 +1,6 @@
 Sewing Bench by Objects begins here.
 
-a sewing bench is a kind of thing. a sewing bench is not portable. The printed name of a sewing bench is "[TQlink of item described]sewing bench[TQxlink of item described][verb-desc of item described]". 1 sewing bench is in School09. 1 sewing bench is in Mansion37. The text-shortcut of a sewing bench is "swb". Figure of sewing bench is the file "Env/School/sewingbench1.png".
+a sewing bench is a kind of thing. a sewing bench is not portable. The printed name of a sewing bench is "[TQlink of item described]sewing bench[TQxlink of item described][verb-desc of item described]". 1 sewing bench is in Facility09. 1 sewing bench is in Mansion37. The text-shortcut of a sewing bench is "swb". Figure of sewing bench is the file "Env/Facility/sewingbench1.png".
 
 Definition: a sewing bench is immune to change: decide yes.
 

@@ -232,11 +232,10 @@ This is the denim overalls wearability rule:
 The denim overalls wearability rule is listed in the overdress wearability rules.
 
 This is the denim overalls removability rule:
-	if wearing-target is denim-overalls:
-		if summoning is 0:
-			repeat with S running through worn shoes:
-				if autoremove is false, say "You can't your [S] through the tight legs of [NameDesc of denim-overalls]!";
-				rule fails.
+	if wearing-target is denim-overalls and summoning is 0 and gluetearing is false:
+		repeat with S running through worn shoes:
+			if autoremove is false, say "You can't get your [S] through the tight legs of [NameDesc of denim-overalls]!";
+			rule fails.
 The denim overalls removability rule is listed in the overdress removability rules.
 
 Cheerleader Outfit ends here.

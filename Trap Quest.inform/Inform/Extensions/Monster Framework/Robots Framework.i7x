@@ -253,6 +253,12 @@ To say EnticeFlav of (M - a robot) for (P - untidy-session):
 	otherwise:
 		say "[line break][speech style of M]'LITTERBUG PUNISHMENT ROUTINE REQUIRED. [caps please] SUBMIT.'[roman type][line break]".
 
+To say EnticeFlav of (M - a robot) for (P - diaper-donate):
+	say "[line break][speech style of M]'[caps please] ADOPT THE DIAPER CHANGE SUBMISSION POSITION.'[roman type][line break]".
+
+To say EnticeFlav of (M - a robot) for (P - spanking-session):
+	say "[line break][speech style of M]'[caps please] ADOPT THE SPANKING SUBMISSION POSITION.'[roman type][line break]".
+
 Part - Conversation
 
 To say OfferFriendshipFlav of (M - a robot):
@@ -312,6 +318,9 @@ To compute unique banishment of (M - a robot):
 
 To unique reset (M - a robot):
 	do nothing. [don't reset blue-balls]
+
+To say PetForcefeedDeclarationFlav of (M - a robot):
+	say "[speech style of M]'BOWL FEEDING ROUTINE INITIATED. TIME FOR YOUR YUM YUMS, ANIMAL.'[roman type][line break]".
 
 Definition: a robot is willing to potion forcefeed: decide yes.
 To say PotionForcefeedDeclarationFlav of (M - a robot) for (T - a thing):

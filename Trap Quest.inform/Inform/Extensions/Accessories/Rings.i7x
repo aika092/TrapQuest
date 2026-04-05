@@ -78,7 +78,7 @@ Definition: a monster (called M) is brat-stone-qualifying:
 	if M is dominatrix:
 		if the distance of Hotel37 > 2, decide yes;
 	if M is nurse:
-		if the distance of School11 > 2, decide yes;
+		if the distance of Facility11 > 2, decide yes;
 	decide no.
 
 A humility-stone is a kind of ring. A humility-stone is unique. A humility-stone is usually blessed. A humility-stone is usually wizardry. A humility-stone can be unchallenged, or challenged. A humility-stone is usually unchallenged.
@@ -206,16 +206,16 @@ To say StoneDesc of (C - piercing-stone):
 	say "a Master of Piercing.".
 
 To StatueRestore (S - piercing-stone):
-	if the player is an april 2025 top donator, now S is in School08;
+	if the player is an april 2025 top donator, now S is in Facility08;
 	otherwise now S is off-stage.
 
 Report wearing piercing-stone:
 	say "An arrow of stinging pain shoots up your arm, across your back and up the nape of your neck, stabbing into your brain.[line break][first custom style]'[if piercing-stone is challenged]Hmph. It seems you CAN follow instructions. [otherwise]Hoh. Your skill is evident in your bearing. [end if]I, The Piercing Stone, acknowledge you.'[roman type][line break]";
 	PainUp 1.
 
-Report going when the player is in School08:
+Report going when the player is in Facility08:
 	if diaper quest is 0 and piercing-stone-progress of the player > 0 and fucktoy-stone is not held:
-		now piercing-stone is in School08.
+		now piercing-stone is in Facility08.
 
 Check taking piercing-stone:
 	if the player is not an april 2025 top donator, say debugadvert instead;

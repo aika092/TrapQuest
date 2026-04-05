@@ -407,14 +407,14 @@ To compute periodic effect of (P - ass-hugger):
 An all time based rule (this is the facehuggers-removed rule):
 	repeat with C running through alive hugger-panties:
 		if C is not held:
-			if C is not in the school:
+			if C is not in the facility:
 				let M be a random off-stage facehugger;
 				if M is monster:
 					set up M;
 					now M is in the location of C;
 			only destroy C;
 	if hugger-gag is alive and hugger-gag is not held:
-		if hugger-gag is not in the school:
+		if hugger-gag is not in the facility:
 			let M be a random off-stage facehugger;
 			if M is monster:
 				set up M;

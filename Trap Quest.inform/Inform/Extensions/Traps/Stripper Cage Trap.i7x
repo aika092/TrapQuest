@@ -120,7 +120,7 @@ To compute turn trap effect of (Y - stripper cage trap):
 								now BP is belly;
 							otherwise if R is 5:
 								now BP is hips;
-						say "[big his of M] [semen] splashes against your [variable BP]![line break][variable custom style][if the semen addiction of the player < 10][one of]Eek![or]Gross![or]Eww![at random][otherwise][one of]Hehe[or]Ooh[or]Oopsie[at random]~[roman type][line break]";
+						say "[big his of M] [semen] splashes against your [variable BP]![line break][variable custom style][if the semen addiction of the player < 10][one of]Eek![or]Gross![or]Eww![at random][otherwise][one of]Hehe[or]Ooh[or]Oopsie[at random]~[end if][roman type][line break]";
 						AnnouncedSquirt semen on BP by (the semen load of M);
 					say "[big he of M] leaves the way [he of M] came, [one of]sounding very pleased with [himself of M][or]chuckling to [himself of M][or]with a pleased sound of satisfaction[at random].";
 					finally destroy M;

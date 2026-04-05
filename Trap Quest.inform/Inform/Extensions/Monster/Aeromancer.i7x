@@ -416,9 +416,6 @@ To say SexSubmissionFlav of (M - an aeromancer): [this is customised because I r
 	otherwise:
 		say "[one of]You allow [NameDesc of M] to violate you as much as [he of M] likes. [big he of M]'s in charge![or]You laugh heartily at [NameDesc of M][']s wordplay, hoping [he of M][']ll reward you after.[at random]".
 
-To say SexResistFlav of (M - an aeromancer):
-	say "[one of]You hopelessly flail from your position in mid-air, doing everything you can to resist the invasion.[or]Since you're trapped several feet off the ground, you have no real way of resisting, but you still try![or]Your hands pass right through when you try to yank a tentacle out of you, but thanks to your struggling, you feel some very tangible pain![or]You flail around and make as much noise as you can, but no matter how much you try, you can't break [NameDesc of M][']s concentration[unless M is confident aeromancer] for very long[end if].[or]You frantically try to claw your way to the aeromancer and hopefully get the wand out of [his of M] hand, [if the M is confident aeromancer]but [he of M] effortlessly holds you at bay[otherwise]but [he of M] always manages to keep you just out of reach[end if].[at random]".
-
 Section 0 - Ballooning
 
 [!<Aeromancer>@<balloon:Integer>*
@@ -1378,7 +1375,7 @@ To compute appearance assessment of (M - confident aeromancer):
 		let A be the air volume of belly + the air volume of breasts + the air volume of hips;
 		if A >= 15:
 			say "[speech style of M]'[one of]WOW, what wind elemental fucked YOUR brains out? I probably shouldn't bother asking, since you're obviously a slut for getting blown up like a balloon, but how would you like to help me with an experiment?'[or]You look kind of bloated. Did you wake up on the wrong side of a djinn's cloud buster? Hahaha! Help me out with an experiment... if you want. *snrt*'[or]Hey, you probably get this a lot, but you look JUST like this balloon I fucked in college. Hahaha! Want to help me out with an experiment?'[at random][roman type][line break]";
-		otherwise if the class of the player is schoolgirl:
+		otherwise if the class of the player is alchemist:
 			say "[speech style of M]'[one of]So, freshman. Want to help out with one of my experiments, or am I going to have to fog you.'[or]Hey, you like tentacles right? OK, so I have this experiment I want to try out, but if you say no, I'm going to use my magic to make you my bitch. Win win for both of us, right?'[or]You obviously have no magical talent, so you'd really have no chance of taking me on in a fight. So, agree to help me out with an experiment, or I'm going to use my magic to torture you until I get bored! Sound good?'[at random][roman type][line break]";
 		otherwise if the player is exposed:
 			say "[speech style of M]'[one of]Wow, a wench outside the dungeon! You don't see that every day! [or]My motto is: ['][if vagina is lewdly exposed][cunt][otherwise if penis is lewdly exposed and penis is tiny][sissy] clitty[otherwise if asshole is lewdly exposed]butthole[otherwise if penis is lewdly exposed]willy[otherwise]nipples[end if] on display, fucked by guards all day!['] [then at random]FYI I'm pretty powerful, so I'm going to experiment on you either way, but I'll go easier on you if you accept willingly. Sound good?[roman type][line break]";

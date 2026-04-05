@@ -877,7 +877,7 @@ To compute poker punishment of (PC - a number):
 					let K be a random worn knickers;
 					if K is diaper:
 						now bulk-search-level is the DQBulk of K;
-						let D be the chosen trap diaper;
+						let D be the chosen diaper;
 						if D is DQBulkier:
 							say "A split second later, a [MediumDesc of D] appears over the top of your [MediumDesc of K]!";
 							blandify and reveal D;
@@ -1177,12 +1177,12 @@ To compute poker punishment of (PC - a number):
 				say "[BigNameDesc of orc] waits a moment, and then hums with intrigue.[line break][speech style of orc]'It would seem that the [poker card of PC] can't find anything appropriate to summon right now.'[roman type][line break]";
 		otherwise if PS is 2:
 			say "[speech style of orc]'The [poker card of PC] curses you with a troublesome burden.'[roman type][line break]";
-			let ULO be the list of eligible pledge-lesson-objects;
+			let ULO be the list of eligible pledge-training-objects;
 			sort ULO in random order;
 			repeat with LO running through ULO:
 				if LO is implanted, remove LO from ULO;
 			let E be entry 1 in ULO;
-			if E is a pledge-lesson-object:
+			if E is a pledge-training-object:
 				pledge-execute E;
 				pledge-implant E;
 				say "And you can feel that for the rest of your time here, if you disobey the pledge that was just made for you, there will be serious consequences.";

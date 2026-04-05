@@ -126,11 +126,11 @@ To decide which object is the unique-upgrade-target of (C - plastic-is-fantastic
 daddy issues dress is a growing silicone dress. daddy issues dress is high cut. daddy issues dress is not-top-displacable. Understand "pink", "rubber" as daddy issues dress.
 
 Definition: daddy issues dress is class-relevant:
-	if the class of the player is silicone queen or the class of the player is schoolgirl, decide yes;
+	if the class of the player is silicone queen or the class of the player is alchemist, decide yes;
 	decide no.
 
 Definition: a clothing is brat themed: decide no.
-Definition: daddy issues dress is brat themed: decide yes. [schoolgirl + silicone queen]
+Definition: daddy issues dress is brat themed: decide yes. [alchemist + silicone queen]
 
 The printed name of daddy issues dress is "[clothing-title-before]pink rubber 'Daddy Issues' dress[clothing-title-after]". The text-shortcut of daddy issues dress is "ddid".
 
@@ -239,7 +239,7 @@ Definition: rubber-royal-dress is class-relevant:
 	if the class of the player is silicone queen or the class of the player is princess, decide yes;
 	decide no.
 
-The printed name of rubber-royal-dress is "[clothing-title-before]pink latex royal dress[clothing-title-after]". The text-shortcut of rubber-royal-dress is "plrd".
+The printed name of rubber-royal-dress is "[clothing-title-before]pink latex royal dress[clothing-title-after]". The text-shortcut of rubber-royal-dress is "plrd". The skirt-length of rubber-royal-dress is 3.
 
 Figure of rubber-royal-dress is the file "Items/Clothes/Upper/Latex/rubberdress8.png".
 

@@ -4,7 +4,7 @@ The setting up dungeon monsters rules is a rulebook.
 The setting up woods monsters rules is a rulebook.
 The setting up hotel monsters rules is a rulebook.
 The setting up mansion monsters rules is a rulebook.
-The setting up school monsters rules is a rulebook.
+The setting up facility monsters rules is a rulebook.
 
 To regionally place (M - a monster):
 	if debugmode > 0, say "Regionally placing [M].";

@@ -3,7 +3,6 @@ DQ Not Enabled by Miscellaneous Backend begins here.
 To decide which number is diaper quest:
 	decide on 0.
 
-
 Include Unnecessary Figures by TQ Only Stuff.
 Include Necessary Figures by TQ Only Stuff.
 
@@ -19,11 +18,26 @@ To decide which figure-name is YesNoBackground:
 	if the size of penis > 7, decide on figure of YesNoBackground6;
 	decide on figure of YesNoBackground2.
 
-The story description is "Explore a dangerous world of transformation, penetration, and bimbofication. 18+ only!".
-The release number is 15.
+The story description is "Explore a delightful roguelike dungeon of transformation, penetration, and bimbofication. 18+ only!".
+The release number is 16.
+
+To compute (M - a monster) stomping (N - a monster):[We keep this completely generic to avoid potential conflicts with the specific instances of each monster.]
+	if N is matron:
+		compute matron-escape from M;
+	otherwise if N is female and N is not neuter:
+		if M is in the location of the player, say "[BigNameDesc of M] grabs [NameDesc of N] and pulls [him of N] towards [him of M]. Remaining fully standing, [he of M] lowers [him of N] onto [his of M] giant erect [DickDesc of M] and starts fucking [his of N] [HoleDesc of N] furiously. [big he of N] screams in both pleasure and terror as [his of M] member almost splits [him of N] in two, and very soon [he of M] is coming inside [him of N]. [big his of N] belly visibly bulges before pints of [semen] begin to explode from around the sides of [his of M] [DickDesc of M]. After [he of M] has finished, [his of M] tail lets go of [his of N] waist and [he of N] falls to the ground, where [he of N] promptly faints.";
+		otherwise say "You hear a [man of N] shout out in a mixture of ecstasy and terror from [if N is nearby]nearby[otherwise]somewhere in the [playerRegion][end if]!";
+		destroy N;
+		let L be a random off-stage leftover;
+		now L is in the location of M;
+		now the leftover-type of L is the leftover-type of N;
+	otherwise:
+		say "[BigNameDesc of M] is glitching, it doesn't know how to deal with the [N]. Report this bug please!";[This will not happen with default game but with added monsters it allows the ability for them to be dungeon dwelling and have a scene where the minotaur kills them.]
 
 Definition: a thing is thigh-spreading: decide no.
 Definition: a clothing is thigh-spread-blocking: decide no.
+To say ShortDesc of (C - an alchemist outfit):
+	say "alchemist outfit".
 
 berriVineBossScene is a number that varies.
 berriMatronTripScene is a number that varies.
@@ -58,10 +72,11 @@ To decide which object is correct-berri-diaper:
 
 urinal-competition-punishment is a diaper punishment. urinal-competition-punishment has an object called urinal-rival.
 berri-collaring is a diaper punishment.
+berri-present is a diaper punishment.
 
 robomatron is a monster.
 boogeymonster is a monster.
-student-rachel is a monster.
+trainee-rachel is a monster.
 
 Include Wench by Monster.
 Include Sex Doll by Monster.
@@ -76,6 +91,7 @@ Include Slutty Sisters by Monster.
 Include Centaur by Monster.
 Include Goblin by Monster.
 Include Woman Barbara by Monster.
+Include Familiar by Monster.
 Include TQ Monster Variants by TQ Only Stuff.
 
 Figure of Berri Cutscene 14c is the file "Special/Animations/GargoyleTitwank/loading banner.png".
@@ -102,7 +118,7 @@ A diaper bag of holding is a kind of bag of holding.
 A baby diaper bag of holding is a kind of bag of holding.
 A stuffie is a kind of equippable. A stuffie is unique.
 
-Include School Stuff by TQ Only Stuff.
+Include Facility Stuff by TQ Only Stuff.
 Include Serving Table by Bondage.
 Include Bunny Ears TQ by Headgear.
 Include Bridal Veils by Headgear.

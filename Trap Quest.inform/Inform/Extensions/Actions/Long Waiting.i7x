@@ -13,8 +13,8 @@ Check LongWaiting:
 		holewait instead;
 	otherwise if the player is in DiaperPresentBoxBlindfolded:
 		try waiting instead;
-	otherwise if detention chair is grabbing the player:
-		detentionchairwait instead;
+	otherwise if reconditioning chair is grabbing the player:
+		reconditioningchairwait instead;
 	if the player is immobile, say "You're a bit busy to use this verb!" instead;
 	if the player is in danger, say "You can't use this verb when there are monsters nearby!" instead;
 	if the player is in a predicament room, say "Sorry, you can't use this in the Extra Credit Zone." instead;
@@ -62,17 +62,17 @@ This is the long wait report danger rule:
 		rule succeeds.
 The long wait report danger rule is listed in the long wait report rules.
 
-This is the long wait school dungeon rule:
-	if the player is in School34 and dungeon chains is not worn:
-		if debugmode > 1, say "Stopped for school dungeon.";
+This is the long wait facility dungeon rule:
+	if the player is in Facility34 and dungeon chains is not worn:
+		if debugmode > 1, say "Stopped for facility dungeon.";
 		rule fails.
-The long wait school dungeon rule is listed in the long wait rules.
+The long wait facility dungeon rule is listed in the long wait rules.
 
-This is the long wait report school dungeon rule:
-	if the player is in School34 and dungeon chains is not worn:
+This is the long wait report facility dungeon rule:
+	if the player is in Facility34 and dungeon chains is not worn:
 		say "[bold type]Waiting ended as you are no longer bound by chains.[roman type][line break]";
 		rule succeeds.
-The long wait report school dungeon rule is listed in the long wait report rules.
+The long wait report facility dungeon rule is listed in the long wait report rules.
 
 old-thirst is a number that varies.
 

@@ -37,7 +37,7 @@ To choose a diaper punishment:
 		decrease current-priority by 1.
 
 To say EnticeFlav of (M - a monster) for (P - a diaper punishment):
-	if M is student:
+	if M is trainee:
 		say "[line break][speech style of M]'[one of]Get on your knees NOW, twerp.'[or]What's the big deal? You must get bullied all the time! Just get on your knees already!'[in random order][roman type][line break]";
 	if M is intelligent:
 		say "[line break][speech style of M]'[one of]Right, down on your knees so we can have some fun.'[or]I can't wait to do something extra-special with you, as soon as you get on your knees!'[in random order][roman type][line break]";
@@ -60,6 +60,7 @@ To decide which number is the relevant addiction of (P - diaper-change):
 
 Definition: a monster (called M) is eager to change diapers:
 	if M is changing the player, decide yes;
+	if M is aggravated and (M is not diaper-committed and M is not bulkier-diaper-committed and M is not double-diaper-committed), decide no;
 	if M is staff member and M is not nurse, decide no;
 	if there is a soiled-diaper carried by M or the health of M < the maxhealth of M, decide no;
 	if the class of the player is priestess, decide no;
@@ -201,20 +202,30 @@ Section 3 Masturbation Session
 masturbation-session is a diaper punishment. The priority of masturbation-session is 3.
 
 To say EnticeFlav of (M - a monster) for (P - masturbation-session):
-	if M is intelligent, say "[line break][speech style of M]'[one of]I can see you're all flustered, sweetheart. Why don't you let me make you feel even better?'[or][if there is a worn diaper]What's the big deal? I just want you to get on your knees so I can give you some lovely [']squirties[']...[otherwise]If you get on your knees right now, I'll make you feel really good down there[end if]...'[in random order][roman type][line break]";
+	if M is intelligent, say "[line break][speech style of M]'[one of]I can see you're all flustered, sweetheart. Why don't you let me make you feel even better?'[or][if there is a worn diaper]What's the big deal? I just want you to get on your knees so I can give you some lovely [']squirties['][otherwise]If you get on your knees right now, I'll make you feel really good down there[end if]...'[in random order][roman type][line break]";
 	otherwise say "[big he of M] gestures that [he of M] wants to masturbate you.".
 
 To decide which number is the relevant addiction of (P - masturbation-session):
 	decide on the sex addiction of the player.
 
 Definition: a monster (called M) is eager to masturbate:
-	if M is masturbating the player, decide yes;
+	if M is masturbating the player or M is knee bouncing the player, decide yes;
 	let D be a random worn diaper;
 	if D is not diaper, decide no;
 	if D is not total protection, decide no;
+	if M is eager to knee bounce and M is able to knee bounce, decide yes;
 	if D is messed and M is not willing to masturbate messy players, decide no;
 	if M is able to carry out masturbation, decide yes;
 	decide no.
+
+Definition: a monster (called M) is able to knee bounce:
+	if the player is not a november 2025 diaper donator, decide no;
+	repeat with N running through monsters grabbing the player:
+		if N is not M, decide no;
+	if there is worn total protection knickers,	decide yes;
+	decide no.
+
+Definition: a monster is eager to knee bounce: decide no.
 
 Definition: a monster (called M) is able to carry out masturbation:
 	repeat with N running through monsters grabbing the player:
@@ -234,7 +245,8 @@ Definition: masturbation-session (called P) is appropriate:
 	decide no.
 
 To compute punishment of (P - masturbation-session):
-	compute masturbation of current-monster.
+	if current-monster is knee bouncing the player or (current-monster is eager to knee bounce and current-monster is able to knee bounce), compute knee bouncing of current-monster;
+	otherwise compute masturbation of current-monster.
 
 Section 4 Enema
 
@@ -279,12 +291,20 @@ pet-forcefeed is a diaper punishment. The priority of pet-forcefeed is 4.
 potion-forcefeed is a diaper punishment. The priority of potion-forcefeed is 2.
 
 To say EnticeFlav of (M - a monster) for (P - forcefeed):
-	if M is intelligent, say "[line break][speech style of M]'[one of]I just want to sate that rumbling in your tummy, little one! Come on, come sit on [daddytitle of M][']s lap.'[or]If you get on your knees RIGHT NOW, I'll just feed you your din-dins, and not punish you any more, okay?'[in random order][roman type][line break]";
-	otherwise say "[big he of M] gestures that [he of M] wants to feed you some food.".
+	if M is robot:
+		say "[line break][speech style of M]'ADOPT THE BABY FEEDING POSITION.'[roman type][line break]";
+	otherwise if M is intelligent:
+		say "[line break][speech style of M]'[one of]I just want to sate that rumbling in your tummy, little one! Come on, come sit on [daddytitle of M][']s lap.'[or]If you get on your knees RIGHT NOW, I'll just feed you your din-dins, and not punish you any more, okay?'[in random order][roman type][line break]";
+	otherwise:
+		say "[big he of M] gestures that [he of M] wants to feed you some food.".
 
 To say EnticeFlav of (M - a monster) for (P - pet-forcefeed):
-	if M is intelligent, say "[line break][speech style of M]'It's time for your din-dins, you silly pet!'[roman type][line break]";
-	otherwise say "[big he of M] gestures that [he of M] wants to feed you some food.".
+	if M is robot:
+		say "[line break][speech style of M]'ADOPT THE PET BOWL FEEDING POSITION.'[roman type][line break]";
+	otherwise if M is intelligent:
+		say "[line break][speech style of M]'It's time for your din-dins, you silly pet!'[roman type][line break]";
+	otherwise:
+		say "[big he of M] gestures that [he of M] wants to feed you some food.".
 
 To say EnticeFlav of (M - a monster) for (P - potion-forcefeed):
 	if M is intelligent, say "[line break][speech style of M]'You've got a funny looking drink there. I wonder what will happen if you drink it...'[roman type][line break]";
@@ -435,8 +455,21 @@ Definition: a monster is able to donate babywear:
 	if there is babywearable clothing, decide yes;
 	decide no.
 
+Definition: a clothing (called C) is potentially babywearable:
+	if C is off-stage and C is babywear, decide yes;
+	decide no.
+
+[some NPCs love certain types of clothing]
+Definition: a clothing (called C) is priority babywear:
+	if C is off-stage and C is uniquely priority babywear, decide yes;
+	if C is not potentially babywearable, decide no;
+	if C is carried by current-monster or (C is off-stage and C is listed in the tradableItems of current-monster), decide yes;
+	decide no.
+
+Definition: a clothing is uniquely priority babywear: decide no.
+
 Definition: a clothing (called C) is babywearable:
-	if C is on-stage or C is not babywear, decide no;
+	if C is not potentially babywearable, decide no;
 	if C is unskirted themed and there is worn skirted clothing, decide no;
 	if C is skirted and there is worn unskirted themed clothing, decide no;
 	if C is actually summonable, decide yes;

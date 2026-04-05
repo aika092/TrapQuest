@@ -390,7 +390,7 @@ To decide which number is the delicateness-influence of (C - a sissy faggot T-sh
 Definition: a sissy faggot T-shirt is sissifying: decide yes.
 Definition: a sissy faggot T-shirt is white themed: decide yes.
 Definition: a sissy faggot T-shirt is fetish appropriate:
-	if the player is gendered male and diaper quest is 0, decide yes;
+	if the player is gendered male and diaper quest is 0 and legacy content is 1, decide yes;
 	decide no.
 
 To decide which number is the initial outrage of (C - a sissy faggot T-shirt):

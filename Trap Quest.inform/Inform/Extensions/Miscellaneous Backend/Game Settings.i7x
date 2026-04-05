@@ -77,7 +77,7 @@ choice
 1 [auto body animations]
 0 [Disclaimer Version]
 0 [Undo Counter]
-1 [School Names]
+1 [Facility Names]
 0 [Excessive Hyperlinks]
 1 [used for dark mode announcement]
 24 [inventoryFocusLimit]
@@ -101,6 +101,8 @@ choice
 45 [map-window-portion]
 0 [oldStickFigure]
 1 [bondageIconVisible]
+3 [buttCamVisible]
+0 [legacy content]
 
 To decide which number is YesNoPreference:
 	decide on choice in row 1 of the Table of Settings.
@@ -441,12 +443,12 @@ How many times has the player used undo since they started this new game?
 To decide which number is undo-counter:
 	decide on choice in row 44 of the Table of Settings.
 
-[!<DecideWhichNumberIsSchoolNames>+
+[!<DecideWhichNumberIsFacilityNames>+
 
 Does the player's name get overridden in the school?
 
 +!]
-To decide which number is schoolNames:
+To decide which number is facilityNames:
 	decide on choice in row 45 of the Table of Settings.
 
 [!<DecideWhichNumberIsExcessiveHyperlinks>+
@@ -594,7 +596,7 @@ title	subtable	description	toggle
 "Non-inventory Hyperlinks disabled when all graphical windows are open: [if excessiveHyperlinks is 0]YES[otherwise]NO[end if]"	--	--	excessive hyperlinks toggle rule
 "When you are asked to respond yes / no: [if actual inline hyperlinks < 1]Respond by keyboard only (since you've disabled hyperlinks)[otherwise if YesNoPreference is 0]Respond by keyboard only[otherwise if YesNoPreference is 1]Respond by keyboard or text hyperlinks or map window buttons (all options will be provided to you)[otherwise]Respond by keyboard or text hyperlinks (obnoxious map window buttons don't appear)[end if]"	--	--	YesNoPreference toggle rule
 "Examine Items After Transform: On / Off: [if transformation cutscenes is 1]ON[otherwise]OFF[end if]"	--	--	transformation cutscenes toggle rule
-"Academy teachers can give you new names: [if schoolNames is 0]OFF[otherwise]ON[end if]"	--	--	school names toggle rule
+"Royal Training Promotions can give you new names: [if facilityNames is 0]OFF[otherwise]ON[end if]"	--	--	facility names toggle rule
 ["Simulated internet (at the end of the game it's revealed that nothing compromising was actually published to the real internet): [if simulatedInternet is 0]OFF[otherwise]ON[end if]"	--	--	simulated internet toggle rule]
 [ALL EXTRA OPTIONS SHOULD GO ABOVE SIMULATED INTERNET ROW, OR NON-DONATORS WON'T SEE THEM.]
 
@@ -651,6 +653,7 @@ title	subtable	description	toggle
 "Automatically show clothing window when clothing changes: [if auto clothing window is 0]OFF[otherwise if auto clothing window is 1]ON (lower priority than automatically showing body window)[otherwise]ON (higher priority than automatically showing body window)[end if]"	--	--	auto clothing window toggle rule
 "Automatically show body window when body transformation visibly progresses: [if auto body window is 0]OFF[otherwise]ON[end if]"	--	--	auto body window toggle rule
 "What counts as body transformation visibly progressing? [if body outdated preference is 0]ALL VISIBLE CHANGES, GOOD & BAD[otherwise]ONLY WHEN BODY GETS SLUTTIER[end if]"	--	--	body outdated preference toggle rule
+"Display butt view underneath clothing window? [if buttCamVisible is 0]NEVER[otherwise if buttCamVisible is 1]WHEN WEARING CLOTHING WITH AN UNUSUAL REAR VIEW[otherwise if diaper quest is 0 and buttCamVisible is 2]WHEN WEARING USUAL CLOTHING OR WHEN GAPED[otherwise]ALWAYS[end if]"	--	--	buttCamVisibletoggle rule
 "Animated graphical elements: [if animationsEnabled is 1]ON[otherwise]OFF[end if]"	--	--	animationsEnabled toggle rule
 "Automatically animate body transformations (recent alpha testers only): [if auto body animations is 0]OFF[otherwise]ON[end if]"	--	--	auto body animations toggle rule
 "Icons for nearby NPCs in Map Window: [if map-figures is 1]ENABLED[otherwise if the player is not the donator]BETA TESTERS ONLY FOR NOW[otherwise]DISABLED[end if]"	--	--	map-figures toggle rule
@@ -797,7 +800,7 @@ This is the trap warning toggle rule:
 	if choice in row 35 of Table of Settings is 0, increase choice in row 35 of Table of Settings by 1;
 	otherwise now choice in row 35 of Table of Settings is 0.
 
-This is the school names toggle rule:
+This is the facility names toggle rule:
 	if choice in row 45 of Table of Settings is 0, increase choice in row 45 of Table of Settings by 1;
 	otherwise now choice in row 45 of Table of Settings is 0.
 
@@ -959,6 +962,16 @@ This is the oldStickFiguretoggle rule:
 
 To decide which number is bondageIconVisible:
 	decide on choice in row 68 of Table of Settings.
+
+To decide which number is buttCamVisible:
+	decide on choice in row 69 of Table of Settings.
+
+This is the buttCamVisibletoggle rule:
+	if buttCamVisible < 3:
+		increase the choice in row 69 of Table of Settings by 1;
+		if diaper quest is 1 and the choice in row 69 of Table of Settings is 2, increase the choice in row 69 of Table of Settings by 1;
+	otherwise:
+		now choice in row 69 of Table of Settings is 0.
 
 Part - Settings
 

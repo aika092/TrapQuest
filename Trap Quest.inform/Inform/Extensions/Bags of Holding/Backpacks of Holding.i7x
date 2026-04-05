@@ -18,7 +18,7 @@ To decide which figure-name is clothing-image of (C - a pink backpack of holding
 	decide on figure of pink backpack of holding.
 
 To say ClothingDesc of (C - a pink backpack of holding):
-	say "A smart but girly leather backpack in a stylish shade of pink that holds all your spare items and negates their weight. Whilst it could be worse, it's very eye-catching and you'd expect it to be worn be someone of a school age rather than an adult. A warning on the label says '[BagHoldingWarning] backpack'.".
+	say "A smart but girly leather backpack in a stylish shade of pink that holds all your spare items and negates their weight. Whilst it could be worse, it's very eye-catching and you'd expect it to be worn be someone of a younger age. A warning on the label says '[BagHoldingWarning] backpack'.".
 
 To say ShortDesc of (C - a pink backpack of holding):
 	say "girly pink leather backpack".

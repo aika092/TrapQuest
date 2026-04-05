@@ -18,15 +18,21 @@ A room can be seen. [A seen room is every room next to a visited room.]
 A room can be trappable or untrappable. A room is usually trappable. [An untrappable room doesn't have traps spawn, e.g. the shop.]
 
 A room can be mandatory. [The game will not accept a map configuration that is missing this room.]
+A room can be dq-mandatory. [The game will not accept a map configuration that is missing this room.]
+Definition: a room (called R) is actually mandatory: [Allows us to override mandatory rooms]
+	if R is mandatory, decide yes;
+	if R is dq-mandatory and diaper lover > 0, decide yes;
+	decide no.
+A room can be vanished. [adult nurseries can be removed from the map]
 A room can be pinned or unpinned. A room is usually unpinned.
 A room has a direction called first forbidden direction. The first forbidden direction of a room is usually up.
 A room has a direction called second forbidden direction. The second forbidden direction of a room is usually up.
 
 A room can be use-the-floor, water-bodied, urinals or toilets (this is the toilet facilities property). A room is usually use-the-floor.
 Report going when the location is toilets:
-	if watersports fetish is 1, compute addiction reflection on "urine".
+	if watersports fetish is 1, compute addiction reflection on "urine" with 1 flavour.
 Report going when the location is urinals:
-	if watersports fetish is 1, compute addiction reflection on "urine".
+	if watersports fetish is 1, compute addiction reflection on "urine" with 1 flavour.
 
 Definition: a room is bathroom:
 	if it is urinals or it is toilets, decide yes;

@@ -278,7 +278,7 @@ To choose a grope target:
 	now specificBodyPartChosen is false.
 
 To compute grope of (M - a person):
-	if current-predicament is team-scissor-lift-predicament and the player is in a predicament room and there is a student in the location of the player: [this is a bystander reacting to a player on a scissor lift tour]
+	if current-predicament is team-scissor-lift-predicament and the player is in a predicament room and there is a trainee in the location of the player: [this is a bystander reacting to a player on a scissor lift tour]
 		say "[speech style of M]'Holy shit[one of], look at those two sluts up there[or], I can see their tits and everything[or], what the fuck[or][stopping]!'[roman type][line break]";
 	otherwise:
 		let RF be refractoryperiod; [this is how we check if the player orgasmed from the grope]

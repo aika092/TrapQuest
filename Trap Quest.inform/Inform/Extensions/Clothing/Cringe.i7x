@@ -28,9 +28,14 @@ To decide which number is the cringe of (C - a diaper):
 	if C is worn:
 		if C is not currently at least partially visible, decide on 0;
 		if C is not currently visible:
-			if the trophy-mode of diaper-trophy is 1 and the at least partial concealer of C is not arms, decide on 0;
+			if the trophy-mode of diaper-trophy is 1 and the at least partial concealer of C is not arms:
+				let LPC be the at least partial concealer of C;
+				if LPC is not actually sheer, decide on 0; [diaper trophy makes diaper shape not humiliating, so as long as the clothing isn't sheer, we can set this to 0]
 	let O be the unworn cringe of C;
-	if C is worn and C is not currently visible, now O is (O * 8) / 10;
+	if C is worn and C is not currently visible:
+		let LPC be the at least partial concealer of C;
+		if LPC is actually sheer clothing, now O is (O * 8) / 10;
+		otherwise decide on the bulk cringe of C;
 	decide on O.
 
 To decide which number is the unworn cringe of (C - a clothing):
