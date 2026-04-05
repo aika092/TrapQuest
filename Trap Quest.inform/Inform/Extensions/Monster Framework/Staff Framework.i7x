@@ -288,7 +288,7 @@ To say WhoAnswer of (M - a staff member):
 	say "[speech style of M]'I should clearly be teaching you not to ask stupid questions!'[roman type][line break]".
 
 To say WhereAnswer of (M - a staff member):
-	say "[speech style of M]'[if the rank of the player <= 1]Geez, you're pretty far gone, aren't you?'[otherwise]Ranks are earned, and not without effort. It's important you realise that.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Jeez, you're pretty far gone, aren't you?'[otherwise]Ranks are earned, and not without effort. It's important you realise that.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a staff member):
 	say "[speech style of M]'Wouldn't you like to know.'[roman type][line break]".
@@ -1414,7 +1414,7 @@ To compute reconditioning chair tease of (M - a monster):
 	now M is uninterested.
 
 To say reconditioning chair tease of (M - a monster):
-	say "[speech style of M]'[one of]Hah! You enjoying yourself there, [honey of M]?'[or]Geez, it's like you get off on humiliation or something.'[or]You must be pretty dumb if you can't even [reconditioning-reason-flav].'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Hah! You enjoying yourself there, [honey of M]?'[or]Jeez, it's like you get off on humiliation or something.'[or]You must be pretty dumb if you can't even [reconditioning-reason-flav].'[in random order][roman type][line break]".
 
 To say reconditioning chair tease of (M - a tutor):
 	say "[speech style of M]'[one of]Hmmph. I wouldn't be surprised if I saw you in here again.'[or]Pathetic.'[or]Hah. You're not even worthy of being teased.'[in random order][roman type][line break]".
@@ -1829,7 +1829,7 @@ To compute event start of (E - cookie-delivery-event):
 			facility event wait place X;
 			now the quality of cookie is -3;
 			now the fat of cookie is 3;
-			say "[speech style of M]'[NameBimbo], would you be a darling and take this special birthday snack to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a lewd towards you.[paragraph break]Agree to the task?";
+			say "[speech style of M]'[NameBimbo], would you be a darling and take this special birthday snack to [NameDesc of X] [speech style of M]for me please?'[roman type][line break][BigNameDesc of M] holds out a lewd treat towards you.[paragraph break]Agree to the task?";
 			now temporaryYesNoBackground is the examine-image of cookie;
 			if the player is bimbo consenting:
 				say "You take [NameDesc of cookie]. It's still warm... And gooey.";

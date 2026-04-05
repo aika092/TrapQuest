@@ -182,7 +182,7 @@ Report Mopping:
 				if (diaper quest is 0 and the player is a november 2025 top donator) or (diaper quest is 1 and the player is a september 2025 diaper donator):
 					let H be a random worn headgear;
 					transform H into maid-cat-ears;
-					say "[if the bimbo of the player > 12][second custom style]That's right, I'm cleaning the place up... With my tongue! I'm so dirty![otherwise][first custom style]What?! No! Cleaning up puddles wiht my tongue isn't my job![line break]...I guess it is, now...[end if][roman type][line break]";
+					say "[if the bimbo of the player > 12][second custom style]That's right, I'm cleaning the place up... With my tongue! I'm so dirty![otherwise][first custom style]What?! No! Cleaning up puddles with my tongue isn't my job![line break]...I guess it is, now...[end if][roman type][line break]";
 		if stripper maid headdress is worn:
 			let M be a random actually seducable monster;
 			if M is monster:

@@ -426,7 +426,7 @@ To say FriendlySluttyPerception of (M - a supporter): [The NPC has just spotted 
 	say "[speech style of M]'[one of]Hey chic[if the player is gendered male]o[otherwise]a[end if], looking good! Keep it up and I might even decide to fuck you.'[or]You know if you're trying to scream 'fuck me' with that appearance, you're doing a good job.'[or]Wow, there are some real sluts down here! I'll probably come back for you later.'[in random order][roman type][line break]".
 
 To say UnfriendlySluttyPerception of (M - a supporter): [The NPC has just spotted the player while the player looks slutty, but hasn't had much of a chance to start disapproving of them yet.]
-	say "[speech style of M]'[one of]Okay that's it, you clearly need a good hard seeing to. Let's do this.'[or]I think it's time for me to join in with your [']training['].'[or]Well geez, when you look like that, how can I say no?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Okay that's it, you clearly need a good hard seeing to. Let's do this.'[or]I think it's time for me to join in with your [']training['].'[or]Well jeez, when you look like that, how can I say no?'[in random order][roman type][line break]".
 
 To say BoringPerception of (M - a supporter): [The NPC has spotted the player who doesn't look slutty enough to decrease their friendliness]
 	say "[speech style of M]'[one of]Another player, huh? Stay out of my way, I'm just here to fuck sluts[or]You again. Sorry, you're still not slutty enough for me to be bothered to try and fuck you[stopping].'[roman type][line break]".
@@ -450,7 +450,7 @@ To say PresentFriendlyAcceptanceFlav of (M - a supporter): [This is when the pla
 	say "[speech style of M]'Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[roman type][line break]".
 
 To say PresentFriendlyRejectionFlav of (M - a supporter): [This is when the player offers a body part up to them and the NPC is still friendly, and refuses because a) they orgasmed recently or b) Can't fuck that particular body part]
-	say "[speech style of M]'[if M is male and presented-orifice is a potential target]Geez, give me some time to recover before asking that!'[otherwise]Not interested.'[end if][roman type][line break]".
+	say "[speech style of M]'[if M is male and presented-orifice is a potential target]Jeez, give me some time to recover before asking that!'[otherwise]Not interested.'[end if][roman type][line break]".
 
 To say FriendlySexReleaseRefusalSpeech of (M - a supporter): [The player has changed their mind and wants to end the friendly sex early. The NPC has decided to dominate the player and not let go so easily.]
 	if the player is not able to speak, say "[speech style of M]'[one of]Quiet down! I'm enjoying this![or]Stop squirming, you will hurt yourself.'[or]I couldn't understand that, but we can talk about it when I am finished.'[in random order][roman type][line break]";

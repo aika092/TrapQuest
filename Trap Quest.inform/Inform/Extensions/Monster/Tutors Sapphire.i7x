@@ -127,7 +127,7 @@ To compute teaching of (L - roulette-training):
 	if lactation fetish is 1 or diaper quest is 1, add "milk" to LD;
 	if alcohol fetish is 1, add "alcohol" to LD;
 	let LS be {0}; [list of shots]
-	say "[speech style of M]'Today's training session will be on courage, dedication and constitution.'[roman type][line break][BigNameDesc of M] gestures towards your desks. Each of you have an opaque canister about the size of a shot glass in front of you. ";
+	say "[speech style of M]'Today's training session will be on courage, dedication, and constitution.'[roman type][line break][BigNameDesc of M] gestures towards your desks. Each of you have an opaque canister about the size of a shot glass in front of you. ";
 	say "At the desk at the front, there are [number of entries in LD] clear jugs of liquid, labelled 'water'[if the number of entries in LD is 3], 'breast milk' and 'vodka'[otherwise if lactation fetish is 1 or diaper quest is 1]and 'breast milk'[otherwise]and 'vodka'[end if] respectively.[line break][speech style of M]'One at a time, I want you to come up to the front and add a liquid of your choice to the canister.'[roman type][line break]";
 	let LST be the list of trainees in the location of the player;
 	sort LST in random order;
@@ -304,7 +304,7 @@ To say WhoAnswer of (M - tutor-angela):
 	say "[speech style of M]'I should clearly be teaching you not to azk ztupid queztionz!'[roman type][line break]".
 
 To say WhereAnswer of (M - tutor-angela):
-	say "[speech style of M]'[if the rank of the player <= 1]Geez, you're pretty far gone, aren't you.'[otherwise]Rankz are earned, and not without effort. It iz important you realize zat.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Jeez, you're pretty far gone, aren't you.'[otherwise]Rankz are earned, and not without effort. It iz important you realize zat.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - tutor-angela):
 	say "[speech style of M]'Vouldn't you like to know?'[roman type][line break]".
@@ -385,7 +385,7 @@ To compute teaching of (L - make-up-training):
 			otherwise:
 				say "[BigNameDesc of M] writes 'I suck' on your arm with red lipstick!";
 			try examining T;
-			say "[speech style of M]'You must chooze. I can make the lipztick permanent, or...'[roman type][line break][big he of M] lets an unspoken threat dangle in the air.[paragraph break]Ask [him of M] to make the make up permanent?";
+			say "[speech style of M]'You must chooze. I can make the lipztick permanent, or...'[roman type][line break][big he of M] lets an unspoken threat dangle in the air.[paragraph break]Ask [him of M] to make the lipstick permanent?";
 			if the player is consenting:
 				if T is not worn:
 					say "[BigNameDesc of M] smiles a wide, severe smile, and waves [his of M] hands. You feel some magic passing from [his of M] fingertips into your skin. You immediately know that the lipstick is now permanent. But also, you do feel somewhat magical yourself.[line break][speech style of M]'Zis vas ze right choice. Now remember to use zis before our next zesson.'[roman type][line break][BigNameDesc of M] returns your make up kit.";

@@ -219,7 +219,7 @@ To compute (M - a real-life patron) protecting against (X - a monster):
 		otherwise say FightObserve of M with X.
 
 To say BaseObservationFlav of (M - a real-life patron):
-	say "[MediumDesc of M] continues to watch [one of]the action[or]you[purely at random][if M is unfriendly][one of], [his of M] hand moving just off-screen.[or].[or], clearly playing with [himself of M] off-screen.[or].[then at random][otherwise][one of], mouth wide open.[or].[or]in total disbelief.[or].[then at random][end if][line break]";
+	say "[MediumDesc of M] continues to watch [one of]the action[or]you[purely at random][if M is unfriendly][one of], [his of M] hand moving just off-screen.[or].[or], clearly playing with [himself of M] off-screen.[or].[then at random][otherwise][one of], mouth wide open.[or].[or] in total disbelief.[or].[then at random][end if][line break]";
 
 [Each turn spent fighting, this will display]
 To say FightObserve of (M - a real-life patron) with (N - a monster):

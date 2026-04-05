@@ -58,7 +58,7 @@ To say ExamineDesc of (C - a recipe):
 		otherwise:
 			say "This recipe is impossible to craft. I guess someone should probably submit a bug report, with the following information:[line break]CURRENT-CRAFTING-KEY: [current-crafting-key]. CURRENT-ALCHEMY-KEY: [current-alchemy-key]. RECIPE-KEY: [recipe-key of C][line break]";
 			display complete alchemy data;
-	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Memorising a recipe increases your chances of creating a blessed version of the item. The main thing required, however, is high intelligence (and pray to RNGsus).[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[line break][one of][newbie style]Newbie tip: Memorising a recipe increases your chances of creating a blessed version of the item. The main thing required, however, is high intelligence (and pray to RNGsus).[roman type][line break][or][stopping]".
 
 To decide which object is the recipe of (N - a number):
 	repeat with R running through recipes:

@@ -659,7 +659,7 @@ To compute lake tentacle gangbang of (L - lake monster):
 	now L is not penetrating vagina;
 	now L is not penetrating face;
 	now L is not penetrating breasts;
-	say "Having finally finished with you, the monster chucks you onto the shore of the lake. It's tentacles do not disappear however, seeming to favour this part of the lake now that it is full of the gallons of [semen] that didn't manage to stay on or inside you.";
+	say "Having finally finished with you, the monster chucks you onto the shore of the lake. Its tentacles do not disappear however, seeming to favour this part of the lake now that it is full of the gallons of [semen] that didn't manage to stay on or inside you.";
 	now the stance of the player is 1;
 	now the swim-location of L is 1;
 	now L is not lake-stalking;

@@ -36,7 +36,7 @@ To compute corset strain of (C - a corset):
 		destroy C.]
 
 Report examining corsets:
-	if newbie tips is 1, say "[one of][item style]Corsets [if the number of worn corsets is 0]would [end if]help keep your belly in control, as large bellies can make movement difficult.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][item style]Newbie tip: Corsets [if the number of worn corsets is 0]would [end if]help keep your belly in control, as large bellies can make movement difficult.[roman type][line break][or][stopping]".
 
 To set up magic attribute of (C - a corset):
 	let R be a random number between 1 and 9;
