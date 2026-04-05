@@ -83,7 +83,7 @@ To say RinseFlav of (T - hair) in (P - an object):
 	say "You lean over and let your hair fall into the cool and refreshing water. [if the semen coating of hair > 0]Soon all the [semen] has been washed away. [otherwise if the urine coating of hair > 0]Soon all the [urine] has been washed away. [end if]".
 
 To say RinseFlav of (B - body part) in (P - an object):
-	say "You splash your [B] with handfulls of cool and refreshing water. [if the semen coating of B > 0]Soon all the [semen] has been washed away. [end if]";
+	say "You splash your [B] with handfuls of cool and refreshing water. [if the semen coating of B > 0]Soon all the [semen] has been washed away. [end if]";
 
 To say RinseFlav of (T - a clothing) in (P - sacred-pool):
 	say "You put the [noun] in the water and twist and squeeze it until all the bodily fluids are gone. [if T is cursed clothing and the corruption of P < 120]Darkness seems to leak out of the [clothing-material of T] and into the pool.[otherwise if T is blessed clothing and the corruption of P >= 60]The water around it seems to bubble and when you remove it, something about it somehow appears more mundane.[end if]".

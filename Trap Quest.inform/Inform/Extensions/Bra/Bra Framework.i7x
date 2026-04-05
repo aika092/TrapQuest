@@ -80,7 +80,7 @@ Report examining bra:
 			say "This [ShortDesc of the noun] is [if S > 2]significantly[otherwise if S is 2]moderately[otherwise]slightly[end if] supporting your breasts.";
 		otherwise if the noun is worn:
 			say "This [ShortDesc of the noun] is not supporting your breasts[if the largeness of breasts + 2 <= the size of the noun and the support of the noun > 0] because the cups are too big[otherwise if the noun is not top-placed and the support of the noun > 0] because it has been displaced[end if].";
-	if the largeness of breasts > 2 and newbie tips is 1, say "[if the current support of the noun > 0]Bras[otherwise if the noun is top-placed]Most bras (but not this one)[otherwise]Most bras (but not when displaced)[end if] [if the number of worn bras is 0]would [end if]reduce the effective weight of your breasts and the amount that your slap damage [if the largeness of breasts >= 6 and the breastskill of the player is 0]is[otherwise]would be[end if] reduced by having large breasts[if the breastskill of the player is 1] if you hadn't learned the skill from the gladiator[end if].".
+	if the largeness of breasts > 2 and newbie tips is 1, say "Newbie tip: [if the current support of the noun > 0]Bras[otherwise if the noun is top-placed]Most bras (but not this one)[otherwise]Most bras (but not when displaced)[end if] [if the number of worn bras is 0]would [end if]reduce the effective weight of your breasts and the amount that your slap damage [if the largeness of breasts >= 6 and the breastskill of the player is 0]is[otherwise]would be[end if] reduced by having large breasts[if the breastskill of the player is 1] if you hadn't learned the skill from the gladiator[end if].".
 
 To say selfexaminetitle of (B - a bra):
 	say ShortDesc of B.

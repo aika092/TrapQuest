@@ -55,7 +55,7 @@ This is the setup starting pair of suspenders rule:
 The setup starting pair of suspenders rule is listed in the setup starting items rules.
 
 Report examining suspenders:
-	if newbie tips is 1, say "[one of][newbie style]Suspenders can enhance the effects of your stockings.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Suspenders can enhance the effects of your stockings.[roman type][line break][or][stopping]".
 
 To say ShortDesc of (C - a suspenders):
 	say "pair of suspenders".

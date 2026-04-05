@@ -42,7 +42,7 @@ To decide which figure-name is the examine-image of (C - dungeon altar):
 
 To say ExamineDesc of (C - dungeon altar):
 	say "A large stone slab in front of a giant statue of a proud naked woman with a huge [if pregnancy fetish > 0]pregnant [end if]belly.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely needs to be left to recharge its power before you use it again.[end if]";
-	if newbie tips is 1, say "[one of][newbie style]Placing things on here can bless them. Placing yourself here can help you or give you the priestess class. The altar doesn't recharge over time like other objects. Instead, it recharges slowly each time you open a container or interact with an NPC.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Placing things on here can bless them. Placing yourself here can help you or give you the priestess class. The altar doesn't recharge over time like other objects. Instead, it recharges slowly each time you open a container or interact with an NPC.[roman type][line break][or][stopping]".
 
 Check going when the player is in Dungeon28:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
@@ -84,7 +84,7 @@ To say GodDesc of (A - woods altar):
 
 To say ExamineDesc of (C - woods altar):
 	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle[one of]. It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it[or][stopping][if witch is bitchy and witch is in Woods20 and the altar-uses of witch is 1]. The altar has a single realistic penis amongst the metal ones, indicating that you are currently only allowed to use it one more time[otherwise if witch is bitchy and witch is in Woods20]. The altar has [altar-uses of witch] realistic penises amongst the metal ones, indicating how many times you are currently allowed to use it[end if].";
-	if newbie tips is 1, say "[one of][newbie style]Placing jewellery on here will uncurse worn clothing. If you have no cursed clothing, it'll instead raise your lowest stat. Just make sure you've paid the witch's toll first.[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Placing jewellery on here will uncurse worn clothing. If you have no cursed clothing, it'll instead raise your lowest stat. Just make sure you've paid the witch's toll first.[roman type][line break][or][stopping]".
 
 To say FightObserve of (M - woods altar) with (N - a monster):
 	if the player is prone, say "[second custom style]'[one of]Odds.... Poor...'[or]Mortals... Limited...'[or]Arms... Weak... Knees... Sturdy...'[or]Victory... Slipping...'[or]Suggestion... Get... Up...'[then at random][roman type][line break][moderateHumiliateReflect]";

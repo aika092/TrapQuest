@@ -142,7 +142,7 @@ To compute SelfExamineDesc of (C - a rollerskates):
 		say "A [ShortDesc of C] are currently latched to your feet[if the player is ankle bound], and your ankles are bound close together making it difficult to crawl[end if]. ".
 
 Report examining rollerskates:
-	if newbie tips is 1, say "[one of][item style]Rollerskates [if the number of worn rollerskates is 0]would [end if]allow you to deal slightly higher amounts of damage with your kicks and increase your ability to move between rooms quickly (preventing others from getting to move twice when you do).[roman type][line break][or][stopping]".
+	if newbie tips is 1, say "[one of][item style]Newbie tip: Rollerskates [if the number of worn rollerskates is 0]would [end if]allow you to deal slightly higher amounts of damage with your kicks and increase your ability to move between rooms quickly (preventing others from getting to move twice when you do).[roman type][line break][or][stopping]".
 
 To say MonsterOfferRejectFlav of (M - a demoness) to (T - a rollerskates):
 	say "[speech style of M]'Heels should not have wheels!'[roman type][line break]".

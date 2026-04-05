@@ -7,7 +7,7 @@ supporter-ai is a supporter. supporter-ai is female. The leftover-type of suppor
 The supporter-name of supporter-ai is "Ai".
 
 To say MonsterDesc of (M - supporter-ai):
-	say "This [man of M] looks like the epitome of a blonde bimbo. [big he of M]'s completely naked, [if lady fetish is 2]aside from a neon-pink chastity cage around [his of M] [DickDesc of M][otherwise][his of M] giant M-cup tits somehow not sagging as much as they should, either thanks to implants or magic[end if]. [big his of M] huge, visibly enhanced cock-suckling lips are coloured a deep shade of pink and two hoops with hears in the centre hang from [his of M] earlobes. [big his of M] medium length blonde hair is kept in a ponytail by a tight pink scrunchie.".
+	say "This [man of M] looks like the epitome of a blonde bimbo. [big he of M]'s completely naked, [if lady fetish is 2]aside from a neon-pink chastity cage around [his of M] [DickDesc of M][otherwise][his of M] giant M-cup tits somehow not sagging as much as they should, either thanks to implants or magic[end if]. [big his of M] huge, visibly enhanced cock-sucking lips are coloured a deep shade of pink, and two hoops with hearts in the centre hang from [his of M] earlobes. [big his of M] medium length blonde hair is kept in a ponytail by a tight pink scrunchie.".
 
 Figure of Ai is the file "NPCs/MultiFloor/Supporter/aika1.png".
 
@@ -101,7 +101,7 @@ To decide which figure-name is the monster-image of (M - supporter-aika):
 	decide on figure of Aika.
 
 To say LeftoverDesc (N - 203):
-	say "The bloated, cumfilled, and unconscious body of Aika is on the ground here, cum still leaking out of [his of supporter-aika] mouth, asshole, and [LongDickDesc of supporter-aika].[line break]".
+	say "The bloated, cum-filled, and unconscious body of Aika is on the ground here, cum still leaking out of [his of supporter-aika] mouth, asshole, and [LongDickDesc of supporter-aika].[line break]".
 
 To set up (M - supporter-aika):
 	reset M;
@@ -156,7 +156,7 @@ To say UnidentifiablePosterReactionFlav of (M - supporter-aika) with (P - a post
 	say "[speech style of M]'Oh ho ho, I wonder if this might be you? Don't worry, I can keep a secret!'[roman type][line break]".
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-aika):
-	say "[speech style of M]'I really shouldn't... but now can I say no when you put it like that?'[roman type][line break]".
+	say "[speech style of M]'I really shouldn't... but how can I say no when you put it like that?'[roman type][line break]".
 
 To compute delay of (M - supporter-aika):
 	say "[BigNameDesc of M] folds [his of M] arms.[line break][speech style of M]'Any requests, or are you going to leave it completely up to me where I put this thing?'[roman type][line break]".
@@ -428,7 +428,7 @@ To say MovementBlock of (M - supporter-critchett):
 	say "[BigNameDesc of M] eclipses the way through with [his of M] swollen diapered silhouette, stopping you in your tracks![line break][speech style of M]'Wait just a moment there, cutie! Aren't you forgetting something?'[roman type][line break][BigNameDesc of M] leans forward, pulling open the front of [his of M] diaper and beckoning you to get into that hot, wet sack!".
 
 To say StandingBlock of (M - supporter-critchett):
-	say "[BigNameDesc of M] grabs handfulls of your [ShortDesc of hair] and stuffs it down [his of M] diaper, purring as the silky strands mix in [his of M] cum pool and caress [his of M] vulva! [big he of M] clamps [his of M] legs together and you can't get off of your knees".
+	say "[BigNameDesc of M] grabs handfuls of your [ShortDesc of hair] and stuffs it down [his of M] diaper, purring as the silky strands mix in [his of M] cum pool and caress [his of M] vulva! [big he of M] clamps [his of M] legs together and you can't get off of your knees".
 
 To say BanishFleeFlav of (M - supporter-critchett):
 	say "[speech style of M]'AAAAAHHHHHHHH!!!'[roman type][line break][BigNameDesc of M] cries out as your final blow strikes [his of M] square in between [his of M] legs and [he of M] comes to [his of M] final greatest orgasm![line break][one of][big his of M] body softens and then bursts entirely into slimy sex honey! You blink in disbelief as [his of M] diaper falls to the ground, swiftly absorbing [his of M] now-liquid body of girlcum fully into itself![or][big he of M] falls back onto [his of M] deeply padded butt and actually sinks into the diaper until the waistband comes up to just under [his of M] large breasts. As [he of M] finishes [his of M] soul-breaking climax, [he of M] looks confused for a second as [his of M] whole body tugs downwards a few times. [BigNameDesc of M] eyes go wide in shock and pleasure as [he of M]'s suddenly swallowed by [his of M] diaper, [his of M] tits popping inside as [his of M] legs are slurped up through [his of M] legbands! Very quickly you see the last of [his of M] sucked fully into [his of M] own absorbent paradise[at random].[line break]A fairy swoops in and examines the quivering mess on the floor.[line break][speech style of M]'Wow, you really finished [him of M] off good! I told [him of M] there was a price to pay for that diaper! [big he of M][']s completely used up. A slut this disgraced deserves only one thing at this point: I'm going to go flush [him of M] down the toilet! [big he of M][']s such worthless slop now that this whole diaper full of [his of M] just needs to be sucked spiralling down a drain. It's what [he of M] really wants.[roman type][line break]The fairy effortlessly scoops up the gigantic, soggy diaper and flies off to go make good on that plan. You think you hear a crinkly burble of excitement coming from the disposable cargo...".
@@ -1376,7 +1376,7 @@ To say FriendlySluttyPerception of (M - supporter-serena): [The NPC has just spo
 	say "[speech style of M]'[one of]Hey chica, looking good! Keep it up and I might even decide to fuck you.'[or]You know if you're trying to scream [']fuck me['] with that appearance, you're doing a good job.'[or]Wow, there are some real sluts down here! I'll probably come back for you later.'[in random order][roman type][line break]".
 
 To say UnfriendlySluttyPerception of (M - supporter-serena): [The NPC has just spotted the player while the player looks slutty, but hasn't had much of a chance to start disapproving of them yet.]
-	say "[speech style of M]'[one of]Okay, that's it, you clearly need a good hard seeing to. Let's do this.'[or]I think it's time for me to help in your [']training['].'[or]Well geez, when you look like that, how can I say no?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Okay, that's it, you clearly need a good hard seeing to. Let's do this.'[or]I think it's time for me to help in your [']training['].'[or]Well jeez, when you look like that, how can I say no?'[in random order][roman type][line break]".
 
 To say BoringPerception of (M - supporter-serena): [The NPC has spotted the player who doesn't look slutty enough to decrease their friendliness]
 	say "[speech style of M]'[one of]Another player, huh? Stay out of my way, I'm just here to fuck sluts[or]You again. Sorry, you're still not slutty enough for me to be bothered to try and fuck you[stopping].'[roman type][line break]".
@@ -1391,7 +1391,7 @@ To say PresentFriendlyAcceptanceFlav of (M - supporter-serena): [This is when th
 	say "[speech style of M]'Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[roman type][line break]".
 
 To say PresentFriendlyRejectionFlav of (M - supporter-serena): [This is when the player offers a body part up to them and the NPC is still friendly, and refuses because a) they orgasmed recently or b) Can't fuck that particular body part]
-	say "[speech style of M]'[if presented-orifice is a potential target]Geez, give me some time to recover before asking that!'[otherwise]Not interested.'[end if][roman type][line break]".
+	say "[speech style of M]'[if presented-orifice is a potential target]Jeez, give me some time to recover before asking that!'[otherwise]Not interested.'[end if][roman type][line break]".
 
 To say FriendlySexReleaseRefusalSpeech of (M - supporter-serena): [The player has changed their mind and wants to end the friendly sex early. The NPC has decided to dominate the player and not let go so easily.]
 	if the player is not able to speak, say "[speech style of M]'[one of]Quiet down! I'm enjoying this![or]Stop squirming, you'll hurt yourself.'[or]I couldn't understand that, but we can talk about it when I'm finished.'[in random order][roman type][line break]";
@@ -1637,7 +1637,7 @@ To say PresentFriendlyAcceptanceFlav of (M - supporter-elluria): [This is when t
 	say "[speech style of M]'Hmm... Luckily for you, I'm especially bored right now. Go ahead.'[roman type][line break]".
 
 To say PresentFriendlyRejectionFlav of (M - supporter-elluria): [This is when the player offers a body part up to them and the NPC is still friendly, and refuses because a) they orgasmed recently or b) Can't fuck that particular body part]
-	say "[speech style of M]'[if presented-orifice is a potential target]Geez, give me some time to recover before asking that!'[otherwise]Aww sweetie, it's so cute that you think you deserve any of my time.'[end if][roman type][line break]".
+	say "[speech style of M]'[if presented-orifice is a potential target]Jeez, give me some time to recover before asking that!'[otherwise]Aww sweetie, it's so cute that you think you deserve any of my time.'[end if][roman type][line break]".
 
 To say FriendlySexReleaseRefusalSpeech of (M - supporter-elluria): [The player has changed their mind and wants to end the friendly sex early. The NPC has decided to dominate the player and not let go so easily.]
 	say "[speech style of M]'[one of]Excuse me but you do not just start having sex with [supporter-name of M] and then change your mind.'[or]Now now sweetie, don't be so rude!'[stopping][roman type][line break]".

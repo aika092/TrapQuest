@@ -81,11 +81,11 @@ To say DungeonBossCageDesc of (M - minotaur):
 To say MonsterComment of (M - minotaur):
 	if M is penetrating a body part:
 		if the bimbo of the player < 8:
-			say "[first custom style][big he of M]'s destroying my [variable random orifice penetrated by M]!";
+			say "[first custom style][big he of M]'s destroying my [variable random orifice penetrated by M]![roman type][line break]";
 		otherwise if the bimbo of the player < 14:
-			say "[variable custom style]Come on [variable random orifice penetrated by M], you can take it. T-this couldn't go on for ever.";
+			say "[variable custom style]Come on [variable random orifice penetrated by M], you can take it. T-this couldn't go on forever...[roman type][line break]";
 		otherwise:
-			say "[second custom style]That's right, [stud of M]! Let it all out!";
+			say "[second custom style]That's right, [stud of M]! Let it all out![roman type][line break]";
 	otherwise if the player is pheromonal:
 		if the bimbo of the player < 8:
 			if M is caged, say "[first custom style][big his of M] cage smells.... no, [caps he of M] smells. Wait, why do I even care? I should go...[roman type][line break]";

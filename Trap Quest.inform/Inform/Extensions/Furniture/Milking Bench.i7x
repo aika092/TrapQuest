@@ -7,7 +7,7 @@ A milking bench lever is a kind of thing. A milking bench lever can be lever-pul
 Definition: a milking bench lever is immune to change: decide yes.
 To say ExamineDesc of (C - a milking bench lever):
 	say "There's a lever sticking out of the wall, with a large green plus sign and a large red minus sign as the two settings painted on the wall next to it. It is currently pointing [if C is lever-pulled]upwards, towards the green plus sign[otherwise]downwards, towards the red minus sign[end if].";
-	if newbie tips is 1, say "[newbie style]When this lever is set to the green plus sign, resting on the milking bench with your nipples exposed will cause you to gain very large amounts of lactation and breast size.[roman type][line break]".
+	if newbie tips is 1, say "[newbie style]Newbie tip: When this lever is set to the green plus sign, resting on the milking bench with your nipples exposed will cause you to gain very large amounts of lactation and breast size.[roman type][line break]".
 Check pulling a milking bench lever:
 	if the player is immobile or the player is in danger, say "You're a bit busy, aren't you?" instead;
 	if the player is not able to manually use their hands, do nothing instead;
