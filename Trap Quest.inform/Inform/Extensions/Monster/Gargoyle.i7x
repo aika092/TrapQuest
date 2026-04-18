@@ -161,7 +161,7 @@ To compute appearance assessment of (M - gargoyle):
 	otherwise if H is a thing:
 		say "on your [ShortDesc of H].";
 	otherwise:[If she woke up because the player was horny, due to magic item, or the doom counter, she just stares at you]
-		say "on you, and [big he of M] stares at you in silence for several seconds.";
+		say "on you, and [he of M] stares at you in silence for several seconds.";
 	if M is objectifying the player or M is unfriendly:
 		say "[big his of M] wings unfurl as [he of M] steps down from the pedestal.";
 		anger M;
