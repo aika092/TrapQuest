@@ -2252,7 +2252,7 @@ An all later time based rule (this is the drone upload rule):
 				if doomed < 1:
 					say "The [ShortDesc of D] shoots out an antenna, only for it to immediately spit out sparks and explode like a popped balloon, leaving nothing but a cloud of smoke. Looks like it couldn't handle getting wet!";
 				otherwise:
-					say "The [ShortDesc of D] 's dilated pupil freezes in place, glowing bright pink for a second before disappearing in a puff of purple smoke. Looks like it got what it needed...";
+					say "The [ShortDesc of D]'s dilated pupil freezes in place, glowing bright pink for a second before disappearing in a puff of purple smoke. Looks like it got what it needed...";
 					complete upload of D;
 				reset D with flavour false;
 			otherwise if D is not uploading:
@@ -2260,7 +2260,7 @@ An all later time based rule (this is the drone upload rule):
 				now P is off-stage;
 				now D is uploading;
 				if doomed < 1, say "The antenna the [ShortDesc of D]'s back begins to blink in rapid succession. You have a feeling that if you don't find a way to overwrite it or disable the drone, that compromising picture it just took is going to get uploaded somewhere!";
-				otherwise say "The [ShortDesc of D]'s  pupil begins to move rapidly in all directions. You have a feeling that if you don't find a way to distract it, that compromising picture it just took is going to get uploaded somewhere!";
+				otherwise say "The [ShortDesc of D]'s pupil begins to move rapidly in all directions. You have a feeling that if you don't find a way to distract it, that compromising picture it just took is going to get uploaded somewhere!";
 			otherwise:
 				if the upload-progress of D > 7 * combatSpeed:
 					if doomed < 1, say "The [ShortDesc of D]'s antenna gives off one final, sustained blink before the entire thing explodes like a popped balloon, leaving behind nothing but a cloud of smoke. Looks like you lost your chance to stop the upload...";
