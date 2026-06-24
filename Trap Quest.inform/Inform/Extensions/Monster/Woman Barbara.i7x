@@ -1634,7 +1634,7 @@ To compute basic greeting to (M - woman-player):
 	otherwise if the woman-status of M is 94:
 		let HT be a random revealed spiral trap in the location of M;
 		if HT is a thing and HT is not expired:
-			say "[speech style of M]'Huh? Oh crap, another spiral trap! Let's get out of here!'[roman type][line break]";
+			say "[speech style of M]'Huh? Oh crap, another [if legacy content is 1]hypno[otherwise]spiral[end if] trap! Let's get out of here!'[roman type][line break]";
 			compute mandatory room leaving of M;
 			now M is uninterested;
 		otherwise:
