@@ -211,7 +211,7 @@ Definition: spiral-trap-choice is appropriate:
 	if legacy content is 1, decide yes;
 	decide no.
 To say ChoiceFlav of (C - spiral-trap-choice):
-	say "[if legacy content is 1]HYPNOSIS[otherwise]SPIRAL VIDEO[endif]".
+	say "[if legacy content is 1]HYPNOSIS[otherwise]SPIRAL VIDEO[end if]".
 To trigger (C - spiral-trap-choice):
 	let T be a random fetish appropriate spiral trap;
 	say "The screen changes, and is suddenly [spiral content of T]. It immediately captivates your attention!";
