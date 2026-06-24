@@ -44,15 +44,15 @@ To say ExamineDesc of (T - a spiral trap):
 	say "A monitor revealed from within a hidden compartment in a wall. [if T is expired]The screen has now turned off[otherwise]On the screen is [spiral content of T]. It's difficult to look away once you start watching it[end if].".
 
 To say EnvironmentDesc of (T - a spiral trap):
-	say "A large [if T is expired]blank TV screen[otherwise if T is milk-spiral-trap]TV screen showing women's breasts being milked like cows[otherwise if T is diaper-spiral-trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a spiraltic pattern[end if] takes up a large portion of the wall in front of you. ".
+	say "A large [if T is expired]blank TV screen[otherwise if T is milk-spiral-trap]TV screen showing women's breasts being milked like cows[otherwise if T is diaper-spiral-trap]TV screen showing adults being treated like babies[otherwise if legacy content is 1]TV screen showing degrading sex acts with a hypnotic pattern[otherwise]TV screen showing degrading sex acts with a swirling pattern[end if] takes up a large portion of the wall in front of you. ".
 
 To say ShortDesc of (T - a spiral trap):
-	say "spiral screen".
+	say "[if legacy content is 1]hypno[otherwise]spiral[end if] screen".
 
 To trigger (Y - a spiral trap):
 	now Y is revealed;
 	now Y is not untriggered;
-	say "A section of the wall in front of you slides away, and behind it is a magic crystal display. Suddenly, the crystal starts playing [spiral content of Y] as if it was a giant TV screen!";
+	say "A section of the wall in front of you slides away, and behind it is a [if legacy content is 1]large screen. On the screen is [hypno content of Y].[otherwise]magic crystal display. Suddenly, the crystal starts playing [spiral content of Y] as if it was a giant TV screen![end if]";
 	now the reset-timer of Y is 250.
 
 To compute turn trap effect of (T - a spiral trap):
@@ -61,30 +61,30 @@ To compute turn trap effect of (T - a spiral trap):
 
 To compute time decay of (T - a spiral trap):
 	if the reset-timer of T - time-seconds < 200:
-		if T is in the location of the player, say "The spiral screen finally turns itself off.";
+		if T is in the location of the player, say "The [if legacy content is 1]hypno[otherwise]spiral[end if] screen finally turns itself off.";
 		if T is nearby, say "The [T] in the [location of T] finally stops.";
 		now T is expired.
 
 To say spiral content of (Y - a spiral trap):
-	say "a swirling pattern".
+	say "a swirling [if legacy content is 1]hypnotic [end if]pattern".
 
 To say spiral content of (Y - a cocksucker spiral trap):
-	say "a swirling pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars gleefully giving blowjobs to huge [manly-penis]s [if bukkake fetish is 1]and receiving massive facials[otherwise]and swallowing massive loads[end if]".
+	say "a swirling [if legacy content is 1]hypnotic [end if]pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars gleefully giving blowjobs to huge [manly-penis]s [if bukkake fetish is 1]and receiving massive facials[otherwise]and swallowing massive loads[end if]".
 
 To say spiral content of (Y - a fucktoy spiral trap):
-	say "a swirling pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars getting [if the player is not possessing a vagina]anally destroyed[otherwise if pregnancy fetish is 1]anally destroyed and vaginally bred[otherwise]double penetrated[end if] by huge [manly-penis]s".
+	say "a swirling [if legacy content is 1]hypnotic [end if]pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars getting [if the player is not possessing a vagina]anally destroyed[otherwise if pregnancy fetish is 1]anally destroyed and vaginally bred[otherwise]double penetrated[end if] by huge [manly-penis]s".
 
 To say spiral content of (Y - a BBC spiral trap):
-	say "a swirling pattern, with short clips flashing constantly of porn stars worshipping and pleasuring incredibly sized black [manly-penis]s with every part of their body".
+	say "a swirling [if legacy content is 1]hypnotic [end if]pattern, with short clips flashing constantly of porn stars worshipping and pleasuring incredibly sized black [manly-penis]s with every part of their body".
 
 To say spiral content of (Y - a milk-spiral-trap):
-	say "a swirling pattern, with short clips flashing constantly of tits being milked with industrial dairy machinery".
+	say "a swirling [if legacy content is 1]hypnotic [end if]pattern, with short clips flashing constantly of tits being milked with industrial dairy machinery".
 
 To say spiral content of (Y - a piss-spiral-trap):
-	say "a swirling pattern, with short clips flashing constantly of women being used as urinals and swallowing [urine]".
+	say "a swirling [if legacy content is 1]hypnotic [end if]pattern, with short clips flashing constantly of women being used as urinals and swallowing [urine]".
 
 To say spiral content of (Y - a diaper-spiral-trap):
-	say "a swirling pattern, with short clips flashing constantly of adults gleefully wetting [if diaper messing >= 4]and messing [end if]their diapers and playing around in them, frequently stopping to rub their padded crotches enthusiastically".
+	say "a swirling [if legacy content is 1]hypnotic [end if]pattern, with short clips flashing constantly of adults gleefully wetting [if diaper messing >= 4]and messing [end if]their diapers and playing around in them, frequently stopping to rub their padded crotches enthusiastically".
 
 To compute spiral effect of (Y - a spiral trap):
 	let R be a random number between -6 and 19;
