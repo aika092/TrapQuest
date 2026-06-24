@@ -469,7 +469,7 @@ Check going:
 					unless the player is in agreement, say "You change your mind." instead;
 			repeat with ST running through revealed spiral traps in L:
 				unless ST is expired:
-					say "There is a spiral trap currently displaying [spiral content of ST] in that room. Are you sure you want to try and go that way? ";
+					say "There is a [if legacy content is 1]hypno[otherwise]spiral[end if] trap currently displaying [spiral content of ST] in that room. Are you sure you want to try and go that way? ";
 					unless the player is in agreement, say "You change your mind." instead;
 			repeat with ST running through revealed haunted mirror traps in L:
 				unless ST is expired:
