@@ -867,7 +867,7 @@ To compute happy reward of (M - shopkeeper):
 			otherwise:
 				say "[speech style of M]'That was good, but the [ShortDesc of C] is worth too much I'm afraid. But feel free to try and earn more credit points again in the future!'[roman type][line break]";
 		otherwise if the blue-balls of M <= 0:
-			say "[speech style of M]'That was incredible! [one of]In fact, I think I'll knock some off my prices just to make sure you give me another visit.'[or]Discount is still on, just so you know!'[stopping][roman type][line break]";
+			say "[speech style of M][one of]'In fact, I think I'll knock some off my prices just to make sure you give me another visit.'[or]'Discount is still on, just so you know!'[stopping][roman type][line break]";
 			if the blue-balls of M is 0, now the blue-balls of M is -1;
 			check black lace transformation.
 

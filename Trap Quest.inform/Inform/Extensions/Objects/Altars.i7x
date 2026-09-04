@@ -986,7 +986,7 @@ To AltarReward (T - a condom hat):
 
 To AltarReward (T - ritual-beads):
 	if T is worn:
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], you should remove your ritual beads before presenting them to the Goddess!'[roman type][line break]";
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] you should remove your ritual beads before presenting them to the Goddess!'[roman type][line break]";
 	otherwise:
 		let N be the notches of T;
 		if N < 6:

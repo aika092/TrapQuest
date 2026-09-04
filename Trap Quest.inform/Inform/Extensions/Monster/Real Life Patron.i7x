@@ -114,7 +114,7 @@ To say NewAppearanceReaction of (M - a real-life patron):
 		if diaper quest is 1, now P is the cringe appearance of the player;
 		let S be the friend-max-appearance of M;
 		let B be the friend-old-name of M;
-		say "[speech style of M]'[if P < 6 and S < 6]Wow, [B], it really is you. [otherwise if S > P or the times-called of M > 0]Hello, [B]. [otherwise][B]?! Is that really you?! [end if][run paragraph on]";[we always start by using the player's last known name, and giving the player a hint about shock.]
+		say "[speech style of M]'[if P < 6 and S < 6]Wow, [B], it really is you. [otherwise if S > P or the times-called of M > 0]Hello, [B]. [otherwise][B]?! Is that really you?! [end if]"[roman type][run paragraph on];[we always start by using the player's last known name, and giving the player a hint about shock.]
 		if a random number between 0 and the number of applicable humiliating situations is 0:
 			say GenericSituationReaction of M;
 		otherwise:
@@ -219,7 +219,7 @@ To compute (M - a real-life patron) protecting against (X - a monster):
 		otherwise say FightObserve of M with X.
 
 To say BaseObservationFlav of (M - a real-life patron):
-	say "[MediumDesc of M] continues to watch [one of]the action[or]you[purely at random][if M is unfriendly][one of], [his of M] hand moving just off-screen.[or].[or], clearly playing with [himself of M] off-screen.[or].[then at random][otherwise][one of], mouth wide open.[or].[or] in total disbelief.[or].[then at random][end if][line break]";
+	say "[roman type][MediumDesc of M] continues to watch [one of]the action[or]you[purely at random][if M is unfriendly][one of], [his of M] hand moving just off-screen.[or].[or], clearly playing with [himself of M] off-screen.[or].[then at random][otherwise][one of], mouth wide open.[or].[or] in total disbelief.[or].[then at random][end if][line break]";
 
 [Each turn spent fighting, this will display]
 To say FightObserve of (M - a real-life patron) with (N - a monster):

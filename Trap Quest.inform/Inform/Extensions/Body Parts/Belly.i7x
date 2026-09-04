@@ -1029,7 +1029,7 @@ To lay (X - a number) small eggs:
 
 To lay (X - a number) medium eggs:
 	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third [variable custom style](owww!)[roman type][end if][if X > 3], then a fourth[end if][if X > 4], then a fifth[end if][if X > 5], then a sixth[line break][variable custom style](my poor [asshole] can't survive much more of this...)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth[line break][variable custom style](there's no way this was all inside me...)[roman type][line break][end if][if X > 8], then a ninth[end if] full sized egg slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
-	otherwise say "Full sized chicken-like eggs one by one force their way from your [asshole]. There are so many that you quickly lose count, it's at least ten but you really have no idea.";
+	otherwise say "full sized chicken-like eggs one by one force their way from your [asshole]. There are so many that you quickly lose count. It looks like at least ten, but you really have no idea.";
 	if the latex-transformation of the player < 3:
 		say "The [if X > 1]eggs are[otherwise]egg is[end if] much too big to be passed comfortably, and the ordeal inevitably stimulates your ass just as much as anal sex would.";
 		let E be a random medium egg;

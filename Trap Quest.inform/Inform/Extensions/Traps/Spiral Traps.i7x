@@ -45,7 +45,7 @@ To say ExamineDesc of (T - a spiral trap):
 
 To say EnvironmentDesc of (T - a spiral trap):
 	if legacy content is 1, say "A large [if T is expired]blank TV screen[otherwise if T is milk-spiral-trap]TV screen showing women's breasts being milked like cows[otherwise if T is diaper-spiral-trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a spiraltic pattern[end if] takes up a large portion of the wall in front of you. ";
-	otherwise say "A large [if T is expired]blank TV screen[otherwise if T is milk-spiral-trap]TV screen showing a documentary about breast milking[otherwise if T is diaper-spiral-trap]TV screen showing a documentary about adults being treated like babies[otherwise]TV screen showing a documentary about sex acts[end if] takes up a large portion of the wall in front of you. ";
+	otherwise say "A large [if T is expired]blank TV screen[otherwise if T is milk-spiral-trap]TV screen showing a documentary about breast milking[otherwise if T is diaper-spiral-trap]TV screen showing a documentary about adults being treated like babies[otherwise]TV screen showing a documentary about sex acts[end if] takes up a large portion of the wall in front of you. ".
 
 To say ShortDesc of (T - a spiral trap):
 	say "[if legacy content is 1]spiral[otherwise]presentation[end if] screen".

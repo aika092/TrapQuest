@@ -1639,7 +1639,7 @@ To say DismissalResponse of (M - a monster):
 		say DismissalResponseDefault of M.
 
 To say DismissalResponseRefused of (M - a monster):
-	say "[speech style of M]I've already said no.'[roman type][line break]".
+	say "[speech style of M]'I've already said no.'[roman type][line break]".
 
 To say DismissalResponseRoyal of (M - a monster):
 	say DismissalResponseDefault of M.
@@ -1793,7 +1793,7 @@ To say StoryQuestion of (M - a monster):
 		say "'What's your story?'".
 
 To say StoryAnswer of (M - a monster):
-	say "[speech style of M]'Trapquest.'[roman type][line break]".
+	say "[speech style of M]'TFQuest.'[roman type][line break]".
 
 talk-escape-question is a talk-object.
 

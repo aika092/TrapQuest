@@ -45,7 +45,7 @@ Figure of Icarus interact 7 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-int
 Figure of Icarus interact 8 is the file "NPCs/Dungeon/Icarus/cutscene-Icarus-interact8.jpg".
 
 To say MonsterDesc of (M - Icarus):
-	say "This well-built [man of M] has two giant feathery wings rooted in [his of M] back. There's no doubt that [he of M][']s some kind of angel. [big his of M] calm thoughtful gaze gives [him of M] an air of intelligence and wisdom beyond the apparent age of [his of M] body, which looks about 25 years old.".
+	say "This well-built [man of M] has two giant feathery wings rooted in [his of M] back. There's no doubt that [he of M][']s some kind of angel. [big his of M] calm, thoughtful gaze gives [him of M] an air of intelligence and wisdom beyond the apparent age of [his of M] body, which looks about 25 years old.".
 
 To set up (M - Icarus):
 	reset M;

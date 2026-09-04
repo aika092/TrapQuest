@@ -251,7 +251,7 @@ To teleport via (W - a warp portal):
 						let M be receptionist;
 						interest M;
 						anger M;
-						say "[speech style of M]'HEY! WHERE ARE YOU TAKING THAT EGG?! THAT'S THE mistress'S!'[roman type][line break][big he of M] looks furious! [BigNameDesc of armband] fizzles into dust.";
+						say "[speech style of M]'HEY! WHERE ARE YOU TAKING THAT EGG?! THAT'S THE MISTRESS'S!'[roman type][line break][big he of M] looks furious! [BigNameDesc of armband] fizzles into dust.";
 						destroy armband;
 						now receptionistChasing is true;
 						now egg-smuggling-event is event-ended;

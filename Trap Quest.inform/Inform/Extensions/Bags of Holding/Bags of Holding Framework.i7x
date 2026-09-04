@@ -87,7 +87,7 @@ Definition: a bag of holding is destructible: decide no.
 Definition: a bag of holding is stealable: decide no.
 
 Check taking off bag of holding:
-	if tutorial is 1, say "[bold type]Stop! [roman type]This is your Bag Of Holding item. Interacting with this object is not how you inspect what's inside it. To check what's in your bag, and interact with those items, click on the inventory tab to the far left of the inventory tab you currently have open!" instead;
+	if tutorial is 1, say "[bold type]Stop! [roman type]This is your Bag of Holding item. Interacting with this object is not how you inspect what's inside it. To check what's in your bag, and interact with those items, click on the inventory tab to the far left of the inventory tab you currently have open!" instead;
 	if the noun is glued, try tearing off the noun instead;
 	now summoning is 0;
 	unless the noun is actually removable, do nothing instead;

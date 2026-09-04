@@ -1807,7 +1807,7 @@ To say conventional greeting of (M - woman-player):
 		if the bimbo of the player < 4:
 			say "'Hi again, [womanName].'";
 		otherwise if the bimbo of the player < 8:
-			say "'Hey there, [womanName] what's up?'";
+			say "'Hey there [womanName], what's up?'";
 		otherwise if the bimbo of the player < 10:
 			say "'Hey hey [womanName], looking good!'";
 		otherwise if the bimbo of the player < 12:
