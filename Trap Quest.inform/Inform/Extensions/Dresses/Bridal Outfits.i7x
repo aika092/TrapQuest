@@ -86,7 +86,7 @@ To say MediumDesc of (C - sexy bridal dress):
 	say "sexy bridal dress".
 
 To say ClothingDesc of (C - sexy bridal dress):
-	say "This silk white [MediumDesc of C] has a long skirt but with extremely high cut slits for the legs, which expose the wearer's hips. Similarly the cut of the top makes it difficult to conceal a bra. Long white gloves cover the wearer's hands.".
+	say "This silk white [MediumDesc of C] has a long skirt but with extremely high cut slits for the legs, which expose the wearer's hips. Similarly, the cut of the top makes it difficult to conceal a bra. Long white gloves cover the wearer's hands.".
 
 To decide which number is the initial outrage of (C - sexy bridal dress):
 	decide on 5.
