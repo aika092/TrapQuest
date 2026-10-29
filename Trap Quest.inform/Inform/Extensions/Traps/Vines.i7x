@@ -128,7 +128,7 @@ To compute vines kneeling:
 			now V is in the location of the player;
 			if the player is vine stuck and the player is not vine fucked:
 				compute V penetrating;
-			otherwise if diaper quest is 1 and refractoryperiod <= 0 and the player is able to get horny:
+			otherwise if diaper quest is 1 and refractoryperiod of the player <= 0 and the player is able to get horny:
 				let D be a random worn diaper;
 				say "Squirming living vines [one of]rise up from the ground and begin rubbing[or]squirm and rub[stopping] against the crotch of your diaper! Your [genitals] [one of]is stimulated through your padding[or]feels amazing[or]tingles with delight[or]pulses with pleasure[at random]...";
 				if the player is not a pervert, say "[variable custom style][one of]Not good, not good![or]I need to get out of here! Or at least stand up high enough that these guys can't reach me...[or][if the diaper addiction of the player < 8]No, I don't want to be turned on in my diaper[otherwise]Enough with making me turned on all the time, I just want to wear my diapers in peace[end if]![or]This game is totally trying to give me a diaper fetish, isn't it?[then at random][roman type][line break]";
@@ -372,7 +372,7 @@ To compute vineNut of (V - a vine):
 	if the vine-condoms of V > 0 and the player is in WoodsBoss01 and vine boss is alive: [Otherwise if the player is really good with her condoms, she'll never get eaten]
 		if the vine-condoms of V >= 4:
 			say "[BigNameDesc of vine boss] looks somewhat fatigued and frustrated at your skill at placing condoms rendering [him of vine boss] unable to fill you with [his of vine boss] [semen]. Your suspicions are confirmed when the monster grabs you with [his of vine boss] 'hands' and throws you upwards, expelling you from [his of vine boss] pit in annoyance!";
-			teleport to Woods16;
+			raw teleport to Woods16;
 		otherwise:
 			say "[BigNameDesc of vine boss] looks somewhat frustrated at your condoms restricting how many of [his of vine boss] vines were able to fill you with [his of vine boss] [semen]. However the fact that you didn't manage to catch them all gives [him of vine boss] enough of an encouragement to continue [his of vine boss] assault!";
 	now the vine-condoms of V is 0.

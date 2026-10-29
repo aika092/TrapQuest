@@ -1,16 +1,13 @@
 Instant TG Options by Fetish Settings begins here.
 
-Definition: yourself is ready for event TG:
+Definition: yourself is ready for uncommon event tg:[used to be "ready for event TG"]
 	if the player is not sexed male or tg fetish is 0, decide no;
-	if event tg > 1 or the size of penis <= min penis size, decide yes;
+	if uncommon event tg is 1 or the size of penis <= min penis size, decide yes;
 	decide no.
-
-Definition: yourself is ready for common event TG:
+Definition: yourself is ready for common event TG:[implies regular event tg]
 	if the player is not sexed male or tg fetish is 0, decide no;
-	if event tg > 2 or the size of penis <= min penis size, decide yes;
+	if common event tg is 1 or the size of penis <= min penis size, decide yes;
 	decide no.
-
-
 
 [
 1: TG never happens from shrinkage
@@ -21,6 +18,15 @@ Definition: yourself is ready for common event TG:
 To decide which number is shrink TG:
 	if TG fetish is 0, decide on 0;
 	decide on 1 + (choice in row 73 of the Table of Player Options / 3).
+To decide which number is orgasm shrink TG:[shrink tg 2+]
+	if shrink TG > 1, decide on 1;
+	decide on 0.
+To decide which number is timer shrink TG:[shrink tg 3]
+	if shrink TG is 3, decide on 1;
+	decide on 0.
+To decide which number is instant shrink TG:[shrink tg 4]
+	if shrink TG is 4, decide on 1;
+	decide on 0.
 
 Table of TG Occurence Options
 title	subtable	description	toggle
@@ -44,7 +50,6 @@ This is the instant tg disliker rule:
 This is the instant tg hater rule:
 	follow quit rule.
 
-
 [
 Before minimum penis size...
 1: TG only happens from the most telegraphed of events
@@ -54,6 +59,12 @@ Before minimum penis size...
 To decide which number is event TG:
 	if TG fetish is 0, decide on 0;
 	decide on 1 + the remainder after dividing choice in row 73 of the Table of Player Options by 3.
+To decide which number is uncommon event tg:[event tg 2+]
+	if event TG > 1, decide on 1;
+	decide on 0.
+To decide which number is common event TG:[event tg 3]
+	if event TG > 2, decide on 1;
+	decide on 0.
 
 Table of TG Timing Options
 title	subtable	description	toggle

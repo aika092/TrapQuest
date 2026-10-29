@@ -365,12 +365,13 @@ Check attacking female-gloryhole:
 									say "[speech style of M]'Fine, have it your way.'[roman type][line break]";
 									make video go gloryhole viral;
 		otherwise:
-			say "The [man of M] on the other side of the wall [if TX <= 1]seems intrigued.[line break][speech style of M]'Oh, is somebody hungry?'[otherwise if TX is 2]seems curious.[line break][speech style of M]'Oh, is somebody there?'[otherwise if TX is 3]seems cautious.[line break][speech style of M]'Who's there?'[otherwise if TX is 4]seems hesitant.[line break][speech style of M]'You're not a dude, are you?'[otherwise]seems reluctant.[line break][speech style of M]'This can't be for real...'[end if][roman type][line break]";
+			unless current-predicament is chores-predicament, say "The [man of M] on the other side of the wall [if TX <= 1]seems intrigued.[line break][speech style of M]'Oh, is somebody hungry?'[otherwise if TX is 2]seems curious.[line break][speech style of M]'Oh, is somebody there?'[otherwise if TX is 3]seems cautious.[line break][speech style of M]'Who's there?'[otherwise if TX is 4]seems hesitant.[line break][speech style of M]'You're not a dude, are you?'[otherwise]seems reluctant.[line break][speech style of M]'This can't be for real...'[end if][roman type][line break]";
 			let recorded-bj be false;
 			if id-poster is in Toilet01 and a random number between 1 and 4 > TX:
 				now recorded-bj is true;
 				say "You hear a [bold type]BEEP[roman type] that sounds like [he of M][']s started a recording on [his of M] phone.[one of][line break][variable custom style][big he of M][']s going to record this entire interaction... But at least [he of M] can't see my face...[roman type][line break][or][stopping]";
 			if current-predicament is gloryhole-predicament, say "What will you do? Remember, the more outrageous your performance, the more humiliating the CCTV footage will be if it gets shared online.";
+			if current-predicament is chores-predicament, say "What will you say? Remember, to satisfy [NameDesc of bum-bystander], you have to make your overall performance slutty enough to make [him of bum-bystander] feel like [he of bum-bystander][']s in a porno.";
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			if the player is silently able to manually speak:
 				set numerical response 1 to "whisper a greeting";
@@ -382,6 +383,7 @@ Check attacking female-gloryhole:
 				set numerical response 1 to "make a noise";
 			set numerical response 0 to "do nothing";
 			compute multiple choice question;
+			if current-predicament is chores-predicament, increase the bystanderInt1 of bum-bystander by (player-numerical-response + a random number between 0 and 1) / 2;
 			let bj-request-flav be "shyly greeting the person filming";
 			decrease T by player-numerical-response;
 			if current-predicament is gloryhole-predicament:
@@ -405,10 +407,10 @@ Check attacking female-gloryhole:
 				say "You make your voice as high pitched and girly as possible.[line break][variable custom style]'Please [stud of M], [one of]can I please taste your yummy [manly-penis]?'[or]I'm desperate to suck on your big [manly-penis] and drink your cum...'[or]I'm a [manly-penis]-addicted slut and I just really need your [manly-penis] straight away! Pleeeease let me taste it!'[in random order][roman type][line break][severeHumiliateReflect]";
 				now bj-request-flav is "shamelessly degrading yourself and begging to give a blowjob to the person filming";
 			if T <= 0:
-				if current-predicament is not nun-walk-predicament and condom fetish > 0 and a random number between 1 and 2 is 1, now M is wrapped;
+				if current-predicament is not nun-walk-predicament and current-predicament is not chores-predicament and baseline condom fetish is 1 and a random number between 1 and 2 is 1, now M is wrapped;
 				otherwise now M is unwrapped;
-				say "[if OT > 0]You can hear [NameDesc of M] [one of]breathing heavily[or]almost tripping over [himself of M] as [he of M] drops [his of M] pants[or]rushing to comply[or]making excited sounds[in random order].[line break][speech style of M]'[one of]Today must be my lucky day[or]Oh yeah[or]Stay right there[in random order]...'[roman type][line break][end if]Moments later, a [manly-penis] appears through the hole! ";
-				if condom fetish > 0, say "There is [if M is unwrapped][bold type]not[roman type] [end if]a condom on [his of M] [manly-penis].";
+				say "[if current-predicament is chores-predicament]You hear excited breathing from the other side of the wall! [otherwise if OT > 0]You can hear [NameDesc of M] [one of]breathing heavily[or]almost tripping over [himself of M] as [he of M] drops [his of M] pants[or]rushing to comply[or]making excited sounds[in random order].[line break][speech style of M]'[one of]Today must be my lucky day[or]Oh yeah[or]Stay right there[in random order]...'[roman type][line break][end if]Moments later, a [manly-penis] appears through the hole! ";
+				if baseline condom fetish is 1, say "There is [if M is unwrapped][bold type]not[roman type] [end if]a condom on [his of M] [manly-penis].";
 				say "Suck the [manly-penis]?";
 				if the player is consenting:
 					if mens-room-entered of gloryhole-predicament is 1 and current-predicament is gloryhole-predicament, now mens-room-entered of gloryhole-predicament is 2; [the player has entered the men's room, and returned to suck more cock. penalty point!]
@@ -429,6 +431,7 @@ Check attacking female-gloryhole:
 					interest M;
 					now M is penetrating face;
 					now M is friendly-fucking;
+					now the gloryhole-sucks of chores-predicament is 0;
 				otherwise:
 					say "[BigNameDesc of M] quickly gets fed up, pulls away and leaves.[line break][MissedGloryholeCock]";
 					destroy M;
@@ -469,6 +472,7 @@ To compute swimming in (H - park-lake):
 		set numerical response 1 to "Stay in the water";
 		set numerical response 2 to "Get out of the water";
 		set numerical response 3 to "Dive for treasure";
+		if current-predicament is chores-predicament and the bystanderInt1 of male-sunbather-bystander is 1, set next numerical response to "Retrieve the beachball";
 		compute multiple choice question;
 		if player-numerical-response is 1:
 			say "You remain hidden in the lake.";
@@ -480,6 +484,10 @@ To compute swimming in (H - park-lake):
 			compute extra turn;
 		otherwise if player-numerical-response is 3:
 			compute treasure diving in park-lake at 0;
+		otherwise if player-numerical-response is 4:
+			say "You wade into the middle of the lake to grab the beachball, and then throw it to [NameDesc of male-sunbather-bystander].[line break][speech style of male-sunbather-bystander]'Thanks, doll!'[roman type][line break]";
+			now the bystanderInt1 of male-sunbather-bystander is -1;
+			progress chores;
 		otherwise:
 			say "You get out of the water.";
 			now lake-swimming is false;
@@ -568,7 +576,7 @@ To compute predicament conclusion:
 	let abnormalClothingSituation be 0;
 	repeat with C running through predicament-temporary wearthings:
 		now C is predicament-normal;
-		if C is clothing and (the raw-magic-modifier of C > 0 or C is not blandness or C is scarf):
+		if C is clothing and (the raw-magic-modifier of C > 0 or C is not blandness or C is scarf or C is scrunchie) and (current-predicament is not chores-predicament or C is worn):
 			if C is held or C is in the location of the player:
 				say "[BigNameDesc of C] fades away! [bold type]You can tell that it has been sent to the 'Junk Room'.[roman type][line break]";
 			dislodge C;
@@ -696,6 +704,14 @@ Smoothie predicament: How much convincing do they need?]
 A bystander has a number called bystanderInt2.
 A bystander has a number called bystanderInt3.
 
+To construct unique buttons for (T - a bystander):
+	if current-predicament is chores-predicament:
+		if the player is silently able to manually speak and ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of GreetButton;
+			now the ButtonCommand entry is "talk to [text-shortcut of T]";
+			now the ButtonColour entry is lightModeFullGreen.
+
 Definition: a bystander is reactive:
 	if it is interested:
 		if it is in the location of the player, decide yes;
@@ -746,9 +762,9 @@ To compute movement of (M - a bystander):
 				now RL is Predicament12;
 			otherwise if R is 3:
 				now RL is Park06;
-			now A is the best route from the location of M to RL;
+			now A is the best route from the location of M to RL through predicament rooms;
 		otherwise:
-			now A is the best route from the location of M to the predicament-pull-room of M; [People love going to the centre]
+			now A is the best route from the location of M to the predicament-pull-room of M through predicament rooms; [People love going to the centre]
 		if A is a direction:
 			now bystander-room-target is the room A from neighbour finder;
 			if M is not target-room-happy, now A is up; [lets us know that we need to randomise direction instead]
@@ -794,18 +810,26 @@ Definition: a bystander (called M) is target-room-happy:
 	decide yes. [Mostly yes but some NPCs will only go to the park or to the road]
 
 To decide which number is the awareness of (M - a bystander):
+	if current-predicament is always-perceiving, decide on 9999;
+	decide on the default awareness of M.
+To decide which number is the default awareness of (M - a bystander):
 	decide on 11.
 
 To decide which number is the outrage tolerance of (M - a bystander):
 	if current-predicament is incontinence-awareness-predicament, decide on 8;
+	if current-predicament is chores-predicament, decide on 4;
+	decide on the default outrage tolerance of M.
+To decide which number is the default outrage tolerance of (M - a bystander):
 	decide on 6.
-To decide which number is the outrage tolerance of (M - a camera-bystander):
+To decide which number is the default outrage tolerance of (M - a camera-bystander):
 	decide on 3.
 
 To decide which number is the cringe tolerance of (M - a bystander):
 	if current-predicament is incontinence-awareness-predicament, decide on 8;
+	decide on the default cringe tolerance of M.
+To decide which number is the default cringe tolerance of (M - a bystander):
 	decide on 4.
-To decide which number is the cringe tolerance of (M - a camera-bystander):
+To decide which number is the default cringe tolerance of (M - a camera-bystander):
 	decide on 3.
 
 To check perception of (M - a bystander):
@@ -813,11 +837,12 @@ To check perception of (M - a bystander):
 		now segway-predicament is not snapped-this-turn;
 		if M is uninterested:
 			let R be a random number between 1 and the awareness of M;
+			if the awareness of M >= 100, now R is the awareness of M;
 			let C be the concealment of the location of the player;
 			let P be the stealth of the player;
 			if lake-swimming is true, now P is a random number between 5 and 15;
 			if debuginfo > 0, say "[input-style]Bystander perception check: awareness roll (d[awareness of M]) = [R] | [C + P].5 = ([C].5) [location of the player] concealment rating + ([P]) player [if the player is upright]standing[otherwise]kneeling[end if] stealth rating[roman type][line break]";
-			if C + P >= R and smoothie gag is not worn and current-predicament is not always-perceiving:
+			if C + P >= R and smoothie gag is not worn:
 				say "[BigNameDesc of M] fails to notice you.";
 			otherwise:
 				now M is interested;
@@ -915,6 +940,10 @@ To check disapproval of (M - a bystander):
 		check perception of M.
 
 To compute lewd perception reaction of (M - a bystander):
+	if current-predicament is chores-predicament, compute chores lewd perception reaction of M;
+	otherwise compute default lewd perception reaction of M.
+
+To compute default lewd perception reaction of (M - a bystander):
 	say "[line break][first custom style]'[one of]What the fuck?!'[or]Is [he of the player]...?!'[or]Holy shit! Are you insane?'[or]What the fuck?! Disgusting!'[or]Oh my god!'[or]In public?! How inappropriate!'[or]Why would you come outside like that?!'[or]Ugh! How indecent!'[in random order][roman type][line break]".
 
 To compute toilet pervert perception reaction of (M - a bystander):
@@ -924,13 +953,17 @@ To compute toilet pervert perception reaction of (M - a bystander):
 		compute careful picture taking of M.
 
 To compute cringe perception reaction of (M - a bystander):
-	compute lewd perception reaction of M.
+	if current-predicament is chores-predicament, compute chores cringe perception reaction of M;
+	otherwise compute default cringe perception reaction of M.
+
+To compute default cringe perception reaction of (M - a bystander):
+	compute default lewd perception reaction of M.
 
 To compute non-lewd perception reaction of (M - a bystander):
 	say "[big he of M] looks at you strangely but doesn't say anything.".
 
 To compute non-lewd worsened perception reaction of (M - a bystander):
-	say "[BigNameDesc of M] frowns at you.".
+	unless current-predicament is chores-predicament, say "[BigNameDesc of M] frowns at you.".
 
 To compute toy expulsion reaction of (M - a bystander):
 	say "[BigNameDesc of M] [one of]almost chokes[or]leaps in surprise[or]barks in surprise[in random order].[line break][speech style of M]'[one of]That was INSIDE you?!'[or]What the hell? Did you just push that out of your hole in front of me?!'[or]Oh my gosh, you filthy pervert!'[in random order][roman type][line break][moderateHumiliateReflect]";
@@ -940,7 +973,7 @@ To compute toy expulsion reaction of (M - a bystander):
 
 A camera-bystander is a kind of bystander. The printed name of a camera-bystander is "[TQlink of item described][man of item described] on [his of item described] phone[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "man", "on his phone" as camera-bystander when item described is male. Understand "woman", "on her phone" as camera-bystander when item described is female. Understand "phone" as camera-bystander.
 
-To compute lewd perception reaction of (M - a camera-bystander):
+To compute default lewd perception reaction of (M - a camera-bystander):
 	say "[BigNameDesc of M] [one of]widens [his of M] eyes and[or]gasps and[or]doesn't say anything, but just[then at random] ";
 	if current-predicament is incontinence-awareness-predicament and the cringe appearance of the player < 10 and incontinence-awareness-predicament is in the location of the player:
 		if there is a worn messed diaper, compute careful picture taking of M;
@@ -1050,9 +1083,9 @@ To decide which figure-name is the examine-image of (M - a bystander):
 	decide on figure of businessman bystander.
 
 businessman-bystander is a bystander. The printed name of businessman-bystander is "[TQlink of item described]businessman[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "businessman" as businessman-bystander.
-To decide which number is the awareness of (M - businessman-bystander):
+To decide which number is the default awareness of (M - businessman-bystander):
 	decide on 4.
-To decide which number is the cringe tolerance of (M - businessman-bystander):
+To decide which number is the default cringe tolerance of (M - businessman-bystander):
 	decide on 3.
 To say ExamineDesc of (M - businessman-bystander):
 	say "This smartly dressed [man of M] looks very busy and distracted. [big he of M] is constantly checking [his of M] watch.".
@@ -1060,11 +1093,11 @@ To say ExamineDesc of (M - businessman-bystander):
 businesswoman-bystander is a camera-bystander. businesswoman-bystander is female. The printed name of businesswoman-bystander is "[TQlink of item described]businesswoman[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "businesswoman" as businesswoman-bystander.
 To decide which figure-name is the examine-image of (M - businesswoman-bystander):
 	decide on figure of businesswoman bystander.
-To decide which number is the awareness of (M - businesswoman-bystander):
+To decide which number is the default awareness of (M - businesswoman-bystander):
 	decide on 6.
-To decide which number is the outrage tolerance of (M - businesswoman-bystander):
+To decide which number is the default outrage tolerance of (M - businesswoman-bystander):
 	decide on 5.
-To decide which number is the cringe tolerance of (M - businesswoman-bystander):
+To decide which number is the default cringe tolerance of (M - businesswoman-bystander):
 	decide on 4.
 To say ExamineDesc of (M - businesswoman-bystander):
 	say "This smartly dressed [man of M] looks rather busy. [big he of M] is in the middle of what sounds like an important phonecall.".
@@ -1072,7 +1105,7 @@ To say ExamineDesc of (M - businesswoman-bystander):
 male-birdwatcher-bystander is a camera-bystander. The printed name of male-birdwatcher-bystander is "[TQlink of item described]birdwatcher[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "birdwatcher" as male-birdwatcher-bystander.
 To decide which figure-name is the examine-image of (M - male-birdwatcher-bystander):
 	decide on figure of male birdwatcher bystander.
-To decide which number is the awareness of (M - male-birdwatcher-bystander):
+To decide which number is the default awareness of (M - male-birdwatcher-bystander):
 	decide on 4.
 To say ExamineDesc of (M - male-birdwatcher-bystander):
 	say "This modestly dressed [man of M] is scouting around for interesting birds with [his of M] binoculars. A digital camera hangs from a strap around [his of M] neck, ready to be used at any moment.".
@@ -1083,9 +1116,9 @@ Definition: male-birdwatcher-bystander is target-room-happy:
 female-birdwatcher-bystander is a camera-bystander. female-birdwatcher-bystander is female. The printed name of female-birdwatcher-bystander is "[TQlink of item described]birdwatcher[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "birdwatcher" as female-birdwatcher-bystander.
 To decide which figure-name is the examine-image of (M - female-birdwatcher-bystander):
 	decide on figure of female birdwatcher bystander.
-To decide which number is the awareness of (M - female-birdwatcher-bystander):
+To decide which number is the default awareness of (M - female-birdwatcher-bystander):
 	decide on 4.
-To decide which number is the outrage tolerance of (M - female-birdwatcher-bystander):
+To decide which number is the default outrage tolerance of (M - female-birdwatcher-bystander):
 	decide on 4.
 To say ExamineDesc of (M - female-birdwatcher-bystander):
 	say "This modestly dressed [man of M] is scouting around for interesting birds with [his of M] binoculars. A digital camera hangs from a strap around [his of M] shoulder, ready for use at a moment's notice.".
@@ -1098,9 +1131,9 @@ To decide which figure-name is the examine-image of (M - male-gardener-bystander
 	decide on figure of male gardener bystander.
 To say ExamineDesc of (M - male-gardener-bystander):
 	say "This [man of M] is wearing denim overalls and carrying a hoe. It looks like [he of M][']s currently on [his of M] break.".
-To compute lewd perception reaction of (M - male-gardener-bystander):
+To compute default lewd perception reaction of (M - male-gardener-bystander):
 	say "[line break][first custom style]'Oh my god! And I thought *this* was the biggest hoe in the area!'[roman type][line break]".
-To compute cringe perception reaction of (M - male-gardener-bystander):
+To compute default cringe perception reaction of (M - male-gardener-bystander):
 	say "[line break][first custom style]'Well now, that's just plain weird. Are you all right in the head?!'[roman type][line break]".
 To set up smoothie stats of (M - male-gardener-bystander):
 	now the bystanderInt1 of M is a random number between 3 and 9; [How much will they enjoy the drink?]
@@ -1112,7 +1145,7 @@ Definition: male-gardener-bystander is target-room-happy:
 female-gardener-bystander is a bystander. female-gardener-bystander is female. The printed name of female-gardener-bystander is "[TQlink of item described]gardener[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "gardener" as female-gardener-bystander.
 To decide which figure-name is the examine-image of (M - female-gardener-bystander):
 	decide on figure of female gardener bystander.
-To decide which number is the awareness of (M - female-gardener-bystander):
+To decide which number is the default awareness of (M - female-gardener-bystander):
 	decide on 7.
 To say ExamineDesc of (M - female-gardener-bystander):
 	say "This [man of M] is wearing denim overalls and tending to the grass and flowers.".
@@ -1129,7 +1162,7 @@ To decide which figure-name is the examine-image of (M - male-jogger-bystander):
 To say ExamineDesc of (M - male-jogger-bystander):
 	say "This [man of M] is wearing a rather tight pair of exercise shorts and is completely topless, showing off [his of M] impressive abs. [big he of M]'s jogging at a decent pace, while listening to music through [his of M] earbuds.".
 Definition: male-jogger-bystander is strolling: decide yes.
-To decide which number is the outrage tolerance of (M - male-jogger-bystander):
+To decide which number is the default outrage tolerance of (M - male-jogger-bystander):
 	decide on 8.
 To set up smoothie stats of (M - male-jogger-bystander):
 	now the bystanderInt1 of M is a random number between 5 and 7; [How much will they enjoy the drink?]
@@ -1141,7 +1174,7 @@ To decide which figure-name is the examine-image of (M - female-jogger-bystander
 To say ExamineDesc of (M - female-jogger-bystander):
 	say "This [man of M] is wearing a rather skimpy set of exercise top and shorts. [big he of M]'s jogging at a decent pace, while listening to music through [his of M] earbuds.".
 Definition: female-jogger-bystander is strolling: decide yes.
-To decide which number is the outrage tolerance of (M - female-jogger-bystander):
+To decide which number is the default outrage tolerance of (M - female-jogger-bystander):
 	decide on 7.
 To set up smoothie stats of (M - female-jogger-bystander):
 	now the bystanderInt1 of M is a random number between 5 and 7; [How much will they enjoy the drink?]
@@ -1153,7 +1186,7 @@ To decide which figure-name is the examine-image of (M - postman-bystander):
 To say ExamineDesc of (M - postman-bystander):
 	say "This [man of M] is wearing a postie's uniform and has a satchel full of mail slung over one shoulder. [big he of M]'s busy heading from postbox to postbox. [big he of M] has a slightly mischievous grin on [his of M] face.".
 Definition: postman-bystander is strolling: decide yes.
-To decide which number is the outrage tolerance of (M - postman-bystander):
+To decide which number is the default outrage tolerance of (M - postman-bystander):
 	decide on 9.
 Definition: postman-bystander is target-room-happy:
 	if bystander-room-target is Park02, decide yes; [everyone needs the toilet sometimes!]
@@ -1174,7 +1207,7 @@ Definition: postwoman-bystander is target-room-happy:
 male-frisbeer-bystander is a bystander. The printed name of male-frisbeer-bystander is "[TQlink of item described]frisbeer[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "frisbeer" as male-frisbeer-bystander.
 To decide which figure-name is the examine-image of (M - male-frisbeer-bystander):
 	decide on figure of male frisbeer bystander.
-To decide which number is the awareness of (M - male-frisbeer-bystander):
+To decide which number is the default awareness of (M - male-frisbeer-bystander):
 	decide on 5.
 To say ExamineDesc of (M - male-frisbeer-bystander):
 	say "This [man of M] is throwing a Frisbee around, so [he of M] is a little distracted.".
@@ -1185,7 +1218,7 @@ Definition: male-frisbeer-bystander is target-room-happy:
 female-frisbeer-bystander is a bystander. female-frisbeer-bystander is female. The printed name of female-frisbeer-bystander is "[TQlink of item described]frisbeer[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "frisbeer" as male-frisbeer-bystander.
 To decide which figure-name is the examine-image of (M - female-frisbeer-bystander):
 	decide on figure of female frisbeer bystander.
-To decide which number is the awareness of (M - female-frisbeer-bystander):
+To decide which number is the default awareness of (M - female-frisbeer-bystander):
 	decide on 5.
 To say ExamineDesc of (M - female-frisbeer-bystander):
 	say "This [man of M] is throwing a Frisbee around, so [he of M] is a little distracted.".
@@ -1196,29 +1229,29 @@ Definition: female-frisbeer-bystander is target-room-happy:
 male-bookworm-bystander is a bystander. The printed name of male-bookworm-bystander is "[TQlink of item described]bookworm[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "bookworm" as male-bookworm-bystander.
 To decide which figure-name is the examine-image of (M - male-bookworm-bystander):
 	decide on figure of male bookworm bystander.
-To decide which number is the awareness of (M - male-bookworm-bystander):
+To decide which number is the default awareness of (M - male-bookworm-bystander):
 	decide on 3.
 To say ExamineDesc of (M - male-bookworm-bystander):
 	say "This [man of M] has [his of M] nose in [his of M] book[if M is not interested]. Hopefully [he of M] won't look up[end if].".
-To compute lewd perception reaction of (M - male-bookworm-bystander):
+To compute default lewd perception reaction of (M - male-bookworm-bystander):
 	say "[line break][first custom style]'[one of]I... Oh god!'[or]H... haaah... Hello!'[in random order][roman type][line break][BigNameDesc of M] has turned bright red and you can see a massive erection forming in [his of M] pants!".
 
 female-bookworm-bystander is a bystander. female-bookworm-bystander is female. The printed name of female-bookworm-bystander is "[TQlink of item described]bookworm[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "bookworm" as male-bookworm-bystander.
 To decide which figure-name is the examine-image of (M - female-bookworm-bystander):
 	decide on figure of female bookworm bystander.
-To decide which number is the awareness of (M - female-bookworm-bystander):
+To decide which number is the default awareness of (M - female-bookworm-bystander):
 	decide on 3.
 To say ExamineDesc of (M - female-bookworm-bystander):
 	say "This [man of M] has [his of M] nose in [his of M] book[if M is not interested]. Hopefully [he of M] won't look up[end if].".
-To compute lewd perception reaction of (M - female-bookworm-bystander):
+To compute default lewd perception reaction of (M - female-bookworm-bystander):
 	say "[line break][first custom style]'[one of]I... Oh my!'[or]H... haaah... How are you so brave?'[in random order][roman type][line break][BigNameDesc of M] has turned bright red and [he of M] is crossing [his of M] legs together as if [he of M] desperately needs the [SlimeTarget].".
 
 male-selfie-bystander is a camera-bystander. The printed name of male-selfie-bystander is "[TQlink of item described]selfie addict[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "selfie", "addict" as male-selfie-bystander.
 To decide which figure-name is the examine-image of (M - male-selfie-bystander):
 	decide on figure of male selfie bystander.
-To decide which number is the awareness of (M - male-selfie-bystander):
+To decide which number is the default awareness of (M - male-selfie-bystander):
 	decide on 5.
-To decide which number is the outrage tolerance of (M - male-selfie-bystander):
+To decide which number is the default outrage tolerance of (M - male-selfie-bystander):
 	decide on 8.
 To say ExamineDesc of (M - male-selfie-bystander):
 	say "This fashionably dressed [man of M] is a bit distracted by [his of M] own image. [big he of M]'s spending [his of M] entire time posing and taking selfies of [himself of M].".
@@ -1226,9 +1259,9 @@ To say ExamineDesc of (M - male-selfie-bystander):
 female-selfie-bystander is a camera-bystander. female-selfie-bystander is female. The printed name of female-selfie-bystander is "[TQlink of item described]selfie chick[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "selfie", "chick" as female-selfie-bystander.
 To decide which figure-name is the examine-image of (M - female-selfie-bystander):
 	decide on figure of female selfie bystander.
-To decide which number is the awareness of (M - female-selfie-bystander):
+To decide which number is the default awareness of (M - female-selfie-bystander):
 	decide on 5.
-To decide which number is the outrage tolerance of (M - female-selfie-bystander):
+To decide which number is the default outrage tolerance of (M - female-selfie-bystander):
 	decide on 8.
 To say ExamineDesc of (M - female-selfie-bystander):
 	say "This confidently dressed [man of M] is a bit distracted by [his of M] own image. [big he of M]'s spending [his of M] entire time trying out different sexy poses and taking selfies of [himself of M].".
@@ -1258,14 +1291,14 @@ To decide which figure-name is the examine-image of (M - male-sunbather-bystande
 	decide on figure of male sunbather bystander.
 To say ExamineDesc of (M - male-sunbather-bystander):
 	say "This [man of M] is wearing board shorts and nothing else, clearly very proud of [his of M] tanned body and rock hard abs. [big he of M]'s got expensive shades on [his of M] face and a beach ball underneath one arm.".
-To decide which number is the outrage tolerance of (M - male-sunbather-bystander):
+To decide which number is the default outrage tolerance of (M - male-sunbather-bystander):
 	decide on 10.
 To set up smoothie stats of (M - male-sunbather-bystander):
 	now the bystanderInt1 of M is a random number between 3 and 9; [How much will they enjoy the drink?]
 	now the bystanderInt2 of M is 0. [How much convincing do they need?]
-To compute lewd perception reaction of (M - male-sunbather-bystander):
+To compute default lewd perception reaction of (M - male-sunbather-bystander):
 	say "[line break][first custom style]'Holy shit! Come on, that's just too far!'[roman type][line break]".
-To compute cringe perception reaction of (M - male-sunbather-bystander):
+To compute default cringe perception reaction of (M - male-sunbather-bystander):
 	say "[line break][first custom style]'Is there something wrong with your brain?!'[roman type][line break]".
 To compute non-lewd perception reaction of (M - male-sunbather-bystander):
 	if M is groping:
@@ -1280,14 +1313,14 @@ To decide which figure-name is the examine-image of (M - female-sunbather-bystan
 	decide on figure of female sunbather bystander.
 To say ExamineDesc of (M - female-sunbather-bystander):
 	say "This [man of M] is wearing a rather skimpy blue bikini and sipping from a cool drink. [big he of M] seems very confident in [his of M] own (very tanned) skin.".
-To decide which number is the outrage tolerance of (M - female-sunbather-bystander):
+To decide which number is the default outrage tolerance of (M - female-sunbather-bystander):
 	decide on 8.
 To set up smoothie stats of (M - female-sunbather-bystander):
 	now the bystanderInt1 of M is 1; [How much will they enjoy the drink?]
 	now the bystanderInt2 of M is 5. [How much convincing do they need?]
-To compute lewd perception reaction of (M - female-sunbather-bystander):
+To compute default lewd perception reaction of (M - female-sunbather-bystander):
 	say "[line break][first custom style]'Come on, you've taken it way too far. What a SLUT!'[roman type][line break]".
-To compute cringe perception reaction of (M - female-sunbather-bystander):
+To compute default cringe perception reaction of (M - female-sunbather-bystander):
 	say "[line break][first custom style]'Are you for real?!'[roman type][line break]".
 To compute non-lewd perception reaction of (M - female-sunbather-bystander):
 	say "[big he of M] gives you a friendly thumbs up.[if the saved appearance of the player > 3][line break][first custom style]'I LOVE your confidence! You do you, [brother of the player]! Don't let anyone tell you how to dress!'[roman type][line break][end if]".
@@ -1297,7 +1330,7 @@ To compute non-lewd worsened perception reaction of (M - female-sunbather-bystan
 shutterbug-bystander is a camera-bystander. The printed name of shutterbug-bystander is "[TQlink of item described]shutterbug[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "shutterbug" as shutterbug-bystander.
 To decide which figure-name is the examine-image of (M - shutterbug-bystander):
 	decide on figure of shutterbug bystander.
-To decide which number is the awareness of (M - shutterbug-bystander):
+To decide which number is the default awareness of (M - shutterbug-bystander):
 	decide on 10.
 To say ExamineDesc of (M - shutterbug-bystander):
 	say "This creepy looking guy seems to be trying to take photos of everything that moves...".
@@ -1305,11 +1338,11 @@ To say ExamineDesc of (M - shutterbug-bystander):
 bro-bystander is a bystander. The printed name of bro-bystander is "[TQlink of item described]bro[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "bro" as bro-bystander.
 To decide which figure-name is the examine-image of (M - bro-bystander):
 	decide on figure of bro bystander.
-To decide which number is the outrage tolerance of (M - bro-bystander):
+To decide which number is the default outrage tolerance of (M - bro-bystander):
 	decide on 14.
 To say ExamineDesc of (M - bro-bystander):
 	say "This guy looks like a total douche-bag. [big his of M] shirt reads 'SEND NUDES' and [he of M] has a mocking sneer on [his of M] face.".
-To compute lewd perception reaction of (M - bro-bystander):
+To compute default lewd perception reaction of (M - bro-bystander):
 	say "[line break][first custom style]'Holy shit! What the actual fuck is this?!'[roman type][line break]".
 To compute non-lewd perception reaction of (M - bro-bystander):
 	if segway-predicament is penetrating a fuckhole, compute lewd perception reaction of M;
@@ -1320,11 +1353,11 @@ To compute non-lewd worsened perception reaction of (M - bro-bystander):
 bum-bystander is a bystander. The printed name of bum-bystander is "[TQlink of item described]bum[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "bum" as bum-bystander.
 To decide which figure-name is the examine-image of (M - bum-bystander):
 	decide on figure of bum bystander.
-To decide which number is the outrage tolerance of (M - bum-bystander):
+To decide which number is the default outrage tolerance of (M - bum-bystander):
 	decide on 10.
 To say ExamineDesc of (M - bum-bystander):
 	say "This guy looks like [he of M]'s been living on the streets for a while, if [his of M] long beard and worn clothes are anything to go by.".
-To compute lewd perception reaction of (M - bum-bystander):
+To compute default lewd perception reaction of (M - bum-bystander):
 	say "[line break][first custom style]'I must still be drunk...'[roman type][line break]".
 To compute non-lewd perception reaction of (M - bum-bystander):
 	if segway-predicament is penetrating a fuckhole, compute lewd perception reaction of M;
@@ -1337,11 +1370,11 @@ To set up awareness stats of (M - bum-bystander):
 partygirl-bystander is a bystander. partygirl-bystander is female. The printed name of partygirl-bystander is "[TQlink of item described]party girl[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "party", "girl" as partygirl-bystander.
 To decide which figure-name is the examine-image of (M - partygirl-bystander):
 	decide on figure of partygirl bystander.
-To decide which number is the outrage tolerance of (M - partygirl-bystander):
+To decide which number is the default outrage tolerance of (M - partygirl-bystander):
 	decide on 8.
 To say ExamineDesc of (M - partygirl-bystander):
 	say "This [man of M] is in a tight fitting clubbing dress, and is walking home carrying [his of M] heels in [his of M] hand, looking rather worse for wear the morning after. Some folks might call this a 'walk of shame'.".
-To compute lewd perception reaction of (M - partygirl-bystander):
+To compute default lewd perception reaction of (M - partygirl-bystander):
 	say "[line break][first custom style]'I must still be drunk...'[roman type][line break]".
 To compute non-lewd perception reaction of (M - partygirl-bystander):
 	say "[line break][first custom style]'Ugh, [if the saved appearance of the player < 3]I'm never drinking again[otherwise]you and me both, sister[end if]...'[roman type][line break]".
@@ -1351,15 +1384,15 @@ To compute non-lewd worsened perception reaction of (M - partygirl-bystander):
 cosplay-bystander is a bystander. cosplay-bystander is female. The printed name of cosplay-bystander is "[TQlink of item described]cosplayer[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "cosplayer" as cosplay-bystander.
 To decide which figure-name is the examine-image of (M - cosplay-bystander):
 	decide on figure of cosplayer bystander.
-To decide which number is the outrage tolerance of (M - cosplay-bystander):
+To decide which number is the default outrage tolerance of (M - cosplay-bystander):
 	decide on 10.
-To decide which number is the cringe tolerance of (M - cosplay-bystander):
+To decide which number is the default cringe tolerance of (M - cosplay-bystander):
 	decide on 10.
 To say ExamineDesc of (M - cosplay-bystander):
 	say "This [man of M] is dressed up as some kind of anime character, complete with fake pink cat ears and tail.".
-To compute lewd perception reaction of (M - cosplay-bystander):
+To compute default lewd perception reaction of (M - cosplay-bystander):
 	say "[line break][first custom style]'Um, is there a SLUT convention happening at the same time as the anime one or something?!'[roman type][line break]".
-To compute cringe perception reaction of (M - cosplay-bystander):
+To compute default cringe perception reaction of (M - cosplay-bystander):
 	say "[line break][first custom style]'Um, is there a DISGUSTING FETISH convention happening at the same time as the anime one or something?!'[roman type][line break]".
 To compute non-lewd perception reaction of (M - cosplay-bystander):
 	say "[line break][first custom style]'[if the saved appearance of the player < 3]Do you know the quickest way to get to the anime convention[otherwise]Oh, are you going to the convention too? That's an interesting costume, I assume it's from an ecchi anime I haven't heard of[end if]?'[roman type][line break]".
@@ -1372,9 +1405,9 @@ To decide which figure-name is the examine-image of (M - construction-worker-bys
 Definition: construction-worker-bystander is strolling: decide no.
 To say ExamineDesc of (M - construction-worker-bystander):
 	say "This rather butch looking [man of M] is working on fixing a path.".
-To compute lewd perception reaction of (M - construction-worker-bystander):
+To compute default lewd perception reaction of (M - construction-worker-bystander):
 	say "[line break][first custom style]'You're the worst kind of [man of the player]. SLUT!'[roman type][line break]".
-To compute cringe perception reaction of (M - construction-worker-bystander):
+To compute default cringe perception reaction of (M - construction-worker-bystander):
 	say "[line break][first custom style]'[if there is a currently visible messed knickers]Is that SHIT?! [otherwise if there is a currently at least partially visible diaper]Is that a DIAPER?! [end if]Are you serious?!'[roman type][line break]".
 To compute non-lewd perception reaction of (M - construction-worker-bystander):
 	if M is groping:
@@ -1385,25 +1418,25 @@ To compute non-lewd perception reaction of (M - construction-worker-bystander):
 housewife-bystander is a bystander. housewife-bystander is female. The printed name of housewife-bystander is "[TQlink of item described]housewife[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "housewife" as housewife-bystander.
 To decide which figure-name is the examine-image of (M - housewife-bystander):
 	decide on figure of housewife bystander.
-To decide which number is the awareness of (M - housewife-bystander):
+To decide which number is the default awareness of (M - housewife-bystander):
 	decide on 9.
-To decide which number is the outrage tolerance of (M - housewife-bystander):
+To decide which number is the default outrage tolerance of (M - housewife-bystander):
 	decide on 2.
 To say ExamineDesc of (M - housewife-bystander):
 	say "This prim and proper [man of M] is carrying [his of M] shopping home.".
-To compute lewd perception reaction of (M - housewife-bystander):
+To compute default lewd perception reaction of (M - housewife-bystander):
 	say "[line break][first custom style]'I knew this neighbourhood was going downhill! HMPH!'[roman type][line break]".
 
 hooker-bystander is a bystander. hooker-bystander is female. The printed name of hooker-bystander is "[TQlink of item described]hooker[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "hooker" as hooker-bystander.
 To decide which figure-name is the examine-image of (M - hooker-bystander):
 	decide on figure of hooker bystander.
-To decide which number is the outrage tolerance of (M - hooker-bystander):
+To decide which number is the default outrage tolerance of (M - hooker-bystander):
 	decide on 11.
 To say ExamineDesc of (M - hooker-bystander):
 	say "This skankily dressed [man of M] clearly wants to find a John and make some money.".
-To compute lewd perception reaction of (M - hooker-bystander):
+To compute default lewd perception reaction of (M - hooker-bystander):
 	say "[line break][first custom style]'Hey, this is my turf, bitch! Find your own block.'[roman type][line break]".
-To compute cringe perception reaction of (M - hooker-bystander):
+To compute default cringe perception reaction of (M - hooker-bystander):
 	say "[line break][first custom style]'I've done weird stuff for cash before, but even I would never stoop that low.'[roman type][line break]".
 To set up awareness stats of (M - hooker-bystander):
 	now the bystanderInt1 of M is a random number between -1 and 10; [How much convincing do they need?]
@@ -1416,9 +1449,9 @@ To say ExamineDesc of (M - couple-bystander):
 	say "This [man of M]'s girlfriend seems to be rather irritated with how [he of M]'s looking at everyone except her[if M is interested], including you[end if].".
 To compute non-lewd perception reaction of (M - couple-bystander):
 	say "[line break][BigNameDesc of M] looks you up and down. [big his of M] girlfriend is the one that speaks, in an angry tone.[line break][first custom style]'Keep your eyes to yourself, John!'[roman type][line break]".
-To compute lewd perception reaction of (M - couple-bystander):
+To compute default lewd perception reaction of (M - couple-bystander):
 	say "[line break][BigNameDesc of M] looks you up and down, mouth wide open. [big his of M] girlfriend shrieks at [him of M].[line break][first custom style]'Don't look at [him of the player], you pig!'[roman type][line break]".
-To compute cringe perception reaction of (M - couple-bystander):
+To compute default cringe perception reaction of (M - couple-bystander):
 	if there is a worn currently at least partially visible diaper or the number of worn currently visible baby themed clothing > 0, say "[line break][BigNameDesc of M] looks you up and down, mouth wide open. [big his of M] girlfriend shrieks at [him of M].[line break][first custom style]'Oh my god, are you getting turned on by a [boy of the player] dressed as a baby? You disgusting pervert!'[roman type][line break]";
 	otherwise compute lewd perception reaction of M.
 To compute cupcake perception of (M - couple-bystander):
@@ -1461,9 +1494,11 @@ To compute bystander motion:
 		update appearance level; [We really want to make sure we've got this accurate]
 		repeat with M running through alive bystanders:
 			unless (current-predicament is toilets-dildos-predicament and M is in Park02 and the player is in Toilet02) or (current-predicament is incontinence-awareness-predicament and M is in Park02 and the player is in Park02 and M is interested and the bystanderInt2 of M > 0 and a random number between 1 and 8 > 1):
-				unless M is in the location of the player and ((fake-baby is held and fake-baby is not settled) or (M is male and there is a sat-on breastfeeding-bench)): [some people want to watch you care for your fake baby]
+				unless current-predicament is breastfeeding-predicament and M is in the location of the player and ((fake-baby is held and fake-baby is not settled) or (M is male and there is a sat-on breastfeeding-bench)): [some people want to watch you care for your fake baby]
 					if debugmode > 1, say "Computing [NameDesc of M] ([location of M]).";
-					if M is not moved, compute movement of M;
+					if M is not moved:
+						if current-predicament is chores-predicament, compute chores movement of M;
+						otherwise compute movement of M;
 			now M is not moved;
 			check perception of M;
 			[display entire map.]
@@ -1571,7 +1606,7 @@ To compute car coming past:
 		repeat with M running through uninterested bystanders:
 			if M is not in the location of the player:
 				now neighbour finder is the location of M;
-				let A be the best route from the location of M to the location of the player;
+				let A be the best route from the location of M to the location of the player through predicament rooms;
 				if A is a direction:
 					let P be the room A from (the location of M);
 					if a random number between 1 and 5 > 3 and the number of barriers in P is 0 and the number of barriers in the location of M is 0, try M going A;
@@ -1625,9 +1660,9 @@ To say PredicamentDescription of (P - a predicament):
 current-predicament is an object that varies.
 
 To say PredicamentRewardExplanation:
-	say "[one of]HERE YOU CAN EARN TROPHIES WHICH MAY BE USEFUL ASSETS THROUGHOUT THE REST OF YOUR TRAINING. PLEASE NOTE, IT IS RECOMMENDED TO MOVE THROUGH THIS AREA WITH AS MODEST AN APPEARANCE AS POSSIBLE TO AVOID EMBARRASSING ENCOUNTERS WITH YOUR NEIGHBOURS. ALL YOUR ITEMS AND YOUR NEW TROPHY ARE WAITING FOR YOU IN THE DESTINATION LOCATION. [caps please] NOTE[or]ANOTHER TROPHY IS WAITING FOR YOU AT THE DESTINATION LOCATION. [caps please] REMEMBER[stopping]: ALL PHOTOS AND VIDEOS TAKEN ARE UPLOADED TO THE [if infamy fetish is 1]*REAL* [end if]INTERNET. YOUR REAL PUBLIC REPUTATION IS AT STAKE. ".
+	say "[one of]HERE YOU CAN EARN TROPHIES WHICH MAY BE USEFUL ASSETS THROUGHOUT THE REST OF YOUR TRAINING. PLEASE NOTE, IT IS RECOMMENDED TO MOVE THROUGH THIS AREA WITH AS MODEST AN APPEARANCE AS POSSIBLE TO AVOID EMBARRASSING ENCOUNTERS WITH YOUR NEIGHBOURS. ALL YOUR ITEMS AND YOUR NEW TROPHY ARE WAITING FOR YOU IN THE DESTINATION LOCATION. [caps please] NOTE[or]ANOTHER TROPHY IS WAITING FOR YOU AT THE DESTINATION LOCATION. [caps please] REMEMBER[stopping]: ALL PHOTOS AND VIDEOS TAKEN ARE UPLOADED TO THE [if infamy fetish is 1]*REAL* INTERNET. YOUR *REAL* PUBLIC REPUTATION IS AT STAKE[otherwise][']INTERNET['][end if]. ".
 To say PredicamentRewardExplanationReaction:
-	say "[one of][line break][variable custom style]How cryptic. [if the player is shameless and infamy fetish is 1]So photos of me can get uploaded to the real life Internet? How outrageous... and exciting![otherwise if simulatedInternet is 0]But one thing is clear: if there's chances of photos of me being uploaded to the real life Internet, then I really must be careful here...[end if][or][stopping]".
+	say "[one of][line break][variable custom style][if the player is shameless and infamy fetish is 1]So photos of me can get uploaded to the real life Internet? How outrageous... and exciting![otherwise if infamy fetish is 1]Trophies? Neighbours? How cryptic. But one thing is clear: if there's chances of photos of me being uploaded to the real life Internet, then I really must be careful here...[otherwise]Trophies? Neighbours? How cryptic...[end if][or][stopping]".
 
 simple-sneak-predicament is a predicament.
 Figure of simple sneak predicament is the file "Special/Cutscene/cutscene-predicament-diaper-sneak1.jpg".
@@ -1851,7 +1886,7 @@ To execute (P - triple-dildo-predicament):
 	now triple-dildo-predicament is penetrating asshole;
 	now the stomach-semen of the player is 0;
 	now the stomach-water of the player is 3;
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	display focus stuff;
 	now bigGameLoop is 3; [tells the game not to refresh any windows]
 	say "[bold type]Suddenly you can feel that your arms are tightly bound behind you, with your hands in fingerless mittens, and there are thick dildos in your throat, pussy and ass![roman type][line break]A mechanical voice begins to explain your predicament.[line break][first custom style]'THE RULES ARE AS FOLLOWS: THE TANK OF SEMEN IN FRONT OF YOU IS CONNECTED TO YOUR BODY BY THREE TUBES. THE MOUTH AND [caps cunt] TUBES ARE CURRENTLY LOCKED IN PLACE. YOU CAN PUMP SEMEN DOWN YOUR THROAT BY SQUEEZING ON THE DILDO IN YOUR MOUTH. YOU CAN PUMP SEMEN UP YOUR ASSHOLE BY BOUNCING ON THE STUDDED ANAL DILDO ON THE CHAIR BELOW YOU. WARNING: IF YOU FAIL TO PERFORM ANY SIGNIFICANT PUMPING AT ALL FOR 10 SECONDS, THE LOCK HOLDING THE EXERCISE SHORTS IN THE CABINET BEHIND YOU WILL ENTER A PERMANENT LOCKED STATE.[paragraph break]'AFTER TWO MINUTES, ANYTHING REMAINING IN THE SEMEN TANK WILL BE DUMPED INTO YOUR FERTILE [caps pussy]. HOWEVER AS SOON AS THE SEMEN TANK IS EMPTY, ALL THE BONDAGE WILL FALL UNLOCKED AND YOU WILL BE ABLE TO ACCESS THE EXERCISE SHORTS. SO IF YOU DON'T SLACK FOR JUST TWO MINUTES, YOU WILL HAVE SOMETHING TO WEAR WHEN YOU LEAVE.[paragraph break]'FINALLY, IF YOU DO GET CREAMPIED, [if pregnancy fetish is 1]THERE IS A MORNING AFTER PILL WAITING FOR YOU IN YOUR HOUSE. BUT IT WILL BE DESTROYED[otherwise]THE COMPUTER IN YOUR HOUSE WILL UPLOAD A VIDEO RECORDING OF YOUR TIME HERE TO THE INTERNET[end if] EXACTLY 60 SECONDS AFTER THE TANK EMPTIES, SO THERE WILL BE NO TIME TO WASTE [bold type]PURPOSEFULLY EXPELLING[first custom style] OR [bold type]DOUBLING BACK ON YOURSELF[first custom style] ON YOUR WAY HOME.[paragraph break]'GO.'[roman type][line break]";
@@ -1882,8 +1917,8 @@ To execute (P - triple-dildo-predicament):
 		if playerContinue is 2 or playerContinue is 3:
 			say "You spend the next ten seconds pumping up and down on the dildo. ";
 			now sex-hurt-balance is 10; [Each tick of asshole ruining should cause delicateness or fainting chance at maximum soreness]
-			if refractoryperiod > 0:
-				decrease refractoryperiod by 1;
+			if refractoryperiod of the player > 0:
+				decrease refractoryperiod of the player by 1;
 				say "[bold type]But due to your fatigue from your recent orgasm, your pumping is much slower than before![roman type][line break]";
 				AssFill 1;
 				decrease S by 3;
@@ -1998,7 +2033,7 @@ To execute (P - painted-cutoffs-predicament):
 	now the heel-height of C is 2;
 	now the raw-magic-modifier of C is 2;
 	summon frilly stockings uncursed;
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	if the rank of the player < 3:
 		now the predicament-completed of painted-cutoffs-predicament is 1;
 		say "Suddenly you find yourself standing outside, in an alleyway. Round the corner, the noise of a road and the sound of distant voices can be heard. A robotic voice issues from a speaker in the wall behind you.[line break][first custom style]'WELCOME TO THE [']EXTRA CREDIT['] CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY... RETURN HOME.[paragraph break]'GO.'[PredicamentRewardExplanationReaction][roman type][paragraph break]Looking down at yourself, you begin to realise the challenge. You're wearing a tight pink tube top which shows your nipples straight through it. Your feet are stuck in white stockings and black court heels. And the only other thing on your body is... [UniqueClothingDesc of predicament-painted-cutoffs][variable custom style]Holy crap...[roman type][line break]";
@@ -2039,7 +2074,7 @@ To execute (P - serving-tray-predicament):
 	now the raw-magic-modifier of C is 2;
 	now the heel-height of C is 2;
 	summon frilly stockings uncursed;
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	summon heart-collar locked;
 	now the raw-magic-modifier of heart-collar is 0;
 	now heart-collar is blandness;
@@ -2098,7 +2133,7 @@ To maths-execute (M - leave-me-alone):
 
 condom-anal is a maths-sex-predicament-punishment.
 Definition: condom-anal is appropriate:
-	if condom fetish >= 2, decide yes;
+	if sticky condom fetish is 1, decide yes;
 	decide no.
 To decide which text is the maths-punishment-description of (M - condom-anal):
 	decide on "Fuck me in the ass with a condom, then tie it to my belt".
@@ -2121,7 +2156,7 @@ To maths-execute (M - bareback-anal):
 
 condom-vaginal is a maths-sex-predicament-punishment.
 Definition: condom-vaginal is appropriate:
-	if the player is possessing a vagina and condom fetish >= 2, decide yes;
+	if the player is possessing a vagina and sticky condom fetish is 1, decide yes;
 	decide no.
 To decide which text is the maths-punishment-description of (M - condom-vaginal):
 	decide on "Fuck me in the pussy with a condom, then tie it to my belt".
@@ -2337,7 +2372,7 @@ Glulx input handling rule for a timer-event:
 To execute (MSP - maths-sex-predicament):
 	now Predicament01 is discovered;
 	now the player is in Predicament01;
-	say "You find yourself on your hands and knees, stuck in a hole-in-a-wall! The only item of clothing on your entire body is a [if diaper quest is 1]big thick white diaper[otherwise]string belt on your waist[end if]. In front of you sits a control panel with five buttons, labelled from 1 to 5.[line break][first custom style]'WELCOME TO THIS MATHEMATICS-THEMED [']EXTRA CREDIT['] CLASS. SIX INSTRUCTIONS WILL BE PRESENTED IN FRONT OF YOU. THE OPTION YOU CHOOSE WILL BE DISPLAYED ON THE MONITOR ABOVE YOUR LOWER HALF, AND [if diaper quest is 1]EXECUTED BY THE AUTOMATED ROBOTIC ARMS[otherwise]READ BY THE OBEDIENT INSTRUCTION UNDERTAKER WAITING[end if] IN THE ROOM BEHIND YOU, FILMED, AND UPLOADED TO THE INTERNET. THIS WILL OCCUR FIVE TIMES. APOLOGIES, THE INSTRUCTION NUMBER GENERATOR APPEARS TO BE SLIGHTLY MALFUNCTIONING; NUMBERS ARE DISPLAYED IN THE FORM OF MATHEMATICAL SUMS. THERE IS A STRICT TIME LIMIT FOR EACH INSTRUCTION. [if condom fetish >= 2][paragraph break]'THERE IS ALSO A FURTHER BONUS AVAILABLE: ARRIVE HOME WITH FIVE CONDOMS PINNED TO YOUR BELT TO EARN A SECOND TROPHY![end if][paragraph break]'GO.'[paragraph break][variable custom style]Holy crap...[roman type][line break]";
+	say "You find yourself on your hands and knees, stuck in a hole-in-a-wall! The only item of clothing on your entire body is a [if diaper quest is 1]big thick white diaper[otherwise]string belt on your waist[end if]. In front of you sits a control panel with five buttons, labelled from 1 to 5.[line break][first custom style]'WELCOME TO THIS MATHEMATICS-THEMED [']EXTRA CREDIT['] CLASS. SIX INSTRUCTIONS WILL BE PRESENTED IN FRONT OF YOU. THE OPTION YOU CHOOSE WILL BE DISPLAYED ON THE MONITOR ABOVE YOUR LOWER HALF, AND [if diaper quest is 1]EXECUTED BY THE AUTOMATED ROBOTIC ARMS[otherwise]READ BY THE OBEDIENT INSTRUCTION UNDERTAKER WAITING[end if] IN THE ROOM BEHIND YOU, FILMED, AND UPLOADED TO THE INTERNET. THIS WILL OCCUR FIVE TIMES. APOLOGIES, THE INSTRUCTION NUMBER GENERATOR APPEARS TO BE SLIGHTLY MALFUNCTIONING; NUMBERS ARE DISPLAYED IN THE FORM OF MATHEMATICAL SUMS. THERE IS A STRICT TIME LIMIT FOR EACH INSTRUCTION. [if sticky condom fetish is 1][paragraph break]'THERE IS ALSO A FURTHER BONUS AVAILABLE: ARRIVE HOME WITH FIVE CONDOMS PINNED TO YOUR BELT TO EARN A SECOND TROPHY![end if][paragraph break]'GO.'[paragraph break][variable custom style]Holy crap...[roman type][line break]";
 	now the stance of the player is 1;
 	if diaper quest is 0:
 		if string-belt is not worn, summon string-belt uncursed;
@@ -2435,7 +2470,7 @@ Report going when the player is in Predicament19:
 
 team-enema-predicament is a team-predicament.
 Definition: team-enema-predicament is appropriate:
-	if the rank of the player >= 4 and (diaper quest is 1 or a2m fetish >= 2) and (diaper quest is 0 or watersports fetish is 1), decide yes;
+	if the rank of the player >= 4 and (diaper quest is 1 or snowball fetish is 1) and (diaper quest is 0 or watersports fetish is 1), decide yes;
 	decide no.
 Figure of team enema predicament is the file "Special/Cutscene/cutscene-predicament-team-enema1.jpg".
 
@@ -2581,7 +2616,7 @@ Definition: team-quiz-predicament is fixed-clothing-eligible: [might clash with 
 Definition: team-quiz-predicament is appropriate:
 	if the rank of the player < 3, decide no;
 	if diaper quest is 1 and the raw-bladder-incontinence of the player >= the max-bladder-incontinence of the player, decide no;
-	if diaper quest is 0 and (a2m fetish < 2 or the player is barbie), decide no;
+	if diaper quest is 0 and (snowball fetish is 0 or the player is barbie-genitals), decide no;
 	decide yes.
 To set up bystanders for (P - team-quiz-predicament):
 	if quiz-partner is on-stage, set up 13 bystanders;
@@ -3459,7 +3494,7 @@ To execute (L - team-face-crotch-predicament):
 			if K is red-bikini-briefs, HappinessDown ST;
 		let R be a random number between 10 and 14;
 		if R <= STBladder + the vindictiveness of ST - the dedication of ST:
-			say "[BigNameDesc of ST] sighs with defeat and you can tell that [he of ST] is peeing[if playerAbove is 0 and K is diaper]. Mostly because you can FEEL it on your face! The [slime] soaks straight through [his of ST] bikini briefs, making your face warm, wet and smelly. YUCK[otherwise if playerAbove is 0]. Mostly because you can feel the padding in front of your nose turning warm. Over time that subtle but distinct smell of [slime] begins to hit your nostrils[otherwise if K is diaper] into [his of ST] bikini briefs. Looks like [he of ST] will be walking home wet and dripping[otherwise] in [his of ST] diaper. Looks like [he of ST] will be walking home wet and soggy[end if].";
+			say "[BigNameDesc of ST] sighs with defeat and you can tell that [he of ST] is [slimeDraining][if playerAbove is 0 and K is diaper]. Mostly because you can FEEL it on your face! The [slime] soaks straight through [his of ST] bikini briefs, making your face warm, wet and smelly. YUCK[otherwise if playerAbove is 0]. Mostly because you can feel the padding in front of your nose turning warm. Over time that subtle but distinct smell of [slime] begins to hit your nostrils[otherwise if K is diaper] into [his of ST] bikini briefs. Looks like [he of ST] will be walking home wet and dripping[otherwise] in [his of ST] diaper. Looks like [he of ST] will be walking home wet and soggy[end if].";
 			if playerAbove is 0 and K is red-bikini-briefs:
 				if watersports fetish is 1 and K is diaper, SlowSlimeTasteAddictUp 1;
 				otherwise GrossOut wetDiaperFacesitGrossnessLevel;
@@ -3522,7 +3557,7 @@ team-football-predicament has a number called game-state. [0: Game in progress; 
 Definition: team-football-predicament is appropriate:
 	if diaper quest is 1, decide no;
 	if the rank of the player > 2, decide no;
-	if the player is barbie, decide no;
+	if the player is barbie-genitals, decide no;
 	decide yes.
 To say PredicamentDescription of (P - team-football-predicament):
 	say "I'm currently in an Extra Credit training session where I need to stay close to the football and try and get it far away from [trainee-name of team-predicament-partner] to win the game and avoid the forfeits, but also try to avoid having the ball for too long without winning as it'll make me cum, and then I need to get back to my home while avoiding as many bystanders as possible from noticing me.".
@@ -3915,7 +3950,7 @@ gloryhole-predicament is a predicament. gloryhole-predicament has a number calle
 
 Definition: gloryhole-predicament is appropriate:
 	if infamy fetish is 0, decide no;
-	if diaper quest is 0 and the rank of the player > 3 and (condom fetish >= 2 or bukkake fetish is 1), decide yes;
+	if diaper quest is 0 and the rank of the player > 3 and (sticky condom fetish is 1 or bukkake fetish is 1), decide yes;
 	decide no.
 
 To say PredicamentDescription of (P - gloryhole-predicament):
@@ -4108,7 +4143,9 @@ To say MissedGloryholeCock:
 		otherwise:
 			now the keys-tried of gloryhole-key-predicament is -1;
 			say "[first custom style]'Suit yourself.'[roman type][line break]You can hear [him of male-m] flushing the keys down the toilet, and then leaving. You have failed, and will have to leave naked.";
-		now the keys-agreed of gloryhole-key-predicament is 0.
+		now the keys-agreed of gloryhole-key-predicament is 0;
+	otherwise if current-predicament is chores-predicament:
+		say "[variable custom style]Crap. Maybe [he of bum-bystander][']ll come back soon? Or maybe that wasn't even [NameDesc of bum-bystander].[roman type][line break]".
 
 To make gloryhole statement demand of (M - a monster):
 	let R be a random number between 1 and 3;
@@ -4143,11 +4180,11 @@ To make gloryhole statement demand of (M - a monster):
 			otherwise:
 				say "[variable custom style]'What the fuck? No way! Get out of here.'[line break]";
 				compute gloryhole gluing;
-		otherwise if the cocks-sucked of gloryhole-predicament > 0 and grossness fetish > 0:
-			say "[speech style of M]'Next, I want you to [if grossness fetish > 1]eat my ass.'[roman type][line break]You see [NameDesc of M][']s gross hairy butthole pushed up against the gloryhole[otherwise]suck my toes.'[roman type][line break]You see the front half [NameDesc of M][']s gross bare [one of]left[or]right[purely at random] foot pushed through the gloryhole[end if].[line break][variable custom style]Huh? There's no rule saying that I have to do that...[roman type][line break]Do what [he of M] says?";
+		otherwise if the cocks-sucked of gloryhole-predicament > 0 and baseline grossness fetish is 1:
+			say "[speech style of M]'Next, I want you to [if baseline a2m fetish is 1]eat my ass.'[roman type][line break]You see [NameDesc of M][']s gross hairy butthole pushed up against the gloryhole[otherwise]suck my toes.'[roman type][line break]You see the front half [NameDesc of M][']s gross bare [one of]left[or]right[purely at random] foot pushed through the gloryhole[end if].[line break][variable custom style]Huh? There's no rule saying that I have to do that...[roman type][line break]Do what [he of M] says?";
 			if the player is bimbo consenting:
 				say "[variable custom style]'Okay, fine...'[roman type][line break]";
-				if grossness fetish > 1:
+				if baseline a2m fetish is 1:
 					say AnilingusSubmissionResponse of M;[The idea here is that the player and "M" are working together, so we don't unnecessarily restrict ourselves with two flavour functions]
 					TasteGrossOut 7;
 				otherwise:
@@ -4573,7 +4610,7 @@ To execute (TDVP - team-diaper-vibe-predicament):
 	while T > 0:
 		say "There are [T] seconds left on the clock.";
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-		set numerical response 1 to "[if KNEES is 1]Keep holding[otherwise]hold[end if] your knees apart, pressed onto the buttons[if refractoryperiod > 0] (you recently orgasmed, so this will [bold type]hurt[roman type])";
+		set numerical response 1 to "[if KNEES is 1]Keep holding[otherwise]hold[end if] your knees apart, pressed onto the buttons[if refractoryperiod of the player > 0] (you recently orgasmed, so this will [bold type]hurt[roman type])";
 		set numerical response 2 to "[if KNEES is 1]Release the buttons, forcing [trainee-name of M] to drink laxative[otherwise if LAX > 0]Keep resting your legs, forcing [trainee-name of M] to drink more laxative[otherwise]Refuse to spread your legs and press the buttons, forcing [trainee-name of M] to drink laxative[end if]";
 		if HOLD <= 0 and LAX >= 5:
 			now player-numerical-response is 2;
@@ -4582,7 +4619,7 @@ To execute (TDVP - team-diaper-vibe-predicament):
 		if player-numerical-response is 1:
 			say "The wand vibrator buzzes powerfully against your [genitals]!";
 			stimulate vagina from TDVP;
-			if refractoryperiod >= maxrefractoryperiod and HOLD <= 0:
+			if refractoryperiod of the player >= maxrefractoryperiod and HOLD <= 0:
 				say "Orgasming whilst your nostrils are filled with the smell of a messy diaper has a significant effect on your mental state.";
 				SexAddictUp 1;
 				GrossnessAddictUp 1;
@@ -4617,7 +4654,7 @@ To execute (TDVP - team-diaper-vibe-predicament):
 
 team-scissor-lift-predicament is a team-predicament.
 Definition: team-scissor-lift-predicament is appropriate:
-	if diaper lover is 0 and a2m fetish < 2, decide no;
+	if diaper lover is 0 and snowball fetish is 0, decide no;
 	if enema fetish is 0 and diaper messing < 4, decide no;
 	if the rank of the player >= 5 - (diaper lover * 2), decide yes;
 	decide no.
@@ -4696,7 +4733,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 	say "On the platform alongside you are [if diaper lover is 0]some finger foods on plates, but all with thick ropes of [semen] plastered over the top[otherwise]a large supply of unused disposable diapers, giant hamster feeders full of pureed diuretic baby food, and baby bottles full of [milk][end if][if watersports fetish is 1], and sports bottles (with the lids glued on) full of [slime][otherwise if diaper lover is 0], and sports bottles with the lids glued on[end if]. A large sign next to the scissor lift has the following information on it:[paragraph break][bold type]TIME UNTIL PLATFORM IS LOWERED[roman type][line break][if diaper lover is 0]30:00[otherwise]24:00:00[end if][line break][bold type]CURRENT PLATFORM WEIGHT[roman type][line break][W] LBS.[line break][bold type]AT 348 LBS:[roman type] MODEST CLOTHES BOX LOCKED[line break][bold type]AT 347 LBS:[roman type] HUMILIATING CLOTHES BOX LOCKED[line break][bold type][if diaper lover > 0]AT 345 LBS:[roman type] PLATFORM TAKES AN AUTOMATED TOUR OF NEIGHBOURHOOD[line break][bold type]AT 342 LBS:[roman type] TIMER INCREASED BY 24 HOURS[otherwise]AT 345 LBS:[roman type] TIMER INCREASED BY 24 HOURS[line break][bold type]AT 342 LBS:[roman type] PLATFORM TAKES AN AUTOMATED TOUR OF NEIGHBOURHOOD[end if][line break][paragraph break]Understanding washes over you: [bold type]This is a weight retention game. [roman type]If you were to [if enema fetish is 1]expel your enema[otherwise]soil yourself[end if] [if diaper lover > 0]or [slimedrain] outside of a diaper[otherwise if slimeshooter fetish is 1]or drain your slimepistol anywhere except into [NameDesc of M][']s mouth[otherwise if watersports fetish is 1]or [slimedrain] anywhere except into [NameDesc of M][']s mouth[otherwise]anywhere except into [NameDesc of M][']s mouth[end if], the liquid would travel down through the grate floor, and the weight measured by the scissor lift would decrease[if diaper lover > 0]. The same is true if you throw any of the used diapers off the platform, which means that the only other option is keeping your used nappies right next to you in the small space[end if]. So, the question is, what is worse? The things you'll have to do to retain the weight measurement of the platform, or the penalties for the weight going down?";
 	while T >= 0:
 		let D be a random worn diaper;
-		say "[one of][or][bold type]Time moves forward. [roman type]The clock now reads [bold type][if T < 10]0[end if][T]:[if mins < 10]0[end if][mins]:00.[roman type][line break][stopping][if the player is extremely thirsty][bold type]You are extremely thirsty.[roman type][line break][otherwise if the player is very thirsty]You are very thirsty.[line break][otherwise if the player is thirsty]You are thirsty.[line break][end if][if the player is hungry][bold type]You are very hungry.[roman type][line break][otherwise if the player is nearly hungry]You are hungry.[line break][end if][if the bladder of the player >= 8][bold type]You desperately need to pee.[roman type][line break][otherwise if the bladder of the player >= 6]You need to pee.[line break][otherwise if the bladder of the player >= 4]You slightly need to pee.[line break][end if][if the total squirtable fill of belly > 0][bold type]You are filled to the brim with a [EL] enema.[roman type][line break][otherwise if rectum >= 6]You need to go number two.[line break][otherwise if rectum >= 4]You need to go number two soon.[line break][end if][if the number of soiled-diaper in the location of the player is 1]You have one used diaper up on the platform with you.[line break][otherwise if there is soiled-diaper in the location of the player]There are [number of soiled-diaper in the location of the player] used diapers up on the platform with you.[line break][end if]";
+		say "[one of][or][bold type]Time moves forward. [roman type]The clock now reads [bold type][if T < 10]0[end if][T]:[if mins < 10]0[end if][mins]:00.[roman type][line break][stopping][if the player is extremely thirsty][bold type]You are extremely thirsty.[roman type][line break][otherwise if the player is very thirsty]You are very thirsty.[line break][otherwise if the player is thirsty]You are thirsty.[line break][end if][if the player is hungry][bold type]You are very hungry.[roman type][line break][otherwise if the player is nearly hungry]You are hungry.[line break][end if][if the bladder of the player >= 8][bold type]You desperately need to [slimedrain].[roman type][line break][otherwise if the bladder of the player >= 6]You need to [slimedrain].[line break][otherwise if the bladder of the player >= 4]You slightly need to [slimedrain].[line break][end if][if the total squirtable fill of belly > 0][bold type]You are filled to the brim with a [EL] enema.[roman type][line break][otherwise if rectum >= 6]You need to go number two.[line break][otherwise if rectum >= 4]You need to go number two soon.[line break][end if][if the number of soiled-diaper in the location of the player is 1]You have one used diaper up on the platform with you.[line break][otherwise if there is soiled-diaper in the location of the player]There are [number of soiled-diaper in the location of the player] used diapers up on the platform with you.[line break][end if]";
 		let PNR be 100;
 		while PNR is not 0:
 			force immediate clothing-focus redraw;
@@ -4977,7 +5014,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 					otherwise:
 						now airPee is true;
 				otherwise if watersports fetish is 1:
-					say "[if legacy watersports mechanics is 1]Pee[otherwise]Shoot[end if] into [trainee-name of M][']s mouth?";
+					say "[if legacy watersports mechanics is 1]Pee[otherwise]Drain slime[end if] into [trainee-name of M][']s mouth?";
 					if the player is consenting:
 						say "[variable custom style]'Sorry about this...'[line break][speech style of M]'It's OK.'[roman type][line break][BigNameDesc of M] allows you to [if legacy watersports mechanics is 1]carefully straddle [his of M] face and pee[otherwise]point your slimeshooter at [his of M] face and carefully shoot[end if] into [his of M] mouth. ";
 						let BLT be (the bladder of the player + 1) / 2;
@@ -5279,7 +5316,7 @@ An all later time based rule:
 			if the player is possessing a vagina, add "let me fuck your pussy" to sexActList;
 			add "let me fuck your asshole" to sexActList;
 			if watersports fetish is 1, add "drink my [if slimeshooter fetish is 1]slime[otherwise]piss[end if]" to sexActList;
-			if a2m fetish > 0, add "repeatedly put my [manly-penis] in your ass then clean it off with your mouth" to sexActList;
+			if baseline a2m fetish is 1, add "repeatedly put my [manly-penis] in your ass then clean it off with your mouth" to sexActList;
 			let MNastiness be a random number between 1 and the number of entries in sexActList;
 			now the keys-agreed of gloryhole-key-predicament is a random number between 1 and 2;
 			say "[speech style of M]'[if MPatienceFuzz <= a random number between -1 and 0]I'm going to have me some fun with you, whore. [otherwise if MPatienceFuzz <= a random number between 1 and 5]Well well well. Sounds like you're at my mercy, doesn't it. [otherwise if MPatienceFuzz <= 2]Looks like I've found myself a slut in a predicament, haha! [otherwise if MPatienceFuzz is 3]Oh, this is bad news for you, but I guess it's my lucky day! [otherwise if MPatienceFuzz is 4]Hmm, what should I do... [otherwise]I'm sorry to ask this of you, but... [end if]";
@@ -5503,7 +5540,7 @@ An all time based rule (this is the team blowjob race predicament rule):
 					say "turns around and squats down over [his of male-m] lap. [big he of M] carefully [one of]but competently [or][stopping] works the [manly-penis] into [his of M] [if RD is 1]pussy[otherwise]asshole[end if].";
 			if the trainee-sex-method of team-blowjob-race-predicament is 0:
 				say "[BigNameDesc of M] [one of]noisily slurps on the [manly-penis][or]works hard to orally pleasure the [manly-penis][or]bobs [his of M] head up and down as fast as [he of M] can go[or]sucks the [manly-penis] in [his of M] mouth with commendable vigour[or]diligently gives the best hands-free blowjob [he of M] can[in random order].";
-				if a2m fetish > 0 and (2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament):
+				if baseline a2m fetish is 1 and (2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament):
 					say "[speech style of M]'[one of]Ugh, yuck, it tastes of ass[or]Eurgh[or]Yuck yuck yuck[cycling]!'[roman type][line break][BigNameDesc of M] complains.";
 				otherwise if 1 is listed in the previous-sex-methods of team-blowjob-race-predicament or 3 is listed in the previous-sex-methods of team-blowjob-race-predicament:
 					say "[speech style of M]'[one of]Bleurgh. It still tastes of pussy[or]Eurgh[or]Blegh[or]Eww[cycling].'[roman type][line break][BigNameDesc of M] whines.";
@@ -5524,7 +5561,7 @@ An all time based rule (this is the team blowjob race predicament rule):
 					dislodge team-blowjob-race-predicament;
 				otherwise:
 					say "Instantly, [trainee-name of M] is reeled back in towards [his of M] wall, the [man of male-m][']s [manly-penis] popping out of [his of M] [if the trainee-sex-method of team-blowjob-race-predicament is 2]asshole[otherwise if the trainee-sex-method of team-blowjob-race-predicament is 1]pussy[otherwise]mouth[end if] with an audible sound. Your chain is loosened, allowing you to advance on the waiting [manly-penis].";
-					if (a2m fetish > 0 or the player is possessing a vagina) and (M is nasty trainee or M is innocent trainee), say "[one of][speech style of M]'If you're thinking of doing what I think you're thinking of doing, just don't. There's no way I'm fucking this dude, and I don't want to have to taste you on [his of male-m] [manly-penis].'[roman type][line break][or][stopping]";
+					if (baseline a2m fetish is 1 or the player is possessing a vagina) and (M is nasty trainee or M is innocent trainee), say "[one of][speech style of M]'If you're thinking of doing what I think you're thinking of doing, just don't. There's no way I'm fucking this dude, and I don't want to have to taste you on [his of male-m] [manly-penis].'[roman type][line break][or][stopping]";
 					now team-blowjob-race-predicament is reeled-out;
 					if the trainee-sex-method of team-blowjob-race-predicament is 0, truncate the previous-sex-methods of team-blowjob-race-predicament to 0 entries;
 					otherwise add the trainee-sex-method of team-blowjob-race-predicament to the previous-sex-methods of team-blowjob-race-predicament;
@@ -5541,7 +5578,7 @@ Check plugging something with team-blowjob-race-predicament:
 	if the noun is face and team-blowjob-race-predicament is not reeled-out, say "The chain is too tight, you can't bend over to reach!" instead;
 	if the noun is vagina:
 		if the player is not possessing a vagina, say "You don't have a vagina." instead;
-		if a2m fetish > 0 and team-blowjob-race-predicament is reeled-out and (2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament), say "Despite everything that's going on, you know that it's not healthy or safe to put something that's recently been inside a butthole into your [vagina]." instead;
+		if baseline a2m fetish is 1 and team-blowjob-race-predicament is reeled-out and (2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament), say "Despite everything that's going on, you know that it's not healthy or safe to put something that's recently been inside a butthole into your [vagina]." instead;
 	if the girth of team-blowjob-race-predicament > the insertableGirthAcceptance of the noun, say "There's just no way [if the girth of team-blowjob-race-predicament > the openness of the noun + 5]it would fit, it's way too big[otherwise]you could bring yourself to try and push something so big inside of your poor [variable noun][end if]!" instead;
 	allocate 6 seconds;
 	if team-blowjob-race-predicament is reeled-out:
@@ -5551,7 +5588,7 @@ Check plugging something with team-blowjob-race-predicament:
 			say "You squat over [NameDesc of team-blowjob-race-predicament] and do your best to lower your [variable noun] onto [his of male-m] [manly-penis].";
 			ruin the noun;
 			if the noun is asshole:
-				if a2m fetish > 0 and 2 is not listed in the previous-sex-methods of team-blowjob-race-predicament:
+				if baseline a2m fetish is 1 and 2 is not listed in the previous-sex-methods of team-blowjob-race-predicament:
 					say "[speech style of team-predicament-partner]'With your ass?! Really, do you have to make it taste like butthole?!'[roman type][line break][BigNameDesc of team-predicament-partner] complains.";
 					FavourDown team-predicament-partner;
 				add 4 to the previous-sex-methods of team-blowjob-race-predicament;
@@ -5559,7 +5596,7 @@ Check plugging something with team-blowjob-race-predicament:
 				add 3 to the previous-sex-methods of team-blowjob-race-predicament;
 		otherwise:
 			say "You kneel down and take the [manly-penis] into your mouth.";
-			if a2m fetish > 0 and (2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament):
+			if baseline a2m fetish is 1 and (2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament):
 				let N be 0;
 				repeat with PSM running through the previous-sex-methods of team-blowjob-race-predicament:
 					if PSM is 2 or PSM is 4, increase N by 1;
@@ -5682,7 +5719,7 @@ To construct unique buttons for (T - team-blowjob-race-predicament):
 			now the ButtonImage entry is Figure of VaginaButton;
 			now the ButtonCommand entry is "insert [text-shortcut of T] in vagina";
 			now the ButtonColour entry is lightModeFullGreen;
-			if a2m fetish > 0 and T is reeled-out and (2 is listed in the previous-sex-methods of T or 4 is listed in the previous-sex-methods of T), now the ButtonColour entry is lightModeFullYellow; [no ass to vag]
+			if baseline a2m fetish is 1 and T is reeled-out and (2 is listed in the previous-sex-methods of T or 4 is listed in the previous-sex-methods of T), now the ButtonColour entry is lightModeFullYellow; [no ass to vag]
 		if ButtonTableFull is 0:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of AssholeButton;
@@ -5695,9 +5732,9 @@ Check talking a trainee:
 		reset multiple choice questions;
 		set next numerical response to "'You look like such a filthy whore right now!'";
 		if team-blowjob-race-predicament is reeled-out:
-			set next numerical response to "'You're a bit too eager to get back to this [manly-penis], aren't you?!'";
-			if team-blowjob-race-predicament is penetrating asshole and a2m fetish > 0, set next numerical response to "'I bet you can't wait to taste my asshole, can you, slut?'";
-			if team-blowjob-race-predicament is penetrating vagina, set next numerical response to "'Ready to suck my pussy juices off [his of male-m] [manly-penis]?'";
+			set next numerical response to "'You're a bit too eager to get back to that [DickDesc of male-m], aren't you?!'";
+			if team-blowjob-race-predicament is penetrating asshole and baseline a2m fetish is 1, set next numerical response to "'I bet you can't wait to taste my asshole, can you, slut?'";
+			if team-blowjob-race-predicament is penetrating vagina, set next numerical response to "'Ready to suck my pussy juices off [his of male-m] [DickDesc of male-m]?'";
 		otherwise:
 			set next numerical response to "'Oh my god, you whore! You don't even know that [man of male-m]'s name!'";
 		set next numerical response to "'Just give up! There's no way you're going to win this.'";
@@ -5709,7 +5746,6 @@ Check talking a trainee:
 			say "[speech style of the noun]'[if the noun is amicable trainee][one of]That's not very nice[or]Oh[or]Let's not be so cruel to each other[in random order]...'[otherwise][one of]Fuck you[or]Shut up[or]Grrr[or]Zip it, skank[in random order]!'[end if][roman type][line break]";
 			try waiting instead;
 		do nothing instead.
-
 
 teddy-walk-predicament is a predicament.
 Definition: teddy-walk-predicament is appropriate:
@@ -5970,8 +6006,8 @@ To execute (TRNP - train-predicament):
 		if diaper messing >= 4, now rectum is rectum-risky-level + 1;
 	otherwise:
 		if a2m fetish is 0, summon remote-controlled-vibrator uncursed;
-		if a2m fetish is 1, assfill 7 small eggs;
-		if a2m fetish is 2 and watersports fetish is 1, now the slime volume of belly is 20;
+		if just a2m fetish is 1, assfill 7 small eggs;
+		if snowball fetish is 1 and watersports fetish is 1, now the slime volume of belly is 20;
 		blandify and reveal heart-strap-thong;
 		now heart-strap-thong is in Predicament02;
 		gluify heart-strap-thong;
@@ -5984,15 +6020,15 @@ To execute (TRNP - train-predicament):
 			now heart-strap-bra is predicament-fixed;
 	if diaper quest is 1, now the bladder of the player is bladder-risky-level + 4;
 	now the player is in Predicament01;
-	say "You find yourself strapped face-down on some kind of trolley / cart / bondage bench on rails. You're wearing a green lycra bodysuit that covers everything except your face and crotch[if diaper quest is 1], and a large white diaper with a green vertical strip down the middle[end if]. Strict metal bondage keeps your arms and legs restrained and away from the ground. Your head hangs off the front end of your [']vehicle[']. and your butt hangs off the other end.[paragraph break][if watersports mechanics is 1]You're also desperate to [slime]. [end if][if diaper quest is 1 and diaper messing >= 4]And you feel the need to poop. [end if][if diaper quest is 0 and a2m fetish > 1]Also, you can feel that something slimy has been inserted in your asshole, and now urgently needs to be squeezed out. [end if][if diaper quest is 0 and a2m fetish is 1]Also, you can feel that there's several small objects inside your asshole, urgently needing to be squeezed out. [end if][paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]ALLOW US TO EXPLAIN THE NATURE OF TODAY'S PREDICAMENT.'[roman type][line break]";
+	say "You find yourself strapped face-down on some kind of trolley / cart / bondage bench on rails. You're wearing a green lycra bodysuit that covers everything except your face and crotch[if diaper quest is 1], and a large white diaper with a green vertical strip down the middle[end if]. Strict metal bondage keeps your arms and legs restrained and away from the ground. Your head hangs off the front end of your [']vehicle[']. and your butt hangs off the other end.[paragraph break][if watersports mechanics is 1]You're also desperate to [slime]. [end if][if diaper quest is 1 and diaper messing >= 4]And you feel the need to poop. [end if][if diaper quest is 0 and snowball fetish is 1]Also, you can feel that something slimy has been inserted in your asshole, and now urgently needs to be squeezed out. [end if][if diaper quest is 0 and just a2m fetish is 1]Also, you can feel that there's several small objects inside your asshole, urgently needing to be squeezed out. [end if][paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]ALLOW US TO EXPLAIN THE NATURE OF TODAY'S PREDICAMENT.'[roman type][line break]";
 	now temporaryYesNoBackground is Figure of Train Predicament Cutscene;
 	compute single choice question "Look around as the voice speaks.";
 	now temporaryYesNoBackground is Figure of no-image-yet; [forces normal map to be drawn during multiple choice, which in turn forces train state render to be drawn instead]
 	now temporary-map-figure is Figure of Train Predicament Track;
 	say "[first custom style]'TO EARN THIS TROPHY, YOU MUST RETURN HOME. BUT FIRST YOU'LL NEED TO EARN YOUR FREEDOM. YOU ARE BOUND ON A TROLLEY MOUNTED UPON A CIRCULAR TRACK. THERE IS A GREEN CIRCLE WITHIN THIS TRACK. THERE IS A CAMERA OBSERVING THE TRACK FROM ABOVE. WHEN IT CAN SEE AN UNINTERRUPTED GREEN CIRCLE, YOU WILL BE RELEASED. UNFORTUNATELY THERE ARE CURRENTLY SEVERAL PIECES OF CHOCOLATE FUDGE CAKE, AND SEVERAL SPLASHES OF [if diaper quest is 0]SEMEN[otherwise]HUMAN BREAST MILK[end if], BLOCKING THE PATTERN.[paragraph break]";
 	if diaper quest is 0:
-		if a2m fetish > 0:
-			say "'YOUR BELLY HAS BEEN FILLED WITH [if a2m fetish > 1 and watersports fetish > 0][caps slime][otherwise if a2m fetish > 1]TOMATO KETCHUP[otherwise]PING PONG BALLS[end if], AND IF YOU CAN'T HOLD IT IN, THE RESULT MIGHT MAKE YOUR LIFE EVEN MORE TRICKY...'";
+		if baseline a2m fetish is 1:
+			say "'YOUR BELLY HAS BEEN FILLED WITH [if snowball fetish is 1 and watersports fetish > 0][caps slime][otherwise if snowball fetish is 1]TOMATO KETCHUP[otherwise]PING PONG BALLS[end if], AND IF YOU CAN'T HOLD IT IN, THE RESULT MIGHT MAKE YOUR LIFE EVEN MORE TRICKY...'";
 		otherwise:
 			say "'OH, AND BY THE WAY, YOU HAVE A VIBRATOR ON YOUR GENITALIA[run paragraph on]";
 			if the player is possessing a penis, say ".[paragraph break]";
@@ -6008,7 +6044,7 @@ To execute (TRNP - train-predicament):
 	while trolleyTime > 0:
 		say "[line break][one of]The trolley starts to move[or]The trolley has completed another circuit of the track[stopping].";
 		let currentPressure be (the square root of buildingPressure) + a random number between 0 and 4;
-		if diaper quest is 0 and a2m fetish is 2, increase currentPressure by 1;
+		if diaper quest is 0 and snowball fetish is 1, increase currentPressure by 1;
 		if currentPressure > 9, now currentPressure is 9;
 		if diaper quest is 1, now currentPressure is currentPressure * 2;
 		otherwise now currentPressure is currentPressure * 10;
@@ -6031,10 +6067,10 @@ To execute (TRNP - train-predicament):
 		render train state;
 		let stuff-to-hold be 1;
 		if (diaper quest is 0 and (a2m fetish is not 1 or the small egg count of belly > 0)) or (diaper quest is 1 and the bladder of the player > 0):
-			say "Your [if diaper quest is 0 and a2m fetish > 0]belly's cramping[otherwise if diaper quest is 1][SlimeContainer]'s cramping[otherwise]need to orgasm[end if] [if previousPressure is 0]is suddenly at the forefront of your mind[otherwise if currentPressure > previousPressure and currentPressure <= previousPressure + 3]gets a bit stronger[otherwise if currentPressure > previousPressure]is much stronger than before[otherwise if currentPressure is previousPressure]is the same as before[otherwise if currentPressure <= previousPressure - 3]significantly dies away for now[otherwise]has slightly reduced[end if] ([bold type][currentPressure]% chance of losing control this turn[roman type]).";
+			say "Your [if diaper quest is 0 and baseline a2m fetish is 1]belly's cramping[otherwise if diaper quest is 1][SlimeContainer]'s cramping[otherwise]need to orgasm[end if] [if previousPressure is 0]is suddenly at the forefront of your mind[otherwise if currentPressure > previousPressure and currentPressure <= previousPressure + 3]gets a bit stronger[otherwise if currentPressure > previousPressure]is much stronger than before[otherwise if currentPressure is previousPressure]is the same as before[otherwise if currentPressure <= previousPressure - 3]significantly dies away for now[otherwise]has slightly reduced[end if] ([bold type][currentPressure]% chance of losing control this turn[roman type]).";
 			reset multiple choice questions;
 			set numerical response 1 to "Focus on clearing the green path as quickly as possible (increases average amount of stuff cleared).";
-			set numerical response 2 to "Split your focus between clearing the green path and holding [if diaper quest is 0 and a2m fetish > 0]your sphincter shut[otherwise if diaper quest is 1]onto your [SlimeContainer][otherwise]back your orgasm[end if] (half chance of losing control).";
+			set numerical response 2 to "Split your focus between clearing the green path and holding [if diaper quest is 0 and baseline a2m fetish is 1]your sphincter shut[otherwise if diaper quest is 1]onto your [SlimeContainer][otherwise]back your orgasm[end if] (half chance of losing control).";
 			set numerical response 3 to "Focus entirely on holding [if diaper quest is 0 and a2m fetish > 0]your sphincter shut[otherwise if diaper quest is 1]onto your [SlimeContainer][otherwise]back your orgasm[end if] (one tenth chance of losing control).";
 			set numerical response 0 to "Give up and wait for someone to discover you.";
 			compute multiple choice question;
@@ -6135,7 +6171,7 @@ To execute (TRNP - train-predicament):
 							let LPDLN be entry LPDLR in LPDL;
 							now entry LPDLN in train-piss of train-predicament is 1;
 					SexAddictUp 1;
-				otherwise if a2m fetish is 1:
+				otherwise if just a2m fetish is 1:
 					say "A large number of ping pong balls come shooting out of your butthole. Seven of them end up on top of the green line, obscuring the perfect circle. You're going to have to reach them with your tongue and knock them out of the way before you can escape...";
 					now small egg count of belly is 0;
 					now the train-ping-pong-balls of train-predicament is 7;
@@ -6331,7 +6367,7 @@ To render train state:
 			otherwise:
 				add Figure of Train Predicament Cum 4 to temporary-map-figures;
 		increase E by 1;
-	if diaper quest is 0 and a2m fetish is 1 and the small egg count of belly > 0, add Figure of Train Predicament Ping Pong to temporary-map-figures.
+	if diaper quest is 0 and just a2m fetish is 1 and the small egg count of belly > 0, add Figure of Train Predicament Ping Pong to temporary-map-figures.
 
 
 
@@ -7113,7 +7149,7 @@ An all later time based rule (this is the quadcopter rule):
 			let L be the location of snitch-predicament;
 			let R be a random number between 1 and 10;
 			if L is not a park room or a random number between 1 and 4 is 1:
-				let A be the best route from L to Park05; [the centre of the park]
+				let A be the best route from L to Park05 through predicament rooms; [the centre of the park]
 				try snitch-predicament going A;
 			otherwise if R > snitch-time of snitch-predicament:
 				if the player is in L and the player is getting lucky:
@@ -7287,7 +7323,7 @@ To execute (P - joint-fuckhole-predicament):
 		now N is a random unseen-stranger;
 	while player-released is false and rival-released is false:
 		let man-balance be 1; [0: both for player; 1: one for each; 2: both for rival]
-		if refractoryperiod > 0, decrease refractoryperiod by 1;
+		if refractoryperiod of the player > 0, decrease refractoryperiod of the player by 1;
 		now pain-this-round is false;
 		check for arousal change;
 		say "There's [one of]a[or]another[stopping] short break before your next options appear.";
@@ -7580,7 +7616,7 @@ To execute (P - joint-fuckhole-predicament):
 							otherwise if rough-sex is 1:
 								say "[BigNameDesc of M] [one of]pumps in and out of your [variable F][or]treats your [variable F] like a faceless masturbatory aid[or]thrusts in and out of your [variable F][or]humps your [variable F][or]fucks your [variable F][or]slams [his of M] [manly-penis] deep into your [variable F][in random order] [one of]at a steady speed[or]with a steady rhythm[or]2 or 3 times a second[or]with an energetic pace[or]quickly and rhythmically[at random].";
 							ruin F times rough-sex;
-							if T is "VIDEO" and refractoryperiod >= maxrefractoryperiod: [player orgasmed]
+							if T is "VIDEO" and refractoryperiod of the player >= maxrefractoryperiod: [player orgasmed]
 								say "The quarter of the screen showing the video call software changes to show a still of your face, with your eyes rolled into the back of your head, and your tongue lolling out of your mouth. You hadn't even realised you were doing that. At the bottom, it says [']CALLER TOOK SCREENSHOT['].[line break][FanciedName] has a darkened face, and looks angry.[line break][speech style of fancied-friend]'I can't believe you did that in front of me. That's so gross. And perverted. And wrong. I'll have you know that I've taken a screenshot, and will be posting it on your timeline, and telling everyone exactly what you did to me. Nobody's ever going to speak to you again, you freak.'[line break][variable custom style]'No wait please [FanciedName], I can explain!'[roman type][line break]Your [FanciedRole] terminates the call before you can properly respond.[line break][variable custom style]Is [he of fancied-friend] really going to post that where all my family and friends can see it? Oh god...[roman type][line break]";
 								if the friend-max-appearance of fancied-friend < 8, now the friend-max-appearance of fancied-friend is 8;
 								now fancied-friend is friend-shocked;
@@ -8014,7 +8050,7 @@ To execute (P - business-briefcase-predicament):
 		now white-thong is predicament-fixed;
 		if a random number between 1 and 2 is 1, gluify white-thong;
 	now house-key is in Toilet01;
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	let F be vagina;
 	if the player is not possessing a vagina, now F is penis;
 	now P is penetrating F;
@@ -8030,7 +8066,7 @@ To execute (P - business-briefcase-predicament):
 		vaginally orgasm shamefully;
 		say "You grit your teeth and try to hide the fact that you just had an orgasm. It's impossible to tell if you were successful, but no immediate apparent [']penalty['] appears to happen.";
 		unless the player is getting lucky, now P is orgasm-caught;
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	say "After that, the autocue just keeps going, and there's nothing to do but continue to read what it says.[paragraph break][variable custom style]'[if diaper quest is 1]I don't just like wearing diapers, I like using them too. In fact, I can't wait to use this one[otherwise]I'm such a shameless exhibitionist! You wouldn't believe how slutty the outfit is that I'm going to be wearing[end if] while I'm out on my walk in the park. You see, right after making this video, I'm going to go for a walk in the park outside my house, and drop little business cards with links to this web page all over the park. Perhaps you are the lucky person who found one of my cards? If so, please, it's up to you to be the first to spread it around. Make me go viral! Please, punish me for being such a dirty slut! Ruin my life! I want it so bad. And if you're someone who's into degrading and abusing little naughty sluts like me, why not come pay me a visit? Threaten to show my family this video if I don't obey you, and I'll probably do whatever you say. And don't worry, I've made sure to get the website owners to promise to update my details below if they ever change. So you'll always be able to find me. I'll be the world's public slut for the rest of my life. All you have to do, is share my link around...'[roman type][paragraph break]That appears to be the end of it. The locks around the Sybian unlock, and you could stand up if you want. But now you're really horny again... Really close to the edge. So close to a second orgasm. Do you let the Sybian finish you off a second time?";
 	now the arousal of the player is 10000;
 	if the player is consenting:
@@ -8424,8 +8460,8 @@ To execute (BKP - balloon-kart-predicament):
 					say "You slam yourself up and down on the huge vibrator, roughly stimulating your [F].";
 					now BKP is humped; [harder sensations]
 					ruin F times 2;
-					if refractoryperiod > 0:
-						now refractoryperiod is 0;
+					if refractoryperiod of the player > 0:
+						now refractoryperiod of the player is 0;
 						now the tempInt3 of P is 2;
 					otherwise:
 						if the soreness of F > 5:
@@ -8980,7 +9016,7 @@ To execute (P - porno-predicament):
 		set numerical response 3 to "Use the dildo.";
 		set numerical response 4 to "Use the butt plug.";
 		set numerical response 5 to "Use both toys at the same time.";
-		if a2m fetish >= 1, set next numerical response to "Use both toys, then lick them clean.";
+		if baseline a2m fetish is 1, set next numerical response to "Use both toys, then lick them clean.";
 	otherwise:
 		set numerical response 1 to "Drink the drink.";
 		set numerical response 2 to "Give yourself an enema.";
@@ -9427,22 +9463,22 @@ To execute (P - porno-predicament):
 				say "Suddenly, [NameDesc of M] grabs you by the hair and throws you onto the ground. [big his of M] [manly-penis] is ripped from your [asshole] with a sudden POP.";
 				ruin asshole;
 				say "[big he of M] sits on the side of the bed and looks down at you darkly.";
-				say "[speech style of M]'Clean my [if grossness fetish > 0]feet[otherwise]balls[end if], slave.'[roman type][line break]";
+				say "[speech style of M]'Clean my [if baseline grossness fetish is 1]feet[otherwise]balls[end if], slave.'[roman type][line break]";
 				reset multiple choice questions;
 				set numerical response 0 to "'Fuck you, clean them yourself.'";
-				set numerical response 1 to "Kiss [his of M] [if grossness fetish > 0]feet[otherwise]balls[end if]";
-				set numerical response 2 to "Passionately lick and suck [his of M] [if grossness fetish > 0]feet[otherwise]balls[end if] clean";
+				set numerical response 1 to "Kiss [his of M] [if baseline grossness fetish is 1]feet[otherwise]balls[end if]";
+				set numerical response 2 to "Passionately lick and suck [his of M] [if baseline grossness fetish is 1]feet[otherwise]balls[end if] clean";
 				compute multiple choice question;
 				if player-numerical-response is 0:
 					decrease PP by 2;
 					say "[BigNameDesc of M] shrugs.[line break][speech style of M]'Fine. It's your asshole's funeral.'[roman type][line break][big he of M] lifts you back onto the bed and shoves [his of M] [manly-penis] back deep down into where the sun doesn't shine.";
 					ruin asshole;
 				otherwise if player-numerical-response is 1:
-					say "You crawl over to [NameDesc of M] and give [his of M] [if grossness fetish > 0]dirty feet[otherwise]wrinkly nutsack[end if] a plastering of polite kisses and even a couple of gentle [if grossness fetish > 0]toe [end if]sucks. [BigNameDesc of M] watches silently and masturbates. [strongHumiliateReflect]";
+					say "You crawl over to [NameDesc of M] and give [his of M] [if baseline grossness fetish is 1]dirty feet[otherwise]wrinkly nutsack[end if] a plastering of polite kisses and even a couple of gentle [if baseline grossness fetish is 1]toe [end if]sucks. [BigNameDesc of M] watches silently and masturbates. [strongHumiliateReflect]";
 					decrease PP by a random number between 0 and 1;
 				otherwise:
-					say "You crawl over to [NameDesc of M] and give [his of M] [if grossness fetish > 0]dirty feet[otherwise]wrinkly nutsack[end if] a wet session of sloppy tongue worship. [BigNameDesc of M] orders you to keep your hands behind your back at at all times, which you obey. [if grossness fetish > 0][big he of M] even raises [his of M] feet into the air to allow you to lick the soles, which you obediently do. [end if][severeHumiliateReflect]";
-					if grossness fetish is 1, TasteGrossOut 6;
+					say "You crawl over to [NameDesc of M] and give [his of M] [if baseline grossness fetish is 1]dirty feet[otherwise]wrinkly nutsack[end if] a wet session of sloppy tongue worship. [BigNameDesc of M] orders you to keep your hands behind your back at at all times, which you obey. [if baseline grossness fetish is 1][big he of M] even raises [his of M] feet into the air to allow you to lick the soles, which you obediently do. [end if][severeHumiliateReflect]";
+					if just grossness fetish is 1, TasteGrossOut 6;
 			otherwise:
 				repeat with MM running through unseen-strangers:
 					if MM is penetrating F:
@@ -9464,7 +9500,7 @@ To execute (P - porno-predicament):
 							say "[BigNameDesc of MM] is spurred on, and tries [his of MM] best to increase the pace even more!";
 							ruin F;
 					otherwise:
-						if MM is M and (F is vagina or a2m fetish > 0): [the first to penetrate]
+						if MM is M and (F is vagina or baseline a2m fetish is 1): [the first to penetrate]
 							say "[BigNameDesc of M] brings [his of M] [manly-penis] round to your face.[line break][speech style of M]'Suck it.'[roman type][paragraph break][variable custom style]That's just been in my [F]...[roman type][line break]";
 							reset multiple choice questions;
 							set numerical response 1 to "Don't suck it";
@@ -9620,7 +9656,7 @@ To execute (P - porno-predicament):
 					decrease PP by 1;
 				otherwise:
 					stimulate vagina from M;
-					if refractoryperiod > 0, say severeHumiliateReflect;
+					if refractoryperiod of the player > 0, say severeHumiliateReflect;
 		check for arousal change;
 		[Part 4 - Cumshot]
 		if diaper quest is 0:
@@ -9703,7 +9739,7 @@ To execute (P - porno-predicament):
 		[Part 5 - Final Humiliation]
 		if diaper quest is 0:
 			if watersports-scene is true:
-				if a2m fetish >= 2:
+				if snowball fetish is 1:
 					let MM be a random monster penetrating asshole;
 					if MM is nothing: [just in case something's gone weird]
 						now MM is M;
@@ -9766,7 +9802,7 @@ To execute (P - porno-predicament):
 						StomachSlimeUp 15;
 						say obsceneHumiliateReflect;
 						say "By the end of your sordid display, you feel extremely bloated, stomach full up to the brim with these guys['] [slime].";
-			otherwise if a2m fetish >= 2 and the semen volume of belly > 0:
+			otherwise if snowball fetish is 1 and the semen volume of belly > 0:
 				say "[BigNameDesc of M] grabs your hair and guides you to squat over a champagne flute.[line break][speech style of M]'Push that anal creampie out, slut.'[roman type][paragraph break][big he of M] spreads your sphincter open wide, removing any choice you have in the matter - the [semen] in your ass comes oozing back out, collecting in the cup like some sort of sordid cum and ass-juice cocktail. And you know what's coming next. The champagne flute is brought round to your lips...";
 				now the semen volume of belly is 0;
 				now temporaryYesNoBackground is figure of wench cutscene 9;
@@ -9942,7 +9978,7 @@ To execute (VW - horizontal-pole-predicament):
 	now the stance of the player is 1;
 	now the arousal of the player is 1000;
 	update arousal;
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	summon ankle-ropes locked;
 	summon wrist-waist-ropes locked;
 	let SS be 3; [spank strength]
@@ -9961,7 +9997,7 @@ To execute (VW - horizontal-pole-predicament):
 	let F be vagina;
 	if the player is not possessing a vagina, now F is penis;
 	while P > 0 and P < 9:
-		if refractoryperiod > 0, decrease refractoryperiod by 1;
+		if refractoryperiod of the player > 0, decrease refractoryperiod of the player by 1;
 		say "[if P is 4]You are in the centre of the pole. Nothing is currently touching your butt[otherwise if P < 4]A spanking machine is thwacking away at your butt[otherwise]A strong wand vibrator is pressed against your [variable F][end if]. ";
 		say "[if P is 1]The left vertical pole is to your left. You could press the green button with your heel[otherwise if P is 2]There is one spanking machine to your left[otherwise if P < 5]There are [P - 1] spanking machines to your left[otherwise if P is 5]The gap is to your left, followed by 3 spanking machines[otherwise if P is 6]There is one vibrating wand to your left, followed by the gap and then 3 spanking machines[otherwise]There are [P - 5] vibrating wands to your left, followed by the gap and then 3 spanking machines[end if]. ";
 		say "[if P is 8]The right vertical pole is to your right. You could press the green button with your heel[otherwise if P is 7]There is one vibrating wand to your right[otherwise if P > 3]There are [8 - P] vibrating wands to your right[otherwise if P is 3]The gap is to your right, followed by 4 vibrating wands[otherwise if P is 2]There is one spanking machine to your right, followed by the gap and then 4 vibrating wands[otherwise]There are 2 spanking machines to your right, followed by the gap and then 4 vibrating wands[end if].";
@@ -10092,7 +10128,7 @@ To execute (TWP - tug-of-war-predicament):
 	now the stance of the player is 1;
 	now the arousal of the player is 1000;
 	update arousal;
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	summon blue-velcro-diaper locked;
 	let K be a random off-stage specific-key;
 	if K is a thing:
@@ -10115,7 +10151,7 @@ To execute (TWP - tug-of-war-predicament):
 			say "You are currently [if tug-status is -1]slightly[otherwise if tug-status is -2]close to[otherwise]very close to[end if] losing the tug-of-war.";
 		otherwise:
 			say "You are currently neither winning nor losing the tug-of-war.";
-		if the player-soil of TWP is 0, say "You desperately need to pee[if diaper messing >= 4] and poop[end if].";
+		if the player-soil of TWP is 0, say "You desperately need to [SlimeShoot][if diaper messing >= 4] and poop[end if].";
 		if the player-soil of TWP is 1, say "You desperately need to poop.";
 		[if the rival-soil of TWP is 1, say "[trainee-name of ST] has wet [himself of ST].";
 		if the rival-soil of TWP is 2, say "[trainee-name of ST] has messed [himself of ST].";]
@@ -10379,7 +10415,7 @@ To compute cry attraction:
 	repeat with M running through uninterested bystanders:
 		if M is not in the location of the player:
 			now neighbour finder is the location of M;
-			let A be the best route from the location of M to the location of the player;
+			let A be the best route from the location of M to the location of the player through predicament rooms;
 			if A is a direction:
 				let P be the room A from (the location of M);
 				if a random number between 1 and 5 > 3 and the number of barriers in P is 0 and the number of barriers in the location of M is 0, try M going A;
@@ -10739,7 +10775,7 @@ To execute (L - team-lake-predicament):
 	repeat with C running through worn clothing:
 		now C is predicament-fixed;
 	compute predicament map reveal;
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	now the beachball-game of L is 1;
 	let beachball-state be 10; [0: in player's hands; 1-9: thrown to the side with decreasing difficulty; 10: thrown straight but high; 11+ behind player; -1: in rival's hands, ready to throw, -2: in rival's hands; below -2: getting ball, increases by 1 per turn]
 	let FTG be the buckle threshold of the player / 8;
@@ -10756,7 +10792,7 @@ To execute (L - team-lake-predicament):
 			check for arousal change;
 			say "[variable custom style][one of]Fuck, this thing is strong!!![or]Holy shit...[or][one of]Haaah...[or]Oh my god...[or]Eeeeeee!!![at random][stopping][roman type][line break]";
 		reset multiple choice questions;
-		if refractoryperiod > 0:
+		if refractoryperiod of the player > 0:
 			set numerical response 0 to "recover from your orgasm";
 			now temporaryYesNoBackground is figure of lake predicament 1;
 		otherwise:
@@ -10779,7 +10815,7 @@ To execute (L - team-lake-predicament):
 		compute multiple choice question;
 		if player-numerical-response is 0:
 			say "You breathe hard and try to stop your legs shaking.[line break][variable custom style]Holy shit...[roman type][line break]";
-			now refractoryperiod is 0;
+			now refractoryperiod of the player is 0;
 			if beachball-state > 0 and beachball-state <= 10, now beachball-state is 15; [ball was not caught]
 		otherwise if player-numerical-response is 1:
 			say "You give up, and wade out of the water as quickly as you can!";
@@ -11209,7 +11245,7 @@ An all time based rule (this is the flagpole inflation rule):
 				if a random number between 1 and 4 is 1:
 					if M is not in the location of the player:
 						now neighbour finder is the location of M;
-						let A be the best route from the location of M to the location of the player;
+						let A be the best route from the location of M to the location of the player through predicament rooms;
 						if A is a direction:
 							let P be the room A from (the location of M);
 							if a random number between 1 and 5 > 3 and the number of barriers in P is 0 and the number of barriers in the location of M is 0, try M going A;
@@ -11334,6 +11370,408 @@ To compute segway punishment:
 				stimulate F from segway-predicament times 2;
 			now segway-predicament is snapped-this-turn;
 			ruin F times 1.
+
+
+
+chores-predicament is a predicament. chores-predicament can be key-lost. chores-predicament has a number called bystanders-helped. chores-predicament has a room called the latest-vibe-room. The latest-vibe-room of chores-predicament is Predicament02.
+Definition: chores-predicament is realistic-arms-requiring: decide yes.
+[bystanderInt1: 0 unrequested, 1+ active, -1 rejected / completed, -2 seen lewd]
+Definition: chores-predicament is appropriate:
+	if the player is not possessing a penis and the player is not possessing a vagina, decide no;
+	if bondage protection >= 3, decide no;
+	if there is a worn chastity bond, decide no;
+	if there is an off-stage blue scrunchie or there is a worn blue scrunchie or the largeness of hair <= 1, decide no; [must be able to be pigtailed]
+	if the rank of the player <= 2:
+		if the player is a september 2026 top donator or (diaper quest is 1 and the player is a september 2026 diaper donator), decide yes;
+	decide no.
+To execute (ESCP - chores-predicament):
+	let C be chastity-belt;
+	if the player is possessing a penis, now C is a random off-stage fetish appropriate chastity cage;
+	if C is nothing, now C is a random fetish appropriate chastity cage;
+	summon C locked;
+	now C is predicament-fixed;
+	blandify and reveal blue-babydoll-dress;
+	if diaper lover > 0:
+		now the raw-magic-modifier of blue-babydoll-dress is 1;
+		now blue-babydoll-dress is charisma-influencing;
+	now blue-babydoll-dress is in Predicament02;
+	if diaper quest is 0:
+		blandify and reveal purple-vibrator;
+		now the size of purple-vibrator is the openness of asshole;
+		if the size of purple-vibrator < 2, now the size of purple-vibrator is 2;
+		now purple-vibrator is in Predicament02;
+	otherwise:
+		summon pink-button-diaper uncursed;
+		if the player is possessing a vagina:
+			summon wired-vibe uncursed;
+			now wired-vibe is clit-taped;
+			now wired-vibe is predicament-fixed;
+		otherwise:
+			summon remote-controlled-vibrator vaginally;
+			now remote-controlled-vibrator is penetrating penis;
+			now remote-controlled-vibrator is predicament-fixed;
+		compute cutscene bladder and bowel filling;
+	summon normal-ballet-shoes uncursed;
+	now normal-ballet-shoes is speed;
+	summon bunny socks uncursed;
+	now bunny socks is confidence;
+	now the player is in Predicament02;
+	let is-blonde be false;
+	if HairColourVagueText matches the text "blonde", now is-blonde is true;
+	repeat with BS running through blue scrunchies:
+		summon BS uncursed;
+		now BS is resilience;
+	say "You find yourself in a dark alleyway near a park. You [if diaper quest is 0]are naked with[otherwise]have[end if] blonde [if is-blonde is false][variable custom style](blonde?!) [roman type][end if]pigtails, and a [MediumDesc of C] has been locked on you[if diaper quest is 1], over a vibrator that's buzzing away against your [genitals]. Over the top of all this, is a [MediumDesc of pink-button-diaper][end if]! There are ballet shoes and cute pink socks on your feet. On the ground next to you is a [blue-babydoll-dress][if diaper quest is 0] and a [purple-vibrator][end if].[paragraph break]A robotic voice speaks to you from a hidden speaker.[line break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. TODAY'S LESSON IS ON PRESENTING YOURSELF AS A SWEET INNOCENT GOODY-TWO-SHOES. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY RETURN HOME, BUT TO EARN THE KEY TO YOUR CHASTITY DEVICE, YOU MUST FULFILL A CHALLENGE FIRST:[line break]1) [if diaper quest is 0]MAINTAIN A CLOSE DISTANCE TO THE VIBRATOR AT ALL TIMES (NO MORE THAN THREE SECTORS)[otherwise]ALWAYS WEARING A DIAPER (USING THE CHANGING STATION IN THE TOILETS IS ALLOWED, USING A TOILET IS FORBIDDEN)[end if][line break]2) OFFERING TO HELP, AND SATISFYING THE NEEDS, OF AT LEAST THREE STRANGERS[line break]BONUS REWARD AVAILABLE: MUCH OF YOUR CLOTHING HAS MAGIC ENHANCEMENTS. CONTINUE WEARING THE ENHANCED CLOTHING FOR THE DURATION OF THE LESSON TO HAVE THEM SENT TO THE [']JUNK ROOM['] AT THE END OF THE LESSON. REMOVED CLOTHING WILL INSTEAD VANISH AT THE END OF THE LESSON.'[line break][PredicamentRewardExplanationReaction][line break][variable custom style]Holy crap. So I guess, I have two very different options. I could go through all the effort of helping strangers, while hiding the [if diaper quest is 0]vibrator in my butt, or nearby[otherwise]fact that I'm wearing a diaper, and beginning to feel the need to use the toilet[end if]... Or I could just head for the end zone, but then I will have to go back into the rest of the game world wearing this [ShortDesc of C][if diaper quest is 1] with the vibrator underneath it[end if]![roman type][line break]".
+
+To progress chores:
+	increase bystanders-helped of chores-predicament by 1;
+	say "[variable custom style]I've helped [bystanders-helped of chores-predicament] stranger[if bystanders-helped of chores-predicament > 1]s[end if]! [if bystanders-helped of chores-predicament >= 3]I can go home now[otherwise]I need to help [3 - bystanders-helped of chores-predicament] more[end if].[roman type][line break]";
+
+To set up bystanders for (P - chores-predicament):
+	let N be 3;
+	let LB be the list of bystanders;
+	repeat with M running through LB:
+		destroy M;
+	sort LB in random order;
+	if the number of entries in LB > N, truncate LB to N entries;
+	add housewife-bystander to LB, if absent;
+	add male-selfie-bystander to LB, if absent;
+	add bum-bystander to LB, if absent;
+	add male-sunbather-bystander to LB, if absent;
+	add female-bookworm-bystander to LB, if absent;
+	if romance-novel is off-stage:
+		if a random number between 1 and 2 is 1, now romance-novel is in a random road room;
+		otherwise now romance-novel is in a random park room;
+	repeat with M running through LB:
+		now the bystanderInt1 of M is 0;
+		let valid-location-found be 0;
+		while valid-location-found is 0:
+			now neighbour finder is a random outside predicament room;
+			if a random number between 1 and 7 is 1 or neighbour finder is Predicament03, now neighbour finder is Park16;
+			if M is male-selfie-bystander, now neighbour finder is Park17; [lower lake]
+			if M is male-sunbather-bystander, now neighbour finder is Park11; [upper lake]
+			now M is in neighbour finder;
+			let LA be the list of N-viable directions;
+			repeat with D running through LA:
+				now bystander-room-target is the room D from neighbour finder;
+				if M is target-room-happy, now valid-location-found is 1; [This NPC will be able to find a valid direction to walk in]
+		now M is moved; [stops them moving instantly]
+
+
+To say PredicamentDescription of (P - chores-predicament):
+	say "I'm currently in an Extra Credit training session where I need to get home, but I must first satisfy at least three strangers' needs, or I won't get released from my chastity.".
+
+To compute chores movement of (M - a bystander):
+	compute movement of M.
+To compute chores lewd perception reaction of (M - a bystander):
+	if the bystanderInt1 of M > 0:
+		compute chore end lewd perception reaction of M;
+	otherwise:
+		compute default lewd perception reaction of M;
+	now the bystanderInt1 of M is -2.
+To compute chores cringe perception reaction of (M - a bystander):
+	if the bystanderInt1 of M > 0:
+		compute chore end lewd perception reaction of M;
+	otherwise:
+		compute default cringe perception reaction of M;
+	now the bystanderInt1 of M is -2.
+To compute chore end lewd perception reaction of (M - a bystander):
+	say "[speech style of M]'What on Earth?! I take it back, I don't want your help at all!'[roman type][line break]";
+	compute unique chore end of M.
+To compute unique chore end of (M - a bystander):
+	do nothing.
+
+Check talking a bystander when current-predicament is chores-predicament:
+	now currently-speaking is true;
+	reset multiple choice questions;
+	if the player is not silently able to manually speak:
+		set numerical response 1 to the substituted form of "[gag sounds]";
+		set numerical response 0 to "cancel";
+		compute multiple choice question;
+		if player-numerical-response is 1:
+			allocate 3 seconds;
+			say "[second custom style][chosen numerical response][roman type][line break]";
+			say "[speech style of the noun]'What a weirdo.'[roman type][line break]";
+			now the noun is interested;
+	otherwise:
+		set numerical response 1 to the substituted form of "'[if the bystanderInt1 of the noun is 0 or the bystanderInt1 of the noun is -2]Good morning, is there anything I could do to make your day brighter[otherwise]Could you remind me what you wanted from me again[end if]?'";
+		set numerical response 0 to "cancel";
+		compute multiple choice question;
+		if player-numerical-response is not 0:
+			now the noun is interested;
+			allocate 3 seconds;
+			say "[second custom style][chosen numerical response][roman type][line break]You [one of]find yourself asking[or]ask[stopping] in a sickly sweet tone.";
+			let A be the appearance of the player;
+			let C be 0;
+			if diaper quest is 1, now C is the cringe appearance of the player;
+			if debuginfo > 0:
+				if diaper quest is 1 and the worst-appearance of the noun < C, say "[input-style]New baby appearance rating ([C]) | ([worst-appearance of the noun]) [MediumDesc of the noun] worst seen appearance[roman type][line break]";
+				otherwise say "[input-style]New slutty appearance rating ([A]) | ([worst-appearance of the noun]) [MediumDesc of the noun] worst seen appearance[roman type][line break]";
+			if diaper quest is 1 and C > the cringe tolerance of the noun and (C >= A or A <= the outrage tolerance of the noun):
+				compute chores cringe perception reaction of the noun;
+				say HumiliateReflect (C * 30);
+			otherwise if A > the outrage tolerance of the noun:
+				compute chores lewd perception reaction of the noun;
+				say HumiliateReflect (A * 30);
+			if the bystanderInt1 of the noun is -2:
+				say "[speech style of the noun]'Hell no, you crazy pervert!'[roman type][line break]";
+			otherwise:
+				compute chore request of the noun;
+	now currently-speaking is false;
+	do nothing instead.
+
+To compute chore request of (M - a bystander):
+	say "[speech style of M]'[one of]I'm all good[or]No, sorry, I can't think of anything[or]I don't need anything[or]Go bother someone else[cycling].'[roman type][line break]".
+
+[HOUSEWIFE BYSTANDER]
+groceries-bag is a thing. The printed name of groceries-bag is "groceries bag". Understand "groceries", "bag" as groceries-bag. The text-shortcut of groceries-bag is "gb".
+Figure of groceries bag is the file "Items/Collectibles/shopping1.png".
+To decide which figure-name is the examine-image of (C - groceries-bag):
+	decide on Figure of groceries bag.
+To say ExamineDesc of (C - groceries-bag):
+	say "This paper bag is full of heavy items. It needs to be carried at the bottom with two hands.".
+To decide which number is the heaviness of (C - groceries-bag):
+	decide on 21. [causes overburdened]
+To decide which number is the carriedArmsRequired of (C - groceries-bag):
+	decide on 2.
+To compute chore request of (M - housewife-bystander):
+	if the bystanderInt1 of M >= 0:
+		say "[speech style of M]'[one of]Could you help me carry my groceries home, dear? They're a bit heavy for me[or]I need help getting my groceries home[stopping]. I just need you to [bold type]hold the bag at the base so that it doesn't break, and follow me to my house[speech style of M].'[roman type][line break]";
+		if the bystanderInt1 of M is 0:
+			now the bystanderInt1 of M is 1;
+			say "[BigNameDesc of M] places a heavy paper bag of shopping at your feet.";
+			now groceries-bag is in the location of M;
+			now M is moved;
+			say "[speech style of M]'Hurry and pick it up now, I don't have all day.'[roman type][line break]";
+	otherwise if the bystanderInt1 of M is -3:
+		say "[speech style of M]'What the hell did you do with my bag?! Did someone steal it?! You're useless! I should never have trusted you.'[roman type][line break][BigNameDesc of M] storms off.";
+		unless M is in Predicament33, try M going east;
+		destroy M;
+	otherwise:
+		say "[speech style of M]'Go bother someone else.'[roman type][line break]".
+To compute chores movement of (M - housewife-bystander):
+	if M is not moved and groceries-bag is alive:
+		if groceries-bag is not held and (groceries-bag is not in the location of the player or M is in the location of the player):
+			now the bystanderInt1 of M is -1;
+			if M is in the location of the player:
+				if groceries-bag is in the location of the player:
+					say "[speech style of M]'Why is my bag on the ground?! You're useless. I'll find someone else to help me.'[roman type][line break][BigNameDesc of M] picks [his of M] bag back up.";
+				otherwise:
+					say "[speech style of M]'What the hell did you do with my bag?! Did someone steal it?! You're useless! I should never have trusted you.'[roman type][line break][BigNameDesc of M] storms off.";
+					unless M is in Predicament33, try M going east;
+					destroy M;
+			otherwise:
+				now the bystanderInt1 of M is -3;
+			destroy groceries-bag;
+		otherwise if M is in the location of the player:
+			now M is moved;
+			now neighbour finder is the location of M;
+			if neighbour finder is Predicament33:
+				say "[speech style of M]'Thank you so much! You've really helped me out.'[roman type][line break][BigNameDesc of M] takes the groceries bag back from you.";
+				destroy groceries-bag;
+				progress chores;
+				now the bystanderInt1 of M is -1;
+			otherwise:
+				let A be nothing;
+				now A is the best route from the location of M to Predicament33 through predicament rooms;
+				if debugmode > 1, say "Housewife chose [A].";
+				if A is a direction:
+					say "[speech style of M]'[one of]Come on, it's this way[or]Follow me[or]You're doing great[or]This way[cycling].'[roman type][line break]";
+					try M going A.
+To compute unique chore end of (M - housewife-bystander):
+	if M is in the location of the player:
+		if groceries-bag is in the location of the player:
+			say "[BigNameDesc of M] picks [his of M] bag back up.";
+		otherwise:
+			say "[BigNameDesc of M] storms off.";
+			unless M is in Predicament33, try M going east;
+			destroy M;
+	destroy groceries-bag.
+
+
+[SELFIE BYSTANDER]
+selfie-phone is a thing. The printed name of selfie-phone is "selfie phone". Understand "selfie", "phone" as selfie-phone. The text-shortcut of selfie-phone is "sp". selfie-phone can be phone-recording.
+Figure of selfie phone is the file "Items/Collectibles/phone1.png".
+To decide which figure-name is the examine-image of (C - selfie-phone):
+	decide on Figure of selfie phone.
+To say ExamineDesc of (C - selfie-phone):
+	say "You can use this phone to take a video of the selfie-addicted dude. [BigNameDesc of male-selfie-bystander] wants you to use it from the other side of the lake.".
+To compute chore request of (M - male-selfie-bystander):
+	if the bystanderInt1 of M >= 0:
+		say "[speech style of M]'Can you take my phone to the other side of the lake to take a cool video of me?'[roman type][line break]";
+		if the bystanderInt1 of M is 0:
+			now the bystanderInt1 of M is 1;
+			say "[BigNameDesc of M] tosses [his of M] phone to you.";
+			now selfie-phone is in the location of M;
+			compute autotaking selfie-phone;
+	otherwise if the bystanderInt1 of M is -3:
+		say "[speech style of M]'What the hell did you do with my phone?! Did someone steal it?! You're useless! I should never have trusted you.'[roman type][line break][BigNameDesc of M] storms off.";
+		try M going east;
+		destroy M;
+	otherwise:
+		say "[speech style of M]'Go bother someone else.'[roman type][line break]".
+To compute chores movement of (M - male-selfie-bystander):
+	if M is not moved and selfie-phone is alive:
+		if selfie-phone is not held and (selfie-phone is not in the location of the player or M is in the location of the player):
+			now the bystanderInt1 of M is -1;
+			if M is in the location of the player:
+				if selfie-phone is in the location of the player:
+					say "[speech style of M]'Why is my phone on the ground?! You're useless. I'll find someone else to help me.'[roman type][line break][BigNameDesc of M] picks [his of M] phone back up.";
+				otherwise:
+					say "[speech style of M]'What the hell did you do with my phone?! Did someone steal it?! You're useless! I should never have trusted you.'[roman type][line break][BigNameDesc of M] storms off.";
+					unless M is in Predicament33, try M going east;
+					destroy M;
+			otherwise:
+				now the bystanderInt1 of M is -3;
+			destroy selfie-phone;
+		otherwise if the player is in Park11:
+			say "[BigNameDesc of M] is [one of][or]still [stopping]doing a groovy dance on the far side of the lake!";
+			reset multiple choice questions;
+			set numerical response 1 to "Use both your hands to record the video";
+			set numerical response 0 to "Do something else";
+			compute multiple choice question;
+			if player-numerical-response is 1:
+				now selfie-phone is phone-recording;
+				now another-turn is 1;
+				now another-turn-flavour is "You hold the phone steady and record [his of M] performance.";
+				increase the bystanderInt1 of M by 1;
+				if the bystanderInt1 of M > a random number between 2 and 20, now the bystanderInt1 of M is 100;
+		otherwise if M is in the location of the player:
+			if the bystanderInt1 of M >= 100:
+				say "[speech style of M]'Thank you so much! You've really helped me out.'[roman type][line break][BigNameDesc of M] takes the phone back from you.";
+				destroy selfie-phone;
+				progress chores;
+				now the bystanderInt1 of M is -1;
+			otherwise if the bystanderInt1 of M >= 2:
+				say "[speech style of M]'I haven't finished getting all the footage I want yet! Go back and get me more!'[roman type][line break][BigNameDesc of M] demands.".
+
+[SUNBATHER BYSTANDER]
+To compute chores movement of (M - male-sunbather-bystander):
+	do nothing.
+To compute chore request of (M - male-sunbather-bystander):
+	if the bystanderInt1 of M is 0:
+		say "[speech style of M]'Catch!'[roman type][line break][BigNameDesc of M] lobs the beachball towards you.";
+		let ball-caught be false;
+		now the bystanderInt1 of M is 1;
+		if entry 1 in the armUses of arms is arms or entry 1 in the armUses of arms is the player:
+			if a random number between 1 and 15 < the dexterity of the player:
+				say "With lightning reflexes, you catch the ball!";
+				now ball-caught is true;
+				say "[speech style of M]'Nice one, babe!'[roman type][line break]You throw it back... And [he of M] seems satisfied![line break][variable custom style]Wow, that was simple.[roman type][line break]";
+				now the bystanderInt1 of M is -1;
+				progress chores;
+		if ball-caught is false:
+			say "The ball goes straight past you, and into the middle of the lake![line break][speech style of M]'Hey butterfingers! Got get my ball back!'[roman type][line break]";
+	otherwise if the bystanderInt1 of M > 0:
+		say "[speech style of M]'Get my ball out of the lake!'[roman type][line break][BigNameDesc of M] demands impatiently.";
+	otherwise:
+		say "[speech style of M]'Go bother someone else.'[roman type][line break]".
+
+
+[BUM BYSTANDER]
+To compute chores movement of (M - bum-bystander):
+	if the player is in Toilet02:
+		now M is in Park04; [below men's toilets entrance]
+	otherwise if the bystanderInt1 of bum-bystander is 1:
+		now M is moved;
+		now neighbour finder is the location of M;
+		if neighbour finder is Park01: [men's toilets entrance]
+			if the non-bums-sucked of chores-predicament is 0, now the non-bums-sucked of chores-predicament is 1;
+		otherwise if a random number between 1 and 4 is 1:
+			let A be nothing;
+			now A is the best route from the location of M to Park01 through predicament rooms;
+			if A is a direction:
+				try M going A;
+	otherwise:
+		compute movement of M.
+To compute chore request of (M - bum-bystander):
+	if the bystanderInt1 of M >= 0:
+		say "[speech style of M]'[one of]Me? Hahaha... Nothing a sweet innocent lass like you could help me with. What[or]Like I said before, what[stopping] would make my day, is if just once, when I was using the toilet, some greedy, nasty slut begged for my cock through that hole, and sucked me off while begging for my cum. Like, right out of a porno. Hahaha.'[variable custom style][line break][big he of M] clearly doesn't think that's actually going to happen, and is just saying that to try and shock me, but I could probably take [him of M] up on it and have it count towards [']satisfying the needs of three strangers['].[roman type][line break]";
+		now the bystanderInt1 of M is 1.
+chores-predicament has a number called non-bums-sucked. chores-predicament has a number called gloryhole-sucks.
+
+[BOOKWORM BYSTANDER]
+To compute chore request of (M - female-bookworm-bystander):
+	if (romance-novel is in a predicament room or romance-novel is held) and the bystanderInt1 of M >= 0:
+		say "[speech style of M]'My favourite book fell out of my bag! It's a romance novel... Please let me know if you find it!'[roman type][line break]";
+		now the bystanderInt1 of M is 1.
+
+An all time based rule (this is the chores predicament rule):
+	if current-predicament is chores-predicament and the player is in a predicament room:
+		if chores-predicament is not key-lost:
+			if diaper quest is 0:
+				if purple-vibrator is off-stage:
+					now chores-predicament is key-lost;
+					if the player is in the latest-vibe-room of chores-predicament:
+						say "[variable custom style]What?! I could swear I left the vibrator RIGHT HERE! Don't tell me... Someone walked by and picked it up and walked away with it?! Fuck, that means [bold type]I've definitely completely failed the challenge, and I'm stuck in chastity[variable custom style]!'[roman type][line break]";
+						now the latest-vibe-room of chores-predicament is Facility01;
+				otherwise if purple-vibrator is held:
+					now the latest-vibe-room of chores-predicament is the location of the player;
+				otherwise:
+					now the latest-vibe-room of chores-predicament is the location of purple-vibrator;
+					if the player is not in the latest-vibe-room of chores-predicament:
+						let D be the distance of the latest-vibe-room of chores-predicament;
+						if D > 3:
+							now chores-predicament is key-lost;
+						otherwise:
+							repeat with M running through bystanders in the latest-vibe-room of chores-predicament:
+								if the player is not getting lucky, destroy purple-vibrator;
+			otherwise:
+				unless there is a worn diaper, now chores-predicament is key-lost;
+		let M be a random unseen-stranger in Toilet02;
+		if M is a thing:
+			if M is not penetrating a body part:
+				if the player is in Toilet02, say "You hear [NameDesc of M] do [his of M] business and then leave.";
+				finally destroy M;
+				zero focus stuff;
+		otherwise if the bystanderInt1 of bum-bystander > 0 and the player is in Toilet02:
+			if a random number between 1 and 3 is 1:
+				let M be a random unseen-stranger;
+				set up M;
+				now M is in Toilet02;
+				now M is not interested;
+				say "[bold type]Through the hole, you can hear someone enter the men's bathroom.[line break][variable custom style][one of]I guess that's my cue to knock on the wall[or]I should knock now or [he of M] might leave[stopping]...[roman type][line break]";
+			otherwise:
+				say "[one of]You silently wait and listen for any noise through the hole.[or][or]You silently reflect on how you must look to anyone somehow spectating this, waiting at a gloryhole for [manly-penis].[or][or]Time feels like it stands still as you quietly wait[if the player is prone] on your knees[end if].[or][or][variable custom style]This is a new low.[roman type][line break][or][or][then at random]";
+		if female-bookworm-bystander is in the location of the player and female-bookworm-bystander is interested and romance-novel is held:
+			if the bystanderInt1 of female-bookworm-bystander is -2:
+				say "[one of][speech style of female-bookworm-bystander]'My book... Ew, it feels tainted now. Keep it.'[roman type][line break][or][stopping]";
+			otherwise:
+				say "[speech style of female-bookworm-bystander]'My favourite book[if the bystanderInt1 of female-bookworm-bystander is 0]! I've been looking for that[end if]!!!'[roman type][line break]";
+				compute single choice question "Hand over the romance novel";
+				say "[speech style of female-bookworm-bystander]'Thank you so much! I'm so grateful!'[roman type][line break]";
+				progress chores;
+				now the bystanderInt1 of female-bookworm-bystander is -1;
+				destroy romance-novel.
+
+Report going south when the player is in Predicament01:
+	if current-predicament is chores-predicament and pinafore-dress is in Predicament01:
+		say "You spot your new outfit waiting for you on a nearby table.";
+		try examining pinafore-dress;
+		say "[variable custom style]Seriously?! At least half the people out there will probably instantly judge me harshly just for wearing something so pathetically babyish. I guess I'll have to find the ones who aren't too perturbed by a [man of the player] wearing a dress like this...[roman type][line break]".
+
+Report going east when the player is in Predicament20:
+	if current-predicament is chores-predicament:
+		let lockOpen be false;
+		if chores-predicament is key-lost:
+			if diaper quest is 0, say "There doesn't seen to be a key for your chastity here.[line break][variable custom style]Fuck, I must have gone too far away from the vibrator[if purple-vibrator is held] at some point[end if]...[roman type][line break]";
+			otherwise say "There doesn't seen to be a key for your chastity here.[line break][variable custom style]Fuck, maybe I shouldn't have taken off my diaper...[roman type][line break]";
+		otherwise if the bystanders-helped of chores-predicament < 3:
+			if the bystanders-helped of chores-predicament is 2 and the bystanderInt1 of bum-bystander > 1:
+				let R be a random number between 3 and 4;
+				if the bystanderInt1 of bum-bystander >= R:
+					now lockOpen is true;
+				otherwise:
+					say "There doesn't seen to be a key for your chastity here.[line break][variable custom style]Fuck! I should have been more slutty for that gross gloryhole dude...[roman type][line break]";
+			otherwise:
+				say "There doesn't seen to be a key for your chastity here.[line break][variable custom style]I hope this was the right decision, not bothering with satisfying 3 people...[roman type][line break]";
+		otherwise:
+			now lockOpen is true;
+		if lockOpen is true:
+			let C be a random worn chastity bond;
+			if C is a thing:
+				say "[BigNameDesc of C] loudly clicks open![line break][variable custom style]Phew! I did it![roman type][line break]";
+				unlock C.
 
 
 

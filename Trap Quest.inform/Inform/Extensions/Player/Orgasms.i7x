@@ -1,10 +1,13 @@
 Orgasms by Player begins here.
 
-refractoryperiod is a number that varies. [goes down by 1 per turn. While above 0, player (usually) can't orgasm again.]
-maxrefractoryperiod is a number that varies. maxrefractoryperiod is 6. [The number that refractoryperiod goes up to when the player orgasms.]
+The player has a number called refractoryperiod. [goes down by 1 per turn. While above 0, player (usually) can't orgasm again.]
+maxrefractoryperiod is a number that varies. maxrefractoryperiod is 6. [The number that refractoryperiod of the player goes up to when the player orgasms.]
 orgasm-count is a number that varies. orgasm-count is 0.
 anal-orgasms is a number that varies. anal-orgasms is 0.
 vaginal-orgasms is a number that varies. vaginal-orgasms is 0.
+throat-gasms is a number that varies. throat-gasms is 0.
+titty-gasms is a number that varies. titty-gasms is 0.
+shameful-orgasm-count is a number that varies. shameful-orgasm-count is 0.
 
 To decide which number is the orgasm-resist-influence of (C - a thing):
 	decide on 0.
@@ -26,6 +29,7 @@ To decide which number is the orgasm resistance of the player:
 	decide on R.
 
 Part 2 - Modify Orgasm Skill
+
 
 The player has a number called raw-orgasm-resist. The raw-orgasm-resist of the player is usually 1.[Min 1 Max 10]
 
@@ -59,7 +63,7 @@ To 2GasmResDown:
 	if the raw-orgasm-resist of the player > 1, decrease the raw-orgasm-resist of the player by 1.
 
 Definition: a person is able to orgasm:
-	[if player-fucking is not DOMINANT-NONE and refractoryperiod < 1, decide yes;]
+	[if player-fucking is not DOMINANT-NONE and refractoryperiod of the player < 1, decide yes;]
 	if player-fucking is not DOMINANT-NONE, decide yes;
 	if the class of the player is royal slave:
 		if there is a monster grabbing the player or there is a monster penetrating a body part:[a reason why the player might want to masturbate during a blowjob]
@@ -136,7 +140,7 @@ To say DefaultAnalOrgasmFlav:
 To anally orgasm shamefully:
 	if the player is not able to orgasm:
 		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping]wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [if the player is sexed male]prostate[otherwise]asshole[end if], only to have it just... stop.[line break][variable custom style][one of]I was pretty sure I was about to cum... maybe it has something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe it's because I'm not acting like a slave...[stopping][roman type][line break]";
-		otherwise say "[if refractoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
+		otherwise say "[if refractoryperiod of the player > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
 	otherwise if the player is sexed male:
@@ -151,7 +155,7 @@ To anally orgasm shamefully:
 		slowSexAddictUp 1 + the number of live things penetrating vagina;
 		if diaper quest is 1, progress quest of asshole-presenting-quest;
 		increase anal-orgasms by 1;
-	if refractoryperiod > 0:
+	if refractoryperiod of the player > 0:
 		let Y be the valid snapshotter;
 		if Y is a thing and there is an off-stage shameful orgasm poster:
 			let P be a random off-stage shameful orgasm poster;
@@ -162,7 +166,7 @@ To anally orgasm shamefully:
 		if newbie tips is 1, say shameful tip;
 		check orgasm delays;
 	otherwise:
-		now refractoryperiod is maxrefractoryperiod - 1.[The player couldn't cum, but we still increase it so the game does not immediately try again.]
+		now refractoryperiod of the player is maxrefractoryperiod - 1.[The player couldn't cum, but we still increase it so the game does not immediately try again.]
 
 [!<SayVaginalOrgasmFlav>+
 
@@ -200,7 +204,7 @@ To say DefaultVaginalOrgasmFlav:
 To vaginally orgasm shamefully:
 	if the player is not able to orgasm:
 		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping] wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [vagina], only to have it just... stop.[line break][variable custom style][one of]I was pretty sure I was about to cum... does it have something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe they want me to act more like a slave first...[stopping][roman type][line break]";
-		otherwise say "[if refractoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
+		otherwise say "[if refractoryperiod of the player > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
 	otherwise if the player is male:
@@ -218,6 +222,14 @@ To vaginally orgasm shamefully:
 		if newbie tips is 1, say shameful tip;
 		check orgasm delays.
 
+To throat orgasm shamefully:
+	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is not possessing a vagina]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from your throat! [or]Your orgasm triggered by your sensitive throat leaves you panting. [stopping][roman type][line break]";
+	orgasm;
+	if the player is male, punish shameful male orgasm;
+	OralSexAddictUp 1;
+	if newbie tips is 1, say shameful tip;
+	check orgasm delays.
+
 To breasts orgasm shamefully:
 	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is not possessing a vagina]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from your breasts! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
 	orgasm;
@@ -229,9 +241,14 @@ To breasts orgasm shamefully:
 [Triggers from femdom/sissydom where the player is on the bottom.]
 To penis orgasm shamefully:
 	say PenisOrgasmFlav;
-	orgasm;
+	[orgasm;]
 	[punish shameful male orgasm; For now, this doesn't reduce penis size or trigger TG]
-	if there is a live thing penetrating penis, PenisObedienceUp 1;
+	penis orgasm shamefully yet quietly.
+
+To penis orgasm shamefully yet quietly:
+	orgasm;
+	if there is a live thing penetrating penis:
+		unless there is a live friendly-fucking monster penetrating penis, PenisObedienceUp 1;
 	slowSexAddictUp 1 + the number of live things penetrating face;
 	[if newbie tips is 1, say shameful tip;]
 	check orgasm delays.
@@ -254,7 +271,7 @@ To say DefaultOrgasmFlav:
 
 To punish shameful male orgasm:
 	if the player is not in a predicament room:
-		if (shrink tg > 1 and the size of penis <= min penis size) or (ritual-beads is worn and the player is ready for event tg):
+		if (orgasm shrink tg is 1 and the size of penis <= min penis size) or (ritual-beads is worn and the player is ready for uncommon event tg):
 			if ritual-beads is worn, say "[BigNameDesc of ritual-beads] react strongly to your orgasm!";
 			say DefaultSexChangeFlav;
 			say "The fact that this is happening as you shudder through yet another shameful orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
@@ -289,8 +306,8 @@ totalOrgasmCount is a number that varies.
 
 To orgasm:
 	increase orgasm-count by 1;
-	if refractoryperiod < 0, now refractoryperiod is 0;
-	increase refractoryperiod by maxrefractoryperiod;
+	if refractoryperiod of the player < 0, now refractoryperiod of the player is 0;
+	increase refractoryperiod of the player by maxrefractoryperiod;
 	[if the player is possessing a penis, now the rawness of penis is 0;]
 	follow the ejaculation rules;
 	follow the orgasm fatigue effects rules;
@@ -339,18 +356,6 @@ This is the lack of penis for ejaculation rule:
 		rule fails.
 The lack of penis for ejaculation rule is listed last in the ejaculation rules.
 
-This is the condom of kings ejaculation rule:
-	let C be a random worn condom of kings;
-	if C is condom of kings:
-		let A be the semen load of the player;
-		say "[one of]Your [mystical ShortDesc of penis] [if A < 3]dribbles a small amount of [semen][otherwise if A < 5]shoots warm [semen][otherwise if A < 9]shoots several strings of warm [semen][otherwise]fires rope after rope of potent [semen][end if] into your [printed name of a random condom of kings worn by the player].[or]Your [mystical ShortDesc of penis] [if A < 3]twitches pitifully as it fills your[otherwise if A < 6]throbs powerfully as it fills your[otherwise]flexes as it floods your[end if] [printed name of a random condom of kings worn by the player] with a [if A < 3]feeble[otherwise if A < 5]warm[otherwise if A < 8]thick, creamy[otherwise]massive[end if] load[at random].";
-		now C is creamfilled;
-		if C is not cursed:
-			say "The opening of the condom suddenly tightens, as if reacting to the shamefulness of your orgasm! You watch[if the bimbo of the player < 5] with horror[otherwise], intrigued[end if] as a wave of bright pink spreads out from the emblem on the tip, overriding the aura of pride and manliness with overpowering shame. It's cursed!";
-			now C is cursed;
-		rule succeeds.
-The condom of kings ejaculation rule is listed last in the ejaculation rules.
-
 This is the ejaculation during handjob rule:
 	let M be a random monster penetrating penis;
 	if M is a monster and M is not normal-penis-fucking:
@@ -372,6 +377,10 @@ This is the penetration ejaculation rule:
 		compute erection orgasm of M; [See the Special Events extension]
 		rule succeeds.
 The penetration ejaculation rule is listed last in the ejaculation rules.
+
+To compute erection orgasm of (M - a thing):
+	follow the default ejaculation rule;
+	compute erection decay.[Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
 
 [It would be harsh for the player to get cum soaked pants before the game ends]
 This is the football game ejaculation rule:
@@ -445,7 +454,7 @@ To decide which number is the semen load of (Y - yourself):
 	decide on N.
 
 To compute ejaculation:
-	if players-dick-is-detached > 0:
+	if penis is detached:
 		compute maybe detached dick ejaculation; [#LXorDD]
 	otherwise:
 		let P be a random worn bottom level pee protection clothing;
@@ -467,14 +476,15 @@ This is the penis softens after ejaculation rule:
 				do nothing;
 			otherwise:
 				[#LXorDD Cock rings give a 2/3 chance of staying erect]
-				if there is a worn portal-cock-ring and (a random number between 1 and 3 > 1):
-					say cock ring effect of portal-cock-ring;
-				otherwise if P is clothing and penis is exposed:
+				if there is a worn cock-ring:
+					say cock ring effect of a random worn cock-ring;
+				otherwise if P is clothing and penis is exposed and penis is able to get soft:
 					say "Your [mystical ShortDesc of penis] softens enough to slip back into your [ShortDesc of P].";
-					now penis is not penis-erect;
-				otherwise:
-					say "Your [mystical ShortDesc of penis] slowly softens.";
-					now penis is not penis-erect;
+					now penis-flav is false;
+					compute erection decay;
+					now penis-flav is true;
+				otherwise if penis is able to get soft:
+					compute erection decay;
 		otherwise:
 			now penis is not penis-erect.
 The penis softens after ejaculation rule is listed last in the orgasm resolution rules.
@@ -702,13 +712,22 @@ To decide which number is the vaginal sensitivity influence of (C - a wearthing)
 To decide which number is the sensitivity of (F - a body part):
 	decide on 0.
 
+To decide which number is the cock sensitivity influence of (C - a wearthing):
+	decide on 0.
+
+To decide which number is the sensitivity of (F - face):
+	let S be the raw sensitivity of F;
+	increase S by the lips of face;
+	decide on S.
+
 To decide which number is the sensitivity of (F - penis):
 	let S be 3;
-	increase S by the rawness of penis / 3;
-	if the size of penis < 4, increase S by 1;
-	if the size of penis < 2, increase S by 1;
-	let P be a random worn insertable thing penetrating asshole;
-	if P is clothing and P is suppression, decrease S by 1;
+	if the size of penis > 0:
+		increase S by the rawness of penis / 3;
+		let P be a random worn insertable thing penetrating asshole;
+		if P is clothing and P is suppression, decrease S by 1;
+	if the mystical size of penis < 4, increase S by 1;
+	if the mystical size of penis < 2, increase S by 1;
 	decide on S.
 
 To decide which number is the sensitivity of (F - vagina):
@@ -726,7 +745,7 @@ To decide which number is the sensitivity of (F - vagina):
 	decide on S.
 
 Definition: a person is unable to orgasm so soon rather than able to orgasm so soon:
-	if the player is not able to get horny or the arousal of the player - 500 <= minimum arousal or refractoryperiod > 0, decide yes;
+	if the player is not able to get horny or the arousal of the player - 500 <= minimum arousal or refractoryperiod of the player > 0, decide yes;
 	decide no.
 
 Definition: a body part (called B) is pushed over the edge:
@@ -740,9 +759,34 @@ Definition: breasts (called F) is pushed over the edge:
 	let ST be the stimulation of T on F / 2;
 	let SEN be the sensitivity of F;
 	if N < 0 or SEN < 10, now N is 0;
+	increase N by ST + SEN;
 	if debuginfo > 1, say "[input-style][F] orgasm threshold check: stimulation ([ST]) + sensitivity ([SEN]) = [N]; square rooted = [run paragraph on]";
 	now N is the square root of N; [some logarithmic scaling; 0>0, 1-3>1, 4-8>2, 9-15>3]
 	let A be 4 - fuckhole arousal;
+	if debuginfo > 1, say "[N] | ([A].5) orgasm threshold based on arousal[if N <= A]... player is currently too unaroused to orgasm.[roman type][end if][line break]";
+	if N <= A, decide no;
+	let O1 be a random number between N and A;
+	let O2 be a random number between N and A;
+	let L1 be O1 - a random number between 0 and R;
+	let L2 be O2 - a random number between 0 and (R / 2);
+	if debuginfo > 0, say "[input-style]Orgasm check: arousal ([A]) orgasm resistance ([R]) & stimulation ([N]); RNG([A]~[N]) - RNG(0~[R]) = [L1] and RNG([A]~[N]) - RNG(0~[R / 2]) = [L2] must both be above [A].[roman type][line break]";
+	if L1 > A or L2 > A:
+		if L1 <= A or L2 <= A and orgasm-count > 0 and the player is glitching-orgasm, decide no;
+		decide yes;
+	decide no.
+
+Definition: face (called F) is pushed over the edge:
+	if the player is unable to orgasm so soon or the player is not a bit horny, decide no;
+	let N be -1;
+	let T be a random thing penetrating F;
+	let R be the orgasm resistance of the player;
+	let ST be the stimulation of T on F / 2;
+	let SEN be the sensitivity of F;
+	if N < 0 or SEN < 10, now N is 0;
+	increase N by ST + SEN;
+	if debuginfo > 1, say "[input-style][F] orgasm threshold check: stimulation ([ST]) + sensitivity ([SEN]) = [N]; square rooted = [run paragraph on]";
+	now N is the square root of N; [some logarithmic scaling; 0>0, 1-3>1, 4-8>2, 9-15>3]
+	let A be 6 - fuckhole arousal;
 	if debuginfo > 1, say "[N] | ([A].5) orgasm threshold based on arousal[if N <= A]... player is currently too unaroused to orgasm.[roman type][end if][line break]";
 	if N <= A, decide no;
 	let O1 be a random number between N and A;
@@ -773,7 +817,7 @@ The orgasm level lost rule is listed in the orgasm resolution rules.
 
 Definition: yourself is able to cum hornilessly: [Some things just stimulate you so much that you cum even without being aroused]
 	if the latex-transformation of the player > 3, decide no;
-	if refractoryperiod > 0, decide no;
+	if refractoryperiod of the player > 0, decide no;
 	decide yes.
 
 Definition: yourself is cumming hornilessly:
@@ -789,8 +833,9 @@ Definition: penis (called P) is pushed over the edge:
 	let N be -1;
 	let T be a random thing penetrating P;
 	let R be the orgasm resistance of the player;
-	let ST be the stimulation of T on P;
+	let ST be (the stimulation of T on P + a random number between 0 and 1) / 2;
 	let SEN be the sensitivity of P;
+	let ENJ be the enjoyment of P;
 	increase N by ST + SEN;
 	if N < 0, now N is 0;
 	if debuginfo > 1, say "[input-style][P] orgasm threshold check: stimulation ([ST]) + sensitivity ([SEN]) = [N]; square rooted = [run paragraph on]";
@@ -816,7 +861,7 @@ Definition: a fuckhole (called F) is pushed over the edge:
 	let N be -1;
 	let T be a random thing penetrating F;
 	let R be the orgasm resistance of the player;
-	let ST be the stimulation of T on F / 2;
+	let ST be (the stimulation of T on F + a random number between 0 and 1) / 2;
 	let SEN be the sensitivity of F;
 	let ENJ be the enjoyment of F;
 	increase N by ST + SEN + ENJ;
@@ -853,7 +898,7 @@ Definition: a person is glitching-orgasm:
 		now gasm-time of the player is 0;
 		now the delayed arousal of the player is 0.
 
-To compute climax resist exp from (T - a thing) on (F - a body part):
+To compute climax resist exp from (T - an object) on (F - a body part):
 	let combo be 0;
 	if the player is a bit horny, increase combo by 1;
 	if the player is horny, increase combo by 1;
@@ -872,25 +917,32 @@ To compute climax resist exp from (T - a thing) on (F - a body part):
 To decide which number is fuckhole arousal:
 	decide on (the arousal of the player + 1000) / 2000.
 
-To decide which number is the enjoyment of (F - a fuckhole):
+To decide which number is the enjoyment of (F - a body part):
 	if diaper quest is 1:
 		check immobility;
 		if the player is immobile, decide on 4;
 		decide on 2;
 	let A be 2;
 	if the reaction of the player is 0 and wrestler-jumpsuit is worn, decrease A by 2;
-	if the reaction of the player is 1 or the player is friendly-fucking, increase A by 2;
+	if the reaction of the player is 1 and the player is not friendly-fucking, increase A by 2;
 	if A < 0, decide on 0;
 	decide on A.
 
 To trigger shameful orgasm of (F - a body part):
-	vaginally orgasm shamefully.
+	vaginally orgasm shamefully;
+	increase shameful-orgasm-count by 1.
 
 To trigger shameful orgasm of (F - asshole):
-	anally orgasm shamefully.
+	anally orgasm shamefully;
+	increase shameful-orgasm-count by 1.
 
 To trigger shameful orgasm of (F - breasts):
-	breasts orgasm shamefully.
+	breasts orgasm shamefully;
+	increase shameful-orgasm-count by 1.
+
+To trigger shameful orgasm of (F - face):
+	throat orgasm shamefully;
+	increase shameful-orgasm-count by 1.
 
 [!<ABodyPartIsOrgasming>+
 

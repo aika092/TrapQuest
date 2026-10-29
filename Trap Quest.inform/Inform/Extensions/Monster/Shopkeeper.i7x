@@ -569,7 +569,7 @@ Definition: shopkeeper (called M) is willing to bukkake:
 	if a random number between 1 and 2 is 1, decide yes;
 	decide no.
 
-To say UnavoidedFacial of (M - shopkeeper):
+To say AcceptedFacial of (M - shopkeeper):
 	if the class of the player is living sex doll:
 		say "[BigNameDesc of M][']s mighty staff suddenly leaves your O-shaped suction-hole with a cartoonish rubber squeak. One hand clasps you behind your slender neck, holding you helplessly still while [his of M] other hand starts jerking with crazy speed as [he of M] aims [his of M] thick firehose at your face. There's nothing you can do as the bulbous end pulses and you get a close-up view as jet after jet explodes out all over your face, each spurt sounding exactly like water striking balloon-tight rubber.";
 		say "[speech style of M]'Man, that was the best one yet! Your muffled squeals really add something to the experience. I've gotta convince them to let me add you to my product line. We could give demonstrations to potential customers, doll-face!'[roman type][line break]";
@@ -1315,7 +1315,7 @@ To blowjob dominate (M - shopkeeper):[TODO: incorporate a bj here]
 
 To compute ride dominate intro of (M - shopkeeper):
 	let A be a random worn chastity cage;
-	let submission be the calculated bbc addiction of the player;
+	let submission be the bbc addiction of the player;
 	if interracial fetish is 0:
 		now submission is the delicateness of the player;
 	say "You force [NameDesc of M] to the ground, straddling [him of M] as you take in the sight of [his of M] [cockshaft of M]. [run paragraph on]";
@@ -1333,7 +1333,7 @@ To ride dominate (M - shopkeeper):
 	let F be player-fucker;
 	let Ofit be the openness of F - the girth of M;
 	let A be a random worn chastity cage;
-	let submission be the calculated bbc addiction of the player;
+	let submission be the bbc addiction of the player;
 	if interracial fetish is 0:
 		now submission is the delicateness of the player;
 	compute ride dominate intro of M;
@@ -1344,7 +1344,7 @@ To ride dominate (M - shopkeeper):
 		if R >= 0:
 			if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
 			say "You immediately grab [his of M] hand and slam it against the ground, glaring at [him of M] as you grab [his of M] other hand and pin that down too. [big he of M] looks up at you with hints of defiance in [his of M] features, but offers no more resistance as you continue at your OWN pace. You bounce your hips, allowing [his of M] [cockhead of M] to stroke your [if F is asshole and the player is sexed male]prostate[otherwise if F is vagina]g-spot[otherwise]deeper and deeper spots[end if] as your [if sexual-penis-length < 1]moans shamelessly fly out. [otherwise if A is clothing][player-penis] drools in your [ShortDesc of A]. [otherwise if sexual-penis-length > 4][ShortDesc of penis] taps [his of M] belly, leaving splotches of precum. [otherwise][SexDesc of penis] drools precum. [end if]The cocktail of control, pleasure, and [LongDickDesc of M] thoroughly enhances the experience, and you are thoroughly satisfied by the time [if A is clothing or (sexual-penis-length > 0 and sexual-penis-length < 4)]your [load] is forming a zig-zag on [his of M] abs. [otherwise if sexual-penis-length >= 4]your [load] is shooting in a line across [his of M] abs. [otherwise if the player is possessing a vagina]you are squirting all over [his of M] abs. [otherwise]you cum. [end if][big he of M] had no such enhancement, and [his of M] [cockshaft of M] is still hard and throbbing inside you. Will you let [him of M] finish?";
-			now refractoryperiod is 0;
+			now refractoryperiod of the player is 0;
 			orgasm;
 			if the player is bimbo consenting:
 				say "You smirk at [him of M] and resume bouncing until [his of M] [LongDickDesc of M] stiffens and explodes inside you. [big his of M] load [if M is wrapped]is collected in a neat bulge at the end of the condom[otherwise]seeps out your [variable F][end if] as you climb off.";
@@ -1365,7 +1365,7 @@ To ride dominate (M - shopkeeper):
 			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 			say "[if the player is wrist bound]With your wrists bound, there's nothing you can do about it, [otherwise]It isn't the WORST thing [he of M] could do, so you reluctantly allow it, [end if][if Ofit < -1]winc[otherwise if Ofit < 2]gasp[otherwise]hiss[end if]ing as [he of M] completely plugs your crevice with [LongDickDesc of M]. You at least don't let [him of M] set the pace, bouncing on [his of M] [cockshaft of M] as [his of M] other hand [if the largeness of breasts > 5]gropes[otherwise]palms[end if] your [ShortDesc of breasts]. You don't stop even as [he of M] starts playing with your nipples, [if A is clothing]cage[otherwise if sexual-penis-length > 0][SexDesc of penis][otherwise if the largeness of breasts < 5]hair[otherwise]breasts[end if] bouncing as you stubbornly stroke your [if the player is sexed male and F is asshole]prostate[otherwise if F is vagina]g-spot[otherwise]sensitive spots[end if] with [his of M] [DickDesc of M]. It IS distracting though, and you ride [him of M] harder and harder in hopes of making [him of M] stop. Eventually, [he of M] does, placing both hands on your waist and exploding into [if M is wrapped]the condom as your [variable F][otherwise]your [variable F] as it[end if] clamps down around [his of M] [cockshaft of M].";
 			moderateDignify;
-			now refractoryperiod is 0;
+			now refractoryperiod of the player is 0;
 			now player-fucking is DOMINANT-NEUTRAL;
 			orgasm;
 			if M is unwrapped:
@@ -1384,11 +1384,11 @@ To ride dominate (M - shopkeeper):
 			now player-fucking is DOMINANT-NEUTRAL;
 			if the player is reverse bimbo consenting:
 				say "You stand up sharply, very nearly cumming as [his of M] [LongDickDesc of M] slides out of your [variable F].";
-				now refractoryperiod is 1;
+				now refractoryperiod of the player is 1;
 				say AfterDominationComment 7 of M;
 			otherwise:
 				say "You shudder with pleasure as [he of M] slams [him of M]self home, and you [if the player is not possessing a penis and the player is not possessing a vagina]dig your nails into[otherwise if A is clothing or sexual-penis-length < 4]dribble your [load] onto[otherwise if sexual-penis-length > 4]shoot your [load] across[otherwise]squirt all over[end if] [his of M] abs as [he of M] explodes into [if M is wrapped]the condom.[otherwise]your [variable F].[end if]";
-				now refractoryperiod is 0;
+				now refractoryperiod of the player is 0;
 				orgasm;
 				if M is unwrapped:
 					if F is asshole, AssFill the semen load of M;
@@ -1424,20 +1424,20 @@ To ride dominate (M - shopkeeper):
 			say AfterDominationComment 6 of M;
 		otherwise:
 			now player-fucking is DOMINANT-SHAMEFUL;
-			say "[if the player is wrist bound]With your arms bound, there isn't much you can do as [he of M] rolls[otherwise]Your instinctive desire to submit to [his of M] [LongDickDesc of M] slows your reaction, and you don't react quick enough to stop [him of M] from rolling[end if] ontop. From this new angle, it's much easier for [him of M] to make use of [his of M] massive length, and [he of M] drives it into you with every thrust. Neither of you last long after that, your [if face is not actually occupied]legs shaking[otherwise]mouth forming a great big [']O['][end if] as [he of M] explodes at your deepest point, flooding [if M is wrapped]the condom with[otherwise]you with[end if] wave after wave of fresh, warm [semen].";
+			say "[if the player is wrist bound]With your arms bound, there isn't much you can do as [he of M] rolls[otherwise]Your instinctive desire to submit to [his of M] [LongDickDesc of M] slows your reaction, and you don't react quick enough to stop [him of M] from rolling[end if] ontop. From this new angle, it's much easier for [him of M] to make use of [his of M] massive length, and [he of M] drives it into you with every thrust. Neither of you last long after that, your [if face is not actually occupied]legs shaking[otherwise]mouth forming a great big [']O['][end if] as [he of M] explodes at your deepest point, flooding [if M is wrapped]the condom[otherwise]you[end if] with wave after wave of fresh, warm [semen].";
 			if M is unwrapped:
 				if F is vagina, PussyFill the semen load of M;
 				otherwise AssFill the semen load of M;
 			orgasm M;
-			now refractoryperiod is 0;
+			now refractoryperiod of the player is 0;
 			if F is vagina, vaginally orgasm shamefully;
 			otherwise anally orgasm shamefully;
-			if a2m fetish is 1 and face is not actually occupied:
-				if M is wrapped, say "[line break][speech style of M]'Wasn't that much better? Now, why don't you get me cleaned up?'[roman type][line break][big he of M] pulls out, [his of M] [LongDickDesc of M] swaying [if interracial fetish is 1]majestically [end if]as [he of M] kneels over your face. Done pretending to be dominant, you obey without a second thought [if the player is wrist bound]and[otherwise]gripping [his of M] muscular hips with both hands as you[end if] *thoroughly* suck every last drop of [semen] off [his of M] softening [cockshaft of M].";
-				if M is wrapped, say "[line break][speech style of M]'Wasn't that much better? Now, why don't you get me cleaned up?'[roman type][line break][big he of M] pulls out, peeling off the condom as [he of M] kneels over your face. Done pretending to be dominant, you obey without a second thought [if the player is wrist bound]and[otherwise]gripping [his of M] muscular hips with both hands as you[end if] *thoroughly* suck the [if F is asshole]ass-flavoured[otherwise]pussy-flavoured[end if] [semen] off [his of M] softening [cockshaft of M].";
+			if baseline a2m fetish is 1 and face is not actually occupied:
+				let flavoured be the substituted form of "[if F is asshole]ass[otherwise]pussy[end if]-flavoured";
+				say "[line break][speech style of M]'Wasn't that much better? Now, why don't you get me cleaned up?'[roman type][line break][big he of M] pulls out, [his of M] [LongDickDesc of M] swaying [if interracial fetish is 1]majestically [end if]as [he of M] kneels over your face. Done pretending to be dominant, you obey without a second thought[if the player is wrist bound] and[otherwise], gripping [his of M] muscular hips with both hands as you[end if] [if M is wrapped]use your teeth to pull off the [flavoured] condom before sucking[otherwise]*thoroughly* suck[end if] every last drop of [unless M is wrapped][flavoured] [end if][semen] off [his of M] softening [cockshaft of M].";
 				now M is penetrating face;
 				BlowCount;
-				now refractoryperiod is 0;
+				now refractoryperiod of the player is 0;
 				orgasm;
 				StomachSemenUp 1;
 				now M is not penetrating face;

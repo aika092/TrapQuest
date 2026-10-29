@@ -152,7 +152,10 @@ We explain how much the player likes receiving vaginal sex and the idea of getti
 
 +!]
 This is the vaginal sex addiction description rule:
-	if the player is possessing a vagina and diaper quest is 0:
+	if diaper quest is 0 and tg fetish > 0 and the player is not possessing a vagina:
+		say "[if the vaginal sex addiction of the player <= 3 and the vaginalvirgin of the player is 1 and the anal sex addiction of the player > 5]You don't have a [vagina], and you don't need one. Getting fucked in the [asshole] is obviously way better[otherwise if the vaginal sex addiction of the player <= 3 and the vaginalvirgin of the player is 1]You have no desire to have a [vagina], let alone a desire to get fucked in it[otherwise if the vaginal sex addiction of the player <= 5]You are rather curious about what it would be like to experience vaginal sex[otherwise if the vaginal sex addiction of the player <= 7]Every now and then you feel a deep, aching desire to have a [vagina] and have it filled up by a big [manly-penis][otherwise if the vaginal sex addiction of the player <= 9]You frequently fantasize about having a [vagina] perfect for being filled, stretched and plundered by big fat [manly-penis][otherwise]You long experience to what it's like to have a [vagina]. Like an itch you can't scratch, you can't stop thinking about what it would be like to have it filled up an fucked by big, fat [manly-penis][end if].";
+		if debuginfo > 0, say "[input-style](Vaginal sex addiction [vaginal sex addiction of the player] / 10)[roman type][line break]";
+	otherwise if diaper quest is 0 and the player is possessing a vagina:
 		say "[if the vaginal sex addiction of the player <= 3 and the vaginalvirgin of the player is 1 and the anal sex addiction of the player > 5]You've never tried vaginal sex, but why would you? Your [asshole] makes a perfectly good substitute[otherwise if the vaginal sex addiction of the player <= 3 and the vaginalvirgin of the player is 1]You've never tried vaginal sex, and you have no particular desire to lose your virginity today[otherwise if the vaginal sex addiction of the player <= 3]Your [vagina] feels completely content being empty and remaining that way[otherwise if the vaginal sex addiction of the player <= 5]You are acutely aware of how good it feels when you have a [manly-penis] in your [vagina][otherwise if the vaginal sex addiction of the player <= 7]Every now and then you feel your [vagina] throb with a deep ache, a desire to be filled by a big [manly-penis][otherwise if the vaginal sex addiction of the player <= 9]After a while of being empty, your [vagina] begins to feel a deep longing to be filled, stretched and plundered by a big fat [manly-penis][otherwise]As soon as your greedy cunt is empty you begin to crave that feeling of being filled to the brim by [manly-penis], or toys, or anything! It's like an itch that always needs scratching[end if]. ";
 		if pregnancy fetish is 1:
 			if the pregnancy of the player is 0:
@@ -297,7 +300,7 @@ This is the milk taste addiction description rule:
 			otherwise if the milk taste addiction of the player < 11:
 				say "You love the taste of milk so much that you're happy to breast feed[if the breastskill of the player is 1]. Drinking directly from your own breasts would still feel rather humiliating[end if].";
 			otherwise if the milk taste addiction of the player < 14:
-				say "You love the taste of milk to such an extreme extent that you will willingly drink it from anywhere, including direct breastfeeding[if a2m fetish >= 2] or drinking it after it's been pushed out of someone's ass[end if].";
+				say "You love the taste of milk to such an extreme extent that you will willingly drink it from anywhere, including direct breastfeeding[if snowball fetish is 1] or drinking it after it's been pushed out of someone's ass[end if].";
 			otherwise if the milk taste addiction of the player < 17:
 				say "You're rather addicted to [milk] - you think it's the perfect drink, and you sometimes find yourself craving the taste of it.";
 			otherwise if the milk taste addiction of the player < 20:
@@ -319,7 +322,7 @@ We explain how much the player likes bad tastes and smells.
 
 +!]
 This is the grossness addiction description rule:
-	if grossness fetish > 0 or diaper quest is 1:
+	if baseline grossness fetish is 1 or diaper quest is 1:
 		if the grossness addiction of the player < 3:
 			say "Bad tastes and smells disgust you and kill your arousal.";
 		otherwise if the grossness addiction of the player < 5:
@@ -333,7 +336,7 @@ This is the grossness addiction description rule:
 		otherwise if the grossness addiction of the player < 17:
 			say "You're rather addicted to [DetailedGrossStuff]. Just the thought of it can make you rather horny!";
 		otherwise if the grossness addiction of the player < 20:
-			say "You often find yourself craving your next [if diaper messing >= 6]sniff of a messy diaper[otherwise if a2m fetish >= 1]lick of a butthole[otherwise]taste of a sweaty foot[end if][if a2m fetish >= 2], or longing for a fresh anal creampie to savour on your tongue[otherwise if diaper swapping > 1], or for someone to use your diaper as their personal [SlimeTargetU][otherwise if diaper quest is 0], or longing for a fresh creampied pussy to devour and savour on your tongue[otherwise if diaper messing >= 7],or for someone to sit their diaper on your face as they soil themselves[end if].";
+			say "You often find yourself craving your next [if diaper messing >= 6]sniff of a messy diaper[otherwise if baseline a2m fetish is 1]lick of a butthole[otherwise]taste of a sweaty foot[end if][if snowball fetish is 1], or longing for a fresh anal creampie to savour on your tongue[otherwise if diaper swapping > 1], or for someone to use your diaper as their personal [SlimeTargetU][otherwise if diaper quest is 0], or longing for a fresh creampied pussy to devour and savour on your tongue[otherwise if diaper messing >= 7],or for someone to sit their diaper on your face as they soil themselves[end if].";
 		otherwise:
 			say "You are [bold type]obsessed[roman type] with [DetailedGrossStuff]. [if diaper messing >= 6]When a messy diaper is nearby, it takes all your self control not to shove your face into the back cover of it and breathe in deeply.[otherwise if a2m fetish >= 1]When you see an exposed butthole in front of your face, you can't help but immediately shove your tongue as deep inside as it will go, savouring every little bit of that wonderful bitter taste of ass.[otherwise]When someone puts their bare foot in front of your face, you can't help but eagerly start to lick it clean, delighting in that delicious tangy taste of sweat and dirt.[end if]";
 		if debuginfo > 0, say "[input-style](Grossness addiction [grossness addiction of the player] / 20)[roman type][line break]".
@@ -426,10 +429,12 @@ If the player has a short skirt addiction, we'll explain it to them here.
 
 +!]
 This is the short skirt addiction description rule:
-	if short skirts permanent suggestion is 1:
-		say "Your addiction to extreme short skirts makes you feel uncomfortable in anything but the tiniest dresses and skirts, and has given you a complete aversion to wearing trousers.";
-	otherwise if short skirts permanent suggestion > 0:
-		say "Your body now only feels comfortable in skirts that are [SkirtLength short skirts permanent suggestion] or shorter. It also feels wrong to wear trousers.".
+	if short skirts permanent optimization is 0:
+		say "Your avatar is optimized for nothing covering your hips, making your stats weaker if you wear even the tiniest skirts or trousers.";
+	otherwise if short skirts permanent optimization is 1:
+		say "Your avatar is optimized for extreme short skirts, making your stats weaker in anything but the tiniest dresses and skirts. It also doesn't work quite right when you wear trousers.";
+	otherwise if short skirts permanent optimization > 0:
+		say "Your avatar now only feels comfortable in skirts that are [SkirtLength short skirts permanent optimization] or shorter. It also doesn't work right when you wear trousers.".
 The short skirt addiction description rule is listed in the addiction listing rules.
 
 [!<TheToplessExposureAddictionDescriptionRule>+
@@ -437,18 +442,18 @@ The short skirt addiction description rule is listed in the addiction listing ru
 If the player has a topless exposure addiction, we'll explain it to them here.
 
 +!]
-This is the topless exposure addiction description rule:
+[This is the topless exposure addiction description rule:
 	if topless-fetish is 1, say "You feel extremely uncomfortable whenever your nipples aren't on display, since it's very important that people objectify you whenever they see you.".
-The topless exposure addiction description rule is listed in the addiction listing rules.
+The topless exposure addiction description rule is listed in the addiction listing rules.]
 
 [!<TheBottomlessExposureAddictionDescriptionRule>+
 
 If the player has a bottomless exposure addiction, we'll explain it to them here.
 
 +!]
-This is the bottomless exposure addiction description rule:
+[This is the bottomless exposure addiction description rule:
 	if underwear-cover-limit is 1, say "You feel extremely uncomfortable wearing [if the diaper addiction of the player > 15]big girl panties, since you miss the comfort and security of diapers whenever you do[otherwise if diaper quest is 1]big girl panties, since deep down you know you don't deserve them[otherwise]panties, as you have an extremely powerful fetish for going commando[end if].".
-The bottomless exposure addiction description rule is listed in the addiction listing rules.
+The bottomless exposure addiction description rule is listed in the addiction listing rules.]
 
 This is the humiliation description rule:
 	say HumiliationDesc;

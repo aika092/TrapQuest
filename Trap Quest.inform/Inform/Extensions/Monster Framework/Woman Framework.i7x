@@ -2,10 +2,16 @@ Woman Framework by Monster Framework begins here.
 
 woman-player is a monster.
 
-woman-player is intelligent. woman-player has a number called delayed sluttification. woman-player can be stranger or introduced. woman-player is stranger. The leftover-type of woman-player is 131. woman-player can be angered. the favour of woman-player is 10. woman-player can be truly-female or truly-male. woman-player is truly-female. woman-player can be partially-enslaved.
+woman-player is intelligent. woman-player has a number called delayed sluttification. woman-player can be stranger or introduced. woman-player is stranger. The leftover-type of woman-player is 131. woman-player can be angered. the favour of woman-player is 10. woman-player can be truly-female or truly-male. woman-player is truly-female.
+woman-player can be partially-enslaved. woman-player has a number called enslaved-rounds.
+woman-player has a number called vanished-turns.
+woman-player has a number called spontaneous-orgasms-witnessed.
 
 Definition: woman-player is normally ally:
 	if the favour of it >= 10, decide yes;
+	decide no.
+Definition: woman-player is normally guardian:
+	if the favour of it >= 12, decide yes;
 	decide no.
 
 Definition: woman-player is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
@@ -150,6 +156,7 @@ STATES:
 6: Dungeon crawling, just crafted potion.
 7: Just freed the player from bondage (or told them no)
 8: Mansion crawling
+9: Partially enslaved wandering
 
 ==Anything below 10 can be interpreted as normal wandering and hijacked for a scene==
 
@@ -158,7 +165,7 @@ STATES:
 23: TQ only: Pregnant from swimming pool semen (in swimsuit)
 24: TQ only: Wobbling around on skates
 25: DQ only for now: After stuck in hole in wall
-26: DQ: After matron play scene.
+26: TQ: After cuck scene. DQ: After matron play scene.
 27: DQ: After matron fight scene.
 28: DQ: Changing station
 29: Just rescued from the vine boss hole
@@ -172,7 +179,7 @@ STATES:
 ==Anything 90 or above prevents movement==
 90: Appeared by being fucked by vines in the woods
 91: Appeared by being fucked by mechanic in the hotel
-92: Appeared to try the deepthroat discount challenge with the shopkeeper
+92: TQ: Appeared to try the deepthroat discount challenge with the shopkeeper
 93: Appeared in the dominatrix's predicament contraption
 94: Interacting with a spiral trap
 95: Released from the toilet
@@ -186,6 +193,7 @@ STATES:
 103: DQ: Appeared in Christmas box.
 104: DQ: Picked up by ropes after opening chest
 105: TQ: Used as human stool
+106: TQ: Appeared for intimacy scene
 ]
 
 Definition: woman-player is uniquely unreactive:
@@ -200,16 +208,20 @@ Definition: woman-player is easy-steal:
 
 Definition: woman-player is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
 Definition: woman-player is redeploy appropriate:
+	if the vanished-turns of woman-player <= 3, decide no;
 	if it is not angered and it is summon-available and it is introduced and it is not partially-enslaved and the woman-pregnancy of it < 2 and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)):
 		if the number of interested regional monsters is 0, decide yes;
 	decide no.
 Definition: woman-player is relaxed redeploy appropriate: [Allows for interested NPCs]
+	if the vanished-turns of woman-player <= 3, decide no;
 	if it is not angered and it is summon-available and it is introduced and it is not partially-enslaved and the woman-pregnancy of it < 2 and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)), decide yes;
 	decide no.
 Definition: woman-player is deploy appropriate: [currently unused]
+	if the vanished-turns of woman-player <= 3, decide no;
 	if it is not angered and it is angry deploy appropriate, decide yes;
 	decide no.
 Definition: woman-player is angry deploy appropriate:
+	if the vanished-turns of woman-player <= 3, decide no;
 	if it is off-stage and it is summon-available and it is introduced and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel) and the location of the player is not nonstandard, decide yes;
 	decide no.
 
@@ -301,6 +313,8 @@ To construct unique buttons for (M - woman-player):
 The womanspawning rules is a rulebook.
 
 A time based rule (this is the woman spawning rule):
+	if woman-player is off-stage, increase the vanished-turns of woman-player by 1;
+	otherwise now the vanished-turns of woman-player is 0;
 	if woman-player is angry deploy appropriate:
 		follow the womanspawning rules;
 	if woman-player is off-stage and woman-player is not partially-enslaved and woman-player is not permanently banished:
@@ -357,8 +371,8 @@ The woman spawning to release the boss rule is listed last in the womanspawning 
 This is the woman spawning in the region of the player rule:
 	if barbsummoned is true or a random number between 1 and 80 is 1:
 		if playerRegion is Dungeon:
-			if diaper quest is 0 and the player is the donator and portal-bra is off-stage and woman-player is not partially-enslaved and the times-met of pimp > 0 and Hotel44 is discovered and the woman-bimbo of woman-player is 2, now woman-player is partially-enslaved;
-			deploy woman-player with woman-status 1;
+			if diaper quest is 0 and the player is the donator and portal-bra is off-stage and woman-player is not partially-enslaved and the times-met of pimp > 0 and Hotel44 is discovered and the woman-bimbo of woman-player is 2 and the enslaved-rounds of woman-player is 0, now woman-player is partially-enslaved;
+			deploy woman-player with woman-status 9;
 			rule succeeds;
 		otherwise if playerRegion is Woods:
 			deploy woman-player with woman-status 0;
@@ -597,9 +611,9 @@ To execute (A - prank-deride):
 Part - Combat
 
 To check attack of (M - woman-player):
-	if the woman-status of M < 80, check default attack of M.
+	if the woman-status of M < 80 or the woman-status of M is 106, check default attack of M.
 Definition: woman-player is blocker:
-	if the woman-status of woman-player < 80, decide yes;
+	if the woman-status of woman-player < 80 or the woman-status of woman-player is 106, decide yes;
 	decide no.
 
 To say AllyDamageFlav of (M - woman-player) on (X - a monster):

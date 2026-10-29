@@ -26,7 +26,7 @@ To say PlayerDescription:
 	if the latex-transformation of the player > 2, say "Your [LatexFlav]skin [if the latex-transformation of the player > 7]is now explained: [one of]this darned game has transformed you into a sex doll![or]you've been turned into one of this stupid game's sex dolls![or]there's no difference you can see between you now and one of the stupid sex dolls roaming around.[or]you look like a dumb sex-doll![or]people might mistake you for just another sex doll.[at random][otherwise]has you [one of]a little worried[or]more than a little concerned[or]feeling worried[or]a little nervous[at random] about just what that means.[end if]";
 	[#LXorDD Note that if the player has no penis AND no vagina, they have a doll-like mound and TotalDesc of penis covers that case.]
 	say "[if the player is possessing a penis or the player is not possessing a vagina][TotalDesc of penis][end if][if the player is possessing a vagina][TotalDesc of vagina][end if][if the player is possessing a penis and the player is possessing a vagina]That's right: you now have both a [penis] AND a [vagina]. You're a futa![line break][TotalDesc of asshole]";
-	if players-dick-is-detached > 0:
+	if penis is detached:
 		if player is carrying players-detached-dick:
 			say "[first custom style]Now I need to find some way, or someone, to reattach my penis before I lose it again![roman type][line break]";
 		otherwise if player is wearing players-detached-dick:

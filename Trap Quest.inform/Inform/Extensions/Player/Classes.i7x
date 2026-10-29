@@ -169,10 +169,10 @@ nekoMaidExplained is initially false.
 a class explaining rule (this is the explaining neko maid rule):
 	if nekoMaidExplained is false and the class of the player is "neko maid":
 		now nekoMaidExplained is true;
-		say "[bold type]Now that you have become the [']neko maid['] subclass, you sense that you will now longer [if grossness fetish > 0]gain addiction to gross sensations or [end if]lose self-respect by licking up puddles.[roman type][line break]";
+		say "[bold type]Now that you have become the [']neko maid['] subclass, you sense that you will now longer [if baseline grossness fetish is 1]gain addiction to gross sensations or [end if]lose self-respect by licking up puddles.[roman type][line break]";
 	otherwise if nekoMaidExplained is true and the class of the player is not "neko maid":
 		now nekoMaidExplained is false;
-		say "[bold type]Now that you are no longer the [']neko maid['] subclass, you no longer feel immune to the [if grossness fetish > 0]grossness addiction or [end if]self-respect changes caused by licking up puddles.[roman type][line break]".
+		say "[bold type]Now that you are no longer the [']neko maid['] subclass, you no longer feel immune to the [if baseline grossness fetish is 1]grossness addiction or [end if]self-respect changes caused by licking up puddles.[roman type][line break]".
 
 This is the cowgirl class rule:
 	if (cow-ears is worn or cow-horns is worn):
@@ -1069,7 +1069,7 @@ Definition: a text (called T) is condom collector:
 
 condomCollectorExplained is initially false.
 a class explaining rule (this is the explaining condom collector rule):
-	if condom fetish >= 2:
+	if sticky condom fetish is 1:
 		if condomCollectorExplained is false and the class of the player is condom collector:
 			now condomCollectorExplained is true;
 			say "[bold type]Now that you have become the [']condom collector['] class, you can sense that the more condoms you have pinned to your clothing (both full of semen and ones you've already swallowed the contents of), the more bonus intelligence you'll have.[roman type][line break]";

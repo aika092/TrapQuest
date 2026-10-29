@@ -27,6 +27,6 @@ To say ShortDesc of (C - a condom rolls bag of holding):
 To compute failed transform of (C - a condom rolls bag of holding):
 	increase the transform-attempts of C by 1;
 	say "The [ShortDesc of C] seems to [if the transform-attempts of C > 1]once again [end if]resist being transformed!";
-	if condom fetish >= 2, compute spontaneous condom of C.
+	if sticky condom fetish is 1, compute spontaneous condom of C.
 
 Ultra Slutty Bags of Holding ends here.

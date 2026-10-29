@@ -109,32 +109,66 @@ To decide which number is min scrotum size:
 
 [!<SayShortDescOfScrotum>+
 
-REQUIRES COMMENTING
+Describes the player's balls. Plural.
 
 +!]
 To say ShortDesc of (B - scrotum):
-	if the size of scrotum <= 0:
+	say BallsFlav the size of scrotum;
+
+To say BallsFlav (N - a number):
+	if N <= 0:
 		say "internal testicles";
-	otherwise if the size of scrotum < 3:
+	otherwise if N < 3:
 		say "light, tiny balls";
-	otherwise if the size of scrotum < 5:
-		say "small, tight ball sac";
-	otherwise if the size of scrotum < 7:
-		say "average scrotum";
+	otherwise if N < 5:
+		say "below average balls";
+	otherwise if N < 7:
+		say "midsize balls";
 	otherwise:
 		say "heavy, full balls".
 
+To say TouchDesc of (B - scrotum):
+	let S be the sensitivity of penis;
+	let D be players-detached-dick;
+	if penis is attached or the size of scrotum is 0, say "[ShortDesc of scrotum]. ";
+	otherwise say "[DetachedScrotum]. ";
+	if the size of scrotum > 0:
+		say "They are [if the latex-transformation of the player > 2]warm, [ShortLatexFlav], and 100%[otherwise]just as soft, wrinkly, and warm as in real life, though you don't know if they were ever so completely[end if] hairless.";
+	otherwise if penis is attached:
+		say "There's nothing to feel, of course. Your nutsack [if the player is possessing a penis]has been reduced to a slightly wrinkly area on your taint, only noticeable if you know exactly what you're looking for.[otherwise if the player is not possessing a vagina]is completely gone, just like your [manly-penis].[otherwise]has long been replaced by a soft, wrinkly set of labia lips.[end if]";
+	otherwise if player is carrying D:
+		say "They're still firmly attached to your [DetachedPenisFlavour], which is good, but it would be better if the smooth, [if the ballsize of D is 0]slightly wrinkly seam[otherwise]warm, wrinkly sac[end if] was attached to your body too.";
+	otherwise if player is wearing D:
+		let F be a random fuckhole penetrated by D;
+		say "They're still firmly attached to your [DetachedPenisFlavour], and you can [if the ballsize of D is 0]kind of [end if]feel them, warm and wrinkly against your body, but only because said [manly-penis] is buried in your [variable F]., but it would be better if the smooth, [if the ballsize of D is 0]slightly wrinkly seam[otherwise]warm, wrinkly sac[end if] was attached to your body too.";
+	otherwise if the players-detached-dick is in the location of the player:
+		say "Unfortunately, they are no longer attached to your body, so you can't feel them without picking them up... or better yet, finding some way to reattach them!";
+	otherwise:
+		say "Or, that's what you would have done, but you can't reach them right now. All you have in that area [if the player is possessing a vagina]are your labia lips.[otherwise]is a smooth, doll-like mound of flesh.[end if]".
+
+To say TaintDesc:
+	if the size of scrotum <= 0:
+		if the player is possessing a vagina, say LabiaDesc;
+		otherwise say "taint";
+	otherwise:
+		say player-scrotum;
+
+[!<SayPlayerScrotum>+
+
+Describes the player's scrotum. Singular.
+
++!]
 To say player-scrotum:
 	if the size of scrotum <= 0:
-		say "internal testicles";
+		say "barely noticeable scrotum";
 	otherwise if the size of scrotum < 3:
-		say "light, tiny sac";
+		say "light, tiny [LatexFlav]sac";
 	otherwise if the size of scrotum < 5:
-		say "small, tight ball sac";
+		say "small, tight [LatexFlav]ball sac";
 	otherwise if the size of scrotum < 7:
-		say "average scrotum";
+		say "average [LatexFlav]scrotum";
 	otherwise:
-		say "heavy, full sac".
+		say "heavy, full [LatexFlav]nutsack".
 
 [!<PlayerIsPossessingScrotum>+
 

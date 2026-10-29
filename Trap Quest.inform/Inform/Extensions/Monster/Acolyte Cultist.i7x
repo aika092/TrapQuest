@@ -582,20 +582,23 @@ To say ErectionUseFlav of (M - an acolyte):
 [TODO: maybe expand]
 To compute erection orgasm of (M - an acolyte):
 	say "The symbols [FuckerDesc of M] drew on your skin glow and light up as your [ShortDesc of penis] begins to throb, and [FuckerDesc of M] slams [his of M] hips down, taking every inch of your shaft as your [load] explodes into [his of M] [HoleDesc of M]!";
-	now penis is not penis-erect.
+	compute erection decay.
+
+To say PenisGoneFlav of (M - an acolyte):
+	say ErectionLostFlav of M.
 
 [TODO: possibly consider more handling for the doom quest]
 To say ErectionLostFlav of (M - an acolyte):
 	let N be a random off-stage mindless acolyte;
 	if N is monster and doomed > 0 and doomed < 5:
-		say "[BigFuckerDesc of M] begins to laugh as your softening [ShortDesc of penis] slips out of [his of M] [HoleDesc of M].[line break][speech style of M]'[one of]The ritual is complete. Ha. Hahaha...'[or]HAHAHAH! AT LAST! At... last...'[or]The ritual is complete! Heehee! Heeheehee...'[or]Finally, I can join the blessed ones! At... last..'[in random order][roman type][line break][big his of M] voice trails off as [his of M] facial expression grows even more vacant, and [his of M] whole body is wreathed in purple light, [if andro fetish is 1]a tiny purple chastity cage materialises around [his of M] penis[otherwise if pregnancy fetish is 1][his of M] belly balloons up ridiculously[otherwise]clear fluid squirting out of [his of M] pussy[end if].";
+		say "[BigFuckerDesc of M] begins to laugh[if the player is possessing a penis] as your softening [ShortDesc of penis] slips out of [his of M] [HoleDesc of M][end if].[line break][speech style of M]'[one of]The ritual is complete. Ha. Hahaha...'[or]HAHAHAH! AT LAST! At... last...'[or]The ritual is complete! Heehee! Heeheehee...'[or]Finally, I can join the blessed ones! At... last..'[in random order][roman type][line break][big his of M] voice trails off as [his of M] facial expression grows even more vacant, and [his of M] whole body is wreathed in purple light, [if andro fetish is 1]a tiny purple chastity cage materialises around [his of M] penis[otherwise if pregnancy fetish is 1][his of M] belly balloons up ridiculously[otherwise]clear fluid squirting out of [his of M] pussy[end if].";
 		increase doom counter by 50;
 		destroy M;
 		set up N;
 		now N is in the location of the player;
 		now the times-submitted of M is 1;
 	otherwise:
-		say "[BigFuckerDesc of M] looks over [his of M] shoulder for the first time in quite a while as your softening [ShortDesc of penis] slips out of [his of M] [HoleDesc of M].[line break][speech style of M]'[if the class of the player is cultist][one of]The cult thanks you, [brother of the player]. We grow strong as one.'[or]Many thanks, [brother of the player]. As one, we grow strong.'[or]We have done it, [brother of the player]. The cult grows ever stronger!'[in random order][otherwise][one of]The cult grows stronger thanks to you, non-believer. You will join us. It is inevitable.'[or]The cult grows with every donation, non-believer. Join us.'[or]You donation is appreciated, but not enough, non-believer. Soon, you will join us. You have no choice.[in random order][end if][big he of M] [if the class of the player is cultist]holds eye contact with you for several seconds before climbing[otherwise]somehow smiles without disturbing [his of M] vacant facial expression, and climbs[end if] off you. Looks like [he of M]'s lost interest.";
+		say "[BigFuckerDesc of M] looks over [his of M] shoulder for the first time in quite a while[if the player is possessing a penis] as your softening [ShortDesc of penis] slips out of [his of M] [HoleDesc of M][end if].[line break][speech style of M]'[if the class of the player is cultist][one of]The cult thanks you, [brother of the player]. We grow strong as one.'[or]Many thanks, [brother of the player]. As one, we grow strong.'[or]We have done it, [brother of the player]. The cult grows ever stronger!'[in random order][otherwise][one of]The cult grows stronger thanks to you, non-believer. You will join us. It is inevitable.'[or]The cult grows with every donation, non-believer. Join us.'[or]You donation is appreciated, but not enough, non-believer. Soon, you will join us. You have no choice.[in random order][end if][big he of M] [if the class of the player is cultist]holds eye contact with you for several seconds before climbing[otherwise]somehow smiles without disturbing [his of M] vacant facial expression, and climbs[end if] off you. Looks like [he of M]'s lost interest.";
 		SilentlyDifficultyUp M by 1;
 		Bore M.
 
@@ -610,7 +613,7 @@ To say PenileClimaxFlav of (M - an acolyte):
 		let N be doomed;
 		if N < 0, now N is 1;
 		stimulate penis times N;[If the player orgasms, the ejaculation has its own flavour.]
-		if refractoryperiod > 0:
+		if refractoryperiod of the player > 0:
 			say ErectionLostFlav of M;
 		otherwise:
 			say "Unfortunately, you aren't able to finish before the glowing symbols fade, and [FuckerDesc of M] slows down and comes to a stop.[line break][speech style of M]'[if the class of the player is cultist][one of]When one of us fails, all of us do, [brother of the player].'[or]We have shamed ourselves...'[or]We have failed, [brother of the player]...'[in random order][otherwise][one of]It seems I was mistaken about your purpose. Excuse me, I have to prepare.'[or]Only a non-believer like you would show the [great ones] such disrespect. Your true purpose only becomes clearer...'[or]Hmm. It seems you weren't suitable as donor after all.'[in random order][end if][roman type][line break][big he of M] climbs off you and begins to walk away without once looking over [his of M] shoulder.";
@@ -1149,7 +1152,7 @@ To replace (M - a mindless acolyte) after domination:
 		now R is a random placed haunted room;
 	say "A portal opens up over your head, and a huge tentacle seizes you. You feel your body warping unnaturally as you are pulled through an invisible space and thrown out in [printed name of R]";
 	FatigueUp 10;
-	teleport to R.
+	spatial teleport to R.
 
 To say DominationEscapeFlav of (M - clairvoyant acolyte):
 	do nothing.
@@ -1160,7 +1163,7 @@ To replace (M - clairvoyant acolyte) after domination:
 		now R is a random placed haunted room;
 	say "A portal opens up over your head, and a huge tentacle seizes you. You feel your body warping unnaturally as you are pulled through an invisible space and thrown out in [printed name of R]";
 	FatigueUp 10;
-	teleport to R.
+	spatial teleport to R.
 
 To watersports dominate (M - an acolyte):
 	if slimeshooter fetish is 0, say "[BigNameDesc of M] drops to [his of M] knees, keeping [his of M] mouth wide open as [he of M] cups [his of M] hands under [his of M] chin. You don't wait for more invitation than that, gently holding [his of M] head in place as you begin to [slimedrain] directly onto [his of M] forehead. [big he of M] remains completely still as your [slime] flows down [his of M] face[if bukkake fetish is 1 and M is clairvoyant acolyte], washing the [semen] off the bridge of [his of M] nose[end if] and into [his of M] open mouth. [big his of M] veil is soaked within moments, clinging to [his of M] skin as the [slimedrain] overflows from the [SlimeShade] 'lake' in [his of M] mouth and runs down [his of M] [if bukkake fetish is 1 and M is clairvoyant acolyte]cream-covered [end if][ChestDesc of M]. You're not sure how to feel about [his of M] total non-reaction to being treated like a human [SlimeTarget], but it's unbelievably satisfying to watch [him of M] hold all that [slimedrain] in [his of M] mouth.";
@@ -1235,7 +1238,7 @@ To facesit dominate (M - an acolyte):[The cultist eats you out herself!]
 	otherwise:
 		say "Not that you have any idea what [he of M]'s talking about, but you decide not to waste your chance, so you join [him of M] on the ground and wait expectantly.";
 		if belly liquid types > 1:
-			now refractoryperiod is 0;
+			now refractoryperiod of the player is 0;
 			say "[big he of M] crawls behind you, causing you to gasp as [he of M] spreads your [AssDesc] and thrusts [his of M] tongue into your [asshole], stretching your sphincter pleasurably as [he of M] begins to explore your delicate anal passage. [big his of M] nails dig into your [AssDesc] as the horrid mixture of bodily fluids trapped inside you touches [his of M] tongue. You hear a blood-curdling slurping noise as [his of M] lips suddenly flatten around your hole, and [his of M] tongue begins moving around inside of you with such reach and dexterity that you're forced to wonder if it's still attached to a human. The violation doesn't stop there, [his of M] grip tightening as [his of M] tongue begins to relentlessly stroke your [if the player is sexed male]prostate[otherwise]inner walls[end if], causing you to shiver with equal parts fear and pleasure as you accept the inevitable.[line break]";
 			now player-fucking is DOMINANT-NONE;
 			anally orgasm shamefully;

@@ -421,15 +421,18 @@ To compute erection orgasm of (M - gargoyle):
 	if mythical creature fetish is 1:
 		if the size of penis > 8, cutshow Figure of gargoyle BJ 5 for M;
 		otherwise cutshow Figure of gargoyle BJ 6 for M;
-	now penis is not penis-erect.[we must do this, because we don't handle erection loss normally while we're penetrating a monster]
+	compute erection decay.[we must do this, because we don't handle erection loss normally while we're penetrating a monster]
+
+To say PenisGoneFlav of (M - gargoyle):
+	say ErectionLostFlav of M.
 
 To say ErectionLostFlav of (M - gargoyle):
-	say "[big he of M] seems satisfied, and [he of M] climbs off you and silently returns to [his of M] pedestal. As your [ShortDesc of penis] softens, you realise it's far smaller than it was before! [BigNameDesc of M] must have converted a couple inches into an extra meal for [himself of M]!";
+	say "[big he of M] seems satisfied, and [he of M] climbs off you and silently returns to [his of M] pedestal. [if the player is possessing a penis]As your [ShortDesc of penis] softens, you realise it's far smaller than it was before! [BigNameDesc of M] must have converted a couple inches into an extra meal for [himself of M]![end if]";
 	Bore M;
 	compute post climax effect of M in penis;
 
 To say PenileClimaxFlav of (M - gargoyle):
-	if refractoryperiod > 0:
+	if refractoryperiod of the player > 0:
 		say ErectionLostFlav of M;
 	otherwise:
 		say "[line break][BigNameDesc of M] slows down and peers at you in disappointment before letting go and climbing back onto [his of M] pedestal.";

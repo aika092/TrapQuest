@@ -42,7 +42,7 @@ Carry out PinkEating:
 					say "[BigNameDesc of M] is ripped out of your [vagina] at an incredible speed, causing a loud pop. Your mind reels from the brutal damage done to the inside of your [vagina]!";
 					ruin vagina times 2;
 				dislodge M;
-	teleport to Dungeon12;
+	raw teleport to Dungeon12;
 	remove all interest;
 	if the player is prone:
 		now the stance of the player is 0;

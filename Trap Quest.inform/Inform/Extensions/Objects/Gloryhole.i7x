@@ -2,6 +2,7 @@ Gloryhole by Objects begins here.
 
 gloryhole is a thing. gloryhole is not portable. The printed name of gloryhole is "[TQlink of item described]double gloryhole[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of gloryhole is "gl". Understand "double", "glory", "hole" as gloryhole.
 
+[A gloryhole can detach your penis if you've given a blowjob there before.]
 gloryhole can be a-dick-detacher or a-non-detacher. gloryhole is a-non-detacher.
 
 Figure of gloryhole is the file "Env/Facility/gloryhole3a.jpg".
@@ -19,8 +20,23 @@ To decide which figure-name is the examine-image of (G - gloryhole):
 	if the charge of G <= 0, decide on figure of gloryhole;
 	decide on figure of empty gloryhole.
 
+To say FuckerDesc of (T - gloryhole):
+	if T is blowjob portal:
+		say "your own [ShortDesc of penis]";
+	otherwise if T is upper oral:
+		say "the anonymous [man of shopkeeper]";
+	otherwise:
+		say "the anonymous [man of witch]".
+To say BigFuckerDesc of (T - gloryhole):
+	if T is blowjob portal:
+		say "Your own [ShortDesc of penis]";
+	otherwise if T is upper oral:
+		say "The anonymous [man of shopkeeper]";
+	otherwise:
+		say "The anonymous [man of witch]".
+
 To say ExamineDesc of (C - gloryhole):
-	say "A hole in the wall at crotch height, and another above it at face height. Each hole is surrounded by a circle of runic markings, which seem to pulse with magical energy[if the charge of C <= 0]. A womanly mouth with big lips sits patiently waiting at the lower hole[end if].".
+	say "A hole in the wall at crotch height, and another above it at face height. Each hole is surrounded by a circle of runic markings, which seem to pulse with magical energy[if the charge of C <= 0]. A [man of witch]ly mouth with big lips sits patiently waiting at the lower hole[end if].".
 
 Definition: gloryhole is live: decide yes.
 Definition: gloryhole is throater:
@@ -29,6 +45,11 @@ Definition: gloryhole is throater:
 
 gloryhole has a number called charge. gloryhole has a number called turns trapped. gloryhole can be glorywrapped or gloryunwrapped. gloryhole is gloryunwrapped.
 
+[
+normal glory hole - You get oral sex
+Upper oral - You give oral sex
+blowjob portal - You get oral sex from yourself
+]
 A gloryhole can be normal glory hole, upper oral, blowjob portal (this is the gloryhole-type property).
 
 Definition: gloryhole is immune to change: decide yes.
@@ -42,7 +63,7 @@ Check entering gloryhole:
 	if the player is not a bit horny and the player is upright and the semen taste addiction of the player < 12 and the oral sex addiction of the player < 6, say "You're not aroused enough." instead;
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
 	if the player is in danger, say "You would, but you are currently in a fight." instead;
-	if the player is upright and the player is barbie:
+	if the player is upright and the player is barbie-genitals:
 	[Let's also make the milking the default action if they have milky breasts and no dick]
 		if the milk volume of breasts > 0 and bottom level lactation cover is nothing:
 			allocate 6 seconds;
@@ -208,9 +229,8 @@ To compute gloryhole genital modification:
 				say "You're enjoying both the sensations and the feeling of dominance, when suddenly, things start to feel... strange.[line break][variable custom style]What the hell is going on?![roman type][line break]";
 				say DefaultSexChangeFlav;
 				SexChange the player;
-			otherwise if gloryhole is a-dick-detacher and penis-is-detachable by gloryhole using 1: [#LXorDD]
-				say "You're enjoying both the sensations and the feeling of dominance";
-				compute detach-players-dick by gloryhole using 1;
+			otherwise if gloryhole is a-dick-detacher and penis is detachable-via-blowjob:[#LXorDD]
+				compute gloryhole-cock-detachment by gloryhole;
 				say GotUnluckyFlav;
 			otherwise:
 				say "Somebody slaps your [ShortDesc of penis] painfully!";
@@ -260,19 +280,19 @@ To say SexSubmissionFlav of (G - a gloryhole):
 
 [This will only happen if the player has a different type of orgasm while getting sucked, e.g. by inserting something in their butt]
 To compute erection orgasm of (M - gloryhole):
-	if M is a-dick-detacher and penis-is-detachable by M using 1: [#LXorDD]
-		say "[one of]Panting, you thrust one last time [or]You feel the [semen] about to burst forth[or][line break][variable custom style]Yes, yes![roman type][line break]You're just about to explode [at random]";
-		compute detach-players-dick by M using 1;
-		compute gloryhole dislodging;
-		stop;
-	say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the semen load of the player > 4]entire [otherwise if the semen load of the player < 3]tiny[end if]load, and then swallow it all in one [if the semen load of the player > 7]large gulp[otherwise if the semen load of the player < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
-	if the size of penis < 3:
-		say "[one of]The amused look she gives you make your cheeks turn bright pink.[or]She smirks and holds up her pinkie finger, giving it a little wiggle. Once again you feel your cheeks burning.[or]She purses her lips in a [italic type]tiny[roman type] air-kiss.[stopping]";
-		SlightHumiliate;
-	BlowGet;
-	DelicateDown 1;
-	now penis is not penis-erect;
-	compute gloryhole dislodging.
+	if M is a-dick-detacher and penis is detachable-via-blowjob and M is not blowjob portal:[For now]
+		compute gloryhole-cock-detachment by M;
+	otherwise:
+		say "You feel the [boy of witch] keep her mouth wrapped around your [player-penis] to catch your [if the semen load of the player > 4]entire [otherwise if the semen load of the player < 3]tiny[end if]load, and then swallow it all in one [if the semen load of the player > 7]large gulp[otherwise if the semen load of the player < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
+		if the size of penis < 3:
+			say "[one of]The amused look she gives you make your cheeks turn bright pink.[or]She smirks and holds up her pinkie finger, giving it a little wiggle. Once again you feel your cheeks burning.[or]She purses her lips in a [italic type]tiny[roman type] air-kiss.[stopping]";
+			SlightHumiliate;
+		BlowGet;
+		DelicateDown 1;
+		compute erection decay;
+		compute gloryhole dislodging.
+
+
 
 An all time based rule (this is the compute gloryhole rule):
 	let tinyDickGrabbed be 0;

@@ -14,7 +14,9 @@ To decide which figure-name is the examine-image of (C - cookie):
 	decide on figure of cookie.
 
 To say ExamineDesc of (C - cookie):
-	if the quality of C > 1:
+	if the quality of C > 2:
+		say "A coconut chunk cookie";
+	otherwise if the quality of C > 1:
 		say "A chocolate chip cookie.";
 	otherwise if the quality of C > -1:
 		say "A sugar cookie.";

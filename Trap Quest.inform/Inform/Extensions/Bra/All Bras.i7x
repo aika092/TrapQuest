@@ -769,6 +769,7 @@ Definition: portal-bra is displacable: decide no.
 Definition: portal-bra is cursable: decide no.
 Definition: portal-bra is removable: decide no.
 Definition: portal-bra is stealable: decide no.
+Definition: portal-bra is portal themed: decide yes.
 Definition: portal-bra is grey themed: decide yes.
 Definition: portal-bra is transformation-protected: decide yes.
 Definition: portal-bra is fluid immune: decide yes.
@@ -790,6 +791,15 @@ To decide which figure-name is clothing-image of (C - portal-bra):
 
 To compute unique summoning of (C - portal-bra):
 	now woman-player is not partially-enslaved.
+
+To compute PortalBust of (P - portal-bra) from (O - a room):
+	say "The spatial warping is too much for your [MediumDesc of P], and it explodes, slamming the portal shut. Pain wracks your body as your chest is twisted and distorted by back into its original place!";
+	let B be the largeness of breasts - the real largeness of breasts;
+	if B > 0:
+		BustDown B;
+	breasts orgasm shamefully;
+	destroy P;
+	PainUp 50.
 
 To SilentSquirt (L - a liquid-object) On (C - portal-bra) by (N - a number):
 	if N > 0:

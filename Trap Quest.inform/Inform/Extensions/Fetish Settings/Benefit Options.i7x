@@ -201,8 +201,10 @@ This is the spontaneous tattoos toggle rule:
 The spontaneous tattoos reset rule is listed in the reset rules.]
 
 This is the roleplay fetish toggle rule:
-	if roleplay fetish is 0 and points count >= 1, now choice in row 47 of the Table of Player Options is 1;
-	otherwise now choice in row 47 of the Table of Player Options is 0.
+	if choice in row 47 of the Table of Player Options is 0 and points count >= 1:
+		now choice in row 47 of the Table of Player Options is 1;
+	otherwise if choice in row 47 of the Table of Player Options is 1:
+		now choice in row 47 of the Table of Player Options is 0.
 
 This is the roleplay fetish reset rule:
 	now choice in row 47 of the Table of Player Options is 0.
@@ -677,14 +679,14 @@ To compute benefit toggle (D - a direction):
 			let T be the Table of Player Options;
 			let minN be -1;
 			let maxN be 2;
-			if current menu selection <= 5 or current menu selection is 7 or (current menu selection >= 12 and current menu selection <= 15):
+			if current menu selection <= 5 or current menu selection is 7 or (current menu selection >= 12 and current menu selection <= 15) or current menu selection is 17:
 				let minN be 0;
 				let maxN be 8;
 				if current menu selection is 1, now maxN is 7;
 				if current menu selection is 7, now maxN is 3;
 				if current menu selection is 12, now maxN is 6;
 				if current menu selection is 13, now maxN is 2;
-				if current menu selection is 14 or current menu selection is 15, now maxN is 1;
+				if current menu selection is 14 or current menu selection is 15 or current menu selection is 17, now maxN is 1;
 			if D is down:
 				if choice in row N of T < maxN, increase choice in row N of T by 1;
 				otherwise now choice in row N of T is minN;
@@ -723,7 +725,7 @@ To decide which figure-name is benefit menu banner:
 			if the player is sexed male, decide on figure of background_waiter_bg;
 			decide on figure of background_waitress_bg;
 		otherwise if background-pure is 1:
-			if the player is originally male, decide on figure of background_pure_male_bg;
+			if the player is sexed male, decide on figure of background_pure_male_bg;
 			otherwise decide on figure of background_pure_bg;
 		otherwise if background-magic is 1:
 			decide on figure of background_dnd_nerd_bg;

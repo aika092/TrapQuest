@@ -47,7 +47,7 @@ The chastity bond pussy slut rule is listed in the pussy slut eligibility rules.
 chastity-belt is a chastity bond. chastity-belt is unique. chastity-belt is metal. The printed name of chastity-belt is "[clothing-title-before]chastity belt[clothing-title-after]". The text-shortcut of chastity-belt is "chab". Understand "belt" as chastity-belt.
 
 To say ClothingDesc of (C - chastity-belt):
-	say "A metal chastity belt that completely prevents access to your [genitals], aside from a small opening for you to pee through. The back straps go over each ass cheek, allowing full access to your [asshole].";
+	say "A metal chastity belt that completely prevents access to your [genitals][if legacy watersports mechanics is 1], aside from a small opening for you to pee through[end if]. The back straps go over each ass cheek, allowing full access to your [asshole].";
 	if C is cursed, say "You can feel it slowly making you more and more aroused.";
 	say "[variable custom style][if the bimbo of the player < 3][one of]I'm having trouble understanding why the game would want me to wear this.[or]As long as I'm wearing this chastity belt, nothing can touch my genitals.[or]I'd rather it covered more than my crotch, but I can't really complain, I doubt anybody here can rip through solid metal.[in random order][otherwise if the bimbo of the player < 6][one of]Wearing this should make me relieved, but I just feel frustrated...[or]This isn't protecting me, it's just making me want sex![or]I know I shouldn't take this off, but... I want to.[in random order][otherwise if the bimbo of the player < 10][one of]It won't even let me touch my clit...[or]I thought I was supposed to have lots of sex. This is so dumb...[in random order][otherwise if the bimbo of the player < 13][one of]If it's against the rules to use my pussy, I should probably keep this on.[or]This is the game's way of telling me I don't deserve to get fucked in my pussy. It's probably right.[or]My asshole may be free when I wear this, but I can't touch myself when I'm getting fucked![in random order][otherwise][one of]I'm a dirty whore, I don't deserve to have my pussy fucked![or]More anal for me. Tee-hee![or]When this is on, I can't get double penetrated, and that's my favourite way to get fucked![or]If I find someone strong enough to pry this off, I'll probably find somebody with a big cock too![in random order][end if][roman type][line break]".
 
@@ -212,7 +212,7 @@ To compute periodic effect of (C - latex-cage):
 		say "Since you no longer have a penis, your [ShortDesc of C] falls to the ground.";
 		now C is in the location of the player;
 	otherwise if the size of C > the size of penis + 1:
-		if the player is getting unlucky:
+		if C is cursed and the player is getting unlucky:
 			say "You feel your [ShortDesc of C] start to vibrate and pulse as it shrinks and squeezes your [sissy-penis] down into a nub.";
 			transform C into nub-cage;
 			say GotUnluckyFlav;
@@ -274,7 +274,7 @@ To compute periodic effect of (C - nub-cage):
 				say "Your [ShortDesc of C] starts to squeeze your [sissy-penis] down even smaller!";
 				passively stimulate penis from C;
 				PenisDown 1;
-			otherwise if the penis-obedience of penis < 10:
+			otherwise if the penis-obedience of penis < 10 and a random number between 1 and 3 is 1:
 				PenisObedienceUp 1;
 				say "Your [ShortDesc of C] starts to squeeze and vibrate, but your [sissy-penis] can only leak in its tiny prison!";
 				say HumiliatingDesc of C;
@@ -296,7 +296,16 @@ This is the chastity bond already worn rule:
 		if summoning is 0 and autowear is false, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
 		rule fails.
 The chastity bond already worn rule is listed in the chastity cage wearability rules.
+The chastity bond already worn rule is listed in the cock ring wearability rules.
 The chastity bond already worn rule is listed in the chastity belt wearability rules.
+
+This is the cock ring already worn rule:
+	repeat with O running through worn cock-ring:
+		if summoning is 0 and autowear is false, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [printed name of O][end if]!";
+		rule fails.
+The cock ring already worn rule is listed in the chastity cage wearability rules.
+The cock ring already worn rule is listed in the cock ring wearability rules.
+The cock ring already worn rule is listed in the chastity belt wearability rules.
 
 This is the can't phase chastity through clothes rule:
 	if summoning is 0 and the player is pussy protected:
@@ -307,19 +316,19 @@ The can't phase chastity through clothes rule is listed in the chastity belt wea
 
 This is the can't cage ken rule:
 	if the player is not possessing a penis:
-		if summoning is 0 and autowear is false, say "But you don't have a penis right now!";
+		if summoning is 0 and autowear is false, say "But you don't have a [manly-penis] right now!";
 		rule fails.
 The can't cage ken rule is listed in the chastity cage wearability rules.
+The can't cage ken rule is listed in the cock ring wearability rules.
 
 This is the can't cage erection rule:
-	if penis is penis-erect:
-		if summoning is 0 and autowear is false and the size of penis > 3:
-			say "Your penis is too hard to fit into a cage right now!";
-			rule fails;
-		otherwise:
-			[if summoning is 0 and autowear is false, say "[line break]Your [player-penis] softens as it is forced into the cage.[line break]";][if the player's penis is small enough, we can force it.] [but we can't put this flavour here because what if a later rule prevents it being worn?]
-			now penis is not penis-erect.
+	if penis is penis-erect and the size of penis > 3:
+		if summoning is 0 and autowear is false, say "Your penis is too hard to fit into a cage right now!";
+		rule fails.
 The can't cage erection rule is listed in the chastity cage wearability rules.
+
+Report wearing chastity cage:
+	compute erection decay.
 
 This is the cage too big rule:
 	if the player is possessing a penis and the size of wearing-target > the size of penis + 1 and summoning is 0:
@@ -332,5 +341,9 @@ This is the players in chastity can't wear vagina plugging clothes rule:
 		if summoning is 0 and autowear is false, say "You can't get the plug in past your chastity belt, and so can't wear these.";
 		rule fails.
 The players in chastity can't wear vagina plugging clothes rule is listed in the global wearability rules.
+
+Check taking off chastity bond:
+	if the player is pussy protected and summoning is 0 and autoremove is false, say "Your [printed name of random top level protection clothing] is preventing you." instead.
+
 
 Chastity Cage ends here.

@@ -357,7 +357,7 @@ To say DragFlav of (M - a wrestler) to (R - a room):
 	otherwise cutshow figure of wrestler cutscene 5 for M.
 
 To say DragArrival of (M - a wrestler) to (R - Hotel31):
-	say "[speech style of M]'Here we are!'[line break][variable custom style][one of][if the bimbo of the player < 8]Oh god, why is there a gap between those urinals?[otherwise]Why are we here I wonder?[end if][or][if the bimbo of the player < 13]No no no please not again![otherwise]Uh-oh, looks like it's [SlimeTarget] time again![end if][stopping][roman type][line break]".
+	say "[speech style of M]'Here we are!'[line break][variable custom style][one of][if the bimbo of the player < 8]Oh god, why is there a gap between those [SlimeTargetU]s?[otherwise]Why are we here I wonder?[end if][or][if the bimbo of the player < 13]No no no please not again![otherwise]Uh-oh, looks like it's [SlimeTargetU] time again![end if][stopping][roman type][line break]".
 
 A time based rule (this is the stuff can't exist in urinal room rule):
 	if the player is in UrinalBlindfolded:
@@ -625,7 +625,7 @@ To say StrikingFailureFlav of (M - a wrestler) on (B - a body part):
 This is the wrestler friendly convinced rule:
 	let M be current-monster;
 	if presented-orifice is face:[she rejects you if you're gagged.]
-		if there is a worn chastity bond or the player is gagged or the player is barbie or (the player is possessing a vagina and vagina is actually occupied):
+		if there is a worn chastity bond or the player is gagged or the player is barbie-genitals or (the player is possessing a vagina and vagina is actually occupied):
 			if watersports fetish is 1, compute friendly drink of M;
 			otherwise say PresentFriendlyRejectionFlav of M;
 		otherwise:
@@ -677,7 +677,9 @@ To say FriendlyMouthPenetrationFlav of (M - a wrestler):
 
 To compute penile sex of (M - a wrestler):
 	if M is penetrating face, do nothing instead;
-	if penis is not penis-erect:[which implies that the player came]
+	if the size of penis is 0:
+		say PenisGoneFlav of M;
+	otherwise if penis is not penis-erect:
 		say ErectionLostFlav of M;
 	otherwise if the sex-length of M is 1 and M is anticipating-climax:
 		say ErectionNearingClimaxFlav of M;
@@ -687,7 +689,7 @@ To compute penile sex of (M - a wrestler):
 		compute post climax effect of M in penis;
 	otherwise:
 		decrease the sex-length of M by 1;
-		stimulate penis from M;[special flavour for orgasms will trigger after normal flavour is shown.]
+		stimulate penis from M;
 		say "[one of][M sex reaction][or][cycling]";
 	compute slow grossness of M.
 
@@ -757,7 +759,7 @@ To say OralSubmissionResponse of (M - a wrestler):[This is only called if the pl
 		stimulate penis from M;
 	otherwise if the player is possessing a vagina:
 		stimulate vagina from M;
-	if refractoryperiod > 0:
+	if refractoryperiod of the player > 0:
 		now the sex-length of M is 1;[this way we know the player is the one who had the orgasm.]
 		compute facial climax of M;
 	say "[line break]".
@@ -771,7 +773,7 @@ To compute erection orgasm of (M - a wrestler):
 		say "[line break][one of]It's just too much for you, and you cum[or]You try to hold back, but it's too good! Your eyes roll back as you cum[or]It feels way too good to hold back, and you cum[at random], [if the size of penis > 4]groaning[otherwise]moaning[end if] with pleasure as [if the size of penis < 4 or penis is not penis-erect]your [player-penis] dribbles a [load][otherwise if the size of penis < 7]you shoot your [load][otherwise]shoot a [load][end if] on your tummy. [big he of M] watches with a self-satisfied grin.";
 	otherwise:
 		follow the default ejaculation rule;
-	now penis is not penis-erect.
+	compute erection decay.
 
 To compute vaginal orgasm hijack of (M - wrestler):
 	if M is penetrating face:
@@ -794,7 +796,7 @@ To compute facial climax of (M - a wrestler):
 		now G is ruby;
 		set shortcut of G;
 		now G is in the location of the player;
-		say "[BigNameDesc of M] finally releases [his of M] grip, allowing you to roll off as [BigNameDesc of P] happily shuffles out of the room.[line break][speech style of M]'[if refractoryperiod > 0]Technically, you still came first, but that was fun, so...'[otherwise]Wow, I guess [he of P] came first, huh? Take this, you earned it!'[end if][roman type][line break][big he of M] grins, pulling out a [printed name of G] and tossing it in your direction.";
+		say "[BigNameDesc of M] finally releases [his of M] grip, allowing you to roll off as [BigNameDesc of P] happily shuffles out of the room.[line break][speech style of M]'[if refractoryperiod of the player > 0]Technically, you still came first, but that was fun, so...'[otherwise]Wow, I guess [he of P] came first, huh? Take this, you earned it!'[end if][roman type][line break][big he of M] grins, pulling out a [printed name of G] and tossing it in your direction.";
 	otherwise if the sex-length of M > 0:[if sex ends and her sex length is 1 or more, it means you came first.]
 		say "[line break][speech style of M]'[one of]Looks like I win!'[or]I win! I'm game if you want another try later, though.'[or]I win again!'[cycling][roman type][line break]";
 		now the sex-length of M is 0;
@@ -856,6 +858,13 @@ To say ErectionUseFlav of (M - a wrestler):
 	let valley be the substituted form of "[if andro fetish is 1]cheeks![otherwise][vagina]![end if]";
 	say "[one of][BigFuckerDesc of M]'s [if andro fetish is 1]cage jiggles[otherwise]breasts jiggle[end if] as [he of M] aggressively humps your [player-penis].[or][BigFuckerDesc of M]'s suit squeaks as [he of M] rocks [his of M] hips back and forth.[or][BigFuckerDesc of M] uses [if the size of penis > 8]slow, exaggerated movements[otherwise if the size of penis > 3]fast movements[otherwise]minimal movements[end if] to stroke the entire surface of your [player-penis] with [his of M] [valley].[or]Your [player-penis] [if andro fetish is 1]spasms as [BigFuckerDesc of M][otherwise]is coated in [BigFuckerDesc of M]'s juices as [he of M][end if] rocks against you.[in random order]".
 
+To say PenisGoneFlav of (M - a wrestler):
+	say "[BigFuckerDesc of M] taps your [if tg fetish is 1 and the player is possessing a vagina and the vaginalvirgin of the player is 0]new clitoris.[otherwise if the player is possessing a vagina]clitoris.[otherwise]sexless mound.[end if][line break][speech style of M]'[one of]Bye bye, penis!'[or]Wow, your [player-penis] is really gone!'[at random][roman type][line break]";
+	FavourDown M by 1;
+	DifficultyUp M by 2;
+	Bore M;
+	now the sex-length of M is 0.
+
 To say ErectionLostFlav of (M - a wrestler):
 	say "[BigFuckerDesc of M] shakes [his of M] head as [he of M] [if M is normal-penis-fucking]climbs off[otherwise]lets go of[end if] your softening [ShortDesc of penis].[line break][speech style of M]'[one of]That was quicker than I thought!'[or]Cocks are pretty sensitive, huh?'[or]You made a really big mess![or]You jizzed!'[at random][roman type][line break][if M is normal-penis-fucking][big he of M] climbs off you and immediately loses interest.[end if]";
 	FavourDown M by 1;
@@ -884,7 +893,7 @@ This is the wrestler uses your diaper rule:
 				compute M attacking C;
 			otherwise:
 				now C is a random worn overdress;
-				say "[BigNameDesc of M] pulls up the rear of the waistband of your [D] and squats over your back. [big he of M] starts peeing!";
+				say "[BigNameDesc of M] pulls up the rear of the waistband of your [D] and squats over your back. [big he of M] starts [slimedraining]!";
 				SlimeSoak 6 on D;
 				if C is clothing, SlimeSoak 6 on C;
 				satisfy M;
@@ -1002,7 +1011,7 @@ Definition: wrestler-facesit (called P) is appropriate:
 To compute punishment of (P - wrestler-facesit):
 	let M be current-monster;
 	let D be a random worn diaper;
-	say "[BigNameDesc of M] flips you onto your back and lies on top of you so that [his of M] latex-covered diaper bulge is right above your face. From this vantage point [he of M] gives you a diaper check, pushing [his of M] hand into your [MediumDesc of D] and moving [his of M] nose very close to get a good sniff.[line break][speech style of M]'That's what I thought. Well, to make this a proper 69 I need to make sure mine matches yours, right?'[roman type][line break]That's the last thing you hear [him of M] say before your head is engulfed by cold stretchy rubber and all you can do is wriggle with [joy the diaper addiction of the player]. You can feel the softness of [his of M] thick padding cushioning you against the heavy weight of the butt and body above it. [if D is wet]A very subtle hiss accompanies the sound of rain hitting an umbrella and you know that [NameDesc of M] is peeing [himself of M] right on top of your face. The padding begins to sag which makes the latex cling to your face even tighter. [end if][if D is messed and diaper messing >= 7]There's a rubber whine, like a little bit of air being released from a balloon. Then a rasping sound heralds the arrival of something new above your face. It feels like there's an avalanche of snow or something right on the other side of [his of M] latex bodysuit. Your head becomes even more enveloped in its rubbery prison, if that were even possible. [end if]You can't breathe and you can hardly hear a thing. ";
+	say "[BigNameDesc of M] flips you onto your back and lies on top of you so that [his of M] latex-covered diaper bulge is right above your face. From this vantage point [he of M] gives you a diaper check, pushing [his of M] hand into your [MediumDesc of D] and moving [his of M] nose very close to get a good sniff.[line break][speech style of M]'That's what I thought. Well, to make this a proper 69 I need to make sure mine matches yours, right?'[roman type][line break]That's the last thing you hear [him of M] say before your head is engulfed by cold stretchy rubber and all you can do is wriggle with [joy the diaper addiction of the player]. You can feel the softness of [his of M] thick padding cushioning you against the heavy weight of the butt and body above it. [if D is wet]A very subtle hiss accompanies the sound of rain hitting an umbrella and you know that [NameDesc of M] is [SlimeDraining] [himself of M] right on top of your face. The padding begins to sag which makes the latex cling to your face even tighter. [end if][if D is messed and diaper messing >= 7]There's a rubber whine, like a little bit of air being released from a balloon. Then a rasping sound heralds the arrival of something new above your face. It feels like there's an avalanche of snow or something right on the other side of [his of M] latex bodysuit. Your head becomes even more enveloped in its rubbery prison, if that were even possible. [end if]You can't breathe and you can hardly hear a thing. ";
 	if D is messed and diaper messing >= 7, GrossOut messyDiaperFacesitGrossnessLevel;
 	otherwise GrossOut wetDiaperFacesitGrossnessLevel;
 	compute police hat transformation;

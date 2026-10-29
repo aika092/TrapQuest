@@ -95,25 +95,23 @@ Definition: a monster is facefucker:
 
 To StomachSemenUp (X - a number):
 	if X > 0:
-		let M be a random wrapped monster penetrating face;
-		if M is monster:
+		let M be a random thing penetrating face;
+		if M is wrapped monster:
 			compute condom filling of M;
 		otherwise:
+			if M is facefucker, now the recent-source of semen is M;
 			compute slightly addictive swallowing of semen by X;
-		if there is a facefucker thing penetrating face:
+			progress quest of cum-swallowing-quest;
+		if M is facefucker:
 			OralSexAddictUp 1;
-			progress quest of cum-swallowing-quest.
 
 To ActualStomachSemenUp (X - a number):
 	let SU be a random number between 0 and 1;
 	if lipstick collar is worn, increase X by 1;
-	if the latex-transformation of the player > 4:
-		AssFill X;
-		now X is 0;
 	if X > 0:
 		say SemenEncounterFlav;
 		now cold turkey of semen is 0;
-		if the stomach-food of the player < 2, now the stomach-food of the player is 2; [Improves hunger]
+		if the stomach-food of the player < 2 and the latex-transformation of the player <= 4, now the stomach-food of the player is 2; [Improves hunger]
 		if the semen volume of belly > 0, compute cumdumpsterification;
 	while X > 0:
 		increase the stomach-semen of the player by 1;
@@ -129,6 +127,8 @@ To StomachSemenDown (X - a number):
 			decrease X by 1.
 
 To StomachSlimeUp (X - a number):
+	let M be a random facefucker thing penetrating face;
+	if M is a thing, now the recent-source of slime is M;
 	if X > 0, compute slightly addictive swallowing of slime by X.
 
 To ActualStomachSlimeUp (X - a number):
@@ -149,6 +149,8 @@ To StomachSlimeDown (X - a number):
 			decrease the stomach-slime of the player by 1.
 
 To StomachMilkUp (X - a number):
+	let M be a random thing penetrating face;
+	if M is a thing, now the recent-source of milk is M;
 	if X > 0, compute slightly addictive swallowing of milk by X.
 
 To ActualStomachMilkUp (X - a number):

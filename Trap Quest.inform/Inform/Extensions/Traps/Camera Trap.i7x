@@ -328,7 +328,7 @@ To compute title of (P - an upskirt poster):
 				otherwise now the title of P is "Shocking evidence that this whore gets turned on by getting [slime] on [himself of P].";
 	otherwise if the old-knickers of P is diaper:
 		if P is in the hotel, now the title of P is "DIAPERED CRYBABY";
-		otherwise now the title of P is "A properly padded peepot.";
+		otherwise now the title of P is "A properly padded [slime]pot.";
 	otherwise if the old-overdress of P is royalty themed:
 		if P is in the hotel, now the title of P is "[caps his of P] ROYAL SLUTNESS";
 		otherwise now the title of P is "A royal slip-up!";
@@ -596,7 +596,7 @@ A wetting poster is a kind of poster. A wetting poster has an object called urin
 There are 10 wetting posters.
 
 To say CameraFlashFlav of (P - a wetting poster) by (Y - a camera trap):
-	say "It was in a perfect position to capture a full shot of you peeing.[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh no! No no no! Not one of me peeing! Fuck.[otherwise]Now everyone will know what a pervert I am.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]I bet that pic looks FILTHY![end if][stopping][roman type][line break]";
+	say "It was in a perfect position to capture a full shot of you [slimeDraining].[one of][line break][variable custom style][if the humiliation of the player < HUMILIATION-SHAMELESS - 1000]Oh no! No no no! Not one of me [slimeDraining]! Fuck.[otherwise]Now everyone will know what a pervert I am.[end if][or][if the bimbo of the player < 14][variable custom style]Again?![otherwise][line break][second custom style]I bet that pic looks FILTHY![end if][stopping][roman type][line break]";
 
 To compute unique variables of (P - a wetting poster):
 	now the old-humiliation of P is the humiliation of the player;
@@ -611,8 +611,8 @@ To compute title of (P - a wetting poster):
 				if P is in the hotel, now the title of P is "PRINCESS [caps slime]PANTS";
 				otherwise now the title of P is "A royal relief!";
 			otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
-				if P is in the hotel, now the title of P is "SISSY PEEPOT";
-				otherwise now the title of P is "'I'm a little peepot, whimper and pout[line break]Here is my diapee I cry about[line break]When I get all fussy I wail and shout[line break]Check my diaper and change me out'";
+				if P is in the hotel, now the title of P is "SISSY [caps slime]POT";
+				otherwise now the title of P is "'I'm a little [slime]pot, whimper and pout[line break]Here is my diapee I cry about[line break]When I get all fussy I wail and shout[line break]Check my diaper and change me out'";
 			otherwise if the old-overdress of P is maid outfit:
 				if P is in the hotel, now the title of P is "EMPLOYEE OF THE MONTH";
 				otherwise now the title of P is "A hard working maid doesn't have time to take loo breaks!";
@@ -709,7 +709,7 @@ To say ExamineDesc of (C - a wetting poster):
 
 To say ShortDesc of (P - a wetting poster):
 	if slimeshooter fetish is 1, say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if][if urination-target of P is clothing]Your slimeshooter is very visibly draining itself into your [urination-target of P]. [otherwise if urination-target of P is room]Your slimeshooter is very visibly draining itself onto the floor of the [urination-target of P]. [otherwise]Your slimeshooter is draining itself all over the ground. [end if]";
-	otherwise say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if][if urination-target of P is clothing]You are very visibly wetting yourself into your [urination-target of P]. [otherwise if urination-target of P is room]You are very visibly peeing onto the floor of the [urination-target of P]. [otherwise]You are very visibly peeing onto the ground. [end if]";
+	otherwise say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if][if urination-target of P is clothing]You are very visibly [slimedraining] into your [urination-target of P]. [otherwise if urination-target of P is room]You are very visibly [slimeDraining] onto the floor of the [urination-target of P]. [otherwise]You are very visibly [slimeDraining] onto the ground. [end if]";
 	if the title of P is "TEACHER'S PET" and the class of the player is alchemist, cutshow figure of teachers pet cutscene 1 for P.
 
 To decide which number is the lewdness of (P - a wetting poster):

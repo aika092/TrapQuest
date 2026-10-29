@@ -210,7 +210,7 @@ To compute unique climax of (M - robochef) in (F - asshole):
 
 To compute condom filling of (M - robochef):
 	now M is unwrapped;
-	say "You can feel the rubbery coating of [M]'s [manly-penis] stretching as it floods with warm filling, catching briefly on the inside of your hole as the chef slowly removes [his of M] 'genitals' from your ass.[line break][speech style of M]'BAGGED LUNCH COMPLETE. ENJOY YOUR MEAL.'[roman type][line break][BigNameDesc of M] emits a sharp *ding*, and [his of M] bulging rubber [manly-penis] detaches from [his of M] body, landing behind you with a pronounced *plop*. [big he of M] seems to lose interest.";
+	say "You can feel the rubbery coating of [FuckerDesc of M]'s [DickDesc of M] stretching as it floods with warm filling, catching briefly on the inside of your hole as the chef slowly removes [his of M] 'genitals' from your ass.[line break][speech style of M]'BAGGED LUNCH COMPLETE. ENJOY YOUR MEAL.'[roman type][line break][BigNameDesc of M] emits a sharp *ding*, and [his of M] bulging rubber [DickDesc of M] detaches from [his of M] body, landing behind you with a pronounced *plop*. [big he of M] seems to lose interest.";
 	ruin asshole;
 	let L be a random off-stage bag lunch;
 	now L is in the location of the player;

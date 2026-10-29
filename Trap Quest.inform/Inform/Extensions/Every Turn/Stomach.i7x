@@ -102,7 +102,7 @@ An all time based rule (this is the compute stomach rule):
 				increase the cold turkey of L by time-seconds;
 				if the relevant taste addiction of L > 13 and the cold turkey of L >= the cold turkey limit of L:
 					if cold turkey of L - time-seconds < the cold turkey limit of L:
-						say "[bold type]Your stomach and taste buds are beginning to [if L is desperately craved]desperately [end if]crave more [variable L]. [roman type]Until you either drink some more [variable L] or avoid [L] for a long time, you will feel [second custom style]cranky[roman type], lowering your submissiveness but also significantly lowering your intelligence.";
+						say "[bold type]Your stomach and taste buds are beginning to [if L is desperately craved]desperately [end if]crave more [variable L]. [roman type]Until you either drink some more [variable L] or avoid [boringLQ L] for a long time, you will feel [second custom style]cranky[roman type], lowering your submissiveness but also significantly lowering your intelligence.";
 					otherwise if cold turkey of L >= cold turkey limit of L * 2:
 						if L is semen and the raw semen taste addiction of the player > 11:
 							say "[bold type]Your mind and body is slowly getting used to not receiving regular helpings of [semen]. [roman type]Keep it up and your body's addiction will continue to lower.";

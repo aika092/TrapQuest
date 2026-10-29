@@ -155,7 +155,7 @@ To compute turn trap effect of (Y - stripper cage trap):
 					say StripperDemandFlav of M;
 					let tissue-thrown be true;
 					if a random number between 1 and 2 is 1:
-						if condom fetish >= 2 and a random number between 1 and 2 is 1:
+						if sticky condom fetish is 1 and a random number between 1 and 2 is 1:
 							now tissue-thrown is false;
 							now condom-thrown is true;
 						say "[BigNameDesc of M] reaches into the trash can and pulls out a [if tissue-thrown is false]used condom[else]cum-soaked tissue[end if], and throws it at you!";

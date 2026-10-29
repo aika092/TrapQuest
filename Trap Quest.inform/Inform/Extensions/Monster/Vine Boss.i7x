@@ -95,7 +95,7 @@ To say MovementBlock of (M - vine boss):
 To compute unique teleportation to (R - Woods16):
 	unless the player is flying:
 		say "You have appeared in mid-air above the hole! Uh-oh... Looks like gravity is taking you on a one-way compulsory trip downwards!";
-		teleport to WoodsBoss01;
+		raw teleport to WoodsBoss01;
 		say "You land on your front with a painful thump[if the body soreness of the player < 10], giving yourself more than one ache and bruise[end if].";
 		BodyRuin 3;
 		now the stance of the player is 1.

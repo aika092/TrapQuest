@@ -238,7 +238,7 @@ An all time based rule (this is the toilet monster rule):
 			let TPR be a random toilet-painting-room-exit toilet-painting-room;
 			if the player is not in TPR:
 				say "[bold type]You are teleported to the room where you can see the real exit to the south.[roman type][line break]";
-				teleport to TPR;
+				raw teleport to TPR;
 			if diaper quest is 0 and meat-toilet-panties is not worn and meat-toilet-panties is class summonable:
 				class summon meat-toilet-panties.
 

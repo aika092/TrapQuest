@@ -19,7 +19,7 @@ To check consensual submissive sex of (M - a monster):
 		if M is willing to urinate and M is not a diaper wetter and the bladder of M >= 600:
 			compute M urinating;
 		otherwise:
-			if M is intelligent, say "[BigNameDesc of M] shrugs.[line break][speech style of M]'[if M is a diaper wetter]I just use my diaper when I need to pee[otherwise if M is willing to urinate]I don't need to go right now[otherwise]I'm not into that sort of thing[end if].'[roman type][line break]";
+			if M is intelligent, say "[BigNameDesc of M] shrugs.[line break][speech style of M]'[if M is a diaper wetter]I just use my diaper when I need to [slimedrain][otherwise if M is willing to urinate]I don't need to go right now[otherwise]I'm not into that sort of thing[end if].'[roman type][line break]";
 			otherwise say "It doesn't look like [NameDesc of M] understood that at all.";
 	otherwise:
 		if presented-orifice is vagina and M is bride-consort and the consummation of betrothal-quest is false:
@@ -79,12 +79,14 @@ To say FriendlySexResistFlav of (M - a monster):
 To say FriendlySexSubmissionFlav of (T - a thing):
 	if number of body parts penetrated by T < 1:
 		say "You let the [T] keep going.";
-	if T is penetrating face and T is monster:
+	otherwise if T is penetrating face and T is monster:
+		do nothing;[handled by the monster itself, usually]
+	otherwise if T is penetrating penis and T is friendly-fucking monster:
 		do nothing;[handled by the monster itself, usually]
 	otherwise if the player is feeling dominant:
-		say "[one of]You lie still and allow the [T] to keep going.[or]You submit to the [T][if T is monster], knowing who's really in charge[end if].[or]You stay still and let yourself be used.[or]You push back against the [T][if T is monster], eager to have this over and done with as soon as possible[end if].[or]You silently submit to the [T], forcing yourself not to resist.[or]You allow the [T] to keep going unhindered.[in random order]";
+		say "[one of]You lie still and allow [FuckerDesc of T] to keep going.[or]You submit to [FuckerDesc of T][if T is monster], knowing who's really in charge[end if].[or]You stay still and let yourself be used.[or]You push back against [FuckerDesc of T][if T is monster], eager to have this over and done with as soon as possible[end if].[or]You silently submit to [FuckerDesc of T], forcing yourself not to resist.[or]You allow [FuckerDesc of T] to keep going unhindered.[in random order]";
 	otherwise:
-		say "[one of]You lie still and allow yourself to enjoy the stimulation.[or]You eagerly submit to the [T][if T is monster] - you know who's in charge[end if].[or]You are happy just staying still and letting yourself be used.[or]You push back against the [T][if T is monster] to get [him of T] nice and worked up[end if]![or]You clench your muscles, joining in the same rhythm of the [T].[or]You vigorously thrust your [random body part penetrated by T] back and forth![in random order]".
+		say "[one of]You lie still and allow yourself to enjoy the stimulation.[or]You eagerly submit to [FuckerDesc of T][if T is monster] - you know who's in charge[end if].[or]You are happy just staying still and letting yourself be used.[or]You push back against [FuckerDesc of T][if T is monster] to get [him of T] nice and worked up[end if]![or]You clench your muscles, joining in the same rhythm of [FuckerDesc of T].[or]You vigorously thrust your [random body part penetrated by T] back and forth![in random order]".
 
 To compute FriendlySexRelease of (M - a monster):
 	if M is willing to let go:

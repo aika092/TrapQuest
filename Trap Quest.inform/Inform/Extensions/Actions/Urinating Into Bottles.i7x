@@ -4,10 +4,10 @@ PeeBottling is an action applying to one thing.
 
 Check PeeBottling:[TODO: compatible with parched pedestal]
 	if the bladder of the player < 4:
-		if legacy watersports fetish is 1, say "You don't feel the need." instead;
+		if legacy watersports mechanics is 1, say "You don't feel the need." instead;
 		otherwise say "Your slimepistol isn't that full.";
 	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
-	if legacy watersports fetish is 1:
+	if legacy watersports mechanics is 1:
 		if the player is not disgraced and there is a reactive monster and debugmode is 0, say "You consider yourself too dignified to do that in front of someone right now. Doing it without anyone watching would be humiliating enough." instead;
 		unless the noun is a vessel or the noun is a pedestal, say "How would you [SlimeShoot] into that?" instead;
 		if the noun is a vessel and the noun is tight topped, say "You can only [SlimeShoot] into open-topped containers." instead;
@@ -15,7 +15,7 @@ Check PeeBottling:[TODO: compatible with parched pedestal]
 		if the player is not disgraced and there is a reactive monster and debugmode is 0, say "You consider yourself too dignified to try wrangling that thing in front of someone else right now." instead;
 		unless the noun is a vessel or the noun is a pedestal, say "How would you fire into that?" instead;
 		if the noun is a vessel and the noun is tight topped, say "You can only fire into open-topped containers." instead;
-	if the noun is erect pedestal, say "There's no opening where you can pee." instead;
+	if the noun is erect pedestal, say "There's no opening where you can [SlimeShoot]." instead;
 	if the player is prone, say "You can only do that when standing." instead;
 	if there is pee covering clothing:
 		now auto is 1;
@@ -39,9 +39,9 @@ Check PeeBottling:[TODO: compatible with parched pedestal]
 			otherwise:
 				say "You change your mind." instead;
 	otherwise if the noun is pedestal:
-		if the player is pee protected or there is a pee covering actually unavoidable clothing, say "[if legacy watersports fetish is 1]You can't get your genitals close enough to the carving[otherwise]Your slimeshooter is tucked too deep into your clothes[end if] for that to work." instead;
+		if the player is pee protected or there is a pee covering actually unavoidable clothing, say "[if legacy watersports mechanics is 1]You can't get your genitals close enough to the carving[otherwise]Your slimeshooter is tucked too deep into your clothes[end if] for that to work." instead;
 	otherwise:
-		say "How would you [if legacy watersports fetish is 1]pee[otherwise]shoot[end if] into that?" instead.
+		say "How would you [if legacy watersports mechanics is 1]pee[otherwise]shoot[end if] into that?" instead.
 
 pee-bottling is a number that varies.
 Carry out PeeBottling:
@@ -78,7 +78,7 @@ Carry out PeeBottling:
 		let P be the noun;
 		let B be the bladder of the player;
 		BladderDown B;
-		if the player is able to use a urinal, say "You walk up to the [printed name of P] and [if legacy watersports fetish is 1]piss[otherwise]fire your slimeshooter[end if] into the mouth carved into the base.";
+		if the player is able to use a urinal, say "You walk up to the [printed name of P] and [if legacy watersports mechanics is 1]piss[otherwise]fire your slimeshooter[end if] into the mouth carved into the base.";
 		compute PedestalFilling P with slime by (B * 2);
 	allocate 6 seconds.
 Understand "shoot into [something]", "fire into [something]", "pee into [something]", "pee in [something]", "piss in [something]", "piss into [something]", "urinate in [something]", "urinate into [something]", "wee in [something]", "wee into [something]", "pp [something]" as PeeBottling.

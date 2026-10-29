@@ -54,6 +54,8 @@ Figure of Barbara Cutscene 29 is the file "NPCs/MultiFloor/barbara/cutscene-barb
 Figure of Barbara Cutscene 30 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-icarus1.jpg".
 Figure of Barbara Cutscene 31 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-aeromancer1.jpg".
 Figure of Barbara Cutscene 32 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-stool1.jpg".
+Figure of Barbara Cutscene 33 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-fuck3.jpg".
+Figure of Barbara Cutscene 34 is the file "NPCs/MultiFloor/barbara/cutscene-barbara-fuck4.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if the woman-status of M is 97:
@@ -159,8 +161,6 @@ To compute friendly boredom of (M - woman-player):
 			distract M;
 			if M is in the location of the player, say BecomesBoredFlav of M.
 
-woman-player has a number called enslaved-rounds.
-
 To vanish (M - a monster):
 	if woman-player is in the woods and the location of woman-player is urinals, now the location of woman-player is use-the-floor;
 	if M is woman-player and M is introduced:
@@ -172,8 +172,11 @@ To vanish (M - a monster):
 			otherwise:
 				regionally place M;
 				increase the enslaved-rounds of M by 1;
+			now the woman-status of M is 9;
 		otherwise:
 			remove M from play;
+	if M is off-stage, now the vanished-turns of M is 0;
+	if the woman-status of M is 106, compute refractoryReset of M;
 	if the woman-pregnancy of M is 1, now the woman-pregnancy of M is 2;
 	if the woman-status of M is 90 and the vine-scene of M is 5:
 		FavourDown M;
@@ -293,7 +296,7 @@ woman-player has a number called the intimacy-scene.
 To compute perception of (M - woman-player):
 	if M is angered:
 		say "[BigNameDesc of M] notices you![line break][speech style of M]'[one of][if the woman-bimbo of M < 5]You! How could you treat me so poorly?! I'm not going to let you get away with it any more!'[otherwise]Hey sexy. You've taught me some valuable lessons in how to be a good friend. I think it's time for me to return to favour...'[end if][or]You still haven't lost? Let's go again, then!'[or]Hi again, bitch.'[stopping][roman type][line break][big he of M] starts walking towards you.";
-	otherwise if the woman-bimbo of M >= 6 and the woman-status of M < 10 and the player is possessing a vagina and breasts is lewdly exposed and the player is not pussy protected and refractoryperiod <= 0 and vagina is not actually occupied and the player is able to orgasm and the player is not in danger and the player is not at least partially immobile and the player is able to use their hands:
+	otherwise if the woman-bimbo of M >= 6 and the woman-status of M < 10 and the player is possessing a vagina and breasts is lewdly exposed and the player is not pussy protected and refractoryperiod of the player <= 0 and vagina is not actually occupied and the player is able to orgasm and the player is not in danger and the player is not at least partially immobile and the player is able to use their hands:
 		if the intimacy-scene of M is 0:
 			compute sudden intimacy scene of M;
 		otherwise if the intimacy-scene of M is 10 and the player is prone:
@@ -304,6 +307,8 @@ To compute perception of (M - woman-player):
 		compute human stool scene of M;
 	otherwise if the favour of M < the prank-favour-limit of M and the player is not in danger and the player is not at least partially immobile:
 		compute default prank of M;
+	otherwise if the horny-scene of M is 2 and the woman-status of M < 20 and M is ready for horny intimacy and the number of unleashed monsters in the location of the player is 1 and the player is not at least partially immobile:
+		compute horny perception of M;
 	otherwise:
 		deinterest M. [Unless there has been a scene trigger, it's up to the player to interact with her]
 
@@ -349,7 +354,7 @@ This is the continue woman intimacy rule:
 			increase the intimacy-scene of M by 1;
 			say "[BigNameDesc of M] finger-blasts your [vagina] as you lay back on the ground! [one of]In this compromising position, and with something so delightful happening to your lower body, it's difficult to do anything other than lie there and get jilled towards your peak.[or][line break][speech style of M]'[one of]Hehehe, this is fun...'[or]You're so wet...'[or]What a naughty [boy of the player]!'[then at random][roman type][line break][stopping]";
 			stimulate vagina from M;
-			if refractoryperiod > 0:
+			if refractoryperiod of the player > 0:
 				say "[BigNameDesc of M] stands up, looking very pleased with [himself of M].[line break][speech style of M]'There's more where that came from, my love~'[roman type][line break]";
 			otherwise if the intimacy-scene of M < 10 and the player is able to orgasm and vagina is not actually occupied:
 				now another-turn is 1;
@@ -852,7 +857,7 @@ To compute contraption climax of (M - a monster):
 Chapter - Human Toilet Scene
 
 To check woman toilet:
-	if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2:
+	if the player is in Hotel38 and watersports fetish is 1 and snowball fetish is 1:
 		if the human-toilet-scene of woman-player is 0 and the woman-bimbo of woman-player >= (a random number between 2 and 5) and woman-player is relaxed redeploy appropriate:
 			say "A groaning, gurgling noise from below you makes you notice that the [man of woman-player] below you looks different from usual.";
 			if legacy watersports mechanics is 1, cutshow figure of barbara cutscene 4 for toilet;
@@ -914,6 +919,670 @@ Report going when shopkeeper is in the location and woman-player is in the locat
 	DifficultyUp shopkeeper by 1;
 	now the shopkeeper-scene of woman-player is 1.
 
+Chapter - Horny Intimacy Scene
+
+woman-player has a number called horny-scene.
+Definition: woman-player is girlfriend:
+	if the horny-scene of woman-player > 0, decide yes;
+	decide no.
+Definition: woman-player is happy girlfriend:
+	if woman-player is girlfriend and woman-player is normally guardian, decide yes;
+	decide no.
+woman-player has a number called sex-satisfaction.
+To WomanSexSatisfactionUp:
+	FavourUp woman-player;
+	increase the sex-satisfaction of woman-player by 1.
+To WomanSexSatisfactionDown:
+	FavourDown woman-player;
+	decrease the sex-satisfaction of woman-player by 1.
+
+To decide which figure-name is the penis-fucking-monster-image of (M - woman-player):
+	if M is girlfriend and M is not angered, decide on Figure of Barbara Cutscene 33;
+	decide on figure of Missing NPC.
+
+Definition: woman-player is ready for horny intimacy:
+	if (woman-player is guardian or woman-player is girlfriend) and the player is possessing a penis and penis is attached and the refractory-period of woman-player <= 0 and ((woman-player is girlfriend and interracial fetish > 0 and the player is possessing a penis and the player is a september 2026 top donator) or the size of penis > 2):
+		repeat with C running through pussy covering clothing:
+			if C is not displacable and C is not crotch-zipped and C is not usually autoremovable:
+				unless woman-player is girlfriend and interracial fetish > 0 and C is chastity bond, decide no;
+		decide yes;
+	decide no.
+
+This is the woman spawning to get horny intimacy rule:
+	if playerRegion is hotel and ((the horny-scene of woman-player is 0 and the woman-bimbo of woman-player <= 3 and the woman-pregnancy of woman-player is 0) or (woman-player is girlfriend and interracial fetish is 1)) and woman-player is ready for horny intimacy:
+		let R be a random placed guest modern room;
+		let D be 100;
+		repeat with L running through placed guest modern rooms:
+			let X be the distance of L from the location of the player;
+			if X < D and X is not 0:
+				now R is L;
+				now D is X;
+		deploy woman-player with woman-status 106;
+		now woman-player is in R;
+		rule succeeds.
+The woman spawning to get horny intimacy rule is listed first in the womanspawning rules.
+
+Report going when woman-player is in the location and (the woman-bimbo of woman-player <= 3 or woman-player is girlfriend) and woman-player is not interested and the location is a guest room and the number of monsters in the location is 1 and woman-player is ready for horny intimacy:
+	compute horny intimacy start scene.
+
+Report going when woman-player is off-stage and (the woman-bimbo of woman-player <= 3 and the horny-scene of woman-player is 0) and the location is a guest room and the number of monsters in the location is 0 and woman-player is ready for horny intimacy:
+	now woman-player is in the location of the player;
+	compute horny intimacy start scene.
+
+To compute horny intimacy start scene:
+	now the woman-status of woman-player is 106;
+	if the horny-scene of woman-player is 0:
+		say "In this room you spot [NameDesc of woman-player] lying on the bed, breathing ragged, [his of woman-player] hand between [his of woman-player] thighs. When [he of woman-player] spots you, [he of woman-player] whimpers and looks at you longingly.";
+		interest woman-player;
+		say "[speech style of woman-player]'Please, [NameBimbo], would you please fuck me... I'd so much rather it was you...'[roman type][line break]";
+		if penis is not penis-erect, say "[speech style of woman-player]'You can... You can get it up, right?'[roman type][line break]";
+		if penis is erect-if-possible or penis is penis-erect:
+			if penis is not penis-erect:
+				say "Your [ShortDesc of penis] quickly stands to attention!";
+				now penis is penis-erect;
+			say "[variable custom style]If I do this... We might develop feelings for another. And that might get complicated... And cause hurt feelings down the line. But also... Maybe it'd be great?[roman type][line break]";
+			say "Fuck [NameDesc of woman-player]?";
+			if the player is consenting:
+				compute horny intimacy barbara scene;
+			otherwise:
+				if the player is able to speak, say "[variable custom style]'I think it's a bad idea... Sorry.'[roman type][line break]";
+				otherwise say "[variable custom style]I think it's a bad idea...[roman type][line break]You shake your head.";
+				say "[BigNameDesc of woman-player] looks crestfallen, but just whimpers and nods in understanding.[line break][speech style of woman-player]'Fine... I'll have to find someone else.'[roman type][line break]";
+		otherwise:
+			say "You both look at disappointment at your [MediumDesc of penis] as it stays soft and limp[if there is a worn chastity bond] in its [ShortDesc of random worn chastity bond][end if].[paragraph break][BigNameDesc of woman-player] chuckles darkly to [himself of woman-player].[line break][speech style of woman-player]'No, of course, that would have been too simple. Of course, the game wants me to find a REAL [man of male-m].'[roman type][line break][severeHumiliateReflect]";
+		now the horny-scene of woman-player is 1;
+	otherwise:
+		let CK be a random prioritised eligible bed-cuck-event;
+		if CK is nothing, now CK is a random eligible bed-cuck-event;
+		now current-cuck-event is CK;
+		increase the times-occurred of CK by 1;
+		execute CK.
+
+
+To compute horny perception of (M - woman-player):
+	interest M;
+	say "[BigNameDesc of M] notices you![line break][speech style of M]'[NameBimbo]... Fuck, I'm horny again... Let's do it again, please!'[roman type][line break][BigNameDesc of M] steps forward to embrace you.";
+	if penis is not penis-erect, say "[speech style of woman-player]'You can... You can get it up, right?'[roman type][line break]";
+	if penis is erect-if-possible or penis is penis-erect:
+		if penis is not penis-erect:
+			say "Your [ShortDesc of penis] quickly stands to attention!";
+			now penis is penis-erect;
+		say "Fuck [NameDesc of woman-player]?";
+		if the player is consenting:
+			compute horny intimacy barbara scene;
+		otherwise:
+			if the player is able to speak, say "[variable custom style]'I can't right now... Sorry.'[roman type][line break]";
+			otherwise say "[variable custom style]I can't right now...[roman type][line break]You shake your head.";
+	otherwise:
+		say "You both look at disappointment at your [MediumDesc of penis] as it stays soft and limp[if there is a worn chastity bond] in its [ShortDesc of random worn chastity bond][end if].[paragraph break][BigNameDesc of woman-player] chuckles darkly to [himself of woman-player].[line break]";
+		WomanSexSatisfactionDown;
+	if M is not penetrating a body part:
+		if M is happy girlfriend:
+			say "[BigNameDesc of woman-player] looks crestfallen, but just whimpers and nods in understanding.[line break][speech style of woman-player]'Fine... I'll just have to wait until you're ready...'[roman type][line break]";
+		otherwise:
+			say "[speech style of woman-player]'No, no way I was thinking that you could be my [boy of the player]friend. What was I thinking...'[roman type][line break][BigNameDesc of woman-player] stares daggers at you.[line break][speech style of woman-player]'Don't expect me to ask again.'[roman type][line break][strongHumiliateReflect]";
+			if interracial fetish is 0, now the horny-scene of woman-player is -1;
+		WomanSexSatisfactionDown.
+
+To compute horny intimacy barbara scene:
+	compute preparing for penile sex;
+	now woman-player is friendly-fucking;
+	now woman-player is normal-penis-fucking;
+	set up sex length of woman-player in penis;
+	say "You approach [NameDesc of woman-player], and [he of woman-player] opens [his of woman-player] legs wide to accept you.[line break][speech style of woman-player]'Yesssss, I needed this! Thank youuuuuu~'[roman type][line break][BigNameDesc of woman-player] sighs with deep delight as [he of woman-player] feels your length enter [him of woman-player].";
+	now woman-player is penetrating penis;
+	compute virginity loss with woman-player on penis.
+
+woman-player has a number called times-orgasmed-during-sex.
+
+To set up sex length of (M - woman-player) in (F - penis):
+	now the times-orgasmed-during-sex of M is 0;
+	if the horny-scene of woman-player is 1, set up sex length 2 of M in F;
+	otherwise set up sex length (the woman-bimbo of M) of M in F.
+
+To compute preparing for penile sex:
+	let C be a random top level protection clothing;
+	while C is clothing:
+		if C is crotch-zipped:
+			say "You unzip your [ShortDesc of C].";
+			ZipDown C;
+		otherwise if C is displacable:
+			say "You displace your [ShortDesc of C].";
+			displace C;
+		otherwise:
+			say "You remove your [ShortDesc of C].";
+			now C is carried by the player;
+			dislodge C;
+		let C be a random top level protection clothing;
+	now auto is 1;
+	try kneeling;
+	now auto is 0.
+
+To compute penile sex of (M - woman-player):
+	let feels-good be false;
+	if the horny-scene of woman-player is 1 or a random number between 1 and the woman-bimbo of woman-player < the size of penis, now feels-good is true;
+	if penis is not penis-erect:[which implies that the player came]
+		compute SexEnd of M;
+	otherwise:
+		if feels-good is true, say ErectionUseFlav of M;
+		otherwise say UnderwhelmingErectionUseFlav of M;
+	if M is not penetrating penis:
+		compute post climax effect of M in penis;
+	otherwise:
+		if feels-good is true, decrease the sex-length of M by 1;
+		if (the horny-scene of M is 1 or feels-good is true) and a random number between 0 and the times-orgasmed-during-sex of M is 0:
+			say "[speech style of M]'[if the sex-length of M > 1][one of][or]Keep going[or]Don't stop now[or]Don't cum yet[then at random][otherwise][one of]I'm gonna cum soon[or]I'm almost there[or]I'm so close[then at random][end if]!'[roman type][line break][if the player is horny][BigNameDesc of M][']s [one of]words help[or]vocal encouragement helps[cycling] you hold back your orgasm.[end if]";
+			passively stimulate penis from M;
+		otherwise:
+			stimulate penis from M. [special flavour for orgasms will trigger after normal flavour is shown.]
+
+To say ErectionUseFlav of (M - woman-player):
+	if M is happy girlfriend, say "You thrust into [NameDesc of M] steadily, as [he of M] [one of]moans happily[or]continues to coo with delight[or]squeezes [his of M] nipples with delight[then at random].";
+	otherwise say "You thrust into [NameDesc of M] steadily, [if the sex-length of M >= 3][one of]and [he of M] makes an intrigued sound[or]as [he of M] makes gentle noises[or]as [he of M] giggles[or]and [he of M] growls teasingly[then at random][otherwise if the sex-length of M is 2]and [he of M] makes a surprised sound[otherwise]and [he of M] gasps[end if].".
+To say UnderwhelmingErectionUseFlav of (M - woman-player):
+	if M is happy girlfriend, say "You thrust into [NameDesc of M] steadily, [one of]as [he of M] moans quietly[or]as [he of M] closes [his of M] eyes[or]but [he of M] stays quiet[then at random].";
+	otherwise say "You thrust into [NameDesc of M] steadily, as [he of M] [one of]makes a humming sound, as if [he of M] is not sure what to think about your performance[or]makes a frustrated whine[or]grumbles in what sounds like annoyance[or]tuts[then at random].".
+
+To decide which number is the stimulation of (M - woman-player) on (F - a body part):
+	decide on (the woman-bimbo of M + a random number between 0 and 3) / 4.
+
+[This is the player orgasming]
+To compute erection orgasm of (M - woman-player):
+	say "You cum hard inside [NameDesc of M][']s warm, welcoming [HoleDesc of M].";
+	compute erection decay.
+
+[For most NPCs this is the player orgasming but in this scene, it's Barbara orgasming. Sex may continue.]
+To compute penile climax of (M - woman-player):
+	if penis is not penis-erect: [player already came. too late for Barbara to orgasm! Redirect to the function that can handle sex already being over]
+		compute penile sex of M;
+	otherwise:
+		increase the times-orgasmed-during-sex of M by 1;
+		TimesSubmittedUp M by 1;
+		say PenileClimaxFlav of M;
+		compute post climax effect of M in penis;
+		if the rounds of sex left of M <= 0 and the player is not able to orgasm: [we only end sex if the player is never gonna cum themselves]
+			if M is interested, orgasm satisfy M;
+			otherwise orgasm dislodge M;
+		otherwise:
+			now the sex-length of M is a random number between 1 and 3. [She can orgasm multiple times]
+
+To say PenileClimaxFlav of (M - woman-player):
+	say "[BigNameDesc of M] shakes and squeals [he of M] [if the rounds of sex left of M >= 0]climaxes.[otherwise]has another orgasm![end if]";
+	cutshow Figure of Barbara Cutscene 34 for M;
+	if the player is not broken:
+		dignify 500;
+		say "[if the rounds of sex left of M >= 0][variable custom style]Hell yeah.[otherwise]That's very good for your self-esteem.[end if][roman type][line break]";
+	orgasm M.
+
+To compute SexEnd of (M - woman-player):
+	dislodge M;
+	if the horny-scene of woman-player is 1:
+		say "[speech style of M]'[NameBimbo], that was incredible! I'm so glad I asked you to be the one to that with me...'[roman type][line break]You cuddle [him of M] tightly, extremely glad to have had one [']normal['] sexual encounter in this crazy place.[line break][speech style of M]'We're going to do this again, right? I feel very, very close to you now...'[roman type][paragraph break]";
+		if the player is able to speak, say "[variable custom style]'Of course.'[roman type][line break]You instinctively respond.";
+		otherwise say "You instinctively nod fervently in agreement.";
+		say "[line break][variable custom style]Did I... Just... Get a [boy of woman-player]friend?! HELL YEAH![roman type][line break]You can't help but feel great about yourself.";
+		dignify 1000;
+		WomanSexSatisfactionUp;
+		now the horny-scene of M is 2;
+	otherwise if current-cuck-event is size-comparison-cucking:
+		if the times-orgasmed-during-sex of M >= 2:
+			say "[speech style of M]'Hell yes, [NameBimbo], you gave me [times-orgasmed-during-sex of M] orgasms, you stud! You're more than enough for me.'[roman type][line break]";
+			WomanSexSatisfactionUp;
+		otherwise if the times-orgasmed-during-sex of M >= 2:
+			say "[variable custom style]I could only make [him of M] orgasm once...[roman type][line break]";
+			say "[speech style of M]'Thanks sweetie, I had a nice time...'[roman type][line break][BigNameDesc of M] says sweetly, but it almost sounds patronizing.";
+			if players-response of size-comparison-cucking is 1 and the cheat-count of current-cheat-consideration < 0, now the cheat-count of current-cheat-consideration is 0;
+		otherwise:
+			say "[variable custom style]I couldn't make [him of M] orgasm at all...[roman type][line break]";
+			say "[speech style of M]'Oh... It's over...'[roman type][line break][BigNameDesc of M] sounds downtrodden.[line break][speech style of M]'I didn't get what I needed at all...'[roman type][line break]";
+			if the cheat-count of current-cheat-consideration < 0, now the cheat-count of current-cheat-consideration is 0;
+			WomanSexSatisfactionDown;
+		now current-cuck-event is nothing;
+	otherwise if the times-orgasmed-during-sex of M >= 1:
+		if the sex-length of M is 0:
+			say "[speech style of M]'No... Fuck... I was so close to another orgasm! What crappy timing...'[roman type][line break][BigNameDesc of M] seems visibly frustrated about being left on the edge, but at least you made [him of M] cum [if the times-orgasmed-during-sex of M is 1]once[otherwise][the times-orgasmed-during-sex of M] times[end if] already.";
+		otherwise:
+			say "[speech style of M]'Hell yes, [one of][NameBimbo][or][if the player is presenting as female]babe[otherwise][stud][end if][purely at random], thank you for filling me up~'[roman type][line break]";
+			WomanSexSatisfactionUp;
+	otherwise:
+		say "[speech style of M]'It's over already?'[roman type][line break][BigNameDesc of M] does not look amused.[line break][speech style of M]'I didn't get what I needed at all...'[roman type][line break]".
+
+A cuck-event is a kind of object. A cuck-event has a number called times-occurred.
+current-cuck-event is an object that varies. current-cheat-consideration is an object that varies.
+Definition: a cuck-event is prioritised: decide no.
+Definition: a cuck-event is eligible: decide yes.
+To execute (C - a cuck-event):
+	say "BUG - this cuck event has no function.".
+To compute erection attempt of (C - a cuck-event):
+	if penis is not penis-erect, say "[speech style of woman-player]'Is it hard for me?~'[roman type][line break]";
+	if penis is erect-if-possible or penis is penis-erect:
+		if penis is not penis-erect:
+			say "Your [ShortDesc of penis] quickly stands to attention!";
+			now penis is penis-erect;
+		erection execute C;
+	otherwise:
+		say "You both look at disappointment at your [MediumDesc of penis] as it stays soft and limp[if there is a worn chastity bond] in its [ShortDesc of random worn chastity bond][end if].[paragraph break]";
+		WomanSexSatisfactionDown;
+		if woman-player is happy girlfriend:
+			say "[BigNameDesc of woman-player] looks crestfallen, but just whimpers and nods in understanding.[line break][speech style of woman-player]'Fine... I'll just have to wait until you're ready...'[roman type][line break]";
+		otherwise:
+			say "[speech style of woman-player]'Really? This is what I've got for a boyfriend?!'[roman type][line break][BigNameDesc of woman-player] stares daggers at you.[strongHumiliateReflect]".
+To erection execute (C - a cuck-event):
+	say "BUG - this cuck event has no function for after the player gets an erection.".
+To compute cuck shoving of (P - a monster):
+	let L be the location of the player;
+	let E be the number of entries in the Nviables of L;
+	let R be a random number between 1 and E;
+	let D be entry R in the Nviables of L;
+	let LD be the room D from L;
+	shove to LD by P;
+	now modesty shutter is in the location of P;
+	say "As soon as you're beyond the threshold, a solid metal shutter slams across the doorway of [location of P]. It has 'MODESTY BARRIER' printed on in big letters, and means that you can't get back in.[line break][variable custom style]Shit![roman type][line break]Moments later, the loud feminine moans of [NameDesc of woman-player] can be heard coming from the other side of the barrier.[line break][variable custom style][one of][big he of P]'s really fucking [him of woman-player]![or]Not again...![stopping][roman type][line break][if the number of cheat-eligible monsters is 0][ultraHumiliateReflect][otherwise][severeHumiliateReflect][end if]";
+	finally destroy P;
+	vanish woman-player;
+	orgasm woman-player;
+	if the cheat-count of P is -1, now the cheat-count of P is 0;
+	increase the cheats-agreed of P by 1;
+	increase the cheat-count of P by 1.
+
+A bed-cuck-event is a kind of cuck-event.
+
+no-cuck-today is a bed-cuck-event.
+Definition: no-cuck-today is eligible:
+	if woman-player is chastity keyholding, decide no;
+	decide yes.
+To execute (C - no-cuck-today):
+	compute horny perception of woman-player.
+
+size-comparison-cucking is a bed-cuck-event. size-comparison-cucking has a number called players-response.
+Definition: size-comparison-cucking is eligible:
+	if woman-player is chastity keyholding, decide no;
+	if the size of penis < 7, decide yes;
+	decide no.
+To execute (C - size-comparison-cucking):
+	say "In this room you spot [NameDesc of woman-player] lying on the bed, breathing ragged, eyes partially glazed over with arousal.";
+	interest woman-player;
+	say "[speech style of woman-player]'[NameBimbo]... I need your [manly-penis] again...'[roman type][line break]";
+	compute erection attempt of C.
+To erection execute (C - size-comparison-cucking):
+	compute preparing for penile sex;
+	let P be a random generic-patron dark skinned dickhead patron;
+	now P is in the location of the player;
+	now current-cheat-consideration is P;
+	let pp be the girth of P - the size of penis;
+	let pph be pp * 100;
+	say "[speech style of P]'You call that thing a [manly-penis]?'[roman type][line break]Both you and [NameBimbo] snap your heads around to see [NameDesc of P] entering the room.[line break][speech style of P]'Let's compare sizes, shall we?'[roman type][line break]You [if the player is upright]stand[otherwise]whimper[end if] awkwardly as [NameDesc of P] brings [his of P] up next to yours, revealing that [his of P] impressive [girth of P] inch [manly-penis] is [if pp >= 4]over twice as long and thick[otherwise if pp is 3]nearly twice as long and thick[otherwise if pp is 2]significantly longer and thicker[otherwise]visibly longer[end if] than your [ShortDesc of penis].[paragraph break][speech style of P]'Well, [WomanName]? Which one's bigger?'[roman type][line break][BigNameDesc of P] demands.[line break][speech style of woman-player]'Yours, [if pp is 1]I guess[otherwise]obviously[end if]...'[roman type][line break][BigNameDesc of woman-player] admits. [HumiliateReflect pph]";
+	say "[BigNameDesc of P] turns to you.[line break][speech style of P]'Well, [NameBimbo]? What do you think? If you truly want your [boy of woman-player]friend to have as much satisfaction from sex as possible, you should want to let [him of woman-player] fuck the biggest [manly-penis] in the room, right?'[roman type][paragraph break][BigNameDesc of woman-player] is [if the woman-bimbo of woman-player <= 3]avoiding eye contact with you[otherwise]undeniably staring hungrily at [NameDesc of P][']s [manly-penis][end if]...";
+	reset multiple choice questions;
+	set numerical response 1 to "Refuse to let [NameDesc of P] fuck your [boy of woman-player]friend.";
+	set numerical response 2 to "Let [NameDesc of woman-player] choose.";
+	set numerical response 3 to "Give [NameDesc of woman-player] your blessing to fuck [NameDesc of P] this time.";
+	compute multiple choice question;
+	now players-response of C is player-numerical-response;
+	if player-numerical-response is 1:
+		if the player is able to speak, say "[variable custom style]'Fuck off dude, [he of woman-player] doesn't need you. I'm more than enough for [him of woman-player].'[roman type][line break]";
+		otherwise say "You shake your head fervently, making it clear that you believe that you're more than enough for [NameDesc of woman-player].";
+	otherwise if player-numerical-response is 3:
+		if the player is able to speak, say "[variable custom style]'I... I can't compare. You should fuck [him of P].'[roman type][line break]You say dejectedly.";
+		otherwise say "You bow your head in submission, and gesture to [NameDesc of P] to fuck your [boy of woman-player]friend in your stead.";
+		say "[speech style of woman-player]R-really?! You're sure? Um, okay!'[roman type][line break][BigNameDesc of woman-player] really doesn't seem very reluctant at all.";
+	if player-numerical-response is 2:
+		if the player is able to speak, say "[variable custom style]'I... I understand if you want to. I'll leave it up to you.'[roman type][line break]You say dejectedly.";
+		otherwise say "You raise your eyebrows at [NameDesc of woman-player] expectantly.";
+		say "[speech style of woman-player]'You... You want me to choose?'[roman type][line break][BigNameDesc of woman-player] asks uncertainly.";
+		let RF be a random number between 1 and the favour of woman-player;
+		decrease RF by the cheat-count of P * 2;
+		if RF >= the girth of P:
+			say "[speech style of woman-player]I... I want [NameBimbo] to fuck me.'[roman type][line break][BigNameDesc of woman-player] says in a shaky voice. But [he of woman-player] is staring unblinkingly at [NameDesc of P][']s bigger [manly-penis] as [he of woman-player] says it.";
+			now player-numerical-response is 1;
+		otherwise:
+			say "[speech style of woman-player]I... I want the bigger dick please.'[roman type][line break][BigNameDesc of woman-player] says, staring unblinkingly at [NameDesc of P][']s [girth of P]-incher as [he of woman-player] says it.";
+			now player-numerical-response is 3;
+	if player-numerical-response is 1:
+		say "[speech style of P]'Oh, is that so?'[roman type][line break][BigNameDesc of P] smirks mockingly.[line break][speech style of P]'Well, [WomanName], if you want to enjoy [bold type]at least two orgasms[roman type] when you get railed, come and find me later.'[roman type][line break]With that, [NameDesc of P] leaves you alone.[line break][variable custom style]I've been challenged to make [WomanName] cum twice... If I don't, this could be very damaging to [his of woman-player] loyalty...[roman type][line break]";
+		finally destroy P;
+		compute horny intimacy barbara scene;
+	otherwise if player-numerical-response is 3:
+		say "[speech style of P]'Hahaha, looks like your [boy of woman-player] wants it bad, cuck! Well then, give us some privacy! I don't want your weird nerdy ass watching me from behind as I enjoy this fine piece of ass.'[roman type][line break][BigNameDesc of P] shoves you backwards, and out of the room.[roman type][line break]";
+		compute cuck shoving of P.
+
+bet-cucking is a bed-cuck-event.
+Definition: bet-cucking is eligible:
+	if the times-occurred of bet-cucking > 0 or there is a has-cheated generic-patron dark skinned inexperienced patron, decide no;
+	if woman-player is happy girlfriend, decide yes;
+	decide no.
+To execute (C - bet-cucking):
+	let P be a random never-cheated generic-patron dark skinned inexperienced patron;
+	now P is in the location of the player;
+	say "In this room you find [NameDesc of woman-player] standing cross-armed, looking offended, staring daggers at [NameDesc of P].[line break][speech style of woman-player]'You could NOT!'[paragraph break][speech style of P]'Could too.'[roman type][line break][BigNameDesc of P] is smirking cockily and speaking in a rather teasing tone.";
+	interest woman-player;
+	say "[speech style of woman-player]'[NameBimbo], this ASSHOLE was just trying to claim [he of P] could make me cum by fucking my asshole. What a crazy thing to say.'[roman type][line break][BigNameDesc of woman-player] spits, clearly pissed off.[paragraph break][speech style of P]'Yep. Without even touching your pussy or your clit. And I'm even willing to bet these babies on it.'[roman type][line break][BigNameDesc of P] holds up two pink diamond rings. That gets [NameDesc of woman-player][']s attention.[paragraph break][speech style of woman-player]'Y-you what?! Really?!'[paragraph break][speech style of P]'Three minutes, my dick, your asshole, one squirting orgasm. If I fail, you keep the rings. If I win... I get to fuck your pussy OR your ass whenever I want from now on, for free.'[roman type][paragraph break][BigNameDesc of woman-player] looks to you uncertainly.[line break][speech style of woman-player]'[NameBimbo]... I know we wanted to be faithful to each other... But this is, like, free money, right?! I've got to take this bet... Don't you think? If you give me your blessing, I'll split the winnings with you... One ring each.'[roman type][line break]";
+	reset multiple choice questions;
+	set numerical response 1 to "Refuse to give [him of woman-player] permission.";
+	set numerical response 2 to "Give [NameDesc of woman-player] your blessing.";
+	compute multiple choice question;
+	if player-numerical-response is 1:
+		if the player is able to speak, say "[variable custom style]'[WomanName], we're a couple now! You can't just hop onto some [BlackCock] to try and win a bet.'[roman type][line break]";
+		otherwise say "You shake your head fervently, making it clear that you don't want [him of woman-player] to go through with it.";
+		say "[BigNameDesc of woman-player] looks troubled.[line break][speech style of woman-player]'But... Money...'[roman type][line break]";
+		if a random number between 1 and 10 >= the woman-bimbo of woman-player:
+			say "[big he of woman-player] sighs.[line break][variable custom style]'Fine. I do want to stay committed to you... So I'll turn [him of P] down.'[roman type][paragraph break][BigNameDesc of P] spits on the floor.[line break][speech style of P]'You guys are lame! I'm out of here.[roman type][line break][big he of P] leaves the way you came.";
+			finally destroy P;
+		otherwise:
+			now player-numerical-response is 3;
+			say "After a moment, [he of woman-player] stamps [his of woman-player] foot.[line break][speech style of woman-player]'I'm sorry if this hurts your feelings, [NameBimbo], but I have to go through with this. And since you won't give me your blessing... I'm going to be keeping both of the rings for myself.'[roman type][paragraph break][BigNameDesc of P] cackles loudly.[line break][speech style of P]'Hahaha, yeah! That's what I'm talking about! Let's do this thing. And we don't need you watching us, you little weirdo. Give us some privacy.'[roman type][line break][BigNameDesc of P] shoves you backwards, and out of the room.[roman type][line break]";
+			compute cuck shoving of P;
+	otherwise:
+		if the player is able to speak, say "[variable custom style]'I understand... Rings are super valuable in this game. Go win that stupid bet and let's get out of here even richer than we expected.'[roman type][line break]";
+		otherwise say "You quietly nod your assent.";
+		say "[BigNameDesc of woman-player] smiles gratefully at you, and then turns back to [NameDesc of P].[line break][speech style of woman-player]'You're on, knucklehead. Three minutes, and no touching my pussy.'[roman type][paragraph break]You gulp and watch as your [boy of woman-player]friend crawls onto the bed, and spreads [his of woman-player] buttcheeks for another [man of the player].[line break][variable custom style][WomanName]...[roman type][paragraph break]And then, faster than you expected, it's happening. [BigNameDesc of P] has lined up [his of P] [BlackCock], and begun to sink into [NameDesc of woman-player][']s most unholy of holes. [big he of woman-player] squeals like a pig as [his of woman-player] sphincter is stretched wider than it ever has before.[line break][speech style of woman-player]'Oh my... Oh my god!'[roman type][paragraph break]";
+		say ModestyBarrierDownFlav;
+		now modesty shutter is in the location of the player;
+		if the cheat-count of P is -1, now the cheat-count of P is 0;
+		increase the cheats-agreed of P by 1;
+		increase the cheat-count of P by 1;
+		compute single choice question "Watch another man ass-fuck your [boy of woman-player]friend";
+		say "You [if the player is upright]stand[otherwise]lay[end if] there and watch as a minute of impressive ass-fucking happens in front of your eyes.[line break][speech style of woman-player]'I'm... I'm getting wet! How are you doing this?!'[roman type][line break][BigNameDesc of woman-player] squeaks, [his of woman-player] voice filled with panicked surprise.[paragraph break][speech style of P]'Haha, you've never had proper black [manly-penis] up here before, have you?'[roman type][line break]";
+		cuck arouse 2000;
+		compute single choice question "Watch on helplessly";
+		cuck arouse 2000;
+		say "Another minute of noisy, hard anal sex fills the air... Along with the unmistakable scent of feminine arousal.[line break][speech style of woman-player]'Oh my god... My ass! You're so deep! Fuck fuck fuck!'[roman type][line break]You've never seen [NameDesc of woman-player] quite this red in the face before. [big he of woman-player] looks like [he of woman-player][']s using every ounce of willpoewr to keep [himself of woman-player] from cumming.[paragraph break][speech style of P]'One minute left, slut! Do you think you can hold on?'[line break][speech style of woman-player]'O-of course! I wouldn't be so depraved as to have an orgasm from t-this!'[roman type][line break]";
+		compute single choice question "Watch on in silent disbelief";
+		say "The next 60 seconds seem to stretch on into infinity.[line break][speech style of woman-player]'Fuck fuck fuck!'[roman type][line break][BigNameDesc of woman-player][']s get more and more high pitched...[paragraph break]";
+		let RB be a random number between 1 and 7;
+		if RB <= the woman-bimbo of woman-player:
+			say "[speech style of woman-player]'Fuck! Cumming! Fuck!'[roman type][line break]But [he of woman-player] didn't really need to announce it. A fountain of squirt shoots out from [his of woman-player] crotch, soaking the sheets beneath [him of woman-player], cold hard evidence of [him of woman-player] losing the bet.[paragraph break][speech style of P]'Fuck yes, bitch, your ass is mine! I'm cumming too!'[roman type][line break][BigNameDesc of P] adds insult to injury by emptying [his of P] balls into your [boy of woman-player]friend's guts.";
+			cuck arouse 2000;
+			progress quest of cuck-quest;
+			say "[speech style of P]'Hahaha, yes! To the victor, the spoils!'[roman type][line break][BigNameDesc of P] croons as [he of P] pulls [his of P] [BlackCock] from your lover's ass with a noisy wet slurp.[line break][speech style of P]'Free fucks for life! I'll be seeing you around, shawtie!'[roman type][line break][big he of P] smacks [NameDesc of woman-player][']s ass, which elicits a yelp of shame from [him of woman-player].[paragraph break][speech style of woman-player]'I'm so sorry, [NameBimbo], I thought... I didn't... I wasn't expecting... Oh, I'm such a fool! Of course this place would have special rules to make anal sex with [BlackCock] feel extra-pleasurable...'[roman type][line break]";
+			if a2m fetish >= 1:
+				say "[BigNameDesc of P] chuckles darkly.[line break][speech style of P]'You two are just so darn pathetic, you know that? Tell you what, if you're so desperate for these rings... I'll give them to you... If you [if a2m fetish >= 2]drink all my [semen] out of your [boy of woman-player][']s asshole[otherwise]suck your [boy of woman-player][']s ass juices off of my cock[end if].'[roman type][paragraph break]Both yours and [NameDesc of woman-player][']s eyes shoot open wide.[line break][speech style of woman-player]'[NameBimbo]... We really need the rings...'[roman type][line break]Do what's been asked of you?";
+				if the player is bimbo consenting:
+					if a2m fetish >= 2:
+						say "Shaking, you approach [NameDesc of woman-player][']s ass, and seal your lips against [his of woman-player] freshly-fucked brown star. [big he of woman-player] makes a weak mewling noise as you worm your tongue inside. There's not much resistance - and after you tease it open, the weakened muscle relaxes entirely, and opens as wide as it was stretched just a moment before with another [man of P][']s cock was inside it.[paragraph break][BigNameDesc of P][']s load comes surging out all at once, hitting your tongue and flooding your mouth with its bitter, salty taste.";
+						TasteGrossOut 10;
+						FaceFill semen by 4;
+						if the total volume of face > 0:
+							compute swallowing;
+							say "[BigNameDesc of P] is laughing so hard that [he of P] can hardly breathe.[line break][speech style of P]'I can't! I can't! It's too pathetic! To not only get cucked, but to eat [his of woman-player] ass out afterwards... You really are the lowers of the low. Here, take them, take them quickly, I have to go before I die of laughter!'[roman type][line break][BigNameDesc of P] hands one pink diamond ring to [NameDesc of woman-player], and then tosses one on the floor in front of you.";
+							let R be a random off-stage plentiful ring;
+							now R is pink diamond;
+							set shortcut of R;
+							now R is in the location of the player;
+							compute autotaking R;
+						otherwise: [automatically spat it out]
+							say "[speech style of P]'Sorry, that doesn't count, I said DRINK it! No deal!'[roman type][line break]";
+					otherwise:
+						say "Shaking, you approach [NameDesc of P][']s ass, open wide to allow it inside.[paragraph break]The bitter taste of [NameDesc of woman-player][']s ass is all over the huge [BlackCock], and it takes several moments to slurp it all off.";
+						TasteGrossOut 7;
+						say "[BigNameDesc of P] is laughing so hard that [he of P] can hardly breathe.[line break][speech style of P]'I can't! I can't! It's too pathetic! To not only get anally cucked, but to suck my cock afterwards... You really are the lowers of the low. Here, take them, take them quickly, I have to go before I die of laughter!'[roman type][line break][BigNameDesc of P] hands one pink diamond ring to [NameDesc of woman-player], and then tosses one on the floor in front of you.";
+						let R be a random off-stage plentiful ring;
+						now R is pink diamond;
+						set shortcut of R;
+						now R is in the location of the player;
+						compute autotaking R;
+					say severeHumiliateReflect;
+				otherwise:
+					if the player is able to speak, say "[variable custom style]'No fucking way, dude. Just get out of here.'[roman type][line break]";
+					otherwise say "You shake your head violently.";
+					say "[speech style of woman-player]'[NameBimbo]! I thought you cared about me...'[roman type][line break][BigNameDesc of woman-player] seems dejected that you wouldn't humiliate yourself for yours and [hers of woman-player] mutual benefit.";
+					FavourDown woman-player;
+					say "[speech style of P]'Whatever. I'm done here. [WomanName]. I'll see you around for those free fucks.'[roman type][line break]";
+		otherwise:
+			say "[speech style of woman-player]'Fuck! Fuck! I'm gonna... I'm gonna!'[roman type][line break]Your mouth goes dry, but then you look at the clock on the wall and realize.";
+			if the player is able to speak, say "[variable custom style]'Time's up! That's three minutes! You're done.'[roman type][line break][BigNameDesc of P] snarls with annoyance, but doesn't cheat. [big he of P] pulls ";
+			otherwise say "[variable custom style]Time's up![roman type][line break]You pull [NameDesc of P] ";
+			say "out of your [boy of woman-player]friend's asshole, which is now winking lewdly, going from gaped to closed to gaped to closed again.[paragraph break]";
+			say "[speech style of P]'Dammit! Fine, you win. But you have to admit it was close! Your [boy of woman-player] loves a good anal stretching, and you can't deny it! I wonder how long it'll be before [he of woman-player] comes crawling back for more from a proper sized cock like mine.'[roman type][line break][BigNameDesc of P] hands one pink diamond ring to [NameDesc of woman-player], and then tosses one on the floor in front of you.";
+			let R be a random off-stage plentiful ring;
+			now R is pink diamond;
+			set shortcut of R;
+			now R is in the location of the player;
+			compute autotaking R;
+			say "[variable custom style]Phew... At least we got what we wanted from that.[roman type][line break]";
+		say "[BigNameDesc of P] leaves the way you came. Meanwhile, [NameDesc of woman-player] is having trouble looking at you in the eyes.";
+		finally destroy P.
+
+caught-cucking is a bed-cuck-event.
+Definition: caught-cucking is eligible:
+	if a random number between 0 and the number of cheat-eligible generic-patron patrons > a random number between 0 and 1, decide yes;
+	decide no.
+To execute (C - caught-cucking):
+	let P be a random cheat-eligible generic-patron patron;
+	focus-consider P;
+	increase the cheat-count of P by 1;
+	increase the cheats-caught of P by 1;
+	say "In this room you find [NameDesc of woman-player] on the bed, sweaty and exhausted.[line break][speech style of P]'Later, slut.'[roman type][line break][BigNameDesc of P] is walking out of the room as you're walking in. [big he of P] gives you a knowing smirk, before disappearing around the corner.[paragraph break][speech style of woman-player]'Oh, um, hi [NameBimbo], how lovely to see you... Just give me a moment...'[roman type][line break][BigNameDesc of woman-player] is way too flustered. It's all too obvious that [he of woman-player] has just finished having sex with [NameDesc of P].[line break][variable custom style]I should say something... But I can't bring myself to... God, I'm such a pathetic loser...[roman type][line break][severeHumiliateReflect]";
+	if the raw delicateness of the player < a random number between 7 and 15, DelicateUp 1;
+	orgasm woman-player;
+	now the woman-status of woman-player is 26;
+	interest woman-player.
+
+
+key-bait is a bed-cuck-event. key-bait has an object called the target-key. key-bait has an object called the target-clothing.
+Definition: key-bait is prioritised:
+	if key-bait is eligible:
+		if the target-key of key-bait is a thing, decide yes;
+	decide no.
+Definition: key-bait is eligible:
+	now the target-key of key-bait is nothing;
+	now the target-clothing of key-bait is nothing;
+	repeat with K running through specific-keys:
+		if K is not held and K is not in pink wardrobe and K is not held by woman-player:
+			repeat with C running through worn locked clothing:
+				if K is covering C:
+					now the target-key of key-bait is K;
+					now the target-clothing of key-bait is C;
+	if the target-key of key-bait is nothing:
+		repeat with C running through worn locked clothing:
+			if the number of specific-keys covering C is 0, decide yes;
+	if the target-key of key-bait is a thing, decide yes;
+	decide no.
+To execute (C - key-bait):
+	say "In this room you spot [NameDesc of woman-player] lying on the bed, breathing ragged, eyes partially glazed over with arousal.";
+	interest woman-player;
+	say "[speech style of woman-player]'[NameBimbo]... I need your [manly-penis] again...'[roman type][line break]";
+	compute erection attempt of C.
+To erection execute (C - key-bait):
+	let CC be random worn locked clothing;
+	if the target-key of key-bait is nothing:
+		repeat with CCC running through worn locked clothing:
+			if the number of specific-keys covering CCC is 0, now CC is CCC;
+	if the target-key of key-bait is nothing:
+		now the target-key of key-bait is a random off-stage specific-key;
+		if the target-key of key-bait is nothing, now the target-key of key-bait is a random specific-key;
+		now the target-key of key-bait is covering CC;
+		now the target-clothing of key-bait is CC;
+	compute preparing for penile sex;
+	let P be a random generic-patron dark skinned patron;
+	now the target-key of key-bait is carried by P;
+	now P is in the location of the player;
+	say "[speech style of P]'Just a sec...'[roman type][line break]Both you and [NameBimbo] snap your heads around to see [NameDesc of P] entering the room.[line break][speech style of P]'Am I right in saying that you're looking for this?'[roman type][line break][BigNameDesc of P] is holding up [NameDesc of the target-key of key-bait], which you immediately recognise as the key that will fit in the lock on your [target-clothing of key-bait].[paragraph break][speech style of woman-player]'Hey, [NameBimbo] needs that! Give it to [him of the player]!'[roman type][line break][BigNameDesc of woman-player] demands on your behalf.[paragraph break][speech style of P]'Sure. Absolutely. No problem. As long as I get something too. How about... An old-fashioned fuck session with you?'[roman type][line break][BigNameDesc of P] offers.[paragraph break][speech style of woman-player]'But I... I promised myself to [NameBimbo]...'[roman type][line break][BigNameDesc of woman-player] mumbles uncertainly.[paragraph break][speech style of P]'No fuck, no key.'[roman type][line break][BigNameDesc of P] dangles the key temptingly.[paragraph break][speech style of woman-player]'[NameBimbo]... I'll do it if you want me to... Do you want me to?'[roman type][line break][BigNameDesc of woman-player] asks you delicately.";
+	reset multiple choice questions;
+	set numerical response 1 to "Fuck [NameDesc of woman-player] yourself, and decline the offer of the key to your [ShortDesc of the target-clothing of key-bait].";
+	set numerical response 2 to "Allow [NameDesc of P] to fuck your [boy of woman-player]friend in exchange for the key.";
+	compute multiple choice question;
+	if player-numerical-response is 1:
+		if the player is able to speak, say "[variable custom style]'I'm the only one who fucks [WomanName] from now on. You can go to hell.'[roman type][line break]";
+		otherwise say "You shake your head fervently, making it clear that you don't want [him of woman-player] to go through with it.";
+		say "[BigNameDesc of woman-player] looks surprised, but smiles.[line break][speech style of woman-player]'Okay, [NameBimbo], if you're sure...'[roman type][line break]";
+		say "[speech style of P]'Suit yourself, losers. I'm gonna hide this key somewhere nobody will ever find it.'[roman type][line break][big he of P] leaves the way you came.";
+		let S be a random on-stage safe;
+		now the target-key of key-bait is in S;
+		now S is closed;
+		finally destroy P;
+		say "[speech style of woman-player]'Okay, [NameBimbo], now where were we...'[roman type][line break]";
+		compute horny intimacy barbara scene;
+	otherwise:
+		if the player is able to speak, say "[variable custom style]'I don't like the idea of you fucking other [men of P]... But I do really need the key. Sorry.'[roman type][line break]";
+		otherwise say "You quietly nod your assent.";
+		say "[BigNameDesc of woman-player] smiles almost pitifully at you. [big he of woman-player] seems almost too horny to care about who [he of woman-player] fucks.[line break][speech style of woman-player]'Hand over the key first, and then you can have me however you like.'[roman type][paragraph break][variable custom style][big he of woman-player] doesn't need to sound quite so eager...[roman type][line break]You are quickly handed the key, and then you gulp and watch as your [boy of woman-player]friend crawls onto the bed, and spreads [his of woman-player] buttcheeks for another [man of the player].[line break][variable custom style][WomanName]...[roman type][paragraph break]";
+		say "[speech style of P]'Pleasure doing business with you, cuck-[boy of the player]! Now, give us some privacy! I don't need an audience while I enjoy this juicy-looking set of holes.'[roman type][line break][BigNameDesc of P] shoves you backwards, and out of the room.[roman type][line break]";
+		now the target-key of key-bait is carried by the player;
+		focus-consider the target-key of key-bait;
+		compute cuck shoving of P.
+
+cursed-cage is a bed-cuck-event.
+Definition: cursed-cage is prioritised:
+	if the player is very horny, decide yes;
+	decide no.
+Definition: cursed-cage is eligible:
+	if the times-occurred of cursed-cage > 0 or there is a worn chastity bond, decide no;
+	if the player is able to speak, decide yes;
+	decide no.
+To execute (C - cursed-cage):
+	say "In this room you spot [NameDesc of woman-player] lying on the bed, breathing ragged, eyes partially glazed over with arousal.";
+	interest woman-player;
+	say "[speech style of woman-player]'[NameBimbo]... I need your [manly-penis] again...'[roman type][line break]";
+	compute erection attempt of C.
+To erection execute (C - cursed-cage):
+	compute preparing for penile sex;
+	let CC be a random off-stage fetish appropriate chastity cage;
+	if CC is nothing, now CC is a random fetish appropriate chastity cage;
+	summon CC cursed;
+	now the quest of CC is cuck-quest;
+	say "But then, your knee hits a panel in the ground, and a magic rune appears! In the next moment, a [CC] has appeared around your [player-penis]!";
+	cutshow Figure of shrink rune trap triggered;
+	focus-consider CC;
+	say QuestFlav of cuck-quest;
+	say "[speech style of woman-player]'Oh my god, [NameBimbo]! What are the odds?! Is it cursed? What does it say? How do you remove the curse?'[roman type][line break][BigNameDesc of woman-player] asks worriedly.[paragraph break]";
+	let P be a random generic-patron dark skinned patron;
+	now P is in the location of the player;
+	say "And of course, almost as if summoned by the game, just at this moment, [NameDesc of P] happens to wander into the room. First [he of P] looks at [NameDesc of woman-player] bent over, ready for you to enter [him of woman-player].[line break][speech style of P]'Damn, nice holes.'[roman type][line break]Then [he of P] looks at you, and the triggered trap under your knee, and your new [ShortDesc of CC].[line break][speech style of P]'Sucks to be you, I guess.'[roman type][paragraph break]The game has put you in an impossible situation![line break][variable custom style]I can't tell [NameDesc of woman-player] I have to watch [NameDesc of P] make [him of woman-player] orgasm... Can I?![roman type][line break]";
+	reset multiple choice questions;
+	set numerical response 1 to "Lie, and pretend the curse is something different.";
+	set numerical response 2 to "Tell [NameDesc of woman-player] the truth - that if [he of woman-player] wants the cage to come off, [he of woman-player] first has to get off on [BlackCock].";
+	compute multiple choice question;
+	if player-numerical-response is 1:
+		say "[variable custom style]'It's, um, a quest to eat a certain amount of stuff. I'll get it off soon enough.'[roman type][line break]";
+		say "[BigNameDesc of woman-player] raises [his of woman-player] eyebrows, but smiles.[line break][speech style of woman-player]'Okay, that's good to hear. Don't take too long, though, okay? I'm getting desperate here...'[roman type][paragraph break]";
+		say "[speech style of P]'Let me know if you get kept waiting too long, shawtie. I've got a big one right here waiting for someone to beg for it.'[roman type][line break][big he of P] leaves the way [he of P] came.[paragraph break]";
+		finally destroy P;
+		say "[speech style of woman-player]'What an asshole...'[roman type][line break][BigNameDesc of woman-player] comments, but [his of woman-player] tone of voice is too soft and warm...[line break][variable custom style]I've got to find a way to get this off, and FAST.[roman type][line break]";
+		decrease the sex-satisfaction of woman-player by 1;
+		if the cheat-count of P < 0, now the cheat-count of P is 0;
+	otherwise:
+		let able-to-cum be false;
+		if the player is able to orgasm so soon, now able-to-cum is true;
+		if the player is able to speak, say "[variable custom style]'The uncurse quest is... Oh god, I can't believe I'm saying this, but I need you to have sex with a black [man of P] until you orgasm.'[roman type][line break]";
+		let NM be the substituted form of "[NameBimbo]";
+		let NMS be the substituted form of "[character number 1 in NM][character number 2 in NM]- ";
+		say "[BigNameDesc of woman-player] raises [his of woman-player] eyebrows, but smiles.[line break][speech style of woman-player]'...Oh.'[roman type][paragraph break][speech style of P]'Lucky for you that I'm right here, then!'[roman type][line break][BigNameDesc of P] strides towards your [boy of woman-player] purposeful and dominant.[paragraph break][speech style of woman-player]'Well, then, if you don't mind... I guess we have no choice but to... AAAAH~'[roman type][paragraph break]Almost before either you or [NameDesc of woman-player] had even had a chance to fully process what was about to happen, [NameDesc of P] has just casually slid [his of P] [DickDesc of P] into your [boy of woman-player]friend's loose wet snatch.[line break][speech style of woman-player]'Oh my gosh! You're way bigger than [NMS]I mean... Bigger than... I expected!'[roman type][paragraph break]";
+		say ModestyBarrierDownFlav;
+		now modesty shutter is in the location of the player;
+		if the cheat-count of P is -1, now the cheat-count of P is 0;
+		increase the cheats-agreed of P by 1;
+		increase the cheat-count of P by 1;
+		if the player is not very horny, cuck arouse 3000;
+		compute single choice question "Watch a black [man of P] fuck [WomanName] in front of you";
+		say "You watch on helplessly, you [player-penis] throbbing inside its new cage as this virile, athletic [man of P] plows your [boy of woman-player]friend's sex for all that [he of P][']s worth.[paragraph break][speech style of P]'Yes, take it right there, you slut!'[roman type][line break][BigNameDesc of P] snarls with dominant energy.[paragraph break][speech style of woman-player]'Fuck fuck fuck fuck! It's so good!'[paragraph break][variable custom style]Did [he of woman-player] have to admit that out loud?[roman type][line break][if the player is able to orgasm so soon]But despite your frustration, your own arousal continues to build.[end if]";
+		cuck arouse 2000;
+		if the player is able to orgasm so soon:
+			say "[speech style of woman-player]'[NameBimbo], come kiss me...'[paragraph break][variable custom style][big he of woman-player] wants me to kiss [him of woman-player] while [he of woman-player][']s fucking another [man of P]?[roman type][line break]";
+			if the player is bimbo consenting:
+				say "You step round to [NameDesc of woman-player][']s front and lock lips with [him of woman-player]. In this position, you feel every thrust of [NameDesc of P] as [he of P] slams into your partner's pussy again and again. [severeHumiliateReflect]";
+				FavourUp woman-player;
+				cuck arouse 3000;
+			otherwise:
+				say "Your body is frozen to the spot - you don't even manage to respond.[line break][variable custom style]Fuck, this is so fucked up![roman type][line break]";
+				cuck arouse 2000;
+		otherwise:
+			compute single choice question "Watch on helplessly";
+			say "Your body is frozen to the spot - you don't even manage to respond.[line break][variable custom style]Fuck, this is so fucked up![roman type][line break]";
+			cuck arouse 2000;
+		if able-to-cum is true and the player is not able to orgasm so soon: [player already had a spontaneous cage orgasm]
+			compute single choice question "Fall backwards, dazed";
+			say "[speech style of woman-player]'[NameBimbo], you had an orgasm inside the cage?!'[roman type][line break][BigNameDesc of woman-player] asks, confused, and more than a bit distracted.[paragraph break][variable custom style]'I... I can't believe it... What's wrong with me?!'[roman type][line break]";
+			increase the spontaneous-orgasms-witnessed of woman-player by 1;
+		otherwise:
+			compute single choice question "Continue to watch on helplessly";
+		say "And then suddenly, [NameDesc of woman-player] starts moaning like a bitch in heat.[line break][speech style of woman-player]'Yes, yes, right there, don't stop, oh my god oh my god oh my GOD!'[roman type][line break][big he of woman-player] has a screaming, squirting orgasm, right there in front of you, all over [NameDesc of P][']s [manly-penis].[paragraph break]";
+		cuck arouse 2000;
+		progress quest of cuck-quest;
+		say "[speech style of P]'Don't forget about me!'[roman type][line break][BigNameDesc of P] roars as [he of P] reaches [his of P] own climax, filling your lover's [if pregnancy fetish > 0]fertile [end if]snatch with [his of P] thick, creamy load.[paragraph break][variable custom style]Oh my god, that really just happened...[roman type][paragraph break]And then, just as suddenly as the orgasms happened, it's all over, and [NameDesc of P] is unceremoniously pulling out of [NameDesc of woman-player] with a loud wet sound.[line break][speech style of P]'You're a good lay, bitch! I'll see you around. Let me know if you're ever interested in round two, if your [boy of the player] continues to have such a hard time pleasing you first.'[roman type][line break][BigNameDesc of P] taunts as [he of P] leaves the way [he of P] came in.[paragraph break]Meanwhile, a panting, breathless, thoroughly well-fucked [NameDesc of woman-player] is uncomfortably silent.[paragraph break][variable custom style]That was... We had no other choice... Right?[roman type][line break]";
+		now the woman-status of woman-player is 26;
+		finally destroy P.
+
+cage-conversation is a bed-cuck-event.
+Definition: cage-conversation is prioritised: decide yes.
+Definition: cage-conversation is eligible:
+	if there is a worn chastity bond or face is actually occupied or woman-player is key-crumbled, decide no;
+	if the sex-satisfaction of woman-player < 0 and woman-player is not happy girlfriend and there is an off-stage specific-key, decide yes;
+	decide no.
+To execute (C - cage-conversation):
+	let CC be a random off-stage fetish appropriate chastity bond;
+	if CC is nothing, now CC is a random fetish appropriate chastity bond;
+	blandify and reveal CC;
+	now CC is in the location of the player;
+	say "In this room you find [NameDesc of woman-player] on the bed, legs crossed, looking firm. On the bed next to [him of woman-player], is a [ShortDesc of CC].[paragraph break][speech style of woman-player]'Take a seat, ['][boy of the player]friend['].'[roman type][line break][big he of woman-player] says that last word as if you don't deserve to be called [his of woman-player] ['][boy of the player]friend['].";
+	interest woman-player;
+	compute single choice question "Take a seat next to [NameDesc of woman-player]";
+	say "You gingerly sit down. It's clear that this is not going to be a fun talk.[paragraph break][speech style of woman-player]'I think we can both agree, that this hasn't been working out. In a game like this, I need CONSISTENT satisfaction, to keep my wits about me, and you can't seem to provide that.'[roman type][line break][big he of woman-player] speaks tersely and formally at first, but now, [his of woman-player] tone softens.[line break][speech style of woman-player]'I do, however, still feel a connection - a bond - with you, and I don't want to lose that. I also can't bear to think of you finding another [man of woman-player]. So... I have a proposed solution. I'm going to lock you in this [if CC is chastity cage]cage[otherwise]belt[end if], and keep the key. And then you will do your best to satisfy me with your tongue from now on. Hopefully I'll at least get some dominance points back this way. And if you can't satisfy me... Well then, you can't blame me if I have to look elsewhere. And if you DO satisfy me... Well, then you can earn your own orgasms from me just like before.'[roman type][line break]It doesn't look like [NameDesc of woman-player] intends to take [']no['] for an answer... If you say no, it'll be the end your relationship.";
+	say "[variable custom style]I can't lose a [boy of woman-player]friend so quickly... That would be devastating for my self-esteem...[roman type][line break]Agree to let [NameDesc of woman-player] lock you in chastity?[line break]";
+	if the player is bimbo consenting:
+		say "[speech style of woman-player]'This is for the good of our relationship.'[roman type][line break]";
+		summon CC;
+		say LockFlav of woman-player for CC;
+		let K be a random off-stage specific-key;
+		now K is covering CC;
+		now woman-player is carrying K;
+		add K to the taxableItems of woman-player;
+		say LockAfterFlav of woman-player for CC;
+		say "[speech style of woman-player]'Good. I'm glad we could come to this understanding. Now, about that tongue of yours...'[roman type][line break]You get on your knees between [NameDesc of woman-player][']s legs and get in there with your tongue. It's hard work, but you are soon rewarded with a face full of squirt.[speech style of woman-player]'Fuck YES! I knew I would find this reinvigorating. I feel more dominant already! Good [boy of the player].'[roman type][line break]";
+		say "[variable custom style]I do feel happy for having satisfied [him of woman-player]... But also... Frustrated...[roman type][line break]";
+		Dignify 1000;
+		OralSexAddictUp 1;
+		arouse 2000;
+	otherwise:
+		say "[speech style of woman-player]'Fine. Then we are going back to being just [']friends[']. I guess I'll see you around.'[roman type][line break]";
+		FavourDown woman-player;
+		progress quest of cuck-quest;
+		now the horny-scene of woman-player is -1.
+
+Definition: a monster (called M) is chastity keyholding:
+	let CC be a random worn locked chastity bond;
+	if CC is chastity bond:
+		repeat with K running through specific-keys held by M:
+			if K is covering CC, decide yes;
+	decide no.
+
+cage-crumbled is a bed-cuck-event.
+Definition: cage-crumbled is prioritised: decide yes.
+Definition: cage-crumbled is eligible:
+	if woman-player is key-crumbled, decide yes;
+	decide no.
+To execute (C - cage-crumbled):
+	say "In this room you find [NameDesc of woman-player] on the bed, legs crossed, looking firm. [paragraph break][speech style of woman-player]'Tell me, ['][boy of the player]friend['], why did the key to your cage crumble to dust in my hands? Did you allow someone else to unlock you, hmm? No, don't bother trying to explain yourself. This was a deal we made, and you allowed that deal to be broken. So, we're done. We are going back to being just [']friends[']. I'll see you around.'[roman type][line break]";
+	FavourDown woman-player;
+	progress quest of cuck-quest;
+	now the horny-scene of woman-player is -1;
+	now woman-player is not key-crumbled;
+	say "[variable custom style]No no no no no, I can't believe that the only other real person in this entire place has already dumped me! Am I really that shit of a human?![roman type][line break][ultraHumiliateReflect]".
+
+cage-bait is a bed-cuck-event.
+Definition: cage-bait is eligible:
+	if woman-player is chastity keyholding, decide yes;
+	decide no.
+To execute (C - cage-bait):
+	say "In this room you find [NameDesc of woman-player] on the bed, legs wide open, looking dominant.[line break][speech style of woman-player]'Get on your knees, slave. It's time to work towards earning your next cage release.'[roman type][line break]";
+	interest woman-player;
+	say "Eat [NameDesc of woman-player][']s pussy?";
+	if the player is bimbo consenting:
+		say "You get on your knees between [NameDesc of woman-player][']s legs and get in there with your tongue. It's hard work, but you are soon rewarded with a face full of squirt.[speech style of woman-player]'Fuck YES! Good [boy of the player].'[roman type][line break]";
+		say "[variable custom style]I do feel happy for having satisfied [him of woman-player]... But also... Frustrated... I wonder if [he of woman-player][']ll ever actually free me...[roman type][line break]";
+		Dignify 1000;
+		OralSexAddictUp 1;
+		arouse 2000;
+	otherwise:
+		say "[speech style of woman-player]'You are so fucking useless. We are going back to being just [']friends[']. I guess I'll see you around.'[roman type][line break]";
+		FavourDown woman-player;
+		progress quest of cuck-quest;
+		now the horny-scene of woman-player is -1;
+		say "[variable custom style]No no no no no, I can't believe that the only other real person in this entire place has already dumped me! Am I really that shit of a human?![roman type][line break][ultraHumiliateReflect]".
+
+
+
+
 Chapter - Patron Scene
 
 To compute patron scene of (W - woman-player):
@@ -934,7 +1603,7 @@ To compute patron scene of (W - woman-player):
 	say "[first custom style]'Hey everyone, get in here!'[roman type][line break]A hidden door opens from the opposite wall, and you watch [the number of patrons in the location of the player] patrons stride in, each with a bottle of beer in one hand and a party hat on their head. [if the number of N-viable directions is 1]A modesty barrier comes[otherwise]Modesty barriers come[end if] down, preventing either of you from leaving[if W is asleep]. [BigNameDesc of W] wakes up with a start[end if].[line break][first custom style]'We've paid a lot of money to be allowed to have two of you at once, so you'd better follow everything we say.'[roman type][line break]A look of [if the bimbo of the player < 5]horror[otherwise if the bimbo of the player < 10]uncertainty[otherwise]understanding[end if] passes between you and [NameDesc of W]. Whether you fight or fuck them, this is going to be a great challenge. One of the older patrons speaks first.[line break][first custom style]'Okay, let's get this party started[if the player is upright]. On your knees, bitches[end if].'[roman type][line break]";
 	now the sleep of W is 0;
 	mapcutshow Figure of Barbara Cutscene 19 for W;
-	now a random modesty shutter is in the location of the player.
+	now modesty shutter is in the location of the player.
 
 Report slapping patron when woman-player is in the location and the woman-status of woman-player is 96:
 	if the patron-scene-fighting of woman-player < 2, now the patron-scene-fighting of woman-player is 2.
@@ -1084,7 +1753,7 @@ To compute patron scene climax of (W - woman-player):
 		repeat with M running through alive patrons:
 			now the boredom of M is 0;
 			now M is unleashed;
-			destroy M;
+			finally destroy M;
 		force allocate 6 seconds.
 
 Chapter - Anal Only Stool
@@ -1629,7 +2298,7 @@ To compute protection of (M - woman-player):
 To compute unique interaction of (M - woman-player):
 	if the woman-status of M is 96 and the patron-scene-done of M is 1 and M is in the location of the player:
 		compute patron scene climax of M;
-	otherwise if the woman-status of M is 82 and pregnancy fetish is 1 and the pregnancy of the player is 0 and (the player is immobile or milking is 1) and (the player is possessing a vagina or the player is ready for event TG):
+	otherwise if the woman-status of M is 82 and pregnancy fetish is 1 and the pregnancy of the player is 0 and (the player is immobile or milking is 1) and (the player is possessing a vagina or the player is ready for uncommon event tg):
 		compute pregnancy swap of M;
 	otherwise if the woman-bimbo of M < 4 and the woman-status of M < 10 and the player is possessing a penis and the size of penis > 7:
 		compute penis siphoning of M;
@@ -1670,7 +2339,7 @@ To compute (M - woman-player) protecting against (X - a monster):
 
 To compute pregnancy swap of (M - woman-player):
 	say "[speech style of woman-player]'I'm really sorry about this, but if I don't take this opportunity now, I know it'll never come again. I've got to do what's right for myself.'[roman type][line break][BigNameDesc of woman-player] advances on you, in your compromised position.[line break][variable custom style][if the player is able to speak]'[womanName], what are you...'[otherwise]Wait, what is [he of woman-player]...[end if][roman type][line break][big he of woman-player] presses a palm to your belly, and whispers into your ear.[line break][speech style of woman-player]'[one of]The witch taught me a special way... To get someone to share my burden[or]How was it last time? Are you excited to give birth again? I'm almost jealous[stopping].'[roman type][line break]Looking down with [horror the sex addiction of the player], you realise that [his of woman-player] belly has shrunk back to normal, while yours has expanded to that huge, full term pregnant size.[line break][variable custom style]Holy shit...[roman type][line break]";
-	if the player is ready for event TG:
+	if the player is ready for uncommon event tg:
 		say "[BigNameDesc of woman-player]'s magic surges down from your belly to your loins. [if the player is possessing a penis]Your [player-penis] feels... Absent![end if] The logical conclusion of what has just happened to you is clear, and it only takes a moment for you to check and confirm... You're no longer biologically male. You have a real, fully functional vagina and womb![line break][variable custom style]And I'm already 9 months pregnant... This is insane![roman type][line break]";
 		SexChange the player;
 	cutshow figure of barbara cutscene 13 for woman-player;
@@ -1836,6 +2505,9 @@ To compute basic greeting to (M - woman-player):
 			now the current-errand of M is satisfy-pimp-errand;
 			now the current-reward of M is alliance-reward;
 			say "[speech style of M]'Oh [NameBimbo], I've got myself in a terrible pickle! That nasty pimp [unless playerRegion is hotel]up in the hotel [end if]has attached this portal thing to my breasts, and has said that I'm in so much debt with [him of pimp] that [he of pimp][']ll be letting [men of male-m] play with my tits for the rest of my days... I don't know what to do! [big he of pimp] clearly doesn't trust me... Is there any way you could negotiate something with [him of pimp]? I'd be forever in your debt...'[roman type][line break]";
+		otherwise if M is girlfriend:
+			if M is happy girlfriend, say "[speech style of M]'Hey [NameBimbo], [one of]thank goodness you're still here too[or]let's adventure together for a bit[or]I feel so much better whenever I see you[or]my knight in shining armour[or]my love[stopping]...'[roman type][line break]";
+			otherwise say "[speech style of M]'[one of]Oh there you are[or]I've been looking for you[or]You're still here. Good[then at random].'[roman type][line break][BigNameDesc of M] seems [one of]more terse[or]less affectionate[cycling] than [he of M] used to...";
 		otherwise if the woman-status of M is 0:
 			if M is interested:
 				say "[speech style of M]'I hate being alone in these woods...'[roman type][line break]";
@@ -2038,16 +2710,16 @@ To decide which number is the requestability of (C - suck-my-dick):
 	decide on 12 - (the woman-bimbo of woman-player * 2).
 Definition: suck-my-dick is appropriate:
 	if the player is not the donator, decide no;
-	if the player is not possessing a penis or the player is not a bit horny, decide no;
+	if the player is not possessing a penis or the player is not a bit horny or penis is detached, decide no;
 	if there is pussy covering actually unavoidable clothing, decide no;
 	if the noun is woman-player and the woman-status of woman-player < 30, decide yes;
 	decide no.
 To say RequestFlav of (C - suck-my-dick):
-	say "'[if the player is feeling dominant]How much for a BJ[otherwise if the player is feeling submissive]If you wouldn't mind... Is there any chance you'd be willing to... Give me a blowjob[otherwise]Wanna suck my dick[end if]?'".
+	say "'[if woman-player is girlfriend]I'm so horny... Would you mind, sweetheart[otherwise if the player is feeling dominant]How much for a BJ[otherwise if the player is feeling submissive]If you wouldn't mind... Is there any chance you'd be willing to... Give me a blowjob[otherwise]Wanna suck my dick[end if]?'".
 To say RewardFlav of (C - suck-my-dick):
 	say "suck your [player-penis]".
 To compute errand rewarding of (T - suck-my-dick) from (P - a person):
-	say "[speech style of P]'So... Do you still want that BJ?'[roman type][line break]";
+	if P is not woman-player or woman-player is not happy girlfriend, say "[speech style of P]'So... Do you still want that BJ?'[roman type][line break]";
 	if the player is possessing a penis and the player is a bit horny:
 		let C be a random worn actually unavoidable pussy covering clothing;
 		if C is clothing:
@@ -2088,6 +2760,12 @@ To compute errand rewarding of (T - suck-my-dick) from (P - a person):
 			say "You shake your head, deciding against it for some reason.";
 	otherwise:
 		say "You shake your head. The need has gone. All that for nothing!".
+
+To say RequestAcceptanceForFree of (M - woman-player):
+	say "[speech style of M]'[if M is happy girlfriend]Anything for you, my love[otherwise]Oh, go on then[end if].'[roman type][line break]".
+
+To say RequestAcceptanceForFreeFlav of (M - woman-player):
+	say "".
 
 Part - Unused Functions
 

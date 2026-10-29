@@ -164,7 +164,12 @@ An all later time based rule (this is the update appearance and cringe rule):
 To update appearance level:
 	now calculated-appearance-outrage-level is appearance-outrage-level;
 	now calculated-cumulative-outrage-level is cumulative-outrage-level;
-	update cringe level.
+	update cringe level;
+	if the player is in a predicament room and the player is not in Predicament01 and the player is not in Predicament20:
+		if diaper quest is 1 and the saved cringe appearance of the player >= the saved appearance of the player and the saved cringe appearance of the player >= the cringe tolerance of male-birdwatcher-bystander:
+			focus-consider appearance-cringe-target;
+		otherwise:
+			 if the saved appearance of the player >= the outrage tolerance of male-birdwatcher-bystander, focus-consider appearance-outrage-target.
 
 To update cringe level:
 	if diaper quest is 1:

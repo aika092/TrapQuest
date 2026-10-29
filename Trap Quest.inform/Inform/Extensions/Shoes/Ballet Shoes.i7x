@@ -41,7 +41,7 @@ To decide which figure-name is the clothing-image of (H - a ballet shoes):
 
 Figure of ballet shoes is the file "Items/Clothes/Lower/Feet/Ballet/balletshoes1.png".
 
-There is 1 ballet shoes.
+normal-ballet-shoes is a ballet shoes. Understand "ballet", "shoes" as normal-ballet-shoes.
 
 To say ClothingDesc of (C - a ballet shoes):
 	say "A pair of magic pink cotton ballet shoes[if C is worn] that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them! This is probably good practice for walking in real heels in the future[end if].".

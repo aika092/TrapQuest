@@ -83,7 +83,7 @@ To compute uniqueToyInsertion of (S - a thing) into (F - a fuckhole):
 
 To compute insertionRuin of (S - a thing) into (F - a fuckhole):
 	if S is players-detached-dick and the size of S is 0:
-		if players-dick-is-detached is 2: [#LXorDD: when it's 2, it's stuck to the bottom of a normal dildo]
+		if players-detached-dick is doubled: [#LXorDD: when it's 2, it's stuck to the bottom of a normal dildo]
 			say "Of course you can't insert the penis decal, so you reverse it and instead use the normal-sized dildo it's stuck to the base of.";
 		otherwise:
 			say "You can't actually insert the penis decal, but you press the thin disc down just below your [variable F], where it sticks nicely, sending little tingles through you in a kind of ghostly echo of penetration.";

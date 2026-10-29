@@ -217,6 +217,15 @@ To say LipDesc:
 			say "[one of]swollen[or]oversized[or]huge[or]corpulent[or]augmented[at random] dick sucking";
 		say " lips".
 
+To say TouchDesc of (B - face):
+	let L be the lips of face;
+	let S be the sensitivity of face;
+	say " face. ";
+	if the latex-transformation of the player > 2:
+		say "Your cheeks are as numb as your fingers, but your lips are [if S > 5]insanely[otherwise if S > 3]shockingly[otherwise]strangely[end if] sensitive. They're [if L is 0]as narrow and delicate as ever[otherwise if L is 1]a bit plump[otherwise if L is 2]fat and pillowy[otherwise if the latex-transformation of the player > 7]fat, succulent, and perfectly [manly-penis] hugging little pillows, fixed in the shape of an O[otherwise]swollen into succulent little pillows[end if], and they [if S < 3]tingle whenever your tongue runs over them.[otherwise if S < 5]feel just as sensitive as your genitals, sending little thrills of pleasure through you whenever you run your tongue over them or push them together.[otherwise]send little bursts of pleasure through you whenever they so much as touch each other. Even more sensitive than your actual genitals, you find yourself constantly running your tongue over their [LatexFlav] surfaces.[end if]";
+	otherwise:
+		say "Your cheeks are smooth, free of oil, hair or blemishes. Your lips are [if L is 0]as narrow and delicate as ever[otherwise if L is 1]a bit plump[otherwise if L is 2]fat and pillowy[otherwise]swollen into succulent little pillows[end if], and they're [if S < 1]not particularly sensitive.[otherwise if S < 3]strangely sensitive, causing a tingle whenever your tongue runs over them.[otherwise if S < 5]just as sensitive as your genitals, sending little thrills of pleasure through you whenever you run your tongue over them or push them together.[otherwise]insanely sensitive, even more than you'd expect from your genitals. Little bursts of pleasure run through you whenever they so much as touch each other, and find yourself constantly running your tongue over their surfaces.[end if]";
+
 Part 3 - Modify Face Stats
 
 To FaceUp (X - a number):
@@ -271,7 +280,7 @@ This is the mouthful prevents speech rule:
 The mouthful prevents speech rule is listed in the player speech rules.
 
 To FaceFill (L - a liquid-object) by (N - a number):
-	if debugmode > 1, say "Filling face by [N] units of [L].";
+	if debugmode > 1, say "Filling face by [N] units of [boringLQ L].";
 	let T be the total volume of face;
 	let outputSuppressed be false;
 	if N > 0:
@@ -291,7 +300,7 @@ To FaceFill (L - a liquid-object) by (N - a number):
 					increase the milk volume of face by 1;
 		check tasting of L;
 	if N > 0:
-		say "Your mouth is completely full, and the [L] is still coming!";
+		say "Your mouth is completely full, and the [boringLQ L] is still coming!";
 		if the player is refusing to swallow:
 			say "You can't bring yourself to swallow the disgusting stuff!";
 			NoseBurst L by N;
@@ -623,7 +632,7 @@ This is the player pukes rule:
 					if M > 0, UnannouncedExpel milk On Breasts By M;
 					if S > 0, UnannouncedExpel semen On Breasts By S; [semen last so it's not cleaned away]
 			otherwise:
-				say "Your stomach retches. A [if N < 3]small amount of[otherwise if N < 6]decently voluminous quantity of[otherwise]veritable [cascade] of[end if] [if L is murkwater]a mixture of bodily fluids[otherwise][L][end if] flows out of your mouth and onto the floor.";
+				say "Your stomach retches. A [if N < 3]small amount of[otherwise if N < 6]decently voluminous quantity of[otherwise]veritable [cascade] of[end if] [if L is murkwater]a mixture of bodily fluids[otherwise][boringLQ L][end if] flows out of your mouth and onto the floor.";
 				cutshow Figure of Oral Creampie Cutscene 6 for face;
 				PuddleUp semen by S;
 				PuddleUp slime by U;

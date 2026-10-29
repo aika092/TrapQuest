@@ -10,6 +10,7 @@ Definition: a knickers is ingredient:
 Definition: a knickers is same-type:
 	if theme-share-target is knickers and theme-share-target is not undies, decide yes;
 	decide no. [In general, undies don't become non-undies]
+Definition: a knickers is disembodied rather than embodied: decide yes. [When penetrating an orifice, can it fit underneath other clothing like a sex toy? Or will clothing get in the way, e.g. a dildo pole?]
 
 To decide which number is the crafting key of (B - a knickers):
 	decide on 32.

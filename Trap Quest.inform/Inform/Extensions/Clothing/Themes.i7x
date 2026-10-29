@@ -646,7 +646,7 @@ A theme effect description rule:
 	if theme-target is yellow themed:
 		let YTB be yellow theme bonus;
 		if YTB > 0:
-			if diaper quest is 1, say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at holding in your pee[if watersports fetish is 1] and you are better at drinking [slime] without getting addicted to it[end if]. ";
+			if diaper quest is 1, say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at controlling your [slime][if watersports fetish is 1] and you are better at drinking [slime] without getting addicted to it[end if]. ";
 			otherwise say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at drinking [if watersports fetish is 1][slime][otherwise][semen][end if] without getting addicted to it. ".
 
 Section - Green

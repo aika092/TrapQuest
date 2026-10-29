@@ -502,12 +502,12 @@ To compute teaching of (L - patience-training):
 		otherwise say "[one of]You can feel the pressure building inside your very full [SlimeContainer][or]Your [SlimeContainer] cramps painfully[or]The pressure mounting in your [SlimeContainer] is now seriously painful[or]You feel the slime pressing strongly against that barrier in your urethra, desperately begging for release[or]You feel your body absolutely desperate to let it out. It would feel so good, so relieving, if you'd just let go[cycling]...";
 		reset multiple choice questions;
 		set numerical response 1 to the substituted form of "Run for the [SlimeTarget]!";
-		set numerical response 2 to "Hold onto your [if diaper messing >= 3]poop[otherwise]pee[end if]!";
+		set numerical response 2 to "Hold onto your [if diaper messing >= 3]poop[otherwise][slime][end if]!";
 		set numerical response 3 to "Dig extra-deep (guaranteed success, but harms long-term continence...)";
 		compute multiple choice question;
 		if player-numerical-response is 1:
 			if the player is able to speak, say "[variable custom style]'[if the player is feeling dominant]Screw this[otherwise]I'm sorry, I can't[end if]!'[roman type][line break]You bolt out of the door and to the [SlimeTarget]s, doing an awkward [SlimeTargetP]-dance wobble as you go.";
-			teleport to Facility10;
+			raw teleport to Facility10;
 			compute toilet use;
 			now TM is -100;
 		otherwise if player-numerical-response is 3:

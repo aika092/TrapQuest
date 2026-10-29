@@ -180,7 +180,7 @@ To say real-genitals:
 			say sissy-penis.
 
 To say player-crotch:
-	if the player is barbie, say "[asshole]";
+	if the player is barbie-genitals, say "[asshole]";
 	otherwise say "[if the player is possessing a vagina][vagina][otherwise if the size of penis > 5][manly-penis][otherwise if the player is possessing a penis][sissy-penis][end if] and [asshole]".
 
 To say fuckholes:
@@ -232,14 +232,15 @@ To say player-penis:
 	say "[if the size of penis < 5][sissy-penis][otherwise][player-manly-penis][end if]".
 
 To say plain-sissy-penis:
-	say "[one of]prick[or]willy[or]pecker[or]clitty[or]noodle[or]dickie[or]winky[or]weeny[as decreasingly likely outcomes]".
+	if the class of the player is santa's little helper:
+		say "little candy cane";
+	otherwise:
+		say "[one of]prick[or]willy[or]pecker[or]clitty[or]noodle[or]dickie[or]winky[or]weeny[as decreasingly likely outcomes]".
 
 To say sissy-penis:
 	say LatexFlav with " "; [#LXorDD]
-	if the player is barbie:
+	if the player is barbie-genitals:
 		say "[one of]smooth groin[or]sexless mound[or]smooth stretch of skin[at random]"; [I avoided using doll-like here so we can further qualify this with "doll-like", elsewhere]
-	otherwise if the class of the player is santa's little helper:
-		say "little candy cane";
 	otherwise:
 		say plain-sissy-penis.
 
@@ -319,66 +320,69 @@ To say big slime:
 	if slimeshooter fetish is 1, say "Slime";
 	otherwise say "[one of]Pee[or]Piss[as decreasingly likely outcomes]";
 
+To say boringLQ (L - a liquid-object):
+	say "[if L is slime and legacy watersports mechanics is 1]urine[otherwise][L][end if]".
+
 To say slime:
 	say urine.
 
 To say SlimePistolDesc:
-	if legacy watersports fetish is 1, say SexDesc of penis;
+	if legacy watersports mechanics is 1, say SexDesc of penis;
 	otherwise say "blue slimepistol";
 
 To say SlimeJunk:
-	if legacy watersports fetish is 1, say "genitals";
+	if legacy watersports mechanics is 1, say "genitals";
 	otherwise say "slimepistol";
 
 To say SlimeShade:
-	if legacy watersports fetish is 1, say "golden";
+	if legacy watersports mechanics is 1, say "golden";
 	otherwise say "bright blue";
 
 To say SlimeContainer:
-	if legacy watersports fetish is 1, say "bladder";
+	if legacy watersports mechanics is 1, say "bladder";
 	otherwise say "slimepistol".
 
 To say SlimeShoot:
-	if legacy watersports fetish is 1, say "pee";
+	if legacy watersports mechanics is 1, say "pee";
 	otherwise say "shoot".
 
 To say big SlimeTarget:
-	if legacy watersports fetish is 1, say "Toilet";
+	if legacy watersports mechanics is 1, say "Toilet";
 	otherwise say "Target".
 
 To say SlimeTarget:
-	if legacy watersports fetish is 1, say "toilet";
+	if legacy watersports mechanics is 1, say "toilet";
 	otherwise say "target".
 
 To say SlimeTargetU:
-	if legacy watersports fetish is 1, say "urinal";
+	if legacy watersports mechanics is 1, say "urinal";
 	otherwise say "target".
 
 To say caps SlimeTarget:
-	if legacy watersports fetish is 1, say "TOILET";
+	if legacy watersports mechanics is 1, say "TOILET";
 	otherwise say "TARGET".
 
 To say big SlimeTargetU:
-	if legacy watersports fetish is 1, say "Urinal";
+	if legacy watersports mechanics is 1, say "Urinal";
 	otherwise say "Target".
 
 To say SlimeDraining:
-	if legacy watersports fetish is 1, say "urinating";
+	if legacy watersports mechanics is 1, say "urinating";
 	otherwise say "draining slime".
 
 To say SlimeTargetP:
-	if legacy watersports fetish is 1, say "potty";
+	if legacy watersports mechanics is 1, say "potty";
 	otherwise say "target".
 
 To say big SlimeTargetP:
-	if legacy watersports fetish is 1, say "Potty";
+	if legacy watersports mechanics is 1, say "Potty";
 	otherwise say "Target".
 
 To say urine:
 	if the class of the player is santa's little helper:
-		if legacy watersports fetish is 1, say "hot buttered rum";
+		if legacy watersports mechanics is 1, say "hot buttered rum";
 		otherwise say "festive mint tea";
-	otherwise if legacy watersports fetish is 0:
+	otherwise if legacy watersports mechanics is 0:
 		say "[one of]slime[or]goo[or]jelly[or]goop[or]slime[as decreasingly likely outcomes]";
 	otherwise if the raw intelligence of the player < 5 and diaper lover >= 1:
 		say "[one of]pee pee[or]wee wee[or]wee[or]tinkle juice[as decreasingly likely outcomes]";
@@ -394,6 +398,9 @@ To say slimedrain:
 To say slimedrained:
 	if slimeshooter fetish is 1, say "drained slime";
 	otherwise say "[urinate]d";
+To say slimedraining:
+	if slimeshooter fetish is 1, say "draining slime";
+	otherwise say "[urinate]ing";
 To say slimeonself:
 	if slimeshooter fetish is 1, say "[slimedrain] on yourself";
 	otherwise say "pee on yourself";
@@ -451,7 +458,7 @@ To decide which text is boy of (M - a thing):
 	decide on man of M.
 
 To decide which text is boy of (M - a person):
-	decide on "[if M is neuter]youngling[otherwise if M is presenting as female]girl[otherwise]boy[end if]".
+	decide on "[if M is neuter]being[otherwise if M is presenting as female]girl[otherwise]boy[end if]".
 
 To decide which text is big boy of (M - a thing):
 	decide on boy of M in title case.
@@ -688,7 +695,7 @@ To say baby title of (M - a monster):
 	otherwise if the class of the player is princess:
 		say "[one of]our little princess[or]princess pottypants[or]her royal padded highness[or]princess of the pampers[or]the royal waddler[or]her royal heinie[at random]";
 	otherwise:
-		say "[one of]my little trooper[or]our little bedwetter[or]little miss waddlebum[or]chubby-cheeks[or]little miss [if diaper messing >= 3]stinker[otherwise]pee-pee-pants[end if][or]Baby [NameBimbo][or][at random]".
+		say "[one of]my little trooper[or]our little bedwetter[or]little miss waddlebum[or]chubby-cheeks[or]little miss [if diaper messing >= 3]stinker[otherwise][slime][slime] pants[end if][or]Baby [NameBimbo][or][at random]".
 
 To say brotha of (M - a person):
 	if interracial fetish is 1:

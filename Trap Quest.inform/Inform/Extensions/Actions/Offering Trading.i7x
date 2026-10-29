@@ -4,6 +4,8 @@ To decide what number is the charisma-influence of (C - a thing):
 	if C is charisma-influencing clothing, decide on the magic-modifier of C;
 	decide on 0.
 
+The player has a number called sweet-scent. The sweet-scent of the player is 0.
+
 To decide which number is the charisma of the player:
 	let X be 0;
 	increase X by the make-up of face;
@@ -16,6 +18,7 @@ To decide which number is the charisma of the player:
 	if the class of the player is succubus:
 		if demon horns is cursed, increase X by 1;
 		otherwise increase X by 2;
+	increase X by sweet-scent of the player / 5;
 	decide on X.
 
 Offering it to is an action applying to two things.

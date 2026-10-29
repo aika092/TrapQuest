@@ -345,6 +345,7 @@ To compute furniture resting on (G - an automated changing station):
 			say "When the wristcuffs release you and the door opens, you are now wearing a [diaper-stack].";
 		otherwise:
 			let D be plain-largish-diaper;
+			if the player is in a predicament room and current-predicament is chores-predicament, now D is pink-huge-diaper;
 			if diaperChangeAllowed is 2:
 				increase latest-berri-stage by 1;
 				if latest-berri-stage > 5, now latest-berri-stage is 5;
@@ -402,6 +403,11 @@ To compute furniture resting on (G - an automated changing station):
 				say "[if diaperChangeAllowed is not 2][GotUnluckyFlav][line break][end if]At least the arms seem to be finished with their fun for now. The claws reach down for a clean diaper ";
 			say "and before you know it you are wearing a dry [MediumDesc of D]! The wristcuffs release you and the door opens.";
 			if K is diaper and the raw diaper addiction of the player < 7, SlowDiaperAddictUp 1;
+			if D is pink-huge-diaper and chores-predicament is not key-lost and pinafore-dress is not held and pinafore-dress is not in a predicament room:
+				say "[variable custom style]Wait a minute, this is a thicker diaper than normal, isn't it? What the hell?! My dress isn't long enough to hide this properly![roman type][line break]Suddenly, the robotic voice blares out from a hidden speaker.[paragraph break][first custom style]EXTRA CREDIT ZONE ADDITIONAL CHALLENGE: YOU WILL FIND IT DIFFICULT TO NOT FREAK OUT THE BYSTANDERS WITH A VISIBLE DIAPER. AN ALTERNATIVE DRESS IS AVAILABLE IN THE WAREHOUSE AT THE BACK OF THE ALLEY. THE CHOICE IS YOURS. REMEMBER, YOU MUST CONTINUE TO WEAR A DIAPER AT ALL TIMES TO EARN FREEDOM FROM THE CHASTITY DEVICE.[variable custom style][paragraph break]Fucking hell... Nothing is ever straightfoward, is it?!";
+				blandify and reveal pinafore-dress;
+				now pinafore-dress is in Predicament01;
+				now pinafore-dress is predicament-temporary;
 			trigger change-wisp-trigger.
 
 Check pulling hotel changing station:

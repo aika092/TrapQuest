@@ -827,7 +827,7 @@ To compute alchemy product effect of (Q - blessing-potion):
 		say "You feel yourself sucked through a portal. ";
 		if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;
 		say "The scenery around you slightly changes, and you are now in an altar room! ";
-		teleport to Dungeon28;
+		spatial teleport to Dungeon28;
 		if map images > 0, display entire map;
 	if the player is in Dungeon28 and (the charge of the dungeon altar > 0 or Q is cursed):
 		say "You feel that it is safe to pray at the altar.";
@@ -1160,7 +1160,7 @@ Check PowderRubbing identification-powder on clothing:
 Carry Out PowderRubbing identification-powder on a thing:
 	say "You sprinkle the powder onto the [ShortDesc of the second noun]. It glitters brightly as its magic properties are revealed to you! ";
 	now the second noun is sure;
-	now the second noun is identified;
+	if the noun is clothing, now the second noun is identified;
 	if the second noun provides the property raw-magic-modifier, say "It is a [second noun][if the raw-magic-modifier of the second noun is 0 and the second noun is bland and the second noun is blandness].[line break][variable custom style]Hmm, how underwhelming[end if].[roman type][line break]";
 	otherwise say "It is a [second noun].";
 	if the noun is cursed and the second noun is not cursed:

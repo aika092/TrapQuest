@@ -2,7 +2,7 @@ Tutors Ruby by Monster begins here.
 
 condom-training is a training session. condom-training has a number called condom-timer.
 Definition: condom-training is training-appropriate:
-	if the player is the donator and condom fetish >= 2, decide yes;
+	if the player is the donator and sticky condom fetish is 1, decide yes;
 	decide no.
 To say TrainingSessionTitle of (L - condom-training):
 	say "Wearing Used Condoms".

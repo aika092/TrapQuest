@@ -644,7 +644,7 @@ To say EnticeFlav of (M - centaur) with (B - breasts):
 	say "[BigNameDesc of M] smirks as [he of M] stares at your chest.[line break][speech style of M]'[one of]You look like you'd be real fun to tittyfuck.'[or]I'm loving the girls! Maybe you should pop 'em out and put 'em on my [DickDesc of M].'[in random order][roman type][line break]".
 
 To say EnticeFlav of (M - centaur) with (B - belly):
-	say "[BigNameDesc of M] stares at your face thoughtfully.[line break][speech style of M]'[one of]Hey, so... would you mind if I peed on you. I think it might be interesting.'[or]Ok, hear me out. What if... I peed on your face?'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] stares at your face thoughtfully.[line break][speech style of M]'[one of]Hey, so... would you mind if I [slimedrained] on you. I think it might be interesting.'[or]Ok, hear me out. What if... I [slimedrained] on your face?'[in random order][roman type][line break]".
 
 To say EnticeFlav of (M - centaur) with (B - thighs):
 	if M is eager to do anilingus:

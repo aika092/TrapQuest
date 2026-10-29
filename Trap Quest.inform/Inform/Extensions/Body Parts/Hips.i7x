@@ -91,10 +91,12 @@ Definition: hips is exposed:
 To say FullExamineDesc of (B - hips):
 	say "[ImageDesc of hips][TotalDesc of hips]".
 
+[The "raw" hip size.]
 Hips has a number called thickness. The thickness of hips is usually 1.
 
 Hips has a number called real thickness. The real thickness of hips is usually 1.
 
+[This is the size of your butt]
 Hips has a number called flesh volume. The flesh volume of hips is usually 1.
 
 Hips has a number called air volume. The air volume of hips is usually 0.
@@ -333,6 +335,14 @@ To say HipWeight:
 		say "Your butt is extremely heavy and unwieldy, making it a huge challenge for you to move around. ";
 	otherwise:
 		say "Your butt is impossibly heavy and unwieldy, making each step a very challenging task. ".
+
+To say TouchDesc of (B - hips):
+	let R be the body soreness of the player;
+	let A be the air volume of hips;
+	let F be the flesh volume of hips;
+	let S be the silicone volume of hips;
+	let T be the latex-transformation of the player;
+	say " [AssDesc], which are [if A > F and A > S]taut like overly inflated balloons[otherwise if S > F]firm, yet supple like a dense pound cake[otherwise if A > 4]soft and supple[otherwise]firm, but not hard[end if]. The [LatexFlav]skin is [if R > 6]hot[otherwise if R > 3]warm[otherwise]slightly warm[end if][if R > 9], tender,[end if] and [if the semen coating of hips > 0]sticky with [semen], yielding[otherwise]yields[end if] to your touch. ";
 
 To say HipCum:
 	say "[if the semen coating of hips > 7]It is plastered in [semen]. [otherwise if the semen coating of hips > 4]There is a decent amount of [semen] stuck to it. [otherwise if the semen coating of belly > 0]It has a splattering of [semen] on it. [end if]".

@@ -11,7 +11,7 @@ To decide which figure-name is the examine-image of (C - condom-pack):
 	decide on figure of condom pack.
 
 To say ExamineDesc of (C - condom-pack):
-	say "A small box of condoms labelled 'SuperSafe Condoms, for a slut on the go. This magic condom-pack of Holding contains over a thousand condoms, more than enough for even the biggest of sluts. 100% safe and user foolproof. Warning: Do not attempt to store inside bags of holding. Magical safety enchantment causes used condoms to be ungraspable by feminine entities. If you are feminine-leaning, please use sharp objects or teeth to detach used condoms.'".
+	say "A small box of condoms labelled 'SuperSafe Condoms, for a slut on the go. This magic condom-pack of Holding contains over a thousand condoms, more than enough for even the biggest of sluts. 100% safe and user foolproof. Warning: Do not attempt to store inside bags of holding. Magical safety enchantment causes used condoms to be ungraspable by bottom entities. If you are bottom-leaning, please use sharp objects or teeth to detach used condoms.'".
 
 Definition: condom-pack is never-in-bag: decide yes.
 
@@ -45,7 +45,7 @@ The condom pack specific recipe rule is listed in the specific recipe rules.
 
 To compute recipe specific cursing of (T - condom-pack):
 	now T is condom-trapped;
-	if condom fetish < 2, now T is not condom-trapped;
+	if sticky condom fetish is 0, now T is not condom-trapped;
 	if Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 1, now T is not condom-trapped; [One random other ingredient will be correct]
 	if current-crafting-key is 44, now T is not condom-trapped. [Piece of rubber is always correct]
 
@@ -53,7 +53,7 @@ To decide which text is the RecipeDesc of (C - condom-pack):
 	decide on "This recipe says 'Place a piece of rubber into the bowl'.".
 
 Report taking condom-pack when the player is in Dungeon07:
-	if condom fetish >= 2 and the player is getting unlucky, now condom-pack is condom-trapped;
+	if sticky condom fetish is 1 and the player is getting unlucky, now condom-pack is condom-trapped;
 	compute poker table cunt.
 
 Report going when condom-pack is carried:
@@ -163,6 +163,11 @@ To say CondomsPinnedDesc of (C - a clothing):
 	if the used condoms of C >= 20, say "[BigNameDesc of C] has an almost countless number of used condoms covering it.";
 	otherwise say "[BigNameDesc of C] has [if the used condoms of C > 1][used condoms of C] large cum-filled condoms pinned to it[otherwise if the used condoms of C is 1]a large cum-filled condom pinned to it[end if][if the used condoms of C > 0 and the empty condoms of C > 0], and [end if][if the empty condoms of C > 1][empty condoms of C] used condoms pinned to it that have been torn and sucked dry[otherwise if the empty condoms of C is 1]one used condom that has been torn and sucked dry pinned to it[end if].".
 
+[!<MonsterIsCondomPreferring>+
+
+Will this monster actually use a condom?
+
++!]
 Definition: a monster is condom-preferring:
 	if the class of the player is condom collector, decide yes;
 	if it is bride-consort, decide no;
@@ -172,9 +177,9 @@ Definition: a monster is condom-preferring:
 	decide no.
 
 To compute condom request choice of (M - a monster):
-	if M is unwrapped and condom fetish > 0: [NPCs sometimes automatically take condoms]
+	if M is unwrapped and baseline condom fetish is 1: [NPCs sometimes automatically take condoms]
 		if M is intelligent:
-			if M is condom-preferring and M is convinced to wear a condom:
+			if M is condom-preferring and M is deciding to wear a condom:
 				say AutomaticCondomFlav of M;
 				now M is wrapped;
 			[otherwise:
@@ -195,8 +200,7 @@ To compute condom request choice of (M - a monster):
 				otherwise:
 					say CondomForceFailFlav of M.]
 
-Definition: a monster (called M) is convinced to wear a condom:
-	let C be the charisma of the player + (the trophy-mode of condom-trophy * 3);
+To decide which number is the true condom resistance of (M - a monster):
 	let CR be the condom resistance of M;
 	if the class of the player is fertility goddess, increase CR by 1;
 	if the class of the player is condom collector, decrease CR by 7;
@@ -204,11 +208,24 @@ Definition: a monster (called M) is convinced to wear a condom:
 	let BB be the blue-balls-limit of M - the blue-balls of M;
 	let ORG be the virility of M - the sex-length of M;
 	if M is seduced:
-		if M is not intelligent, decide yes;
+		if M is not intelligent, decide on CR;
 		increase CR by BB / 2; [The more patient they are, the less happy they will be to put a condom on already]
 		decrease CR by ORG; [The closer they are to orgasm, the more willing they are to put on a condom]
+	if debuginfo > 0, say "[input-style]([CR].5) [ShortDesc of M] condom resistance[if M is seduced]= ([condom resistance of M]) base condom resistance + ([BB]) patience - ([ORG]) arousal[end if][roman type][line break]";
+	decide on CR.
+
+Definition: a monster (called M) is deciding to wear a condom:
+	let C be the trophy-mode of condom-trophy * 3;
+	let CR be the true condom resistance of M;
 	let R be a random number between 0 and C;
-	if debuginfo > 0, say "[input-style]Condom convince check: condom charisma roll d[C + 1] ([R + 1]) | ([CR].5) [ShortDesc of M] condom resistance[if M is seduced] = ([condom resistance of M]) base condom resistance + ([BB]) patience - ([ORG]) arousal[end if][roman type][line break]";
+	if debuginfo > 0, say "[input-style]Condom convince check: condom charisma roll d[C + 1] ([R + 1]) | ([CR].5) [ShortDesc of M] condom resistance[roman type][line break]";
+	if R < CR, decide no;
+	decide yes.
+Definition: a monster (called M) is convinced to wear a condom:
+	let C be the charisma of the player + (the trophy-mode of condom-trophy * 3);
+	let CR be the true condom resistance of M;
+	let R be a random number between 0 and C;
+	if debuginfo > 0, say "[input-style]Condom convince check: condom charisma roll d[C + 1] ([R + 1]) | ([CR].5) [ShortDesc of M] condom resistance[roman type][line break]";
 	if R < CR, decide no;
 	decide yes.
 
@@ -226,7 +243,7 @@ To compute condom filling of (M - a monster):
 	compute default condom filling of M.
 
 To compute default condom filling of (M - a monster):
-	if condom fetish >= 2:
+	if sticky condom fetish is 1:
 		let C be a random worn drinkable condom pinned clothing;
 		if C is nothing or C is not condom pinnable or a random number between 1 and 2 is 1, now C is a random worn condom pinnable clothing; [50% chance of condoms going on the same item as there are already condoms]
 		if runic headband is worn and runic headband is not purity and M is penetrating vagina, now C is runic headband;

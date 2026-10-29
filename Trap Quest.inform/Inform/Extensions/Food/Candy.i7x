@@ -84,10 +84,8 @@ To compute CandyCornEat:
 	otherwise if the number of stalking wisps is 0:
 		deploy a wisp;
 	otherwise if diaper quest is 1:
-		say "[second custom style]TASTY... TASTY... TASTY![roman type][line break]The word reverberates in your head over and over again. ";
 		if htrigger-tasty is 0:
-			say "That was weird...";
-			now htrigger-tasty is 1;
+			TastyOptimize;
 		otherwise:
 			say "You suddenly feel very hungry for [tasty] things!";
 	otherwise:
@@ -543,7 +541,7 @@ Carry out TQeating pink nougat:
 	say "[DevourFlav of the noun] As the candy reaches your stomach you suddenly feel ";
 	if (diaper quest is 0 or diaper messing < 3) and the player is getting unlucky:
 		say "an overpowering arousal flood your entire body. You can actually feel your pupils dilate as your heartbeat thumps loud and fast.";
-		now refractoryperiod is 0;
+		now refractoryperiod of the player is 0;
 		arouse 7000;
 		check for arousal change;
 		say "[variable custom style][one of]Uh-oh, it seems like some of these nougats increase a different kind of blood flow...[or][if the bimbo of the player < 7]Oh god, I wanted strength, not this again![otherwise if the bimbo of the player < 14 and the player is able to automatically masturbate]Oh no, not again! I should find somewhere private to sort myself out.[otherwise]Ooh, I need to cum so bad... I'm sure someone here can help me...[end if][stopping][roman type][line break]";

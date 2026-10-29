@@ -49,7 +49,7 @@ To trigger (Y - a needle trap):
 		otherwise:
 			if the player is possessing a vagina:
 				now target-body-part is vagina;
-			otherwise: [We'll PenisDown, so no need to check if players-dick-is-detached is 0]
+			otherwise: [We'll PenisDown, so no need to check if penis is attached]
 				now target-body-part is penis;
 		if the player is a flatchested trap or the player is prone or diaper quest is 1 or tutorial is 1, now target-body-part is hips;
 		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise if the player is in a heist-painting-room]a miniature turret[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise if target-body-part is hips]hip[otherwise if target-body-part is face][LipDesc][otherwise if target-body-part is vagina][vagina][otherwise][penis][end if]. ";

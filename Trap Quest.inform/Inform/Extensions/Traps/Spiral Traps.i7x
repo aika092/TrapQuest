@@ -129,16 +129,10 @@ To compute spiral effect of (Y - a spiral trap):
 To compute specific spiral effect of (Y - a spiral trap):
 	do nothing. [Should never happen; each spiral trap should have a function here]
 
-htrigger-tasty is a number that varies.
-htrigger-maturity is a number that varies.
-htrigger-pussy is a number that varies.
-
 To compute specific spiral effect of (Y - a cocksucker spiral trap):
 	if legacy content is 1, commence animation of OralSpiralAnimation;
 	if htrigger-tasty is 0:
-		if legacy content is 1, say "For some reason the word 'tasty' repeats in your head over and over and over and over. You feel that if you were to hear someone say that word out loud, you might lose control over your own actions.";
-		otherwise say "[variable custom style]'Ok, I'm convinced. When I hear the word 'tasty', that's code for [']get on my knees and suck [DickDesc of shopkeeper]...[']'[roman type]";
-		now htrigger-tasty is 1;
+		TastyOptimize;
 	otherwise if the thirst of the player < 3:
 		say "You feel weirdly thirsty.";
 		StomachDown 1;
@@ -180,15 +174,13 @@ To compute specific spiral effect of (Y - a slime-spiral-trap):
 	say "[one of]Seeing the images on the screen, you find your own mouth opening, and your tongue feeling rather dry.[or][or][cycling]";
 	SlimeTasteAddictUp 1.
 
-htrigger-please is a number that varies.
-
 To compute specific spiral effect of (Y - a diaper-spiral-trap):
 	commence animation of DiaperSpiralAnimation;
 	if the class of the player is berri and blue-dungarees is worn and the reset-timer of Y is 200:
 		DiaperAddictUp 1;
 		SexAddictUp 1;
 	otherwise if htrigger is "please" and htrigger-please is 0:
-		say "For some reason the words [second custom style]'PLEASE'[roman type] and [second custom style]'[caps slime]'[roman type] keep echoing around in your head. You feel it ebb and settle, taking a permanent home in the deepest recesses of your mind.";
+		if legacy content is 1, say "For some reason the words [second custom style]'PLEASE'[roman type] and [second custom style]'[caps slime]'[roman type] keep echoing around in your head. You feel it ebb and settle, taking a permanent home in the deepest recesses of your mind.";
 		now htrigger-please is 1;
 		now htrigger is "";
 	otherwise if diaper messing >= 3 and the player is full and asshole is not actually occupied and there is a worn total protection soilable knickers:

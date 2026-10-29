@@ -797,7 +797,7 @@ An all later time based rule (this is the asscum annie rule):
 								now semen-caught is 2;
 								say "You place the [ShortDesc of B] below [his of ex-princess] butthole and use it to collect all the asscum!";
 								now B is anal-origin;
-				if semen-caught is 0 and a2m fetish >= 2:
+				if semen-caught is 0 and snowball fetish is 1:
 					now autodrink is 1;
 					if the player is prone and the player is able to drink:
 						say "Do you seal [his of ex-princess] butthole with your lips and drink the asscum?";

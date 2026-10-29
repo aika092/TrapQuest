@@ -91,6 +91,8 @@ To say SkirtLength (N - a number):
 A clothing has a number called skirt-length.
 To decide which number is the front-skirt-length of (C - a clothing):
 	decide on the skirt-length of C.
+To decide which number is the front-skirt-hindrance-length of (C - a clothing): [used to calculate movement and attack penalties]
+	decide on the front-skirt-length of C.
 To decide which number is the back-skirt-length of (C - a clothing):
 	decide on the skirt-length of C.
 [To decide which number is the shortest-skirt-length of (C - a clothing):
@@ -500,6 +502,21 @@ fully exposing takes up chest slot, but physically exposes breasts
 everything else takes up the chest slot and covers up the breasts at least a little bit, with varying degrees of bust exposure.
 *@!]
 Clothing can be chestless, fully exposing, ridiculously low cut, very low cut, low cut, average cut, high cut, fully covering (this is the clothing-cleavage property). Clothing is usually chestless.
+To say NecklineLength (N - a number):
+	if N <= 0:
+		say "fully exposing";
+	otherwise if N is 3:
+		say "ridiculously low cut";
+	otherwise if N is 4:
+		say "very low cut";
+	otherwise if N is 5:
+		say "low cut";
+	otherwise if N is 6:
+		say "average cut";
+	otherwise if N is 7:
+		say "high cut";
+	otherwise:
+		say "fully covering".
 Clothing can be top-intact or top-ripped. Clothing is usually top-intact.
 Definition: a clothing is breast exposing rather than breast covering:
 	if it is chestless, decide yes;
@@ -561,7 +578,7 @@ Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
 
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, audible squelches, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking, wizardry, spookiness, cumguzzling and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, audible squelches, desperation, augmentation, elasticity, waddle-walking, draining, strength stealing, impermanence, autobinding, sneaking, wizardry, spookiness, cumguzzling, resilience and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 
 A clothing has a number called impermanence-counter.
 
@@ -808,5 +825,13 @@ An all time based rule (this is the malfunction checking rule):
 			if the player is top-wardrobe-malfunctioning:
 				say NipSlipFlav;
 				now latest-top-malfunction is time-earnings.
+[To compute dicc tip reaction of (M - a monster):
+	say BonerSuppressDemand of M;
+	if penis is flaccid-under-pressure:
+		say BonerSquashedFlav of M;
+	otherwise:
+		FavourDown M with consequences.
+To say BonerSuppressDemand of (M - a monster):
+	say "[speech style of M]'[one of]You really think you can just walk around with that sticking out?'[or]Anyone can tell that's a boner. How about feeling a little shame.'[or]Nip-slip alert.'[in random order][roman type][line break]".]
 
 Clothing Adjectives ends here.

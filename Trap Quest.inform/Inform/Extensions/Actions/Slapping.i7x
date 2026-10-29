@@ -174,6 +174,9 @@ To decide which number is the zap damage of (P - a person):
 	if fire palm tattoo is worn:
 		increase A by 1;
 		if damage-explained > 1, say "+1 (fire palm tattoo) ";
+	if princess wand tattoo is worn and currentZapper is vibe-wand:
+		increase A by 1;
+		if damage-explained > 1, say "+1 (princess wand tattoo) ";
 	let N be 0;
 	if noLineBreaksZapDamage is true, now N is the nolinebreaks zap damage improvement of currentZapper;
 	otherwise now N is the zap damage improvement of currentZapper;

@@ -384,6 +384,7 @@ To decide which number is the trip hazard of the player:
 	let Q be the largeness of hair - 14;
 	if the player is ponytailed, decrease Q by 3;
 	if the player is pigtailed, decrease Q by 6;
+	if pair of helium balloons is worn, decrease Q by 20;
 	if Q > 0, increase X by Q;
 	if X < 0, decide on 0;
 	if anchor collar is worn, decide on X / 2;
@@ -618,7 +619,7 @@ Check going:
 		teleport via W instead;
 		do nothing instead; [Shouldn't be necessary but it is. Go figure.]
 	[#LXorDD]
-	if players-dick-is-detached > 0 and a random number between 1 and 50 is 1:
+	if penis is detached and a random number between 1 and 50 is 1:
 		say "[if players-detached-dick is in Dungeon41]You get a brief sensation of someone wiping your detached dick and then putting it back down[otherwise if players-detached-dick is pick-uppable]You feel a brief, faint vibration in your detached dick, like it's lying on the ground and something just walked past it[otherwise]You feel[one of][or], once again,[stopping] [one of][or]a sudden sensation from [at random]your missing dick, feeling someone - or some[i]thing[/i] - handling it. You feel it being [one of]slapped a couple of times against some hard surface[or]submerged in water and waved about[or]roughly wiped down[or]waved around and waggled[at random], and then [one of]tossed up in the air and caught[or]slapped against flesh[or]slapped against something leathery[or]struck against something small that squishes against it which is then picked off[or]it dipped in something warm, stirring it around, then withdrawn and licked all over[or]something warm and wet envelops it, sliding up and down over it for seconds and then minutes[as decreasingly likely outcomes]. Then it's wrapped up... and then nothing.";
 		swap dick in; [So there's a penis there while the function runs]
 		passively stimulate penis;
@@ -666,7 +667,12 @@ Carry Out Going (this is the monsters-go-next rule):
 	if seconds is 3 or seconds is 6:
 		if the player is in a predicament room:
 			repeat with M running through alive bystanders:
-				compute movement of M;
+				if current-predicament is chores-predicament:
+					if M is housewife-bystander and M is in the location of the player:
+						say "[speech style of M]'[one of]Good, you've caught up.'[or]You're struggling to keep up?'[or]Sorry, I know it's heavy.'[or]You okay there? You're looking a little...'[or][one of]Come on, then.'[or]No time to waste.'[cycling][stopping][roman type][line break]";
+						now M is moved;
+				otherwise:
+					compute movement of M;
 		let R be the room noun from the location of the player; [NPCs in the room that the player is entering don't move yet]
 		repeat with M running through alive simulated monsters:
 			unless M is vine boss or M is in R or M is moved, compute turn 2 of M; [if the player used a smoke bomb, we may have flagged monsters in the room as 'moved', and we need to catch that here]
@@ -746,9 +752,10 @@ Report going:
 	Do important going resolution.
 
 To do important going resolution:
-	if an untriggered pressure trap is in the location of the player or an untriggered wire trap is in the location of the player or a sticky trap is in the location of the player:
-		now the room-entering of the player is 1;
-		choose a trap to trigger;
+	unless there is an embodied thing penetrating a body part:
+		if an untriggered pressure trap is in the location of the player or an untriggered wire trap is in the location of the player or a sticky trap is in the location of the player:
+			now the room-entering of the player is 1;
+			choose a trap to trigger;
 	if the location of the player is Dungeon12:
 		remove all interest.
 

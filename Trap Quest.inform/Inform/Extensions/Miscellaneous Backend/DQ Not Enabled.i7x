@@ -92,6 +92,9 @@ Include Sex Doll by Monster.
 Include Minotaur by Monster.
 Include Giant Wasp by Monster.
 Include Aeromancer by Monster.
+Include Dryad by Monster.
+Include Carrot by Food.
+Include Jelly Dildo by Sex Toys.
 Include Tentacle Monster by Monster.
 Include Facehugger by Monster.
 Include Gargoyle by Monster.

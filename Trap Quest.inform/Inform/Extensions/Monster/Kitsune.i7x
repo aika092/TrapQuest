@@ -287,7 +287,7 @@ To say HeldItems of (N - kitsune):
 		if T is off-stage, say "You can see that [he of M] has a [ShortDesc of T].";
 	repeat with T running through things held by M:
 		say "You can see that [he of M] still has the [ShortDesc of T].";
-	if players-dick-is-detached > 0: [#LXorDD]
+	if penis is detached: [#LXorDD]
 		say its-got-my-dick for M.
 
 Part 1 - Perception

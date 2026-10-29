@@ -18,7 +18,7 @@ To decide which number is the initial outrage of (C - a condom collector hat):
 
 thirsty work condom hat is a condom collector hat. thirsty work condom hat is plastic.
 Definition: thirsty work condom hat is roleplay:
-	if condom fetish >= 2, decide yes;
+	if sticky condom fetish is 1, decide yes;
 	decide no.
 The printed name of thirsty work condom hat is "[clothing-title-before]thirsty work condom collector hat[clothing-title-after]". The text-shortcut of thirsty work condom hat is "twch".
 

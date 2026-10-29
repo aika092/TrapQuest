@@ -163,12 +163,12 @@ To compute enema holding failure:
 	if C is a thing, compute enema vs glue pressure of C;
 	if the player is able to expel: [will return false if there's still a glued sex toy]
 		if currently-squirting is 0, AssSquirt;
-		if rubber bunny ears is worn and the class of the player is bunny and the number of laid medium eggs in the location of the player > 1 and carrot daggers is off-stage:
+		if rubber bunny ears is worn and the class of the player is bunny and the number of laid medium eggs in the location of the player > 1 and carrot-daggers is off-stage:
 			say "[bold type]Suddenly, [if the number of medium eggs in the location of the player is 2]the two[otherwise]two of the[end if] eggs beneath you shine a bright orange and change shape![roman type][line break]In their place are now a pair of latex carrots.[line break][variable custom style]What in the world?![roman type][line break]";
 			destroy a random laid medium egg in the location of the player;
 			destroy a random laid medium egg in the location of the player;
-			now carrot daggers is in the location of the player;
-			compute autotaking carrot daggers.
+			now carrot-daggers is in the location of the player;
+			compute autotaking carrot-daggers.
 
 player-just-enema-leaked is initially false.
 To check enema holding:

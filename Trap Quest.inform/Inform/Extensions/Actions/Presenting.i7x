@@ -338,6 +338,10 @@ Carry out direct-presenting something to:
 								transform hotwife dress into not-cheating T-shirt;
 						otherwise if hotwife neckerchief is unclash summonable:
 							unclash class summon hotwife neckerchief;
+						if there is a worn tattoo and bulls-only tattoo is drawable:
+							say "New ink appears across your buttcheeks!";
+							summon bulls-only tattoo;
+							try examining bulls-only tattoo;
 		if the noun is fuckhole and the second noun is dark skinned male monster and the bbc addiction of the player >= 6, check tiara-of-spades transformation;
 		if the noun is asshole and the second noun is male monster, progress quest of asshole-presenting-quest;
 		check immobility;

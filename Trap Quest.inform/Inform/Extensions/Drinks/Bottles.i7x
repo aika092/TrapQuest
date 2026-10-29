@@ -109,7 +109,7 @@ A bottle has a drink-colour called the fill-colour. Understand the fill-colour p
 
 To say PotionType of (B - a bottle):
 	say "a [fill-colour of B] liquid";
-	if the fill-type of B is remembered, say " ([FillName the fill-type of B][if the fill-colour of B is creamy and the number of things inseminating B > 0] from the [list of things inseminating B][end if][if a2m fetish >= 2 and B is anal-origin] that has been inside someone's asshole[otherwise if B is not boring-origin] that has been inside someone's orifice[end if])".
+	if the fill-type of B is remembered, say " ([FillName the fill-type of B][if the fill-colour of B is creamy and the number of things inseminating B > 0] from the [list of things inseminating B][end if][if snowball fetish is 1 and B is anal-origin] that has been inside someone's asshole[otherwise if B is not boring-origin] that has been inside someone's orifice[end if])".
 
 To say ShortDesc of (B - a bottle):
 	if the fill-type of B is remembered, say "[FillName the fill-type of B]";

@@ -142,7 +142,7 @@ Definition: sword-of-purity is fetish appropriate:
 Definition: sword-of-purity is destiny-appropriate:
 	if the class of the player is succubus, decide no;
 	if the player is possessing a vagina and the vaginalvirgin of the player is 1, decide yes;
-	if the player is ready for event TG, decide yes;
+	if the player is ready for uncommon event tg, decide yes;
 	decide no.
 Definition: sword-of-purity is destiny-prioritised:
 	if the class of the player is succubus, decide no;
@@ -721,7 +721,7 @@ Definition: sissy-sword is destiny-prioritised:
 	if the player is a sissy, decide yes;
 	decide no.
 Definition: sissy-sword is destiny-appropriate:
-	if the player is gendered male and event tg < 3, decide yes;
+	if the player is gendered male and common event tg is 0, decide yes;
 	decide no.
 
 To compute sword destiny of (S - sissy-sword):

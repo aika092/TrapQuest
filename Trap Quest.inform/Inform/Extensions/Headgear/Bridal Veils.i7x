@@ -46,7 +46,7 @@ To compute virginity-loss of (C - a bridal veil): [no escaping it by losing virg
 
 To compute class outfit of (H - a bridal veil):
 	if the player is not possessing a vagina:
-		unless the player is the donator and the player is not ready for event tg:
+		unless the player is the donator and the player is not ready for uncommon event tg:
 			say DefaultSexChangeFlav;
 			SexChange the player;
 	if the player is possessing a vagina:

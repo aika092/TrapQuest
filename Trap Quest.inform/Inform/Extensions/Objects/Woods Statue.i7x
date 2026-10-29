@@ -9,7 +9,7 @@ To decide which figure-name is the examine-image of (C - WoodsScenery02):
 	decide on figure of WoodsScenery02.
 
 To say ExamineDesc of (C - WoodsScenery02):
-	if diaper quest is 1, say "This statue of a squatting chick is actually a fountain. The water trickles from her pussy, making it look like she's peeing.";
+	if diaper quest is 1, say "This statue of a squatting chick is actually a fountain. The water trickles from her pussy, making it look like she's [slimedraining].";
 	otherwise say "A statue of an upright naked man with arms spread wide, having sex with a naked woman, who is supporting herself by holding onto a scarf around his shoulders, and her [vagina] impaled on his [manly-penis]. [if brat-stone is in the location of C]There is a ruby ring on the woman's finger. [end if][if the bimbo of the player > 13][line break][second custom style]That looks fun[roman type][line break]. [end if]";
 	say "You could try to [bold type]touch the statue's hand[roman type], [bold type]touch the statue's foot[roman type], or [bold type]touch the statue's head[roman type].".
 
@@ -55,16 +55,15 @@ Check touching WoodsScenery02:
 		otherwise if diaper quest is 1:
 			say "As your hand touches the statue's head, your vision suddenly blurs! A moment later, you find yourself looking out from the statue's eyes. You are now perched in an unchanging squatting position and can both feel and hear the warm water as it flows from your [genitals]. You relax as you grow accustomed to your new position, enjoying the feeling of the unending urination running through you and watering the ground below. You feel so peaceful, so serene.";
 			if the bladder of the player <= 0, now the bladder of the player is 5;
-			say "You blink, and suddenly you are back in your own body! But you're now in an identical squatting position, and to your [if the diaper addiction of the player < 5]horror[otherwise if the diaper addiction of the player < 12 or the number of worn diapers is 0]surprise[otherwise]delight[end if] you realise that you are still peeing!";
+			say "You blink, and suddenly you are back in your own body! But you're now in an identical squatting position, and to your [if the diaper addiction of the player < 5]horror[otherwise if the diaper addiction of the player < 12 or the number of worn diapers is 0]surprise[otherwise]delight[end if] you realise that you are still [slimedraining]!";
 			compute urination;
 		otherwise:
 			say "As your hand touches the statue's head, your vision suddenly blurs! A moment later, you find yourself looking out from the statue's eyes, seeing the tall faceless white statue-man in front of you. You can feel his fleshy stomach against yours, and you can feel him... you can feel him [i]inside[/i] you! You move to let go of his neck in surprise, only to find you actually can't. And then, he comes to life! He begins thrusting wildly, the [italic type]slap slap slap[roman type] of his body against yours making wet noises that echo through the trees. You can hear the woman's thoughts in side your own head or is she speaking out loud? Or is it your thoughts? It's hard to tell.[line break][second custom style]YES PLEASE YES PLEASE PLEASE PLEASE MORE YES PLEASE YES[roman type][line break]It all feels and sounds so real.[line break][variable custom style]Oh, god, what if someone hears us, and comes to investigate?[roman type][line break]Your [vagina] is aflame with sensation as he takes you hard in your acrobatic stance. [if the player is not possessing a vagina][line break][variable custom style]Wait, I have a vagina?![roman type][line break][end if]You don't have time to think as the silent statue plows deeper and deeper into you, bringing you towards a screaming conclusion...";
 			vaginally orgasm shamefully;
 			say "[second custom style]PLEASE YES YES YES PLEASE PLEASE [caps please][roman type][line break]";
 			if htrigger-please is 0 and the player is the donator:
-				say "For some reason the word [second custom style]'PLEASE'[roman type] keeps echoing around in your head. You feel it ebb and settle, taking a permanent home in the deepest recesses of your mind.";
-				now htrigger-please is 1;
-				now htrigger is "";
+				if legacy content is 1, say "For some reason the word [second custom style]'PLEASE'[roman type] keeps echoing around in your head. You feel it ebb and settle, taking a permanent home in the deepest recesses of your mind.";
+				PleaseOptimize;
 			say "You blink, and suddenly you are back in your own body, as if nothing had happened. Except that now you feel much more sweaty and fatigued!";
 		now the charge of the noun is 450;
 		allocate 2 seconds instead;

@@ -188,8 +188,12 @@ To unlock (C - diaper-stack):
 	now C is unlocked;
 	keyfree C.
 
+A person can be key-crumbled.
+
 To keyfree (C - a clothing):
 	repeat with K running through unlock-keys covering C:
+		let M be a random person carrying K;
+		if M is person and M is not reactive, now M is key-crumbled;
 		if K is in the location of the player or K is held, say "[BigNameDesc of K] crumbles to dust.";
 		destroy K.
 

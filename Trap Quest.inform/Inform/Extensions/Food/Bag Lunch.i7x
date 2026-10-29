@@ -50,4 +50,35 @@ To decide which number is the bartering value of (T - a bag lunch) for (M - a se
 
 Definition: a bag lunch is semen themed: decide yes.
 
+A fruit-snack is a kind of food. Understand "fruit", "snack" as fruit-snack. the printed name of fruit-snack is "[TQlink of item described]'fruit snack'[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fruit-snack is "frs".
+
+To say ExamineDesc of (B - a fruit-snack):
+	say "A stretchy, bite-sized condom full of white, syrupy tree 'sap'. Apparently it's meant to be eaten whole.";
+
+To decide which figure-name is the examine-image of (B - a fruit-snack):
+	decide on figure of used condom.
+
+To decide which number is the outrage of (C - a fruit-snack):
+	decide on 18.
+
+Check TQeating fruit-snack:
+	if there is a thing penetrating face or there is worn ringagged clothing, say "I can't get to the [semen] if I can't bite down on it." instead.
+
+Carry out TQeating fruit-snack:
+	allocate 6 seconds;
+	say "You pop the condom in your mouth and bite down, puncturing the edible outer covering and causing it to coat the inside of your mouth with sugary sap. [if the semen addiction of the player + the flesh volume of arms < 10]The shock of the sudden blast makes you swallow the load on reflex[otherwise if the semen addiction of the player + the flesh volume of arms < 20]You gulp down the [SapCum] without thinking[otherwise]You savour the taste in your mouth for a few moments before beginning to swallow it down bit by bit, enjoying the feeling of the slimy stuff as it travels down your throat[end if].";
+	compute bagluncheat of the noun.
+
+To compute bagluncheat of (T - a fruit-snack):
+	say "Your food pipe makes a gurgling sound as the contents slides down towards your stomach.";
+	StomachFoodUp 1;
+	StomachSemenUp 1;
+	MagicPowerRefresh 2;
+	humiliate MODERATE-HUMILIATION - the semen taste addiction of the player;
+	destroy T;
+	progress quest of condom-drinking-quest.
+
+To say unique-verb-desc of (T - a fruit-snack):
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]dri[close bracket][as]dr [text-shortcut of T][end link][if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if]".
+
 Bag Lunch ends here.

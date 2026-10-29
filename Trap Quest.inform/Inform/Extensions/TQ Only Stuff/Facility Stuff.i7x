@@ -44,7 +44,7 @@ To compute teaching of (L - kissing-training):
 
 To compute group kissing training session of (M - a staff member):
 	say "[big he of M] licks [his of M] lips.[line break][speech style of M]'Ve vill play a little game wiz zis candy.'[roman type][line break][BigNameDesc of M] holds up a relatively large purple spherical candy. It looks like it's the type that melts very slowly in your mouth.[line break][speech style of M]'You vill each take turnz choozing someone to kizz. If ze perzon you kizz has ze candy, zey are allowed to pazz it into your mouth. Ze candy iz lazed with a ztrong aphrodeziac - not long after you tazte it, it vill make you feel very fuzzy inzide. Ze longer you zucked on it, ze more powerful ze effect. When ze candy is all melted, whoever haz managed to control zeir urges and not do anyzing inappropriate to zemselvez, vill get promoted.'[roman type][line break]Gosh, that was all a little bit confusing to listen to, but you believe you've understood the gist of it:[paragraph break]* You will be taking turns choosing someone to kiss.[line break]* If that person has the candy in their mouth, they can pass it to you.[line break]* Having the candy in your mouth makes you horny, but with a slight delay.[line break]* The game ends when the candy melts. Anyone who doesn't orgasm, gets promoted.[paragraph break][speech style of M]'And now... Let uz begin!'[roman type][line break][BigNameDesc of M] closes [his of M] hand around the candy and then opens it again. The candy has disappeared.[line break][speech style of M]'The candy iz now in one of your mouthz. I vill not say who.'[roman type][line break]";
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	let currentCandy be a random person in the location of the player;
 	if currentCandy is M, now currentCandy is the player;
 	if currentCandy is the player, say "You feel the hard, slightly slimy sphere appear in your own mouth. [bold type]The candy has started with you![roman type][line break]";
@@ -253,9 +253,9 @@ To compute group kissing training session of (M - a staff member):
 				otherwise if STM is the player and the arousal of the player >= maximum arousal:
 					say "You can't help but reach down and [one of]masturbate[or]play with[or]rub[in random order] yourself through your clothes!";
 					if the player is able to orgasm and a random number between 1 and 2 is 1, vaginally orgasm shamefully;
-		if refractoryperiod > 0:
+		if refractoryperiod of the player > 0:
 			if the player is listed in LSP, remove the player from LSP;
-			now refractoryperiod is 0;
+			now refractoryperiod of the player is 0;
 		let candyReceiver be M;
 		if KT is currentCandy:
 			now candyReceiver is ST;
@@ -548,7 +548,8 @@ To compute teaching of (L - tits-training):
 	otherwise say "[speech style of M]'Breasts.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] giant chest gently heaving up and down in front of [him of M] as [he of M] breathes.[line break][speech style of M]'A woman's most important seductive tool, and a great symbol of her power. Why is it then, that so many of you fools do not spend your lives seeking new ways to enhance and empower your primary assets?'[roman type][line break]";
 	allocate 35 seconds;
 	if the player is top heavy or the largeness of breasts >= 12 or the breast-enhancement of nurse < 0:
-		if the breast-enhancement of nurse < 0 or breasts is lewdly exposed or the number of worn top-placed low cut or higher nipple covering clothing is 0:
+		let X be the number of worn topless-fetish-disallowed clothing;
+		if the breast-enhancement of nurse < 0 or breasts is lewdly exposed or X is 0:
 			if andro fetish is 1:
 				say "[NameDesc of M] gestures at you.[line break][speech style of M]'This is what all women could look like. She is a woman who has truly striven for perfection, and I am proud to call her my superior.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't even try to compete with this cutie for attention in a club or bar.'[roman type][line break]After a [if there is worn rigid actually breast covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more that I can teach you. Try to leave some knowledge for the rest of us.'[roman type][line break]";
 			otherwise:
@@ -577,18 +578,18 @@ To compute teaching of (L - tits-training):
 		otherwise:
 			say "[NameDesc of M] gestures at you.[line break][speech style of M]'Now this is a woman who has truly striven for perfection, but look at that clothing! There's nowhere near enough cleavage showing. It's almost like she is ashamed of the size of her massive titties. That just won't do!'[roman type][line break][big he of M] actually looks rather angry.[line break][variable custom style]Uh-oh...[roman type][line break][big he of M] opens the ancient-looking book that [he of M] is holding and turns it to a certain page. [big he of M] begins reciting a chant in a very bizarre sounding language.[line break][speech style of M]'PUJ VLTU[']BE[']JAJ!'[roman type][line break]The book glows with dark energy which then shoots out and strikes you in the chest! You feel powerful magic surging through your veins.";
 			MagicPowerUp 4;
-			repeat with C running through worn actually breast covering clothing:
+			repeat with C running through worn destructible actually breast covering clothing:
 				say "Your [ShortDesc of C] disintegrates in a burst of black flame!";
 				destroy C;
-			if topless temporary fetish is 0, say "You suddenly feel very comfortable with having your [BreastDesc] on full display. In fact, the idea of wearing something that covers you up now feels just objectively... wrong. Your magnificent mammaries and proudly erect nipples are destined to be gazed upon! It would be wrong of you to deprive anyone of that wonderful privilege.";
-			if topless temporary fetish < 20,	now topless temporary fetish is 20;
-			say "[speech style of M]'That's better! Now we can clearly see that these ta-tas definitely deserve a promotion.'[roman type][line break]";
+			CleavageOptimize 7;
+			if breasts is exposed, say "[speech style of M]'That's better! Now we can clearly see that these ta-tas definitely deserve a promotion.'[roman type][line break]";
+			otherwise say "[speech style of M]'Now that your body is functioning properly, we can clearly see that these ta-tas deserve a promotion!'[roman type][line break]";
 			now armband is ruby;
 			say "You watch as the ID card inside your armband transforms!";
 			now the armband-title of armband is "Juggz";
 			now the armband-print of armband is "topless talent";
 			say ClothingDesc of armband;
-			say "[BigNameDesc of M] smirks.[line break][speech style of M]'Well I think that's enough excitement for one day! Hopefully you've all learned something about what it TRULY means to own a pair of proper boobs. [NameBimbo] will certainly have to learn [his of the player] lesson the practical way - TWENTY TIMES, in in fact. Anyway, until next time.'[roman type][line break][big he of M] disbands the class.";
+			say "[BigNameDesc of M] smirks.[line break][speech style of M]'Well I think that's enough excitement for one day! Hopefully you've all learned something about what it TRULY means to own a pair of proper boobs. [NameBimbo] certainly will!'[roman type][line break][big he of M] disbands the class.";
 	otherwise if (the breast-enhancement of nurse is not 0 or a random number between 1 and 2 is 1) and the number of worn chest tattoos is 0 and (breasts is showing cleavage or the number of worn actually not-top-displacable fully covering clothing is 0):
 		let S be random trainee in the location of the player;
 		say "[big he of M] opens a desk drawer and retrieves several black marker pens.[line break][speech style of M]'Today we will be helping each other learn to be proud of displaying their [if andro fetish is 1]flat chests[otherwise]cleavage[end if]. Firstly, let's split into groups.'[roman type][line break][NameDesc of M] assigns people into pairs. You are partnered with [NameDesc of S].[line break][speech style of M]'You will each be writing a phrase on your partner's [if andro fetish is 1]cleavage[otherwise]chest[end if]. I want you to come up with something cheeky that will make the wearer's titty-meat nice and eye catching. Don't worry, it's not permanent.'[roman type][line break]Each pair is handed a pen. You are given the pen for your pair, so you go first. [if the player is a nympho]A naughty thought comes to your mind, and you write 'stick your dick here'[otherwise if the player is a pervert]After thinking for a few moments you write 'one for the wank bank'[otherwise]You struggle to think of anything inventive, and end up just writing 'hot stuff'[end if] on [NameDesc of S][']s cleavage.[line break]But then it's [his of S] turn. [big he of S] takes the pen off you and ";
@@ -633,13 +634,13 @@ To compute teaching of (L - tits-training):
 
 To compute tits marker choice of (S - a trainee):
 	say "thinks for a few moments [himself of S] before taking the pen to your skin. ";
-	let R be a random number between 1 and 3;
-	if R is 1:
-		now the tattoo-title of marker chest tattoo is "photos welcome";
-	otherwise if R is 2:
+	[let R be a random number between 1 and 3;
+	if R is 1:]
+	now the tattoo-title of marker chest tattoo is "photos welcome";
+	[otherwise if R is 2:
 		now the tattoo-title of marker chest tattoo is "I love being topless";
 	otherwise:
-		now the tattoo-title of marker chest tattoo is "please stare at my tits";
+		now the tattoo-title of marker chest tattoo is "please stare at my tits";]
 	now the tattoo-outrage of marker chest tattoo is 8;
 	say "[big he of S] writes '[tattoo-title of marker chest tattoo]' onto your body![line break]".
 
@@ -648,13 +649,13 @@ To compute tits marker reaction of (S - a trainee):
 
 To compute tits marker choice of (S - a ditzy trainee):
 	say "umms to [himself of S] for a few moments [himself of S] before making a gleeful 'ooh!' sound and then taking the pen to your skin. ";
-	let R be a random number between 1 and 3;
+	[let R be a random number between 1 and 3;
 	if R is 1:
 		now the tattoo-title of marker chest tattoo is "fuckballs";
 	otherwise if R is 2:
 		now the tattoo-title of marker chest tattoo is "fuck bags";
-	otherwise:
-		now the tattoo-title of marker chest tattoo is "cock pillows";
+	otherwise:]
+	now the tattoo-title of marker chest tattoo is "cock pillows";
 	now the tattoo-outrage of marker chest tattoo is 11;
 	say "[big he of S] writes '[tattoo-title of marker chest tattoo]' onto your body![line break]".
 
@@ -663,13 +664,13 @@ To compute tits marker reaction of (S - a ditzy trainee):
 
 To compute tits marker choice of (S - a nasty trainee):
 	say "doesn't hesitate before taking the pen to your skin. ";
-	let R be a random number between 1 and 3;
+	[let R be a random number between 1 and 3;
 	if R is 1:
 		now the tattoo-title of marker chest tattoo is "ugly bitches need bigger boobs";
 	otherwise if R is 2:
 		now the tattoo-title of marker chest tattoo is "worthless whore with mediocre boobs";
-	otherwise:
-		now the tattoo-title of marker chest tattoo is "please look at my disgusting tits";
+	otherwise:]
+	now the tattoo-title of marker chest tattoo is "please look at my disgusting tits";
 	now the tattoo-outrage of marker chest tattoo is 13;
 	say "[big he of S] grins a wide, evil grin and then writes '[tattoo-title of marker chest tattoo]' onto your body![line break]".
 
@@ -1017,7 +1018,7 @@ To compute teaching of (L - practical-training):
 	say "You reflect on how you feel about your different options.";
 	if face is not actually occupied, follow the oral sex addiction description rule;
 	if the player is possessing a vagina and vagina is not actually occupied and the number of worn chastity bond is 0, follow the vaginal sex addiction description rule;
-	if asshole is not actually occupied and a2m fetish > 0, follow the anal sex addiction description rule;
+	if asshole is not actually occupied and baseline a2m fetish is 1, follow the anal sex addiction description rule;
 	if the largeness of breasts > 5, follow the titfuck addiction description rule;
 	repeat with W running through worn wrist locking clothing:
 		say "With a click of [his of DL] fingers, your [ShortDesc of W] falls to the ground.";
@@ -1036,7 +1037,7 @@ To compute teaching of (L - practical-training):
 		now the trainingInt1 of ST is 0; [we are going to use binary to try which body parts they've used: 1st bit is asshole, 2nd is vagina, 3rd is mouth]
 	let LB be a list of body parts; [list of what body parts the player has used]
 	let filthiest-trainee be a random trainee in the location of the player;
-	now refractoryperiod is 0;
+	now refractoryperiod of the player is 0;
 	let LST be the list of trainees in the location of the player;
 	sort LST in random order;
 	while cum-countdown > 0:
@@ -1052,7 +1053,7 @@ To compute teaching of (L - practical-training):
 			if the player is possessing a vagina and vagina is not actually occupied and the number of worn chastity bond is 0:
 				if ass-count is 0, set numerical response 2 to "use your pussy";
 				otherwise say "You aren't allowed to use your [vagina] while there's someone else's ass juices on [NameDesc of DL][']s [DickDesc of DL], as that would be unhealthy.";
-			if asshole is not actually occupied and a2m fetish > 0, set numerical response 3 to "use your asshole";
+			if asshole is not actually occupied and baseline a2m fetish is 1, set numerical response 3 to "use your asshole";
 			if the largeness of breasts > 5, set numerical response 4 to "use your breasts";
 			set numerical response 0 to "just use your hand";
 			compute multiple choice question;
@@ -1200,7 +1201,7 @@ To compute teaching of (L - practical-training):
 				if a2m fetish is 0, now VagChance is 14;
 				if a random number between 1 and (7 + ((ass-count + ass-count + pussy-count) * 2) - the practical dirtiness of M) is 1 and M is promotable:
 					if the remainder after dividing the trainingInt1 of M by 2 is 0, increase the trainingInt1 of M by 1; [set bit 1 to 1]
-					say "[BigNameDesc of M] [one of]moves [his of M] face up to[or]approaches[in random order] [NameDesc of DL][']s crotch and takes [his of DL] [LongDickDesc of DL] into [his of M] mouth. [big he of M] [one of]audibly gags[or]chokes on the length[or]makes rather lewd glugging sounds[in random order] as [he of M] tries to get as much as possible of it into [his of M] [one of]tiny mouth[or]delicate throat[or]gullet[in random order], and [one of]slurp up[or]suck away[in random order] all the [if ass-count > 0]disgusting [end if]juices. After a short while of moving [his of M] head up an down, you hear [him of M] gulp[if a2m fetish >= 2] as [he of M] swallows whatever is sloshing around in [his of M] mouth[end if]. [if ass-count > 0]After [he of M] pulls away, you see [him of M] wipe [his of M] tongue with disgust. [end if][big his of M] saliva still coats [NameDesc of DL][']s [DickDesc of DL].";
+					say "[BigNameDesc of M] [one of]moves [his of M] face up to[or]approaches[in random order] [NameDesc of DL][']s crotch and takes [his of DL] [LongDickDesc of DL] into [his of M] mouth. [big he of M] [one of]audibly gags[or]chokes on the length[or]makes rather lewd glugging sounds[in random order] as [he of M] tries to get as much as possible of it into [his of M] [one of]tiny mouth[or]delicate throat[or]gullet[in random order], and [one of]slurp up[or]suck away[in random order] all the [if ass-count > 0]disgusting [end if]juices. After a short while of moving [his of M] head up an down, you hear [him of M] gulp[if snowball fetish is 1] as [he of M] swallows whatever is sloshing around in [his of M] mouth[end if]. [if ass-count > 0]After [he of M] pulls away, you see [him of M] wipe [his of M] tongue with disgust. [end if][big his of M] saliva still coats [NameDesc of DL][']s [DickDesc of DL].";
 					if ass-count + pussy-count > trainee-filthiness:
 						now filthiest-trainee is M;
 						now trainee-filthiness is ass-count + ass-count + pussy-count;
@@ -1213,7 +1214,7 @@ To compute teaching of (L - practical-training):
 					say "[BigNameDesc of M] crouches above [NameDesc of DL] before carefully lowering [his of M] spread pussy onto [NameDesc of DL][']s [one of]waiting shaft[or]rock hard rod[or]thick [LongDickDesc of DL][in random order]. [big he of M] [one of]audibly moans as [he of M] rocks back and forth[or]goes a bit red in the face as [he of M] repeatedly rides up and down the whole length[or]hardly moves at all before [he of M] mewls in a high pitched voice and loses control of [his of M] shuddering body as [he of M] cums hard. This leaves [him of M] panting and collapsed on top of [NameDesc of DL], that [LongDickDesc of DL] still fully embedded inside of [him of M][or]tries to clench [his of M] vaginal muscles as [he of M] rides up and down, to make it tighter for [NameDesc of DL][or]silently thrusts [his of M] hips back and forth, taking on the role of the obedient cowgirl[or]grinds down onto the [DickDesc of DL] as hard as [he of M] can, clearly trying as hard as possible to pleasure [his of M] tutor[or]quickly gets to bouncing up and down with a steady, smooth rhythm[in random order].";
 					increase pussy-count by 1;
 					increase stimulation-level by a random number between 1 and ((the practical dirtiness of M + a random number between 0 and 1) / 2);
-				otherwise if a2m fetish > 0 and a random number between 1 and (20 - the practical dirtiness of M) <= 10:
+				otherwise if baseline a2m fetish is 1 and a random number between 1 and (20 - the practical dirtiness of M) <= 10:
 					if the remainder after dividing the trainingInt1 of M by 8 < 4, increase the trainingInt1 of M by 4; [set bit 3 to 1]
 					say "[BigNameDesc of M] crouches above [NameDesc of DL] before [one of]carefully lowering[or]roughly impaling[or]slowly pushing[in random order] [his of M] [one of]tight little asshole[or]slightly open asshole[or]butthole[in random order] onto [NameDesc of DL][']s [one of]massive beast[or]long hard shaft[or]waiting dong[in random order]. [big he of M] [one of]audibly whimpers as [he of M] moves [his of M] hips back and forth[or]holds [his of M] breath as [he of M] uses [his of M] thigh muscles to ride up and down the whole length[or]grinds up and down, forward and back for several seconds before suddenly wailing as a sudden anal orgasm wracks [his of M] entire body, causing [him of M] to collapse onto of [NameDesc of DL], the still fully-hard [DickDesc of DL] managing to slither its way out of [his of M] butthole with a loud slurp[or]tries to use [his of M] butt muscles to massage [NameDesc of DL][']s [DickDesc of DL] in an almost sensual display[or]somehow makes very loud and wet slapping noises as [his of M] butt rapidly rises and falls on top of [NameDesc of DL][or]grinds down onto the [DickDesc of DL] as hard as [he of M] can, clearly trying as hard as possible to pleasure [his of M] tutor with [his of M] tight butthole[or]fucks it at a good steady pace, using [his of M] arms and hands to help balance [himself of M] as [he of M] moves up and down[in random order].";
 					increase ass-count by 1;
@@ -1582,7 +1583,7 @@ To compute teaching of (L - swimming-training):
 		decrease eventTimer by 1;
 		if eventTimer is 0 and the number of entries in LInPool > 0: [Something crazy happens.]
 			say "[bold type]Suddenly the lights turn red and a loud klaxon starts blaring. The timed event that [tutor-name of M] talked about is happening![roman type][line break]";
-			if condom fetish >= 2 and CPS is clothing and a random number between 1 and 4 > 1: [Swimming condoms]
+			if sticky condom fetish is 1 and CPS is clothing and a random number between 1 and 4 > 1: [Swimming condoms]
 				now poolCrazyEvent is 2;
 				say "And then it happens: A sea of unused condoms, not in wrappers, rain from the ceiling. They land in the pool all over, and then begin swimming blindly around like leeches, filling up with [semen] from the pool as they move. ";
 				if yourself is listed in LInPool and the number of entries in LInPool is 1: [Player is the only person in the pool]
@@ -2019,7 +2020,7 @@ To compute teaching of (L - bukkake-training):
 			otherwise if sentenceID <= 15:
 				add "must" to correctWords;
 				if a random number between 1 and 2 is 1:
-					if a2m fetish > 0, add the substituted form of "[one of]kiss[or]lick[purely at random]" to correctWords;
+					if baseline a2m fetish is 1, add the substituted form of "[one of]kiss[or]lick[purely at random]" to correctWords;
 					otherwise add the substituted form of "[one of]suck[or]service[or]ride[purely at random]" to correctWords;
 					if a random number between 1 and 2 is 1:
 						add "at" to correctWords;
@@ -2029,7 +2030,7 @@ To compute teaching of (L - bukkake-training):
 						add "minimum" to correctWords;
 						add "of" to correctWords;
 					add the substituted form of "[one of]three[or]four[or]five[or]ten[purely at random]" to correctWords;
-					if a2m fetish > 0, add the substituted form of "[one of]assholes[or]buttholes[purely at random]" to correctWords;
+					if baseline a2m fetish is 1, add the substituted form of "[one of]assholes[or]buttholes[purely at random]" to correctWords;
 					otherwise add the substituted form of "[one of]penises[or]people[purely at random]" to correctWords;
 					add the substituted form of "[one of]each[or]per[or]every[purely at random]" to correctWords;
 					add the substituted form of "[one of]day[or]week[or]fortnight[purely at random]" to correctWords;
@@ -2156,7 +2157,7 @@ To compute teaching of (L - bukkake-training):
 					if currentGenitalsSensation > 0:
 						repeat with X running from 1 to currentGenitalsSensation:
 							add the substituted form of "[if the player is possessing a penis][one of]dick[or]cock[or]wank[or]handjob[purely at random][otherwise][one of]clit[or]cunt[or]vag[or]tongue[purely at random][end if]" to wordChoices, if absent;
-					if refractoryperiod > 0:
+					if refractoryperiod of the player > 0:
 						repeat with X running from 1 to 8:
 							add the substituted form of "[one of]orgasm[or]I came[or]cumming[or]cum[or]climax[or]mindblowing[or]peak[or]nut[or]euphoria[in random order]" to wordChoices, if absent;
 				if the number of entries in wordChoices > 10, truncate wordChoices to 10 entries;
@@ -2307,9 +2308,9 @@ To compute teaching of (L - bukkake-training):
 			if currentButtSensation > 2, now currentButtSensation is 2;
 			if currentGenitalsSensation > 0, decrease currentGenitalsSensation by 1;
 			if currentGenitalsSensation > 2, now currentGenitalsSensation is 2;
-			if refractoryperiod > 0:
+			if refractoryperiod of the player > 0:
 				increase newsOrgasmCount by 1;
-				now refractoryperiod is 0;
+				now refractoryperiod of the player is 0;
 			if currentUnderTable is trainee:
 				if player-numerical-response is 3:
 					now L is just-floundered;
@@ -2663,7 +2664,7 @@ To compute teaching of (L - chess-training):
 		update arousal;
 		if mistress is alive, now M is mistress;
 		say "You are led up onto the stage along with [NameDesc of ST], where a unique scene awaits you. Two chairs sit either side of a chess table, but each seat is built like a gynecologist's chair - a V shape keeps the legs spread with the sitter's genitals left fully exposed and accessible. The frames have modern-looking cuffs at the bottom of the front two legs and the end of one arm rest, clearly to keep anyone sitting there locked in place. The chairs and chess table sit inside a massive rectangular transparent tray, which acts like a paddling pool, keeping any and all fluids inside. The chess board has a chess clock next to it, which has a large metal pump connected to it.[paragraph break]You and [NameDesc of ST] are led to the chairs, where you are made to sit, your groins completely exposed and vulnerable. Your ankles are secured in the cuffs. Two pneumatic dildo fucking machines are brought in and set up, the upper halves of the dildos inserted into your [F]s. They begin to fuck each of you, at a very slow but steady pace.[paragraph break]Hollow nose plugs are inserted in your nostrils, and a tube leading from these plugs dangles down to your chest. Large fishbowl-like helmets are placed over your heads, and loosely sealed at the bottom with tape. The tube from your nose runs underneath this tape, allowing you to breathe. Translucent tubes are used to connect the pump device to the tops of the helmets. Now, [NameDesc of M] speaks to everyone.";
-		say "[speech style of M]'Welcome to the [one of]second ever[or]third ever[or]latest[stopping] [training halls] Chess Championship! Fame and glory awaits the winner, and, well, the loser might be stuck in their chair for a while. When it's your turn, challengers, the pump will quickly fill your helmet with whatever liquid it can draw from the ground beneath you! It'll slowly dribble out the seal at the bottom but not as quickly as it'll fill up! If your helmet gets filled to the top, your fucking machine will click into overdrive until some drains away. There are two ways to lose: either you get checkmated, or you cum. The winner not only gets promoted but will gain a place in our hall of fame. The loser will get treated to some lovely... one-on-one time with a helmet full of [if watersports fetish is 1][slime][otherwise][semen][end if], and won't get released until, well, until I decide so. Which is usually quite a long time! So, with the stakes made clear, let's get this game underway!'[roman type][line break][big he of M] claps [his of M] hands, making you and [trainee-name of ST] yelp as you feel your [if a2m fetish >= 2]bellies[otherwise][SlimeContainer]s[end if] suddenly filled with ludicrous amounts of [if watersports fetish is 1][slime][otherwise][semen][end if]! You try to hold on but there's way too much and it's no use. Moments later, both you and [trainee-name of ST] are [if a2m fetish >= 2]expelling[otherwise]squirting[end if] litres of [if watersports fetish is 1][slime][otherwise][semen][end if] into the perspex tray underneath you, where it pools, spreading out from the middle.";
+		say "[speech style of M]'Welcome to the [one of]second ever[or]third ever[or]latest[stopping] [training halls] Chess Championship! Fame and glory awaits the winner, and, well, the loser might be stuck in their chair for a while. When it's your turn, challengers, the pump will quickly fill your helmet with whatever liquid it can draw from the ground beneath you! It'll slowly dribble out the seal at the bottom but not as quickly as it'll fill up! If your helmet gets filled to the top, your fucking machine will click into overdrive until some drains away. There are two ways to lose: either you get checkmated, or you cum. The winner not only gets promoted but will gain a place in our hall of fame. The loser will get treated to some lovely... one-on-one time with a helmet full of [if watersports fetish is 1][slime][otherwise][semen][end if], and won't get released until, well, until I decide so. Which is usually quite a long time! So, with the stakes made clear, let's get this game underway!'[roman type][line break][big he of M] claps [his of M] hands, making you and [trainee-name of ST] yelp as you feel your [if snowball fetish is 1]bellies[otherwise][SlimeContainer]s[end if] suddenly filled with ludicrous amounts of [if watersports fetish is 1][slime][otherwise][semen][end if]! You try to hold on but there's way too much and it's no use. Moments later, both you and [trainee-name of ST] are [if snowball fetish is 1]expelling[otherwise]squirting[end if] litres of [if watersports fetish is 1][slime][otherwise][semen][end if] into the perspex tray underneath you, where it pools, spreading out from the middle.";
 		say "And then a pump starts. The pungent liquid is slowly sucked up into the pump and begins flowing through the tube and into [NameDesc of ST][']s fishbowl, from whom you hear a muffled [second custom style]Eep![roman type] as it soaks into [his of ST] hair and then begins trickling down [his of ST] face. [big he of ST][']s got the pink pieces, which are arranged in white's normal positions, so must be going first. [big he of ST] quickly moves [his of M] king's pawn two spaces forward and then presses the switch on the chess clock with the same hand. The liquid stops being sent through the tube connected to [his of M] helmet and instead begins to travel towards you! A moment later you are being showered by the stuff that had moments ago been inside the two of you. You quickly stop the flow by matching [his of ST] pawn move with your own mirrored one, and then pressing the button on your side of the clock. Several quick moves from both of you set up the board in a rather even state, and now you properly need to think about your next move. Enough [if watersports fetish is 1][slime][otherwise][semen][end if] has collected in each of your fishbowls that it would flow into your mouths if either of you opened them. The game has truly begun.";
 		now chess table is in Facility16;
 		now chess table is grabbing the player;
@@ -2739,7 +2740,7 @@ To compute chess time:
 			ruin F;
 		otherwise if the player is not horny:
 			stimulate F from chess table;
-		if refractoryperiod > 0, compute chess loss;
+		if refractoryperiod of the player > 0, compute chess loss;
 		if the trainee-bowl-fill of chess-training >= 12 and the chess-victor of chess-training is 0:
 			say "[bold type]The dildo machine in [trainee-name of ST][']s [F] [if the trainee-machine of chess-training is 1]keeps destroying [his of ST] [F][otherwise]begins to piston in and out of [his of ST] [F] with brutal speed and force[end if]![roman type][line break]";
 			now the trainee-machine of chess-training is 1;
@@ -2760,7 +2761,7 @@ To compute chess time:
 				if the bladder of the player > 6:
 					increase player-bladder-penalty of chess-training by 1;
 					if legacy watersports fetish is 1:
-						if the player-bladder-penalty of chess-training >= 5, say "[bold type][if the player-bladder-penalty of chess-training is 5]You are beginning to feel a strong urge to pee, which is making it more difficult for you to concentrate[otherwise if the player-bladder-penalty of chess-training >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your [SlimeContainer][otherwise]You would find it significantly easier to think if you didn't have to focus on holding your [SlimeContainer][end if].[roman type][line break]";
+						if the player-bladder-penalty of chess-training >= 5, say "[bold type][if the player-bladder-penalty of chess-training is 5]You are beginning to feel a strong urge to [slimedrain], which is making it more difficult for you to concentrate[otherwise if the player-bladder-penalty of chess-training >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your [SlimeContainer][otherwise]You would find it significantly easier to think if you didn't have to focus on holding your [SlimeContainer][end if].[roman type][line break]";
 					otherwise:
 						if the player-bladder-penalty of chess-training >= 5, say "[bold type][if the player-bladder-penalty of chess-training is 5]Your slimeshooter is beginning to seem pretty bloated, which is making it more difficult for you to concentrate[otherwise if the player-bladder-penalty of chess-training >= saved-flat-intelligence + 4]It is currently IMPOSSIBLE to think about chess moves because of how much you're holding onto your bloated slimeshooter[otherwise]You would find it significantly easier to think if you didn't have to focus on holding your bloated slimeshooter[end if].[roman type][line break]";
 				otherwise:
@@ -3206,8 +3207,8 @@ To compute piercing taunt of (M - a monster):
 			otherwise:
 				say "[trainee-name of M] stares directly into your eyes as [he of M] takes hold of your [ShortDesc of CH] and [one of]jiggles it[or]uses it to tug your [BreastDesc] until they [BreastBounceDesc][or]tugs on it different directions, teasing your [BreastDesc][in random order]. [speech style of M]'[one of]'You really get off on piercings, I can tell. I bet you'd like me to attach a big heavy chain to these babies, yeah?'[or]'We're going to find a nice heavy chain to dangle and tug from your piercings.'[or]'It'd be hot if we could lead you around on a chain by these, wouldn't it?'[or]'You gonna beg me to chain you by these?'[cycling][roman type][line break]";
 		say "[big he of M] smirks, bending down so you get a faceful of their breasts while [his of M] hands move out of sight between your thighs, and suddenly takes a possessive hold of your [genitals].";
-		if player is barbie:
-			say "[speech style of M]'[one of]O.M.G! I thought you were a normal girl, but you're really just a sexless Barbie doll pretending to be a real girl[or]'OMG! That's not girl-flat, that's *doll* flat! Ha ha ha! I was gonna offer to get you pierced down there, like I know you'd love - but what'd be the point? Oh my gawd! That's just so weak. I knew you were a loser, but that... I gotta go and tell everyone[or]Oh, that's just better and better - you're not even a real person, are you? You got nothin['] down there! How do you even pee? Ha ha ha[in random order]!'[roman type][line break]";
+		if player is barbie-genitals:
+			say "[speech style of M]'[one of]O.M.G! I thought you were a normal girl, but you're really just a sexless Barbie doll pretending to be a real girl[or]'OMG! That's not girl-flat, that's *doll* flat! Ha ha ha! I was gonna offer to get you pierced down there, like I know you'd love - but what'd be the point? Oh my gawd! That's just so weak. I knew you were a loser, but that... I gotta go and tell everyone[or]Oh, that's just better and better - you're not even a real person, are you? You got nothin['] down there! How do you even [slimedrain]? Ha ha ha[in random order]!'[roman type][line break]";
 		otherwise if C is nothing:
 			say "[speech style of M]'I bet you'd like us to pierce you down here, too? Maybe fit a chain or a leash to lead you around by your clitty?'[roman type][line break]";
 		otherwise:
@@ -3350,7 +3351,7 @@ To compute tongue demand of (M - an unseen-stranger):
 			FaceDrain from M;
 		otherwise if a random number between 1 and 2 is 1:
 			let ST be a random trainee in the location of the training-tutor of ultimate-training;
-			if ST is monster and a2m fetish >= 2 and a random number between 1 and 2 is 1:
+			if ST is monster and snowball fetish is 1 and a random number between 1 and 2 is 1:
 				say "You hear [NameDesc of ST] yelp as [he of ST] is dragged towards you, and then [his of ST] asshole is pushed against your tongue. [NameDesc of M] barks an order at [him of ST].[line break][speech style of M]'Go on [trainee-name of ST], give [NameBimbo] what [he of the player] is asking for.'[roman type][line break][BigNameDesc of ST] mutters a muted apology as [he of ST] pushes out a fresh anal creampie onto your tongue.";
 				FaceFill semen by 2;
 				now face is anal-origin;
@@ -3381,7 +3382,7 @@ To compute tongue demand of (M - an unseen-stranger):
 
 To compute anal creampie expel demand of (M - an unseen-stranger):
 	let ST be a random trainee in the location of the training-tutor of ultimate-training;
-	if ST is trainee and a2m fetish >= 2 and a random number between 1 and 2 is 1 and face is actually occupied:
+	if ST is trainee and snowball fetish is 1 and a random number between 1 and 2 is 1 and face is actually occupied:
 		say "You hear a squeak from [NameDesc of ST] and then you feel [his of ST] lips pressed against your [asshole]. [BigNameDesc of M] that recently pulled out of your [asshole] gives you an order.[line break][speech style of M]'Feed [him of ST] my creampie.'[roman type][line break]Do you obey?";
 		if the player is bimbo consenting:
 			say "You screw your eyes shut even tighter and let it rip, filling [NameDesc of ST][']s mouth with your anal load. You hear [him of ST] [one of]moan submissively[or]mewl in complaint[at random] and then gulp it all down.";
@@ -3393,7 +3394,7 @@ To compute anal creampie expel demand of (M - an unseen-stranger):
 		say "You feel something cold and hard pushed against your buttcheeks. [BigNameDesc of M] who recently pulled out of your [asshole] gives you an order.[line break][speech style of M]'Push it out now, slut.'[roman type][line break]Do you obey?";
 		if the player is bimbo consenting:
 			say "You let it rip, filling whatever's behind you with your [if belly liquid types > 1]ass juices[otherwise]ass-cum[end if].";
-			if a2m fetish >= 2:
+			if snowball fetish is 1:
 				if face is not actually occupied:
 					say "Moments later you find the vessel pressed against your lips.[line break][speech style of M]'Drink up now, you little cum-whore.'[roman type][line break]Do you obey?";
 					if the player is bimbo consenting:
@@ -3418,7 +3419,7 @@ To compute anal torture of (M - an unseen-stranger):
 		say "[one of]You expect it to begin fucking you, but instead[or]Once again instead of a thrusting motion[stopping] you feel your belly begin to fill from the inside. [big he of M][']s using your asshole as [his of M] [SlimeTargetU]! By the time [he of M] finishes and pulls out, you are feeling very full of [slime].";
 		AssFill 12 with slime;
 		dislodge M;
-	otherwise if the number of entries in LST > 0 and a2m fetish > 1 and the total squirtable fill of belly is 0:
+	otherwise if the number of entries in LST > 0 and snowball fetish is 1 and the total squirtable fill of belly is 0:
 		say "You hear what sounds like some kind of power drill spinning up behind you![line break][speech style of M]'Spread your asshole wide, slut!'[roman type][line break]Do you obey?";
 		if the player is bimbo consenting:
 			say "It seems like the drilldo must have been for someone else. Instead of what you were expecting, you feel the mushy sensation of a banana shoved inside your [asshole]. After it's all been forced inside, a new [manly-penis] pushes its way in behind it and begins to roughly fuck you, mashing the banana up inside you as it goes in and out.[paragraph break]A short while later, [FuckerDesc of M] ejaculates, combining [his of M] jizz with the banana in your butt.";
@@ -3440,15 +3441,15 @@ To compute anal torture of (M - an unseen-stranger):
 				sort LST in random order;
 				let ST be entry 1 of LST;
 				say "You hear [NameDesc of ST] whimper as [he of ST] is forced to eat the slimy banana mush that had just been prepared inside your [asshole].";
-	otherwise if the number of entries in LST > 1 and face is not actually occupied and a2m fetish > 0 and (a random number between 1 and 3 is 1 or the total squirtable fill of belly > 0):
+	otherwise if the number of entries in LST > 1 and face is not actually occupied and baseline a2m fetish is 1 and (a random number between 1 and 3 is 1 or the total squirtable fill of belly > 0):
 		sort LST in random order;
 		let ST1 be entry 1 of LST;
 		let ST2 be entry 2 of LST;
 		say "[speech style of M]'Human centipede time, bitches!'[roman type][line break]You squeak with surprise as [NameDesc of ST1][']s asshole is pressed against your [LipDesc], while at the same time you hear [NameDesc of ST2] mewl with hesitation as [his of ST2] mouth gets forced against your [asshole]. [if the number of entries in LST > 3]The others make similar noises as you are all arranged in a line, mouth-to-asshole.[otherwise if the number of entries in LST is 3][BigNameDesc of entry 3 of LST] makes a similar noise as [he of entry 3 of LST] is face-planted between [NameDesc of ST2][']s buttcheeks.[end if][line break][speech style of M]'Well don't just sit there, start licking!'[roman type][line break]You shiver with arousal as [NameDesc of ST2] begins to probe your [asshole] with [his of ST2] tongue. Do you do the same?";
 		if the player is bimbo consenting:
-			if a2m fetish >= 2, say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the slime volume of belly > 0], [slime][end if] and ass begin to make you feel a bit light headed.[TasteGrossOut 9][strongHumiliateReflect]";
+			if snowball fetish is 1, say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the slime volume of belly > 0], [slime][end if] and ass begin to make you feel a bit light headed.[TasteGrossOut 9][strongHumiliateReflect]";
 			otherwise say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare[TasteGrossOut 7]. [strongHumiliateReflect]";
-			if a2m fetish >= 2 and the semen volume of belly + the slime volume of belly > 0:
+			if snowball fetish is 1 and the semen volume of belly + the slime volume of belly > 0:
 				say "Then, all of a sudden, you and the other trainees all begin squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the slime volume of belly > 0] and [slime][end if]. The room fills with the sound of squirting, swallowing, and gagging.[TasteGrossOut 12]";
 				FaceFill semen by the semen volume of belly;
 				FaceFill slime by the slime volume of belly;
@@ -4100,7 +4101,7 @@ To decide which figure-name is the monster-image of (M - trainee-abbi):
 	decide on figure of abriana.
 
 To say MonsterDesc of (M - trainee-abbi):
-	say "This thicc [man of M] has light brown hair and is wearing a sexy sheer top with matching tartan miniskirt and tie. [big his of M] giant K-cup breasts hang down in front of [him of M] like giant udders, [his of M] sheer black top lewdly exposing 80% of [his of M] titty meat and hardly supporting the rest. [big he of M] [if the current-rank of M is 2]always seems to be idly sucking on a lollipop, and never seems to look happy[otherwise if a2m fetish > 0]seems to have taken to keeping [his of M] lollipop in [his of M] asshole whenever [he of M][']s not sucking on it[otherwise]seems to now wear [his of M] lollipop as some kind of lewd makeshift butt plug[end if].".
+	say "This thicc [man of M] has light brown hair and is wearing a sexy sheer top with matching tartan miniskirt and tie. [big his of M] giant K-cup breasts hang down in front of [him of M] like giant udders, [his of M] sheer black top lewdly exposing 80% of [his of M] titty meat and hardly supporting the rest. [big he of M] [if the current-rank of M is 2]always seems to be idly sucking on a lollipop, and never seems to look happy[otherwise if baseline a2m fetish is 1]seems to have taken to keeping [his of M] lollipop in [his of M] asshole whenever [he of M][']s not sucking on it[otherwise]seems to now wear [his of M] lollipop as some kind of lewd makeshift butt plug[end if].".
 
 The min-rank of trainee-abbi is 2.
 The max-rank of trainee-abbi is 4.
@@ -4118,11 +4119,11 @@ To update name of (M - trainee-abbi):
 	otherwise if the current-rank of M is 3:
 		now the trainee-name of M is "Abbi";
 		if weight gain fetish is 1, now the trainee-print of M is "gluttonous guzzler";
-		otherwise now the trainee-print of M is "luscious [if a2m fetish > 0]ass[end if]licker";
+		otherwise now the trainee-print of M is "luscious [if baseline a2m fetish is 1]ass[end if]licker";
 	otherwise:
 		now the trainee-name of M is "Absinthe";
 		if weight gain fetish is 1, now the trainee-print of M is "gluttonous gobbler";
-		otherwise now the trainee-print of M is "greedy [if a2m fetish > 0]ass [end if]gobbler".
+		otherwise now the trainee-print of M is "greedy [if baseline a2m fetish is 1]ass [end if]gobbler".
 
 To say FirstResponse of (M - trainee-abbi):
 	say "[speech style of M]'Fuck off.'[roman type][line break]".
@@ -4139,7 +4140,7 @@ To say WhereAnswer of (M - trainee-abbi):
 trainee-interaction-abbi-lollipop is a trainee-interaction. trainee-interaction-abbi-lollipop is repeatable.
 
 Definition: trainee-interaction-abbi-lollipop is trainee-eligible:
-	if diaper quest is 0 and current-monster is trainee-abbi and grossness fetish > 0 and (the current-rank of trainee-abbi is 2 or a2m fetish > 0) and face is not actually occupied, decide yes;
+	if diaper quest is 0 and current-monster is trainee-abbi and baseline grossness fetish is 1 and (the current-rank of trainee-abbi is 2 or baseline a2m fetish is 1) and face is not actually occupied, decide yes;
 	decide no.
 
 To resolve (SI - trainee-interaction-abbi-lollipop):

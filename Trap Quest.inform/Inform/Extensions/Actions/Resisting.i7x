@@ -116,7 +116,6 @@ Check resisting:
 			if M is ex-princess, say ForcedSubmitFlav;
 			try submitting instead;
 	otherwise if M is monster and M is vampiress and a random number between 5 and 9 + (the intelligence of the player / 3) <= the bimbo of the player:
-		say VampResistRefusalFlav;
 		now forced submit is 1;
 		try submitting instead;
 	otherwise if the player is in DiamondTrainingSessionBlindfolded:

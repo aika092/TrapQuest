@@ -88,13 +88,13 @@ Table of Wet Diaper Swapping Options
 title	subtable	description	toggle
 "I would like absolutely minimal scenes where I am put in an already used diaper."	--	--	diaper swap hater rule
 "I don't mind being put in used diapers, but only if they're unmessed."	--	--	diaper swap liker rule [1]
-"In addition to the above, I'm also happy for people to pee in my diaper while I'm wearing it."	--	--	diaper swap lover rule [2]
+"In addition to the above, I'm also happy for people to [slimedrain] in my diaper while I'm wearing it."	--	--	diaper swap lover rule [2]
 
 Table of Messy Diaper Swapping Options
 title	subtable	description	toggle
 "I would like absolutely minimal scenes where I am put in an already used diaper."	--	--	diaper swap hater rule [0]
 "I don't mind being put in used diapers, but only if they're unmessed."	--	--	diaper swap liker rule [1]
-"In addition to the above, I'm also happy for people to pee in my diaper while I'm wearing it."	--	--	diaper swap lover rule [2]
+"In addition to the above, I'm also happy for people to [slimedrain] in my diaper while I'm wearing it."	--	--	diaper swap lover rule [2]
 "In addition to the above, I'm also happy to be forced to wear a diaper that's already been messed in."	--	--	messy diaper swap liker rule [3]
 "In addition to the above, I'm also happy for people to mess in a diaper I'm currently wearing! (Mostly using magic)"	--	--	messy diaper swap lover rule [4]
 

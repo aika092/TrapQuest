@@ -309,7 +309,7 @@ To compute WellUnlocking for offer (N - a number) with roll (R - a number):
 				if N < 100, say "Rejected... Potential... Limited...[roman type][line break]";
 				otherwise increase R by 1;
 			if wish-done is 1:
-				if the player is sexed male and the player is ready for event TG:
+				if the player is sexed male and the player is ready for uncommon event tg:
 					say DefaultSexchangeFlav;
 					SexChange the player;
 				if E is clothing:

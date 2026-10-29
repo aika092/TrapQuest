@@ -375,7 +375,7 @@ To trigger (C - teleport-trap-choice):
 		while R is an academic room or R is a predicament room or R is a painting-room or R is an introductory room or R is an elevator-room:
 			now R is a random placed roomstandard room;
 		say "A beam of blue light appears around you, teleporting you to who-knows-where!";
-		teleport to R.
+		spatial teleport to R.
 To evade trigger (C - teleport-trap-choice):
 	say "A beam of blue light appears where you were standing a split second ago. It fails to teleport you where it wanted to!";
 	if the player is getting unlucky:

@@ -156,6 +156,9 @@ To silently check for arousal change:
 	check for arousal change type 0.
 To immediately check for arousal change: [suppresses flavour that implies the arousal was gained 'over time']
 	check for arousal change type 2.
+To cuck arouse (N - a number):
+	arouse N;
+	check for arousal change type 3. [allows for spontaneous orgasms]
 
 To check for arousal change type (ACT - a number):
 	[This is us checking if the level of arousal has changed since last turn.]
@@ -187,7 +190,13 @@ To check for arousal change type (ACT - a number):
 		if previous-horny is 3:
 			if ACT > 0, say "[bold type]You now feel desperately horny. You are having an even harder time thinking about anything non-sexual[if the bimbo of the player > 8][one of] [second custom style](Tee-hee, hard)[or][stopping][end if][run paragraph on][roman type] - [if diaper quest is 1]your intelligence is significantly reduced until you orgasm or cool off.[otherwise if there is an unfriendly monster penetrating a fuckhole and the player is feeling dominant][run paragraph on]you might struggle to bring yourself to properly resist now.[otherwise if the delicateness of the player < 12][run paragraph on]it's going to be a lot more difficult to say no to the advances of others now![otherwise][run paragraph on]once there's a [manly-penis] inside you, there's no way you're going to be anything but a willing fuckhole until you get off.[end if][roman type][line break]";
 		if previous-horny is 4:
-			if ACT > 0, say "[bold type][one of]You didn't even realise it was possible to be so aroused. [roman type]Your entire crotch burns with desire, your breathing is heavy and your thoughts are [if the intelligence of the player < 6]a jumbled mess[otherwise]all over the place[end if][or]Once again you find yourself extremely horny, more than you ever realised was possible before entering this virtual world[or]You are extremely horny once again[stopping].[roman type][line break]";
+			let RO be a random number between 1 and the delicateness of the player;
+			if ACT >= 3 and debuginfo > 0, say "[input-style]Extreme arousal spontaneous orgasm check: Submissiveness d[the delicateness of the player] (RO) | 8.5 orgasm threshold[roman type][line break]";
+			if ACT >= 3 and RO > 8:
+				trigger shameful orgasm of penis;
+				say "[variable custom style]I just came without being touched... [one of]Oh my god[or]Again[stopping]...[roman type][line break][severeHumiliateReflect]";
+			otherwise:
+				if ACT > 0, say "[bold type][one of]You didn't even realise it was possible to be so aroused. [roman type]Your entire crotch burns with desire, your breathing is heavy and your thoughts are [if the intelligence of the player < 6]a jumbled mess[otherwise]all over the place[end if][or]Once again you find yourself extremely horny, more than you ever realised was possible before entering this virtual world[or]You are extremely horny once again[stopping].[roman type][line break]";
 		if the class of the player is symbiote, say "[bold type][one of]Thanks to the symbiotic nature of your relationship with your tongued clothing, you feel your strength increase as well.[or]Once again, your symbiotic tongues also help increase your strength as you become more aroused.[stopping][roman type][line break]";
 		if the player is pheromonal and old-pheromonal is 0:
 			let H be a random worn headgear;
@@ -196,14 +205,24 @@ To check for arousal change type (ACT - a number):
 	if P > previous-horny and the number of worn steel collar is 0:
 		if the player is grossed out:
 			if ACT > 0, say "[bold type]You are quickly losing all arousal since you are too grossed out.[roman type][line break]";
-		otherwise if refractoryperiod <= 0:
+		otherwise if refractoryperiod of the player <= 0:
 			if ACT is 1:
 				say "[bold type]Over time, [if diaper quest is 1 and there is a worn pacifier]sucking on your pacifier has helped cool you off, and you[otherwise]you have cooled off and[end if] are [if previous-horny is 0]no longer horny[otherwise]now a bit less horny[end if].[roman type][line break]";
 			otherwise if ACT > 0:
 				say "[bold type]You are [if previous-horny is 0]no longer horny[otherwise]now a bit less horny[end if].[roman type][line break]";
 		if the player is not pheromonal and old-pheromonal is 1:
 			say "[bold type]Your primitive urges seem to fade.[roman type][line break]";
-		if penis is penis-erect, compute erection decay;
+		if penis is penis-erect:
+			let D be 12 - the size of penis;
+			now D is D / 2;
+			if P is 0, now D is 0;
+			otherwise increase D by P;
+			let A be 0;
+			if the bonerskill of the player is 0:
+				if tg fetish > 0, decrease A by the vaginal sex addiction of the player - 1;
+				decrease A by shameful-orgasm-count;
+			if a random number between D and A <= 0 and penis is able to get soft:
+				compute erection decay;
 		if previous-horny is 1:
 			if the player is not nipples exposed and the number of worn normally-nipple-covering actually nipple covering clothing is 0:
 				let C be a random worn top-placed erect-nipple-exposing actually dense actually nipple covering clothing;
@@ -290,8 +309,8 @@ Definition: yourself is able to get horny:
 	if the class of the player is princess and bride-consort is monster and the refractory-period of bride-consort > 0, decide no;
 	[#LXorDD: with the new age 'sensitive' sexdolls, let's see how it goes if we allow them to get horny.]
 	[if the latex-transformation of the player > 3, decide no;]
-	if refractoryperiod >= maxrefractoryperiod or multi turn orgasm turns > 0, decide no; [Player can't gain arousal on the turns that they are orgasming.]
-	[if the player is barbie, decide no;]
+	if refractoryperiod of the player >= maxrefractoryperiod or multi turn orgasm turns > 0, decide no; [Player can't gain arousal on the turns that they are orgasming.]
+	[if the player is barbie-genitals, decide no;]
 	decide yes.
 
 Definition: a thing is unlimited horniness: decide no.

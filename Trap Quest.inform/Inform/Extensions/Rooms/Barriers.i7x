@@ -41,14 +41,35 @@ REQUIRES COMMENTING
 @inherits <Barrier>
 
 @!]
-A modesty shutter is a kind of barrier. There is 1 modesty shutter.
+modesty shutter is a barrier. The text-shortcut of modesty shutter is "shutter".
+modesty-shutter-clone is a thing. modesty-shutter-clone is not portable. The printed name of modesty-shutter-clone is "modesty shutter". The text-shortcut of modesty-shutter-clone is "shutter". modesty-shutter-clone is not portable. Understand "modesty shutter" as modesty-shutter-clone.
 
-To check raising of (B - a modesty shutter):
+To say ExamineDesc of (C - modesty shutter):
+	say "This automatically controlled impenetrable metal barrier has blocked [if the number of entries in the Nviables of the location of modesty shutter > 2]every exit[otherwise if the number of entries in the Nviables of the location of modesty shutter is 2]both exits[otherwise]the only exit[end if] and will only rise when your [']session['] is complete.".
+To say ExamineDesc of (C - modesty-shutter-clone):
+	say "This automatically controlled impenetrable metal barrier has blocked the doorway leading into [the location of modesty shutter] and will only rise when their [']session['] is complete. You can faintly hear animalistic moans of pleasure coming from the other side.".
+
+
+Figure of modesty shutter is the file "Env/Hotel/shutter2.jpg".
+Figure of modesty shutter moans is the file "Env/Hotel/shutter3.jpg".
+To decide which figure-name is the examine-image of (C - modesty shutter):
+	decide on Figure of modesty shutter.
+To decide which figure-name is the examine-image of (C - modesty-shutter-clone):
+	decide on Figure of modesty shutter moans.
+
+To check raising of (B - modesty shutter):
 	if (the number of patrons in the location of B is 0 and dominatrix is not in the location of the player) or the player is not in the location of B:
 		now neighbour finder is the location of B;
-		unless the location of the player is next door and the number of entries in the Nviables of the location of the player > 1: [The shutter closed on the neighbouring room. It won't open until the player moves away (which we've confirmed that they can).]
-			if the location of the player is neighbour finder or the location of the player is next door, say "[bold type]The metal modesty shutter noisily opens, allowing you [if the player is in neighbour finder]to leave[otherwise]to enter[end if] the room.[roman type][line break]";
+		if debugmode > 0, say "[input-style]Checking if we can raise the shutter.[roman type][line break]";
+		if neighbour finder is next door and the number of entries in the Nviables of the location of the player > 1: [The shutter closed on the neighbouring room. It won't open until the player moves away (which we've confirmed that they can).]
+			if debugmode > 0, say "[input-style]Player is outside and can go a different way.[roman type][line break]";
+			now modesty-shutter-clone is in the location of the player;
+			say "The sound of moaning from the other side of the shutter [if the player is horny]makes you shudder with arousal[otherwise if the player is a bit horny]makes your [genitals] twitch[otherwise]makes you feel fuzzy inside[end if].";
+			cuck arouse 1000;
+		otherwise:
+			if the location of the player is neighbour finder or neighbour finder is next door, say "[bold type]The metal modesty shutter noisily opens, allowing you [if the player is in neighbour finder]to leave[otherwise]to enter[end if] the room.[roman type][line break]";
 			destroy B;
+			destroy modesty-shutter-clone;
 			if the player is in neighbour finder and there is a hotel bed in the location of the player:
 				now patronTime is 0; [Player should now be able to rest easy]
 				if pimp is alive:

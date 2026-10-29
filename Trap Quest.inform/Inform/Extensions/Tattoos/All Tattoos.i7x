@@ -217,6 +217,25 @@ To decide which number is the bimbo-influence of (T - babygirl tattoo):
 To decide which number is the initial cringe of (T - babygirl tattoo):
 	decide on 5.
 
+barbie tattoo is a body tattoo. The tattoo-title of barbie tattoo is "barbie".
+Figure of barbie tattoo is the file "Items/Tats/tattoo208.jpg".
+To decide which figure-name is the examine-image of (T - barbie tattoo):
+	decide on figure of barbie tattoo.
+Definition: barbie tattoo is eligible:
+	if the noun is pure totem or the noun is piece-of-rubber or the noun is recipe for latex curse reversal or the noun is players-detached-dick or the noun is doll-dress, decide yes;
+	decide no.
+To say tattoo-desc of (T - barbie tattoo):
+	say "The word 'Barbie' is inked underneath your chin, marking you as a plastic doll.".
+To decide which number is the bimbo-influence of (T - barbie tattoo):
+	decide on 1.
+To decide which number is the initial outrage of (T - barbie tattoo):
+	decide on 6.
+To decide which object is the concealer of (T - barbie tattoo):
+	decide on the concealer of face.
+To decide which object is the at least partial concealer of (T - barbie tattoo):
+	if T is listed in the armUses of arms or face is listed in the armUses of arms, decide on arms;
+	decide on the at least partial concealer of face.
+
 bat tattoo is a chest tattoo. The tattoo-title of bat tattoo is "bat".
 Figure of bat tattoo is the file "Items/Tats/tattoo39.jpg".
 Definition: bat tattoo is drawable:
@@ -239,6 +258,26 @@ To decide which number is the strength-influence of (T - bat tattoo):
 	decide on 1.
 To decide which number is the initial outrage of (T - bat tattoo):
 	decide on 3.
+
+bats tattoo is a body tattoo. The tattoo-title of bats tattoo is "bats".
+Figure of bats tattoo is the file "Items/Tats/tattoo209.jpg".
+Definition: bats tattoo is eligible:
+	if the noun is black themed and the noun is not white themed, decide yes;
+	if the noun is bat corset, decide yes;
+	decide no.
+To decide which figure-name is the examine-image of (T - bats tattoo):
+	decide on figure of bats tattoo.
+To say tattoo-desc of (T - bats tattoo):
+	say "Six small bats are tattooed up your ankle.".
+To decide which number is the dexterity-influence of (T - bats tattoo):
+	decide on 1.
+To decide which number is the initial outrage of (T - bats tattoo):
+	decide on 1.
+To decide which object is the concealer of (T - bats tattoo):
+	decide on a random worn actually dense ankle covering clothing.
+To decide which object is the at least partial concealer of (T - bats tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through ankle covering clothing.
 
 bbc-fairy tattoo is an upper back tattoo. The tattoo-title of bbc-fairy tattoo is "big black cock fairy cum".
 Understand "big black", "black cock", "fairy cum" as bbc-fairy tattoo.
@@ -630,6 +669,29 @@ This is the broken clitty orgasm rule:
 				say "[bold type]A new tattoo suddenly appears above your [sissy-penis]![roman type][line break]".
 The broken clitty orgasm rule is listed in the orgasm resolution rules.
 
+bulls-only tattoo is a both-asscheeks tattoo. The tattoo-title of bulls-only tattoo is "bulls only".
+Definition: bulls-only tattoo is drawable:
+	if there is a worn asscheek tattoo or diaper quest is 1, decide no;
+	decide yes.
+Definition: bulls-only tattoo is eligible:
+	if the noun is horn or the noun is cow themed, decide yes;
+	decide no.
+To say tattoo-desc of (T - bulls-only tattoo):
+	say "The words 'BULLS ONLY!' are inked in big brown letters across your buttcheeks, along with a little drawing of a bull's head. It labels you as a size queen who loves to be bred by big, dominant [if interracial fetish is 1]black [men of male-m][otherwise if mythical creatures fetish is 1]bull-like [men of male-m] and minotaurs[otherwise][men of male-m][end if].".
+To decide which number is the vaginal-sex-addiction-influence of (T - bulls-only tattoo):
+	decide on 1.
+To decide which number is the anal-sex-addiction-influence of (T - bulls-only tattoo):
+	decide on 1.
+To compute inking effect of (T - bulls-only tattoo):
+	if minotaur is caged:
+		now minotaur is unleashed;
+		say "[if playerRegion is dungeon]You[otherwise]From underground in the dungeon, you[end if] hear a mechanism whirring, and what sounds like a metal door swing open.";
+		progress quest of lever-quest;
+		progress quest of insanity-quest;
+		say "[variable custom style]Did... Did someone just pull that lever?! Or... Was it the magic of this tattoo?![roman type][line break]".
+To decide which number is the initial outrage of (T - bulls-only tattoo):
+	decide on 10.
+
 butt-burger tattoo is an upper back tattoo. The tattoo-title of butt-burger tattoo is "butt burger".
 Definition: butt-burger tattoo is drawable:
 	if there is a worn upper back tattoo or diaper quest is 1, decide no;
@@ -661,6 +723,23 @@ To say tattoo-desc of (T - butt-slut tattoo):
 This is the butt-slut tattoo butt slut rule:
 	if butt-slut tattoo is worn, increase the desirability of asshole by 5.
 The butt-slut tattoo butt slut rule is listed in the butt slut eligibility rules.
+
+butterfly-tribal tattoo is a belly-tattoo. The tattoo-title of butterfly-tribal tattoo is "butterfly tribal".
+Figure of butterfly tribal tattoo is the file "Items/Tats/tattoo211.jpg".
+To decide which figure-name is the examine-image of (T - butterfly-tribal tattoo):
+	decide on figure of butterfly tribal tattoo.
+Understand "butterfly", "tribal" as butterfly-tribal tattoo.
+Definition: butterfly-tribal tattoo is eligible:
+	if the noun is butterfly themed or the noun is glittering rose or the noun is fairy-wand or the noun is pink-hair or the noun is fae mushroom, decide yes;
+	decide no.
+To say tattoo-desc of (T - butterfly-tribal tattoo):
+	say "A butterfly and a tribal pattern are inked on your belly. It is making your belly less heavy and unwieldy.".
+To decide which number is the semen-addiction-influence of (T - butterfly-tribal tattoo):
+	if diaper quest is 0, decide on 1;
+	decide on 0.
+To decide which number is the vaginal-sex-addiction-influence of (T - butterfly-tribal tattoo):
+	if diaper quest is 0, decide on 1;
+	decide on 0.
 
 butterfly-wings tattoo is an asshole-tattoo. The tattoo-title of butterfly-wings tattoo is "butterfly wings bumhole".
 Understand "butterfly", "wings", "asshole-tattoo" as butterfly-wings tattoo.
@@ -1377,6 +1456,21 @@ To decide which number is the initial cringe of (T - flower ballerina tattoo):
 Definition: flower ballerina tattoo is ballet related: decide yes.
 Definition: flower ballerina tattoo is flower themed: decide yes.
 
+flower slut tattoo is a belly-tattoo. The tattoo-title of flower slut tattoo is "flower slut".
+Definition: flower slut tattoo is drawable:
+	if diaper quest is 1 or there is a worn belly-tattoo, decide no;
+	decide yes.
+Definition: flower slut tattoo is eligible:
+	if the noun is flower themed or the noun is writhing vine, decide yes;
+	decide no.
+To say tattoo-desc of (T - flower slut tattoo):
+	say "The word 'SLUT' is inked on your belly, surrounded by green leaves, flowers and vines.".
+To decide which number is the sex-addiction-influence of (T - flower slut tattoo):
+	decide on 1.
+To decide which number is the initial outrage of (T - flower slut tattoo):
+	decide on 7.
+Definition: flower slut tattoo is flower themed: decide yes.
+
 for deposit only tattoo is a crotch tattoo. The tattoo-title of for deposit only tattoo is "for deposit only".
 Definition: for deposit only tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
@@ -1446,6 +1540,24 @@ To decide which object is the at least partial concealer of (T - freedom tattoo)
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through ankle covering clothing.
 
+fuck-ass tattoo is a both-asscheeks tattoo. The tattoo-title of fuck-ass tattoo is "fuck ass". Understand "fuck", "fuck ass" as fuck-ass tattoo.
+Definition: fuck-ass tattoo is drawable:
+	if diaper quest is 1 or there is a worn asscheek tattoo, decide no;
+	decide yes.
+Definition: fuck-ass tattoo is eligible:
+	if the noun is clothing and the intelligence-influence of the noun < 0, decide yes;
+	if the noun is anal sex themed, decide yes;
+	decide no.
+To say tattoo-desc of (T - fuck-ass tattoo):
+	say "The words 'Fuck' and 'Ass' are tattooed on your butt cheeks.".
+To decide which number is the initial outrage of (T - fuck-ass tattoo):
+	decide on 5.
+To decide which number is the anal-sex-addiction-influence of (T - fuck-ass tattoo):
+	decide on 1.
+To decide which number is the intelligence-influence of (T - fuck-ass tattoo):
+	decide on -1.
+Definition: fuck-ass tattoo is anal sex themed: decide yes.
+
 fuck-me tattoo is a face-tattoo. The tattoo-title of fuck-me tattoo is "fuck me".
 Definition: fuck-me tattoo is eligible: decide no.
 Definition: fuck-me tattoo is drawable: decide no.
@@ -1457,6 +1569,22 @@ To decide which number is the perceived-bimbo-influence of (C - fuck-me tattoo):
 	decide on 99.
 To decide which number is the initial outrage of (T - fuck-me tattoo):
 	decide on 20.
+
+fuck-me-marry-me tattoo is a belly-tattoo. The tattoo-title of fuck-me-marry-me tattoo is "fuck me love me marry me". Understand "fuck", "fuck me", "love", "love me", "marry", "marry me" as fuck-me-marry-me tattoo.
+Definition: fuck-me-marry-me tattoo is drawable:
+	if diaper quest is 1 or there is a worn belly-tattoo, decide no;
+	decide yes.
+Definition: fuck-me-marry-me tattoo is eligible:
+	if the noun is ring or the noun is bridal veil or the noun is bridal dress or the noun is burning love crop top or the noun is floral bouquet or the noun is romance-novel or the noun is love-letters, decide yes;
+	decide no.
+To say tattoo-desc of (T - fuck-me-marry-me tattoo):
+	say "Tattooed on your belly, near your crotch, you have the words:[line break]Fuck me[line break]Love me[line break]Marry me[paragraph break]".
+To decide which number is the initial outrage of (T - fuck-me-marry-me tattoo):
+	decide on 4.
+To decide which number is the charisma-influence of (T - fuck-me-marry-me tattoo):
+	decide on 1.
+To decide which number is the vaginal-sex-addiction-influence of (T - fuck-me-marry-me tattoo):
+	decide on 1.
 
 fuckin classy tattoo is a body tattoo. The tattoo-title of fuckin classy tattoo is "fuckin classy".
 Figure of fuckin classy tattoo is the file "Items/Tats/tattoo48.jpg".
@@ -1537,6 +1665,30 @@ To decide which number is the heaviness of (T - heavyweight tattoo):
 	decide on 10.
 To decide which number is the strength-influence of (T - heavyweight tattoo):
 	decide on 1.
+
+hold-here tattoo is a body tattoo. The tattoo-title of hold-here tattoo is "hold here for facefuck". Understand "hold here", "here for", "facefuck" as hold-here tattoo.
+Figure of hold here tattoo is the file "Items/Tats/tattoo219.jpg".
+To decide which figure-name is the examine-image of (T - hold-here tattoo):
+	decide on figure of hold here tattoo.
+Definition: hold-here tattoo is drawable:
+	if diaper quest is 0 and it is eligible, decide yes;
+	decide no.
+Definition: hold-here tattoo is eligible:
+	if the noun is oral sex themed or the noun is scrunchie or the noun is submissive collar, decide yes;
+	decide no.
+To say tattoo-desc of (T - hold-here tattoo):
+	say "The words 'HOLD HERE FOR FACE FUCK' are tattooed on the back of your neck, along with a dotted line.".
+To decide which number is the oral-sex-addiction-influence of (T - hold-here tattoo):
+	decide on 1.
+To decide which number is the delicateness-influence of (T - hold-here tattoo):
+	decide on 1.
+To decide which number is the initial outrage of (T - hold-here tattoo):
+	decide on 12.
+To decide which object is the concealer of (T - hold-here tattoo):
+	decide on a random worn actually dense neck covering clothing.
+To decide which object is the at least partial concealer of (T - hold-here tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through neck covering clothing.
 
 hundred percent cunt tattoo is a crotch tattoo. The tattoo-title of hundred percent cunt tattoo is "100% cunt". Understand "100%" as hundred percent cunt tattoo.
 Definition: hundred percent cunt tattoo is drawable:
@@ -2125,6 +2277,23 @@ To decide which number is the diaper-addiction-influence of (T - pamper-me tatto
 To decide which number is the charisma-influence of (T - pamper-me tattoo):
 	decide on 2.
 
+paw crotch tattoo is a crotch tattoo. The tattoo-title of paw crotch tattoo is "paw print crotch". Understand "print crotch" as paw crotch tattoo.
+Figure of paw crotch tattoo is the file "Items/Tats/tattoo224.jpg".
+To decide which figure-name is the examine-image of (T - paw crotch tattoo):
+	decide on figure of paw crotch tattoo.
+Definition: paw crotch tattoo is eligible:
+	if the noun is dog themed or the noun is nail file, decide yes;
+	decide no.
+To say tattoo-desc of (T - paw crotch tattoo):
+	say "Two black puppy paw prints are tattooed above your [genitals].".
+To decide which number is the strength-influence of (T - paw crotch tattoo):
+	decide on 1.
+To decide which number is the delicateness-influence of (T - paw crotch tattoo):
+	decide on 1.
+To decide which number is the initial cringe of (T - paw crotch tattoo):
+	decide on 5.
+Definition: paw crotch tattoo is dog themed: decide yes.
+
 paw print tattoo is an arm-tattoo. The tattoo-title of paw print tattoo is "paw print".
 Figure of paw print tattoo is the file "Items/Tats/tattoo60.jpg".
 To decide which figure-name is the examine-image of (T - paw print tattoo):
@@ -2240,7 +2409,7 @@ To compute periodic effect of (T - portal tattoo):
 			let L be semen;
 			if watersports fetish is 1 and (diaper quest is 1 or a random number between 1 and 2 is 1), now L is slime;
 			if lactation fetish is 1 and a random number between 1 and 3 is 1, now L is milk;
-			say "insane amounts of [L]!";
+			say "insane amounts of [boringLQ L]!";
 			let N be belly limit - the total fill of belly;
 			Assfill N with L;
 		say "[variable custom style][one of]What the hell?![or]Not again!!![or]Uh-oh...[or]Ugh, so full...[or]My poor belly...[or]Oh golly...[then at random][roman type][line break]".
@@ -2300,6 +2469,21 @@ To decide which number is the initial outrage of (T - princess-tattoo):
 To decide which number is the initial cringe of (T - princess-tattoo):
 	decide on 6.
 Definition: princess-tattoo is royalty themed: decide yes.
+
+princess wand tattoo is an arm-tattoo. The tattoo-title of princess wand tattoo is "Every princess needs a magic wand". Understand "every", "needs", "needs a", "magic" as princess wand tattoo.
+Definition: princess wand tattoo is eligible:
+	if the noun is royalty themed or the noun is vibe-wand, decide yes;
+	decide no.
+To say tattoo-desc of (T - princess wand tattoo):
+	say "A drawing of a vibrating wand sex toy inside a blue heart, with the text [']Every princess needs a magic wand['] is tattooed on your upper arm. You can sense that it increases the damage of attacks made with a magic wand.".
+To decide which number is the delicateness-influence of (T - princess wand tattoo):
+	decide on 1.
+To decide which number is the initial outrage of (T - princess wand tattoo):
+	decide on 5.
+To decide which number is the initial cringe of (T - princess wand tattoo):
+	decide on 5.
+Definition: princess wand tattoo is royalty themed: decide yes.
+Definition: princess wand tattoo is heart themed: decide yes.
 
 property-tattoo is a lower back tattoo. The tattoo-title of property-tattoo is "property".
 Definition: property-tattoo is drawable: decide no.
@@ -2661,10 +2845,10 @@ To say tattoo-desc of (T - short skirt slut tattoo):
 To decide which number is the initial outrage of (T - short skirt slut tattoo):
 	decide on 8.
 To compute inking effect of (T - short skirt slut tattoo):
-	if short skirts permanent suggestion is 0 or short skirts permanent suggestion > 5:
-		now short skirts permanent suggestion is 5;
-	otherwise if short skirts permanent suggestion > 1:
-		decrease short skirts permanent suggestion by 1.
+	if short skirts permanent optimization is 0 or short skirts permanent optimization > 5:
+		now short skirts permanent optimization is 5;
+	otherwise if short skirts permanent optimization > 1:
+		decrease short skirts permanent optimization by 1.
 
 showtime tattoo is a leg tattoo. The tattoo-title of showtime tattoo is "show time". Understand "show", "time" as showtime tattoo.
 Figure of showtime tattoo is the file "Items/Tats/tattoo25.jpg".
@@ -2903,6 +3087,72 @@ To say tattoo-desc of (T - stinker tattoo):
 To decide which number is the initial cringe of (T - stinker tattoo):
 	if there is worn messed knickers, decide on 9;
 	decide on 4.
+
+storage-cum tattoo is a lower back tattoo. The tattoo-title of storage-cum tattoo is "cum storage". Understand "cum", "storate" as storage-cum tattoo.
+Figure of cum storage tattoo is the file "Items/Tats/tattoo218.jpg".
+To decide which figure-name is the examine-image of (T - storage-cum tattoo):
+	decide on figure of cum storage tattoo.
+Definition: storage-cum tattoo is drawable:
+	if diaper quest is 1, decide no;
+	if there is a worn lower back tattoo, decide no;
+	decide yes.
+Definition: storage-cum tattoo is eligible:
+	if the noun is clothing:
+		if the semen-addiction-influence of the noun > 0 or the semen-taste-addiction-influence of the noun > 0 or the total condoms of the noun > 0, decide yes;
+	if the noun is bag lunch or the noun is squirt dildo or the noun is players-detached-dick or the noun is semen themed, decide yes;
+	if the noun is non-empty bottle and the fill-colour of the noun is creamy, decide yes;
+	decide no.
+To say tattoo-desc of (T - storage-cum tattoo):
+	say "You have a tramp stamp tattoo on your lower back that says the words 'CUM STORAGE'. You can sense it helping you avoid accidentally squirting things out of your butt when surprised or in pain.".
+To decide which number is the semen-addiction-influence of (T - storage-cum tattoo):
+	decide on 2.
+To decide which number is the semen-taste-addiction-influence of (T - storage-cum tattoo):
+	decide on 1.
+Definition: storage-cum tattoo is semen themed: decide yes.
+
+storage-milk tattoo is a lower back tattoo. The tattoo-title of storage-milk tattoo is "milk storage". Understand "milk", "storate" as storage-milk tattoo.
+Figure of milk storage tattoo is the file "Items/Tats/tattoo217.jpg".
+To decide which figure-name is the examine-image of (T - storage-milk tattoo):
+	decide on figure of milk storage tattoo.
+Definition: storage-milk tattoo is drawable:
+	if diaper quest is 0 and lactation fetish is 0, decide no;
+	if there is a worn lower back tattoo, decide no;
+	decide yes.
+Definition: storage-milk tattoo is eligible:
+	if the noun is clothing:
+		if the milk-taste-addiction-influence of the noun > 0, decide yes;
+	if the noun is cow themed or the noun is drink themed, decide yes;
+	if the noun is non-empty bottle and the fill-colour of the noun is golden, decide yes;
+	decide no.
+To say tattoo-desc of (T - storage-milk tattoo):
+	say "You have a tramp stamp tattoo on your lower back that says the words 'MILK STORAGE'. You can sense it helping you avoid accidentally squirting things out of your butt when surprised or in pain.".
+To decide which number is the grossness-addiction-influence of (T - storage-milk tattoo):
+	decide on 1.
+To decide which number is the milk-taste-addiction-influence of (T - storage-milk tattoo):
+	decide on 2.
+Definition: storage-milk tattoo is drink themed: decide yes.
+
+storage-piss tattoo is a lower back tattoo. The tattoo-title of storage-piss tattoo is "piss storage". Understand "piss", "storate" as storage-piss tattoo.
+Figure of piss storage tattoo is the file "Items/Tats/tattoo216.jpg".
+To decide which figure-name is the examine-image of (T - storage-piss tattoo):
+	decide on figure of piss storage tattoo.
+Definition: storage-piss tattoo is drawable:
+	if legacy watersports fetish is 0, decide no;
+	if there is a worn lower back tattoo, decide no;
+	decide yes.
+Definition: storage-piss tattoo is eligible:
+	if the noun is clothing:
+		if the urine-taste-addiction-influence of the noun > 0, decide yes;
+	if the noun is squirt dildo or the noun is players-detached-dick or the noun is toilet themed, decide yes;
+	if the noun is non-empty bottle and the fill-colour of the noun is golden, decide yes;
+	decide no.
+To say tattoo-desc of (T - storage-piss tattoo):
+	say "You have a tramp stamp tattoo on your lower back that says the words 'PISS STORAGE'. You can sense it helping you avoid accidentally squirting things out of your butt when surprised or in pain.".
+To decide which number is the grossness-addiction-influence of (T - storage-piss tattoo):
+	decide on 1.
+To decide which number is the urine-taste-addiction-influence of (T - storage-piss tattoo):
+	decide on 2.
+Definition: storage-piss tattoo is urine themed: decide yes.
 
 stupid whore tattoo is a lower back tattoo. The tattoo-title of stupid whore tattoo is "stupid whore".
 Definition: stupid whore tattoo is drawable:
@@ -3201,14 +3451,34 @@ Definition: true love tattoo is drawable:
 	if max breast size < 5, decide no;
 	decide yes.
 Definition: true love tattoo is eligible:
-	if the noun is heart themed or the noun is boob themed or the noun is royal sceptre, decide yes;
+	if the noun is heart themed or the noun is boob themed or the noun is royal sceptre or the noun is love-letters or the noun is romance-novel, decide yes;
 	if the noun is breast covering clothing:
 		if the noun is actually nipple exposing or the noun is actually sheer, decide yes;
 	decide no.
 To say tattoo-desc of (T - true love tattoo):
-	say "The words 'True Love' is tattooed in large letters above your [BreastDesc], on top of a heart. Either side, there is an angelic cloud with a halo. You can feel it making your [ShortDesc of breasts] more sensitive.".
+	say "The words 'True Love' are tattooed in large letters above your [BreastDesc], on top of a heart. Either side, there is an angelic cloud with a halo. You can feel it making your [ShortDesc of breasts] more sensitive.".
 Definition: true love tattoo is heart themed: decide yes.
 Definition: true love tattoo is boob themed: decide yes.
+
+true love vibe tattoo is a right-asscheek tattoo. The tattoo-title of true love vibe tattoo is "true love vibe".
+Figure of true love vibe tattoo is the file "Items/Tats/tattoo225.jpg".
+To decide which figure-name is the examine-image of (T - true love vibe tattoo):
+	decide on figure of true love vibe tattoo.
+Definition: true love vibe tattoo is eligible:
+	if the noun is dong or the noun is love-letters or the noun is romance-novel, decide yes;
+	decide no.
+To say tattoo-desc of (T - true love vibe tattoo):
+	say "The words 'TRUE LOVE' are tattooed in large letters on your right buttcheek, with a studded purple vibrator in between them.".
+To decide which number is the initial outrage of (T - true love vibe tattoo):
+	decide on 6.
+To decide which number is the charisma-influence of (T - true love vibe tattoo):
+	decide on 1.
+To decide which number is the anal sensitivity influence of (C - true love vibe tattoo):
+	if the player is not possessing a vagina, decide on 1;
+	decide on 0.
+To decide which number is the vaginal sensitivity influence of (C - true love vibe tattoo):
+	if the player is possessing a vagina, decide on 1;
+	decide on 0.
 
 Book - U Tattoos
 
@@ -3228,11 +3498,11 @@ To decide which number is the initial outrage of (T - unfaithful tattoo):
 
 unicorn-horn-finger tattoo is a body tattoo. The tattoo-title of unicorn-horn-finger tattoo is "unicorn horn finger".
 Figure of unicorn-horn-finger tattoo is the file "Items/Tats/tattoo62.jpg".
+To decide which figure-name is the examine-image of (T - unicorn-horn-finger tattoo):
+	decide on figure of unicorn-horn-finger tattoo.
 Definition: unicorn-horn-finger tattoo is eligible:
 	if the noun is gloves or the noun is magic themed or the noun is fairy-wand or the noun is royal sceptre or the noun is purity clothing or the noun is horn or the noun is magic lamp or the noun is bow themed or the noun is horse themed, decide yes;
 	decide no.
-To decide which figure-name is the examine-image of (T - unicorn-horn-finger tattoo):
-	decide on figure of unicorn-horn-finger tattoo.
 To say tattoo-desc of (T - unicorn-horn-finger tattoo):
 	say "This unicorn horn is tattooed on the side of your right index finger. It has a pink bow at the bottom and sparkles shooting out of the tip.".
 To decide which object is the concealer of (T - unicorn-horn-finger tattoo):

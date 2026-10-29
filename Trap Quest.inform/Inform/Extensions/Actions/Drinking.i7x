@@ -336,7 +336,7 @@ Carry Out Spitting:
 					compute disgusting spit reaction of RM;
 			MouthEmpty;
 		otherwise:
-			say "You let the [L] run out of your mouth and into [NameDesc of collecting].";
+			say "You let the [boringLQ L] run out of your mouth and into [NameDesc of collecting].";
 			if collecting is pedestal:
 				compute PedestalFilling collecting with L by the total volume of face;
 			otherwise if collecting is HotelScenery01:

@@ -146,7 +146,7 @@ To compute familiar arrival:
 	now the stored-bbc-addiction of familiar is the raw bbc addiction of the player / 2;
 	decrease the raw bbc addiction of the player by the raw bbc addiction of the player / 2;
 	if debuginfo > 0:
-		say "[input-style]Total summary of changes:[line break]Sex addiction -[the stored-sex-addiction of familiar][line break]Anal sex addiction -[the stored-anal-sex-addiction of familiar][line break]Vaginal sex addiction -[the stored-vaginal-sex-addiction of familiar][line break]Oral sex addiction -[the stored-oral-sex-addiction of familiar][line break]Titfuck addiction -[the stored-titfuck-addiction of familiar][line break][if grossness fetish > 0]Grossness addiction -[the stored-grossness-addiction of familiar][line break][end if][if interracial fetish is 1]Big Black Cock addiction -[the stored-bbc-addiction of familiar][end if][line break]Creampie [if bukkake fetish is 1]& bukkake [end if]addiction -[the stored-semen-addiction of familiar][line break]Semen taste addiction -[the stored-semen-taste-addiction of familiar][line break][if watersports fetish is 1]slime taste addiction -[the stored-slime-taste-addiction of familiar][line break][end if][if lactation fetish is 1]Breast milk taste addiction -[the stored-milk-taste-addiction of familiar][line break][end if]Breast flesh units -[the flesh volume of breasts - the real flesh volume of breasts][line break]Hip thickness units -[the thickness of hips - the real thickness of hips][line break][if weight gain fetish is 1]Ass fat -[the flesh volume of hips][line break][end if][roman type]";
+		say "[input-style]Total summary of changes:[line break]Sex addiction -[the stored-sex-addiction of familiar][line break]Anal sex addiction -[the stored-anal-sex-addiction of familiar][line break]Vaginal sex addiction -[the stored-vaginal-sex-addiction of familiar][line break]Oral sex addiction -[the stored-oral-sex-addiction of familiar][line break]Titfuck addiction -[the stored-titfuck-addiction of familiar][line break][if baseline grossness fetish is 1]Grossness addiction -[the stored-grossness-addiction of familiar][line break][end if][if interracial fetish is 1]Big Black Cock addiction -[the stored-bbc-addiction of familiar][end if][line break]Creampie [if bukkake fetish is 1]& bukkake [end if]addiction -[the stored-semen-addiction of familiar][line break]Semen taste addiction -[the stored-semen-taste-addiction of familiar][line break][if watersports fetish is 1]slime taste addiction -[the stored-slime-taste-addiction of familiar][line break][end if][if lactation fetish is 1]Breast milk taste addiction -[the stored-milk-taste-addiction of familiar][line break][end if]Breast flesh units -[the flesh volume of breasts - the real flesh volume of breasts][line break]Hip thickness units -[the thickness of hips - the real thickness of hips][line break][if weight gain fetish is 1]Ass fat -[the flesh volume of hips][line break][end if][roman type]";
 	now the flesh volume of breasts is the real flesh volume of breasts;
 	now the thickness of hips is the real thickness of hips;
 	if weight gain fetish is 1, now the flesh volume of hips is 0;
@@ -258,7 +258,7 @@ To compute perception of (M - familiar):
 					if EO is 2, now the egg-origin of E is the throne;
 					if EO is 3:
 						if mythical creatures fetish is 1, now the egg-origin of E is a random giant wasp;
-						otherwise now the egg-origin of E is carrot daggers;
+						otherwise now the egg-origin of E is carrot-daggers;
 					if EO is 4:
 						now the egg-origin of E is nothing;
 					now E is not shuddering;
@@ -368,7 +368,7 @@ To compute mischief of (F - familiar):
 	otherwise if L is a thing and L is lever-pulled and player-currently-resting is 1 and milking is 0 and there is worn actually nipple covering clothing:
 		compute L pull of F;
 	otherwise if X is a monster and X is not a diaper wetter:
-		if F is in the location of the player, say "[BigNameDesc of F] sniffs at [NameDesc of X][']s crotch.[line break][speech style of F]'You need to pee, don't you [if X is presenting as female]Miss[otherwise]Mister[end if]? Well, your [SlimeTargetU] is here!'[roman type][line break][big he of F] gets on [his of F] knees and points at [his of F] mouth.[speech style of F]'Aaaah~'[roman type][line break]";
+		if F is in the location of the player, say "[BigNameDesc of F] sniffs at [NameDesc of X][']s crotch.[line break][speech style of F]'You need to [slimedrain], don't you [if X is presenting as female]Miss[otherwise]Mister[end if]? Well, your [SlimeTargetU] is here!'[roman type][line break][big he of F] gets on [his of F] knees and points at [his of F] mouth.[speech style of F]'Aaaah~'[roman type][line break]";
 		compute FamiliarSlimeDrink of X;
 	otherwise if the arousal of F >= 50:
 		let M be a random human male threatening awake noncombative monster in the location of F;

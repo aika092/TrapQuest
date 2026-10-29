@@ -126,6 +126,7 @@ To decide which number is the weight of (XXX - belly):
 		if S is cursed, increase B by 4;
 		if S is bland, decrease B by 3;
 		if S is blessed, decrease B by 6;
+	if butterfly-tribal tattoo is worn, decrease B by 3;
 	if B > 0:
 		let bellymod be 100;
 		if the bellyskill of the player is 1, decrease bellymod by 66;
@@ -191,6 +192,12 @@ To say BellyDesc:
 		if X is 11, say "extremely stretched, [if pregnancy fetish is 1]pregnant and overdue looking[otherwise]beach ball sized[end if] belly";
 		if X is 12, say "[if pregnancy fetish is 1]pregnant with twins looking[otherwise]cartoonish looking[end if], overly stretched belly";
 		if X is 13, say "[if pregnancy fetish is 1]pregnant with octuplets looking[otherwise]cartoonish looking[end if], impossibly huge belly";
+
+To say TouchDesc of (B - belly):
+	let F be the flesh volume of belly;
+	let L be the largeness of belly;
+	say " [BellyDesc]. ";
+	say "The [LatexFlav]skin is [if the semen coating of B > 0]slippery with [semen][otherwise]dry[end if], [if L >= 9]hard, and taut[otherwise if L > 6]firm, and slightly taut[otherwise if F > 4]supple, and rather squishy[otherwise if F > 2]soft, and slightly squishy[otherwise if L > 3]soft, and supple[otherwise if L > 0 or weight gain fetish is 0]slightly firm, and a bit supple[otherwise]toned, and ever so slightly firm[end if].".
 
 To say BellyContents:
 	if the flesh volume of belly > 0, say "It has a [if the flesh volume of belly > 6]large[otherwise if the flesh volume of belly > 3]medium[otherwise]small[end if] amount of fat. ";
@@ -277,7 +284,7 @@ To say HolsterContents:
 		if slimeshooter fetish is 1, say "Your slimy slimeshooter is currently clinging to your body, looking bloated and irritable. You'll have to drain it soon!";
 		otherwise say "You really need to [slimedrain]! ";
 	otherwise:
-		if slimeshooter fetish is 1, say "Your slimy slimeshooter is currently clinging to your body, looking bloated and irritable. You'll have to drain it soon!";
+		if slimeshooter fetish is 1, say "Your slimeshooter isn't on hand right now.";
 		otherwise say "You don't need to [slimedrain] right now.";
 
 To say PermanentBelly:
@@ -441,13 +448,10 @@ To Assfill (X - a number):
 		AssFill X water;
 	otherwise:
 		if lipstick collar is worn, increase X by 1;
-		let M be a random wrapped monster penetrating asshole;
-		if M is monster:
-			now X is 0;
-			compute condom filling of M;
-		otherwise:
-			compute father material of asshole;
-			now assfilled is true;
+		let M be a random thing penetrating asshole;
+		if M is wrapped monster, compute condom filling of M instead;
+		compute father material of asshole;
+		now assfilled is true;
 		if invigoration-timer of invigoration-elixir > 0 and the soreness of asshole > 0 and X > 0:
 			say "As the [semen] rushes through your system into your [BellyDesc], the lining of your [asshole] is somehow healed!";
 			if the soreness of asshole > X, decrease the soreness of asshole by X;
@@ -466,13 +470,14 @@ To Assfill (X - a number):
 				now the intensity of slimegirl is 0;
 			now the timetaken of slimegirl is 0;
 			now X is 0;
+		if M is a thing:
+			now the recent-source of semen is M;
+			liquid stimulate asshole from semen times X;
+			progress quest of anal-creampie-quest from M;
 		SlowSemenAddictUp 1;
 		while X > 0:
 			increase the semen volume of belly by 1;
-			decrease X by 1;
-		now M is a random thing penetrating asshole;
-		if M is a thing, progress quest of anal-creampie-quest from M;
-		overflow.
+			decrease X by 1.
 
 To Assfill (X - a number) with (L - semen):
 	Assfill X.
@@ -491,9 +496,9 @@ To assfill (X - a number) medium eggs:
 		increase the medium egg count of belly by 1;
 		let M be a random egg-fathering thing penetrating asshole;
 		if M is a thing, add M to the medium-egg-origins of belly;
-	if carrot daggers is worn and carrot daggers is not blessed and there is a live thing penetrating asshole:
-		bless carrot daggers;
-		say "You sense that your [ShortDesc of carrot daggers] have become more powerful!";
+	if carrot-daggers is worn and carrot-daggers is not blessed and there is a live thing penetrating asshole:
+		bless carrot-daggers;
+		say "You sense that your [ShortDesc of carrot-daggers] have become more powerful!";
 	overflow;
 
 To assfill (X - a number) large eggs:
@@ -506,6 +511,10 @@ To assfill (X - a number) large eggs:
 
 To Assfill (X - a number) slime:
 	if enema fetish is 0 and X > 0, say "BUG - player's butt just got filled with slime even though enemas were disabled. Please report this bug!";
+	if the number of things penetrating asshole > 0:
+		let M be a random thing penetrating asshole;
+		now the recent-source of slime is M;
+		liquid stimulate asshole from slime times X;
 	while X > 0:
 		decrease X by 1;
 		increase the slime volume of belly by 1;
@@ -516,6 +525,10 @@ To Assfill (X - a number) with (L - slime):
 
 To Assfill (X - a number) milk:
 	if enema fetish is 0 and X > 0, say "BUG - player's butt just got filled with milk even though enemas were disabled. Please report this bug!";
+	if the number of things penetrating asshole > 0:
+		let M be a random thing penetrating asshole;
+		now the recent-source of milk is M;
+		liquid stimulate asshole from milk times X;
 	while X > 0:
 		decrease X by 1;
 		increase the milk volume of belly by 1;
@@ -532,6 +545,10 @@ To Assfill (X - a number) air:
 
 To Assfill (X - a number) water:
 	if enema fetish is 0 and X > 0, say "BUG - player's butt just got filled with water even though enemas were disabled. Please report this bug!";
+	if the number of things penetrating asshole > 0:
+		let M be a random thing penetrating asshole;
+		now the recent-source of water is M;
+		liquid stimulate asshole from water times X;
 	while X > 0:
 		decrease X by 1;
 		increase the water volume of belly by 1;
@@ -884,6 +901,17 @@ To AssSquirt:
 					[If it's full, change the noun so that we stop using it.]
 					if the doses of collecting >= the max-doses of collecting:
 						say "The [printed name of collecting] is now full[if liquid-count < liquid-total], but it keeps coming[end if]!";
+						if there is a worn tattoo and the number of worn lower back tattoo is 0:
+							if the fill-colour of collecting is creamy and storage-cum tattoo is drawable:
+								summon storage-cum tattoo;
+							if the fill-colour of collecting is golden and storage-piss tattoo is drawable:
+								summon storage-piss tattoo;
+							if the fill-colour of collecting is white and storage-milk tattoo is drawable:
+								summon storage-milk tattoo;
+							let T be a random worn lower back tattoo;
+							if T is tattoo:
+								say "[bold type]A tattoo appears on you![roman type][line break][tattoo-desc of T]";
+								focus-consider T;
 						now collecting is the player;
 				[One the bottle is full (or never existed), we start soaking clothing or the floor]
 				if semen-count > 0:
@@ -1070,9 +1098,9 @@ To lay (X - a number) medium eggs:
 			appropriate-cutscene-display figure of egg laying 4;
 		otherwise:
 			appropriate-cutscene-display figure of egg laying 3;
-	if carrot daggers is worn and carrot daggers is not cursed:
-		curse carrot daggers;
-		say "You sense that your [ShortDesc of carrot daggers] [if carrot daggers is cursed]are now stuck to your hands[otherwise]have lost their sharp tips[end if]!".
+	if carrot-daggers is worn and carrot-daggers is not cursed:
+		curse carrot-daggers;
+		say "You sense that your [ShortDesc of carrot-daggers] [if carrot-daggers is cursed]are now stuck to your hands[otherwise]have lost their sharp tips[end if]!".
 
 To lay (X - a number) large eggs:
 	say "the largest egg you've ever seen exits your [asshole] at an excruciatingly slow speed, keeping your [asshole] stretched for several seconds as it eases its way out. It's as wide as your forearm.";

@@ -34,7 +34,7 @@ urinal is a backdrop. The printed name of urinal is "[SlimeTargetU]". Understand
 
 
 To say ExamineDesc of (T - toilet):
-	say "A [SlimeTarget][if watersports mechanics is 1] with a deep bowl. You can [bold type]use[roman type] this to relieve yourself[end if].".
+	say "A [SlimeTarget][if watersports mechanics is 1] with a deep bowl. You can [bold type]use[roman type] this to relieve your [SlimeContainer][end if].".
 To say ExamineDesc of (T - urinal):
 	if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31:
 		say "[if there is a wrestler in Holding Pen][BigNameDesc of random wrestler in Holding Pen] and [NameDesc of woman-player] are here, bound in latex bodysuits as diapered human [SlimeTargetU]s[otherwise][BigNameDesc of woman-player] is here, bound in a latex bodysuit as a diapered human [SlimeTargetU][end if].";
@@ -45,7 +45,7 @@ To say ExamineDesc of (T - urinal):
 	otherwise if diaper quest is 1 and the player is in Dungeon41:
 		say "This poor black [man of shopkeeper] has been encased in a red latex catsuit, complete with matching ring-gagged hood. A stupidly thick diaper sits between [his of shopkeeper] legs underneath the catsuit, keeping [his of shopkeeper] thighs far apart. [big his of shopkeeper] wrists and neck are trapped inside holes inside one of the shelves attached to the wall of [his of shopkeeper] own shop, preventing [him of shopkeeper] from standing up or moving away. [big he of shopkeeper] can't speak, can't move, can't do anything but sit there, moan, and fill [his of shopkeeper] huge diaper over time, relying on visitors to feed [him of shopkeeper] food or drink through [his of shopkeeper] permanently open mouth. A men's [SlimeTarget]s sign on [his of shopkeeper] bib encourages people to serve [him of shopkeeper] drinks directly from their [SlimeContainer]s.";
 	otherwise:
-		say "A [SlimeTargetU][if watersports mechanics is 1] with a shallow bowl. You can [bold type]use[roman type] this to relieve yourself[end if].".
+		say "A [SlimeTargetU][if watersports mechanics is 1] with a shallow bowl. You can [bold type]use[roman type] this to relieve your [SlimeContainer][end if].".
 
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
@@ -53,9 +53,9 @@ To decide which figure-name is the examine-image of (T - toilet):
 		if locked-toilets is true, decide on Figure of facility toilets locked;
 		otherwise decide on Figure of facility toilets;
 	if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide on figure of human toilet;
-	if slimeshooter fetish is 1, decide on figure of toilet;
+	if slimeshooter fetish is 1, decide on figure of urinal;
 	if watersports fetish is 1:
-		if the player is in Hotel38 and slimeshooter fetish is 0 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, decide on figure of human toilet;
+		if the player is in Hotel38 and slimeshooter fetish is 0 and snowball fetish is 1 and the human-toilet-scene of woman-player is not 1, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
 	if diaper quest is 0 and playerRegion is not Dungeon, decide on figure of female toilet;
 	decide on figure of toilet.
@@ -157,12 +157,12 @@ Check toileting:
 	if the location of the player is urinals:
 		if watersports mechanics is 0, say "You have no need to use that!" instead;
 		if the player is bladder incontinent:
-			if legacy watersports fetish is 1, say "You have no control over that - you are [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent." instead;
+			if legacy watersports mechanics is 1, say "You have no control over that - you are [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent." instead;
 			otherwise say "You have no control over that - your slime shooter does whatever it wants. It's [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incorrigible." instead;
 		if PC is clothing, say "You can't because of your [ShortDesc of PC]!" instead;
 	otherwise if the location of the player is toilets:
 		if the total squirtable fill of belly <= 0 and the player is totally incontinent:
-			if legacy watersports fetish is 1, say "You can't use the [SlimeTarget] normally because you are [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent." instead;
+			if legacy watersports mechanics is 1, say "You can't use the [SlimeTarget] normally because you are [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent." instead;
 			otherwise
 			say "You can't just shoot your slime shooter in the [SlimeTarget] because it's [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incorrigible. It does whatever it wants." instead;
 		let P be a random thing penetrating asshole;
@@ -172,6 +172,11 @@ Check toileting:
 			say "." instead;
 		if P is a thing or AC is a clothing:
 			if watersports mechanics is 0, say "You can't expel the contents of your belly because of [if P is a thing][NameDesc of P][otherwise][NameDesc of AC][end if]." instead;
+		if the player is toilet traumatised:
+			if the number of intelligent awake friendly monsters in the location of the player is 0, say "After your traumatising experience with [NameDesc of toilet-monster], you're too scared to use the [SlimeTarget] all by yourself!" instead;
+		otherwise if the player is proud:
+			let M be a random reactive monster;
+			if M is monster, say "[variable custom style]I can't [if PC is clothing]pull my [ShortDesc of PC] down and [end if]sit on the [SlimeTarget] and use it with the [ShortDesc of M] right there!!![roman type][line break]" instead;
 		if PC is clothing or watersports mechanics is 0:
 			if (the player is not full or diaper messing < 4) and the total squirtable fill of belly <= 0:
 				say "You [if watersports mechanics is 1]can't [SlimeShoot] in the [SlimeTarget] because of your [ShortDesc of PC] and you [end if]don't need to expel anything from your [asshole]." instead;
@@ -179,11 +184,9 @@ Check toileting:
 				if legacy watersports mechanics is 1, say "If you sit on the [SlimeTarget] and push, you might accidentally [slimedrain] in your [ShortDesc of PC] at the same time. Do you want to risk it?";
 				say "If you sit on the [SlimeTarget] and push, you might accidentally [SlimeShoot] in your [ShortDesc of PC] at the same time. Do you want to risk it?";
 				if the player is not consenting, say "Action cancelled." instead;
-		if the player is toilet traumatised:
-			if the number of intelligent awake friendly monsters in the location of the player is 0, say "After your traumatising experience with [NameDesc of toilet-monster], you're too scared to use the [SlimeTarget] all by yourself!" instead;
-		otherwise if the player is proud:
-			let M be a random reactive monster;
-			if M is monster, say "[variable custom style]I can't [if PC is clothing]pull my [ShortDesc of PC] down and [end if]sit on the [SlimeTarget] and use it with the [ShortDesc of M] right there!!![roman type][line break]" instead.
+		if current-predicament is chores-predicament and diaper quest is 1 and chores-predicament is not key-lost and the player is in a predicament room:
+			say "[variable custom style]I'm pretty sure that would count as removing my diaper, and so my chastity wouldn't get unlocked at the end of the Extra Credit Lesson...[roman type][line break]Use the toilet anyway?";
+			if the player is not consenting, say "Action cancelled." instead;
 
 Definition: yourself is toilet traumatised:
 	if diaper lover > 0 and the times-terrorised of toilet-monster > 1, decide yes;
@@ -227,7 +230,7 @@ Check urinating:
 	now delayed urination flav is "";
 	if the bladder of the player is 0 and the number of worn prostate massager plugs is 0:
 		if delayed urination is 0, say "[if slimeshooter fetish is 1]Your slimeshooter isn't around right now.[otherwise]You don't feel the need.[end if]" instead;
-		if debugmode is 1, say "resetting accidental [if legacy watersports fetish is 1]urination[otherwise]sliming[end if] flag.";
+		if debugmode is 1, say "resetting accidental [if legacy watersports mechanics is 1]urination[otherwise]sliming[end if] flag.";
 		now delayed urination is 0; [We've accidentally forced the player to pee when they can't, oops! Oh well, let's not break the game.]
 		say "[one of]Player was forced to [slimedrain] when they had nothing in their [SlimeContainer], please report the bug to Aika![or][stopping]";
 		do nothing instead;
@@ -235,7 +238,7 @@ Check urinating:
 		if delayed urination is 0, say "You don't feel the need." instead;
 		do nothing instead;]
 	if the player is bladder incontinent and delayed urination is 0:
-		if legacy watersports fetish is 1, say "You are [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent; you can't control this at all any more! Pushing just does nothing." instead;
+		if legacy watersports mechanics is 1, say "You are [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent; you can't control this at all any more! Pushing just does nothing." instead;
 		otherwise say "Your slimeshooter is [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incorrigible; you can't control it at all any more! Pulling the trigger just does nothing." instead;
 	if the latex-transformation of the player > 4, say "[if delayed urination is 0]You can't [SlimeShoot], you're a sex doll![end if]" instead;
 	[if the player is not bursting and delayed urination is 0, say "You don't feel the need." instead;]
@@ -252,7 +255,7 @@ Check urinating:
 			let P be a random bottom level pee protection clothing;
 			now auto is 1;
 			if there is pee covering actually unavoidable clothing or (there is a worn diaper and the diaper addiction of the player >= 3):
-				if P is pants pee refusal inducing and debugmode is 0, do nothing instead;
+				if P is pants pee refusal inducing clothing and debugmode is 0, do nothing instead;
 				if P is not diaper or the diaper addiction of the player < 3:
 					say "Do you really want to [SlimeShoot] inside your [printed name of P]? ";
 					if the player is bimbo consenting, say "";
@@ -273,7 +276,7 @@ Check urinating:
 						now auto is 0;
 						if P is pants pee refusal inducing and debugmode is 0, do nothing instead;
 				otherwise:
-					say "You can't displace [NameDesc of P] right now, so [if legacy watersports fetish is 1]you'll have to pee[otherwise]your slimeshooter will definitely aim into[end if] into it. Are you sure that's what you want? ";
+					say "You can't displace [NameDesc of P] right now, so [if legacy watersports mechanics is 1]you'll have to pee[otherwise]your slimeshooter will definitely aim into[end if] into it. Are you sure that's what you want? ";
 					now auto is 0;
 					if the player is not consenting, say "You change your mind." instead;
 			now auto is 0;
@@ -282,8 +285,10 @@ Check urinating:
 		if the player is bimbo consenting:
 			let M be a random reactive person;
 			if (the delicateness of the player < 4 or (the player is modest and M is a person)):
-				if debugmode > 0, say "If debugmode was disabled, the player would refuse to pee.";
-				otherwise say SlimeShootRefuseFlav to M;
+				if debugmode > 0:
+					say "If debugmode was disabled, the player would refuse to [SlimeShoot].";
+				otherwise:
+					say SlimeShootRefuseFlav to M instead;
 		otherwise:
 			say "Then you should probably stand up first." instead;
 	if a random lake monster is in the location of the player and the bimbo of the player < 14 and delayed urination is 0:
@@ -291,22 +296,26 @@ Check urinating:
 		if the player is bimbo consenting:
 			let M be a random reactive person;
 			if (the delicateness of the player < 4 or (the player is modest and M is a person)):
-				if debugmode > 0, say "If debugmode was disabled, the player would refuse to [SlimeShoot].";
-				otherwise say SlimeShootRefuseFlav to M;
+				if debugmode > 0:
+					say "If debugmode was disabled, the player would refuse to [SlimeShoot].";
+				otherwise:
+					say SlimeShootRefuseFlav to M instead;
 		otherwise:
 			say "Then you should probably go elsewhere, you don't dare go near the lake with the tentacle monster still lurking in these waters." instead.
 
 Definition: a clothing (called P) is pants pee refusal inducing:
 	let M be a random reactive person;
 	if the slime-soak of P <= 0 and P is not diaper and (the delicateness of the player < 6 or (the player is not disgraced and M is a person)) and (diaper quest is 0 or M is a person):
-		if debugmode > 0, say "If debugmode was disabled, the player would refuse to [SlimeShoot].";
-		otherwise say SlimeShootRefuseFlav to M;
-		decide yes;
+		if debugmode > 0:
+			say "If debugmode was disabled, the player would refuse to [SlimeShoot].";
+		otherwise:
+			say SlimeShootRefuseFlav to M;
+			decide yes;
 	decide no.
 [In DQ players will always pee their pants just not in front of people. This is to make sure that the 'never wet myself involuntarily' bonus is always attainable.]
 
-To say SlimeShootRefuseFlav to (M - a person):
-	say "[first custom style]I'm NOT [if legacy watersports fetish is 1]peeing[otherwise]letting my slimeshooter ruin[end if] my pants[if M is a person and the delicateness of the player >= 6] in front of [FuckerDesc of M][first custom style].[otherwise].[end if][roman type][line break]";
+To say SlimeShootRefuseFlav to (M - a thing):
+	say "[first custom style]I'm NOT [if legacy watersports mechanics is 1]peeing[otherwise]letting my slimeshooter ruin[end if] my pants[if M is a person and the delicateness of the player >= 6] in front of [FuckerDesc of M][first custom style].[otherwise].[end if][roman type][line break]";
 
 toiletJustUsed is initially false. [Used in the DQ ultimate training sesson.]
 
@@ -318,8 +327,13 @@ To compute toilet use:
 	if watersports mechanics is 1 and the player is not bladder incontinent and (the number of pee covering actually unavoidable clothing is 0 or the player is able to use the toilet past their diaper):
 		if the bladder of the player > 0:
 			let C be a random pee covering clothing;
-			if C is clothing, say "Pulling the crotch fabric of your [ShortDesc of C] to one side, you ";
-			otherwise say "You ";
+			if current-predicament is chores-predicament and diaper quest is 1 and chores-predicament is not key-lost and the player is in a predicament room:
+				say "You wish farewell to the key for your chastity, and, pulling your diaper down to your ankles, you ";
+				now chores-predicament is key-lost;
+			otherwise if C is clothing:
+				say "Pulling the crotch fabric of your [ShortDesc of C] to one side, you ";
+			otherwise:
+				say "You ";
 			if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2:
 				say "sit on the Punishment [big SlimeTargetP] above [NameDesc of woman-player][']s face and release your hold on your [SlimeContainer].[line break][speech style of woman-player]'Wait please, no, [one of]let's talk about this[or]not again[stopping]- FFFFFFFFBBBBBFFFFFTTTT!'[roman type][line break][BigNameDesc of woman-player][']s pleas are drowned out by the heavy flow of your [slime].[line break][speech style of woman-player]'You [bitch]!'[roman type][line break]";
 				now too is "NOPE";
@@ -388,9 +402,8 @@ To compute toilet use:
 			if H is actually summonable:
 				say "Before you know it, your head and mouth are encased in rubber. You're now wearing a pink latex baby's bonnet!";
 				summon H cursed;
-			otherwise if skimpy underwear suggestion is not 0:
-				now skimpy underwear suggestion is 0;
-				say "Your mind suddenly clouds for a second... As you shake it off, you suddenly feel a strange aversion to wearing underwear thinner than diapers!";
+			otherwise if skimpy underwear optimization is not 0:
+				UnderwearOptimize 0;
 			otherwise:
 				DiaperAddictUp 1;
 				say "Your mind suddenly clouds for a second... As you shake it off, you suddenly feel more comfortable wearing and using diapers!";
@@ -531,7 +544,7 @@ To start urination:
 		if debugmode is 1, say "resetting accidental [if slimeshooter fetish is 1]drain[otherwise]urination[end if] flag.";
 		now delayed urination is 0;
 	let Y be the valid snapshotter;
-	if Y is a thing and (Y is not a camera trap or refractoryperiod < maxrefractoryperiod):
+	if Y is a thing and (Y is not a camera trap or refractoryperiod of the player < maxrefractoryperiod):
 		let D be a random worn diaper;
 		if D is diaper and D is not currently visible, now target-poster is nothing; [peeing into a diaper that can't be seen shouldn't cause a reaction from cameras]
 		otherwise now target-poster is a random off-stage wetting poster;
@@ -539,7 +552,7 @@ To start urination:
 		now target-poster is nothing;
 	if the player is not pee protected:
 		if the player is flying:
-			if legacy watersports fetish is 1, say "You [slimedrain] freely from the air onto the ground below.[line break][variable custom style]Well this is a new experience...[roman type][line break]";
+			if legacy watersports mechanics is 1, say "You [slimedrain] freely from the air onto the ground below.[line break][variable custom style]Well this is a new experience...[roman type][line break]";
 			otherwise say "You freely empty your slime shooter onto the ground far below.[line break][variable custom style]No one can tell it was me...[roman type][line break]";
 			if the bladder of the player > 6:
 				SlimePuddleUp 6;
@@ -586,8 +599,8 @@ To start urination:
 				now toilet-sitting is true;
 			otherwise:
 				say "You stay where you are. ";
-		if delayed urination is 1, say "[if legacy watersports fetish is 1]You involuntarily release your hold on your [SlimeContainer]. [otherwise]You slimeshooter screeches as it pulls its own trigger. [end if]";
-		otherwise say "You [if legacy watersports fetish is 1]release your hold on your [SlimeContainer]. [otherwise]pull the trigger on your slimeshooter. [end if]";
+		if delayed urination is 1, say "[if legacy watersports mechanics is 1]You involuntarily release your hold on your [SlimeContainer]. [otherwise]You slimeshooter screeches as it pulls its own trigger. [end if]";
+		otherwise say "You [if legacy watersports mechanics is 1]release your hold on your [SlimeContainer]. [otherwise]pull the trigger on your slimeshooter. [end if]";
 		compute pee protected urination;
 		if K is diaper:
 			if diaper quest is 1 and the class of the player is priestess:
@@ -705,7 +718,7 @@ To compute pee protected urination:
 
 To compute urination:
 	let Y be the valid snapshotter;
-	if Y is a thing and (Y is not a camera trap or refractoryperiod < maxrefractoryperiod) or there is a camera-bystander in the location of the player, now target-poster is a random off-stage wetting poster;
+	if Y is a thing and (Y is not a camera trap or refractoryperiod of the player < maxrefractoryperiod) or there is a camera-bystander in the location of the player, now target-poster is a random off-stage wetting poster;
 	otherwise now target-poster is nothing;
 	if seconds is 0, allocate 6 seconds;
 	if the player is not pee protected or the player is able to use a toilet:
@@ -774,7 +787,7 @@ To end urination:
 				say "[bold type]Your [ShortDesc of T] [bold type]seems to curse itself - it seems very eager to stay on your body right now![roman type][line break]";
 				now T is cursed;
 		otherwise if D is actually summonable and the player is not able to use a body of water: [Don't want it getting summoned and therefore the player somehow hasn't actually entered the body of water!]
-			say "[bold type]Your [ShortDesc of T] [bold type]summons a diaper onto your crotch! It doesn't seem happy that you weren't wearing one when you peed...[roman type][line break]";
+			say "[bold type]Your [ShortDesc of T] [bold type]summons a diaper onto your crotch! It doesn't seem happy that you weren't wearing one when you [if slimeshooter fetish is 1]drained your slimeshooter[otherwise]peed[end if]...[roman type][line break]";
 			summon D cursed with quest;
 	if player-currently-resting is 1 and diaper lover >= 1:
 		if there is a worn tattoo and bed-wetter tattoo is not worn and a random number between 1 and 2 is 1:
@@ -825,12 +838,12 @@ To check (L - a liquid-object) maidification:
 		if the class of the player is maid:
 			say "[bold type]Your [ShortDesc of a random worn headgear] causes you to feel deep shame at causing messes rather than cleaning them![roman type][line break]";
 			if (L is not slime or watersports fetish is 1) and bukkake fetish is 1 and a random number between 1 and 2 is 1:
-				say "A bucket full of [L] appears above your head, and tips over, dousing you in the warm stuff.";
+				say "A bucket full of [boringLQ L] appears above your head, and tips over, dousing you in the warm stuff.";
 				AnnouncedSquirt L on hair by 50;
 			otherwise if L is not slime or watersports fetish is 1:
 				let N be the number of carried vessels;
 				if N > 0:
-					say "Your [if N is 1][ShortDesc of a random carried vessel] is[otherwise]drinking vessels are all[end if] filled to the brim with [L]!";
+					say "Your [if N is 1][ShortDesc of a random carried vessel] is[otherwise]drinking vessels are all[end if] filled to the brim with [boringLQ L]!";
 					repeat with V running through carried vessels:
 						if L is semen, now the fill-colour of V is creamy;
 						if L is slime, now the fill-colour of V is golden;
@@ -874,8 +887,8 @@ To compute pee leaking with reason (T - a text):
 			if CK is clothing, now KSK is the total-soak of CK;
 		say bold type;
 		if legacy watersports mechanics is 1:
-			if T is "", say "[one of]You spontaneously leak a little pee[or]All of a sudden, your [SlimeContainer] spasms and you squirt out a little wee[or]Completely beyond your control, your [if the player is possessing a penis][player-penis][otherwise][SlimeContainer][end if] lets out a squirt of pee[in random order]. ";
-			otherwise say "[T] [one of]you squirt out a little bit of pee[or]you leak a little squirt of pee[or]your [SlimeContainer] muscles tense and accidentally let out a little pee[in random order]. ";
+			if T is "", say "[one of]You spontaneously leak a little [slime][or]All of a sudden, your [SlimeContainer] spasms and you squirt out a little [slime][or]Completely beyond your control, your [if the player is possessing a penis][player-penis][otherwise][SlimeContainer][end if] lets out a squirt of [slime][in random order]. ";
+			otherwise say "[T] [one of]you squirt out a little bit of [slime][or]you leak a little squirt of [slime][or]your [SlimeContainer] muscles tense and accidentally let out a little [slime][in random order]. ";
 		otherwise:
 			if T is "", say "[one of]Your slime pistol spontaneously leaks a little slime[or]All of a sudden, your slime pistol spasms and squirts out a little slime[or]Completely beyond your control, your slime pistol lets out a squirt of slime[in random order]. ";
 			otherwise say "[T] [one of]your slime pistol squirts out a little bit of slime[or]your slime pistol leaks a little squirt of slime[or]your slime pistol tenses and lets out a little slime[in random order]. ";
@@ -1004,7 +1017,7 @@ To say GroundPeeDeclaration of (M - a monster):
 	if delayed urination is 0: [Voluntary urination]
 		say "[if the humiliation of the player < HUMILIATION-DISGRACED + 3500]You shudder in shame as you allow [NameDesc of M] to watch you.[otherwise]You hang your head submissively, not looking [NameDesc of M] in the eyes.[end if]";
 	otherwise: [Accidental urination]
-		if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Eek! Don't watch!'[roman type][line break][end if]You stay still like a deer in headlights as [NameDesc of M] watches you pee.";
+		if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Eek! Don't watch!'[roman type][line break][end if]You stay still like a deer in headlights as [NameDesc of M] watches you [slimedrain].";
 		otherwise say "You shudder[if the humiliation of the player < HUMILIATION-BROKEN], finding that the humiliation of [NameDesc of M] seeing you lose control is actually turning you on[otherwise] with a weird mixture of shame and pleasure[end if].".
 
 To say GroundSlimeReaction of (M - a monster):
@@ -1040,7 +1053,7 @@ To say PeeReaction (N - 2):
 				now diaper-reaction-said is true;
 				say DiaperReaction of Z;
 	otherwise if delayed urination is 0:
-		say "[if the diaper addiction of the player < 7][line break][first custom style][one of]I guess if I'm wearing it, I might as well use it.[or]This isn't sexy, but I guess it's practical.[or]I will not be telling my friends this part of the story when I get home.[in random order][otherwise if the diaper addiction of the player < 12]You put your hands on the front of the diaper so that you can feel the warmth spread outwards.[line break][variable custom style][one of]Why does it feel so good?[or]The warmth is really nice against my skin...[or]Diapers are pretty cool, I guess.[or]That was so much easier than having to find a loo![in random order][otherwise]As you pee, your eyes roll to the back of your head in pleasure.[line break][second custom style][one of]I love my diaper so much![or]It feels so good![or]I'm such a good [boy of the player]![or]Mmmmm, yes!!![in random order][end if][roman type][line break]";
+		say "[if the diaper addiction of the player < 7][line break][first custom style][one of]I guess if I'm wearing it, I might as well use it.[or]This isn't sexy, but I guess it's practical.[or]I will not be telling my friends this part of the story when I get home.[in random order][otherwise if the diaper addiction of the player < 12]You put your hands on the front of the diaper so that you can feel the warmth spread outwards.[line break][variable custom style][one of]Why does it feel so good?[or]The warmth is really nice against my skin...[or]Diapers are pretty cool, I guess.[or]That was so much easier than having to find a loo![in random order][otherwise]As you [slimedrain], your eyes roll to the back of your head in pleasure.[line break][second custom style][one of]I love my diaper so much![or]It feels so good![or]I'm such a good [boy of the player]![or]Mmmmm, yes!!![in random order][end if][roman type][line break]";
 	otherwise:
 		say "[if the diaper addiction of the player < 7][line break][first custom style][one of]Oh shit! Well I guess I'm glad I was wearing this thing.[or]This isn't sexy! But, I guess it is necessary, evidently...[or]Crap! I guess I really do need diapers right now.[in random order][otherwise if the diaper addiction of the player < 12][line break][variable custom style][one of]This diaper is coming in really useful![or]I could get used to this feeling.[or]I don't even need to pay attention to my [SlimeContainer]![or]That was so much easier than having to find a loo![in random order][otherwise if the bladder-incontinence of the player > 5][line break][second custom style][one of]*giggle*, that was easy![or]So calming...[or]I hardly felt that one. Maybe soon I won't feel myself going at all![in random order][otherwise][line break][second custom style][one of]*giggle*, that was fun![or]Again again![or]Ooh I just LOVE that feeling![in random order][end if][roman type][line break]";
 	if target-poster is a poster:

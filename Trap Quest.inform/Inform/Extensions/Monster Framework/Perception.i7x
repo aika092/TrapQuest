@@ -33,10 +33,10 @@ To compute just-became-interested of (M - a monster):
 	progress quest of whore-exposing-quest for M;
 	if M is intelligent:
 		progress quest of show-and-tell-quest for M;
-		if topless temporary fetish > 0 and breasts is lewdly exposed:
+		[if topless temporary fetish > 0 and breasts is lewdly exposed:
 			decrease topless temporary fetish by 1;
 			if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
-			otherwise say "You [one of]can tell you have made progress towards removing the curse that makes you desperate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
+			otherwise say "You [one of]can tell you have made progress towards removing the curse that makes you desperate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";]
 	if the times-met of M < 0, now the times-met of M is 0;
 	increase the times-met of M by 1;
 	if M is friendly human monster and breasts is exposed:

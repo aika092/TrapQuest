@@ -334,15 +334,15 @@ This is the alcohol random rule:
 	if choice in row 69 of the Table of Player Options is 0 or choice in row 69 of the Table of Player Options is 1, now choice in row 69 of the Table of Player Options is a random number between 0 and 1.
 The alcohol random rule is listed in the random fetish rules.
 
-To decide which number is gender-preference: [This is NPC gender preference. 0: No preference; 1: Female NPCs only 2: Male NPCs only]
+To decide which number is gender-preference: [This is NPC gender preference. 0: No preference; 1: Some preference]
 	if the player is not the donator, decide on 0;
-	if choice in row 70 of the Table of Player Options <= 0, decide on 0;
+	if choice in row 70 of the Table of Player Options <= 1, decide on 0;
 	decide on 1.
-To decide which number is andro fetish:
+To decide which number is andro fetish: [The preference is for men]
 	if gender-preference is 0, decide on 0;
-	if choice in row 70 of the Table of Player Options > 2, decide on 1;
+	if choice in row 70 of the Table of Player Options > 3, decide on 1;
 	decide on 0.
-To decide which number is gyno fetish:
+To decide which number is gyno fetish: [The preference is for women]
 	if gender-preference is 0, decide on 0;
 	if andro fetish is 1, decide on 0;
 	decide on 1.

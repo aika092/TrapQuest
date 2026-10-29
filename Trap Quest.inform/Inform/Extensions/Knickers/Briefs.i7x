@@ -166,7 +166,7 @@ To compute post transformation effect of (C - pink-hole-briefs):
 		say DefaultSexChangeFlav;
 		SexChange the player.
 Report wearing pink-hole-briefs:
-	if the player is ready for event TG:
+	if the player is ready for uncommon event tg:
 		say DefaultSexChangeFlav;
 		SexChange the player.
 

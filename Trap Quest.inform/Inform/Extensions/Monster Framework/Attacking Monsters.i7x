@@ -276,7 +276,7 @@ This rule causes a knee to fail if the player is wearing a hobble-skirted clothi
 +!]
 This is the player can't knee with long skirts rule:
 	repeat with C running through worn crotch-in-place clothing:
-		if the front-skirt-length of C >= 9 and C is not slitted and C is not crotch-unzipped:
+		if the front-skirt-hindrance-length of C >= 9 and C is not slitted and C is not crotch-unzipped:
 			if autoattack is 0:
 				say "You can't raise your knee whilst sporting a skirt this long with no slit!";
 				focus-consider C;
@@ -292,7 +292,7 @@ This rule causes a kick to fail if the player is wearing a knee-length or hobble
 +!]
 This is the player can't kick with long skirts rule:
 	repeat with C running through worn crotch-in-place clothing:
-		if the front-skirt-length of C >= 7 and C is not slitted and C is not crotch-unzipped:
+		if the front-skirt-hindrance-length of C >= 7 and C is not slitted and C is not crotch-unzipped:
 			if autoattack is 0:
 				say "You can't raise your feet high enough whilst sporting a long skirt with no slit!";
 				focus-consider C;
@@ -568,7 +568,7 @@ To damage (A - a number) on (M - a monster):
 		increase attack-damage by 1;
 		if damage-explained > 0, say "+1 (random bonus for low damage hits) ";
 	[Specific Monsters can add or subtract damage]
-	let N be the damage modifier of M;
+	let N be the damage modifier of M;[We generally check for crits inside this function.]
 	decrease N by the temporary-damage-reduction of M;
 	if N is not 0:
 		increase attack-damage by N;

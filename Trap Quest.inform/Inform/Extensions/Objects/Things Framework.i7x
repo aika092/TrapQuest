@@ -33,6 +33,9 @@ Definition: a thing is museum-store:
 		if it is in Mansion28, decide yes;
 		if it is in a pedestal, decide yes;
 	decide no.
+Definition: a thing is kitsune-store:
+	if the owner of it is kitsune, decide yes;
+	decide no.
 Definition: a thing is stolen:
 	if the owner of it is shopkeeper and it is not in Dungeon41 and it is not held by shopkeeper and (it is not held or the player is not in Dungeon41), decide yes;
 	decide no.
@@ -98,6 +101,7 @@ To decide what number is the pre-discount-price of (C - a clothing):
 		if C is ring, now X is 1;
 		if C is bracelet, now X is 2;
 		if C is necklace, now X is 4;
+		if C is cock-ring, now X is 3;
 		if C is humility-stone:
 			now X is 0;
 			if the player is the donator, now X is 10;

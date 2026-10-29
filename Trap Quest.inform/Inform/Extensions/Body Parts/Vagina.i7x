@@ -225,7 +225,9 @@ Definition: yourself is solely really possessing a vagina:
 [#LXorDD Only needed when reversing a M2F sex change.]
 To devagina the player:
 	now the player is male;
-	now the openness of vagina is -1.
+	now the openness of vagina is -1;
+	now the pregnancy of the player is 0;
+	now the semen volume of vagina is 0.
 
 Part 2 - Description
 
@@ -349,6 +351,12 @@ To say VaginaModesty:
 			if P is monster, say "Enemies are definitely paying extra attention to it.";
 			otherwise say "You have a feeling that enemies are paying extra attention to it.".
 
+To say TouchDesc of (B - vagina):
+	let S be the sensitivity of vagina;
+	let L be the labia plumpness of vagina;
+	say "[ShortDesc of vagina]. You feel a [if S < 3]barely noticeable[otherwise if S < 5]tiny[otherwise if S < 7]sharp[otherwise]massive[end if] jolt as your fingers brush your clit, and another as you [if the latex-transformation of the player > 7]clumsily [end if]spread your [if the latex-transformation of the player > 2][LatexFlav][otherwise if the semen volume of vagina > 5]extremely wet, sticky, [semen]-plastered[otherwise if the semen volume of vagina > 0]slippery, [semen]-dripping[otherwise]soft, slightly wrinkled[end if] folds. ";
+	say "Your [LatexFlav]lips are [if L is 0]ever so slightly plump[otherwise if L is 1]pouting[otherwise if L is 2]engorged and pouting[otherwise]obscenely swollen and pouting[end if] hugging your fingers as you brush the inside of your [PussyGape the openness of B] and [if the soreness of B is 0]sensitive[otherwise if the soreness of B < 3]tingling[otherwise if the soreness of B < 6]throbbing[otherwise]aching[end if] hole.".
+
 Part 3 - Modify Vagina Stats
 
 Chapter 1 - Gape
@@ -435,10 +443,9 @@ This function should be called whenever semen enters the player's vagina
 To PussyFill (X - a number):
 	if lipstick collar is worn, increase X by 1;
 	[let flav-said be 0;]
-	let M be a random wrapped monster penetrating vagina;
-	if M is monster:
-		now X is 0;
-		compute condom filling of M;
+	let M be a random thing penetrating vagina;
+	if M is wrapped monster:
+		compute condom filling of M instead;
 	if X > 0:
 		now pussyfilled is true;
 		if invigoration-timer of invigoration-elixir > 0 and the soreness of vagina > 0:
@@ -446,14 +453,18 @@ To PussyFill (X - a number):
 			if the soreness of vagina > X, decrease the soreness of vagina by X;
 			otherwise now the soreness of vagina is 0;
 			now the tolerated of vagina is 0;
-		otherwise if an infernal monster is penetrating vagina or a demonic thing is penetrating vagina:
-			if the class of the player is not worshipper and the class of the player is not succubus:[demonic classes won't be harmed]
+		otherwise if M is infernal monster or M is demonic thing:
+			if (intense creampie fetish is 1 or the class of the player is priestess) and (the class of the player is not worshipper and the class of the player is not succubus):[demonic classes won't be harmed]
 				say "The infernal [semen] stings the lining of your [vagina]!";
 				if the class of the player is priestess, increase the soreness of vagina by X / 2;
-				otherwise increase the soreness of vagina by X / 3;
+				increase the soreness of vagina by 1;
 			if the soreness of vagina > 10, now the soreness of vagina is 10;
 	let R be a random number between 0 and 5;
-	if there is a live thing penetrating vagina, decrease R by 1;
+	if M is a thing:
+		decrease R by 1;
+		now the recent-source of semen is M;
+		liquid stimulate vagina from semen times X;
+		progress quest of vaginal-creampie-quest from M;
 	SlowSemenAddictUp 1;
 	if X > 0 and vagina is accepting womb semen: [First drop of semen makes it into womb if possible]
 		WombFill 1;
@@ -466,9 +477,7 @@ To PussyFill (X - a number):
 			WombFill 1; [Too big a creampie causes more cum to get into the womb]
 			now VS is 0;
 		otherwise:
-			increase the semen volume of vagina by 1;
-	now M is a random thing penetrating vagina;
-	if M is a thing, progress quest of vaginal-creampie-quest from M.
+			increase the semen volume of vagina by 1.
 
 Definition: vagina is accepting womb semen:
 	if the womb volume of vagina < 5 and the pregnancy of the player is 0, decide yes;
@@ -660,9 +669,9 @@ To wombfill (X - a number) medium eggs:
 		increase the medium egg count of vagina by 1;
 		let M be a random egg-fathering thing penetrating vagina;
 		if M is a thing, add M to the medium-egg-origins of vagina;
-	if carrot daggers is worn and carrot daggers is not blessed and there is a live thing penetrating vagina:
-		bless carrot daggers;
-		say "You sense that your [ShortDesc of carrot daggers] have become more powerful!";
+	if carrot-daggers is worn and carrot-daggers is not blessed and there is a live thing penetrating vagina:
+		bless carrot-daggers;
+		say "You sense that your [ShortDesc of carrot-daggers] have become more powerful!";
 	EggPregCheck.
 To wombfill (X - a number) large eggs:
 	while X > 0:

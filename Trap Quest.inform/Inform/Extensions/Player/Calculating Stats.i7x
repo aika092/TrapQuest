@@ -110,6 +110,8 @@ To decide which number is the flat strength of the player:
 	let Smax be 30;
 	if glory-stone is worn, decrease Smax by 10;
 	if comeuppance-stone is worn, decrease Smax by 10;
+	increase Smax by maximum-optimizer-bonus;
+	if Smax < 1, now Smax is 1;
 	if S > Smax, decide on Smax;
 	decide on S.
 
@@ -206,7 +208,6 @@ To decide which number is the flat dexterity of the player:
 	if cookie-poison-timer > 0, decrease D by 2;
 	if irritated-bladder is true, now D is D / 2;
 	if irritated-rectum is true, now D is D / 2;
-	if the player is fighting against short skirts or the player is fighting against skimpy underwear, now D is D / 2;
 	if wasp-honey-timer > 0, decrease D by wasp-honey-timer / 10;
 	if the player is grossed out and D > 5:
 		now D is 5;
@@ -221,7 +222,9 @@ To decide which number is the flat dexterity of the player:
 	let Dmax be 30;
 	if bondage-stone is worn, decrease Dmax by 10;
 	if brat-stone is worn, decrease Dmax by 10;
-	if Dmax > 30, decide on Dmax;
+	increase Dmax by maximum-optimizer-bonus;
+	if Dmax < 1, now Dmax is 1;
+	if D > Dmax, decide on Dmax;
 	decide on D.
 
 To decide which number is the starting dexterity of the player:
@@ -270,9 +273,7 @@ To decide which number is the intelligence of the player:
 
 To decide which number is the flat intelligence of the player:
 	let I be the raw intelligence of the player;
-	if the player is fighting against skimpy underwear, decrease I by 4;
-	if the player is fighting against short skirts, decrease I by 4;
-	if the player is fighting against topless, decrease I by 4;
+	increase I by maximum-optimizer-bonus;
 	if the class of the player is cowgirl, decrease I by the sensitivity of breasts / 2;
 	if the class of the player is condom collector, increase I by the square root of total pinned condoms;
 	if the class of the player is priestess, increase I by 2;
@@ -307,8 +308,9 @@ To decide which number is the flat intelligence of the player:
 	let Imax be 30;
 	if fucktoy-stone is worn, decrease Imax by 10;
 	if piercing-stone is worn, decrease Imax by 10;
-	if Imax > 30, decide on Imax;
-	if I > 30, decide on 30;
+	increase Imax by maximum-optimizer-bonus;
+	if Imax < 1, now Imax is 1;
+	if I > Imax, decide on Imax;
 	decide on I.
 
 To decide which number is the starting intelligence of the player:

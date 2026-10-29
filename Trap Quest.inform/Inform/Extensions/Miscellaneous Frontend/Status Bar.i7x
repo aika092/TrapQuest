@@ -730,8 +730,8 @@ left	central	right
 
 Table of Benefit Options Status
 left	central	right
-"Choose how to spend your points."	""	""
-"CURRENT POINTS LEFT: [points count]"	""	""
+""	"Choose how to spend your points. CURRENT POINTS LEFT: [points count]"	""
+[""	"[status_int]"	""]
 
 Part - Other Status Bars
 
@@ -740,69 +740,53 @@ status_int is a number that varies.
 Table of Fetish Points Status
 left	central	right
 ""	"TOTAL POINTS (including those earned from already enabled handicaps on next page): [positive points count]"	""
+[""	"[status_int]"	""]
 
 Table of Handicap Points Status
 left	central	right
 ""	"TOTAL POINTS: [positive points count]"	""
+[""	"[status_int]"	""]
 
 Table of Empty Status
 left	central	right
 ""	""	""
-""	"*****[if diaper quest is 1]DIAPER[otherwise]TRAP[end if] QUEST*****"	""
+""	"*****[if diaper quest is 1]DIAPER[otherwise]TF[end if] QUEST*****"	""
 ""	""	""
 
 Table of Pregnancy Choice Status
 left	central	right
-""	""	""
 "Enable or disable inhuman pregnancy content?"	""	""
-""	""	""
 
 Table of Slow Pregnancy Status
 left	central	right
-""	""	""
 "How would you like pregnancies to grow?"	""	""
-""	""	""
 
 Table of TG Timing Status
 left	central	right
-""	""	""
 "Some things can make you change sex before you reach minimum penis size. Please choose how rare or common you'd like that to be."	""	""
-""	""	""
 
 Table of TG Occurence Status
 left	central	right
-""	""	""
 "In this game, a magical sex change usually happens shortly after you reach minimum penis size. But you can configure the exact rules surrounding this to best suit your fantasy."	""	""
-""	""	""
 
 Table of Diaper Choice Status
 left	central	right
-""	""	""
 "Enable or disable certain diaper content?"	""	""
-""	""	""
 
 Table of Festive Options Status
 left	central	right
-""	""	""
 "Make it a festive run?"	""	""
-""	""	""
 
 Table of Diaper Focus Status
 left	central	right
-""	""	""
 "Make diapers the main focus of the game?"	""	""
-""	""	""
 
 Table of Toilet Allowance Status
 left	central	right
-""	""	""
 "Enable the player to pull the diaper to one side when in a room with a [SlimeTarget]?"	""	""
-""	""	""
 
 Table of Random Settings Status
 left	central	right
-""	""	""
 "Randomise Your Setup?"	""	""
-""	""	""
 
 Status Bar ends here.

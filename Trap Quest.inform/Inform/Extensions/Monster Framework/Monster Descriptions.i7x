@@ -124,6 +124,8 @@ To decide which figure-name is the sex-profile of (M - a monster):
 Figure of anilingus 1 is the file "Special/Cutscene/cutscene-anilingus1.jpg".
 Figure of anilingus 2 is the file "Special/Cutscene/cutscene-anilingus2.jpg".
 Figure of normal handjob is the file "Special/Cutscene/cutscene-handjob-normal1.jpg".
+Figure of small handjob is the file "Special/Cutscene/cutscene-handjob-small1.jpg".
+Figure of small handjob climax is the file "Special/Cutscene/cutscene-handjob-small2.jpg".
 Figure of piledriver handjob is the file "Special/Cutscene/cutscene-handjob-piledriver1.jpg".
 Figure of piledriver handjob facial is the file "Special/Cutscene/cutscene-handjob-piledriver2.jpg".
 
@@ -135,6 +137,7 @@ To decide which figure-name is the vaginal-sex-monster-image of (M - a monster):
 To decide which figure-name is the penis-fucking-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
 To decide which figure-name is the penis-masturbating-monster-image of (M - a monster):
+	if M is not male and M is not neuter and the size of penis <= 4, decide on Figure of small handjob;
 	decide on Figure of normal handjob.
 To decide which figure-name is the piledriver-masturbating-monster-image of (M - a monster):
 	if M is human, decide on figure of piledriver handjob;
@@ -204,7 +207,7 @@ To say HeldItems of (M - a monster):
 		if T is off-stage, say "You can see that [he of M] has a [ShortDesc of T].";
 	repeat with T running through things held by M:
 		say "You can see that [he of M] still has the [ShortDesc of T].";
-	if players-dick-is-detached > 0: [#LXorDD]
+	if penis is detached: [#LXorDD]
 		say its-got-my-dick for M.
 
 To say SubmissiveDesc of (M - a monster):

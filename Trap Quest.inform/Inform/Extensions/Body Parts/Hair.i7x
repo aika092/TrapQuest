@@ -105,7 +105,9 @@ To say HairColour:
 
 To decide which text is HairColourVagueText:
 	let H be HairColourText;
-	if H is "jet black" or H is "black":
+	if the player is pigtailed and the player is in a predicament room and the player is not in Predicament20:
+		decide on "blonde";
+	otherwise if H is "jet black" or H is "black":
 		decide on "black";
 	otherwise if H is "dark purple" or H is "purple" or H is "pale purple" or H is "violet" or H is "dark violet" or H is "very dark purple" or H is "red-violet":
 		decide on "purple";
@@ -214,6 +216,11 @@ To say RealHairDesc (X - a number):
 	if X is 13, say "calf length hair";
 	if X is 14, say "ankle length hair";
 	if X > 14, say "hair that is even longer than your body".
+
+To say TouchDesc of (B - hair):
+	let V be the semen coating of B;
+	say "[MediumDesc of B]. ";
+	say "It's [if the latex-transformation of the player is 0]softer than you'd expect your own hair to be[otherwise if latex-transformation of the player < 6]a little coarse[otherwise]coarse and fake, like a cheap wig[end if], [if V > 7]and it's wet and extremely clumpy.[otherwise if V > 5]and it's kind of sticky.[otherwise]it's silky, as if treated by the best shampoo money can buy.[end if]".
 
 Part 3 - Modify Hair Stats
 

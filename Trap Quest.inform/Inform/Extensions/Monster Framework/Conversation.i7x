@@ -2573,7 +2573,7 @@ To decide which number is the errand-value of (B - a bottle) for (P - a person):
 	decide on 0.
 To say ErrandFlav of (E - wench-cup-errand) for (P - a person):
 	let M be a random wench;
-	say "There was this slut who came here briefly once, with the most delicious semen inside [his of M] [if a2m fetish > 0 or M is presenting as male]ass[otherwise]pussy[end if]. But I think I scared [him of M] away, because [he of M] never came back. Maybe you've met [him of M]? Bleach blonde hair, blouse caked in cum? Well, I want you to find [him of M] and a cup of the cum from [his of M] [if a2m fetish > 0 or M is presenting as male]asshole[otherwise]coochie[end if]. ".
+	say "There was this slut who came here briefly once, with the most delicious semen inside [his of M] [if baseline a2m fetish is 1 or M is presenting as male]ass[otherwise]pussy[end if]. But I think I scared [him of M] away, because [he of M] never came back. Maybe you've met [him of M]? Bleach blonde hair, blouse caked in cum? Well, I want you to find [him of M] and a cup of the cum from [his of M] [if baseline a2m fetish is 1 or M is presenting as male]asshole[otherwise]coochie[end if]. ".
 To compute unique completion of (E - wench-cup-errand) for (P - a person):
 	let BO be a random carried bottle;
 	repeat with B running through carried non-empty bottles:
@@ -2838,7 +2838,7 @@ To compute instant effect of (E - chastity-errand) for (P - a person):
 
 skirt-hypnosis-errand is an errand.
 Definition: skirt-hypnosis-errand is appropriate:
-	if short skirts permanent suggestion is 1 or short skirts permanent suggestion is 2, decide no;
+	if short skirts permanent optimization is 1 or short skirts permanent optimization is 2, decide no;
 	if the current-reward of the noun is hex dress, decide yes;
 	decide no.
 To decide which number is the errand-weight of (E - skirt-hypnosis-errand) for (P - neuromancer):
@@ -2851,7 +2851,7 @@ To compute instant effect of (E - skirt-hypnosis-errand) for (P - a person):
 	say "Do you let [NameDesc of P] tweak your brain?";
 	if the player is bimbo consenting:
 		say "As soon as you have nodded your assent, [NameDesc of P] is excitedly fixing [his of P] eyes with yours, and using [his of P] mind-magic powers to delve deep into your subconscious, rewiring your brain to make you [second custom style]love only wearing skirts that are so short that you're at least partially exposed down there![roman type][line break]And then you're blinking with confusion and shock, as [NameDesc of P] looks at you, grinning.[paragraph break][variable custom style]'Oh god... What have you done?!'[line break]You ask, hoarse with concern.[line break][speech style of P]'You know exactly what I've done, sunshine. You'll only be wearing the tiniest of skirts from now on, nyahahaha!'[roman type][line break]";
-		now short skirts permanent suggestion is 2;
+		now short skirts permanent optimization is 2;
 		compute errand reward of E for P;
 		now the current-errand of P is no-errand;
 	otherwise:
@@ -2859,28 +2859,27 @@ To compute instant effect of (E - skirt-hypnosis-errand) for (P - a person):
 		now the current-errand of P is rejected-errand;
 	now the current-reward of P is no-reward.
 
-panties-hypnosis-errand is an errand.
-Definition: panties-hypnosis-errand is appropriate:
-	if skimpy underwear suggestion is 0 or the player is no-panties-allowed, decide no;
+panties-optimize-errand is an errand.
+Definition: panties-optimize-errand is appropriate:
+	if skimpy underwear optimization is 0 or the player is no-panties-allowed, decide no;
 	if the current-reward of the noun is hex gloves or the current-reward of the noun is hex collar, decide yes;
 	decide no.
-To decide which number is the errand-weight of (E - panties-hypnosis-errand) for (P - neuromancer):
+To decide which number is the errand-weight of (E - panties-optimize-errand) for (P - neuromancer):
 	decide on 9999999.
-To decide which number is the errand-desire of (E - panties-hypnosis-errand) for (P - neuromancer):
+To decide which number is the errand-desire of (E - panties-optimize-errand) for (P - neuromancer):
 	decide on 100.
-To say ErrandFlav of (E - panties-hypnosis-errand) for (P - a person):
-	say "You want one of my most powerful items, hmm? Tell you what... I want you to let me tweak your brain, to make sure that you only love wearing [if diaper quest is 1]embarrassing[otherwise]slutty[end if] underwear. ".
-To compute instant effect of (E - panties-hypnosis-errand) for (P - a person):
-	say "Do you let [NameDesc of P] tweak your brain?";
+To say ErrandFlav of (E - panties-optimize-errand) for (P - neuromancer):
+	say "You want one of my most powerful items, nya? Tell you what... I want to modify your avatar so it'll work crappier-, er, work *differently* unless you wear [if diaper quest is 1]embarrassing[otherwise]slutty[end if] underwear. ".
+To compute instant effect of (E - panties-optimize-errand) for (P - neuromancer):
+	say "You get the feeling you won't be able to reverse this without leaving the simulation. Do you let [NameDesc of P] modify your avatar anyway? ";
 	if the player is bimbo consenting:
-		if skimpy underwear suggestion < 0, now skimpy underwear suggestion is 3;
-		otherwise decrease skimpy underwear suggestion by 3;
-		if skimpy underwear suggestion < 0, now skimpy underwear suggestion is 0;
-		say "As soon as you have nodded your assent, [NameDesc of P] is excitedly fixing [his of P] eyes with yours, and using [his of P] mind-magic powers to delve deep into your subconscious, rewiring your brain to make you [second custom style]love only wearing [if skimpy underwear suggestion >= 3]skimpy hotpants and thongs[otherwise if skimpy underwear suggestion > 0]thongs[otherwise]crotchless underwear[end if][if diaper lover > 0] and diapers[end if]![roman type][line break]And then you're blinking with confusion and shock, as [NameDesc of P] looks at you, grinning.[paragraph break][variable custom style]'Oh god... What have you done?!'[line break]You ask, hoarse with concern.[line break][speech style of P]'You know exactly what I've done, sunshine. [if skimpy underwear suggestion is 0 and diaper quest is 1]No more big girl panties for you[otherwise if skimpy underwear suggestion is 0]No more panties for you[otherwise if diaper quest is 1]Your buttcheeks are gonna be sexily exposed or kept padded from now on[otherwise]Only skimpy panties for you from now on[end if], nyahahaha!'[roman type][line break]";
+		say "As soon as you have nodded your assent, [NameDesc of P] is excitedly grabbing you by the temples, fixing [his of P] eyes with yours as he channels [his of P] nerve magic directly into your brain!";
+		UnderwearOptimize 3;
+		say "[line break][variable custom style]'Oh god... What have you done?!'[line break]You ask, hoarse with concern.[line break][speech style of P]'You know exactly what I've done, sunshine. [if skimpy underwear optimization is 0 and diaper quest is 1]No more big girl panties for you[otherwise if skimpy underwear optimization is 0]No more panties for you[otherwise if diaper quest is 1]Your buttcheeks are gonna be sexily exposed or kept padded from now on[otherwise]Only skimpy panties for you from now on[end if], nyahahaha!'[roman type][line break]";
 		compute errand reward of E for P;
 		now the current-errand of P is no-errand;
 	otherwise:
-		say "[variable custom style]'I'd really rather you didn't.'[line break][speech style of P]'You want me to give you one of my favourite items, but you won't even let me play with your brain?! How shitty of you, nya!'[roman type][line break][BigNameDesc of P] sounds hurt.";
+		say "[line break][variable custom style]'I'd really rather you didn't.'[line break][speech style of P]'You want me to give you one of my favourite items, but you won't even let me fuck with your controls?! How shitty of you, nya!'[roman type][line break][BigNameDesc of P] sounds hurt.";
 		now the current-errand of P is rejected-errand;
 	now the current-reward of P is no-reward.
 
@@ -2916,6 +2915,30 @@ To decide which number is the errand-value of (A - an accessory) for (P - a pers
 		if the pay-me-demand of P is 5 and A is pure diamond, decide on 1;
 		if the pay-me-demand of P >= 6 and A is solid gold, decide on 1;
 	decide on 0.
+dong-surrender-errand is an errand.
+Definition: dong-surrender-errand is appropriate:
+	if players-detached-dick is held and the noun is witch, decide yes;[for now]
+	decide no.
+To decide which number is the errand-desire of (E - dong-surrender-errand) for (P - a person):
+	decide on 100.
+To decide which number is the errand-weight of (E - dong-surrender-errand) for (P - a person):
+	if P is witch, decide on 10;
+	decide on 0.
+To say ErrandFlav of (E - dong-surrender-errand) for (P - a person):
+	say "Give me your [mystical-player-penis]. Right here, right now, and no asking for it again later. ".
+To decide which number is the errand-value of (E - players-detached-dick) for (P - a person):
+	decide on the original price of E.
+To compute instant effect of (E - dong-surrender-errand) for (P - a person):
+	say "Give [him of P] your [DetachedPenis]?";
+	if the player is bimbo consenting:
+		say "You [if tg fetish is 1 and the vaginal sex addiction of the player > 4]eagerly hand over your [mystical-player-penis], glad to finally be rid of it[otherwise]reluctantly hand over your [mystical-player-penis], accepting that you might never see it again[end if]. [BigNameDesc of P] snatches it out of your hands, as if afraid you'll change your mind.";
+		now players-detached-dick is carried by P;
+		compute errand reward of E for P;
+		now the current-errand of P is no-errand;
+	otherwise:
+		say "[variable custom style]'Err, thank you, but no thanks.'[line break][speech style of P]'You SELFISH-! Ahem, I mean, understandable.'[roman type][line break][BigNameDesc of P] nods several times, clearly trying not to look disappointed.";
+		now the current-errand of P is rejected-errand;
+	now the current-reward of P is no-reward.
 
 wisp-errand is an errand.
 Definition: wisp-errand is appropriate: decide yes.
@@ -2928,8 +2951,8 @@ To decide which number is the errand-weight of (E - wisp-errand) for (P - an aco
 	decide on 8.
 To decide which number is the errand-weight of (E - wisp-errand) for (P - witch):
 	decide on 4.
-[To decide which number is the errand-weight of (E - wisp-errand) for (P - a wench):
-	decide on 4.]
+To decide which number is the errand-weight of (E - wisp-errand) for (P - a wench):
+	decide on 4.
 To decide which number is the errand-weight of (E - wisp-errand) for (P - djinn):
 	decide on 6.
 To decide which number is the errand-weight of (E - wisp-errand) for (P - a gladiator):
@@ -3225,7 +3248,7 @@ To say RequestFlav of (C - be-my-diaper):
 To say RewardFlav of (C - be-my-diaper):
 	say "let you [slime] in my diaper".
 To compute errand rewarding of (T - be-my-diaper) from (P - a person):
-	say "[speech style of P]'So... Do you still need to do a wee?'[roman type][line break]";
+	say "[speech style of P]'So... Do you still need to do a [slime]?'[roman type][line break]";
 	if the player is bursting:
 		let C be a random worn actually unavoidable pee covering clothing;
 		if C is clothing:
@@ -3298,6 +3321,7 @@ To compute errand rewarding of (T - use-your-key) from (P - a person):
 
 teach-me-something is a requestable.
 To decide which number is the requestability of (C - teach-me-something):
+	if the noun is witch, decide on 101;
 	decide on 5.
 Definition: teach-me-something is appropriate:
 	if easy teaching is 0 and the noun is not defeated and the noun is intelligent and the skillCooldown of the player <= 0 and the noun is friendly, decide yes;
@@ -3366,6 +3390,8 @@ To execute (T - talk-request) for (M - a monster):
 			say "[speech style of M]'I have nothing I can teach you right now.'[roman type][line break]";
 		otherwise if M is woman-player and R is not a requestable:
 			say "[speech style of M]'If I could afford to, I'd give you that for free.'[roman type][line break]";
+		otherwise if M is woman-player and R is suck-my-dick and (the woman-status of woman-player is 26 or the woman-status of woman-player >= 80):
+			say "[speech style of M]'Um, sorry, but I'm not really in the right headspace for that right now.'[roman type][line break]";
 		otherwise if M is matron and (R is use-your-key or R is a specific-key):
 			compute full unlock assessment of M;
 		otherwise if the request-cooldown of M > 0:
@@ -3377,6 +3403,11 @@ To execute (T - talk-request) for (M - a monster):
 			if RQ < CH + 2, now RQ is CH + 2; [always a chance of not getting a freebie]
 			let RR be a random number between 1 and RQ;
 			if M is robot or CH * 4 < RQ, now RR is 9999;
+			if R is suck-my-dick and M is woman-player and woman-player is happy girlfriend:
+				[Girlfriend Barbara will always suck your dick if she's happy with you]
+				now RQ is 0;
+				now RR is 0;
+				if CH < 0, now CH is 0;
 			if debuginfo > 0, say "[input-style]Errand needed check: [if RR is 9999]Request level ([RQ]) too high for player with a charisma score of [CH]; automatic success. Errand is required.[otherwise]Request level d[RQ] ([RR]) | [CH].5 player charisma[end if][roman type][line break]";
 			if CH >= RR:
 				say RequestAcceptanceForFree of M;

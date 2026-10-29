@@ -499,9 +499,9 @@ A later time based rule (this is the facial room machine rule):
 							while vibe-turns < 10:
 								increase vibe-turns by 1;
 								stimulate vagina from N;
-								if refractoryperiod > 0 or (vibe-turns > 1 and the player is getting lucky):
-									say "[BigNameDesc of N] turns the vibrator off, [if refractoryperiod <= 0]apparently [end if]now satisfied.";
-									if refractoryperiod <= 0, say GotLuckyFlav;
+								if refractoryperiod of the player > 0 or (vibe-turns > 1 and the player is getting lucky):
+									say "[BigNameDesc of N] turns the vibrator off, [if refractoryperiod of the player <= 0]apparently [end if]now satisfied.";
+									if refractoryperiod of the player <= 0, say GotLuckyFlav;
 									now vibe-turns is 10;
 								otherwise if spanking-too is true:
 									say "[speech style of N]'And take [one of]THIS[or]THAT[cycling]!'[roman type][line break]The second [MediumDesc of M] whacks your [if there is a worn diaper]padded[otherwise if LP is clothing]poorly protected[otherwise]unprotected[end if] [AssDesc] with two large spanking paddles!";
@@ -902,7 +902,7 @@ To compute elevator entrance of (ER - BellyRoom01):
 					if mythical creature fetish is 1 and a random number between 1 and 2 is 1:
 						add buzzing giant wasp to the medium-egg-origins of vagina; [wasp]
 					otherwise if a random number between 1 and 3 is 1:
-						add carrot daggers to the medium-egg-origins of vagina; [bunny]
+						add carrot-daggers to the medium-egg-origins of vagina; [bunny]
 					[otherwise it will be tentacle]
 			otherwise:
 				while the total egg fill of belly <= (belly limit - 3):
@@ -913,7 +913,7 @@ To compute elevator entrance of (ER - BellyRoom01):
 					if mythical creature fetish is 1 and a random number between 1 and 2 is 1:
 						add buzzing giant wasp to the medium-egg-origins of belly; [wasp]
 					otherwise if a random number between 1 and 3 is 1:
-						add carrot daggers to the medium-egg-origins of belly; [bunny]
+						add carrot-daggers to the medium-egg-origins of belly; [bunny]
 					[otherwise it will be tentacle]
 		cutshow Figure of Belly Room;
 		say "[variable custom style]What the actual fuck just happened?! This can't be real![roman type][paragraph break]You are given no time to even process this insanity before the machine speaks again.[line break][first custom style]'WARNING: THIS ROOM WILL NOW FILL WITH STEAM AS PART OF ITS STERILIZATION CYCLE. WOULD ALL ORGANIC MATTER THAT WISHES TO REMAIN ORGANIC MATTER [caps please] IMMEDIATELY LEAVE VIA THE ELEVATOR PROVIDED.'[line break][variable custom style]Crap, I'm being kicked out right away![roman type][line break]";
@@ -1011,14 +1011,14 @@ To SemenPuddleUp (X - a number) in (R - BellyRoom01):
 	if the player is in R:
 		cutshow Figure of Belly Room Expel;
 		say "A klaxon sounds, followed by a loud whooshing sound as the [semen] is sucked down into a drainage system. ";
-		if (a2m fetish > 1 or currently-squirting is 0) and face is not actually occupied and a random number between 1 and 2 > condom fetish:
+		if (snowball fetish is 1 or currently-squirting is 0) and face is not actually occupied and a random number between 1 and 2 > condom fetish:
 			say "Suddenly, a ring gag connected to a tube flies out of a panel in the ground and into your mouth! It begins pumping the collected [semen] into your mouth[if currently-squirting is 1] - you're being forcefed your own nasty expulsion[one of][or] once again[stopping][end if]!";
 			now smoothie gag is penetrating face;
 			FaceFill semen by X;
 			if currently-squirting is 1, TasteGrossOut 12;
 			dislodge smoothie gag;
 			say "The gag releases itself from your mouth and retreats back into the ground.";
-		otherwise if condom fetish is 1:
+		otherwise if sticky condom fetish is 1:
 			say "Suddenly, a condom full of the collected [semen] is ejected from a panel in the ground, and flies towards you!";
 			let C be a random worn condom pinnable clothing;
 			if C is nothing, now C is string-belt;
@@ -1038,7 +1038,7 @@ To SlimePuddleUp (X - a number) in (R - BellyRoom01):
 	if the player is in R:
 		cutshow Figure of Belly Room Expel;
 		say "A klaxon sounds, followed by a loud whooshing sound as the [slime] is sucked down into a drainage system. ";
-		if (a2m fetish > 1 or currently-squirting is 0) and face is not actually occupied:
+		if (snowball fetish is 1 or currently-squirting is 0) and face is not actually occupied:
 			say "Suddenly, a ring gag connected to a tube flies out of a panel in the ground and into your mouth! It begins pumping the collected [slime] into your mouth[if currently-squirting is 1] - you're being forcefed your own nasty [slime][one of][or] once again[stopping][end if]!";
 			now smoothie gag is penetrating face;
 			FaceFill slime by X;
@@ -1054,7 +1054,7 @@ To MilkPuddleUp (X - a number) in (R - BellyRoom01):
 	if the player is in R:
 		cutshow Figure of Belly Room Expel;
 		say "A klaxon sounds, followed by a loud whooshing sound as the [milk] is sucked down into a drainage system. ";
-		if (a2m fetish > 1 or currently-squirting is 0) and face is not actually occupied:
+		if (snowball fetish is 1 or currently-squirting is 0) and face is not actually occupied:
 			say "Suddenly, a ring gag connected to a tube flies out of a panel in the ground and into your mouth! It begins pumping the collected [milk] into your mouth[if currently-squirting is 1] - you're being forcefed your own nasty assmilk[one of][or] once again[stopping][end if]!";
 			now smoothie gag is penetrating face;
 			FaceFill milk by X;

@@ -153,7 +153,7 @@ Check entering the throne:
 					fully clean K;
 				otherwise:
 					if the bladder of the player < 10, now the bladder of the player is 10;
-					say "[if the player is bursting and K is clothing]You suddenly feel a desperate need to use your [K]![otherwise if the player is bursting]You suddenly feel a desperate need to pee![otherwise]Nothing seems to happen. Strange...[end if]";
+					say "[if the player is bursting and K is clothing]You suddenly feel a desperate need to use your [K]![otherwise if the player is bursting]You suddenly feel a desperate need to [SlimeShoot]![otherwise]Nothing seems to happen. Strange...[end if]";
 			otherwise:
 				say "The shape of the throne twists and morphs beneath you! You gasp as you realise it has now transformed into a throne shaped [SlimeTargetP]![line break][variable custom style][if the diaper addiction of the player < 4]What the FUCK is going on in this sick game?![otherwise if the diaper addiction of the player < 10]I don't know what would be worse, using a diaper or using this thing...[otherwise if the diaper addiction of the player < 15]Why would I use this when I have my diaper?[end if][roman type][line break]";
 				RectumIncontinenceUp 1;

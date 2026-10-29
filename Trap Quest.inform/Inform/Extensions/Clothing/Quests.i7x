@@ -526,7 +526,7 @@ Part - Creampie Drinking Quest
 creampie-drinking-quest is a clothing-quest.
 
 Definition: creampie-drinking-quest is appropriate:
-	if a2m fetish >= 2, decide yes;
+	if snowball fetish is 1, decide yes;
 	decide no.
 
 To decide what number is the quest-weighting of (Q - creampie-drinking-quest) for (C - a clothing):
@@ -548,7 +548,7 @@ Part - Condom Drinking Quest
 condom-drinking-quest is a clothing-quest. condom-drinking-quest is persistent.
 
 Definition: condom-drinking-quest is appropriate:
-	if condom fetish > 0, decide yes;
+	if baseline condom fetish is 1, decide yes;
 	decide no.
 
 To decide what number is the quest-weighting of (Q - condom-drinking-quest) for (C - a clothing):
@@ -844,7 +844,7 @@ To say QuestFlav of (Q - careful-peeing-quest):
 	say "You sense that it wants you to [slime] in [SlimeTarget]s and bodies of water.".
 
 To say QuestTitle of (Q - careful-peeing-quest):
-	say " (careful peeing quest)".
+	say " (careful [SlimeShoot]ing quest)".
 
 To compute persistent reward of (Q - careful-peeing-quest) on (C - a clothing):
 	say "temporarily speeding up the digestion [if diaper messing < 3]of fluids [end if]in your stomach!";
@@ -1493,6 +1493,23 @@ To say QuestTitle of (Q - skill-quest):
 	say " (skill learning quest)".
 
 
+Part - Cuck Quest
+
+cuck-quest is a clothing-quest.
+
+Definition: cuck-quest is appropriate:
+	if woman-player is girlfriend and interracial fetish is 1, decide yes;
+	decide no.
+
+To decide what number is the quest-weighting of (Q - cuck-quest) for (C - a clothing):
+	decide on 1.
+
+To say QuestFlav of (Q - cuck-quest):
+	say "You sense that it wants you to watch [NameDesc of woman-player] being made to orgasm by a black [man of male-m], or have your [boy of woman-player]friend break up with you.".
+
+To say QuestTitle of (Q - cuck-quest):
+	say " (cucked quest)".
+
 
 
 
@@ -1639,7 +1656,7 @@ Definition: change-wisp-trigger is eligible:
 
 condom-wisp-trigger is a wisp trigger. The printed name of condom-wisp-trigger is "get a[if total pinned condoms > 0]nother[end if] used condom pinned to your clothing".
 Definition: condom-wisp-trigger is appropriate:
-	if condom fetish >= 2, decide yes;
+	if sticky condom fetish is 1, decide yes;
 	decide no.
 
 drunk-wisp-trigger is a wisp trigger. The printed name of drunk-wisp-trigger is "get rather drunk".
@@ -1986,7 +2003,7 @@ This is the piercing humility quest list rule:
 		if piercing-stone is challenged:
 			say "You found a bossy [ShortDesc of piercing-stone] in the Royal Training Halls, and it told you to defeat an npc at the most inconvenient time, like when a guard has his shield up, an aeromancer who has her boobs inflated, or a ghost that's still intangible. The ring seemed to think you weren't capable of following its instructions... is that really true? ([piercing-stone-progress of the player]/10)[line break]";
 		otherwise:
-			if the location of the player is Park11:
+			if the location of the player is Facility08:
 				say "Was that ring always there?[line break]";
 			if the location of the player is an academic room:
 				say "You feel a mysterious pull towards the Head Office...";

@@ -54,7 +54,7 @@ Check taking:
 Carry out taking:
 	if takingStuff is false:
 		allocate 2 seconds;
-		allocate arm use to the noun;
+		if realisticArms is 1 and the noun is not listed in the armUses of arms, allocate arm use to the noun;
 	now takingStuff is true; [The player can take several items in the same turn without penalty with "take all"]
 	if debugmode is 2, say "CARRY OUT.".
 

@@ -6,6 +6,7 @@ portal-pants is a knickers. portal-pants is unique. portal-pants is leather. The
 
 Definition: portal-pants is displacable: decide no.
 Definition: portal-pants is black themed: decide yes.
+Definition: portal-pants is portal themed: decide yes.
 Definition: portal-pants is transformation-protected: decide yes.
 Definition: portal-pants is fluid immune: decide no.
 Definition: portal-pants is external fluid immune: decide yes. [Is the top of it waterproof but the underside soakable?]
@@ -34,6 +35,25 @@ To decide which figure-name is clothing-image of (C - portal-pants):
 To say ClothingDesc of (K - portal-pants):
 	say "This set of black straps covers your [genitals] with a swirling portal!".
 
+To compute PortalBust of (P - portal-pants) from (O - a room):
+	say "The spatial warping is too much for your [MediumDesc of P], and it explodes, slamming the portal shut. [run paragraph on]";
+	if penis is detachable:
+		say "Your [pussy] twinges painfully as it is shunted back to its proper place, but with your [ShortDesc of penis], you only feel  ";
+		compute portal-cock-detachment from O by P;
+	otherwise:
+		say "Pain wracks your body as your [genitals] are twisted and distorted by back into their original place!";
+		if the player is possessing a penis:
+			PenisDown the size of penis - min penis size;
+		if the openness of vagina > 0:
+			say "Your [vagina] spasms as it tightens all at once!";
+			PussyClose the openness of vagina;
+		if the player is possessing a penis, penis orgasm shamefully;
+		otherwise vaginally orgasm shamefully;
+		unless portal gag is worn:
+			destroy portal gag;
+		PainUp 50;
+	destroy P.
+
 To set up influence of (C - portal-pants):
 	now C is anal-sex-addiction-influencing.
 
@@ -42,12 +62,12 @@ To SilentSquirt (L - a liquid-object) On (C - portal-pants) by (N - a number):
 		if inside-out is true:
 			say "[announced L] disappears through the portal.";
 			if portal gag is worn:
-				say "The [L] flows out of the [portal gag] and into your mouth!";
+				say "The [boringLQ L] flows out of the [portal gag] and into your mouth!";
 				now N is (N + 1) / 2;
 				if L is semen or (L is murkwater and diaper quest is 0):
 					say "[variable custom style][if the semen taste addiction of the player < 7][one of]Yuck, yuck, yuck![or]Gross...[in random order][otherwise if the semen taste addiction of the player < 14][one of]Salty...[or]Whoops, not again...[then at random][otherwise][one of]Good sissies should always swallow their own cum...[or]Delicious![or]Yum![stopping][end if][roman type][line break]";
 				otherwise if L is slime:
-					say "[variable custom style][if the slime taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the slime taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's [slime], I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of my own pee![or]Yummy![stopping][end if][roman type][line break]";
+					say "[variable custom style][if the slime taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the slime taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's [slime], I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of [slime]![or]Yummy![stopping][end if][roman type][line break]";
 				FaceFill L by N;
 		otherwise:
 			if thighs is unsoaked, say "[announced L] flows down to your thighs.";
@@ -79,6 +99,7 @@ Definition: portal-hotpants is cursable: decide no.
 Definition: portal-hotpants is removable: decide no.
 Definition: portal-hotpants is stealable: decide no.
 Definition: portal-hotpants is grey themed: decide yes.
+Definition: portal-hotpants is portal themed: decide yes.
 Definition: portal-hotpants is transformation-protected: decide yes.
 Definition: portal-hotpants is fluid immune: decide no.
 Definition: portal-hotpants is external fluid immune: decide yes. [Is the top of it waterproof but the underside soakable?]
@@ -125,7 +146,7 @@ To SilentSquirt (L - a liquid-object) On (C - portal-hotpants) by (N - a number)
 Definition: portal-hotpants is pants pee refusal inducing:
 	if the player is proud:
 		if debugmode > 0:
-			say "If debugmode was disabled, the player would refuse to pee.";
+			say "If debugmode was disabled, the player would refuse to [slimedrain].";
 		otherwise:
 			if Hotel44 is within vision and the number of awake intelligent monsters in Hotel44 is 0, decide no;
 			say "[first custom style]I can't bring myself to do that! The pimp [if Hotel44 is not within vision]and who knows how many other people [end if]will be watching![roman type][line break]";
@@ -198,7 +219,7 @@ To SilentSquirt (L - a liquid-object) On (C - giant-teddy) by (N - a number):
 				if L is semen or (L is murkwater and diaper quest is 0):
 					say "[variable custom style][if the semen taste addiction of the player < 7][one of]Yuck, yuck, yuck![or]Gross...[in random order][otherwise if the semen taste addiction of the player < 14][one of]Salty...[or]Whoops, not again...[then at random][otherwise][one of]Good sissies should always swallow their own cum...[or]Delicious![or]Yum![stopping][end if][roman type][line break]";
 				otherwise if L is slime:
-					say "[variable custom style][if the slime taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the slime taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's [slime], I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of my own pee![or]Yummy![stopping][end if][roman type][line break]";
+					say "[variable custom style][if the slime taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the slime taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's [slime], I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of [slime]![or]Yummy![stopping][end if][roman type][line break]";
 				FaceFill L by N;
 			otherwise:
 				say "[announced L] flows through into the teddy's diaper.";

@@ -44,7 +44,7 @@ To decide which figure-name is the monster-image of (M - trainee-belinda):
 	decide on figure of belinda.
 
 To say MonsterDesc of (M - trainee-belinda):
-	say "This skinny [man of M] has blonde pigtails and an unfriendly scowl. [big he of M] is wearing a tight indigo belly-exposing latex top with a diamond-shaped cleavage window and matching latex pants and long fingerless gloves[if the current-rank of M > 1]. [big he of M] has a tattoo that reads 'Daddy's [big boy of M]' on [his of M] left arm, and you could swear [his of M] top is a tiny bit more translucent than before[end if][if the scrunchies-donated of M is 0]. [big he of M] has two spare scrunchies on [his of M] wrist[otherwise]. [big he of M] has one spare scrunchie left on [his of M] wrist[end if].".
+	say "This skinny [man of M] has blonde pigtails and an unfriendly scowl. [big he of M] is wearing a tight indigo belly-exposing latex top with a diamond-shaped cleavage window and matching latex pants and long fingerless gloves[if the current-rank of M > 1]. [big he of M] has a tattoo that reads 'Daddy's [big boy of M]' on [his of M] left arm, and you could swear [his of M] top is a tiny bit more translucent than before[end if][if the scrunchies-donated of trainee-interaction-belinda-scrunchie is 0]. [big he of M] has two spare scrunchies on [his of M] wrist[otherwise]. [big he of M] has one spare scrunchie left on [his of M] wrist[end if].".
 
 The max-rank of trainee-belinda is 2.
 

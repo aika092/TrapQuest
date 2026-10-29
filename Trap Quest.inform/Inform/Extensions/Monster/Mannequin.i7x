@@ -221,12 +221,11 @@ Definition: a mannequin is willing to do oral: decide yes.
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a mannequin):
-	if M is in the location of the player, say "A quiet moan can be heard as several gears, pieces of clothing, and what looks like ceramic fall through the stone opening between the statue's legs. The gears whirr rapidly as the pieces begin to put themselves together, forming a [printed name of M].";
-	otherwise say "You hear the sound of mechanical joints whirring.".
-
-To say SummoningFlav of (M - a goth mannequin):
-	if M is in the location of the player, say "A deafening whirr passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whirr peters out as the [printed name of M] takes [his of M] first few steps into the room, and the mummy's wrappings slowly reform behind it.";
-	otherwise say "You hear the sound of mechanical joints whirring.".
+	if M is in the location of the player:
+		if M is in Woods30, say "A quiet moan can be heard as several gears, pieces of clothing, and what looks like ceramic fall through the stone opening between the statue's legs. The gears whirr rapidly as the pieces begin to put themselves together, forming a [printed name of M].";
+		otherwise say "A deafening whirr passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whirr peters out as the [printed name of M] takes [his of M] first few steps into the room, and the mummy's wrappings slowly reform behind it.";
+	otherwise:
+		say "You hear the sound of mechanical joints whirring.".
 
 To say MuteGreetResponse of (M - a mannequin):
 	say "The mannequin doesn't reply. It would appear to be magically animated rather than sentient.".
@@ -274,13 +273,15 @@ To compute flying player taunting of (M - a mannequin):
 	if a random number from 1 to 6 is 1, say "[BigNameDesc of M] is [one of][or]still [stopping]watching you, waiting.".
 
 This is the mannequin unique punishment rule:
-	if (short skirts permanent suggestion is 0 or short skirts permanent suggestion > 3) and current-monster is not topless mannequin and current-monster is not lycra-clad mannequin and current-monster is not swimmer mannequin and current-monster is not lingerie-clad mannequin and the player is getting unlucky:
-		say "[BigNameDesc of current-monster] strikes a confident pose, and [his of current-monster] eyes stare deep down into your soul. Instantly, you realise that [second custom style]short skirts like the one [he of current-monster] is wearing are the best![roman type][line break]You'll feel awful if you ever wear a skirt longer than that sort of nice and short upper-thigh-length style. [GotUnluckyFlav]";
-		now short skirts permanent suggestion is 3;
+	let M be current-monster;
+	if (short skirts permanent optimization is -1 or short skirts permanent optimization > 3) and current-monster is not topless mannequin and current-monster is not lycra-clad mannequin and current-monster is not swimmer mannequin and current-monster is not lingerie-clad mannequin and the player is getting unlucky:
+		say "[BigNameDesc of current-monster] strikes a confident pose with [his of M] hand lifting [his of M] short skirt, and stares deep down into your soul.";
+		SkirtOptimize 3;
+		say GotUnluckyFlav;
 		rule succeeds;
-	otherwise if the player is allowed-panties and current-monster is lingerie-clad mannequin and (skimpy underwear suggestion is -1 or skimpy underwear suggestion > 3):
-		say "[BigNameDesc of current-monster] strikes a confident pose, and [his of current-monster] eyes stare deep down into your soul. Instantly, you realise that [second custom style]skimpy panties like the one [he of current-monster] is wearing are the best![roman type][line break]You'll feel awful if you ever wear panties or briefs. It's hotpants, thongs and g-strings for you from now on!";
-		now skimpy underwear suggestion is 3;
+	otherwise if the player is allowed-panties and current-monster is lingerie-clad mannequin and (skimpy underwear optimization is -1 or skimpy underwear optimization > 3):
+		say "[BigNameDesc of current-monster] strikes a confident pose with [his of M] hand on [his of M] panties, and stares deep down into your soul.";
+		UnderwearOptimize 3;
 		rule succeeds.
 The unique punishment rule of a mannequin is usually the mannequin unique punishment rule.
 
@@ -309,6 +310,12 @@ To compute unique climax of (M - a mannequin) in (F - asshole):
 		otherwise:
 			say "[BigNameDesc of M] removes [his of M] fingers from your [asshole], and seems to lose interest.";
 
+[
+Three opportunities for stimulation:
+* Sex toy
+* Accessible genitals
+* Baseline
+]
 To compute anal sex of (M - a mannequin):
 	[What she's doing to your ass]
 	if there is a sex toy carried by M:
@@ -317,18 +324,28 @@ To compute anal sex of (M - a mannequin):
 			say "[BigNameDesc of M] [one of]pushes the beads in and out of your [asshole] one at a time, stretching you over and over[or]pushes each bead into your [asshole] and slowly pulls them out one by one, forcing you to experience the stretching of your sphincter over and over[or]holds one bead just inside your [asshole], keeping you as stretched and full as possible[at random][run paragraph on]";
 		otherwise:
 			say "[one of][BigNameDesc of M] keeps fucking you with the [printed name of P][or][BigNameDesc of M] continues pumping the [printed name of P] in and out of your [asshole][or][BigNameDesc of M] fucks you with the [printed name of P][or][BigNameDesc of M] keeps pushing the [printed name of P] in and out of your hole[at random][if the player is sexed male], [one of]angling it against your prostate[or]keeping the tip firmly in contact with your prostate[or]repeatedly prodding your 'G-spot'[or]relentlessly pounding your prostate[at random][end if][run paragraph on]";
+		now P is penetrating asshole;
+		if P is edible-toy:
+			compute wickdip of P;
+		passively stimulate asshole from P;
+		now P is not penetrating asshole;
 	otherwise:
 		say "[if the player is sexed male][BigNameDesc of M] [one of]keeps expertly stroking your prostate[or]keeps skilfully prodding your prostate[or]firmly rubs your prostate[or]relentlessly prodding your prostate with expert movements of [his of M] fingers[at random][otherwise][BigNameDesc of M] keeps [one of]expertly pressing on your G-spot through your [asshole][or]pressing that same spot inside your hole, always with that perfectly maddening amount of force[or]rubbing your G-spot through your [asshole], endlessly repeating [his of M] perfect movements[at random][end if][run paragraph on]";
 	[How she's interacting with your crotch.]
 	if chastity-belt is worn or (there is a worn chastity cage and the player is not possessing a vagina):
 		say ", as if milking an orgasm out of you!";
-	otherwise if the player is possessing a penis:
+	otherwise if the player is possessing a penis and the number of things penetrating penis is 0:
 		say " as [he of M] [unless there is pussy covering clothing and the size of penis > 2][one of]pumps[or]strokes[or]jerks off[at random] your [ShortDesc of penis][otherwise]massages your [ShortDesc of penis][end if], [if the size of penis < 3]as if it was a clitoris![otherwise]as if milking you![end if]";
+		passively stimulate penis from M;
 	otherwise if the player is possessing a vagina:
 		say " as [he of M] [if there is pussy covering clothing]rubs your clit[otherwise][one of]strokes[or]teases[at random] your clit[end if], as if milking an orgasm out of you!";
+		passively stimulate vagina from M;
 	otherwise: [failsafe]
 		say ", as if milking an orgasm out of you!";
-	increase the sex-length of M by 1.
+	stimulate asshole from M;
+	increase the sex-length of M by 1;
+	say "[one of][M sex reaction][or][cycling]";
+	compute slow grossness of M.
 
 To compute the default taunting of (M - a mannequin):
 	say "[one of][BigNameDesc of M] stands in front of you, motionless.[or][or][cycling]".

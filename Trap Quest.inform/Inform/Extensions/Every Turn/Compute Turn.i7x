@@ -70,7 +70,9 @@ To allocate (N - a number) seconds:
 			zero focus stuff; [We've just been told that we're going to need to run the engine. Let's empty the lists of images to display and begin building it anew.]
 			render buffered stuff; [Gives the player some feedback to know that their command went through]
 	now seconds is N;
-	if realisticArms is 1, update arms.
+	if realisticArms is 1:
+		if debugmode > 1, say "allocate seconds arms call.";
+		update arms.
 
 To force allocate (N - a number) seconds:
 	now seconds is 0; [This way we force the recalculation of the focus window]
@@ -122,7 +124,11 @@ To run the engine:
 					if there is a fuckhole-mode glue penetrating face:
 						try submitting;
 					otherwise:
-						say "[if the player-reaction of the player is resisting]Keep holding back[otherwise]Do you want to hold back and minimize your loss of dignity[end if]? ";
+						let FM be a random friendly-fucking monster penetrating a body part;
+						if FM is monster:
+							say "Let [NameDesc of FM] know you want to end the sex? ";
+						otherwise:
+							say "[if the player-reaction of the player is resisting]Keep holding back[otherwise]Do you want to hold back and minimize your loss of dignity[end if]? ";
 						if the player is consenting, try resisting;
 						otherwise try submitting;
 			if player-breathing is false:
@@ -432,7 +438,7 @@ To compute player standing:
 									now the saved-item of magical-maid-outfit is O;
 						transform MO into magical-maid-outfit;
 						now the charge of magical-maid-outfit is a random number between 10 and 40;
-						if the player is ready for event TG:
+						if the player is ready for uncommon event tg:
 							say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that outfit appear has decided you'd be better off [if transGender is 1]with a vagina[otherwise]as a girl[end if]...";
 							SexChange the player;
 						update appearance level;
@@ -764,7 +770,7 @@ To Compute Compulsions:
 					say "You remember that it is your duty to [second custom style]help your friend[roman type].";
 					compute urinal use;
 					now another-turn is 1;
-		if another-turn is 0 and compulsion-tick <= 0 and refractoryperiod <= 0 and glittery-wand is worn and the player is not immobile and the player is able to use their hands and ((playerRegion is facility and wand-delivery-event is event-started) or glittery-wand is cursed):
+		if another-turn is 0 and compulsion-tick <= 0 and refractoryperiod of the player <= 0 and glittery-wand is worn and the player is not immobile and the player is able to use their hands and ((playerRegion is facility and wand-delivery-event is event-started) or glittery-wand is cursed):
 			now compulsion-tick is a random number between 1 and 4;
 			if playerRegion is not facility, now compulsion-tick is a random number between 10 and 25;
 			say "[bold type]Suddenly, the cursed glittery wand sends a magical compulsion down your arm! [roman type]";
@@ -835,101 +841,6 @@ To Compute Broken Actions:
 		otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room and the player is able to automatically masturbate and the wanktime of the player <= 0 and the class of the player is not symbiote:
 			now another-turn is 1;
 			now another-turn-action is the too horny masturbation rule.
-
-The speech triggers rules is a rulebook.
-
-This is the great ones hypno rule:
-	if htrigger is "great one" and player-h-great is 1:
-		say "Just thinking about the [great ones] makes you feel how powerless you are in comparison to them!";
-		slightHumiliate.
-The great ones hypno rule is listed in the speech triggers rules.
-
-This is the present-for-oral hypno rule:
-	if htrigger is "tasty" and htrigger-tasty is 1 and diaper quest is 0:
-		say "[bold type]Having heard the word 'tasty', you [if legacy content is 0]follow the secret 'give a blowjob code,'[otherwise]find yourself automatically[end if] [if face is actually occupied]trying to present[otherwise]presenting[end if] your mouth for use.[roman type][line break]";
-		if the player is upright, try silently kneeling;
-		let M be a random interested monster in the location of the player;
-		if M is nothing:
-			now M is a random monster in the location of the player;
-			if M is monster, interest M;
-		if the player is prone:
-			if face is actually occupied:
-				say "[if the bimbo of the player > 14]Unfortunately[otherwise]Fortunately[end if], your mouth is already occupied.";
-			otherwise if M is nothing:
-				say "All that happens is that you feel a little silly, since there's nobody here to offer a blowjob to.";
-			otherwise:
-				try direct-presenting face to M;
-		now another-turn is 1.
-The present-for-oral hypno rule is listed in the speech triggers rules.
-
-This is the eat-all-food hypno rule:
-	if htrigger is "tasty" and htrigger-tasty is 1 and diaper quest is 1:
-		if the number of held food > 0 and face is not actually occupied and the player is able to eat:
-			say "[bold type]Having heard the word 'tasty', you [if legacy content is 0]follow the secret 'eat as much as possible code,'[otherwise]find yourself automatically[end if] starting to eat everything you can.[roman type][line break]";
-			now auto is 1;
-			repeat with F running through held food:
-				try TQeating F;
-			now auto is 0;
-			now another-turn is 1.
-The eat-all-food hypno rule is listed in the speech triggers rules.
-
-This is the autopush hypno rule:
-	if htrigger is "maturity" and htrigger-maturity is 1 and asshole is not actually occupied and there are worn soilable knickers:
-		say "[bold type]Having heard the word 'maturity', you find you automatically start [if the player is upright]squatting, grunting,[otherwise]grunting[end if] and pushing.[roman type][line break]";
-		now voluntarySquatting is 1;
-		compute partial messing.
-The autopush hypno rule is listed in the speech triggers rules.
-
-This is the autospread hypno rule:
-	if (htrigger is "pussy" or htrigger is "cunt") and htrigger-pussy is 1 and the player is possessing a vagina and vagina is not lewdly exposed:
-		say "[bold type]Having heard the word '[htrigger]', you find yourself automatically trying to get your [vagina] on display.[roman type][line break]";
-		repeat with C running through worn potentially at least partially vagina covering skirted clothing: [We do skirted first to try and make sure that the order makes sense]
-			if C is displacable:
-				say "You pull up your [ShortDesc of C]!";
-				displace C;
-			otherwise:
-				say "You try to remove your [ShortDesc of C]!";
-				try taking off C;
-		repeat with C running through worn potentially at least partially vagina covering trousers: [We do trousers next to try and make sure that the order makes sense]
-			if C is displacable:
-				say "You pull down your [ShortDesc of C]!";
-				displace C;
-			otherwise if C is crotch-zipped:
-				say "You unzip your [ShortDesc of C]!";
-				ZipDown C;
-			otherwise:
-				say "You try to remove your [ShortDesc of C]!";
-				try taking off C;
-		repeat with C running through worn potentially at least partially vagina covering unskirted clothing: [We do everything else last to try and make sure that the order makes sense]
-			if C is displacable:
-				say "You pull your [ShortDesc of C] to the side!";
-				displace C;
-			otherwise if C is crotch-zipped:
-				say "You unzip your [ShortDesc of C]!";
-				ZipDown C;
-			otherwise:
-				say "You try to remove your [ShortDesc of C]!";
-				try taking off C;
-		now another-turn is 1.
-The autospread hypno rule is listed in the speech triggers rules.
-
-This is the autopiss hypno rule:
-	if htrigger is "please" and htrigger-please is 1:
-		if diaper lover > 0:
-			if the bladder of the player > 0 and the latex-transformation of the player <= 4:
-				say "[bold type]Having heard the word 'please', your [SlimeContainer] immediately lets itself go, completely without your conscious control.[roman type][line break]";
-				now delayed urination is 1;
-				try urinating;
-		otherwise if the player is able to get horny: [Different hypnotic effect from the statue when diapers are disabled]
-			say "[bold type]Having heard the word 'please', your head fills with a deep blissful arousal.[roman type][line break]";
-			arouse 5000;
-			check for arousal change;
-			if the player is very horny and the player is able to automatically masturbate:
-				now auto is 1;
-				try masturbating;
-				now auto is 0;
-				now another-turn is 1.
-The autopiss hypno rule is listed in the speech triggers rules.
 
 A later time based rule (this is the throne charge decay rule):
 	if the charge of the throne > 0, decrease the charge of the throne by time-seconds.
@@ -1019,10 +930,10 @@ testing-val is a number that varies.
 To Reset Flags:
 	repeat with A running through bsounding clothing:
 		now A is not bsounding;
-	if refractoryperiod > 0:
-		decrease refractoryperiod by 1;
+	if refractoryperiod of the player > 0:
+		decrease refractoryperiod of the player by 1;
 		now aroused-turns is 0; [The player can keep gaining arousal after orgasms. But then some of it will rather quickly drop off after sex ends, if she successfully orgasmed.]
-		if refractoryperiod is 0 and painted-vibrator-hands is worn, say "[bold type]Your clit feels less sensitive now, and you are willing to push the thumb vibes into it again.[roman type][line break]";
+		if refractoryperiod of the player is 0 and painted-vibrator-hands is worn, say "[bold type]Your clit feels less sensitive now, and you are willing to push the thumb vibes into it again.[roman type][line break]";
 	now auto is 0;
 	now bulk-search-level is 0;
 	now boobshrinkflav is 0;

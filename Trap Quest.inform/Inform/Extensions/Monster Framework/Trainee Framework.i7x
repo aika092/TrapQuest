@@ -1095,7 +1095,7 @@ To execute (A - bully-forcefeed):
 
 bully-rimjob is a bully-action.
 Definition: bully-rimjob is eligible:
-	if a2m fetish > 0 and face is not actually occupied and the current-rank of current-monster > 2, decide yes;
+	if baseline a2m fetish is 1 and face is not actually occupied and the current-rank of current-monster > 2, decide yes;
 	decide no.
 To execute (A - bully-rimjob):
 	say "[BigNameDesc of current-monster] pulls apart [his of current-monster] ass cheeks, and pushes [his of current-monster] asshole against your mouth.[line break][speech style of current-monster]'Lick it.'[roman type][line break]Do you obey?";
@@ -1103,7 +1103,7 @@ To execute (A - bully-rimjob):
 		say "It's humiliating, but you acquiesce and stick your tongue inside, sampling the bitter tastes of [his of current-monster] backdoor. [strongHumiliateReflect]";
 		TasteGrossOut 7;
 		HappinessUp current-monster;
-		if a2m fetish > 1 and the current-rank of current-monster > a random number between 2 and 5:
+		if snowball fetish is 1 and the current-rank of current-monster > a random number between 2 and 5:
 			say "[BigNameDesc of current-monster] grunts and sighs as all of a sudden [he of current-monster] pushes out a big creamy helping of [semen] from [his of current-monster] [asshole] into your mouth!";
 			TasteGrossOut 10;
 			FaceFill semen by 6;
@@ -1289,7 +1289,7 @@ To execute (P - prank-photo):
 
 prank-condom is a prank-action.
 Definition: prank-condom is eligible:
-	if condom fetish >= 2 and the current-rank of current-monster > 1 and there is worn condom pinnable currently uncovered clothing, decide yes;
+	if sticky condom fetish is 1 and the current-rank of current-monster > 1 and there is worn condom pinnable currently uncovered clothing, decide yes;
 	decide no.
 To execute (A - prank-condom):
 	let C be a random worn condom pinnable currently uncovered clothing;
@@ -1577,7 +1577,7 @@ Definition: trainee-interaction-sweat is trainee-eligible:
 	if current-monster is nasty trainee, decide yes;
 	decide no.
 Definition: trainee-interaction-sweat is appropriate:
-	if grossness fetish > 0, decide yes;
+	if baseline grossness fetish is 1, decide yes;
 	decide no.
 Definition: trainee-interaction-sweat is eligible:
 	if the player is in Facility19 or the player is in Facility20 or the player is in Facility23, decide yes;
@@ -1668,7 +1668,7 @@ To resolve (SI - trainee-interaction-plug-swap):
 		silently transform C into P;
 		say "As you remove [NameDesc of C] and offer it to [NameDesc of M], [he of M] reaches back and pulls a [P] out of [his of M] asshole.[line break][variable custom style]Oh wow, that's bigger than mine...[line break][speech style of M]'Well? What are you waiting for? This is an important part of my homework.'[roman type][line break][BigNameDesc of M] has already inserted your [MediumDesc of C] into [his of M] butthole, and isn't tolerating your hesitation. You sigh, and get to work easing [NameDesc of P] into your [asshole].";
 		ruin asshole;
-		if grossness fetish > 0:
+		if baseline a2m fetish is 1:
 			say "You can't get the fact that this plug has just been inside [NameDesc of M][']s warm, sweaty asshole out of your head.";
 			GrossOut 4;
 		otherwise if diaper quest is 1:

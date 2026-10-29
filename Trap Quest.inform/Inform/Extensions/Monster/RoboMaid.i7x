@@ -443,6 +443,7 @@ To compute publicity stunt of (M - a robomilkmaid):
 	otherwise if diaper quest is 0 and face is not actually occupied:
 		say "as [NameDesc of M] lifts up [his of M] apron, pushing [his of M] [LongDickDesc of M] in your face as [his of M] eyes rapidly flash red and pink.[line break][speech style of current-monster]'OOH. OOH. [caps please] SUCK ME.'[roman type][line break] [big he of M] shoves [his of M] [DickDesc of M] into your open mouth and ejaculates with incredible force. Do you try to swallow it?";
 		now M is penetrating face;[TODO: possibly update]
+		stimulate face from M;
 		if the player is bimbo consenting:
 			say "You desperately gulp, just barely able to keep up as [NameDesc of M] thoroughly empties [his of M] stored [semen] into your mouth. Eventually, the flow dies down, and [he of M] pulls out, rolling off of you as [his of M] apron falls back into place.";
 			FaceFill semen by 8;
@@ -454,7 +455,7 @@ To compute publicity stunt of (M - a robomilkmaid):
 			say slightHumiliateReflect;
 		BlowCount;
 	otherwise if diaper quest is 0 and bukkake fetish is 1 and a random number between 1 and 2 is 1:[bukkake]
-		say "as [NameDesc of M] lifts up [his of M] apron, pushing [his of M] [LongDickDesc of M] in your face as [his of M] eyes rapidly flash red and green.[line break][speech style of M]'OOH. OOH. I AM SHOOTING IT.'[roman type][line break] [big his of M] [DickDesc of M] throbs visibly as it blasts your face with several bursts of makeup powder, followed by several ropes of thick, sticky [semen]. You can feel it clinging to your eyelids and rolling slowly down your cheeks as [he of M] rolls off of you.";
+		say "as [NameDesc of M] lifts up [his of M] apron, pushing [his of M] [LongDickDesc of M] in your face as [his of M] eyes rapidly flash red and green.[line break][speech style of M]'OOH. OOH. I AM. SHOOTING IT.'[roman type][line break] [big his of M] [DickDesc of M] throbs visibly as it blasts your face with several bursts of makeup powder, followed by several ropes of thick, sticky [semen]. You can feel it clinging to your eyelids and rolling slowly down your cheeks as [he of M] rolls off of you.";
 		FaceUp 1;
 		CumFaceUp 2;
 		say moderateHumiliateReflect;

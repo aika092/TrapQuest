@@ -54,7 +54,7 @@ A later time based rule:
 				if the number of barriers in the location of the player < 1:
 					if playerRegion is Hotel:
 						say "[bold type]A modesty shutter clatters down over each of the doors, trapping you in!";
-						now a random modesty shutter is in the location of the player;
+						now modesty shutter is in the location of the player;
 					otherwise if playerRegion is the Dungeon:
 						say "[bold type]A heavy wooden door swings shut over each of the entrances, trapping you in the room!";
 						now reinforced-door is in the location of the player;

@@ -132,7 +132,7 @@ To compute perception of (M - witch):
 	let noticed be 0; [#LXorDD: I've restructured this a bit so if the player has multiple curses in operation, the witch will talk about and even help for several of them, starting with the most important.]
 	now the altar-questioned of M is 0;
 	if the witch-target of M is off-stage and the witch-target of M is not the throne and the witch-target-state of M > -1:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'I saw everything through my crystal ball. Your form was a little off, but it was still pretty entertaining. I'm happy to give you anything you need!'[roman type][line break]";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'I saw everything through my crystal ball. Your form was a little off, but it was still pretty entertaining.'[roman type][line break]";
 		now noticed is 1;
 		calm M;
 		now the witch-target-state of M is -1;
@@ -149,7 +149,7 @@ To compute perception of (M - witch):
 		compute autotaking doom notes;
 		calm M;
 	otherwise if doomed < 0:
-		say "[BigNameDesc of M] notices you and seems jubilant.[line break][speech style of M]'I can't believe you actually stopped the ancient ones! This realm is once again safe for several millenia, thanks to you! Great job!'[roman type][line break]";
+		say "[BigNameDesc of M] notices you and seems jubilant.[line break][speech style of M]'I can't believe you actually stopped the ancient ones!'[roman type][line break]";
 		now noticed is 2;
 		now M is unbitchy;
 		calm M;
@@ -168,7 +168,7 @@ To compute perception of (M - witch):
 			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'So, did you get that recipe I need?'[roman type][line break]";
 			mention and maybe reattach dick by M;
 		calm M;
-	if players-dick-is-detached > 0: [#LXorDD]
+	if penis is detached: [#LXorDD]
 		if noticed is 0:
 			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break]";
 		now noticed is 2;
@@ -190,6 +190,106 @@ To compute perception of (M - witch):
 		say "[one of][WitchInitialGreeting of M][or][BigNameDesc of M] looks up[if the player is sluttily dressed]. [otherwise]! [end if][big he of M] doesn't say anything but it looks like [he of M]'s paying attention to you now.[stopping]";
 		calm M.
 
+To mention and maybe reattach dick by (M - witch):
+	if M is carrying players-detached-dick:
+		say "[line break][speech style of M]'Don't worry, I've been taking good care of your [mystical-player-penis]![roman type][line break]";
+	otherwise if penis is detached: [#LXorDD]
+		say "About to turn away, [he of M] happens to glance down at your groin, and literally does a double take.[line break][speech style of M]'By the stars, how did you manage that[if the latex-transformation of the player > 0], as well[end if]? You let someone steal your dick[again-DD]?!'[roman type][line break][BigNameDesc of M] shakes [his of M] head in disbelief.";
+		if player is wearing players-detached-dick:
+			say "[speech style of M]'Oh, wait...'[roman type][line break][BigNameDesc of M] slowly tilts [his of M] head to one side, [one of][his of M] eyes locked on your detached dick stuffed inside you.[line break][speech style of M]'Oh, so you DID find it? I suppose that's one way to carry it around. I don't think I've seen anything to match that for sheer sluttiness though - and I've seen a lot.'[roman type][or]noticing your detached dick stuffed inside you.[line break][speech style of M]'Wow. Talk about a self-indulgent slut - that's taking masturbation to a whole new level.'[roman type][stopping][line break]";
+			moderateHumiliate;
+			say "You shake your head and [if the player is able to speak]almost snap something back in reply,[otherwise]bristle[end if] but then restrain yourself. This might be your chance to get it reattached! Ask her?";
+			if the player is consenting, compute restoration of dick by M;
+		otherwise if player is carrying players-detached-dick:
+			say "This might be your chance to get it reattached! Will you ask her?";
+			if M is witch:
+				compute restoration of dick by M;
+		otherwise:
+			if M is witch:
+				say "[speech style of M]'If you find it and bring it back here, I'll see if I can reattach it for you[again-DD], [if the latex-transformation of the player > 0]though I suggest you find it before we deal with your latex problem.'[otherwise if the player is possessing a vagina]no promises though.'[otherwise]or I could just hold onto it for you.'[end if][roman type][line break]".
+
+To compute restoration of dick by (M - witch):
+	let S be strapon-dildo;
+	let E be 0;
+	let D be players-detached-dick;
+	say "[line break]";
+	if player is possessing a vagina:
+		if D is doubled and the pregnancy of the player is 1, now E is 1;
+		if D is not doubled and player futanari fetish is 0, now E is 1;
+	if the latex-transformation of the player <= 0 and D is latex:
+		say "[speech style of M]'You were infected with the latex curse before you lost this, right? Give up on having it reattached, you'll just turn into a sex doll all over again. [if S is off-stage]Ugh, but I guess- Ok, you still have 5[otherwise]You only have 4[end if] choices.'[roman type][line break]";
+		now E is 1;
+	otherwise if player is possessing a vagina and E is 1:[TODO:mystical amulet is required to fix this.]
+		say "[speech style of M]'...Are you kidding me? How do you expect me to reattach this when you already went and grew an entirely different reproductive system? [if S is off-stage]Ugh, but I guess- Ok, you still have 5[otherwise]You only have 4[end if] choices.'[roman type][line break]";
+	otherwise if player is wearing players-detached-dick:
+		say "[line break][speech style of M]'I guess that gives new meaning to the phrase 'Go fuck yourself', eh?'[roman type][line break]Reaching out, [he of M] slo-o-owly extracts it from you, shaking his head at the way quiver, your eyes roll up. But the doubled pleasure is as delicious as it is unnerving - you're kind of sorry to feel your [DetachedPenis] removed. Not that you'd every admit that! [big he of M] [if the size of players-detached-dick < 4]pops it in and out of [his of M] mouth a few times, [his of M] tongue flicking it[otherwise if the size of players-detached-dick > 8]manages to force it down [his of M] throat in a feat of sword-swallowing, before gasping as [he of M] extracts it with a loud 'pop'[otherwise]swallows it and sucks, [his of M] cheeks hollowing out as [he of M] sucks at it, [his of M] tongue curling around the shaft[end if], which makes you stagger at the strong burst of sensation.[line break][speech style of M]'Huh, looks like it's still working. Trust you to react like that just because I had to, er, attune to it. Now, you have 5 choices.'[roman type][line break]";
+		stimulate vagina from players-detached-dick;
+		stimulate vagina from M;
+	otherwise if player is carrying players-detached-dick:
+		say "[BigNameDesc of M] takes your detached dick, sniffs it, and gives it a big lick, which makes you stagger at the strong burst of sensation.[line break][speech style of M]'Don't get any ideas, I was just attuning my magic to it. Now, you have 5 choices.'[roman type][line break]";
+		swap dick in;
+		passively stimulate penis from M;
+		swap dick out;
+		slightHumiliate;
+	reset multiple choice questions;
+	set numerical response 1 to "Convert it into magic tokens.";
+	set numerical response 2 to "Convert it into defiance tokens";
+	if E is 1 and S is off-stage:
+		set numerical response 3 to "Turn it into a strapon";[we love an ethical queen]
+	otherwise if E is 0:
+		set numerical response 3 to "Reattach it.";
+	set numerical response 4 to "Keep it";
+	[set numerical response 0 to "keep it";][The witch really wants a new toy.]
+	compute multiple choice question;
+	if player-numerical-response is 1:
+		let N be the mystical size of penis;
+		while N > 0:
+			decrease N by 1;
+			let T be a random off-stage magic token;
+			now T is in the location of the player;
+		if N > 0, MagicPowerUp N;
+		say "[BigNameDesc of M] frowns at the [DetachedPenis], and mutters something under [his of M] breath, including several repetitions of '[one of][GodName of woods altar][or][GodTitle of woods altar][at random].' Your shaft lights up, transforming into a neat stack of glowing coins, which [he of M] hands to you.";
+		destroy D instead;
+	otherwise if player-numerical-response is 2:
+		let N be the mystical size of penis;
+		while N > 0:
+			decrease N by 1;
+			let T be a random off-stage defiance token;
+			now T is in the location of the player;
+		if N > 0, DelicateDown N;
+		say "[BigNameDesc of M] frowns at the [DetachedPenis], and mutters something under [his of M] breath, including several repetitions of '[one of][GodName of hotel altar][or][GodTitle of hotel altar][at random].' Your shaft melts and shrinks into a pile of glowing coins, which [he of M] hands to you.";
+		destroy D;
+		stop;
+	otherwise if player-numerical-response is 4:
+		say "[speech style of M]'Suit yourself.'[roman type][line break][big he of M] seems to hesitate for a second before tossing your [DetachedPenis] back at you.";
+		now D is in the location of the player;
+		stop;
+	otherwise if E is 1:
+		say "[BigNameDesc of M] frowns at the [DetachedPenis], and mutters something under [his of M] breath, the only thing you catch being '[one of][GodName of elder altar][or][GodTitle of elder altar][at random].' You see the base kind of soften and melt a bit, while you feel[again-DD] a corresponding tingling, a heated flux at your groin. You feel a weird pulsing[again-DD], as the sensations from your [DetachedPenis] ebbs and flows, building and falling. But it goes on and on, and [NameDesc of M] is sweating with effort, struggling. And finally the feelings fade altogether, and [he of M] is just standing there with a now ordinary-looking dildo. Albeit one that's a pretty faithful recreation of your dick, though clearly just silicone";
+		summon S uncursed;
+		now the strap-length of S is the size of D;
+		destroy D;
+		stop;
+	otherwise:
+		say "[BigNameDesc of M] frowns at the [DetachedPenis], and mutters something under [his of M] breath, the only thing you catch being '[one of][GodName of woods altar][or][GodTitle of woods altar][at random].' You see the base kind of soften and melt a bit, while you feel[again-DD] a corresponding tingling, a heated flux at your groin. ";[falls through]
+	if the player is possessing a vagina:
+		if players-detached-dick is doubled:
+			passively stimulate vagina from players-detached-dick;
+			say "[speech style of M]'Here goes nothing...!'[roman type][line break][big he of M] slides the [DetachedPenis] into your [vagina] making you shudder in pleasure. Even as [he of M] concentrates on [his of M] spell, you notice [his of M] shaking [his of M] head at your slutty display. The feelings from the normal-sized dildo [']handle['] diffuse out, like everything in there is melting back together. Then [he of M]'s seating your dick and balls down solidly between your thighs[again-DD], still frowning in concentration.";
+			devagina the player;
+		otherwise:
+			say "[big he of M] plants your dick and balls down directly above your [vagina]!";
+			if player futanari fetish is 2: [No balls: penis + vagina only]
+				say "As it touches you, there's a weird fizzing and sparking, and your [ShortDesc of scrotum] quiver and shrink, and shrink, and finally vanish altogether!";
+				now the size of scrotum is 0;
+	otherwise:
+		say "[big he of M] plants your dick down solidly on the doll-like mound you've been wandering around with. Wait, did [he of M] have that the right way up?";
+	say "You'd hoped it'd be pleasurable, but the sensation is closer to pain as your [DetachedPenis] fuses back to your groin.";
+	compute raw dick reattachment by M;
+	say "[if players-dick-detach-count is 1][speech style of M]'Whew! Been a while since I had to do that spell. I can't wait to see your next stunt!'[roman type][otherwise][speech style of M]'Whew! That spell doesn't get any easier. I may need to start charging you for that.'[roman type][end if][line break][variable custom style]Oh my god - I did it! I got my [ShortDesc of penis] [one of]back![or]back again![stopping][roman type][line break]";
+	now penis is penis-erect;
+	strongDignify.
+
 To calm (M - witch): [This should bring the monster just into friendly territory.]
 	if M is recently-unfriendly, now M is recently-unknown; [reset what we know about the friendliness of the NPC]
 	if the favour of M <= the aggro limit of M:
@@ -198,6 +298,15 @@ To calm (M - witch): [This should bring the monster just into friendly territory
 	if M is alive:
 		now M is guarding;
 		now M is in Woods20.
+
+To compute unique periodic effect of (M - a witch):
+	if diaper quest is 0 and M is undefeated and M is awake and M is not seduced and M is not combative:
+		let D be players-detached-dick;
+		if the refractory-period of M < a random number between -200 and -120 and D is held by M: [is he horny?]
+			if M is in the location of the player, say "You see [NameDesc of M] pull out a familiar looking 'dildo' and [if the size of players-detached-dick < 4]pop it in and out of [his of M] mouth a few times, [his of M] tongue flicking it.[otherwise if the size of players-detached-dick > 8]force it down [his of M] throat in a feat of sword-swallowing, gasping as [he of M] extracts it with a loud 'pop.'[otherwise]swallows it, [his of M] cheeks hollowing out as [he of M] sucks at it, [his of M] tongue curling around the shaft.[end if]";
+			otherwise say "You feel a pair of lips wrap around your missing [player-penis] [if the size of players-detached-dick < 4]and a tongue flicking the tip.[otherwise]and swallow it down, followed by a tongue fluttering against the bottom.[end if]";
+			passively stimulate penis from M;
+			now the refractory-period of M is 0.
 
 To say WitchInitialGreeting of (M - witch):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
@@ -285,12 +394,12 @@ This is the witch latex punishment rule:
 	let M be current-monster;
 	if minotaur is alive:
 		say "[speech style of M]'I know of someone who could do with letting off some steam with a sex doll!'[roman type][line break]";
-		teleport to the location of minotaur;
+		spatial teleport to the location of minotaur;
 	otherwise:
 		say "[speech style of M]'Sex dolls belong in a bedroom!'[roman type][line break]";
 		let L be a random placed guest modern room;
 		if L is nothing, now L is Dungeon06;
-		teleport to L;
+		spatial teleport to L;
 	satisfy M.
 The latex punishment rule of witch is the witch latex punishment rule.
 
@@ -716,41 +825,64 @@ witch has a thing called witch-target. The witch-target of a witch is usually th
 witch has a number called witch-target-state. The witch-target-state of a witch is usually 0.
 
 To compute teaching of (M - witch):
-	if M is unbitchy:
-		say "[speech style of M]'Hmm, well, I'm not really supposed to share this knowledge, but I do know this spell that can help you read the flow of magic[if the class of the player is priestess or the class of the player is cultist]. Although you should already know how to do it[end if].'[roman type][line break]";
-		teach divinationskill;
-	otherwise:
-		if the witch-target of M is off-stage and the witch-target of M is not the throne and the witch-target-state of M > -1:
-			say "[speech style of M]'I saw everything through my crystal ball. Your form was a little off, but it was still pretty entertaining. I'm happy to give you anything you need!'[roman type][line break]";
-			calm M;
-			now the witch-target-state of M is -1;
-			now M is unbitchy; [must keep this line here or we'll accidentally create an infinite loop]
-			compute teaching of M;
-		otherwise if doomed < 0:
-			say "[BigNameDesc of M] notices you and seems jubilant.[line break][speech style of M]'I can't believe you actually stopped the ancient ones! This realm is once again safe for several millenia, thanks to you! So yes, I'm happy to give you anything you need!'[roman type][line break]";
-			now M is unbitchy; [must keep this line here or we'll accidentally create an infinite loop]
-			calm M;
-			FavourUp M by 4;
-			compute teaching of M;
-		otherwise if the altar-uses of M <= 0:
-			say "[speech style of M]'I'm not going to leave you with my secrets. Not for free, anyway.'[roman type][line break]";
-		otherwise:
-			say "[speech style of M]'You're not the first to ever want my secrets, you know. Are you willing to entertain me a little first?'[roman type][line break]";
-			if the player is consenting:
-				now the witch-target of M is M;
-				let failsafe be 40;
-				while the witch-target of M is M and failsafe > 0:
-					decrease failsafe by 1;
-					now the witch-target of M is a random on-stage human monster;
-					let W be the witch-target of M;
-					if W is trainee or W is staff member or W is ex-princess or W is unconcerned or W is djinn or W is kitsune or W is shopkeeper or W is slutty sister or W is woman-player, now the witch-target of M is M;
-				if the witch-target of M is M:
-					say "[speech style of M]'...Actually, never mind, I can't seem to think of anyone for you to banish.'[roman type][line break]";
-				otherwise:
-					say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target of M][speech style of M] and banish [him of witch-target of M]. I'll know when you've succeeded.'[roman type][line break]";
-					[SilentlyDifficultyUp witch-target of M by 5;]
-			otherwise:
-				say "[speech style of M]'Then fuck off. [big please] and thank you!'[roman type][line break]".
+	say "[speech style of M]'Hmm, well, I'm not really supposed to share this knowledge, but I do know this spell that can help you read the flow of magic[if the class of the player is priestess or the class of the player is cultist]. Although you should already know how to do it[end if].'[roman type][line break]";
+	teach divinationskill.
+
+witch-banish-errand is an errand.
+Definition: witch-banish-errand is appropriate:
+	if the noun is witch and witch-target-state of witch is 0, decide yes;
+	decide no.
+Definition: witch-banish-errand is completed:
+	if witch is unbitchy, decide yes;
+	if the witch-target of witch is off-stage and the witch-target of witch is not the throne and the witch-target-state of witch > -1, decide yes;
+	if doomed < 0, decide yes;
+	decide no.
+To decide which number is the errand-desire of (E - witch-banish-errand) for (P - a person):
+	if P is witch and witch-target-state of witch is 0, decide on 102;
+	decide on 0.
+To decide which number is the errand-weight of (E - witch-banish-errand) for (P - witch):
+	decide on 99.
+To say RequestAssign of (M - witch):
+	let E be the current-errand of M;
+	if the current-errand of M is witch-banish-errand:
+		now the witch-target of M is M;
+		let failsafe be 40;
+		while the witch-target of M is M and failsafe > 0:
+			decrease failsafe by 1;
+			now the witch-target of M is a random on-stage human monster;
+			let W be the witch-target of M;
+			if W is trainee or W is staff member or W is ex-princess or W is unconcerned or W is djinn or W is kitsune or W is shopkeeper or W is slutty sister or W is woman-player, now the witch-target of M is M;
+		if M is unbitchy:
+			compute instant effect of E for M instead;
+		if the witch-target of M is M:
+			now the current-errand of M is no-errand;
+			say RequestRejection of M;
+			now the request-cooldown of M is 50 instead;
+	say "[speech style of M]'[ErrandFlav of E for M] Do that, and I'll [RewardFlav of M].'[roman type][line break]".
+To say ErrandFlav of (E - witch-banish-errand) for (M - a person):
+	say "Find [NameDesc of witch-target of M][speech style of M] and banish [him of witch-target of M].";
+To say RequestAcceptanceForFree of (M - witch):
+	say "[speech style of M]'No worries, I'll [RewardFlav of M].'[roman type][line break]".
+To say RequestRejection of (M - witch):
+	say "[speech style of M]'Can't think of anything I want done, sorry. Ask later.'[roman type][line break]";
+To say RequestAcceptanceForFreeFlav of (M - witch):
+	say "Wow! Getting on [his of M] good side really paid off!".
+To compute unique completion of (E - witch-banish-errand) for (M - a person):
+	now M is unbitchy;
+	calm M;
+	now the witch-target-state of M is -1;
+	FavourUp M by 4;
+	if doomed < 0, say "[speech style of M]'I'm happy to give you anything to the savior of the entire realm!'[roman type][line break]";
+	otherwise say "[speech style of M]'I'm happy to give you anything you need!'[roman type][line break]".
+To compute instant effect of (E - witch-banish-errand) for (P - witch):
+	if P is unbitchy:
+		say RequestAcceptanceForFree of P;
+		compute freebie rewarding of (the current-reward of P) from P;
+		[if R is listed in the tradableItems of P, remove R from the tradableItems of P;]
+		say RequestAcceptanceForFreeFlav of P;
+		now the current-errand of P is no-errand;
+		now the current-reward of P is no-reward;
+		now the request-cooldown of P is 300.
 
 [using the default advice question]
 To say AdviceAnswer of (M - witch):

@@ -65,6 +65,19 @@ To say TotalDesc of arms:
 		otherwise:
 			say "[if saved-flat-strength > 20]incredibly muscly[otherwise if saved-flat-strength > 15]very muscly[otherwise if saved-flat-strength > 10]well toned[otherwise if saved-flat-strength > 6]slim[otherwise]very small and weak looking[end if] arms. ".
 
+To say TouchDesc of (B - arms):
+	let F be the flesh volume of arms;
+	let S be saved-flat-strength;
+	let T be the latex-transformation of the player;
+	say " [ShortDesc of B]. They are [if T > 2][ShortLatexFlav][otherwise]hairless[end if] and [run paragraph on]";
+	if weight gain fetish is 0:
+		if the player is gendered female, say "slightly soft to the touch.";
+		otherwise say "reasonably toned.";
+	otherwise if T > 5:
+		say "[if F > 5]and supple, like huge water balloons.[otherwise if F > 1]pliable, like partially filled water ballons.[otherwise]slightly stiff, like water balloons ready to be filled.[end if]";
+	otherwise:
+		say "[if F > 9]THICK with fat, swallowing up[otherwise if F > 5]fatty, distorting around[otherwise if F > 3]soft, dimpling around[otherwise if F > 1]slightly soft, offering little resistance to[otherwise]skinny, offering no resistance to[end if] your fingers [if F > 9]so completely that you barely even feel[otherwise]as they feel[end if] the [if S >= 20]big, hard muscles[otherwise if S >= 15]big, dense muscles[otherwise if S >= 10]toned muscles[otherwise if S > 5]small, but toned muscles[otherwise]bone[end if] under the skin."
+
 Part 3 - Modify Arms Stats
 
 To FatArmsUp (X - a number):
@@ -111,16 +124,19 @@ To allocate arm use to (T - a thing):
 	if realisticArms is 1:
 		if debugmode is 1, say "Player uses 1 arm interacting with [T].";
 		add T to the temporaryArmUses of arms;
+		if debugmode > 1, say "allocate single use arms call.";
 		update arms.
 To allocate dual arm use to (T - a thing):
 	if realisticArms is 1:
 		if debugmode is 1, say "Player uses 2 arms interacting with [T].";
 		add T to the temporaryArmUses of arms;
 		add T to the temporaryArmUses of arms;
+		if debugmode > 1, say "allocate dual use arms call.";
 		update arms.
 
 An all later time based rule (this is the update arms rule):
 	if realisticArms is 1:
+		if debugmode > 1, say "all later time arms call.";
 		follow the update compulsory arm uses rule; [Rebuild the 'temporaryArmUses' list]
 		update arms;
 	otherwise:
@@ -181,6 +197,10 @@ This is the update compulsory arm uses rule:
 				if debugmode > 0, say "[BigNameDesc of C] requires the use of [if the wornArmsRequired of C is 1]one arm[otherwise]both arms[end if] next turn.";
 				repeat with N running from 1 to the wornArmsRequired of C:
 					add C to the temporaryArmUses of arms;
+		if selfie-phone is phone-recording:
+			add selfie-phone to the temporaryArmUses of arms;
+			add selfie-phone to the temporaryArmUses of arms;
+			now selfie-phone is not phone-recording;
 		if current-predicament is team-three-leg-predicament and girlfriend-partner is in the location of the player:
 			add girlfriend-partner to the temporaryArmUses of arms;
 			add girlfriend-partner to the temporaryArmUses of arms.

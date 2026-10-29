@@ -128,7 +128,7 @@ Carry out fanning:
 					now D is OD;
 					now RD is the room D from R;
 				say "The gale pushes you to the [D][if the noun is cursed]. It must have been cursed[end if]!";
-				teleport to RD;
+				raw teleport to RD;
 			if the noun is not cursed and there is held wet fluid vulnerable clothing:
 				say "The warm air dries out all your clothes!";
 				repeat with C running through wet fluid vulnerable clothing:

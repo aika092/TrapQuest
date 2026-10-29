@@ -438,13 +438,13 @@ To ride dominate (M - pimp):
 			FavourUp M by 2;
 		slightDignify;
 	otherwise:
-		now refractoryperiod is 1;[to prevent the player cumming instantly]
+		now refractoryperiod of the player is 1;[to prevent the player cumming instantly]
 		let F be player-fucker;
 		let O be the openness of F - the girth of M;
 		say "Things probably would get complicated if any patrons showed up, but if it's a problem for [him of M], then that's perfect. You [if oral sex addiction of the player > 3 and face is not actually occupied]use your mouth to give [his of M] shaft a quick polishing, [otherwise if the player is not wrist bound]give [his of M] shaft a couple of strokes with both hands, [otherwise]grind on [his of M] shaft, [end if]just enough to get it hard, and [if O < -2]carefully push it[otherwise if O < 0]ease[otherwise if O < 2]push[otherwise]eagerly slide[end if] it into your [variable F].";
 		now M is penetrating F;
 		Ruin F times 1;
-		now refractoryperiod is 0;
+		now refractoryperiod of the player is 0;
 		let P be a random generic-appropriate patron;
 		say "[big he of M] grumbles as you begin to move your hips, [if O < 0]but thankfully [he of M] accepts [his of M] place and allows you to focus on getting used to [his of M] huge[otherwise]but [he of M] accepts [his of M] place and allows you to really get to know [his of M][end if] [DickDesc of M].[line break][speech style of P]'Whoa, so this is what the brochure meant by [']interactive exhibit!['] SCORE!'[roman type][line break]";
 		compute ride dominate ending of M with P.

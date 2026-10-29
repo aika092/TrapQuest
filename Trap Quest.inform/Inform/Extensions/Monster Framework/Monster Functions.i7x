@@ -168,6 +168,8 @@ Part - Destroying
 To destroy (M - a monster):
 	now M is dying.
 
+Definition: a monster is persistent-after-destruction: decide no. [Some NPCs might not be fully reset when destroyed because the same one comes back]
+
 To finally destroy (M - a monster):
 	if M is carrying players-detached-dick:
 		compute taking away detached dick from M;
@@ -183,14 +185,15 @@ To finally destroy (M - a monster):
 	now M is not soul-stolen;
 	now the time-alive of M is 0;
 	now the sex-length of M is 0;
-	now the times-met of M is 0;
 	if M is bride-consort:
 		now the ceremony of betrothal-quest is true;
 		progress quest of betrothal-quest;
 	compute pedestal interruption of M;
 	remove M from play;
 	if debugmode > 1, say "[BigNameDesc of M] is now in [location of M].";
-	now the monstersetup of M is 0;
+	unless M is persistent-after-destruction:
+		now the monstersetup of M is 0;
+		now the times-met of M is 0;
 	unless M is trainee, reset M. [when a trainee leaves, we don't want them to reset to their minimum rank. This would upset the flavour when the player notices they've gone.]
 
 To reset (M - a monster): [We do this when the player faints to all monsters, even if they are remaining in play.]
@@ -198,6 +201,7 @@ To reset (M - a monster): [We do this when the player faints to all monsters, ev
 	unique reset M;
 	deinterest M; [this includes dislodging]
 	now M is not dying;
+	now M is not key-crumbled;
 	now the sleep of M is 0;
 	now the scared of M is 0;
 	now the last-interaction of M is 0;

@@ -420,8 +420,8 @@ To construct unique buttons for (T - pack of playing cards):
 
 To compute poker table cunt:
 	if diaper quest is 0 and htrigger-pussy is 0 and (the player is possessing a vagina or tg fetish > 0):
-		now htrigger-pussy is 1;
-		say "Your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way they're so... daringly on display, open and inviting! The words [second custom style][']pussy['][roman type] and [second custom style][']cunt['][roman type] consume your inner thoughts...".
+		say "Your eyes are continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. [if legacy content is 1]You feel almost entranced by the way they're so... daringly on display, open and inviting! The words [second custom style][']pussy['][roman type] and [second custom style][']cunt['][roman type] consume your inner thoughts...[end if]";
+		PussyFlashOptimize.
 
 queen-of-hearts is a collectible. The printed name of queen-of-hearts is "[TQlink of item described]queen of hearts[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of queen-of-hearts is "qoh". Understand "queen", "of hearts", "hearts" as queen-of-hearts.
 

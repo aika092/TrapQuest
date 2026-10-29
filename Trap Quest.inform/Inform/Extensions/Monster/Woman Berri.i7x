@@ -203,6 +203,7 @@ To vanish (M - a monster):
 		remove M from play;
 		if M is messy and the woman-diaper-state of M > 1, womanSluttify;
 		reset diaper of M;
+	if M is off-stage, now the vanished-turns of M is 0;
 	if the woman-status of M is 98 or (the woman-status of M is 90 and the vine-scene of M is 5):
 		FavourDown M;
 		womanSluttify.
@@ -262,6 +263,11 @@ To say LeftoverDesc (N - 131):
 	say "Berri is sleeping and you can't seem to wake [him of woman-player]. From what you can tell from [his of woman-player] mumblings, [he of woman-player][']s having a bad dream.".
 To compute diaper mess reaction of (M - woman-player):
 	say "[BigNameDesc of M] looks at you with [if the woman-bimbo of M < 6][one of]poorly hidden disgust[or]disgust and pity[cycling].[line break][speech style of M]'[one of]Not you too...'[or]Ew.'[or]Eurgh.'[stopping][roman type][line break][severeHumiliateReflect][otherwise]lustful enthusiasm.[line break][speech style of M]'[one of]Pooping is such fun[or]Yay[or]That sounded so gross... I love it[then at random]~'[roman type][line break][moderateHumiliateReflect][end if]".
+
+Definition: woman-player is girlfriend:
+	decide no.
+Definition: woman-player is happy girlfriend:
+	decide no.
 
 Part - Magic Pistol
 
@@ -1238,7 +1244,7 @@ Report going when the woman-old-bimbo of woman-player <= 5 and the woman-bimbo o
 			now woman-player is angered;
 			say "[BigNameDesc of woman-player] moans desperately into [his of woman-player] pacifier, but no sympathy is forthcoming. [big his of woman-player] sorrow begins to turn into anger. [big he of woman-player] spits insults at you from behind [his of woman-player] paci.[line break][speech style of woman-player]'You BITH! I'm gogga kick your ash!'[roman type][line break][BigNameDesc of matron] seems entertained by that.[line break][speech style of matron]'Ooh, be my guest!'[roman type][line break]";
 		otherwise:
-			say "You nod your head.[line break][if the player is able to speak][speech style of matron]'No no, I want you to beg me, on [his of woman-player] behalf. Why does [he of woman-player] deserve it?'[roman type][line break][BigNameDesc of matron] folds [his of matron] arms with a smirk. You sigh, but you feel like it's too late to back out now.[line break][variable custom style]'Berri has been a good little baby slave for [his of woman-player] [literalMistress of matron], wearing big thick diapers everywhere [he of woman-player] goes, and doing [his of woman-player] business in them instead of the grown-up [SlimeTargetP] because [he of woman-player] knows [his of woman-player] place. So please let [him of woman-player] go cummies in [his of woman-player] Pampies!'[roman type][line break][end if][BigNameDesc of matron] turns to [NameDesc of woman-player].[line break][speech style of matron]'Do you think you deserve to cum because of all the peepees [if diaper messing >= 3]and poopoos [end if]you've done in your diapees?'[roman type][line break][BigNameDesc of woman-player] nods furiously.[line break][speech style of matron]'Okay then sweetie. Enjoy your reward!'[roman type][line break][BigNameDesc of matron] pushes the wand back up against [NameDesc of woman-player][']s privates and holds it there. Within seconds [NameDesc of woman-player] is thrashing around and screaming through [his of woman-player] pacifier as an insanely powerful orgasm overwhelms [him of woman-player].";
+			say "You nod your head.[line break][if the player is able to speak][speech style of matron]'No no, I want you to beg me, on [his of woman-player] behalf. Why does [he of woman-player] deserve it?'[roman type][line break][BigNameDesc of matron] folds [his of matron] arms with a smirk. You sigh, but you feel like it's too late to back out now.[line break][variable custom style]'Berri has been a good little baby slave for [his of woman-player] [literalMistress of matron], wearing big thick diapers everywhere [he of woman-player] goes, and doing [his of woman-player] business in them instead of the grown-up [SlimeTargetP] because [he of woman-player] knows [his of woman-player] place. So please let [him of woman-player] go cummies in [his of woman-player] Pampies!'[roman type][line break][end if][BigNameDesc of matron] turns to [NameDesc of woman-player].[line break][speech style of matron]'Do you think you deserve to cum because of all the [slime][slime]s [if diaper messing >= 3]and poopoos [end if]you've done in your diapees?'[roman type][line break][BigNameDesc of woman-player] nods furiously.[line break][speech style of matron]'Okay then sweetie. Enjoy your reward!'[roman type][line break][BigNameDesc of matron] pushes the wand back up against [NameDesc of woman-player][']s privates and holds it there. Within seconds [NameDesc of woman-player] is thrashing around and screaming through [his of woman-player] pacifier as an insanely powerful orgasm overwhelms [him of woman-player].";
 			now the woman-diaper-state of woman-player is 1;
 			say "And then...[line break][italic type][if diaper messing >= 6]BRRRRRRRRRRRRRRRRRT[otherwise]HISSSSSSSSSSSSS[end if][line break]You can hear [NameDesc of woman-player] soiling [his of woman-player] padding as [he of woman-player][']s extreme pleasure causes [him of woman-player] to momentarily lose control of [his of woman-player] bodily functions. You expect [him of woman-player] to look embarrassed about that, but [he of woman-player] doesn't. In fact, [he of woman-player] looks pleased, as if the [SlimeTarget] action going on down below merely enhanced the experience. As [NameDesc of woman-player] comes down from [his of woman-player] euphoric high, [his of woman-player] smile doesn't fade. [big he of woman-player] looks blissful, as if [he of woman-player] has found [his of woman-player] inner peace. As if deep down, [he of woman-player] wholly and truly loves using [his of woman-player] diapers.";
 			satisfy matron;
@@ -1344,7 +1350,7 @@ To decide which figure-name is the examine-image of (G - hole-in-wall):
 
 To construct unique icons for (T - hole-in-wall):
 	if the hole-in-wall-scene of woman-player > 1 and woman-player is in HoleInWall:
-		if legacy watersports fetish is 1, add Figure of WetUrineIcon to the list of icons;
+		if legacy watersports mechanics is 1, add Figure of WetUrineIcon to the list of icons;
 		otherwise add Figure of WetSlimeIcon to the list of icons;
 		if diaper messing >= 7, add Figure of MessButton to the list of icons.
 
@@ -1565,7 +1571,7 @@ This is the woman unique punishment rule:
 	otherwise if playerRegion is Woods and vine boss is alive:
 		if the location of the player is not Woods16, drag to Woods16 by M;
 		say "[speech style of M]'Have fun, [if the woman-bimbo of M < 5]bitch.'[otherwise]*giggle*'[end if][roman type][line break][big he of M] pushes you down the hole.";
-		teleport to WoodsBoss01;
+		raw teleport to WoodsBoss01;
 		if another-turn-flavour is "", now another-turn-flavour is the substituted form of "It takes you a moment to recover from the fall.";
 		now another-turn is 1;
 	otherwise if playerRegion is Dungeon and G is glue:
@@ -2375,7 +2381,7 @@ To compute punishment potty use of (M - a monster):
 			satisfy M;
 		compute mandatory room leaving of M;
 		regionally place M;
-	otherwise if M is robot or refractoryperiod > 0:
+	otherwise if M is robot or refractoryperiod of the player > 0:
 		compute forcefeed start of M;
 		progress the forcefeeding of M;
 		let S be the chosen-forcefeed-round of M;
@@ -2390,7 +2396,7 @@ To compute punishment potty use of (M - a monster):
 	otherwise:
 		say "[speech style of M]'Are you having a fun time down here, hmm?'[roman type][line break]";
 		progress masturbation of M;
-		if refractoryperiod <= 0, progress masturbation of M;
+		if refractoryperiod of the player <= 0, progress masturbation of M;
 		satisfy M;
 		compute mandatory room leaving of M;
 		regionally place M.

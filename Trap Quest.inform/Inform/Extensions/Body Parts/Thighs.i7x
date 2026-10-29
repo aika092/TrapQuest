@@ -66,6 +66,20 @@ To say TotalDesc of (T - thighs):
 	otherwise:
 		say "They are concealed at the moment[if O >= 14], which is preventing then from looking extremely lewd[otherwise if O >= 7], which is preventing them from appearing nasty to anyone who looks at you[otherwise if O >= 3], which is preventing then from being a little humiliating in their current state[end if].".
 
+To say TouchDesc of (B - thighs):
+	let F be the flesh volume of thighs;
+	let E be the semen coating of thighs;
+	let S be saved-flat-strength;
+	let T be the latex-transformation of the player;
+	say " [ShortDesc of B]. They are [if T > 2][ShortLatexFlav][otherwise]hairless[end if][if E > 6], very sticky,[otherwise if E > 0], sticky,[end if] and [run paragraph on]";
+	if weight gain fetish is 0:
+		if the player is gendered female, say "reasonably thick and soft to the touch.";
+		otherwise say "a bit thick and soft to the touch.";
+	otherwise if T > 5:
+		say "[if F > 5]and supple, like huge water balloons.[otherwise if F > 1]pliable, like partially filled water ballons.[otherwise]slightly stiff, like water balloons ready to be filled.[end if]";
+	otherwise:
+		say "[if F > 9]THICK with fat, swallowing up[otherwise if F > 5]fatty, distorting around[otherwise if F > 3]soft, dimpling around[otherwise if F > 1]slightly soft, offering little resistance to[otherwise]skinny, offering no resistance to[end if] your fingers [if F > 9]so completely that you barely even feel[otherwise]as they feel[end if] the [if S >= 20]big, hard muscles[otherwise if S >= 15]big, dense muscles[otherwise if S >= 10]toned muscles[otherwise if S > 5]small, but toned muscles[otherwise]bone[end if] under the skin."
+
 Part 3 - Modify Thighs Stats
 
 To FatThighsUp (X - a number):

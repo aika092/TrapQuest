@@ -17,11 +17,11 @@ To decide which number is the total knee damage improvement of (C - a clothing):
 			otherwise:
 				increase K by 3;
 	if C is diaper and the player is diaper kicking, decrease K by 1;
-	if C is skirted and the front-skirt-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
-		if the front-skirt-length of C >= 9:
+	if C is skirted and the front-skirt-hindrance-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
+		if the front-skirt-hindrance-length of C >= 9:
 			decrease K by 100;
 		otherwise:
-			let L be 10 - the front-skirt-length of C; [front-skirt-length should be 6, 7 or 8, which convert to 4, 3, 2 respectively]
+			let L be 10 - the front-skirt-hindrance-length of C; [front-skirt-hindrance-length should be 6, 7 or 8, which convert to 4, 3, 2 respectively]
 			let PA be the early knee damage of the player;
 			let A be (PA * L) / 5; [80%, 60% or 40% damage]
 			decrease K by PA - A;
@@ -57,12 +57,12 @@ To decide which number is the knee damage of (P - a person):
 	if damage-explained > 1, say "[input-style]Base knee damage calculation: [bracket]3 (base damage) ";
 	let A be the early knee damage of P;
 	repeat with C running through worn clothing:
-		if the front-skirt-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
-			if the front-skirt-length of C >= 9:
+		if the front-skirt-hindrance-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
+			if the front-skirt-hindrance-length of C >= 9:
 				if damage-explained > 1, say "(also, skirt too long - attack unavailable) ";
 				[now A is 0;]
 			otherwise:
-				let L be 10 - the front-skirt-length of C; [front-skirt-length should be 6, 7 or 8, which convert to 4, 3, 2 respectively]
+				let L be 10 - the front-skirt-hindrance-length of C; [front-skirt-hindrance-length should be 6, 7 or 8, which convert to 4, 3, 2 respectively]
 				let previousA be A;
 				now A is (A * L) / 5; [80%, 60% or 40% damage]
 				if damage-explained > 1, say "-[previousA - A] (skirt length penalty of [if L is 4]20[otherwise if L is 3]40[otherwise]60[end if]%) ";
@@ -128,8 +128,8 @@ Carry out kneeing:
 			otherwise:
 				say "You knee [NameDesc of the noun] with all your might.";
 		repeat with C running through worn clothing:
-			if the front-skirt-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
-				say "The length of your [ShortDesc of C] [if the front-skirt-length of C is 8]severely [otherwise if the front-skirt-length of C is 7]greatly [end if][one of]restricts the movement of your knee[or]hampers your ability to put power behind the strike[or]weakens the blow[or]lowers the maximum damage of your attack[at random].";
+			if the front-skirt-hindrance-length of C >= 6 and C is not slitted and C is crotch-in-place and C is not crotch-unzipped:
+				say "The length of your [ShortDesc of C] [if the front-skirt-hindrance-length of C is 8]severely [otherwise if the front-skirt-hindrance-length of C is 7]greatly [end if][one of]restricts the movement of your knee[or]hampers your ability to put power behind the strike[or]weakens the blow[or]lowers the maximum damage of your attack[at random].";
 		compute combat diaper squish;
 		damage A on the noun;
 		compute upright fatigue gain;

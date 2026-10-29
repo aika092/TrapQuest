@@ -26,6 +26,7 @@ The player has a number called makeupskill.
 The player has a number called swordskill.
 The player has a number called condomskill.
 The player has a number called messskill.
+The player has a number called bonerskill.
 
 Part 1 - Mercy
 
@@ -242,7 +243,7 @@ Part 11 - Fuck Skill
 
 To teach fuckskill:
 	if the fuckskill of the player is 0:
-		say "[bold type]**You have learned how to hide your submissiveness from the people around you!**[line break]From now on, you'll find it a lot easier to [if diaper quest is 1]dominate people after you defeat them in combat[otherwise]find a way of having dominant sex[end if]![roman type][line break]";
+		say "[bold type]**You have learned how to hide your submissiveness from the people around you!**[line break]From now on, you'll find it a lot easier to [if diaper quest is 1]dominate people after you defeat them in combat[otherwise]convince people to let you dominate them[end if]![roman type][line break]";
 		now the fuckskill of the player is 1;
 		reset skill cooldown;
 	otherwise:
@@ -257,8 +258,24 @@ This is the fuckskill learn rule:
 	now the fuckskill of the player is 1.
 The fuckskill learn rule is listed in the skill cheating rules.
 
+Part 12 - Boner Skill
 
+To teach bonerskill:
+	if the bonerskill of the player is 0:
+		say "[bold type]**You have learned how to more easily maintain an erection!**[line break]From now on, you'll find it a lot easier to get and stay erect![roman type][line break]";
+		now the bonerskill of the player is 1;
+		reset skill cooldown;
+	otherwise:
+		say "[bold type]You've already learned how to maintain erections![roman type]".
 
+This is the bonerskill list rule:
+	if the bonerskill of the player is 1, say "You have an easier time getting and staying hard, even if you've had many shameful orgasms.".
+The bonerskill list rule is listed in the skill listing rules.
+
+This is the bonerskill learn rule:
+	if the bonerskill of the player is 0, say "You are now able to get and stay hard much more easily, even if you've had many shameful orgasms.";
+	now the bonerskill of the player is 1.
+The bonerskill learn rule is listed in the skill cheating rules.
 
 Part 14 - First Aid Skill
 

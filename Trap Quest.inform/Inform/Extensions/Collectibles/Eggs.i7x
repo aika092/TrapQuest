@@ -172,7 +172,7 @@ To compute hatchtime of (E - an egg):
 To compute hatch of (E - an egg):
 	if the egg-origin of E is tentacle monster or the egg-origin of E is lake monster or the egg-origin of E is facehugger or the egg-origin of E is hugger-panties or the egg-origin of E is hugger-gag or the egg-origin of E is vine:
 		compute tentacle hatch of E;
-	otherwise if the egg-origin of E is carrot daggers or the egg-origin of E is a bunny ears or the egg-origin of E is bowsette:
+	otherwise if the egg-origin of E is carrot-daggers or the egg-origin of E is a bunny ears or the egg-origin of E is bowsette:
 		compute bunny hatch of E;
 	otherwise if the egg-origin of E is the throne or the egg-origin of E is ghost or the egg-origin of E is ghostly dildo pole trap:
 		compute ghost hatch of E;
@@ -282,10 +282,10 @@ Figure of medium egg bunny is the file "Items/Collectibles/egg2d.jpg".
 To decide which figure-name is the examine-image of (C - a medium egg):
 	if the class of the player is santa's little helper, decide on figure of medium egg easter;
 	if the egg-origin of C is giant wasp, decide on figure of medium egg normal;
-	if the egg-origin of C is carrot daggers or the egg-origin of C is a bunny ears, decide on figure of medium egg bunny;
+	if the egg-origin of C is carrot-daggers or the egg-origin of C is a bunny ears, decide on figure of medium egg bunny;
 	decide on figure of medium egg tentacle.
 To say ExamineDesc of (B - a medium egg):
-	say "This looks exactly like you'd expect a large chicken egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[otherwise if the egg-origin of B is carrot daggers or the egg-origin of B is a bunny ears], except it has a red and white polka dot pattern[otherwise if the egg-origin of B is not giant wasp], except it has an eerie purple hue[end if][if B is laid]. You laid it out of your own body[end if][if B is laid and the egg-origin of B is a thing] after being oviposited by [NameDesc of egg-origin of B][otherwise if egg-origin of B is a thing]. It came from [NameDesc of egg-origin of B][end if].".
+	say "This looks exactly like you'd expect a large chicken egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[otherwise if the egg-origin of B is carrot-daggers or the egg-origin of B is a bunny ears], except it has a red and white polka dot pattern[otherwise if the egg-origin of B is not giant wasp], except it has an eerie purple hue[end if][if B is laid]. You laid it out of your own body[end if][if B is laid and the egg-origin of B is a thing] after being oviposited by [NameDesc of egg-origin of B][otherwise if egg-origin of B is a thing]. It came from [NameDesc of egg-origin of B][end if].".
 To compute tentacle hatch of (E - a medium egg):
 	let M be a random off-stage facehugger;
 	if M is monster:

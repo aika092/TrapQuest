@@ -246,7 +246,7 @@ To teleport via (W - a warp portal):
 				if receptionist is in the location of the player:
 					let EG be nothing;
 					repeat with EX running through held medium eggs:
-						if the egg-origin of EX is carrot daggers, now EG is EX;
+						if the egg-origin of EX is carrot-daggers, now EG is EX;
 					if EG is a thing and egg-smuggling-event is event-started and armband is worn:
 						let M be receptionist;
 						interest M;
@@ -395,7 +395,8 @@ To teleport via (W - a warp portal):
 			if receptionistChasing is true:
 				now receptionist is in the location of the player;
 				say "[BigNameDesc of receptionist] follows you through the portal![line break][speech style of receptionist]'It's a one way ticket to the Royal Dungeon for you, [NameBimbo]!'[roman type][line break]";
-	if playerRegion is not facility, compute clothing cleanup. [otherwise extra credit zone causes jewellery to get cleaned up]
+	if playerRegion is not facility:
+		compute clothing cleanup.[otherwise extra credit zone causes jewellery to get cleaned up]
 
 To maybe execute (P - a predicament):
 	if cheatsenabled:

@@ -200,6 +200,13 @@ To say AssholeModesty:
 To say RealGapeDesc:
 	say "Your asshole is [AssGape real openness of asshole][if the player is possessing a vagina] and your pussy is [PussyGape real openness of vagina][end if]".
 
+To say TouchDesc of (B - asshole):
+	let S be the sensitivity of asshole;
+	let O be the openness of asshole;
+	let V be the semen volume of belly;
+	say "[ShortDesc of B]. ";
+	say "You feel a [if S < 3]barely noticeable[otherwise if S < 5]tiny[otherwise if S < 7]sharp[otherwise]massive[end if] jolt as your fingers brush your [if the latex-transformation of the player > 2][LatexFlav][otherwise if V > 5]wet, [semen]-drooling[otherwise if V > 0]damp, [semen]-flecked[otherwise]slightly wrinkly[end if] sphincter, and another as you feel the inside of the hole, [AssGape O] and [if the soreness of B is 0]sensitive[otherwise if the soreness of B < 3]tingling[otherwise if the soreness of B < 6]throbbing[otherwise]aching[end if] all the way through.".
+
 Part 3 - Modify Asshole Stats
 
 To gape (A - asshole) times (X - a number):

@@ -375,7 +375,7 @@ To compute unique early action of (M - slimy-portal-creature):
 							now Y is penetrating vagina;
 							if X is a combative monster, now the sex-length of Y is the sex-length of X;
 							otherwise now the sex-length of Y is a random number between 3 and 5;
-							if condom fetish is not 0 and condom fetish is not 2 and a random number between 0 and 1 is 1:
+							if intense creampie fetish is 1 and a random number between 0 and 1 is 1:
 								now X is wrapped;
 								say "[variable custom style]At least I can feel that [he of X][']s wearing a condom...[roman type][line break]";
 							if X is not a combative monster and the player is getting unlucky:
@@ -393,7 +393,7 @@ To compute unique early action of (M - slimy-portal-creature):
 						now X is penetrating face;
 						now the throating of X is 1;
 						now the sex-length of X is a random number between 3 and 5;
-						if condom fetish is not 0 and condom fetish is not 2 and a random number between 0 and 1 is 1:
+						if intense creampie fetish  is 1 and a random number between 0 and 1 is 1:
 							now X is wrapped;
 							say "[variable custom style]At least I can feel that [he of X][']s wearing a condom...[roman type][line break]";
 						now M is bwc-oral;

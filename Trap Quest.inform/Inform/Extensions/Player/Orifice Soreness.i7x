@@ -37,6 +37,25 @@ To decide which number is the tolerance of (F - a fuckhole):
 	if the latex-transformation of the player > 3, increase T by 100;
 	decide on T.
 
+To decide which number is the stimulation of (L - a liquid-object) on (F - a body part):
+	if intense creampie fetish is 0, decide on 0;
+	let S be 0;
+	if F is face:
+		increase S by the player taste addiction of L;
+	if L is semen, increase S by the semen addiction of the player / 4;
+	let M be the recent-source of L;
+	if M is monster:
+		increase S by the difficulty of M / 8;
+		if interracial fetish is 1:
+			if M is dark skinned:
+				increase S by ((the BBC addiction of the player - 1) / 4) - 1;
+			otherwise if M is human:
+				if the player is queen of spades, decrease S by the BBC addiction of the player / 4;
+				if F is vagina and black hole tattoo is worn, decrease S by 2;
+	if S < 1, decide on 0;
+	decide on S.
+
+
 To decide which number is the stimulation of (O - an object) on (F - a body part):
 	if the semen volume of vagina > 6 and F is vagina, decide on 3; [Pussy creampie expulsion]
 	if diaper quest is 1:
@@ -99,6 +118,14 @@ To passively stimulate (F - a body part) times (N - a number):
 		decrease N by 1;
 		passively stimulate F.
 
+To liquid stimulate (F - a body part) from (L - a liquid-object) times (N - a number):
+	if intense creampie fetish is 1:[You can only cum from creampies with condoms enabled.]
+		if the stimulation of L on F >= 10, stimulate F from L times N;
+		otherwise passively stimulate F from L;
+	otherwise:
+		passively stimulate F from L;
+	now the recent-source of L is throne.
+
 To stimulate (F - a body part) from (T - an object):
 	stimulate F from T times 1.
 
@@ -123,8 +150,11 @@ To passively stimulate (F - a body part) from (T - an object) times (N - a numbe
 
 [This one can't cause an automatic orgasm]
 To passively stimulate (F - a body part) from (T - an object):
+	if T is edible-toy, compute wickdip of T;
 	if F is vagina and the player is not possessing a vagina, now F is penis;
-	if F is penis and the player is not possessing a penis, now F is vagina;
+	if F is penis and the player is not possessing a penis:
+		if player is possessing a vagina, now F is vagina;
+		otherwise now F is asshole;
 	if the player is able to get horny:
 		let A be the sensitivity of F + 5;
 		if F is asshole, increase A by the square root of the anal sex addiction of the player;
@@ -134,7 +164,7 @@ To passively stimulate (F - a body part) from (T - an object):
 		if (F is fuckhole or F is penis) and there is a worn total protection diaper, increase A by the square root of the diaper addiction of the player;
 		if F is penis, RawUp penis;
 		let ST be the stimulation of T on F * 2;
-		if refractoryperiod <= 0:
+		if refractoryperiod of the player <= 0:
 			now ST is a random number between ST and (ST * 3); [in the first three turns after orgasm, arousal from stimulation is slightly lowered]
 		otherwise:[if you haven't climaxed recently, passive stimulation grants xp]
 			increase the gasm-time of the player by 25;

@@ -716,7 +716,7 @@ Definition: bag-feeding-pee-time is appropriate:
 	if the player is bursting and the player is not fake bursting and the noun is yellow themed, decide yes;
 	decide no.
 To execute (E - bag-feeding-pee-time):
-	say "Your bag reacts to the yellow colour of the [ShortDesc of noun]. [if legacy watersports fetish is 1]You feel a bit more desperate to go to the loo[otherwise]Your slimeshooter seems a bit more full[end if]...";
+	say "Your bag reacts to the yellow colour of the [ShortDesc of noun]. [if legacy watersports mechanics is 1]You feel a bit more desperate to go to the loo[otherwise]Your slimeshooter seems a bit more full[end if]...";
 	BladderUp 2.
 
 bag-feeding-heels is a bag-feeding-effect.

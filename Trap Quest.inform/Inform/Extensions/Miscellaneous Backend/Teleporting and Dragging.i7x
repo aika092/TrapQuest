@@ -2,18 +2,18 @@ Teleporting and Dragging by Miscellaneous Backend begins here.
 
 player-dragger is an object that varies. player-dragger is usually yourself.
 
-To teleport to (R - a room):
+To raw teleport to (R - a room):
 	if doll-stuck-num > 0:
 		let T be a random dildo trap penetrating a fuckhole;
 		say "The [printed name of T] is ripped free from you. Owww!";
 		BodyRuin 1;
 		dislodge T;
 	repeat with C running through worn stuck clothing:
-		say "[BigNameDesc of C] is ripped from your body by the force of the [if player-dragger is not monster]portal[otherwise]pull[end if], and destroyed. ";
+		say "[BigNameDesc of C] is ripped from your body by the force of [if player-dragger is yourself]the portal[otherwise][NameDesc of player-dragger][end if], and destroyed. ";
 		destroy C;
 	repeat with M running through monsters in the location of the player:
 		if R is unbossed and (M is grabbing the player or M is penetrating an orifice):
-			say "[line break][BigNameDesc of M] is pulled [if player-dragger is not monster]through the portal [end if]with you!";
+			say "[line break][BigNameDesc of M] is pulled [if player-dragger is yourself]through the portal [end if]with you!";
 			now M is in R;
 			if (M is grabbing the player or M is wrangling a body part) and M is not ghostly tentacle and M is not penetrating a body part:
 				say "In the confusion, [he of M] loses [his of M] grip on you!";
@@ -74,6 +74,47 @@ To teleport to (R - a room):
 	if player-dragger is yourself and the player is in R, compute unique teleportation to R;
 	display stuff.
 
+To spatial teleport to (R - a room):
+	let O be the location of the player;
+	raw teleport to R;
+	repeat with P running through worn portal themed clothing:
+		if the damage of P > 6:
+			compute PortalBust of P from O;
+			destroy P;
+		otherwise:
+			compute PortalStrain of P from O.
+
+Definition: an object is portal themed: decide no.
+
+To compute PortalBust of (C - a clothing) from (O - a room):
+	say "The spatial warping is too much for your [MediumDesc of C], and it explodes, slamming the portal shut. [run paragraph on]";
+	if penis is detachable:
+		say "Your [if the player is possessing a vagina][pussy] and [asshole] twinge painfully as they are shunted back to their proper places[otherwise][asshole] twinges painfully as it is shunted back to its original place[end if], but with your [ShortDesc of penis], you only feel ";
+		compute portal-cock-detachment from O by C;
+	otherwise:
+		say "Pain wracks your body as your groin is twisted and distorted back ionto its original place.";
+		if the player is possessing a penis:
+			PenisDown the size of penis - min penis size;
+		if the openness of vagina > 0:
+			say "Your [vagina] spasms as it tightens all at once!";
+			PussyClose the openness of vagina;
+		if the openness of asshole > 0:
+			say "Your [asshole] spasms as it slams shut!";
+			AssClose the openness of asshole;
+		anally orgasm shamefully;
+		PainUp 50;
+	destroy C.
+
+To compute PortalStrain of (P - a clothing) from (O - a room):
+	say "[one of]The spatial warping damages your [MediumDesc of P].[or]The [MediumDesc of P] emits sparks during the spatial transfer![or]The [MediumDesc of P] creaks as it endures the spatial warp.[cycling]";
+	let R be a random number between 1 and 2;
+	if tough-shit is 1, increase R by 1;
+	if P is cursed, increase R by 1;
+	PainUp R;
+	while R > 0:
+		decrease R by 1;
+		Damage P.
+
 To drag to (R - a room) by (M - a thing):[TODO: player can't be dragged when stuck unless the circumstances are special.]
 	compute glue-freeing by M;
 	say DragFlav of M to R;
@@ -81,7 +122,17 @@ To drag to (R - a room) by (M - a thing):[TODO: player can't be dragged when stu
 	fix map-drag to R;
 	now player-dragger is M;
 	now M is in R;
-	teleport to R;
+	raw teleport to R;
+	now player-dragger is yourself;
+	say DragArrival of M to R.
+
+To shove to (R - a room) by (M - a thing):[TODO: player can't be shoved when stuck unless the circumstances are special.]
+	compute glue-freeing by M;
+	say ShoveFlav of M to R;
+	check shopstealing of M;
+	fix map-drag to R;
+	now player-dragger is M;
+	raw teleport to R;
 	now player-dragger is yourself;
 	say DragArrival of M to R.
 
@@ -97,6 +148,9 @@ To fix map-drag to (R - a room):
 
 To say DragFlav of (M - a thing) to (R - a room):
 	say "[BigNameDesc of M] drags you [if the distance of R > 1]all the way [end if]to the [R]!".
+
+To say ShoveFlav of (M - a thing) to (R - a room):
+	say "You are shoved into the [R]!".
 
 To say DragArrival of (M - a thing) to (R - a room):
 	say "".
@@ -142,8 +196,8 @@ To compute bad teleport:
 	if the number of entries in LR > 0:
 		if debugmode > 0, say "List of potential bad teleports: [LR].";
 		sort LR in random order;
-		teleport to entry 1 in LR;
+		spatial teleport to entry 1 in LR;
 	otherwise:
-		teleport to Dungeon31;
+		spatial teleport to Dungeon31;
 
 Teleporting and Dragging ends here.

@@ -246,7 +246,7 @@ To compute oral assistance from (S - a monster) with (D - a monster):
 
 
 To compute boobs assistance from (S - a monster) with (D - a monster):
-	if a2m fetish > 1:
+	if snowball fetish is 1:
 		say "[BigNameDesc of S] [one of]submissively[or]diligently[or]quietly[or]obediently[or]greedily[at random] [one of]tongues[or]eats out[in random order] [NameDesc of D][']s asshole";
 	otherwise:
 		if D is a balls-haver, say "[BigNameDesc of S] [one of]submissively[or]diligently[or]quietly[or]obediently[or]greedily[at random] [one of]licks[or]sucks on[as decreasingly likely outcomes] [NameDesc of D]'s [one of]balls[or]testicles[or]scrotum[as decreasingly likely outcomes].";
@@ -266,7 +266,7 @@ To compute vaginal assistance from (S - a monster) with (D - a monster):
 To compute anal assistance from (S - a monster) with (D - a monster):
 	if a random number between 1 and 2 is 1:
 		if S is not unfriendly:
-			if a2m fetish > 1, say "[BigFuckerDesc of S] kneels [one of]over you, holding [his of S] mouth open, allowing [NameDesc of D] [if D is male]fuck[otherwise]abuse[end if] your [asshole] and [his of S] face alternately.[or]next to you, allowing [FuckerDesc of D] to periodically pull out and [if D is male]fuck[otherwise]use[end if] [his of S] face.[in random order]";
+			if snowball fetish is 1, say "[BigFuckerDesc of S] kneels [one of]over you, holding [his of S] mouth open, allowing [NameDesc of D] [if D is male]fuck[otherwise]abuse[end if] your [asshole] and [his of S] face alternately.[or]next to you, allowing [FuckerDesc of D] to periodically pull out and [if D is male]fuck[otherwise]use[end if] [his of S] face.[in random order]";
 			otherwise say "[BigFuckerDesc of S] kneels [one of]over you, periodically adding spit for extra lube as [NameDesc of D] to abuses your [asshole] and [his of S] face alternately.[or]next to you, periodically leaning in and spitting between your asscheeks to add extra lube for [NameDesc of D].[in random order]";
 		otherwise:
 			say "[BigNameDesc of S] kneels over you, holding your cheeks open so [NameDesc of D] can [if D is male]fuck your [asshole] even harder[otherwise]ruin your [asshole] even more[end if]!";
@@ -291,7 +291,7 @@ To say AssistedFailedFacialDodge of (M - a monster) with (subs - a number):
 	unless N is monster, now N is a random submission-assisting monster in the location of the player;
 	say "Unfortunately, [if subs > 1]the others are[otherwise][FuckerDesc of N] is[end if] right there to grab you and hold you still as [if subs > 1][he of M][otherwise][FuckerDesc of M][end if] ejaculates all over your face and [ShortDesc of breasts].".
 
-To say AssistedUnavoidedFacial of (M - a monster) with (subs - a number):
+To say AssistedAcceptedFacial of (M - a monster) with (subs - a number):
 	let N be a random unfriendly submission-assisting monster in the location of the player;
 	unless N is monster, now N is a random submission-assisting monster in the location of the player;
 	say "[if subs > 1]The others crowd in around you[otherwise][BigFuckerDesc of N] puts [his of N] face up next to yours[end if] as [NameDesc of M] pushes you off and ejaculates all over your faces.".

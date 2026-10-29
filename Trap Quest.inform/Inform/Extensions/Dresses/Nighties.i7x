@@ -27,7 +27,7 @@ Report wearing a nightie:
 		say "As you put on the nightie, the room around you starts to shake and quickly disappears, to be replaced by the Royal Chambers!";
 		curse the noun;
 		compute summoned quest of the noun;
-		teleport to Dungeon12.
+		spatial teleport to Dungeon12.
 
 Report examining a nightie:
 	say "Somehow you can tell that you'll be really quick at recovering your energy once on your knees, whilst you wear this.".

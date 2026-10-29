@@ -679,7 +679,7 @@ The matron defeats early berri rule is listed last in the matron diaper quest ru
 This is the matron vibe tortures berri rule:
 	if the player is prone and the class of the player is berri:
 		now berriMatronTripScene is 2;
-		now refractoryperiod is 0;
+		now refractoryperiod of the player is 0;
 		let M be current-monster;
 		let E be a random interested explorer in the location of the player;
 		now M is grabbing the player;
@@ -713,7 +713,7 @@ This is the matron vibe tortures berri rule:
 				set numerical response 1 to "hold onto your [SlimeContainer]";
 				set numerical response 2 to "get [slime] on yourself";
 				if the bladder of the player >= 10, compute multiple choice question;
-				otherwise compute single choice question "[if refractoryperiod <= 0]fight against your impending orgasm[otherwise]whimper in shame[end if]";
+				otherwise compute single choice question "[if refractoryperiod of the player <= 0]fight against your impending orgasm[otherwise]whimper in shame[end if]";
 				if the bladder of the player >= 10 and player-numerical-response is 2:
 					now delayed urination is 0;
 					start urination;
@@ -721,14 +721,14 @@ This is the matron vibe tortures berri rule:
 			ruin vagina;
 			if the player is getting unlucky, ruin vagina;
 			check for arousal change;
-			if refractoryperiod > 0:
+			if refractoryperiod of the player > 0:
 				if the player is getting lucky:
 					decrease N by 1;
 				otherwise if the bladder of the player >= 6:
 					let T be the substituted form of "As the vibrations continue to torture your overstimulated [genitals],";
 					check pee pressure with reason T; [handles both full peeing and little leaks]
 		say "Suddenly, [NameDesc of M] clicks the vibrator off. ";
-		if D is wet and refractoryperiod > 0:
+		if D is wet and refractoryperiod of the player > 0:
 			say "[big he of M] checks the front of your diaper with a firm hand, and tuts.[line break][speech style of M]'You're soaked! How pathetic, cumming and pissing yourself at the same time! I've got just the outfit for a pathetic little baby like you...'[roman type][line break]";
 			if latest-berri-stage >= 1 and latest-berri-stage <= 5, now latest-berri-stage is 6;
 			otherwise increase latest-berri-stage by 1;
@@ -736,7 +736,7 @@ This is the matron vibe tortures berri rule:
 			summon C uncursed;
 			say "[BigNameDesc of M] forces you into a [C]!";
 			if C is pet collar and bondage protection < 3, compute M keylocking C;
-		otherwise if D is wet or refractoryperiod > 0:
+		otherwise if D is wet or refractoryperiod of the player > 0:
 			say "[big he of M] checks the front of your diaper with a firm hand, and chuckles.[line break][speech style of M]'You're [if D is wet]soaked[otherwise]still dry[end if]! Well done, you naughty baby!'[roman type][line break][BigNameDesc of M] unlocks the pacifier gag!";
 			unlock P;
 		otherwise:
@@ -890,9 +890,9 @@ To compute diaper change during special of (M - matron):
 		say "[one of]Indeed, [he of M] does. [or][stopping]With a dash of lube and a swish of [his of M] arm, [he of M] pushes the thermometer deep inside your [asshole].";
 		if the player is possessing a vagina, cutshow Figure of matron diaper change temperature cutscene female for M;
 		otherwise cutshow Figure of matron diaper change temperature cutscene male for M;
-		let RP be refractoryperiod;
+		let RP be refractoryperiod of the player ;
 		stimulate asshole from M;
-		if RP is refractoryperiod: [no orgasm]
+		if RP is refractoryperiod of the player : [no orgasm]
 			say "[speech style of M]'Such a sweet expression!'[roman type][line break][BigNameDesc of M] smiles widely as [he of M] sees you squirm.[line break][strongHumiliateReflect]";
 		otherwise:
 			say "[speech style of M]'Did that... Really now! What a naughty [boy of the player]!'[roman type][line break][BigNameDesc of M] looks genuinely shocked.[line break][severeHumiliateReflect][line break][variable custom style]I can't believe that just happened... And in front of [him of M]...[roman type][line break]";
@@ -1158,7 +1158,11 @@ To consider farewell routine for (M - matron):
 			drag to Mansion32 by M;
 		otherwise:
 			drag to Dungeon10 by M;
-		say "[speech style of M]'Run along now, you little minx! [one of]And say hi to the [ShortDesc of mistress] for me[or]Play nice with the other babies, now[in random order]!'[roman type][line break][BigNameDesc of M] pushes you through the portal!";
+		say "[speech style of M]'Run along now, you little minx! [one of]And say hi to the [ShortDesc of mistress] for me[or]Play nice with the other babies, now[in random order]!'[roman type][line break]";
+		if old-diaper-left is a thing and old-diaper-left is in the location of the player:
+			say "[BigNameDesc of M] shoves [NameDesc of old-diaper-left] into your hands.[line break][speech style of M]'And don't forget to take this with you, my stinky fairy!'[roman type][line break]";
+			now old-diaper-left is carried by the player;
+		say "[BigNameDesc of M] pushes you through the portal!";
 		cutshow Figure of matron portal cutscene for M;
 		now forced-portal is facility portal;
 		dislodge M;

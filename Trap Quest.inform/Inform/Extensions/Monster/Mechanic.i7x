@@ -435,7 +435,7 @@ To compute xavier reward of (M - mechanic):
 		IntUp 4;
 
 This is the mechanic strips princess rule:
-	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and princess bride dress is unclash summonable and (the player is possessing a vagina or the player is ready for event TG):
+	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and princess bride dress is unclash summonable and (the player is possessing a vagina or the player is ready for uncommon event tg):
 		let H be a random worn headgear;
 		say "[speech style of current-monster]'At long last, release shall be mine. To dispel your magic, I need simply make you my bride...'[roman type][line break][big he of current-monster] touches your [ShortDesc of H].";
 		transform H into tiara-veil;
@@ -491,12 +491,12 @@ The mechanic dark ritual rule is listed last in the mechanic unique punishment r
 This is the mechanic spanks berri rule:
 	if the class of the player is berri and latest-berri-stage is 0 and stripy-blue-dress is worn and plain-white-briefs is worn and berriMechanicScene is 0:
 		now berriMechanicScene is 1;
-		now refractoryperiod is 0;
+		now refractoryperiod of the player is 0;
 		now mechanic is grabbing the player;
 		displace stripy-blue-dress;
 		say "You scream with shock as [NameDesc of mechanic] picks you up and swings you over one shoulder.[line break][speech style of mechanic]'Oh look, just what I need!'[roman type][line break][big he of mechanic] picks up a wand vibrator that was lying on the ground near [his of mechanic] feet, and, flipping your dress up, presses the vibrating wand against your [genitals] through [NameDesc of plain-white-briefs]. The vibrations send surges of electrical delight through your [genitals]!";
 		ruin vagina;
-		now refractoryperiod is 0;
+		now refractoryperiod of the player is 0;
 		check for arousal change;
 		say "You instinctively try to wiggle away, but [NameDesc of mechanic] holds you tight, and begins to aggressively spank your poor partially exposed buttcheeks!";
 		say SpankingFlav of mechanic;
@@ -540,7 +540,7 @@ This is the mechanic spanks berri rule:
 				now E is in L;
 			otherwise:
 				remove E from play;
-			now refractoryperiod is 0;
+			now refractoryperiod of the player is 0;
 			say "[BigNameDesc of mechanic] cackles cruelly.[line break][speech style of mechanic]'Yes that's right, you dumb baby. Nobody's coming to save you. And all it took was a tiny bribe for your little [']friend['] over there to [pussy] out.'[roman type][line break][big he of mechanic] spanks you some more, still holding the vibrator against your [genitals] as [he of mechanic] does![line break][speech style of mechanic]'Is my little perverted baby gonna cum during [his of the player] spankings?'[paragraph break][roman type]";
 			now temporaryYesNoBackground is the examine-image of mechanic;
 			ruin vagina;
@@ -680,7 +680,7 @@ To say CreampieFlav of (M - mechanic) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] slams [his of M] [DickDesc of M] home, groaning with pleasure as [he of M] floods your [variable F] with [semen]. [big he of M] gives you a healthy smack across the ass as [he of M] pulls out, climbing to [his of M] feet and wiping a bit of sweat from [his of M] brow.[or][BigNameDesc of M] jams [his of M] [DickDesc of M] in as far as it will go, reaching underneath you to play with your [ShortDesc of breasts] [he of M] fills your [variable F] with [his of M] load. [big he of M] roughly shoves you off [his of M] [DickDesc of M], sighing in satisfaction as [he of M] gets to [his of M] feet.[or][BigNameDesc of M] groans, tightening [his of M] grip as [his of M] [DickDesc of M] shoots jet after jet of fresh [semen] directly into your [variable F]. [big he of M] finishes [himself of M] off with a few short thrusts before pulling out and climbing to [his of M] feet.[at random]".
 
 To compute (M - mechanic) pulling out of (F - a fuckhole):
-	if a2m fetish > 0 and face is not actually occupied and (M is infernal or the player is getting unlucky), compute M messily pulling out of F;
+	if baseline a2m fetish is 1 and face is not actually occupied and (M is infernal or the player is getting unlucky), compute M messily pulling out of F;
 	otherwise compute M cleanly pulling out of F.
 
 To compute (M - mechanic) messily pulling out of (F - a fuckhole):
@@ -1130,7 +1130,7 @@ To ride dominate (M - mechanic):
 		say "Your eyes find [his of M] wrench, and you desperately grab it [if the player is wrist bound]with your teeth [end if]and wrest it from [his of M] hand. That seems to have the desired effect, although [he of M] gives you a confused look as [he of M] gets on [his of M] knees with [his of M] hands up. [PowerBottomComment of M] They stay up as [he of M] lies on [his of M] back.";
 	otherwise:
 		say "Your eyes find a dangerous looking doo-hickey hanging from [his of M] belt, and you make a desperate lunge to yank it off [his of M] belt and point it at [him of M]. [big his of M] eyes widen as [he of M] drops down with [his of M] hands up. [PowerBottomComment of M] They stay up as [he of M] lies on [his of M] back.";
-	now refractoryperiod is 1;[Ensures the player does not cum just from being penetrated]
+	now refractoryperiod of the player is 1;[Ensures the player does not cum just from being penetrated]
 	if player-fucker is asshole and the player is not possessing a vagina, anal ride dominate M;
 	otherwise vaginal ride dominate M.
 
@@ -1157,7 +1157,7 @@ To vaginal ride dominate (M - mechanic):
 
 To check vaginal dominate entrance of (M - a mechanic) for (J - a thing):
 	let G be the openness of vagina - the girth of M;
-	now refractoryperiod is 1;
+	now refractoryperiod of the player is 1;
 	if player-fucking is DOMINANT-SHAMEFUL:[immediate loss]
 		if debugmode > 0, say "[bold type]FAILED![roman type][line break]";
 		say "You [if the player is not able to speak or the player is wrist bound]swallow[otherwise]lick your lips[end if] in anticipation of how good it's going to feel to have [him of M] inside you, hungrily eyeing [his of M] [DickDesc of M] as you lower yourself into [his of M] lap. [BigNameDesc of M] immediately grabs [if the player is wrist bound]your bound[otherwise]you by the[end if] wrists, [if J is clothing and the player is wrist bound]knocking the [ShortDesc of J] out of your mouth as [he of M][otherwise if J is clothing]knocking the [ShortDesc of J] out of your hand as [he of M][otherwise] and[end if] easily wrestles you onto your back.[line break][speech style of M]'Don't worry, bitch, I'll get you some dick. Hang on...'[roman type][line break]";
@@ -1181,7 +1181,7 @@ To check vaginal dominate entrance of (M - a mechanic) for (J - a thing):
 				slightHumiliate;
 		Ruin vagina times 2;
 		say "Your thoughts are divided between [if the delicateness of the player > 5]the rush[otherwise]the humiliation[end if] of not being in control, and how stupid you were to try and take control in the first place. It's obvious now that there's only one natural position for you, and [NameDesc of M] emphasises where that is with every thrust. You [if G < -1]feel yourself being stretched out more with every moment[otherwise if G < 2]enjoy yourself more with every moment[end if], and you begin to moan as the pleasure builds and builds. [big he of M] doesn't show any signs of stopping, and you clench your fists as your lips form into a big, submissive 'O.'";
-		now refractoryperiod is 0;
+		now refractoryperiod of the player is 0;
 		vaginally orgasm shamefully;
 		say "[line break][BigNameDesc of M] doesn't let up at all, roughly smacking your tits as [he of M] erodes your inhibitions away with every thrust. You hold eye contact with [him of M], moaning shamelessly as [he of M] uses you as nothing but a [if G < 2]tight[otherwise]warm[end if] sleeve for relieving [his of M] lust. Excitement wells up inside you as [his of M] [DickDesc of M] rapidly begins to spasm, and [he of M] jams [himself of M] in as far as [he of M] can go, groaning like the primal [man of M] [he of M] is as [he of M] pumps your [vagina] full of potent [semen].";
 		PussyFill the semen load of M;
@@ -1207,7 +1207,7 @@ To check vaginal dominate vigilance of (M - mechanic) for (J - a thing):
 			if the player is bimbo consenting:
 				say "You rip the condom off without missing a beat, gasping as [his of M] [DickDesc of M] slams back in completely bareback.[line break][speech style of M][if the semen addiction of the player < 8]I can't believe I did that! I CAN'T BELIEVE I DID THAT[otherwise if pregnancy fetish is 1 and the pregnancy of the player is 0]I could get pregnant... I-I could get fucking pregnant[otherwise]I'm going to take it all in my fucking [vagina][end if]![roman type][line break]";
 				now M is unwrapped;
-				now refractoryperiod is 0;
+				now refractoryperiod of the player is 0;
 				vaginally orgasm shamefully;
 				say "[BigNameDesc of M] isn't far behind, slamming [himself of M] home and groaning with pleasure as [his of M] cock floods your [vagina] with potent [semen]. [big he of M] plants it nice and deep with every thrust, making sure to fully drive the consequences of your actions home.";
 				if the womb volume of vagina < 5 - N and the pregnancy of the player is 0, WombFill N;
@@ -1234,7 +1234,7 @@ To check vaginal dominate focus of (M - mechanic) for (J - a thing):
 		if M is wrapped:
 			say "[big he of M] pulls out, shrugging off your attempts to break out of [his of M] hold as [he of M] peels off [his of M] rubber with a sharp *SNAP.* You [if the relevant sex addiction of the player > 7]can't even begin to stifle your moan[otherwise]can't stifle your gasp[end if] as [he of M] slides [his of M] bare [DickDesc of M] back in, which feels incredible after going so long with the condom on. [if the player is not disgraced]You don't want to cum in such a shameful way[otherwise]You know it would be shameful to cum this way[end if], but there's nothing you can do as [NameDesc of M] slams [himself of M] home, flooding your [vagina] with hot [semen]. ";
 			now M is unwrapped;
-			now refractoryperiod is 0;
+			now refractoryperiod of the player is 0;
 			vaginally orgasm shamefully;
 			PussyFill the semen load of M;
 			orgasm M;
@@ -1290,7 +1290,7 @@ To anal ride dominate (M - mechanic):
 To check anal dominate entrance of (M - a mechanic) for (J - a thing):
 	let C be a random worn chastity cage;
 	let G be the openness of asshole - the girth of M;
-	now refractoryperiod is 1;
+	now refractoryperiod of the player is 1;
 	if player-fucking is DOMINANT-SHAMEFUL:[immediate loss]
 		if debugmode > 0, say "[bold type]FAILED![roman type][line break]";
 		say "[if C is worn or the player is not possessing a penis]You giggle[otherwise]You're already hard[end if] in anticipation of how good it's going to feel to have [him of M] inside you, hungrily eyeing [his of M] [DickDesc of M] as you lower yourself into [his of M] lap. [BigNameDesc of M] immediately grabs [if the player is wrist bound]your bound[otherwise]you by the[end if] wrists, [if J is clothing and the player is wrist bound]knocking the [ShortDesc of J] out of your mouth as [he of M][otherwise if J is clothing]knocking the [ShortDesc of J] out of your hand as [he of M][otherwise] and[end if] easily wrestles you onto your back.[line break][speech style of M]'Don't worry, [if the player is gendered male][sissy slut], I can handle this by myself. Hang on...'[otherwise]bitch, the man is in charge now. Hang on...[end if]'[roman type][line break]";
@@ -1314,10 +1314,10 @@ To check anal dominate entrance of (M - a mechanic) for (J - a thing):
 				slightHumiliate;
 		Ruin asshole times 2;
 		say "[if the player is not sexed male][big his of M] tip feels incredible sliding in and out of you[otherwise if G < -1]It's way too big, but the pain is overshadowed by the feeling of [his of M] tip ramming against your prostate[otherwise][big his of M] tip feels incredible ramming up against your prostate[end if], and [if C is worn]clear precum dribbles out of your cage as it jiggles[otherwise if the size of penis > 6]clear precum forms a squiggly line on your belly as your [ShortDesc of penis] jiggles[otherwise if the player is possessing a penis]clear precum pools on your belly as your [ShortDesc of Penis] bobs[otherwise]waves of pleasure wash over you as you pant[end if] in time with [NameDesc of M][']s powerful thrusts. You [if the player is ashamed]eagerly moan[otherwise]moan involuntarily[end if] as [he of M] pounds away, shame rushing through you as you realise that not only did you instantly mess everything up, but it never would have felt this good if you were still in control.[line break][second custom style]'[if face is actually occupied]MMMGG MMMHHH!'[otherwise]OOOH, FUCK ME!'[end if][roman type][line break]";
-		now refractoryperiod is 0;
+		now refractoryperiod of the player is 0;
 		anally orgasm shamefully;
-		if previous penis length is 0 or refractoryperiod is 0 or the player is not possessing a penis:
-			say "You don't ejaculate, but the look on [NameDesc of M][']s face tells you [he of M] definitely knows you [if refractoryperiod > 0]came[otherwise]almost did[end if]. [run paragraph on]";
+		if previous penis length is 0 or refractoryperiod of the player is 0 or the player is not possessing a penis:
+			say "You don't ejaculate, but the look on [NameDesc of M][']s face tells you [he of M] definitely knows you [if refractoryperiod of the player > 0]came[otherwise]almost did[end if]. [run paragraph on]";
 		otherwise if the size of penis < 4 or C is worn:
 			say "You moan uncontrollably as [semen] dribbles out of your [sissy-penis], forming a pitiful white pool on your belly. [run paragraph on]";
 			AnnouncedSquirt semen on belly by the semen load of the player;
@@ -1351,8 +1351,8 @@ To check anal dominate vigilance of (M - mechanic) for (J - a thing):
 			if the player is bimbo consenting:
 				say "You rip the condom off without missing a beat, gasping as [his of M] [DickDesc of M] slams back in completely bareback.[line break][variable custom style]I'm going to take it all in my fucking ass![roman type][line break]";
 				now M is unwrapped;
-				if previous penis length is 0 or refractoryperiod is 0 or the player is not possessing a penis:
-					say "You [if refractoryperiod > 0]cum[otherwise if the player is possessing a penis]don't ejaculate[otherwise]don't cum[end if], but [NameDesc of M] doesn't seem to notice, groaning primally as as [he of M] floods your [asshole] with [his of M] thick, creamy [semen].";
+				if previous penis length is 0 or refractoryperiod of the player is 0 or the player is not possessing a penis:
+					say "You [if refractoryperiod of the player > 0]cum[otherwise if the player is possessing a penis]don't ejaculate[otherwise]don't cum[end if], but [NameDesc of M] doesn't seem to notice, groaning primally as as [he of M] floods your [asshole] with [his of M] thick, creamy [semen].";
 				otherwise if the size of penis < 4 or C is worn:
 					say "You moan uncontrollably as [semen] dribbles out of your [sissy-penis], forming a shameful white pool on your belly. It sits there, a sticky reminder of the shameful nature of [i]your[/i] orgasm as [NameDesc of M] has one of [his of M] own, tightening [his of M] grip as [he of M] floods your [asshole] with [his of M] thick, creamy load.";
 					AnnouncedSquirt semen on belly by the semen load of the player;
@@ -1389,9 +1389,9 @@ To check anal dominate focus of (M - mechanic) for (J - a thing):
 			say "[big he of M] pulls out, shrugging off your attempts to break out of [his of M] hold as [he of M] peels off [his of M] rubber with a sharp *SNAP.* You [if the relevant sex addiction of the player > 7]can't even begin to stifle your moan[otherwise]can't stifle your gasp[end if] as [he of M] slides [his of M] bare [DickDesc of M] back in, which feels incredible after going so long with the condom on. [if the player is not disgraced]You don't want to cum in such a shameful way[otherwise]You know it would be shameful to cum this way[end if], but there's nothing you can do as [NameDesc of M] slams [himself of M] home, flooding your [asshole] with thick [semen]. ";
 			now M is unwrapped;
 			AssFill the semen load of M;
-			now refractoryperiod is 0;
+			now refractoryperiod of the player is 0;
 			anally orgasm shamefully;
-			if previous penis length is 0 or refractoryperiod is 0 or the player is not possessing a penis:
+			if previous penis length is 0 or refractoryperiod of the player is 0 or the player is not possessing a penis:
 				do nothing;
 			otherwise if the size of penis < 4 or there is a worn chastity cage:
 				say "You moan uncontrollably as [semen] dribbles out of your [sissy-penis], leaving a pitiful reminder of the nature of your orgasm pooling on your belly.";
@@ -1435,7 +1435,7 @@ To compute domination aftermath of (M - mechanic) for (J - a clothing):
 	if player-fucking is DOMINANT-SHAMEFUL, now the stance of the player is 1;
 	let F be player-fucker;
 	if M is carrying J:
-		if face is not actually occupied and a2m fetish > 0:
+		if face is not actually occupied and baseline a2m fetish is 1:
 			say "[BigNameDesc of M] grabs you by the hair as [he of M] stands up, holding your face in front of [his of M] softening [DickDesc of M]. [if face is not actually occupied]Do you clean it off? [end if]";
 			if the player is bimbo consenting:
 				say "[if the relevant sex addiction of the player < 5]You try to ignore the taste of your[otherwise]You revel in the taste of your[end if] own [variable F] as you obediently slurp the leftover [semen] off [his of M] shaft. [big he of M] makes sure you keep going until you've swallowed every last drop.";
@@ -1450,8 +1450,8 @@ To compute domination aftermath of (M - mechanic) for (J - a clothing):
 			compute sissification;
 			say AfterDominationComment 2 of M;["Thanks for the sex, here's a reward!"]
 	otherwise if J is not held:
-		if a2m fetish > 0 and the player is not wrist bound, say "[line break]Your eyes meet as you both pant with exhaustion, and you turn toward the [ShortDesc of J] at the same time. [big he of M]'s still hard. Do you try to distract [him of M]?";
-		if a2m fetish > 0 and the player is not wrist bound and the player is bimbo consenting:
+		if baseline a2m fetish is 1 and the player is not wrist bound, say "[line break]Your eyes meet as you both pant with exhaustion, and you turn toward the [ShortDesc of J] at the same time. [big he of M]'s still hard. Do you try to distract [him of M]?";
+		if baseline a2m fetish is 1 and the player is not wrist bound and the player is bimbo consenting:
 			now player-fucking is DOMINANT-SHAMEFUL;[you can't be dominant if you do this]
 			say "You kick the [ShortDesc of J] away, looking at [him of M] [if the sex addiction of the player < 8]with forced enthusiasm[otherwise]hungrily[end if] as you grab [his of M] still-hard [DickDesc of M].[if face is not actually occupied][line break][variable custom style]'Are you really satisfied? I can keep going...'[roman type][line break][end if]You make the sluttiest face you can, hoping [he of M] takes the bait.";
 			let D be 10;
@@ -1498,7 +1498,7 @@ To compute domination aftermath of (M - mechanic) for (J - a clothing):
 To compute domination aftermath of (M - mechanic) for (J - throne):
 	if player-fucking is DOMINANT-SHAMEFUL:
 		now the stance of the player is 1;
-		if face is not actually occupied and a2m fetish > 0:
+		if face is not actually occupied and baseline a2m fetish is 1:
 			say "[BigNameDesc of M] grabs you by the hair as [he of M] stands up, holding your face in front of [his of M] softening [DickDesc of M]. [if face is not actually occupied]Do you clean it off? [end if]";
 			if the player is bimbo consenting:
 				say "[if the relevant sex addiction of the player < 5]You try to ignore the taste of your[otherwise]You revel in the taste of your[end if] own [variable player-fucker] as you obediently slurp the leftover [semen] off [his of M] shaft. [big he of M] makes sure you keep going until you've swallowed every last drop.";

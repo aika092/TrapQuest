@@ -120,7 +120,6 @@ To decide which figure-name is the examine-image of (T - hips):
 Figure of horizontal pole predicament is the file "Special/Cutscene/cutscene-predicament-horizontal-pole2.jpg".
 
 Figure of hotel toilet room 2 is the file "Map/Hotel/HotelBath3.png".
-Figure of hotel toilet room slime is the file "Map/Hotel/HotelBath5.png".
 
 Figure of IronMaidenBackground is the file "Map/maiden2.png".
 

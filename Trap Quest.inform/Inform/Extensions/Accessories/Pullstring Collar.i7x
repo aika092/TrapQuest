@@ -46,7 +46,7 @@ Check pulling pullstring collar:
 			now R is 0;
 		otherwise if R is 2 or (monster-puller is male monster and a random number between 1 and 2 is 1):
 			if diaper quest is 1:
-				say "'[if the diaper addiction of the player < 6]It feels a little awkward wearing diapers, but I'm determined to get used to it!'[otherwise if the diaper addiction of the player < 11 and there is a worn diaper][one of]My diaper feels so comfy and amazing! It's perfect for a baby like me.'[or]If you see me not wearing a diaper, [please] punish me!'[or]I'm a baby in training and should be kept in diapers like this one at all times!'[then at random][otherwise if the diaper addiction of the player < 11][one of]I've been naughty and deserve to be put back in diapers!'[or]I'm a naughty baby who's not wearing [his of the player] diaper! [big please] punish me!'[or]Help, I've lost my diaper, [please] put me back into Pampers where I belong![in random order][otherwise if diaper messing >= 3][one of]I love pooping in my pants! Diapers are the best!'[or]I love being a little naughty stinkybutt and I don't care who knows!'[or]I love the way a nice full nappy makes me waddle around like a baby!'[in random order][otherwise][one of]I love peeing in my pants! Diapers are the best!'[or]I love waddling around in a nice big soggy nappy!'[or]Babies like me should always be kept in diapers!'[in random order][end if][roman type][line break]You can feel [if the diaper addiction of the player < 9]your distaste for wearing diapers slowly fading[otherwise]the collar [one of]warping your mind, making you feel even more keen to wear diapers[or]continue to increase your addiction to diapers[stopping][end if].";
+				say "'[if the diaper addiction of the player < 6]It feels a little awkward wearing diapers, but I'm determined to get used to it!'[otherwise if the diaper addiction of the player < 11 and there is a worn diaper][one of]My diaper feels so comfy and amazing! It's perfect for a baby like me.'[or]If you see me not wearing a diaper, [please] punish me!'[or]I'm a baby in training and should be kept in diapers like this one at all times!'[then at random][otherwise if the diaper addiction of the player < 11][one of]I've been naughty and deserve to be put back in diapers!'[or]I'm a naughty baby who's not wearing [his of the player] diaper! [big please] punish me!'[or]Help, I've lost my diaper, [please] put me back into Pampers where I belong![in random order][otherwise if diaper messing >= 3][one of]I love pooping in my pants! Diapers are the best!'[or]I love being a little naughty stinkybutt and I don't care who knows!'[or]I love the way a nice full nappy makes me waddle around like a baby!'[in random order][otherwise][one of]I love [slime]ing in my pants! Diapers are the best!'[or]I love waddling around in a nice big soggy nappy!'[or]Babies like me should always be kept in diapers!'[in random order][end if][roman type][line break]You can feel [if the diaper addiction of the player < 9]your distaste for wearing diapers slowly fading[otherwise]the collar [one of]warping your mind, making you feel even more keen to wear diapers[or]continue to increase your addiction to diapers[stopping][end if].";
 				SilentlyDiaperAddictUp 1;
 			otherwise if monster-puller is female monster and monster-puller is not neuter monster:
 				say "'[if the oral sex addiction of the player < 3]I can't wait to find out what [his of monster-puller] [pussy] juices taste like!'[otherwise if the oral sex addiction of the player < 6]I just can't wait to have [his of monster-puller] [cunt] on my face!'[otherwise][big please] let me tongue your asshole, [big literalMistress of monster-puller]!'[end if][roman type][line break]";
@@ -75,30 +75,17 @@ Check pulling pullstring collar:
 				SexAddictUp 1;
 			now R is 0;
 		otherwise if R is 4:
-			if skimpy underwear suggestion is not 0 and a random number between -1 and 1 >= diaper quest:
+			if skimpy underwear optimization is not 0 and a random number between -1 and 1 >= diaper quest:
 				now R is 0;
-				if diaper quest is 1 or skimpy underwear suggestion is 1:
+				if diaper quest is 1 or skimpy underwear optimization is 1:
 					say "'[if diaper lover >= 1]Panties are only for big girls who can control their [SlimeContainer]. I'm only allowed to wear diapers!'[otherwise]Panties and tights are for prudes!'[end if][roman type][line break]";
-					let C be a random worn knickers;
-					if C is pussy covering knickers:
-						if C is diaper, say "You suddenly feel extremely at home in your [printed name of C]."; [If the player is wearing normal pants, they will be told in big letters by the fetish function itself. No need to duplicate that text here.]
-					otherwise:
-						say "[if diaper lover >= 1]You suddenly feel an extreme aversion against wearing any underwear except big puffy diapers. [otherwise]You suddenly feel an extreme aversion against wearing any underwear at all. [end if][if the bimbo of the player < 9]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise][line break][end if]";
-					now skimpy underwear suggestion is 0;
-				otherwise if skimpy underwear suggestion < 0:
+					UnderwearOptimize 0;
+				otherwise if skimpy underwear optimization < 0:
 					say "'Big panties are boring and lame!'[roman type][line break]";
-					now skimpy underwear suggestion is 6;
-					if there is worn skimpy-underwear-disallowed knickers, say "You suddenly feel extremely uncomfortable in your [ShortDesc of random worn skimpy-underwear-disallowed knickers]! Your focus and muscle tension, and therefore your dexterity and intelligence, will be significantly negatively affected while you're wearing them.[line break][variable custom style]They're just not skimpy enough for me any more...[roman type][line break]";
-					otherwise say "You suddenly feel an extreme aversion against wearing big boring granny panties.";
+					UnderwearOptimize 6;
 				otherwise:
 					say "'Skimpy panties are the best!'[roman type][line break]";
-					if there is worn skimpy-underwear-disallowed knickers:
-						decrease skimpy underwear suggestion by 1;
-						say "You feel like your strong preference for skimpy underwear just got even skimpier.";
-					otherwise:
-						decrease skimpy underwear suggestion by 1;
-						if there is worn skimpy-underwear-disallowed knickers, say "You suddenly feel extremely uncomfortable in your [ShortDesc of random worn skimpy-underwear-disallowed knickers]! Your focus and muscle tension, and therefore your dexterity and intelligence, will be significantly negatively affected while you're wearing them.[line break][variable custom style]They're just not skimpy enough for me any more...[roman type][line break]";
-						otherwise say "You feel like your strong preference for skimpy underwear just got even skimpier.";
+					UnderwearOptimize 6;[if already at 6, decrements itself]
 			otherwise if diaper lover >= 1 and the player is not bladder incontinent:
 				now R is 0;
 				say "'Dumb girls wear diapers because they can't control their [slime] [slime]!'[roman type][line break][if the player is bladder incontinent]You realise you are now [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent.[otherwise if the diaper addiction of the player < 9]You desperately hope that this doesn't mean you're becoming incontinent.[otherwise if the diaper addiction of the player > 14]You are weirdly excited by the idea that this might mean you're becoming incontinent.[otherwise]You realise this probably means it's making you more incontinent.[end if]";
@@ -106,27 +93,20 @@ Check pulling pullstring collar:
 			otherwise:
 				increase R by 1;
 		if R is 5:
-			if short skirts permanent suggestion > 1:
+			if short skirts permanent optimization > 1:
 				now R is 0;
 				say "'Skirts are like commitments, the shorter the better!'[roman type][line break]";
-				if short skirts permanent suggestion > 6, now short skirts permanent suggestion is 6;
-				otherwise decrease short skirts permanent suggestion by 1;
-				let C be a random worn short-skirt-disallowed clothing;
-				if C is clothing, say "You feel extremely uncomfortable in your [ShortDesc of C] - your brain now only feels comfortable in skirts that are [SkirtLength short skirts permanent suggestion] or shorter.";
-				otherwise say "You feel your brain rewire, and you will forevermore only feel happy in skirts that are [SkirtLength short skirts permanent suggestion] or shorter. [if the bimbo of the player + short skirts permanent suggestion <= 11]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise]You shrug, not too concerned about this new development.[end if]";
-			otherwise if short skirts permanent suggestion is 0:
+				SkirtOptimize 6;
+			otherwise if short skirts permanent optimization is -1:
 				now R is 0;
 				say "'I only like skirts! They're comfy, and easy to wear!'[roman type][line break]";
-				now short skirts permanent suggestion is 10;
-				let C be a random worn short-skirt-disallowed clothing;
-				if C is clothing, say "You suddenly feel extremely uncomfortable in your [ShortDesc of C].";
-				otherwise say "You can tell deep down that trying to fight against your new predilection for always wearing skirts would feel awful.";
+				SkirtOptimize 10;
 			otherwise:
 				increase R by 1;
 		if R is 6:
 			now R is 0;
 			if the humiliation of the player <= HUMILIATION-BROKEN:
-				if diaper quest is 1, say "'[one of]A well behaved baby slave wears whatever she's told to, no matter how degrading!'[or]I'm a good baby, [if there is a worn diaper]I even wear diapers when I haven't been told to[otherwise]I will pee wherever I'm told[end if]!'[or]A good baby slave doesn't care who sees her, whether she's in a soiled nappy or completely naked!'[in random order]";
+				if diaper quest is 1, say "'[one of]A well behaved baby slave wears whatever she's told to, no matter how degrading!'[or]I'm a good baby, [if there is a worn diaper]I even wear diapers when I haven't been told to[otherwise]I will [SlimeShoot] wherever I'm told[end if]!'[or]A good baby slave doesn't care who sees her, whether she's in a soiled nappy or completely naked!'[in random order]";
 				otherwise say "'A proper slut doesn't care if her ASSets are on display!'[roman type][line break][if the humiliation of the player < HUMILIATION-MODEST + 4000]You feel more comfortable wearing revealing clothing.[otherwise]You feel even more like an object, not a real person.[end if]";
 				say "You feel like you respect yourself [if the humiliation of the player > HUMILIATION-PROUD + 2000]even [end if]less.";
 				Humiliate STRONG-HUMILIATION * 4;

@@ -170,7 +170,7 @@ To say TitleBimbo:
 					say " trap";
 				otherwise:
 					say " girl[if the player is presenting as male]yboy[end if]";
-		if the player is a slime slut and T is not the substituted form of "[SlimeTarget]" and legacy watersports fetish is 1, say " [SlimeTargetU]".
+		if the player is a slime slut and T is not the substituted form of "[SlimeTarget]" and legacy watersports mechanics is 1, say " [SlimeTargetU]".
 
 To say TitleBaby:
 	let T be the class of the player;

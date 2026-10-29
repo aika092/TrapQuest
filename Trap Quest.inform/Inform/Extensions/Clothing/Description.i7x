@@ -142,8 +142,12 @@ To say InfluenceDesc of (C - a wearthing):
 	if diaper quest is 1:
 		if the bimbo-influence of C < 0, say "You can sense that this [item of C] is making you [if the bimbo-influence of C < -1]much [end if]more sensible.";
 		if the bimbo-influence of C > 0, say "You can sense that this [item of C] is making you act [if the bimbo-influence of C > 1]much [end if][if diaper quest is 1]girlier and more immature[otherwise]sluttier[end if].";
-	if the vaginal-sex-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the vaginal-sex-addiction-influence of C < -1]significantly [end if]suppressing any [if the vaginal sex addiction of the player < 3]weird [end if]carnal urges to [if the vaginalvirgin of the player is 1]lose your virginity[otherwise]get laid[end if].";
-	if the vaginal-sex-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making your [vagina] [if the vaginal-sex-addiction-influence of C > 1]a lot [end if]more [if the vaginalvirgin of the player is 1]desperate to lose its virginity[otherwise if the vaginal sex addiction of the player > 6]desperate to be filled[otherwise]eager to be filled[end if].";
+	if tg fetish is 1 and the player is not possessing a vagina and diaper quest is 0:
+		if the vaginal-sex-addiction-influence of C < 0, say "You can sense that this [item of C] is [if the vaginal-sex-addiction-influence of C < -1]significantly [end if]suppressing any [if the vaginal sex addiction of the player < 3]weird [end if] urges to become a woman with a [vagina].";
+		if the vaginal-sex-addiction-influence of C > 0, say "You can sense that this [item of C] is making you [if the vaginal-sex-addiction-influence of C > 1]a lot [end if]more [if the vaginal sex addiction of the player > 6]desperate[otherwise]eager[end if] to become a woman with a [vagina].";
+	otherwise if diaper quest is 0:
+		if the vaginal-sex-addiction-influence of C < 0, say "You can sense that this [item of C] is [if the vaginal-sex-addiction-influence of C < -1]significantly [end if]suppressing any [if the vaginal sex addiction of the player < 3]weird [end if]carnal urges to [if the vaginalvirgin of the player is 1]lose your virginity[otherwise]get laid[end if].";
+		if the vaginal-sex-addiction-influence of C > 0, say "You can sense that this [item of C] is making your [vagina] [if the vaginal-sex-addiction-influence of C > 1]a lot [end if]more [if the vaginalvirgin of the player is 1]desperate to lose its virginity[otherwise if the vaginal sex addiction of the player > 6]desperate to be filled[otherwise]eager to be filled[end if].";
 	if the anal-sex-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the anal-sex-addiction-influence of C < -1]significantly [end if][if the anal sex addiction of the player > 4]reducing your body's love of anal[otherwise if the analvirgin of the player is 1]helping you to suppress any urges to try out anal sex[otherwise]reducing your asshole's desire to be filled[end if].";
 	if the anal-sex-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making your [asshole] [if the anal-sex-addiction-influence of C > 1]a lot [end if]more [if the analvirgin of the player is 1]eager to be broken in[otherwise if the anal sex addiction of the player < 5]eager to be played with[otherwise]desperate to be used[end if].";
 	if the oral-sex-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the oral-sex-addiction-influence of C < -1]significantly [end if][if the oral sex addiction of the player > 4]reducing your body's love of oral sex[otherwise]reducing your mouth's desire to be filled[end if].";
@@ -260,20 +264,20 @@ Report examining clothing:
 	otherwise:
 		if the noun is skirted and the front-skirt-length of the noun is the back-skirt-length of the noun, say "The skirt is [SkirtLength the front-skirt-length of the noun][if the noun is hobble-skirted and the player is upright]. The lack of a slit makes it much more difficult to walk quickly, or to move your legs in general[otherwise if the noun is hobble-skirted]. The lack of a slit makes it much more difficult to move your legs[end if].";
 		if the noun is not slitted:
-			if the front-skirt-length of the noun >= 9:
+			if the front-skirt-hindrance-length of the noun >= 9:
 				say "You won't be able to knee or kick while in such a tight skirt[run paragraph on]";
 				if the noun is zippable or the noun is displacable, say ", unless you [if the noun is zippable]unzip[otherwise]displace[end if] it first.";
 				otherwise say ".";
-			otherwise if the front-skirt-length of the noun >= 7:
-				say "You won't be able to kick while in such a tight skirt, and your knee attacks will be [if the front-skirt-length of the noun is 8]severely[otherwise]significantly[end if] weakened[run paragraph on]";
+			otherwise if the front-skirt-hindrance-length of the noun >= 7:
+				say "You won't be able to kick while in such a tight skirt, and your knee attacks will be [if the front-skirt-hindrance-length of the noun is 8]severely[otherwise]significantly[end if] weakened[run paragraph on]";
 				if the noun is zippable or the noun is displacable, say ", unless you [if the noun is zippable]unzip[otherwise]displace[end if] it first.";
 				otherwise say ".";
-			otherwise if the front-skirt-length of the noun is 6:
+			otherwise if the front-skirt-hindrance-length of the noun is 6:
 				say "Your knee attacks will be weakened and your kick attacks will be significantly weakened[run paragraph on]";
 				if the noun is zippable or the noun is displacable, say ", unless you [if the noun is zippable]unzip[otherwise]displace[end if] it first.";
 				otherwise say ".";
-			otherwise if the front-skirt-length of the noun >= 4:
-				say "Your kick attacks will be [if the front-skirt-length of the noun is 5]significantly [end if]weakened[run paragraph on]";
+			otherwise if the front-skirt-hindrance-length of the noun >= 4:
+				say "Your kick attacks will be [if the front-skirt-hindrance-length of the noun is 5]significantly [end if]weakened[run paragraph on]";
 				if the noun is zippable or the noun is displacable, say ", unless you [if the noun is zippable]unzip[otherwise]displace[end if] it first.";
 				otherwise say ".";
 		if the noun is actually sheer:
@@ -339,7 +343,9 @@ Report examining clothing:
 	if debugmode > 0, say "[input-style]Liquid soak limit: [soak-limit of the noun][roman type][line break]";
 
 Report examining wet clothing:
-	unless it is diaper and the player is not diaper aware, say "It is currently [cumdesc of the noun][if the noun is sheer-when-wet]which is making it more see-through than it would otherwise be[otherwise if the noun is actually dense]but it's not the type of item to turn see-through when wet[otherwise]but it's just as see-through as normal[end if].".
+	unless it is diaper and the player is not diaper aware:
+		if the noun is sex toy, say "It is currently [cumdesc of the noun].";
+		otherwise say "It is currently [cumdesc of the noun][if the noun is sheer-when-wet]which is making it more see-through than it would otherwise be[otherwise if the noun is actually dense]but it's not the type of item to turn see-through when wet[otherwise]but it's just as see-through as normal[end if].".
 
 Report examining locked clothing:
 	say "It is currently locked[if the noun is worn] on you[end if], preventing you from removing it.";
@@ -379,6 +385,9 @@ Report examining sneaking clothing:
 
 Report examining wizardry clothing:
 	if the noun is identified, say "It is imbued with magic power, which means that while you're wearing it, you will have access to more mana for casting spells and using magic items.".
+
+Report examining resilience clothing:
+	if the noun is identified, say "It is imbued with a magic enchantment, which means that while you're wearing it, you will have less chance of being negatively affected by gross experiences, and some additional resistance becoming gradually addicted to bodily fluids you taste.".
 
 To say CurrentlyConcealedFlav of (C - a wearthing):
 	let X be the concealer of C;

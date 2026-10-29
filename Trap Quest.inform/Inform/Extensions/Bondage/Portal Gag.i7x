@@ -15,7 +15,19 @@ To say ClothingDesc of (C - portal gag):
 
 Definition: portal gag is fetish appropriate: decide no. [Never appears randomly]
 Definition: portal gag is magic themed: decide yes.
+Definition: portal gag is portal themed: decide yes.
 Definition: portal gag is transformation-protected: decide yes.
+
+To compute PortalBust of (P - portal gag) from (O - a room):
+	say "The spatial warping is too much for your [MediumDesc of P], and it explodes, slamming the portal shut. Pain wracks your body as your lips are twisted and distorted by back into their original place[if the lips of face > 0 and the latex-transformation of the player >= 7], turning them from [LipDesc] to [run paragraph on][otherwise]![end if]";
+	if the lips of face > 0 and the latex-transformation of the player >= 7:
+		now the lips of face is 0;
+		say "[LipDesc]!";
+	throat orgasm shamefully;
+	unless portal-pants is worn:
+		destroy portal-pants;
+	destroy P;
+	PainUp 50.
 
 To SilentSquirt (L - a liquid-object) on (C - portal gag) by (N - a number):
 	if N > 0:
@@ -50,7 +62,7 @@ To compute periodic effect of (C - portal gag):
 					if the player is thirsty or (the player is not hungry and a random number between 1 and 3 is 1):
 						if watersports fetish is 1 and a random number between 1 and 2 is 1:
 							if slimeshooter fetish is 1, say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] push [his of M] slimeshooter up against your mouth![roman type][line break][big he of M] begins to spray, and there's nowhere for it to go except down your throat!";
-							say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] push [his of M] [if M is male][manly-penis][otherwise]pussy[end if] up against your mouth![roman type][line break][big he of M] begins [SlimeDraining]... and there's nowhere for it to go except into your mouth!";
+							otherwise say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] push [his of M] [if slimeshooter fetish is 1]slimeshooter[otherwise if M is male][manly-penis][otherwise]pussy[end if] up against your mouth![roman type][line break][big he of M] begins [SlimeDraining]... and there's nowhere for it to go except into your mouth!";
 							DrinkSlime from M;
 						otherwise:
 							say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] pour some kind of drink through the portal.[roman type][line break]There's nowhere for it to go except into your mouth!";

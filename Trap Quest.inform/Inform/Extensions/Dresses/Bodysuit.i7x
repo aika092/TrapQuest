@@ -1046,13 +1046,12 @@ To compute periodic effect of (L - a leotard):
 	increase the charge of L by 1;
 	if the charge of L > 200:
 		now the charge of L is 0;
-		let S be a random off-stage plentiful ballet shoes;
 		if ballet heels is off-stage and the raw heel skill of the player > 5 and ballet heels is actually summonable:
 			say "[bold type]Your leotard glows powerfully, and extremely high heeled ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes! Uh-oh...[otherwise].[end if][roman type][line break]";
 			summon ballet heels cursed with quest;
-		otherwise if S is actually summonable:
+		otherwise if normal-ballet-shoes is off-stage and normal-ballet-shoes is actually summonable:
 			say "[bold type]Your leotard glows softly, and ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes![otherwise].[end if][roman type][line break]";
-			summon S cursed with quest.
+			summon normal-ballet-shoes cursed with quest.
 
 To decide which object is the unique-upgrade-target of (C - a leotard):
 	if a random number between 1 and 2 is 1 and C is not sexy blue leotard, decide on a random off-stage sexy blue leotard;

@@ -119,7 +119,7 @@ Check taking glory-stone:
 	if the player is not the donator, say debugadvert instead.
 
 Report wearing glory-stone:
-	say "Ripples of pain from your arm across every muscle in your body.[line break][first custom style]'[if glory-stone is challenged]Incredible. I did not think you could do it! [otherwise]Your acheivements are something to behold. [end if]I, The Glory Stone, acknowledge you.'[roman type][line break]";
+	say "Pain ripples from your arm across every muscle in your body.[line break][first custom style]'[if glory-stone is challenged]Incredible. I did not think you could do it! [otherwise]Your acheivements are something to behold. [end if]I, The Glory Stone, acknowledge you.'[roman type][line break]";
 	PainUp 1.
 
 fucktoy-stone is a humility-stone. fucktoy-stone is unique. The printed name of fucktoy-stone is "[TQlink of item described][item style][if the item described is worn]The Fucktoy Stone[otherwise]sapphire ring[end if][clothing-condensed-after]". The text-shortcut of fucktoy-stone is "ftst". The accessory-colour of fucktoy-stone is sapphire.
@@ -194,10 +194,10 @@ Check taking brat-stone:
 			now brat-stone is challenged;
 			say "You try to wiggle the ring off the statue's finger, but it slips away just when you think you've got a good grip! [line break][second custom style][']Ha, haha. You really want to wear me? Maybe if you... find someone lazy, someone who likes to sit in the same plane. Ha, haha, then piss them off. Lure them on a chase, oh this is good, THEN cum for them. After all that, just cum for them anyway! Ha, haha, you won't do it. You're too scared, ha, haha!['][roman type][line break]A reedy voice sounds off in your head as you pull your hand away, and you get a distinct feeling it belongs to the ring itself!" instead;
 		otherwise:
-			say "You try to wiggle the ring off the statue's finger, but it's lips away whenever you get a good grip." instead;
+			say "You try to wiggle the ring off the statue's finger, but it's slips away whenever you get a good grip." instead;
 
 Report wearing brat-stone:
-	say "A burst of pleasure blossoms out from your arm and settles into every joint in your body.[line break][second custom style]'[if brat-stone is challenged]I can't believe you actually wne through with it. [otherwise]Ha, haha, you're trouble, aren't you? [end if]I, The Brat Stone, acknowledge you.'[roman type][line break]";
+	say "A burst of pleasure blossoms out from your arm and settles into every joint in your body.[line break][second custom style]'[if brat-stone is challenged]I can't believe you actually went through with it. [otherwise]Ha, haha, you're trouble, aren't you? [end if]I, The Brat Stone, acknowledge you.'[roman type][line break]";
 	Arouse 1000.
 
 piercing-stone is a humility-stone. piercing-stone is unique. The printed name of piercing-stone is "[TQlink of item described][item style][if the item described is worn]The Piercing Stone[otherwise]pure diamond ring[end if][clothing-condensed-after]". The text-shortcut of piercing-stone is "sbst". The accessory-colour of piercing-stone is pure diamond.

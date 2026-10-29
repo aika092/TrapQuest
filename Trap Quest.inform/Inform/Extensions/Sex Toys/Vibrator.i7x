@@ -5,6 +5,8 @@ A vibrator is a kind of dong. The size of a vibrator is usually 3. The printed n
 Figure of vibrator is the file "Items/Accessories/Toys/vibrator1.png".
 To decide which figure-name is clothing-image of (C - a vibrator):
 	decide on figure of vibrator.
+To decide which number is the initial outrage of (S - a vibrator):
+	decide on 18.
 
 To say ShortDesc of (C - a vibrator):
 	say "vibrator".
@@ -69,8 +71,6 @@ remote-controlled-vibrator is a vibrator. remote-controlled-vibrator is unique. 
 To decide which number is the stimulation of (T - remote-controlled-vibrator) on (F - a body part):
 	if current-predicament is team-girlfriends-predicament or current-predicament is team-lake-predicament, decide on 8;
 	decide on 2.
-To decide which number is the initial outrage of (S - remote-controlled-vibrator):
-	decide on 8.
 Figure of remote controlled vibrator 1 is the file "Items/Accessories/Toys/vibrator2.png".
 Figure of remote controlled vibrator 2 is the file "Items/Accessories/Toys/vibrator3.png".
 To decide which figure-name is clothing-image of (C - remote-controlled-vibrator):
@@ -188,7 +188,7 @@ Carry out plugging something with wired-vibe:
 	now wired-vibe is not clit-taped.
 
 This is the sex toy chastity belt rule:
-	if chastity-belt is worn and (wearing-target is penetrating vagina or wearing-target is wired-vibe):
+	if chastity-belt is worn and (wearing-target is penetrating vagina or wearing-target is remote-controlled-vibrator or wearing-target is wired-vibe):
 		if summoning is 0 and autoremove is false, say "You can't get it past the chastity belt!";
 		rule fails.
 The not wearing rule is listed in the global removability rules.

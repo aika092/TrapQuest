@@ -349,6 +349,7 @@ Definition: a monster (called M) is diaper cover locking: [Does this NPC lock yo
 Definition: a monster is double diaper locking: decide no. [Does this NPC put you in a locked double diaper rather than a cursed double diaper?]
 
 old-diaper is an object that varies.
+old-diaper-left is an object that varies.
 current-diaper-change-top-level is an object that varies.
 new-diaper is an object that varies.
 diaperChangeCount is a number that varies.
@@ -365,6 +366,7 @@ Definition: a knickers is diaper change blocking: decide no.
 
 To compute diaper change of (M - a monster):
 	now current-diaper-change-top-level is nothing;
+	now old-diaper-left is nothing;
 	now new-diaper is nothing;
 	[These are failsafes below to avoid bugs]
 	if M is friendly, anger M;
@@ -488,7 +490,6 @@ To compute diaper change of (M - a monster):
 						DiaperPrint SD from old-diaper;
 						say DiaperDropFlav of M;
 			if new-diaper is not worn:
-				let oldDiaperLeft be nothing;
 				if old-diaper is diaper:
 					let SD be a random off-stage soiled-diaper;
 					if M is diaper leaving and (old-diaper is not messed or (diaper messing >= 6 and SD is soiled-diaper)):
@@ -498,7 +499,7 @@ To compute diaper change of (M - a monster):
 							repeat with OD running through the list of stacked diapers:
 								if OD is messed and diaper messing >= 6 and SD is soiled-diaper:
 									if debugmode is 1, say "[OD] is replaced by a soiled diaper item.";
-									now oldDiaperLeft is SD;
+									now old-diaper-left is SD;
 									now SD is in the location of the player;
 									DiaperPrint SD from OD;
 									let SD be a random off-stage soiled-diaper;
@@ -510,14 +511,14 @@ To compute diaper change of (M - a monster):
 									if debugmode is 1, say "[OD] can't be handled appropriately so isn't respawned.";
 							only destroy diaper-stack;
 						otherwise if old-diaper is messed:
-							now oldDiaperLeft is SD;
+							now old-diaper-left is SD;
 							now SD is in the location of the player;
 							DiaperPrint SD from old-diaper;
 						otherwise:
 							now old-diaper is in the location of the player;
-							now oldDiaperLeft is old-diaper;
-					if new-diaper is held or oldDiaperLeft is old-diaper:
-						unless oldDiaperLeft is old-diaper, only destroy old-diaper;
+							now old-diaper-left is old-diaper;
+					if new-diaper is held or old-diaper-left is old-diaper:
+						unless old-diaper-left is old-diaper, only destroy old-diaper;
 						if M is diaper disciplining, summon new-diaper uncursed;
 						otherwise summon new-diaper cursed;
 					otherwise:
@@ -532,11 +533,11 @@ To compute diaper change of (M - a monster):
 					fully clean new-diaper;
 					say DiaperChangeFlav of M;
 					say DiaperChangeComment of M;
-					if oldDiaperLeft is a thing and oldDiaperLeft is in the location of the player:
+					if old-diaper-left is a thing and old-diaper-left is in the location of the player:
 						if trashcan is worn:
-							say "[BigNameDesc of M] drops [NameDesc of oldDiaperLeft] into [NameDesc of trashcan]!";
+							say "[BigNameDesc of M] drops [NameDesc of old-diaper-left] into [NameDesc of trashcan]!";
 							increase the diaper-fill of trashcan by 1;
-							only destroy oldDiaperLeft;
+							only destroy old-diaper-left;
 						otherwise:
 							say DiaperDropFlav of M;
 				otherwise:
@@ -951,7 +952,7 @@ To say KneeBounceStartFlav of (M - a monster):
 To progress masturbation of (M - a monster):
 	say MasturbationFlav of M;
 	stimulate vagina from M;
-	if refractoryperiod > 0, now the sex-length of M is 0;[if the player came, the monster is done]
+	if refractoryperiod of the player > 0, now the sex-length of M is 0;[if the player came, the monster is done]
 	compute unique masturbation effect of M.
 
 To compute unique masturbation effect of (M - a monster):
@@ -965,13 +966,13 @@ To progress knee bounce of (M - a monster):
 	if the reaction of the player > 0 and the number of worn chastity bond is 0:
 		if player-knee-grinding is true or a random number between 1 and the difficulty of M > a random number between 1 and 8, stimulate vagina from M;
 		otherwise passively stimulate vagina from M;
-	if refractoryperiod > 0 and player-knee-grinding is true:
+	if refractoryperiod of the player > 0 and player-knee-grinding is true:
 		say KneeGrindOrgasmFlav of M;
 		now player-knee-grinding is false;
 	display knee bounce cutscene of M;
 	compute unique knee bounce effect of M;
 	check for arousal change;
-	if M is intelligent and refractoryperiod <= 0 and player-knee-grinding is false and the player is horny:
+	if M is intelligent and refractoryperiod of the player <= 0 and player-knee-grinding is false and the player is horny:
 		say KneeGrindDemandFlav of M;
 		increase the sex-length of M by 1;
 		say "[bold type]From now on, if you [']submit['], you'll grind on [his of M] knee.[roman type][line break]";
@@ -1099,7 +1100,7 @@ To say MasturbationAftermath of (M - a monster):
 
 To say DiaperMasturbationAftermath of (M - a monster):
 	say "[variable custom style]";
-	if refractoryperiod > 0, say "[if the diaper addiction of the player < 6]I can't believe [he of M] was able to make me cum through my diaper...[otherwise if the diaper addiction of the player < 11]Am I really starting to enjoy the feeling of diapers this much?[otherwise if the diaper addiction of the player < 16]It feels even better when it's through a diaper![otherwise]Mmmm, thank you [daddy of M]...[end if]";
+	if refractoryperiod of the player > 0, say "[if the diaper addiction of the player < 6]I can't believe [he of M] was able to make me cum through my diaper...[otherwise if the diaper addiction of the player < 11]Am I really starting to enjoy the feeling of diapers this much?[otherwise if the diaper addiction of the player < 16]It feels even better when it's through a diaper![otherwise]Mmmm, thank you [daddy of M]...[end if]";
 	otherwise say "[if the diaper addiction of the player < 5]There's no way I'm going to let someone make me cum in such a disgusting way![otherwise if the diaper addiction of the player < 10 and the player is a bit horny]I can't believe [he of M][']s making me feel so good this way...[otherwise if the diaper addiction of the player < 10]I can still resist this much. For now...[otherwise if the diaper addiction of the player < 15]Ooh, why did [he of M] stop?![otherwise][daddy of M] always makes me feel so good![end if]";
 	say "[roman type][line break]".
 
@@ -1107,14 +1108,14 @@ To say VanillaMasturbationAftermath of (M - a monster):
 	say "[variable custom style]'That was pretty messed up!'[roman type][line break]".
 
 To say MasturbationAfterFlav of (M - a monster):
-	say "After this [he of M] seems satisfied, and [if refractoryperiod > 0]flexes [his of M] wrist muscles in pride before leaving you to recover.[otherwise if the player is a bit horny][MasturbationTeaseFlav of M][otherwise]leaves you alone.[end if]".
+	say "After this [he of M] seems satisfied, and [if refractoryperiod of the player > 0]flexes [his of M] wrist muscles in pride before leaving you to recover.[otherwise if the player is a bit horny][MasturbationTeaseFlav of M][otherwise]leaves you alone.[end if]".
 
 To say MasturbationTeaseFlav of (M - a monster):
 	if M is intelligent, say "smiles as [he of M] sees your flustered face.[line break][speech style of M]'[one of]Aww, is the little baby all hot and bothered under [his of the player] nappy? I think I'll leave you that way.'[or]I guess you'll have to finish yourself off if you want release.'[or]I think I'll leave you like that, all hot and flustered, desperate for a Mommy or Daddy to finish you off.'[or]That's right, I'm stopping there. No cummies for you today, hah!'[in random order][roman type][line break]";
 	otherwise say "leaves you alone with your arousal.".
 
 To say MasturbationPunishFlav of (M - a monster):
-	say "After this, [he of M] frowns, and[if refractoryperiod > 0], flexing [his of M] wrist muscles in pride,[end if] stands over you menacingly.".
+	say "After this, [he of M] frowns, and[if refractoryperiod of the player > 0], flexing [his of M] wrist muscles in pride,[end if] stands over you menacingly.".
 
 Section - Enema
 

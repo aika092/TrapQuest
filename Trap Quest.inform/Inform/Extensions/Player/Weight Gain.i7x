@@ -2,6 +2,12 @@ Weight Gain by Player begins here.
 
 Part 1 - Calculate Weight Stats
 
+[
+36+ Very fat
+24-35+ Fat
+12-23 Chubby
+0 - 11 Not chubby
+]
 To decide which number is the fat-weight of the player:
 	let F be the flesh volume of thighs + the flesh volume of arms + the flesh volume of hips + the flesh volume of belly;
 	if F > 0, decide on F;
@@ -24,7 +30,7 @@ To decide which number is the relieved heaviness of (H - a thing):
 Report examining a carried thing:
 	if the relieved heaviness of the noun > 0:
 		say "It ";
-		if there is a worn bag of holding, say "can't go in your bag of holding[if the noun is messed knickers] (because of the biological waste on it)[otherwise if the noun is wet clothing] (because of the liquid soaked into it)[end if] so it ";
+		if there is a worn bag of holding, say "can't go in your bag of holding[if the noun is messed knickers] (because of the biological waste on it)[otherwise if the noun is wet sex toy] (because of the liquid on it)[otherwise if the noun is wet clothing] (because of the liquid soaked into it)[end if] so it ";
 		say "is currently [if the relieved heaviness of the noun > 4]massively[otherwise if the relieved heaviness of the noun > 2]significantly[otherwise if the relieved heaviness of the noun > 1]noticeably[otherwise]slightly[end if] weighing you down.";
 
 To decide which number is the heaviness of (H - a thing):

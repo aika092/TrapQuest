@@ -151,13 +151,14 @@ To compute facility periodic effect of (C - predicament-painted-cutoffs):
 			focus-consider C;
 		if C is hand-blocked:
 			let T be a random carried thing;
-			if T is a thing or the player is prone or refractoryperiod > 0:
+			if T is a thing or the player is prone or refractoryperiod of the player > 0:
 				say bold type;
-				if refractoryperiod > 0, say "You can't bring yourself to cover the hand prints of your [C] while your oversensitive clit is still recovering from your recent orgasm!";
+				if refractoryperiod of the player > 0, say "You can't bring yourself to cover the hand prints of your [C] while your oversensitive clit is still recovering from your recent orgasm!";
 				otherwise say "You can't cover the hand prints of your [C] while [if T is a thing]carrying [NameDesc of T][otherwise]on your knees[end if][bold type].";
 				say "[roman type][line break]";
 				now the defaultLeftTarget of arms is arms;
 				now the defaultRightTarget of arms is arms;
+				if debugmode > 1, say "cutoffs arms call.";
 				update arms;
 			say "The egg vibrators are both pushed into your clit from either side. They buzz away powerfully!";
 			stimulate vagina from painted-vibrator-hands.

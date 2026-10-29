@@ -17,6 +17,7 @@ murkwater is a liquid-object.
 A liquid-object has a number called cold turkey. [How long has the player starved themselves of it?]
 A liquid-object has a number called first-taste. [What number did the clock have on it when they first tasted it?]
 A liquid-object has a number called first-swallow. [What number did the clock have on it when they first swallowed it?]
+A liquid-object has an object called recent-source. The recent-source of a liquid-object is usually throne.
 
 To decide which number is the player taste addiction of (L - a liquid-object):
 	decide on 0.
@@ -33,7 +34,7 @@ To decide which number is the player taste addiction of (L - murkwater):
 To check tasting of (L - a liquid-object):
 	if the first-taste of L is 0:
 		now the first-taste of L is earnings;
-		if L is not water and L is not murkwater, say "[bold type]The strong and unmistakable taste of [if L is milk]breast milk[otherwise][variable L][end if] hits your tongue for the first time in your life[if L is milk] since you were a baby[end if].[roman type][line break]";
+		if L is not water and L is not murkwater, say "[bold type]The strong and unmistakable taste of [if L is milk]breast milk[otherwise][variable L][end if] hits your tongue for the first time in your life[if L is milk and diaper quest is 1] since you were a baby[end if].[roman type][line break]";
 	if the player taste addiction of L >= 14, passively stimulate face from L.
 
 
@@ -71,16 +72,17 @@ To compute slightly addictive swallowing of (L - a liquid-object) by (N - a numb
 	if L is semen, ActualStomachSemenUp N;
 	if L is slime, ActualStomachSlimeUp N;
 	if L is milk, ActualStomachMilkUp N;
-	if L is murkwater, StomachUp N.
+	if L is murkwater, StomachUp N;
+	liquid stimulate face from L times N.
 
 [Once we've already told the player there's some liquid moving, we start referring to it as 'The semen' or whatever]
 liquid-announced is initially false.
 To say announced (L - a liquid-object):
 	if liquid-announced is true:
-		say "The [L]";
+		say "The [boringLQ L]";
 	otherwise:
 		now liquid-announced is true;
-		let T be the substituted form of "[L]";
+		let T be the substituted form of "[boringLQ L]";
 		say "[T in title case]".
 
 [We reset tracking which items we've already told the player are getting hit by liquid]
@@ -92,7 +94,7 @@ To reset soak flavour:
 
 [The LIQUIDSOAK function is the final function we should call when assigning liquid to be soaked into things. The function should be able to determine itself whether the object is eligible for soaking based on liquid type and fetish settings.]
 To LiquidSoak (L - a liquid-object) On (O - an object):
-	say "Error - no LiquidSoak function for soaking [L] on [O].".
+	say "Error - no LiquidSoak function for soaking [boringLQ L] on [O].".
 
 To LiquidSoak (L - semen) On (B - a body part):
 	if diaper quest is 0:
@@ -204,7 +206,7 @@ To display cumshot reaction to (N - a number): [displays an appropriate image fo
 		cutshow figure of cumshot reaction 2 for face;
 
 To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
-	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on face.";
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [boringLQ L] on face.";
 	let M be N / 2; [50% of the fluid (rounded down) is going to be redirected to headgear & hair]
 	if L is semen:
 		increase times-bukkaked by 1;
@@ -250,7 +252,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 		PuddleUp L by N.
 
 To UniqueSquirt (L - a liquid-object) On (C - Hair) by (N - a number):
-	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on hair.";
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [boringLQ L] on hair.";
 	let H be a random worn able to take more liquid headgear;
 	if inside-out is false and H is unsoaked headgear: [we have found a headgear to take half of the liquid hitting hair]
 		let M be N / 2; [headgear]
@@ -311,7 +313,7 @@ To decide which object is highest-cleavage-clothing:
 	decide on B.
 
 To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
-	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on breasts.";
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [boringLQ L] on breasts.";
 	if inside-out is false: [liquid is coming from the outside inwards]
 		let HC be highest-cleavage-clothing;
 		let HCC be the cleavageCover of HC;
@@ -380,7 +382,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
 		PuddleUp L by N.
 
 To UniqueSquirt (L - a liquid-object) On (C - Belly) by (N - a number):
-	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on belly.";
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [boringLQ L] on belly.";
 	if inside-out is false: [liquid is coming from the outside inwards]
 		let BC be a random worn top level belly cover clothing;
 		if BC is unsoaked clothing:
@@ -416,7 +418,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Belly) by (N - a number):
 		PuddleUp L by N.
 
 To UniqueSquirt (L - a liquid-object) On (C - Hips) by (N - a number):
-	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on hips.";
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [boringLQ L] on hips.";
 	if inside-out is false: [liquid is coming from the outside inwards]
 		let CC be a random worn top level crotch cover clothing;
 		let CCM be the assModesty of CC; [ratio of ass covered...]
@@ -459,7 +461,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Hips) by (N - a number):
 		PuddleUp L by N.
 
 To UniqueSquirt (L - a liquid-object) On (C - Thighs) by (N - a number):
-	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on thighs.";
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [boringLQ L] on thighs.";
 	if inside-out is false: [liquid is coming from the outside inwards]
 		let TC be a random worn top level thigh cover clothing;
 		if TC is unsoaked clothing:
@@ -563,7 +565,7 @@ Report going when the player is upright:
 
 
 To UniqueSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
-	if debugmode > 0, say "assigning [N] units of [L] onto [C].";
+	if debugmode > 0, say "assigning [N] units of [boringLQ L] onto [C].";
 	let TSK be 0; [fluid that has been soaked into C during this function]
 	if (inside-out is false and C is fluid vulnerable) or (inside-out is true and C is somewhat fluid vulnerable):
 		while N > 0 and C is able to take more liquid:

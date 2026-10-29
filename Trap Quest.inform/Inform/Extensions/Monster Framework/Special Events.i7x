@@ -12,7 +12,7 @@ To idly FaceDrain from (M - an object):
 
 Handles the player being pissed on by an unknown entity. The flavour is kept neutral so it shouldn't matter.
 
-@param <Object>:<M> Whomever is peeing on the player
+@param <Object>:<M> Whomever is draining on the player
 +!]
 To FaceDrain from (M - an object):
 	if the player is upright, try kneeling;
@@ -83,7 +83,7 @@ To FaceDrain from (M - an object):
 
 Displays some text from describing "M" demanding the player drink slime
 
-@param <Object>:<M> Whomever is trying to pee in the player's mouth
+@param <Object>:<M> Whomever is trying to drain in the player's mouth
 +!]
 To say SlimeDrinkThreat of (M - an object):
 	if M is nothing: [Currently this only applies to the wrestler urinal scene]
@@ -189,7 +189,7 @@ To compute (N - a number) slime hitting face:
 
 Handles the player receiving a slime shower and choosing to drink it
 
-@param <Object>:<M> Whomever is trying to peeing in the player's mouth
+@param <Object>:<M> Whomever is trying to draining in the player's mouth
 +!]
 To DrinkSlime from (M - an object):
 	if the total volume of face > 0, compute swallowing;
@@ -420,6 +420,7 @@ This function is called when the player resists in the last turn of oral sex and
 
 +!]
 To compute facial dodging of (M - a monster):
+	now M is not penetrating face;
 	say FacialBrokenFree of M;
 	if M is aiming a bukkake:
 		compute successful facial dodging of M;
@@ -493,15 +494,16 @@ This function is called when the player submits in the last turn of oral sex and
 
 +!]
 To compute facial accepting of (M - a monster):
+	now M is not penetrating face;
 	get facial accepting image for M;
-	say UnavoidedFacial of M;
+	say AcceptedFacial of M;
 	CumFaceUp the semen load of M;
 	severeHumiliate;
 	compute happy oral sex reward of M.
 
 To compute assisted facial accepting of (M - a monster) with (subs - a number):
 	get facial accepting image for M;
-	say AssistedUnavoidedFacial of M with subs;
+	say AssistedAcceptedFacial of M with subs;
 	CumFaceUp 1;
 	moderateHumiliate;
 	compute happy oral sex reward of M.
@@ -781,14 +783,14 @@ Displays some flavour describing the player unsuccessfully dodging a facial afte
 To say FailedFacialDodge of (M - a monster):
 	say "[one of]However, it's still too late! [BigFuckerDesc of M] is already ejaculating in your face![or]Unfortunately, [FuckerDesc of M] manages to grab you again, holding you still as [he of M] ejaculates all over your face.[or][BigFuckerDesc of M] ejaculates anyway! Your reflexes kick in late and your face is already covered in a thick load of [semen] before you even think about getting out of the way.[or][BigFuckerDesc of M] groans, having already gone over the edge. You're much too slow to get out of the way, so you take a full ejaculation all over your face.[or]However, you're too slow to get out of the way before [FuckerDesc of M] jizzes all over your face.[or]Much to your displeasure, [FuckerDesc of M] manages to catch you in an instant, holding you in place for a sticky, disgusting facial.[or][if the semen addiction of the player < 8]However, [FuckerDesc of M] immediately grabs you again. You struggle in vain as [he of M] unloads all over your face.[otherwise if the semen addiction of the player < 12]However, [FuckerDesc of M] immediately grabs you again. You half-heartedly struggle as [he of M] unloads all over your face.[otherwise]However, [FuckerDesc of M] immediately grabs you again. You giggle happily as [he of M] unloads all over your face.[end if][or][if the semen addiction of the player < 9]Knowing what's coming, you try to get out of the way. Unfortunately, you're too slow, so there's nothing you can do to stop [FuckerDesc of M] from ejaculating all over your face.[otherwise if the semen addiction of the player < 13]Unfortunately, you find yourself without the will to struggle as [FuckerDesc of M] grabs you and force you to take a hot, sticky facial.[otherwise]Much to your delight, however, [FuckerDesc of M] manages to grab you and hold you in place for a hot, sticky facial.[end if][or][if the semen addiction of the player < 11]Knowing what's coming, you try to get out of the way. However, you're too slow, so there's nothing you can do to stop [FuckerDesc of M] from ejaculating all over your face.[otherwise]Finding yourself distracted by how yummy [his of M] [DickDesc of M] looks, there's nothing you can do to stop [FuckerDesc of M] from ejaculating all over your face.[end if][in random order]".
 
-[!<SayUnavoidedFacialOfMonster>+
+[!<SayAcceptedFacialOfMonster>+
 
 Displays some flavour describing the player accepting a facial after a blowjob
 
 @param <Monster>:<M> The monster having oral sex with the player
 
 +!]
-To say UnavoidedFacial of (M - a monster):
+To say AcceptedFacial of (M - a monster):
 	say "[one of][BigFuckerDesc of M] pushes you off [his of M] [DickDesc of M], and immediately jizzes all over your face.[or][BigFuckerDesc of M] pulls you off, gritting [his of M] teeth as [he of M] ejaculates all over your face.[or][BigFuckerDesc of M] pushes you away, quickly pumping [his of M] [DickDesc of M] to orgasm all over your face.[or][BigFuckerDesc of M] withdraws [his of M] [DickDesc of M] from your mouth, hissing through [his of M] teeth as [he of M] paints your face with a hot load of [semen].[or][BigFuckerDesc of M] withdraws from your mouth and immediately gives you a warm, messy facial.[or][BigFuckerDesc of M] pulls [his of M] [DickDesc of M] out of your mouth and tilts your head up. You barely have time to get your eyes closed before [he of M] gives you a thick, messy facial.[or][if the semen addiction of the player < 10][BigFuckerDesc of M] pushes you off [his of M] [DickDesc of M] as [he of M] goes over the edge. You gasp and recoil as [he of M] paints your face with hot ropes of [semen].[otherwise][BigFuckerDesc of M] pushes you off [his of M] [DickDesc of M] as [he of M] goes over the edge. You close your eyes and happily lean forward as [he of M] paints your face with hot ropes of [semen].[end if][or][if the semen addiction of the player < 7][BigFuckerDesc of M] pulls [his of M] [DickDesc of M] out of your mouth, finishing [himself of M] off with a few quick pumps. You shudder as [he of M] ejaculates all over your face.[otherwise if the semen addiction of the player < 13][BigFuckerDesc of M] pulls [his of M] [DickDesc of M] out of your mouth, finishing [himself of M] off with a few quick pumps. You gasp as [he of M] ejaculates all over your face.[otherwise][BigFuckerDesc of M] pulls [his of M] [DickDesc of M] out of your mouth, finishing [himself of M] off with a few quick pumps. You close your eyes and stick out your tongue as [he of M] ejaculates all over your face.[end if][or][if the semen addiction of the player < 9][BigFuckerDesc of M] shoves you away as hot ropes of [semen] explode from [his of M] [DickDesc of M]. You barely have time to shut your mouth before they splatter across your face.[otherwise if the semen addiction of the player < 11][BigFuckerDesc of M] shoves you away as hot ropes of [semen] explode from [his of M] [DickDesc of M]. You're surprised to find that your mouth is still open as they splatter across your face.[otherwise][BigFuckerDesc of M] shoves you away as hot ropes of [semen] explode from [his of M] [DickDesc of M]. You close your eyes and open your mouth as they fall across your face.[end if][in random order]".
 
 [!<SayResistedOralCreampieOfMonster>+
@@ -1400,9 +1402,23 @@ Displays some text describing the player allowing a monster to use their penis
 To say ErectionUseFlav of (M - a monster):
 	say "[BigNameDesc of M] moans happily as [he of M] uses your [ShortDesc of penis].".
 
+[!<SayPenisGoneFlavOfMonster>+
+
+Displays some text describing a monster reacting when the player loses their penis during sex. With tg enabled, this can mean the player's penis was replaced by a vagina, but it can also mean they now have a barbie doll sex mound.
+
+ This often happens because the player had an orgasm at minimum penis size, butUsually, this is because the player came.
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say PenisGoneFlav of (M - a monster):
+	say "[BigNameDesc of M] gives you a nonplussed look as your [ShortDesc of penis] disappears.";
+	FavourDown M by 1;
+	bore M;
+	now the sex-length of M is 1.[so it can be reduced by 1]
+
 [!<SayErectionLostFlavOfMonster>+
 
-Displays some text describing a monster reacting when the player loses their erection during sex.
+Displays some text describing a monster reacting when the player loses their erection during sex. Usually, this is because the player came.
 
 @param <Monster>:<M> The monster using the player's penis
 +!]
@@ -1421,15 +1437,16 @@ Displays some text describing a monster getting close to climax whilst using the
 To say ErectionNearingClimaxFlav of (M - a monster):
 	say "[BigNameDesc of M] moves faster and faster. [big he of M] must be close!".
 
+
 [!<ComputeErectionOrgasmOfMonster>+
 
 Displays some text describing the player ejaculating whilst penetrating a monster.
 
 @param <Monster>:<M> The monster occupying the player's penis
 +!]
-To compute erection orgasm of (M - a thing):
-	follow the default ejaculation rule;
-	now penis is not penis-erect. [Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
+To compute erection orgasm of (M - a monster):
+	say "You cum hard inside [NameDesc of M].";
+	compute erection decay. [Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
 
 [!<SayPenileClimaxFlavOfMonster>+
 
@@ -1455,7 +1472,8 @@ To say PileDriverClimaxLandFlav of (M - a monster) with (open-mouth - a truth st
 		if SV >= 3, mapcutshow figure of piledriver handjob facial for face;
 		AnnouncedSquirt semen on face by SV.
 To say HandjobClimaxFlav of (M - a monster):
-	say "Your [player-penis] unleashes several [if the semen load of the player <= 4]weak [otherwise if the semen load of the player > 7]super thick [end if]ropes of [semen] into [NameDesc of M][']s [one of]waiting hand[or]cupped palm[cycling].".
+	say "Your [player-penis] unleashes several [if the semen load of the player <= 4]weak [otherwise if the semen load of the player > 7]super thick [end if]ropes of [semen] into [NameDesc of M][']s [one of]waiting hand[or]cupped palm[cycling].";
+	if the the penis-masturbating-monster-image of M is Figure of small handjob, mapcutshow Figure of small handjob climax for penis.
 
 [!<ComputeHandjobOrgasmOfMonster>+
 
@@ -1485,7 +1503,7 @@ To compute handjob orgasm of (M - a monster):
 	otherwise:
 		say HandjobClimaxFlav of M;
 	now the sex-length of M is the size of penis * -1;[this allows us to simultaneously track whether the player orgasmed and how large the penis was just before 'punish male shameful orgasm' is called, to decide whether to call the 'masturbation penis shrink punishment' function]
-	now penis is not penis-erect. [This line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
+	compute erection decay.[This line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
 
 To say CumShrinkPunishFlav of (M - a monster):
 	say "[speech style of M]'Oh my god, did it just get SMALLER? Hahaha!'[roman type][line break]";
@@ -1779,6 +1797,7 @@ The player has a number called raw-expulsion-weakness. The raw-expulsion-weaknes
 temp-expulsion-weakness is a number that varies. [This is used to represent when it's extra-difficult for the player to hold on in a specific scenario. Lasts until the end of the round unless reset to 0 manually.]
 To decide which number is the expulsion weakness of the player: [How much the player struggles to hold onto stuff when in pain or fear. It needs to be at least 1.]
 	let X be the raw-expulsion-weakness of the player + temp-expulsion-weakness;
+	if storage-cum tattoo is worn or storage-milk tattoo is worn or storage-piss tattoo is worn, decrease X by a random number between 1 and 10;
 	if X < 1, decide on 1;
 	decide on X.
 

@@ -865,6 +865,10 @@ Figure of broken-clitty tattoo is the file "Items/Tats/tattoo155.jpg".
 To decide which figure-name is the examine-image of (T - broken-clitty tattoo):
 	decide on figure of broken-clitty tattoo.
 
+Figure of bulls-only tattoo is the file "Items/Tats/tattoo210.jpg".
+To decide which figure-name is the examine-image of (T - bulls-only tattoo):
+	decide on figure of bulls-only tattoo.
+
 Figure of butt-burger tattoo is the file "Items/Tats/tattoo173.jpg".
 To decide which figure-name is the examine-image of (T - butt-burger tattoo):
 	decide on figure of butt-burger tattoo.
@@ -937,6 +941,10 @@ Figure of empty-mind tattoo is the file "Items/Tats/tattoo114.jpg".
 To decide which figure-name is the examine-image of (T - empty-mind tattoo):
 	decide on figure of empty-mind tattoo.
 
+Figure of flower slut tattoo is the file "Items/Tats/tattoo220.jpg".
+To decide which figure-name is the examine-image of (T - flower slut tattoo):
+	decide on figure of flower slut tattoo.
+
 Figure of for deposit only tattoo is the file "Items/Tats/tattoo12.jpg".
 To decide which figure-name is the examine-image of (T - for deposit only tattoo):
 	decide on figure of for deposit only tattoo.
@@ -945,9 +953,17 @@ Figure of free ride tattoo is the file "Items/Tats/tattoo115.jpg".
 To decide which figure-name is the examine-image of (T - free ride tattoo):
 	decide on figure of free ride tattoo.
 
+Figure of fuck-ass tattoo is the file "Items/Tats/tattoo222.jpg".
+To decide which figure-name is the examine-image of (T - fuck-ass tattoo):
+	decide on figure of fuck-ass tattoo.
+
 Figure of fuck-me tattoo is the file "Items/Tats/tattoo116.jpg".
 To decide which figure-name is the examine-image of (T - fuck-me tattoo):
 	decide on figure of fuck-me tattoo.
+
+Figure of fuck-me-marry-me tattoo is the file "Items/Tats/tattoo221.jpg".
+To decide which figure-name is the examine-image of (T - fuck-me-marry-me tattoo):
+	decide on figure of fuck-me-marry-me tattoo.
 
 Figure of funcentre tattoo is the file "Items/Tats/tattoo5.jpg".
 To decide which figure-name is the examine-image of (T - funcentre tattoo):
@@ -996,6 +1012,21 @@ To decide which figure-name is the examine-image of (T - lesbian anilingus tatto
 Figure of lock-it tattoo is the file "Items/Tats/tattoo151.jpg".
 To decide which figure-name is the examine-image of (T - lock-it tattoo):
 	decide on figure of lock-it tattoo.
+
+Figure of marker chest tattoo disgusting tits is the file "Items/Tats/tattoo212.jpg".
+Figure of marker chest tattoo disgusting pig is the file "Items/Tats/tattoo213.jpg".
+Figure of marker chest tattoo photos welcome is the file "Items/Tats/tattoo214.jpg".
+Figure of marker chest tattoo cock pillows is the file "Items/Tats/tattoo215.jpg".
+To decide which figure-name is the examine-image of (T - marker chest tattoo):
+	if the tattoo-outrage of T is 14:
+		decide on Figure of marker chest tattoo disgusting pig;
+	otherwise if the tattoo-outrage of T is 11:
+		decide on Figure of marker chest tattoo cock pillows;
+	otherwise if the tattoo-outrage of T is 13:
+		decide on Figure of marker chest tattoo disgusting tits;
+	otherwise:
+		decide on Figure of marker chest tattoo photos welcome.
+
 
 Figure of measurement tattoo is the file "Items/Tats/tattoo150.jpg".
 To decide which figure-name is the examine-image of (T - measurement tattoo):

@@ -36,6 +36,8 @@ To decide which number is the initial maxhealth of (M - a monster):
 	increase X by (the difficulty of M * 7) / 3;
 	if M is tentacle monster:
 		if M is durable-tentacle-monster or M is doom-evolved, increase X by the difficulty of M;
+	if M is dryad:
+		increase X by the difficulty of M;
 	decide on X.
 A monster has a number called boredom. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
 A monster has a number called friendly boredom. [The number of turns that the monster has been following the player around. The higher it gets, the more chance that the monster will get bored and leave the player alone.]
@@ -110,21 +112,34 @@ Definition: a monster is willing to do licking:
 	if it is human and it is intelligent and it is raunchy, decide yes;
 	decide no.
 Definition: a monster is willing to do anilingus:
-	if it is willing to do licking and a2m fetish > 0, decide yes;
+	if it is willing to do licking and baseline a2m fetish is 1, decide yes;
 	decide no.
 Definition: a monster is certain to do anilingus:
 	decide no.
 Definition: a monster is eager to do anilingus:
 	if it is willing to do anilingus:
 		if it is certain to do anilingus, decide yes;
-		if the remainder after dividing earnings by 4 < (a2m fetish + 1), decide yes; [50% of turns for a2m = 1; 75% of turns for a2m = 2]
+		let R be the remainder after dividing earnings by 4;
+		let N be 2;
+		if snowball fetish is 1, now N is 3;
+		if R < N, decide yes;[50% of turns for grossness = 2; 75% of turns for grossness = 3]
 	decide no.
 Definition: a monster is willing to do titfucks:
 	if it is male, decide yes;
 	decide no.
 Definition: a monster is willing to charm snakes: decide no.[penis-centric sex]
-Definition: a monster is condom obsessed: decide no. [Does he always use condoms if possible?]
-Definition: a monster is condom prepared: [Does he have condoms on him?]
+[!<MonsterIsCondomObsessed>+
+
+When a condom is available, does this monster use one every time?
+
++!]
+Definition: a monster is condom obsessed: decide no.
+[!<MonsterIsCondomPrepared>+
+
+Does this monster carry condoms?
+
++!]
+Definition: a monster is condom prepared:
 	if it is condom obsessed, decide yes;
 	decide no.
 Definition: a monster (called M) is enjoys sex:
@@ -219,7 +234,18 @@ A monster has a number called selection-frustration. [Have they tried the same b
 A monster can be mating. [Has the player given birth to their spawn?]
 A monster has a number called waitress-boredom.
 A monster has a number called request-cooldown.
-
+A monster has a number called cheat-count. The cheat-count of a monster is -1. [How many times has Barbara cheated on you with them? 0 means Barbara is willing to cheat with them.]
+Definition: a monster is cheat-eligible:
+	if the cheat-count of it >= 0, decide yes;
+	decide no.
+Definition: a monster is never-cheated:
+	if the cheat-count of it <= 0, decide yes;
+	decide no.
+Definition: a monster is has-cheated:
+	if the cheat-count of it >= 1, decide yes;
+	decide no.
+A monster has a number called cheats-agreed. The cheats-agreed of a monster is 0. [How many times has Barbara had sex with this NPC with your blessing.]
+A monster has a number called cheats-caught. The cheats-caught of a monster is 0. [How many times has Barbara had sex with this NPC behind your back but you've found out.]
 
 Definition: a monster is blocker: decide yes.
 
@@ -274,7 +300,7 @@ To decide which number is the semen load of (M - a thing):
 	if the trophy-mode of ejaculate-trophy is 1, decide on (the girth of M * 2) + 5;
 	decide on the girth of M.
 
-Definition: a person is alive:
+Definition: a thing is alive:
 	if it is on-stage, decide yes;
 	decide no.
 Understand "alive" as a thing when item described is on-stage.

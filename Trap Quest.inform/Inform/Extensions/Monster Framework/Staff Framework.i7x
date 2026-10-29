@@ -359,7 +359,7 @@ To decide which number is the DismissalPowerToilet of (M - a staff member):
 	decide on 2.
 
 To say DismissalResponseToilet of (M - a staff member):
-	say "[speech style of M]'[if M is interested]Oh come on dear, I don't think you're responsible enough to be allowed to do that unsupervised[otherwise if diaper quest is 0]You should work on your exhibitionism. Peeing in front of people can be very exciting, you know[otherwise]Okay, well done on making it to the [SlimeTargetP] in time, darling[end if].'[roman type][line break]".
+	say "[speech style of M]'[if M is interested]Oh come on dear, I don't think you're responsible enough to be allowed to do that unsupervised[otherwise if diaper quest is 0]You should work on your exhibitionism. You know [slimedraining] in front of people can be very exciting[otherwise]Okay, well done on making it to the [SlimeTargetP] in time, darling[end if].'[roman type][line break]".
 
 To say ToiletReactionFlav of (M - a staff member):
 	if diaper quest is 0:
@@ -389,7 +389,7 @@ To say DismissalResponseDefault of (M - a staff member):
 
 
 To say MasturbationAfterFlav of (M - a tutor):
-	say "After this [he of M] seems satisfied, and [if refractoryperiod > 0]flexes [his of M] wrist muscles in pride.[otherwise if the player is a bit horny][MasturbationTeaseFlav of M][otherwise]pulls back.[end if][line break][speech style of M]'Right, run along now!'[roman type][line break][if hot-tub is in the location of M]It doesn't seem like [he of M] is going to let you stay here.[end if]".
+	say "After this [he of M] seems satisfied, and [if refractoryperiod of the player > 0]flexes [his of M] wrist muscles in pride.[otherwise if the player is a bit horny][MasturbationTeaseFlav of M][otherwise]pulls back.[end if][line break][speech style of M]'Right, run along now!'[roman type][line break][if hot-tub is in the location of M]It doesn't seem like [he of M] is going to let you stay here.[end if]".
 
 To compute masturbation aftermath of (M - a tutor):
 	say MasturbationAfterFlav of M;
@@ -1160,7 +1160,7 @@ Definition: drink-assembly is eligible:
 		now autodrink is 0;
 		decide no;
 	now autodrink is 0;
-	if watersports fetish is 1 or diaper quest is 1 or a2m fetish >= 2 or lactation fetish is 1, decide yes;
+	if watersports fetish is 1 or diaper quest is 1 or snowball fetish is 1 or lactation fetish is 1, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - drink-assembly):
@@ -1168,7 +1168,7 @@ To say AssemblyStartFlav of (A - drink-assembly):
 
 To execute (A - drink-assembly):
 	say "[speech style of mistress]'At this institution, you are all one big family. And as such, you should all drink from the same cup.'[roman type][line break]";
-	if a2m fetish >= 2:
+	if snowball fetish is 1:
 		say "[BigNameDesc of mistress] takes the chalice and holds it underneath [his of mistress] butt. And then [he of mistress] grunts and pushes... causing a stream of water to gush out of [his of mistress] butthole and into the large drinking vessel, filling it to the brim.";
 	otherwise if watersports fetish is 1:
 		if slimeshooter fetish is 1, say "[BigNameDesc of mistress] takes the chalice and drains [his of mistress] slimeshooter straight into the large drinking vessel, filling it to the brim.";
@@ -1182,10 +1182,10 @@ To execute (A - drink-assembly):
 	if M is a trainee:
 		say "When the chalice makes its way to [M], [he of M] just makes a gagging sound.[line break][speech style of M]'Sorry, but no way. I'm out of here.'[roman type][line break][big he of M] moves to leave, but before [he of M] can make it even a couple of steps, [NameDesc of mistress] interrupts.[line break][speech style of mistress]'Fine then, so be it. But here, take this parting gift.'[roman type][line break][BigNameDesc of M]'s armband disappears, and at the same time, a pink collar appears around [his of M] neck. It has a metal heart at the front. [BigNameDesc of M] squeaks in surprise, and immediately tries to remove it, but can't find a latch.[line break][speech style of mistress]'Think of this as your final assignment. You won't be able to remove the collar until you put that mouth to good use. And until then, you're going to find yourself getting thirsty much faster than normal.'[roman type][line break][BigNameDesc of M] runs from the room, sobbing.";
 		destroy M;
-	say "Finally the chalice is passed to you. Can you really bring yourself to drink an entire mouthful of this [if a2m fetish >= 2]water that came out of [his of mistress] asshole[otherwise if watersports fetish is 1][slime][otherwise][milk][end if]? ";
+	say "Finally the chalice is passed to you. Can you really bring yourself to drink an entire mouthful of this [if snowball fetish is 1]water that came out of [his of mistress] asshole[otherwise if watersports fetish is 1][slime][otherwise][milk][end if]? ";
 	if the player is bimbo consenting:
 		say "You bring the chalice to your lips, fill your mouth, and then gulp it down. ";
-		if a2m fetish >= 2:
+		if snowball fetish is 1:
 			StomachUp 2;
 			say severeHumiliateReflect;
 		otherwise if watersports fetish is 1:
@@ -1209,7 +1209,7 @@ To execute (A - drink-assembly):
 			now heart-collar is respiration;
 			say QuestFlav of heart-collar;
 		say "The world in front of you begins to fade, and then you realise you are being teleported away.";
-		teleport to Dungeon10.
+		spatial teleport to Dungeon10.
 
 
 disgrace-assembly is a generic-assembly.
@@ -1242,7 +1242,7 @@ To execute (A - disgrace-assembly):
 		say "You just shrug, and wait for them to get bored and move on with their day, which eventually of course, they all do.";
 	otherwise:
 		say "You storm out of the hall, the sound of vindictive laughter following you out into the hall.";
-		teleport to Facility05.
+		raw teleport to Facility05.
 
 
 
@@ -1923,7 +1923,7 @@ To compute event start of (ESV - egg-smuggling-event):
 			let E be a random off-stage medium egg;
 			say "[speech style of M]'[NameBimbo], perfect timing. I need to get a rare egg out of the training halls and into the Dungeon. It's not strictly... Permitted. But the receptionist is watching the exit like a hawk, and us staff get checked VERY thoroughly when they leave. You can figure a way to smuggle it out, right?'[paragraph break][variable custom style]Oh fuck, I'd probably have to sneak it out INSIDE me, wouldn't I...[roman type][line break]Agree to the task?";
 			if the player is bimbo consenting:
-				now the egg-origin of E is carrot daggers;
+				now the egg-origin of E is carrot-daggers;
 				now E is in Facility23;
 				say "[speech style of M]'Brilliant, I know I could count on you. I've left it discreetly in the corner of the gymnasium. You won't be able to miss it if you're looking for it. Make sure you don't leave the training halls without it, and make sure nobody sees you with it. Good [boy of the player].'[roman type][line break][BigNameDesc of M] begins to wander off.";
 				bore M;
@@ -1939,7 +1939,7 @@ To compute event handling of (ESV - egg-smuggling-event):
 	if playerRegion is facility:
 		let EG be nothing;
 		repeat with EX running through held medium eggs:
-			if the egg-origin of EX is carrot daggers, now EG is EX;
+			if the egg-origin of EX is carrot-daggers, now EG is EX;
 		if EG is a thing and armband is worn:
 			repeat with M running through reactive staff members:
 				unless M is the event-failure-punisher of ESV:
@@ -1953,10 +1953,10 @@ To compute event handling of (ESV - egg-smuggling-event):
 						say line break;
 					now ESV is event-ended;
 	otherwise:
-		unless carrot daggers is listed in the medium-egg-origins of vagina or carrot daggers is listed in the medium-egg-origins of belly:
+		unless carrot-daggers is listed in the medium-egg-origins of vagina or carrot-daggers is listed in the medium-egg-origins of belly:
 			let E be nothing;
 			repeat with X running through on-stage medium eggs:
-				if the egg-origin of X is carrot daggers:
+				if the egg-origin of X is carrot-daggers:
 					if X is held or X is regional or E is nothing, now E is X;
 			if E is a thing:
 				if debugmode > 0 and debuginfo > 0, say "[E] being used for egg smuggling event...";
@@ -2253,7 +2253,7 @@ To MonsterHeal (M - a trainee) by (N - a number):
 			if the health of M > the maxhealth of M, now the health of M is the maxhealth of M.[Overhealing is not allowed]
 
 
-Book - Ultimate TrainingSession Actor Renamed Unseen Stranger
+Book - Ultimate Training Session Actor Renamed Unseen Stranger
 
 An unseen-stranger is a kind of monster. An unseen-stranger is male. There are 4 unseen-strangers. The text-shortcut of an unseen-stranger is "voi". Understand ["manly", "womanly", "voice",] "unseen", "stranger" as unseen-stranger.
 An unseen-stranger has a text called the specific-man-title.
@@ -2292,7 +2292,41 @@ To compute action (N - a number) of (M - an unseen-stranger):
 				say strongHumiliateReflect;
 			decrease the sex-length of M by 1;
 		otherwise if M is penetrating face:
-			if (current-predicament is not gloryhole-key-predicament or gloryhole-key-predicament is not ass-to-mouth-agreed) and a random number between 1 and 3 > 1:
+			if current-predicament is chores-predicament and the gloryhole-sucks of chores-predicament < 2:
+				say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the sex addiction of the player < 10 or current-predicament is gloryhole-key-predicament]eyes closed[otherwise]looking up at the art of the fireman's hunky body[end if] as you submissively polish [his of M] shaft[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s [manly-penis], [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head[or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the oral sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work[or][BigFuckerDesc of M] grunts in pleasure as your tongue runs over the head of [his of M] [manly-penis][or][BigFuckerDesc of M] chuckles to [himself of M] as you submissively pleasure [his of M] [manly-penis] with your mouth[in random order].";
+				increase the gloryhole-sucks of chores-predicament by 1;
+				let T3 be the substituted form of "'[one of]Fuck, this is so hot[or]Your [manly-penis] is so big, Mister[or]Yummy[in random order].[']";
+				let T4 be the substituted form of "'[one of]Please give me your cum, I need it so bad!'[or]Please fill my mouth with your seed, do it now!'[or]Have you got anything for a cumguzzling slut, stud?'[or]Please let me drain your balls, I want every last drop!'[in random order]";
+				reset multiple choice questions;
+				set numerical response 1 to "moan sweetly";
+				set numerical response 2 to "make an extremely satisfied noise";
+				set numerical response 3 to "say [T3]";
+				set numerical response 4 to "shamelessly plead [T4]";
+				set numerical response 5 to "shove the [manly-penis] down your throat and gag on it repeatedly";
+				set numerical response 0 to "do nothing";
+				say "[variable custom style]I've got to make [him of M] sufficiently [']satisfied[']... And I have no idea how far I need to go to make that happen.[roman type][line break]";
+				compute multiple choice question;
+				if player-numerical-response is 0:
+					say "[variable custom style][one of]I probably don't need to do any more than this, right?[or]Surely this is fine.[cycling][roman type][line break]";
+				otherwise if player-numerical-response is 1:
+					say "[variable custom style]'Mmmmm...'[roman type][line break][trivialHumiliateReflect]";
+				otherwise if player-numerical-response is 2:
+					say "[variable custom style]'Aaaaaaaaaaaaaaah~'[roman type][line break][slightHumiliateReflect]";
+				otherwise if player-numerical-response is 3:
+					say "[variable custom style][T3][roman type][line break][moderateHumiliateReflect]";
+				otherwise if player-numerical-response is 4:
+					say "[variable custom style][T4][roman type][line break][strongHumiliateReflect]";
+				otherwise if player-numerical-response is 5:
+					say "[variable custom style]'GYUK GYUK GYUK'[roman type][line break]You give the [manly-penis] your best, most shamelessly loud and wet and deep sloppy-toppy deepthroat.";
+					GrossOut 3;
+					say strongHumiliateReflect;
+				let BI be (player-numerical-response + a random number between 0 and 3) / 4;
+				if BI > 0:
+					increase the bystanderInt1 of bum-bystander by BI;
+					say "[if BI > 1]You hear garged squealing coming from the other side of the wall! [otherwise]You hear [one of]heavy breathing[or]panting[or]a gasp of pleasure[or]a giddy chuckle[in random order] coming from the other side of the wall. [end if]Sounds like [NameDesc of M] [if BI > 1]really [end if]liked that.";
+				otherwise if player-numerical-response > 0:
+					say "You don't hear any positive feedback from the other side of the wall.";
+			otherwise if current-predicament is not chores-predicament and (current-predicament is not gloryhole-key-predicament or gloryhole-key-predicament is not ass-to-mouth-agreed) and a random number between 1 and 3 > 1:
 				say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the sex addiction of the player < 10 or current-predicament is gloryhole-key-predicament]eyes closed[otherwise]looking up at the art of the fireman's hunky body[end if] as you submissively polish [his of M] shaft[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s [manly-penis], [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head[or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the oral sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work[or][BigFuckerDesc of M] grunts in pleasure as your tongue runs over the head of [his of M] [manly-penis][or][BigFuckerDesc of M] chuckles to [himself of M] as you submissively pleasure [his of M] [manly-penis] with your mouth[in random order][if current-predicament is gloryhole-predicament]. [one of]You can't stop thinking about how everything is being recorded, and your cheeks burn.[or][stopping][otherwise].[end if]";
 			otherwise:
 				BlowCount;
@@ -2302,7 +2336,7 @@ To compute action (N - a number) of (M - an unseen-stranger):
 						say "After [he of M] pulls away, you hear [him of M] fumbling with the condom for a few moments.";
 						UsedCondomUp tight-grey-romper from M;
 					otherwise if debugmode > 0:
-						say "Tight Grey Romper is in [location of tight-grey-romper].";
+						say "[input-style]Tight Grey Romper is in [location of tight-grey-romper].[roman type][line break]";
 					orgasm M;
 					dislodge M;
 					now M is not wrapped;
@@ -2320,7 +2354,35 @@ To compute action (N - a number) of (M - an unseen-stranger):
 						orgasm M;
 						if the player is in Toilet02 and current-predicament is gloryhole-predicament and the semen-spat of gloryhole-predicament is 0, say "[bold type]If you spit it out, you will be penalised.[roman type][line break]";
 						if current-predicament is gloryhole-predicament, suggest swallowing;
-						if current-predicament is gloryhole-key-predicament or current-predicament is business-briefcase-predicament:
+						if current-predicament is chores-predicament:
+							let V be a random number between 1 and 3;
+							if V > the non-bums-sucked of chores-predicament:
+								say "[speech style of M]'[one of]What a naughty bitch. I loved that[or]I wasn't expecting that. This was my lucky day[cycling]!'[variable custom style][line break]Wait a minute... That's not the bum's voice! I've just sucked off the wrong guy![roman type][line break][GotUnluckyFlav]";
+								increase the non-bums-sucked of chores-predicament by 1;
+								now bystanderInt1 of bum-bystander is 1;
+							otherwise:
+								say "[speech style of M]'Yes, yes, yes! Now let me hear you swallow it!'[roman type][line break][BigNameDesc of bum-bystander][']s voice comes clear as day through the hole in the wall.";
+								reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+								set numerical response 1 to "swallow";
+								set numerical response 2 to "pretend to swallow";
+								set numerical response 3 to "refuse to swallow";
+								compute multiple choice question;
+								if player-numerical-response is 1:
+									compute swallowing;
+								otherwise if player-numerical-response is 2:
+									say "You do your best to make an exaggerated gulping sound.";
+									if a random number between 1 and 3 is 1:
+										say "[speech style of M]'I can tell that was fake, you useless whore.'[roman type][line break]";
+									otherwise:
+										if the player is getting unlucky:
+											say "Unfortunately, that's very difficult to do with a mouth full of [semen], and you end up swallowing it anyway! [GotUnluckyFlav]";
+											compute swallowing;
+										now player-numerical-response is 1;
+								otherwise if player-numerical-response is 3:
+									say "[variable custom style]'Uh-uh.'[roman type][line break]You make it clear that this would be a step too far for you.[line break][speech style of M]'Useless whore.'[roman type][line break]";
+								if player-numerical-response is not 1, decrease the bystanderInt1 of bum-bystander by a random number between 1 and 5;
+								if the bystanderInt1 of bum-bystander < 2, now the bystanderInt1 of bum-bystander is 2;
+						otherwise if current-predicament is gloryhole-key-predicament or current-predicament is business-briefcase-predicament:
 							if current-predicament is business-briefcase-predicament or (the keys-agreed of gloryhole-key-predicament > 0 and a random number between 1 and 2 is 1):
 								say "[speech style of M]'Swallow it. Or the deal's off.'[roman type][line break]";
 								reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
@@ -2366,6 +2428,9 @@ To compute action (N - a number) of (M - an unseen-stranger):
 					if business-briefcase-predicament is not predicament-failed:
 						say "You sigh with relief as you see the card pushed through the hole. You successfully avoided disaster! You quickly scrunch it into a ball and flush it down the [SlimeTarget], never to be seen again.";
 					say "[BigNameDesc of M] leaves the [SlimeTarget]s.";
+				otherwise if current-predicament is chores-predicament and the bystanderInt1 of bum-bystander >= 2:
+					say "[speech style of bum-bystander]'What are the odds, just after talking to that sweet innocent lass in the park about how this never happens...'[roman type][line break]With an amused chuckle, [NameDesc of bum-bystander] pulls [his of bum-bystander] [manly-penis] back through the hole and quickly leaves the men's toilets.[paragraph break]";
+					say "[variable custom style]I guess I won't know for sure if the Extra Credit Zone has deemed [him of bum-bystander] as having been fully [']satisfied['] unless I return home [if the bystanders-helped of chores-predicament < 2]after satisfying two other strangers, [end if]and check... What I did surely counts, right?";
 				otherwise:
 					say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[if current-predicament is nun-walk-predicament and the semen volume of face < 4 and the semen volume of face > 0][line break][variable custom style]I've got some cum now... but is it enough to make sure I still have some left if I accidentally lose some on the way home?[roman type][line break][end if]";
 				destroy M;

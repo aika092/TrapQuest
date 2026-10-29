@@ -91,7 +91,7 @@ To compute perception of (M - receptionist):
 				if armband is worn and mistress is alive:
 					say "[big he of M] pushes you through the warp portal. Colours rush all around you, and then suddenly you're standing on a marble floor in front of a large oak desk!";
 					let R be the location of mistress;
-					teleport to R;
+					spatial teleport to R;
 					now shocked-monsters is 0;
 					check guaranteed perception of mistress;
 					increase the times-met of mistress by 1;

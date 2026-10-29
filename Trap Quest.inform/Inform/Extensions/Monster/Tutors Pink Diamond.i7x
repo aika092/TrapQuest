@@ -109,7 +109,7 @@ Definition: enema-tag-training is training-appropriate:
 	repeat with C running through worn clothing:
 		if C is penetrating asshole and (C is unremovable or C is glued or C is cursed or C is locked), decide no;
 		if C is penetrating face and (C is unremovable or C is glued or C is cursed or C is locked), decide no;
-	[if diaper quest is 0 and (a2m fetish < 2 or watersports fetish is 0), decide no;]
+	[if diaper quest is 0 and (snowball fetish is 0 or watersports fetish is 0), decide no;]
 	if the number of alive training-appropriate trainees < 2, decide no;
 	decide yes.
 To say TrainingSessionTitle of (L - enema-tag-training):
@@ -141,7 +141,7 @@ To compute teaching of (L - enema-tag-training):
 	let distancePerLap be 10;
 	let lapsToWin be 5;
 	now the stance of the player is 0;
-	say "You are made to bend over and enema kits are used to slowly but surely fill your bellies with [LQ]. Your bellies start to visibly expand until you all look nine months pregnant. [one of]While the enemas are going in, [NameDesc of M] gives a briefing. [big he of M] points to a [man of male-m] wearing a full black zentai bodysuit that covers even [his of male-m] face.[line break][speech style of M]'The rules are as follows. In order to get a promotion, all you have to do is make it [lapsToWin] times around this racetrack. But that [man of male-m] there has been instructed to hunt down and hump the trainee who [bold type]most recently expelled their enema[speech style of M] and [bold type]has not yet refilled their belly to the brim[if diaper quest is 1] or is not wearing a clean diaper[end if]. [speech style of M]Moreover, [he of male-m][']s allowed to run through the middle of the track, so there's no escaping [him of male-m] for too long. What this means is that it's very dangerous to try and run the race without a full belly[if diaper quest is 1] and a diaper[end if]. You'll find enema refilling kits at the finish line, so you can decide to have a [']pit stop['] at the end of any lap you choose. You are not allowed to run backwards, so either stop at the line or don't, it's up to you! You can also abandon the race at any time by stepping off the track, but then you won't be promoted[if a2m fetish is 2 and watersports fetish is 1]. Also, as long as there's at least one winner, the first person to abandon gets a punishment[end if].'[roman type][line break][or][stopping]You are all led to the starting line, and then with a bang the race begins.";
+	say "You are made to bend over and enema kits are used to slowly but surely fill your bellies with [LQ]. Your bellies start to visibly expand until you all look nine months pregnant. [one of]While the enemas are going in, [NameDesc of M] gives a briefing. [big he of M] points to a [man of male-m] wearing a full black zentai bodysuit that covers even [his of male-m] face.[line break][speech style of M]'The rules are as follows. In order to get a promotion, all you have to do is make it [lapsToWin] times around this racetrack. But that [man of male-m] there has been instructed to hunt down and hump the trainee who [bold type]most recently expelled their enema[speech style of M] and [bold type]has not yet refilled their belly to the brim[if diaper quest is 1] or is not wearing a clean diaper[end if]. [speech style of M]Moreover, [he of male-m][']s allowed to run through the middle of the track, so there's no escaping [him of male-m] for too long. What this means is that it's very dangerous to try and run the race without a full belly[if diaper quest is 1] and a diaper[end if]. You'll find enema refilling kits at the finish line, so you can decide to have a [']pit stop['] at the end of any lap you choose. You are not allowed to run backwards, so either stop at the line or don't, it's up to you! You can also abandon the race at any time by stepping off the track, but then you won't be promoted[if snowball fetish is 1 and watersports fetish is 1]. Also, as long as there's at least one winner, the first person to abandon gets a punishment[end if].'[roman type][line break][or][stopping]You are all led to the starting line, and then with a bang the race begins.";
 	now bigGameLoop is 3; [tells the game not to refresh any windows]
 	now temporaryYesNoResetNeeded is false;
 	let LST be the list of people in the location of the player; [turn order]
@@ -228,15 +228,15 @@ To compute teaching of (L - enema-tag-training):
 							otherwise:
 								ruin vagina;
 							check for arousal change;
-							if refractoryperiod > 0 or zentaiDistance < ( -3 - diaper quest):
-								if refractoryperiod > 0, say severeHumiliateReflect;
+							if refractoryperiod of the player > 0 or zentaiDistance < ( -3 - diaper quest):
+								if refractoryperiod of the player > 0, say severeHumiliateReflect;
 								if diaper quest is 0 and zentaiDistance < -3:
 									say "The [man of male-m] in black grunts from behind [his of male-m] mask as [he of male-m] orgasms! [big he of male-m] pulls out as [he of male-m] ejaculates.";
 									UnannouncedSquirt semen on thighs by (the semen load of ULA);
 								say "[bold type]The [man of male-m] in black seems satisfied by this, and turns away from you.[roman type][line break]";
 								remove yourself from LSZ;
 								now zentaiDistance is 0;
-								now refractoryperiod is 0;
+								now refractoryperiod of the player is 0;
 						otherwise:
 							increase trainingInt2 of TGT by 1;
 							if zentaiDistance < a random number between -2 and -3:
@@ -450,8 +450,8 @@ To compute teaching of (L - enema-tag-training):
 								say "[BigNameDesc of ST] [bold type]drops to [his of ST] knees, clutching [his of ST] belly in pain![roman type][line break]";
 								add ST to LSE;
 			if ST is yourself:
-				if refractoryperiod > 0:
-					decrease refractoryperiod by 1;
+				if refractoryperiod of the player > 0:
+					decrease refractoryperiod of the player by 1;
 					now aroused-turns is 0; [The player can keep gaining arousal after orgasms. But then some of it will rather quickly drop off after sex ends, if she successfully orgasmed.]
 				FatigueDown a random number between 30 and 60;
 				refresh the graphics-window; [So that the fatigue bar updates]
@@ -467,7 +467,7 @@ To compute teaching of (L - enema-tag-training):
 		otherwise:
 			promote ST;
 	if the number of entries in LSP > 0:
-		if (diaper quest is 0 and a2m fetish >= 2 and watersports fetish is 1 and punishmentTarget is not M) or (diaper quest is 1 and diaper messing >= 6): [TODO: non a2m punishment]
+		if (diaper quest is 0 and snowball fetish is 1 and watersports fetish is 1 and punishmentTarget is not M) or (diaper quest is 1 and diaper messing >= 6): [TODO: non a2m punishment]
 			say "[BigNameDesc of M] turns to [YouDesc of punishmentTarget].[line break][speech style of M]'And now, the punishment for the biggest loser.'[roman type][line break][BigNameDesc of M] makes [if punishmentTarget is yourself]you[otherwise][trainee-name of punishmentTarget][end if] lie down on the ground, and then gets ";
 			let E be the number of entries in LSP;
 			repeat with ST running through LSP:
@@ -588,43 +588,43 @@ To pledge-execute (E - pledge-training-hold-back):
 
 pledge-training-short-skirts is a pledge-training-object.
 Definition: pledge-training-short-skirts is eligible:
-	if short skirts permanent suggestion is 0, decide yes;
+	if short skirts permanent optimization is 0, decide yes;
 	decide no.
 To pledge-execute (E - pledge-training-short-skirts):
 	say "[second custom style]Sexy [if diaper quest is 1]cuties[otherwise]sluts[end if] don't wear long skirts. From now on, wearing any skirt longer than [SkirtLength 4] will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [HipDesc] and begins to phase inside you...".
 To pledge-implant (E - pledge-training-short-skirts):
 	now E is implanted;
-	now short skirts permanent suggestion is 4.
+	now short skirts permanent optimization is 4.
 
 pledge-training-shorter-skirts is a pledge-training-object.
 Definition: pledge-training-shorter-skirts is eligible:
-	if short skirts permanent suggestion > 2, decide yes;
+	if short skirts permanent optimization > 2, decide yes;
 	decide no.
 To pledge-execute (E - pledge-training-shorter-skirts):
 	say "[second custom style]The [if diaper quest is 1]cutest[otherwise]sexiest[end if] [boy of the player]s wear the shortest of skirts. From now on, wearing any skirt longer than [SkirtLength 2] will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [HipDesc] and begins to phase inside you...".
 To pledge-implant (E - pledge-training-shorter-skirts):
 	now E is implanted;
-	now short skirts permanent suggestion is 2.
+	now short skirts permanent optimization is 2.
 
 pledge-training-panties is a pledge-training-object.
 Definition: pledge-training-panties is eligible:
-	if skimpy underwear suggestion is -1, decide yes;
+	if skimpy underwear optimization is -1, decide yes;
 	decide no.
 To pledge-execute (E - pledge-training-panties):
 	say "[second custom style]Naughty little minxes like me don't wear normal underwear. From now on, wearing anything except [if diaper lover > 0]diapers [end if][if diaper lover > 0 and diaper quest is 0]or [end if][if diaper quest is 0]thongs or g-strings [end if]will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [AssDesc] and begins to phase inside you...".
 To pledge-implant (E - pledge-training-panties):
 	now E is implanted;
-	now skimpy underwear suggestion is 1.
+	UnderwearOptimize 1.
 
 pledge-training-no-panties is a pledge-training-object.
 Definition: pledge-training-no-panties is eligible:
-	if skimpy underwear suggestion > 0, decide yes;
+	if skimpy underwear optimization > 0 and diaper quest is 0, decide yes;
 	decide no.
 To pledge-execute (E - pledge-training-no-panties):
 	say "[second custom style]Naughty little minxes like me don't even wear thongs or g-strings. From now on, wearing anything except [if diaper lover > 0]diapers [end if][if diaper lover > 0 and diaper quest is 0]and [end if][if diaper quest is 0]crotchless panties [end if]will give me a massive headache.[roman type][line break]A large X-shaped white rune approaches your [AssDesc] and begins to phase inside you...".
 To pledge-implant (E - pledge-training-no-panties):
 	now E is implanted;
-	now skimpy underwear suggestion is 0.
+	UnderwearOptimize 0.
 
 pledge-training-spit is a pledge-training-object.
 Definition: pledge-training-spit is eligible:
@@ -731,7 +731,7 @@ To compute princess reveal of (M - a monster):
 			now N is in the location of ex-princess;
 			unless N is M, interest N;
 		reveal the facility dungeon;
-		teleport to the location of ex-princess;
+		raw teleport to the location of ex-princess;
 		now the stance of the player is 0;
 		say MonsterDesc of ex-princess;
 		if diaper quest is 0, say "[BigNameDesc of M] leans against the cell's metal bars.[speech style of M]'This is my favourite toy. And now that you're [if there is a trainee in the location of the player]all gold-star trainees[otherwise]a gold-star trainee[end if], I'm giving you permission to play with [him of ex-princess] too. Just try not to break [him of ex-princess].'[roman type][line break]And with that, [NameDesc of M] leaves you behind.";

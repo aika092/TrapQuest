@@ -436,7 +436,7 @@ To say PortalHint of (S - giant-statue):
 		say "You can make out a faint noise every so often, almost like a slurp.";
 	otherwise if M is fairy:
 		say "You can faintly hear someone giggling inside her. It's almost too quiet for you to hear, but it's definitely there.";
-	otherwise if M is mannequin:
+	otherwise if M is mannequin or M is dryad:
 		say "[if the charge of S > 50]It's eerily silent[otherwise]You can hear a really distinct creaking noise coming from inside of her[end if].";
 	otherwise:
 		say "You can make out an outline of something [if M is human]vaguely human[otherwise]inhuman[end if].".
@@ -601,19 +601,19 @@ Check entering teleportation-pad:
 	let M be throne;
 	if R is 1:
 		let H be a random hotel bed;
-		teleport to the location of H;
+		spatial teleport to the location of H;
 		now M is H;
 	otherwise if R is 2 and there is an alive demoness:
 		let D be a random alive demoness;
-		teleport to the location of D;
+		spatial teleport to the location of D;
 		now M is D;
 	otherwise if R < 4 and there is an alive gladiator:
 		let G be a random alive gladiator;
-		teleport to the location of G;
+		spatial teleport to the location of G;
 		now M is G;
 	otherwise if R < 5 and vampiress is alive:
 		let V be vampiress;
-		teleport to the location of V;
+		spatial teleport to the location of V;
 		now M is V;
 	if M is throne:
 		if the player is very horny:
@@ -636,7 +636,7 @@ Check entering teleportation-pad:
 			say "You are overwhelmed with vertigo as your surroundings begin to spin, and [if the player is prone]your stomach turns over[otherwise]and you immediately drop to your knees[end if] as you suddenly find yourself in the [RM]!";
 			if the player is prone, FatigueUp 100;
 			otherwise now the stance of the player is 1;
-		teleport to RM;
+		spatial teleport to RM;
 	if R < 6, ChargeUp teleportation-pad by a random number between 200 and 300;
 	do nothing instead.
 
@@ -746,17 +746,17 @@ To say MummyColour of (S - mysterious-mummy):
 To say PortalHint of (S - mysterious-mummy):
 	if S is active:
 		let M be the next-summon of S;
-		if M is acolyte: [cultist]
+		if M is acolyte or M is djinn: [cultist]
 			say "A squirming [man of a random acolyte] wrapped from head to toe in white linen, with a purple aura highlighting [his of a random acolyte] features. [big his of a random acolyte] arms are crossed in front of [his of a random acolyte] chest, but it looks like [his of a random acolyte] wrists are being held together by an invisible rope. There's nothing lewd about the way [he of a random acolyte]'s standing, but whenever you look at [him of a random acolyte], you can't help but feel like you're watching someone having sex.";
-		otherwise if M is gladiator: [gladiator]
-			say "A tall [man of a random gladiator] wrapped from head to toe in white linen, with a golden aura highlighting [his of a random gladiator] busty features. [if futanari fetish > 0 or andro fetish is 1]The cloth is distorted by a banana-like shape near [his of a random gladiator] crotch, which twitches slightly[otherwise]There is a dark spot near [his of a random gladiator] crotch, which grows slowly[end if] as [his of a random gladiator] visibly muscular arms struggle against their wrappings.";
+		otherwise if M is gladiator or M is elder-dryad: [gladiator]
+			say "A tall [man of M] wrapped from head to toe in white linen, with a golden aura highlighting [his of M] busty features. [if futanari fetish > 0 or andro fetish is 1]The cloth is distorted by a banana-like shape near [his of M] crotch, which twitches slightly[otherwise if lactation fetish is 1]There is a dark spot near [his of M] nipples, which grows slowly[otherwise]There is a faint sound of laughter, which grows slowly[end if] as [his of M] visibly muscular arms struggle against their wrappings.";
 		otherwise if M is gargoyle or M is vampiress:
 			say "A feminine figure wrapped in white linen, [his of vampiress] features highlighted by a faint pink aura. There is a bat resting on one of [his of vampiress] shoulders.";
 		otherwise if M is mannequin: [mannequin]
 			say "A feminine figure wrapped from head to toe in white linen, with a black aura surrounding [his of a random mannequin] features. Dusky makeup is peppered over [his of a random mannequin] face, and [his of a random mannequin] arms are splayed at disturbing angles to [his of a random mannequin] sides. It seems to change poses whenever you look away for more than a second, and you can't help but notice a strange clicking noise whenever you get too close.";
 		otherwise if M is demoness: [demoness]
 			say "A tall [man of a random demoness] wrapped from head to toe in white linen, with a red aura highlighting [his of a random demoness] features. One hand rests on [his of a random demoness] hips, and the other extends out in front of [him of a random demoness] in command. Two horns curve around [his of a random demoness] temples, like a wreath, and although you can't see [his of a random demoness] feet, you're almost certain [he of a random demoness]'s wearing heels.[if pregnancy fetish is 1] [big he of a random demoness]'s pregnant.[end if]";
-		otherwise if M is kitsune: [kitsune; shouldn't happen]
+		otherwise if M is kitsune or M is neuromancer:
 			say "A feminine figure wrapped in white linen from head to toe, which a silvery aura highlighting [his of kitsune] features. [big he of kitsune] has just about your build and height, and [his of kitsune] arms are crossed in front of [his of kitsune] chest. The wrappings don't actually look that secure, and [his of kitsune] head always seems to face away from you no matter where you try to stand. It's almost like it's trying to trick you.";
 		otherwise if M is hellhound: [hellhound]
 			say "A feminine figure wrapped in linen from head to toe, with a red aura highlighting [his of hellhound] features. [big he of hellhound][']s on all fours, and there is a leather collar and leash gripped in one of [his of hellhound] hands. [one of]For some reason, [he of hellhound]'s holding it from the wrong end[or][big he of hellhound]'s holding it from the collar end instead of the leash[at random].";

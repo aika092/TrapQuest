@@ -125,7 +125,7 @@ To compute drinking (X - a bottle):
 		if A is 1:
 			curse X;
 			if the curse-ID of X is sure, say "You feel the blessing of your [ShortDesc of X] expire.";
-	if a2m fetish >= 2 and X is anal-origin:
+	if snowball fetish is 1 and X is anal-origin:
 		if the fill-type of X is 20:
 			say "The distinct tangy aftertaste reminds you that this was at one point an anal creampie.";
 			TasteGrossOut 10;

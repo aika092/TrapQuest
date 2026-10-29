@@ -716,7 +716,7 @@ This is the tentacle monster climaxes rule:
 				if heart hairpin is actually summonable:
 					say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a wave of shame come over you... You doubt you'll be very good at this job, judging by how things have been going so far.[roman type][line break]";
 					summon heart hairpin cursed;
-					if the player is ready for event tg:
+					if the player is ready for uncommon event tg:
 						say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
 						SexChange the player;
 			if the class of the player is "silicone queen": [has to be exactly this class and not any cross-class]
@@ -988,7 +988,7 @@ To compute condom request choice of (M - a tentacle monster):
 				say CondomForceFailFlav of M.
 
 To say CondomForceSuccessFlav of (M - a tentacle monster):
-	say "You grab hold of one of [NameDesc of M][']s [DickDesc of M]s and quickly unroll a condom down its length. To your surprise, several more condoms fly out of your pack thanks and with clear magically influenced purpose, apply themselves to each of [NameDesc of M][']s undulating limbs.";
+	say "You grab hold of one of [NameDesc of M][']s [DickDesc of M]s and quickly unroll a condom down its length. To your surprise, several more condoms fly out of your pack and with clear magically influenced purpose, apply themselves to each of [NameDesc of M][']s undulating limbs.";
 
 To say CondomForceFailFlav of (M - a tentacle monster):
 	say "You grab hold of a [DickDesc of M] and try to unroll a condom down its length. [BigNameDesc of M] quickly smacks your hand away[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]".

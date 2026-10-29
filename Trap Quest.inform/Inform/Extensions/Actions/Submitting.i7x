@@ -46,7 +46,7 @@ Report submitting:
 				otherwise:
 					if there is a fuckhole-mode glue penetrating face:
 						say "You [one of]remain held completely still[or]mewl quietly into the glue[or]contintue lying there[or]let a moan out through your nose[or]stay rigid and unmoving[or]close your eyes, defeated[or]curl your toes tightly[or]surrender to your helplessness[cycling][if there is a monster penetrating a body part], [one of]completely unable to resist[or]powerless to prevent yourself from being used as a living fleshlight[or]defenceless and degraded[or]unable to even beg for mercy thanks to the glue gripping your mouth[or]as your lower half is treated like a faceless fuckhole[or]feeling more and more like you're nothing but a sex object[or]with absolutely zero agency[or]with no way to stop what's happening[or]the incredibly strong glue preventing you from budging even an inch[in random order][end if].";
-					otherwise if M is penetrating penis:
+					otherwise if M is penetrating penis and M is not normal-penis-fucking:
 						say TQMasturbationSubmissionFlav of M;
 					otherwise if M is penetrating a body part or M is grabbing the player:
 						say SexSubmissionFlav of M;

@@ -1,6 +1,6 @@
 Masturbating by Actions begins here.
 
-Definition: a thing is barbie:
+Definition: a thing is barbie-genitals:
 	if the player is not possessing a penis and the player is not possessing a vagina, decide yes;
 	decide no.
 
@@ -17,7 +17,7 @@ Definition: yourself is fapping-blocked:
 	if there is a worn chastity cage or there is a worn restricting research airhancer or there is a worn creamfilled condom of kings, decide yes;
 	if there is a worn strapon-panties:
 		unless strapon-dildo is worn and strapon-dildo is not dildo-usage, decide yes;
-	if the player is barbie and the player is not holding the players-detached-dick, decide yes; [#LXorDD]
+	if the player is barbie-genitals and the player is not holding the players-detached-dick, decide yes; [#LXorDD]
 	decide no.
 
 Definition: yourself is anal flexible:
@@ -104,7 +104,7 @@ The too slutty to wank rule is listed last in the global masturbation restrictio
 This is the lack of penis blocks masturbation rule:
 	if the player is not possessing a penis:
 		if the player is not possessing a vagina:
-			if players-dick-is-detached is 0: [#LXorDD]
+			if penis is attached: [#LXorDD]
 				now failed-masturbation-reason is the substituted form of "You can't masturbate if you don't have genitalia!"; [Sometimes flavour will get messed up if we don't gate this.]
 			otherwise if player is not holding players-detached-dick:
 				now failed-masturbation-reason is the substituted form of "[one of]With your stupid sexless Barbie-like mound and your dick magically detached and stolen, you can't even masturbate![or]With the genitals of a Barbie doll and you dick stolen, you can't even masturbate![or]Your genitals aren't here right now, to masturbate![stopping]";
@@ -116,7 +116,7 @@ The lack of penis blocks masturbation rule is listed first in the penis masturba
 This is the lack of vagina blocks masturbation rule:
 	if the player is not possessing a vagina:
 		if the player is not possessing a penis:
-			if players-dick-is-detached is 0: [#LXorDD]
+			if penis is attached: [#LXorDD]
 				now failed-masturbation-reason is the substituted form of "You can't masturbate if you don't have genitalia!"; [Sometimes flavour will get messed up if we don't gate this.]
 			otherwise if player is not holding players-detached-dick:
 				now failed-masturbation-reason is the substituted form of "[one of]With your stupid sexless Barbie-like mound and your dick magically detached and stolen, you can't even masturbate![or]With the genitals of a Barbie doll and you dick stolen, you can't even masturbate![or]Your genitals aren't here right now, to masturbate![stopping]";
@@ -310,7 +310,7 @@ To say PlayerFantasy:
 	let Nn be nemesis-friend;
 	let Pn be platonic-friend;
 	if T is not expired and T is fucktoy spiral trap:
-		say "[second custom style][one of][if pregnancy fetish is 1]GETTING PREGNANT[otherwise]GETTING FUCKED[end if][or]BIG COCKS[or]HORNY GUYS[or]HARD COCKS[or]SITTING ON COCKS[or]FUCKING GUYS[or][if the player is sexed male]PROSTATE ORGASMS[otherwise]DOUBLE PENETRATION[end if][or][if a2m fetish is 1]ASS TO MOUTH[otherwise]GETTING DOMINATED[end if][or][if pregnancy fetish is 1]CREAMPIES[otherwise]FORCED CUMDUMPS[end if][or]GANGBANGS[in random order][roman type]";[the player is masturbating because of the trap, more often than not, so it's affecting their ability to not think about slutty things.]
+		say "[second custom style][one of][if pregnancy fetish is 1]GETTING PREGNANT[otherwise]GETTING FUCKED[end if][or]BIG COCKS[or]HORNY GUYS[or]HARD COCKS[or]SITTING ON COCKS[or]FUCKING GUYS[or][if the player is sexed male]PROSTATE ORGASMS[otherwise]DOUBLE PENETRATION[end if][or][if baseline a2m fetish is 1]ASS TO MOUTH[otherwise]GETTING DOMINATED[end if][or][if pregnancy fetish is 1]CREAMPIES[otherwise]FORCED CUMDUMPS[end if][or]GANGBANGS[in random order][roman type]";[the player is masturbating because of the trap, more often than not, so it's affecting their ability to not think about slutty things.]
 	otherwise if T is not expired and T is diaper-spiral-trap:
 		say "[second custom style][one of]GETTING BOUNCED ON MOMMY'S LAP WHILE WEARING A DIAPER[or]DADDY CUTTING A HOLE IN MY DIAPER AND FUCKING ME[or]GETTING PUNISHED BY MY BABYSITTER FOR BEING NAUGHTY[or][caps slime]TING MY DIAPER UNTIL IT LEAKS[or]BEING DADDY'S LITTLE DIAPERSLUT[or]GETTING FINGERED BY MOMMY DURING A DIAPER CHANGE[or][if diaper messing >= 4]DROPPING A BIG LOAD IN MY DIAPER[end if][in random order][roman type]";
 	otherwise if T is not expired and T is cocksucker spiral trap:
@@ -652,7 +652,7 @@ This is the masturbation climax rule:
 		let C be a random off-stage fetish appropriate chastity bond;
 		if C is actually summonable:[This should handle "penis cage" + no penis situations on its own.]
 			if the player is getting unlucky:
-				if players-dick-is-detached is 0: [#LXorDD]
+				if penis is attached: [#LXorDD]
 					say "As you pull your hand away from your crotch, you feel a tightness around your loins. You look down and see that a [ShortDesc of C] has appeared around your [if C is chastity cage][ShortDesc of penis][otherwise]crotch[end if]! [if the bimbo of the player < 10]Even worse, it[otherwise]It[end if] only stops anything from touching your [if C is chastity-belt]genitals[otherwise]dick[end if], so your [asshole] remains completely unprotected![line break][GotUnluckyFlav]";
 					summon C cursed with quest;
 				otherwise:
@@ -687,12 +687,12 @@ This is the masturbation ended rule:
 so we can use DickAct1 inside the complex say expressions.
 Alternatively, just define a variable:
  let ImagineYou be "";
- if players-dick-is-detached > 0 and players-detached-dick is somewhere-here, now ImagineYou is "imagine you ";
+ if penis is detached and players-detached-dick is somewhere-here, now ImagineYou is "imagine you ";
 so we can just insert a ImagineYou in front of phrases like:
  "...and [ImagineYou]play with your [mystical ShortDesc of penis]...".
 
 To say (present - a text) or (absent - a text) action on penis:
-	if players-dick-is-detached is 0:
+	if penis is attached:
 		say "[present] [ShortDesc of penis]";
 	otherwise if players-detached-dick is somewhere-here:
 		say "[present] [mystical ShortDesc of penis]";

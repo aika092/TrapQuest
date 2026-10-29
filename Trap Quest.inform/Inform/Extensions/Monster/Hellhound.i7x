@@ -1,6 +1,6 @@
 Hellhound by Monster begins here.
 
-hellhound is a monster. hellhound is male. The leftover-type of hellhound is usually 113. The poison-status of hellhound is -1. hellhound can be unknotted or knotted.
+hellhound is a monster. hellhound is male. The leftover-type of hellhound is usually 113. The poison-status of hellhound is -1. hellhound can be unknotted or knotted. hellhound is unknotted.
 
 To decide which figure-name is the monster-image of (M - hellhound):
 	if mythical creature fetish is 0, decide on figure of slavehound;
@@ -365,7 +365,7 @@ To compute the flying player taunting of (M - hellhound):
 		say "[BigNameDesc of M] is [one of][or]still [stopping]watching you, waiting.".
 
 To decide which number is the rounds of sex left of (M - hellhound):
-	if M is knotted, decide on 1;
+	if M is knotted and M is not penetrating face, decide on 1;
 	decide on the default rounds of sex left of M.
 
 To compute facial sex of (M - hellhound):
@@ -452,7 +452,9 @@ To compute fuckhole sex of (M - hellhound):
 		otherwise say "[BigNameDesc of M] [one of]licks the back of your neck with [his of M] warm tongue as [he of M] continues to pound away at your [variable F][or]pistons away in your [variable F] with incredible speed[or]repeatedly drills into you, plundering the depths of your [variable F] with [his of M] [DickDesc of M][in random order].";
 		decrease the sex-length of M by 1;
 		if the reaction of the player > 0, say "[one of]You feel further humiliated by the fact that you are letting [him of M] fuck you.[or][or][or][cycling]";
-		ruin F.
+		ruin F;
+	say "[one of][M sex reaction][or][cycling]";
+	compute slow grossness of M.
 
 To Knot (M - hellhound) in (F - a fuckhole):
 	orgasm M;[makes sure the orgasm from the hellhound is counted]

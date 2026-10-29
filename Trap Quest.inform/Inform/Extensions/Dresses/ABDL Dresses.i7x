@@ -184,7 +184,7 @@ Definition: a waddle outfit is pink themed: decide yes.
 
 Part 4 - White Sissy Dress
 
-A white sissy dress is a kind of baby-dress. There is 1 white sissy dress. The printed name of white sissy dress is "[clothing-title-before]white sissy dress[clothing-title-after]". The text-shortcut of white sissy dress is "wsd".
+A white sissy dress is a kind of baby-dress. There is 1 white sissy dress. The printed name of white sissy dress is "[clothing-title-before]white sissy dress[clothing-title-after]". The text-shortcut of white sissy dress is "wsd". The skirt-length of a white sissy dress is 3.
 
 Figure of white sissy dress is the file "Items/Clothes/Upper/Dresses/Baby/babydress4.png".
 
@@ -198,6 +198,8 @@ To say MediumDesc of (C - a white sissy dress):
 	say "flimsy white sissy dress".
 
 Definition: a white sissy dress is white themed: decide yes.
+To decide which number is the defaultDiaperCoveringLength of (C - a white sissy dress):
+	decide on 3.
 
 Part 5 - Elephant baby dress
 
@@ -335,7 +337,7 @@ Definition: lollipop-dress is pink themed: decide yes.
 
 Part 12 - Pinafore Dress
 
-pinafore-dress is a baby-dress. The printed name of pinafore-dress is "[clothing-title-before]pinafore dress[clothing-title-after]". The text-shortcut of pinafore-dress is "pnfd". Understand "pinafore", "dress" as pinafore-dress.
+pinafore-dress is a baby-dress. The printed name of pinafore-dress is "[clothing-title-before]pinafore dress[clothing-title-after]". The text-shortcut of pinafore-dress is "pnfd". Understand "pinafore", "dress" as pinafore-dress. The skirt-length of pinafore-dress is 5.
 
 Figure of pinafore-dress is the file "Items/Clothes/Upper/Dresses/Baby/babydress12.png".
 
@@ -355,6 +357,8 @@ Definition: pinafore-dress is pink themed: decide yes.
 
 To decide which number is the initial cringe of (C - pinafore-dress):
 	decide on 7.
+To decide which number is the defaultDiaperCoveringLength of (C - pinafore-dress):
+	decide on 8.
 
 Part 13 - Sailor Fleece Dress
 
@@ -677,6 +681,37 @@ To decide which number is the initial outrage of (C - pink-babydoll-dress):
 	decide on 6.
 To decide which number is the initial cringe of (C - pink-babydoll-dress):
 	decide on 11.
+
+Part - Blue Babydoll Dress
+
+blue-babydoll-dress is an overdress. The printed name of blue-babydoll-dress is "[clothing-title-before]short blue babydoll dress[clothing-title-after]".The text-shortcut of blue-babydoll-dress is "bbdd". Understand "short blue", "blue", "babydoll", "dress" as blue-babydoll-dress.
+blue-babydoll-dress is fully covering.
+
+The skirt-length of blue-babydoll-dress is 4.
+To decide which number is the defaultDiaperCoveringLength of (C - blue-babydoll-dress):
+	decide on 4.
+
+Figure of blue babydoll dress is the file "Items/Clothes/Upper/Dresses/Baby/babydress14.png".
+
+To decide which figure-name is clothing-image of (C - blue-babydoll-dress):
+	decide on figure of blue babydoll dress.
+
+To say ClothingDesc of (C - blue-babydoll-dress):
+	say "A rather short blue dress with excessive pink bows and white frills, puffy sleeves and a high collar.".
+
+To say ShortDesc of (C - blue-babydoll-dress):
+	say "babydoll dress".
+To say MediumDesc of (C - blue-babydoll-dress):
+	say "short blue babydoll dress".
+
+Definition: blue-babydoll-dress is blue themed: decide yes.
+Definition: blue-babydoll-dress is transformable: decide no.
+
+To decide which number is the initial outrage of (C - blue-babydoll-dress):
+	decide on 2.
+To decide which number is the initial cringe of (C - blue-babydoll-dress):
+	if the player is in a predicament room and the player is not in Predicament20, decide on 2;
+	decide on 7.
 
 
 

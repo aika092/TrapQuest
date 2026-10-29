@@ -1,6 +1,6 @@
 Unicorn by Monster begins here.
 
-Unicorn is a monster. Unicorn is intelligent. Unicorn is male. Understand "temperamental", "temper", "mental" as unicorn. The text-shortcut of unicorn is "uni".
+Unicorn is a monster. Unicorn is intelligent. Unicorn is male. Understand "temperamental", "temper", "mental", "un", "unbridaled" as unicorn. The text-shortcut of unicorn is "uni".
 
 To decide which number is the girth of (M - unicorn):
 	decide on 2.
@@ -26,10 +26,12 @@ Definition: unicorn is willing to do anal:
 	decide yes.
 
 Definition: unicorn is willing to fluff:
-	if there is a monster penetrating a fuckhole, decide no;
+	if unicorn is unbridaled, decide no;
 	decide yes.
 
-[Definition: unicorn is willing to masturbate: decide yes.]
+Definition: unicorn is willing to charm snakes:
+	if unicorn is unbridaled, decide no;
+	decide yes.
 
 To say speech style of (M - unicorn):
 	say second custom style.
@@ -47,10 +49,10 @@ To say ShortDesc of (M - unicorn):
 	say "unicorn".
 
 To say MediumDesc of (M - unicorn):
-	say "temperamental unicorn".
+	say "[if M is unbridaled]unbridaled[otherwise]temperamental[end if] unicorn".
 
 To say MonsterDesc of (M - unicorn):
-	say "An androgynous person with blonde hair, pointy ears, and an ivory horn poking out of [his of M] forehead. [big he of M] is wearing an extravagant wedding dress with a slit down the front that puts [his of M] dainty white panties and lissom legs on full display. [if mythical creature fetish is 1][big his of M] ankles are covered in fine white fur below the ankles, and in place of feet, [he of M] has a pair of immaculate white hooves.[end if]".
+	say "An androgynous person with blonde hair, pointy ears, and a 7 inch ivory horn poking out of [his of M] forehead. [big he of M] is wearing an extravagant wedding dress with a slit down the front that puts [his of M] dainty white panties and lissom legs on full display. [if mythical creature fetish is 1][big his of M] ankles are covered in fine white fur below the ankles, and in place of feet, [he of M] has a pair of immaculate white hooves.[end if]".
 
 To say MonsterComment of (M - unicorn):
 	if diaper quest is 0:
@@ -394,14 +396,13 @@ To say MessyPullOutFlav of (M - unicorn) in (F - a fuckhole):
 		otherwise say "[BigNameDesc of M] suddenly pulls out and sprays [his of M] load all over your thighs.".
 
 To say LickInitiationFlav of (M - unicorn):
-	say "[BigNameDesc of M] walks in front of your face, and presses one of [his of M] sandals to your face.[line break][speech style of M]'Lick it, [bitch]!'[roman type][line break][one of]The shoe doesn't look particularly dirty but it's obviously been walking around on the forest floor. In any case you're confident it wouldn't taste pleasant. (Use [bold type]submit[roman type] to lick the boot, and [bold type]resist[roman type] to refuse.)[line break][or][stopping]".
+	say "[BigNameDesc of M] walks in front of your face, and presses one of [his of M] sandals to your face.[line break][speech style of M]'Lick it, [bitch]!'[roman type][line break][one of]The shoe doesn't look particularly dirty but it's obviously been walking around on the forest floor. In any case you're confident it wouldn't taste pleasant. (Use [bold type]submit[roman type] to lick the shoe, and [bold type]resist[roman type] to refuse.)[line break][or][stopping]".
 
 To say NearingLickingResponse of (M - unicorn):
 	if the reaction of the player is 0:
 		say "[speech style of M]'[one of]You're so lazy[or]Its JUST a sandal, you baby! Lick it already[or]Stop stalling and LICK. IT. CLEAN[or]What's the hold up? You're taking forever to get this done[in random order]!'[roman type][line break]";
 	otherwise:
-		if M is intelligent, say "[speech style of M]'[one of]W-why are you doing it like that?[or]Y-you're getting enthusiastic about this[or]Th-the way you're moving your tongue is-[or]D-don't lick the top part[in random order]!'[roman type][line break]";
-		otherwise say "It feels like [NameDesc of M] is nearly satisfied!";
+		say "[speech style of M]'[one of]W-why are you doing it like that?[or]Y-you're getting enthusiastic about this[or]Th-the way you're moving your tongue is-[or]D-don't lick the top part[in random order]!'[roman type][line break]".
 
 To say LickSubmissionResponse of (M - unicorn):
 	say "You [if the grossness addiction of the player < 3]extremely reluctantly[otherwise if the grossness addiction of the player < 6]reluctantly[otherwise if the grossness addiction of the player < 13]timidly[otherwise]enthusiastically[end if] lick the front [his of M] sandal. The unpleasant taste of bamboo instantly hits your tongue[if the grossness addiction of the player >= 13], but you don't care[end if].".
@@ -416,15 +417,71 @@ To say NearingAnilingusResponse of (M - unicorn):
 		if M is intelligent, say "[speech style of M]'[one of]That's-! That's not bad[or]Y-you're awful at that[or]M-my asshole is-![or]E-even my beloved isn't this good...[in random order]!'[roman type][line break]";
 		otherwise say "It feels like [NameDesc of M] is nearly satisfied!";
 
-[To say MasturbationDeclarationFlav of (M - unicorn):
-	say "[speech style of M]'[one of]Hmmph. You don't deserve what I'm about to do.'[or]You're lucky I'm doing this.'[stopping][roman type][line break]".
+To say ErectionDemand of (M - unicorn):
+	say "[BigNameDesc of M] crouches in front of you, fixing your [player-penis] with a fierce glare.[line break][speech style of M]'[one of]You... Y-you're about to get erect, aren't you?!'[or]I know what you're doing! You're about to get an erection, and then act like it's MY fault!'[or]You're trying to get an erection at me. Aren't you? AREN'T YOU?!'[at random][roman type][line break]";
 
-To say MasturbationStartFlav of (M - unicorn):
-	say "[BigNameDesc of M] plants [his of M] foot on your [genitals].".
+To compute unerect taunting of (M - unicorn):
+	say "A couple seconds pass, and after it becomes clear that you aren't going to get erect, [NameDesc of M] deflates.[line break][speech style of M]'[one of]Oh. Well. Good, good, you stayed soft. That's what I wanted...'[or]Why isn't getting big-? Er, I mean, thank you for being considerate.'[in random order][roman type][line break][big he of M] walks away looking extremely disappointed.";
+	FavourDown M by 3;
+	moderateHumiliate;
+	Bore M.
 
-To say MasturbationFlav of (M - unicorn):
-	if the player is possessing a vagina:
-	otherwise:]
+To say ErectionPenetrationFlav of (M - unicorn):
+	let P be the size of penis;
+	if penis is not penis-erect:
+		say "[big his of M] expression [if P > 7]stays fixed in place as your [ShortDesc of penis] slowly stiffens to its full length, though you could swear there was a big of drool pooling at the corner of [his of M] lips.[otherwise if P > 3]gets uglier and uglier as your [ShortDesc of penis] gets harder and harder.[otherwise]softens as it quickly becomes clear that your stiffening [ShortDesc of penis] isn't going to be getting much bigger.";
+	otherwise:
+		say "[big his of M] crouches down, [if P > 7]star[otherwise if P > 3]glar[otherwise]peer[end if]ing at your hard [ShortDesc of penis].";
+	say "[line break][speech style of M][if P > 7]'You want sex, don't you. Ha. Ha-ha-ha! Well, I'm NOT going to give it to you![otherwise if P > 3]'I knew it! Take THIS, [one of]animal[or]homewrecker[or]beast[in random order][otherwise][one of]If it's smaller than mine, it should be ok...'[or]I can just say I mistook it for a clitoris!'[in random order][end if]!'[roman type][line break]";
+	say "[big he of M] [if P > 7]holds your [player-penis] in place as [he of M] turns [his of M] head and puts it in [his of M] mouth.[otherwise if P > 3]holds your [player-penis] in place as [he of M] turns [his of M] head and puts it in[otherwise]rests [his of M] head against the side of your thigh, running a finger along your [TaintDesc] as [he of M] slurps your [sissy-penis] into[end if] [his of M] mouth.";
+
+
+To say ErectionNearingClimaxFlav of (M - unicorn):
+	say "[BigNameDesc of M] seems to be slowing down. [big he of M] looks a bit frustrated..".
+
+To say ErectionForceFlav of (M - unicorn):
+	say ErectionUseFlav of M.
+
+To say ErectionUseFlav of (M - unicorn):
+	if the size of penis > 2:
+		say "[one of][BigNameDesc of M] slurps away at your [ShortDesc of penis], teasing your most sensitive parts with [his of M] tongue.[or][BigNameDesc of M] mercilessly sucks your [ShortDesc of penis].[or]Your [ShortDesc of penis] bulges [NameDesc of M]'s heek as [he of M] sucks you off.[or][BigNameDesc of M] hums as [he of M] suckles your [ShortDesc of penis].[or][BigNameDesc of M] massages your [TaintDesc] as [he of M] swirls [his of M] tongue around your tip.[at random]";
+		if andro fetish is 0 and mythical creature fetish is 1, cutshow Figure of gargoyle BJ 4 for M;
+	otherwise:[doubt this will come up so it's mostly copypasta]
+		say "[one of][BigNameDesc of M] relentlessly teases your [ShortDesc of penis] with [his of M] lips and tongue.[or][BigNameDesc of M] teases your [ShortDesc of penis] with the very tip of [his of M] tongue, as if stimulating a clitoris[or][BigNameDesc of M] pleasures you mercilessly with [his of M] tongue and lips.[in random order]".
+
+To compute erection orgasm of (M - unicorn):
+	let SV be (the semen load of the player + 1) / 2;
+	let B be a random worn belly covering clothing;
+	say "You can't take it anymore! Your back arches as your [ShortDesc of penis] begins to rapidly spasm, and you [one of]unleash[or]spurt[or]shoot[or]fire[in random order] [if SV >= 9]rope after big, fat rope[otherwise if SV >= 7]thick ropes[otherwise if SV >= 5]several ropes[otherwise if SV >= 3]several strands[otherwise]a droplet[end if] of [semen] directly into [NameDesc of M][']s mouth. [big he of M] shifts [his of M] position, as if to find the perfect angle to suck out every last drop, but [he of M] seems to forget about the 7 inch horn jutting out of [his of M] forehead, and accidentally pokes you in the [if B is clothing]stomach, showering your [ShortDesc of B] in angry red sparks.[otherwise]stomach.[end if]";
+	PainUp 15;
+	if B is clothing, decrease the raw-magic-modifier of B by SV;
+	SilentlyDifficultyUp M by 2;[TODO: maybe subtract a magic modifier or transform belly clothes?]
+	compute erection decay.
+
+To say PenisGoneFlav of (M - a unicorn):
+	if the player is possessing a vagina and tg fetish is 1 and the vaginalvirgin of the player is 0:
+		say "[BigNameDesc of M] pulls back sharply, face turning red.[line break][speech style of M]'What?! You-! YOU'VE BECOME A RIVAL!'[roman type][line break]";
+		Anger M;
+		Dislodge M;
+	otherwise:
+		say "[BigNameDesc of M] pulls back sharply.[line break][speech style of M]'It's truly gone. I can't-... er, I mean, don't you dare show your [player-penis] to me again, or I will be forced to confiscated it once more! Hmph!'[roman type][line break][big he of M] wipes [his of M] mouth, stands up, and loses interest.";
+		Bore M;
+	FavourDown M by 3;
+	DifficultyUp M by 2;
+	now the sex-length of M is 0.
+
+To say ErectionLostFlav of (M - unicorn):
+	say "[BigNameDesc of M] pulls back sharply.[line break][speech style of M]'I'm so sorry- I mean, sorry I had to do that, but it's the only way you'll learn. Next time, don't get hard at someone that's spoken for! Hmph!'[roman type][line break][big he of M] wipes [his of M] mouth, stands up, and loses interest.";
+	Bore M;
+	compute post climax effect of M in penis;
+
+To say PenileClimaxFlav of (M - unicorn):
+	if refractoryperiod of the player > 0:
+		say ErectionLostFlav of M;
+	otherwise:
+		say "[BigNameDesc of M] suddenly pulls off, looking quite annoyed.[line break][speech style of M]Will you hurry up and ejaculate alread- ahem, I mean, it was truly considerate of you not to spill your [semen], considering I am betrothed. I will definitely remember your kindness in the future...'[roman type][line break][BigNameDesc of M] wipes [his of M] mouth, stands up, and loses interest.";
+		FavourDown M by 2;
+		Bore M.
 
 Section 3 - Damage
 
@@ -491,7 +548,7 @@ To ride dominate (M - unicorn):
 		if the body soreness of the player > 2, now the body soreness of the player is (the body soreness of the player / 2);
 		if the fatigue of the player > 2, FatigueDown (the fatigue of the player / 2);
 	otherwise:
-		now refractoryperiod is 1;[Ensures the player does not orgasm too early during the scene]
+		now refractoryperiod of the player is 1;[Ensures the player does not orgasm too early during the scene]
 		compute ride dominate content M.
 
 To compute ride dominate content (M - unicorn):
@@ -690,7 +747,7 @@ To compute vaginal assistance from (S - unicorn) with (D - a monster):
 To compute anal assistance from (S - unicorn) with (D - a monster):
 	if a random number between 1 and 2 is 1:
 		if S is not unfriendly:
-			if a2m fetish > 1, say "[BigFuckerDesc of S] kneels [one of]over you, holding [his of S] mouth open, allowing [NameDesc of D] [if D is male]fuck[otherwise]abuse[end if] your [asshole] and [his of S] face alternately.[or]next to you, allowing [FuckerDesc of D] to periodically pull out and [if D is male]fuck[otherwise]use[end if] [his of S] face.[in random order]";
+			if snowball fetish is 1, say "[BigFuckerDesc of S] kneels [one of]over you, holding [his of S] mouth open, allowing [NameDesc of D] [if D is male]fuck[otherwise]abuse[end if] your [asshole] and [his of S] face alternately.[or]next to you, allowing [FuckerDesc of D] to periodically pull out and [if D is male]fuck[otherwise]use[end if] [his of S] face.[in random order]";
 			otherwise say "[BigFuckerDesc of S] kneels [one of]over you, periodically adding spit for extra lube as [NameDesc of D] to abuses your [asshole] and [his of S] face alternately.[or]next to you, periodically leaning in and spitting between your asscheeks to add extra lube for [NameDesc of D].[in random order]";
 		otherwise:
 			say "[BigNameDesc of S] kneels over you, holding your cheeks open so [NameDesc of D] can [if D is male]fuck your [asshole] even harder[otherwise]ruin your [asshole] even more[end if]!";
@@ -724,8 +781,12 @@ To say RepeatResponse of (M - unicorn):
 	say FirstResponse of M.
 
 To compute teaching of (M - unicorn):
-	say "[speech style of M]'I would never do this, obviously, but have you ever considered simply admitting your own inferiority and begging for mercy? Who knows, they might even fuck you harder!'[roman type][line break]";
-	teach begging for mercy.
+	if the player is possessing a penis and shameful-orgasm-count > 1:
+		say "[speech style of M]'Have you ever noticed that the more you cum, the harder it is to get hard, even when you're supposed to? Well, if you scrunch up your face just like this and think about how it *feels* to cum from anal, you can counteract it!'[roman type][line break]";
+		teach bonerskill;
+	otherwise:
+		say "[speech style of M]'I would never do this, obviously, but have you ever considered simply admitting your own inferiority and begging for mercy? Who knows, they might even fuck you harder!'[roman type][line break]";
+		teach begging for mercy.
 
 To say WhereAnswer of (M - unicorn):
 	say "[speech style of M]'Does it matter? This place is nothing without a master to rule over it.'[roman type][line break]".

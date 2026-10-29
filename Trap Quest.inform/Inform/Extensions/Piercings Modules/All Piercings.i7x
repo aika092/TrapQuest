@@ -592,7 +592,7 @@ condom-earrings is a pair of earrings. condom-earrings is latex. The printed nam
 Understand "used condom" as condom-earrings.
 Definition: condom-earrings is eligible:
 	if podium is in the location of the player, decide no; [only the modification machine does this]
-	if it is off-stage and condom fetish >= 2 and total used condoms > 1, decide yes;
+	if it is off-stage and sticky condom fetish is 1 and total used condoms > 1, decide yes;
 	decide no.
 To decide which number is the initial outrage of (C - condom-earrings):
 	decide on 12.

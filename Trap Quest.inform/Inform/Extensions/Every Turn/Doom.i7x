@@ -96,9 +96,10 @@ Report going when the player is in Facility01:
 	if retiredTrainees > 0:
 		if most-recent-leaver is a monster:
 			let M be most-recent-leaver;
-			say "[bold type]As you enter the reception, you notice [M] [bold type]handing [his of M] armband back to [if receptionist is in Facility01][NameDesc of receptionist][otherwise]the reception desk[end if].[roman type][line break][speech style of receptionist]'Okay sweetie, now we just have to pop to the Staff Room for your final processing.'[roman type][line break][if receptionist is in Facility01][BigNameDesc of receptionist][otherwise][BigNameDesc of a random alive undefeated staff member][end if] takes [NameDesc of M][']s hand and leads them north, through to the Staff Room.";
+			if receptionist is in Facility01 and receptionist is undefeated:
+				say "[bold type]As you enter the reception, you notice [M] [bold type]handing [his of M] armband back to [if receptionist is in Facility01][NameDesc of receptionist][otherwise]the reception desk[end if].[roman type][line break][speech style of receptionist]'Okay sweetie, now we just have to pop to the Staff Room for your final processing.'[roman type][line break][if receptionist is in Facility01][BigNameDesc of receptionist][otherwise][BigNameDesc of a random alive undefeated staff member][end if] takes [NameDesc of M][']s hand and leads them north, through to the Staff Room.";
+				focus-consider most-recent-leaver;
 			increase retiredTrainees by 1;
-			focus-consider most-recent-leaver;
 			if most-recent-leaver is listed in recent-leavers, remove most-recent-leaver from recent-leavers;
 			now most-recent-leaver is nothing;
 	otherwise if doom counter > 0 and most-recent-leaver is trainee and doomed < 5 and doomed >= 0 and a random number between 1 and 3 is 1:

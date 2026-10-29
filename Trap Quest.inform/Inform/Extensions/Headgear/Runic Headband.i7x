@@ -140,7 +140,7 @@ To compute persistent reward of (Q - priestess-service-quest) on (C - a clothing
 priestess-vaginal-service-quest is a headgear-clothing-quest.
 
 To say QuestFlav of (Q - priestess-vaginal-service-quest):
-	say "You sense that it wants you to have **VAGINAL** sex with men while your [']ritual beads['] are FULLY inserted inside you[if condom fetish >= 2], OR while the men are wearing condoms, then present the beads or your condom-pinned headband at the dungeon altar[end if].".
+	say "You sense that it wants you to have **VAGINAL** sex with men while your [']ritual beads['] are FULLY inserted inside you[if sticky condom fetish is 1], OR while the men are wearing condoms, then present the beads or your condom-pinned headband at the dungeon altar[end if].".
 
 To say QuestTitle of (Q - priestess-vaginal-service-quest):
 	say " (vaginal sex quest)".
@@ -195,7 +195,7 @@ To compute virginity-loss of (C - runic headband):
 			summon cameltoe-priestess-outfit;
 			now cameltoe-priestess-outfit is crotch-displaced;
 			say "A [cameltoe-priestess-outfit] appears on you!";
-		if condom fetish >= 2:
+		if sticky condom fetish is 1:
 			repeat with M running through unwrapped monsters penetrating vagina:
 				if M is male, say "A condom appears around [NameDesc of M][']s [DickDesc of M]!";
 				otherwise say "Condoms appear on [NameDesc of M][']s appendages!";
@@ -203,7 +203,7 @@ To compute virginity-loss of (C - runic headband):
 			repeat with V running through vines penetrating vagina:
 				now the vine-condoms of V is the TrapNo of V + 1;
 				say "[if the vine-condoms of V is 1]A condom appears on the vine[otherwise][vine-condoms of V] condoms appear on the vines[end if] inside of you!";
-		if condom fetish >= 1:
+		if baseline condom fetish is 1:
 			let R be the recipe of 28; [condom pack recipe]
 			if R is recipe:
 				say "A recipe appears at your feet!";

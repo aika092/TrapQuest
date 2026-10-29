@@ -404,7 +404,7 @@ To compute standard damage of (M - a slimeball):
 	if the health of M <= 0, compute defeat of M.
 
 To compute defeat of (M - a slimeball):
-	say "[BigNameDesc of M] loses its structural integrity, and collapses into an inanimate sticky puddle of ectoplasm.";
+	say "[BigNameDesc of M] loses its structural integrity, and collapses into an inanimate sticky puddle of goo.";
 	loot M;
 	destroy M.
 

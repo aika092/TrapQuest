@@ -151,7 +151,7 @@ Definition: trashcan is trash-ready:
 		decide no;
 	otherwise:
 		if the tissue-fill of trashcan < 2, decide yes;
-		if condom fetish >= 2 and the used condoms of trashcan < a random number between 1 and 25, decide yes;
+		if sticky condom fetish is 1 and the used condoms of trashcan < a random number between 1 and 25, decide yes;
 		decide no.
 
 To compute class set up of (C - trashcan):

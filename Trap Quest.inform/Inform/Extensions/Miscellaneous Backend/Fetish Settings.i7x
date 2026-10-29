@@ -210,12 +210,24 @@ To decide which number is diaper focus:
 
 To decide which number is roleplay fetish:
 	if diaper quest is 1, decide on 0;
-	decide on choice in row 47 of the Table of Player Options.
+	if choice in row 47 of the Table of Player Options <= 0, decide on 0;
+	decide on 1.
 
 To decide which number is condom fetish:
 	if diaper quest is 1, decide on 0;
 	if choice in row 53 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on choice in row 53 of the Table of Player Options / 2.
+To decide which number is baseline condom fetish:
+	if condom fetish is 0, decide on 0;
+	decide on 1.
+To decide which number is intense creampie fetish:
+	if condom fetish is 0, decide on 0;
+	if the remainder after dividing condom fetish by 2 is 1, decide on 1;
+	decide on 0.
+To decide which number is sticky condom fetish:
+	if condom fetish is 0, decide on 0;
+	if condom fetish > 1, decide on 1;
+	decide on 0.
 This is the condom fetish toggle rule:
 	if choice in row 53 of the Table of Player Options < 7, increase choice in row 53 of the Table of Player Options by 1;
 	otherwise now choice in row 53 of the Table of Player Options is 0.
@@ -301,17 +313,18 @@ Definition: a person is a flatchested trap:
 To decide which number is super gag reflex:
 	if diaper quest is 1, decide on 0;
 	if choice in row 82 of the Table of Player Options <= 0, decide on 0;
-	otherwise decide on choice in row 82 of the Table of Player Options.
+	if choice in row 82 of the Table of Player Options is 1, decide on 1;
+	otherwise decide on 2.
 
 To decide which number is fantastic elastic:
 	if diaper quest is 1, decide on 0;
 	if choice in row 89 of the Table of Player Options <= 0, decide on 0;
-	decide on choice in row 89 of the Table of Player Options.
+	decide on 1.
 
 To decide which number is smart start:
 	if the player is not the donator, decide on 0;
 	if choice in row 93 of the Table of Player Options <= 0, decide on 0;
-	decide on choice in row 93 of the Table of Player Options.
+	decide on 1.
 
 To decide which number is berri fetish:
 	if diaper quest is 0, decide on 0;
@@ -330,15 +343,27 @@ This is the berri random rule:
 The berri random rule is listed in the random fetish rules.]
 
 [
-0: Minimal grossness
-1: Foot licking only
-2: Ass-to-mouth and foot licking
-3: Drinking butt stuff too
+0: Minimal grossness (never)
+1: Minimal grossness (not now)
+2: Foot licking only (this time)
+3: Foot licking only (always)
+4: Ass-to-mouth and foot licking (this time)
+5: Ass-to-mouth and foot licking (always)
+6: Drinking butt stuff too (this time)
+7: Drinking butt stuff too (always)
 ]
 To decide which number is grossness fetish:
 	if diaper quest is 1, decide on 0;
 	if choice in row 83 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on choice in row 83 of the Table of Player Options / 2.
+To decide which number is baseline grossness fetish:
+	if diaper quest is 1, decide on 0;
+	if grossness fetish <= 0, decide on 0;
+	decide on 1.
+To decide which number is just grossness fetish:
+	if diaper quest is 1, decide on 0;
+	if grossness fetish > 0 and a2m fetish > 0, decide on 1;
+	decide on 0.
 [
 0: Minimal A2M
 1: Anilingus and ass-to-mouth
@@ -347,6 +372,18 @@ To decide which number is grossness fetish:
 To decide which number is a2m fetish:
 	if diaper quest is 1 or grossness fetish is 0, decide on 0;
 	decide on grossness fetish - 1.
+To decide which number is baseline a2m fetish:
+	if diaper quest is 1 or grossness fetish is 0, decide on 0;
+	if choice in row 83 of the Table of Player Options > 3, decide on 1;
+	decide on 0.
+To decide which number is just a2m fetish:
+	if diaper quest is 1, decide on 0;
+	if a2m fetish > 0 and snowball fetish is 0, decide on 1;
+	decide on 0.
+To decide which number is snowball fetish:
+	if diaper quest is 1, decide on 0;
+	if choice in row 83 of the Table of Player Options > 5, decide on 1;
+	decide on 0.
 This is the grossness fetish toggle rule:
 	if choice in row 83 of the Table of Player Options < 7, increase choice in row 83 of the Table of Player Options by 1;
 	otherwise now choice in row 83 of the Table of Player Options is 0.
@@ -727,8 +764,8 @@ To decide which number is fetishMenuRow of (X - a number):
 
 [Tiered rows will need an extra block when rendering their buttons.]
 To decide whether fetishRow (N - a number) is tiered-row:
-	if N is 11 or N is 12 or N is 13, decide yes;[Respectively, Grossness, Condoms, Gender preference]
-	if N is 15 and legacy content is 1, decide yes;[slimeshooters]
+	if N is 11 or N is 12, decide yes;[Respectively, Grossness, Condoms]
+	[if N is 15 and legacy content is 1, decide yes;][slimeshooters]
 	decide no.
 
 [For certain fetishes with multiple tiers, the numbers are all jumbled in the table, compared to what the new menu expects.]
@@ -753,8 +790,9 @@ To compute fetish toggle (D - a direction):
 		if the player is not the donator and current menu selection is 13:
 			do nothing; [NPC gender is donators only]
 		otherwise if fetishRow current menu selection is tiered-row:
+			let selectRIGHT be 6;
 			if D is down:
-				if choice in row N of the Table of Player Options is 6:
+				if choice in row N of the Table of Player Options is selectRIGHT:
 					now choice in row N of the Table of Player Options is 0;
 				otherwise if choice in row N of the Table of Player Options is 0:
 					increase choice in row N of the Table of Player Options by 1;
@@ -766,7 +804,7 @@ To compute fetish toggle (D - a direction):
 					increase choice in row N of the Table of Player Options by 3;
 			otherwise:
 				if choice in row N of the Table of Player Options is 0:
-					now choice in row N of the Table of Player Options is 4;
+					now choice in row N of the Table of Player Options is selectRIGHT;
 				otherwise if choice in row N of the Table of Player Options is 1:
 					decrease choice in row N of the Table of Player Options by 1;
 				otherwise if choice in row N of the Table of Player Options is 3:
@@ -776,12 +814,18 @@ To compute fetish toggle (D - a direction):
 				otherwise:
 					decrease choice in row N of the Table of Player Options by 3;
 		otherwise:
+			let selectMAX be 2;
+			let selectMIN be -1;
+			if current menu selection is 13:
+				now selectMIN is 0;
+				now selectMAX is 5;
+			if current menu selection is 15, now selectMAX is 4;
 			if D is down:
-				if choice in row N of the Table of Player Options < 2, increase choice in row N of the Table of Player Options by 1;
-				otherwise now choice in row N of the Table of Player Options is -1;
+				if choice in row N of the Table of Player Options < selectMAX, increase choice in row N of the Table of Player Options by 1;
+				otherwise now choice in row N of the Table of Player Options is selectMIN;
 			otherwise:
-				if choice in row N of the Table of Player Options > -1, decrease choice in row N of the Table of Player Options by 1;
-				otherwise now choice in row N of the Table of Player Options is 2;
+				if choice in row N of the Table of Player Options > selectMIN, decrease choice in row N of the Table of Player Options by 1;
+				otherwise now choice in row N of the Table of Player Options is selectMAX;
 		now status_int is choice in row N of the Table of Player Options.
 
 
@@ -1037,11 +1081,8 @@ To render full new fetish selection menu:
 			otherwise:
 				now F is figure of condoms_3_always;
 		otherwise if X is 13:
-			if C <= 1:
-				decrease C by 1;
-			otherwise if the remainder after dividing C by 2 is 1:
-				decrease C by 2;
 			if X is CMS, now BTNS is 6;[Display 6 buttons, not 4]
+			decrease C by 1;
 			if C is -1 or the player is not the donator:
 				now F is figure of NPC_gender_1_never;
 			otherwise if C is 0:
@@ -1065,10 +1106,6 @@ To render full new fetish selection menu:
 				now F is figure of infamy_always;
 		otherwise if X is 15:
 			if legacy content is 1:
-				if C <= 1:
-					decrease C by 1;
-				otherwise if the remainder after dividing C by 2 is 1:
-					decrease C by 2;
 				if X is CMS, now BTNS is 6;[Display 6 buttons, not 4]
 			if C is -1:
 				now F is figure of slimeshooter_never;
@@ -1112,7 +1149,7 @@ To render full new fetish selection menu:
 		display the image F in the graphics-window at optionX by optionY with dimensions optionW by optionH;
 		let TXT be the substituted form of "fet[if X < 10]0[end if][X]";
 		set a graphlink in the graphics-window identified as hyperinventoryobject for yourself from optionX by optionY to (optionX + optionW) by (optionY + optionH) as TXT, ignoring redundant links;
-		if X is current menu selection:
+		if X is CMS:
 			now CC is C;
 			let lineY be optionY - ((14 * H) / 1080);
 			let lineH be (2 * H) / 1080;
@@ -1155,6 +1192,7 @@ To render full new fetish selection menu:
 	let buttonN be buttonNR to the nearest whole number;
 	[render 4 buttons, and add links]
 	unless the player is not the donator and CMS is 13:
+		say "CC is [CC].";
 		repeat with X running from FBTN to BTNS:
 			if X is 1:
 				if CC < 0, now F is figure of never_on_buttons;
@@ -1206,9 +1244,9 @@ To compute new lactating silicone selection window:
 			if current menu selection is less than menuItems, increase current menu selection by 1;
 			otherwise now current menu selection is 1;
 	if current menu selection is 1:
-		now choice in row 19 of the Table of Player Options is 1;
+		now choice in row 84 of the Table of Player Options is 1;
 	otherwise:
-		now choice in row 19 of the Table of Player Options is 0;
+		now choice in row 84 of the Table of Player Options is 0;
 	now current menu selection is 1;
 	close the graphics-window;
 	open the status window;

@@ -283,18 +283,20 @@ To UnflinchingGrossOut (X - a number) with reason (T - a text) and sensation (S 
 	compute potential addiction gain from grossness X.
 
 To NonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S - a text): [This function is anticipated to output some kind of flavour text when called]
-	if grossness fetish > 0 or diaper quest is 1:
+	if baseline grossness fetish is 1 or diaper quest is 1:
 		UnflinchingNonAddictiveGrossOut X with reason T and sensation S;
 		let G be X - the grossness addiction of the player;
 		if G > 0:
 			let R be a random number between 1 and 10;
-			if debuginfo > 0, say "[input-style]Avoid flinch check: d10 ([R]) | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
-			if G >= R:
+			let RC be 0;
+			if there is worn resilience clothing, now RC is a random number between 1 and (the number of resilience clothing * 3);
+			if debuginfo > 0, say "[input-style]Avoid flinch check: d10 ([R])[if RC > 0] + resilience clothing bonus ([RC]) = [R + RC][end if] | [G].5 = ([X].5) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
+			if G >= R + RC:
 				if T is "", now T is the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with disgust,";
 				check sudden spit and expulsion with reason T.
 
 To UnflinchingNonAddictiveGrossOut (X - a number) with reason (T - a text) and sensation (S - a text): [This function is anticipated to output some kind of flavour text when called]
-	if grossness fetish > 0 or diaper quest is 1:
+	if baseline grossness fetish is 1 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
 		if G >= 5: [hated]
 			if silent-gross-out is false, say "[variable custom style][one of]This is the most disgusting thing that's ever happened to me in my life[or]YEUUUURGH[or]I'm gonna puke[or]DISGUSTING[or]This is going to make me hurl[then at random]![roman type][line break]";
@@ -333,13 +335,14 @@ To gross cool down (N - a number):
 		cool down N.
 
 To compute potential addiction gain from grossness (X - a number):
-	if grossness fetish > 0 or diaper quest is 1:
+	if baseline grossness fetish is 1 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
 		let Z be 15;
-		if the class of the player is huffer, now Z is 30;
+		if the class of the player is huffer, increase Z by 15;
+		increase Z by 10 * the number of worn resilience clothing;
 		let RZ be a random number between 1 and Z;
 		let R be RZ - 10;
-		if debuginfo > 0, say "[input-style]Grossness gain avoidance check: [if the class of the player is huffer]HUFFER ENHANCED [end if]d[Z] ([RZ]) - (9.5) = [R].5 | [G] = ([X]) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
+		if debuginfo > 0, say "[input-style]Grossness gain avoidance check: [if the class of the player is huffer]HUFFER ENHANCED [end if][if there is worn resilience clothing]RESILIENCE CLOTHING ENHANCED [end if]d[Z] ([RZ]) - (9.5) = [R].5 | [G] = ([X]) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
 		if R < G:
 			GrossnessAddictUp 1.
 
@@ -355,7 +358,7 @@ To SlowGrossOut (X - a number): [This function is anticipated to be called every
 	compute slow addiction gain from grossness X.
 
 To NonAddictiveSlowGrossOut (X - a number): [This function is anticipated to be called every turn for a potentially long number of turns, and so we want smaller text outputs and less addiction gain]
-	if grossness fetish > 0 or diaper quest is 1:
+	if baseline grossness fetish is 1 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
 		if G >= 5: [hated]
 			if silent-gross-out is false, say "[variable custom style][one of]Gonna puke...[or]Gonna hurl...[or]DISGUSTING![or]YEUUUURGH![or]EEEUUURGH![or]I feel ill...[then at random][roman type][line break]";
@@ -386,13 +389,14 @@ To slow gross cool down (N - a number):
 		cool down N.
 
 To compute slow addiction gain from grossness (X - a number):
-	if grossness fetish > 0 or diaper quest is 1:
+	if baseline grossness fetish is 1 or diaper quest is 1:
 		let G be X - the grossness addiction of the player;
 		let Z be 10;
-		if the class of the player is huffer, now Z is 30;
+		if the class of the player is huffer, increase Z by 20;
+		increase Z by 15 * the number of worn resilience clothing;
 		let RZ be a random number between 1 and Z;
 		let R be RZ - 1; [if the player is already tolerant, they won't gain more]
-		if debuginfo > 0, say "[input-style]Persistent grossness gain avoidance check: [if the class of the player is huffer]HUFFER ENHANCED [end if]d[Z] ([RZ]) - (0.5) = [R].5 | [G] = ([X]) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
+		if debuginfo > 0, say "[input-style]Persistent grossness gain avoidance check: [if the class of the player is huffer]HUFFER ENHANCED [end if][if there is worn resilience clothing]RESILIENCE CLOTHING ENHANCED [end if]d[Z] ([RZ]) - (0.5) = [R].5 | [G] = ([X]) grossness - ([grossness addiction of the player]) grossness addiction[roman type][line break]";
 		if R < G:
 			SlowGrossnessAddictUp 1.
 

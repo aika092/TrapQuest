@@ -1,5 +1,6 @@
 Chef Foods by Food begins here.
 
+[Chef foods are valuable meals for the player, granting 1 to each basic stat, and reducing delicateness by 1. However, their quality can vary. High quality foods are dignifying for the player, while low quality foods shame them. Likewise, they often have fat content that causes fatigue or weight gain for the player]
 A chef food is a kind of food. A chef food has a number called quality. The quality of a chef food is usually 1. A chef food has a number called fat. The fat of a chef food is usually 1. The tradability of a chef food is 14.
 
 To say DevourFlav of (C - a chef food):

@@ -66,13 +66,13 @@ Definition: ballgown royal dress is potentially-bottom-layer-concealing:
 Part 2 - Lolita Royal Dress
 
 lolita royal dress is a royal dress. lolita royal dress is fully covering. lolita royal dress is not-top-displacable. The text-shortcut of lolita royal dress is "rd2".
-The skirt-length of lolita royal dress is 5.
+The skirt-length of lolita royal dress is 7.
 
 To decide which figure-name is clothing-image of (C - lolita royal dress):
 	decide on figure of royal dress 2.
 
 To say ClothingDesc of (O - lolita royal dress):
-	say "A long frilly hime lolita dress. It is layered with bows and lace, making it incredibly [if diaper quest is 0]feminine[otherwise]innocent looking[end if]. The fine cut of the material is evidence that this dress is meant only for the most important of people.".
+	say "A long frilly hime lolita dress. It is layered with bows and lace, making it incredibly [if diaper quest is 0]feminine[otherwise]innocent looking[end if]. An in-built frame causes the skirt to puff out in all directions around you, reaching just below your knees, and this means that it doesn't restrict the movement of [if O is worn]your[otherwise]the wearer's[end if] legs as much as it would normally. The fine cut of the material is evidence that this dress is meant only for the most important of people.".
 
 Definition: lolita royal dress is bow themed: decide yes.
 Definition: lolita royal dress is white themed: decide yes.
@@ -81,6 +81,9 @@ To decide which number is the initial outrage of (C - lolita royal dress):
 	decide on 1.
 To decide which number is the initial cringe of (C - lolita royal dress):
 	decide on 3.
+
+To decide which number is the front-skirt-hindrance-length of (C - lolita royal dress):
+	decide on the front-skirt-length of C - 2.
 
 
 Part 3 - Baby Royal Dress

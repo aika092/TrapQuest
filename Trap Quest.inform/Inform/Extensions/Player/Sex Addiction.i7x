@@ -214,7 +214,7 @@ To AnythingAddictDown (X - a number):
 				BBCAddictDown 1;
 				decrease X by 1;
 		otherwise if N is 6:
-			if grossness fetish > 0 and the raw grossness addiction of the player > 1:
+			if grossness fetish is 1 and the raw grossness addiction of the player > 1:
 				GrossnessAddictDown 1;
 				decrease X by 1;
 		otherwise if N is 7:
@@ -330,7 +330,7 @@ Book - Vaginal Sex Addiction
 Part 1 - Calculate Vaginal Sex Addiction
 
 To decide which number is the vaginal sex addiction of the player:
-	if diaper quest is 1 or the player is not possessing a vagina, decide on 0;
+	if diaper quest is 1 or (the player is not possessing a vagina and TG fetish is 0), decide on 0;
 	decide on previous-vaginal-sex-addiction.
 
 To decide which number is the calculated vaginal sex addiction of the player:
@@ -521,6 +521,11 @@ To SemenTasteAddictUp (X - a number):
 
 To SilentlySemenTasteAddictUp (X - a number):
 	if the latex-transformation of the player > 4 or diaper quest is 1 or skirted-maid-corset is worn, now X is 0;
+	if the raw semen taste addiction of the player < 20:
+		if a random number between 1 and 5 <= the number of worn resilience clothing:
+			let RC be a random worn resilience clothing;
+			decrease X by 1;
+			say "Your [RC] [if X is 0]helps you resist against becoming[otherwise]reduces the amount you become[end if] more addicted to the taste of [semen]!";
 	while X > 0:
 		decrease X by 1;
 		if the raw semen taste addiction of the player < 20 and (watersports fetish is 1 or a random number between -1 and yellow theme bonus < 1): [When watersports is disabled, yellow items help suppress semen taste addiction gains]
@@ -715,7 +720,7 @@ Book - Grossness Addiction
 Part 1 - Calculate Grossness Addiction
 
 To decide which number is the grossness addiction of the player:
-	if grossness fetish > 0 or diaper quest is 1, decide on previous-grossness-addiction;
+	if baseline grossness fetish is 1 or diaper quest is 1, decide on previous-grossness-addiction;
 	otherwise decide on the sex addiction of the player.
 
 To decide which number is the calculated grossness addiction of the player:
@@ -788,7 +793,7 @@ To SlowishGrossnessAddictUp (X - a number):
 			FinallyGrossnessAddictUp 1.
 
 To FinallyGrossnessAddictUp (X - a number):
-	if grossness fetish > 0 or diaper quest is 1:
+	if baseline grossness fetish is 1 or diaper quest is 1:
 		let S be the raw grossness addiction of the player;
 		SilentlyGrossnessAddictUp X;
 		now S is the raw grossness addiction of the player - S;
@@ -878,6 +883,11 @@ To SlimeTasteAddictUp (X - a number):
 
 To SilentlySlimeTasteAddictUp (X - a number):
 	if watersports fetish is 0 or the latex-transformation of the player > 4 or skirted-maid-corset is worn, now X is 0;
+	if the raw slime taste addiction of the player < 20:
+		if a random number between 1 and 5 <= the number of worn resilience clothing:
+			let RC be a random worn resilience clothing;
+			decrease X by 1;
+			say "Your [RC] [if X is 0]helps you resist against becoming[otherwise]reduces the amount you become[end if] more addicted to the taste of [slime]!";
 	while X > 0:
 		decrease X by 1;
 		if the raw slime taste addiction of the player < 20, increase the raw slime taste addiction of the player by 1.
@@ -948,6 +958,11 @@ To MilkTasteAddictUp (X - a number):
 
 To SilentlyMilkTasteAddictUp (X - a number):
 	if the latex-transformation of the player > 4 or (lactation fetish is 0 and diaper lover is 0) or skirted-maid-corset is worn, now X is 0;
+	if the raw milk taste addiction of the player < 20:
+		if a random number between 1 and 5 <= the number of worn resilience clothing:
+			let RC be a random worn resilience clothing;
+			decrease X by 1;
+			say "Your [RC] [if X is 0]helps you resist against becoming[otherwise]reduces the amount you become[end if] more addicted to the taste of [milk]!";
 	while X > 0:
 		decrease X by 1;
 		if the raw milk taste addiction of the player < 20:

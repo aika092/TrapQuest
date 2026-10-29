@@ -281,8 +281,10 @@ To choose a grope target:
 To compute grope of (M - a person):
 	if current-predicament is team-scissor-lift-predicament and the player is in a predicament room and there is a trainee in the location of the player: [this is a bystander reacting to a player on a scissor lift tour]
 		say "[speech style of M]'Holy shit[one of], look at those two sluts up there[or], I can see their tits and everything[or], what the fuck[or][stopping]!'[roman type][line break]";
+	otherwise if current-predicament is chores-predicament and the player is in a predicament room:
+		say "[speech style of M]'Sweetie, you look too cute and innocent to be walking around a place like this all by yourself[one of]! Go home before someone like me tries to take advantage of you.'[or]!'[stopping][roman type][line break]";
 	otherwise:
-		let RF be refractoryperiod; [this is how we check if the player orgasmed from the grope]
+		let RF be refractoryperiod of the player ; [this is how we check if the player orgasmed from the grope]
 		if groping-person is not M:
 			now groping-person is M;
 			update gropability;
@@ -326,14 +328,14 @@ To compute grope of (M - a person):
 			now gropeSuccess is 0;
 		if targeted-body-part is body part:
 			if debugmode is 1, say "Reacting to a grope on [targeted-body-part] ([gropability of targeted-body-part] gropability out of a total of [total gropability]).";
-			if refractoryperiod > RF, compute grope orgasm reaction of M;
+			if refractoryperiod of the player > RF, compute grope orgasm reaction of M;
 			otherwise compute grope reaction of M;
 		if M is unfriendly monster:
 			bore M;
 			say "[BigNameDesc of M] seems satisfied, for now...".
 
 To compute seduction grope of (M - a monster):
-	let RF be refractoryperiod; [this is how we check if the player orgasmed from the grope]
+	let RF be refractoryperiod of the player ; [this is how we check if the player orgasmed from the grope]
 	if groping-person is not M:
 		now groping-person is M;
 		update gropability;
@@ -368,7 +370,7 @@ To compute seduction grope of (M - a monster):
 	otherwise:
 		compute slow grossness of M;
 	if targeted-body-part is body part:
-		if refractoryperiod > RF, compute grope orgasm reaction of M.
+		if refractoryperiod of the player > RF, compute grope orgasm reaction of M.
 
 To say BreastsGropeFlav of (M - a person):
 	if M is not unintelligent monster:
@@ -832,7 +834,7 @@ To compute default seduction choice of (M - a monster):
 			if debuginfo > 0, say "[input-style]Stimulation ticks until orgasm: [SL]; Impatience: [the blue-balls of M] | [the blue-balls-limit of M][roman type][line break]";
 			if (a random number between 1 and the sex-length of M) is 1 and M is groping:
 				compute seduction grope of M;
-			otherwise if M is unwrapped and M is male and there is a held condom-providing thing and M is condom-preferring and M is convinced to wear a condom:
+			otherwise if M is unwrapped and M is male and there is a held condom-providing thing and M is condom-preferring and M is deciding to wear a condom:
 				say AutomaticCondomFlav of M;
 				now M is wrapped;
 			otherwise if M is intelligent and the remainder after dividing earnings by 2 is 0: [Should happen every other turn]

@@ -195,7 +195,8 @@ Report Spellcasting:
 		let L be the location of the player;
 		compute spell consequences of the noun;
 		repeat with M running through reactive monsters:
-			if M is in L, compute spell outrageousness reaction of M to the noun;
+			if M is in L:
+				unless M is explorer and the noun is magic-purify, compute spell outrageousness reaction of M to the noun;
 		if the noun is staller and the player is in danger:
 			say "A magic flash temporarily blinds the enemies in the room, making them lose a turn!";
 			repeat with M running through combative monsters:
@@ -308,7 +309,7 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "have assfucked so many cocks that my butthole won't close up any more";
 			now the naughtiness entry is 10;
-		if condom fetish is 1:
+		if baseline condom fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "drink cum from used condoms";
 			now the naughtiness entry is 11;
@@ -323,11 +324,11 @@ A game universe initialisation rule (this is the incantation initialisation rule
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "am so loose I can take a horsecock";
 			now the naughtiness entry is 11;
-		if a2m fetish > 0:
+		if baseline a2m fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "clean their cocks off with my mouth after they pull out of my asshole";
 			now the naughtiness entry is 12;
-		if a2m fetish > 1:
+		if snowball fetish is 1:
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "love drinking anal creampies";
 			now the naughtiness entry is 13;
@@ -509,7 +510,7 @@ Report Spellcasting magic-blinking:
 				deinterest M;
 				FavourSet M to F; [no favour change]
 			now M is moved; [won't move again this turn]
-		teleport to R.
+		spatial teleport to R.
 Definition: magic-blinking is staller: decide no. [Does it make all NPCs lose a turn?]
 
 magic-warping is a magic-spell.
@@ -543,7 +544,7 @@ Report Spellcasting magic-warping when there is a reactive monster:
 			deinterest M;
 			FavourSet M to F; [no favour change]
 			now M is moved; [won't move again this turn]
-		teleport to target-teleport.
+		spatial teleport to target-teleport.
 Definition: magic-warping is staller: decide no. [Does it make all NPCs lose a turn?]
 
 magic-inflating is a magic-spell.
@@ -791,8 +792,6 @@ Report Spellcasting magic-purify:
 magic-armour is a magic-spell. magic-armour has a number called damage-reduction. magic-armour has a number called armour-cooldown.
 To decide which number is the raw-magic-cost of (S - magic-armour):
 	decide on 4.
-Definition: magic-armour is reactive-only:
-	decide yes.
 Definition: magic-armour is fetish appropriate:
 	if the player is a september 2026 top donator, decide yes;
 	decide no.

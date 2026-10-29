@@ -56,6 +56,8 @@ REQUIRES COMMENTING
 @!]
 an orifice is a kind of body part.
 
+an orifice has a number called raw sensitivity.
+
 [!<Fuckhole>@
 
 REQUIRES COMMENTING
@@ -66,7 +68,6 @@ REQUIRES COMMENTING
 a fuckhole is a kind of orifice. [Crotch orifices are called fuckholes, obviously]
 
 a fuckhole has a number called soreness.
-a fuckhole has a number called raw sensitivity.
 
 [!<Fuckhole>@<tolerated:Integer>*
 
@@ -441,6 +442,26 @@ Definition: yourself is crotch covered:
 	if vagina is at least partially lewdly exposed, decide no;
 	if penis is at least partially lewdly exposed, decide no;
 	decide yes.
+
+[So, the sex parts of the body retain their sensation now under the latex doll TF, but the other parts grow progressively more numb.
+I really didn't want the game to say "You feel nothing unusual" when you touch yourself in the clearly unusual circumstances of changing into a latex sex doll!
+]
+Check touching a body part:[when the latex-transformation of the player > 4]
+	let B be the noun;
+	if the number of things penetrating the noun > 0, say "[FuckerDesc of B] is in the way." instead;
+	if the player is wrist bound behind:
+		say "With your wrists bound behind you as they are, you can only guess how your [ShortDesc of B] feels." instead;
+	if B is vagina and the player is not possessing a vagina, say "You don't have one of those.[if tg fetish is 1] (yet)[end if]" instead;
+	if B is penis or B is scrotum and the player is not possessing a penis and penis is not detached, say "You don't have one of those." instead;
+	say "[if the latex-transformation of the player is 8]You can't feel anything at all from your fingertips[otherwise if the latex-transformation of the player > 6]It feels like touching yourself through thick gloves[otherwise if the latex-transformation of the player > 3]Your fingers feel quite numb[otherwise if the latex-transformation of the player > 0]The skin of your fingertips feel somehow different[otherwise]You reach out, [one of]wondering how high fidelity the simulation really is[or]still struggling to believe how good the simulation is[stopping][end if] as you reach out to touch your [TouchDesc of B]";
+	if tough-shit is 1:
+		if (B is penis or B is scrotum) and penis is detached, arouse 50;
+		otherwise passively stimulate B;
+		if the player is a bit horny and a random number between -4 and (the arousal of the player / 2000) > 0:
+			now auto is 1;
+			try masturbating;
+			now auto is 0;
+	do nothing instead.
 
 Section - Image for graphics window
 

@@ -551,8 +551,35 @@ To say BreastBounceDesc:
 	if X is 16, say "bungee jump";
 	if X is 17, say "bounce comically";
 	if X is 18, say "oscillate moon-like, making you sway";
-	if X is 19, say "try to topple you flat to the floor";
+	if X >= 19, say "try to topple you flat to the floor";
 	if X is 20, say "drag you around behind them".
+
+To say TouchDesc of (B - breasts):
+	let L be the largeness of breasts;
+	let A be the air volume of breasts;
+	let F be the flesh volume of breasts;
+	let I be the silicone volume of breasts;
+	let S be the sensitivity of breasts;
+	let T be the latex-transformation of the player;
+	say " [if L is 1]flat pecs[otherwise][BreastDesc][end if]. They [ShortBreastBounceDesc] as you [if T > 7]clumsily [end if][if L <= 4]rub your palms against them[otherwise]rub them together[end if], [run paragraph on]";
+	if T > 5:
+		say "squeaking like [if the semen coating of breasts > 0]wet, slippery, [end if][if A > F]overly-inflated[otherwise if I > F]jelly-filled[otherwise]water[end if]balloons. [run paragraph on]";
+	otherwise if T > 2:
+		say "resisting your touch like [if the semen coating of breasts > 0]wet, slippery, [end if][if A > F]overstuffed down[otherwise if I > F]dense, foam-filled[otherwise]high quality[end if] satin pillows. [run paragraph on]";
+	otherwise:
+		say "yielding to your touch like [if the semen coating of breasts > 0]slippery, [end if][if A > F]over-filled[otherwise if I > F]dense, gel[otherwise]super soft[end if] pillows. [run paragraph on]";
+	say "Your nipples[if T >= 8], which are permanently hard, are the only part of your chest with any reaction to[otherwise if the player is horny]stiffen even further at[otherwise] slightly stiffen at[end if] your touch, bringing out the [if S < 5]slight[otherwise if S < 10]ridiculously sharp[otherwise if S < 20]intense[otherwise]ridiculously intense[end if] tingling sensation as your [if T >= 8]fused [end if]fingertips come into contact with [if S >= 10]them and reminding you how ridiculous it is that this game has turned them into some kind of sex organ.[otherwise]them.[end if]".
+
+To say ShortBreastBounceDesc:
+	let X be the largeness of breasts;
+	if X < 2:
+		say "don't move";
+	otherwise if X < 5:
+		say "[one of]judder[or]shiver[or]wiggle[or]quiver[at random]";
+	otherwise if X < 11:
+		say "[one of]jiggle[or]bounce[or]jostle[at random]";
+	otherwise:
+		say "[one of]wobble[or]bungee jump[or]quake[or]plunge[or]swing[or]sway[at random]".
 
 To say BreastBouncingDesc:
 	let X be the largeness of breasts;

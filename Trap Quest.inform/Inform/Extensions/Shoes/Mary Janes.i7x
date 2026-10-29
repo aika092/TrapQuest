@@ -27,7 +27,7 @@ To say ClothingDesc of (C - a mary janes):
 	say "A pair of flat blue mary janes, made out of a high quality leather.".
 
 To decide which object is the potential-upgrade-target of (C - a mary janes):
-	decide on a random off-stage plentiful ballet shoes.
+	if normal-ballet-shoes is off-stage, decide on normal-ballet-shoes.
 
 Definition: a mary janes is blue themed: decide yes.
 

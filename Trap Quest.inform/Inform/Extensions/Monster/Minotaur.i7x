@@ -442,7 +442,8 @@ To compute anal sex of (M - minotaur):
 		AssFill 2;
 		orgasm M;
 		now the sleep of M is 150;
-		display entire map.
+		display entire map;
+	compute slow grossness of M.
 
 To compute vaginal sex of (M - minotaur):
 	if the sex-length of M > 0:

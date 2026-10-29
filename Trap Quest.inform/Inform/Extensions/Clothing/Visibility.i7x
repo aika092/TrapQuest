@@ -107,7 +107,7 @@ To decide which object is the mid-coverer of (C - a clothing):
 	decide on nothing.
 
 To decide which object is the bottom-coverer of (C - a clothing):
-	if the bottom-layer of C > 0 or C is chastity bond or C is condom of kings:
+	if the bottom-layer of C > 0 or C is chastity bond or C is cock-ring:
 		repeat with O running through bottom-layer-concealing clothing:
 			if the bottom-layer of O > the bottom-layer of C and O is not mesh:
 				decide on O;
@@ -133,7 +133,7 @@ To decide which object is the concealer of (C - a clothing):
 	if entry 1 in the armUses of arms is C and entry 2 in the armUses of arms is C, decide on arms;
 	let B be nothing;
 	let M be nothing;
-	if the bottom-layer of C > 0 or C is chastity bond or C is condom of kings:
+	if the bottom-layer of C > 0 or C is chastity bond or C is cock-ring:
 		if C is pussy protection:
 			repeat with O running through bottom-layer-concealing potentially vagina covering clothing:
 				if O is not C and (the bottom-layer of O > the bottom-layer of C or O is skirted):

@@ -163,8 +163,8 @@ This is the delicateness imprinting rule:
 The delicateness imprinting rule is listed in the imprinting rules.
 
 This is the grossness addiction imprinting rule:
-	if grossness fetish > 0 and the grossness-addiction-influence of imprint-target is not 0:
-		say "[ImprintStartFlav][if diaper messing >= 3]gross smells[otherwise if diaper lover > 0]gross sensations[otherwise if a2m fetish > 0]ass and foot licking[otherwise]foot licking[end if] [if the grossness addiction of the player >= 14]addiction[otherwise if the grossness addiction of the player >= 7]fetish[otherwise]tolerance[end if] [if the grossness-addiction-influence of imprint-target > 0]increasing[otherwise]decreasing[end if] effect [run paragraph on]";
+	if baseline grossness fetish is 1 and the grossness-addiction-influence of imprint-target is not 0:
+		say "[ImprintStartFlav][if diaper messing >= 3]gross smells[otherwise if diaper lover > 0]gross sensations[otherwise if baseline a2m fetish is 1]ass and foot licking[otherwise]foot licking[end if] [if the grossness addiction of the player >= 14]addiction[otherwise if the grossness addiction of the player >= 7]fetish[otherwise]tolerance[end if] [if the grossness-addiction-influence of imprint-target > 0]increasing[otherwise]decreasing[end if] effect [run paragraph on]";
 		if the grossness-addiction-influence of imprint-target > 0, increase the raw grossness addiction of the player by 1;
 		otherwise decrease the raw grossness addiction of the player by 1;
 		if the raw grossness addiction of the player > 20, now the raw grossness addiction of the player is 20;

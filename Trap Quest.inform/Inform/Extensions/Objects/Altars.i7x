@@ -116,7 +116,7 @@ To say ExamineDesc of (C - elder altar):
 	say "You also notice a set of chains attached with manacles, clearly for securing people to the altar. You suppose you could try putting an item on it, or praying at it. You really don't want to think about what might happen if you got on it yourself.".
 
 To say FightObserve of (M - elder altar) with (N - a monster):
-	if the player is prone, say "[second custom style]'[one of]Isn't this, like, embarassing and stuff?'[or]Um, is THIS the mortal combat I've been hearing about?'[or]It seems your pointless resistance is, like, so over.'[or]How pitiable and stuff.'[or]Suggestion... Get... Up...'[then at random][roman type][line break][moderateHumiliateReflect]";
+	if the player is prone, say "[second custom style]'[one of]Isn't this, like, embarassing and stuff?'[or]Um, is THIS the mortal combat I've been hearing about?'[or]It seems your pointless resistance is, like, so over.'[or]How pitiable and stuff.'[or]They totally crushed your futile struggles.'[then at random][roman type][line break][moderateHumiliateReflect]";
 	otherwise say "[second custom style]'[one of]Fight on! Fight on, and stuff!'[or]Oooh, so this is mortal combat?'[or]This is, like, kind of messy...'[at random][roman type][line break][moderateHumiliateReflect]";
 
 To say SexObserve of (M - elder altar) with (N - a monster):

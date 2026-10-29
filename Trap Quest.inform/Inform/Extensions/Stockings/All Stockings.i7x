@@ -305,7 +305,7 @@ condom socks is a socks. condom socks is unique. condom socks is latex. The text
 Definition: condom socks is usually at least partially thigh covering: decide no.
 Definition: condom socks is calf covering: decide no.
 Definition: condom socks is fetish appropriate:
-	if condom fetish > 0, decide yes;
+	if baseline condom fetish is 1, decide yes;
 	decide no.
 
 Definition: condom socks is class-relevant:

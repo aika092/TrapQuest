@@ -45,7 +45,7 @@ Definition: dominatrix is willing to do oral: decide yes.
 Definition: dominatrix is willing to do anal: decide yes.
 
 Definition: dominatrix is willing to do licking:
-	if grossness fetish > 0, decide yes;
+	if baseline grossness fetish is 1, decide yes;
 	decide no.
 
 Definition: dominatrix is willing to do anilingus: decide no.
@@ -58,9 +58,16 @@ Definition: dominatrix is a diaper wetter:
 	if diaper quest is 1, decide yes;
 	decide no.
 
-Definition: a dominatrix is willing to charm snakes:
+Definition: dominatrix is willing to charm snakes:
 	if diaper quest is 0, decide yes;
 	if there is a worn chastity bond, decide no;
+	decide no.
+[The dominatrix will ONLY jerk you off]
+Definition: dominatrix (called M) is eager to masturbate cocks:
+	decide yes.
+Definition: dominatrix (called M) is eager to piledriver masturbate:
+	if bukkake fetish is 0 and face is actually occupied, decide no;[With bukkake, the load always goes in the player's mouth]
+	if M is in Hotel37, decide yes;
 	decide no.
 
 Definition: dominatrix is hotel dwelling: decide yes.
@@ -411,10 +418,9 @@ To compute torturing of (M - dominatrix):
 
 To TimesSubmittedUp (M - dominatrix):
 	increase the times-submitted of M by 1;
-	if the number of modesty shutters in the location of the player > 0:
-		let B be a random modesty shutter in the location of the player;
+	if modesty shutter is in the location of the player:
 		say "[BigNameDesc of M] presses the button on [his of M] remote and the modesty shutter clatters up.";
-		destroy B.
+		destroy modesty shutter.
 
 This is the dominatrix special spanking rule:
 	if current-monster is spanking the player and current-monster is dominatrix and diaper quest is 0:
@@ -561,17 +567,16 @@ To compute facial climax of (M - dominatrix):
 		TimesSubmittedUp M by 1;
 	bore M.
 
-To say LickEndFlav of (M - a monster):
+To say LickEndFlav of (M - dominatrix):
 	if the reaction of the player is 0:
 		say "[BigNameDesc of M] slaps you hard on the cheek. You yelp in pain![line break][speech style of M]'Bitch, you need to learn to obey orders. I expect this to go differently next time.'[roman type][line break]";
 		PainUp 10;
 	otherwise:
 		say "[speech style of M]'What a good slave you are! I might have to promote to you head shoe polisher.'[roman type][line break]";
 		SexAddictUp 1;
-	if the number of modesty shutters in the location of the player > 0:
-		let B be a random modesty shutter in the location of the player;
+	if modesty shutter is in the location of the player:
 		say "[BigNameDesc of M] presses the button on [his of M] remote and the modesty shutter clatters up.";
-		destroy B;
+		destroy modesty shutter;
 	otherwise:
 		say "[BigNameDesc of M] looks away and seems to have lost interest.".
 
@@ -625,7 +630,7 @@ To set up sex length of (M - dominatrix) in (B - a body part):
 	set up sex length (a random number between 3 and 4) of M in B.[remember, this only applies if sex length is 0 or less]
 
 To compute unique penetration effect of (M - dominatrix) in (B - a body part):
-	if refractoryperiod >= maxrefractoryperiod and M is not friendly-fucking:
+	if refractoryperiod of the player >= maxrefractoryperiod and M is not friendly-fucking:
 		say "[BigNameDesc of M] tuts and shakes [his of M] head in disapproval.[line break][speech style of M]'Did I say you could cum? I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
 		if the player is possessing a penis, cutshow figure of dominatrix cutscene 7 for M;
 		now the disappointment of M is 1;
@@ -650,7 +655,7 @@ To compute anal sex of (M - dominatrix):
 		decrease the sex-length of M by 1;
 		if M is not friendly-fucking:
 			ruin asshole;
-			if refractoryperiod > 0 and the disappointment of M is 0:
+			if refractoryperiod of the player > 0 and the disappointment of M is 0:
 				say "[BigNameDesc of M] tuts and shakes [his of M] head in disapproval.[line break][speech style of M]'Did I say you could cum? I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
 				now the disappointment of M is 1.
 
@@ -659,7 +664,7 @@ To compute sexResist of (M - dominatrix) in (F - a fuckhole):
 	say "You try to get away, but [he of M]'s much too strong for you.[one of]If anything, your struggles have just made the fucking even more brutal on your poor [asshole].[or]Instead, [he of M] seems to be taking the disobedience as motivation to fuck you even harder![or][or][at random]".[Friendly sex dominatrix has either let go or started torturing the player by now.]
 
 To compute sexSubmit of (M - a dominatrix) in (F - a fuckhole):
-	if the strap-on girth of M >= 6 and refractoryperiod is 0 and the sex-length of M is 1 and the player is able to get horny and M is not friendly-fucking:
+	if the strap-on girth of M >= 6 and refractoryperiod of the player is 0 and the sex-length of M is 1 and the player is able to get horny and M is not friendly-fucking:
 		say "[BigNameDesc of M] starts pumping even faster.[line break][speech style of M]'Cum, slave, cum for me now!'[roman type][line break][if the player is not a pervert]As much as you try to stop yourself, the feeling in your [asshole] is too intense and you can't help but obey [his of M] command![otherwise]You feel the pressure building inside of you and gleefully comply![end if]";
 		anally orgasm shamefully;
 		heal asshole times 2; [To prevent fainting]
@@ -668,7 +673,7 @@ To compute sexSubmit of (M - a dominatrix) in (F - a fuckhole):
 	otherwise:
 		say "[BigNameDesc of M] continues to powerfully pummel away with [his of M] [LongDickDesc of M]. [one of]You can very clearly feel the realistic contours of [his of M] rubber [manly-penis] as it rubs mercilessly against the sensitive walls of your [asshole].[or][line break][variable custom style]Oof![roman type][line break][or][line break][variable custom style]Aaah![roman type][line break][or][line break][variable custom style]Fucccck![roman type][line break][or]Even though you're the only one whose nether regions are being stimulated, it's clear [he of M]'s deriving a lot of sexual pleasure from the situation.[or][line break][speech style of M]'Good girl!'[roman type][line break][then at random]";
 		ruin asshole;
-		if M is friendly-fucking and refractoryperiod > 0:
+		if M is friendly-fucking and refractoryperiod of the player > 0:
 			compute anal climax of M.
 
 To compute MasturbationReaction of (M - dominatrix):
@@ -839,67 +844,145 @@ To compute unerect taunting of (M - dominatrix):
 		FavourDown M by 1;
 		Bore M.
 
-To say ErectionPenetrationFlav of (M - dominatrix):
+To say ErectionMasturbationStart of (M - dominatrix):
+	now masturbation-grab-point is the substituted form of "[one of]neck[or]wrist[or][ShortDesc of hair][or][if the player is possessing a scrotum]balls[otherwise]thigh[end if][in random order]";
 	if penis is not penis-erect:
-		say "Being dehumanised like that feels a little unpleasant, but the sensation of [his of M] breath tickling your shaft is more than enough to make up for it. [BigFuckerDesc of M] pulls out a translucent pink cocksleeve as your [ShortDesc of penis] quickly grows rigid under [his of M] stern gaze. [big he of M] finally glances up at you as [he of M] forces the flexible, jelly-like material over your shaft.[line break][speech style of M]'Cum without permission, and *both* of you will be punished.'[roman type][line break]";
+		say "Being dehumanised like that feels a little unpleasant, but the sensation of [his of M] breath tickling your shaft is more than enough to make up for it. [BigFuckerDesc of M] pulls out a translucent pink cocksleeve as your [ShortDesc of penis] quickly grows rigid under [his of M] stern gaze. [big he of M] still refuses to even glance at you as [he of M] grabs your [masturbation-grab-point] and forces the flexible, jelly-like material over your shaft.";
 	otherwise:
-		say "[BigNameDesc of M] bends over, [his of M] face coming within a few centimetres of your [player-penis] as [he of M] pulls out a translucent pink cocksleeve. [big he of M] glances at you as [he of M] forces the flexible, jelly-like material over your shaft.[line break][speech style of M]'Cum without permission, and *both* of you will be punished.'[roman type][line break]".
+		say "[BigNameDesc of M] bends over, [his of M] face coming within a few centimetres of your [player-penis] as [he of M] pulls out a translucent pink cocksleeve. [big he of M] doesn't even glance at you as [he of M] grabs your [masturbation-grab-point] and forces the flexible, jelly-like material over your shaft.";
+	say "[line break][speech style of M]'Cum without permission, and *both* of you will be punished.'[roman type][line break]".
 
-To say ErectionUseFlav of (M - dominatrix):
+[Only in her dungeon]
+To say PiledriverMasturbationStart of (M - dominatrix):
+	now masturbation-grab-point is "[if the player is possessing a scrotum]balls[otherwise]thigh[end if]";
+	say "[BigNameDesc of M] pulls you towards the X-frame and locks you in upside-down, your [unless penis is penis-erect]hardening [end if][ShortDesc of penis] pointing directly at your face! However, [he of M] doesn't look at it even once, seeming to speak only to your [player-penis] as [he of M] grabs your [masturbation-grab-point] and forces a translucent pink cocksleeve over your shaft.";
+	say "[line break][speech style of M]'Cum without permission, and *both* of you will be punished.'[roman type][line break]".
+
+To say MasturbationSubmittedFlav of (M - dominatrix):
 	say "[one of][BigFuckerDesc of M] plays with your [if the player is possessing a scrotum]balls[otherwise]taint[end if] as [he of M] pumps your [player-penis] with the sleeve.[or][BigFuckerDesc of M] squeezes your [player-penis] through the sleeve as [he of M] [if the size of penis < 4]twists it around[otherwise]pumps it over[end if] your shaft.[or]The inner material of the cocksleeve massages your [player-penis] as [FuckerDesc of M] [if the size of penis < 4]twists it around[otherwise]pumps it up and down[end if] your length.[or][BigFuckerDesc of M] maintains a business-like facial expression as [he of M] twists the sleeve around your shaft.[or]The cocksleeve makes faint squelching noises as [FuckerDesc of M] pumps and squeezes it around your [player-penis].[or][BigFuckerDesc of M] glances at you as [he of M] uses the sleeve to slowly pump your [player-penis].[in random order]".
 
-To say ErectionForceFlav of (M - dominatrix):
+To say MasturbationResistedFlav of (M - dominatrix):
 	say "[one of][BigFuckerDesc of M] holds you down firmly as [he of M] forces the cocksleeve up and down your shaft.[or][BigFuckerDesc of M] holds you down, squeezing your [player-penis] through the sleeve as [he of M] pumps it over your shaft.[or][BigFuckerDesc of M] twists the sleeve as [he of M] forces it forces your [player-penis] in and out of the sleeve, through the sleeve, roughly twisting it around your shaft.[or][BigFuckerDesc of M] doesn't send a single glance your way as [he of M] roughly twists it around your shaft.[or][BigFuckerDesc of M]'s expression doesn't change at all as [he of M] forces your [player-penis] in and out of the sleeve.[or]The cocksleeve makes faint squelching noises as [FuckerDesc of M] forces it up and down your shaft.[in random order]".
 
-To compute erection orgasm of (M - dominatrix):
-	if the sex-length of M < 1:[If -1, it triggered during the climax function. In that case, the countdown is already underway.]
-		if the reaction of the player is 0, say "[line break][speech style of M]'[if the sex-length of M is -1]7... 6... 5...'[otherwise]10... 9... 8... 7...'[end if][roman type][line break]You don't stop squirming even for a second, [if the delicateness of the player < 6]determined not to cum on anyone else's terms[otherwise if the delicateness of the player < 10]hoping it's enough to stop yourself from cumming on [his of M] terms[otherwise]hoping against hope that your body won't break down and cum on [his of M] terms[end if], but from the way your [player-penis] begins to spasm, you know it's all in vain.[line break][speech style of M]'4... 5... wait, that's not right, is it? Ugh, I better start over. 10... 9...'[roman type][line break][big his of M] holds eye contact with you as [he of M] suddenly speeds up, smirking as your [load] finally [if the size of penis < 4]dribbles out, slowly colouring the lower end of the sleeve[otherwise if the size of penis < 7]spurts out, quickly painting the inside of the sleeve completely[otherwise]your [load] shoots out, the first spurt clearing the inside of the sleeve and landing on [his of M] hand and the rest rapidly colouring the inside of the sleeve[end if] white.";
-		otherwise say "[line break][speech style of M]'[if the sex-length of M is -1]7... 6... 5...'[otherwise]10... 9... 8... 7...'[end if][roman type][line break]You buck and wiggle your hips in an attempt to make yourself cum before your time limit is up.[line break][speech style of M]'[if the sex-length of M is -1]4... 3...'[otherwise]6... 5... 4... 3...'[end if][roman type][line break]However, it's only when the countdown is almost over and your [literalMistress of M] has begun to slow down that your [player-penis] finally begins to spasm. You frantically hump the sex toy in [his of M] hand, desperately hoping you aren't too late![line break][speech style of M]'2... 1. Times up, s-'[roman type][line break][BigFuckerDesc of M] pauses as you suddenly throw your head back, moaning triumphantly as [if the size of penis < 4]your [load] finally, finally dribbles out, slowly colouring the lower end of the sleeve[otherwise if the size of penis < 7]your [load] finally spurts out, rapidly colouring the inside of the sleeve[otherwise]your [load] finally shoots out, instantly colouring the inside of the sleeve[end if] white.";
-	otherwise:
-		say "[BigFuckerDesc of M] frowns as [he of M] notices your impending climax, but doesn't let up, holding eye contact with you as [he of M] relentlessly pumps your spasming shaft. You [if the delicateness of the player < 6]glare right back at [him of M], moaning defiantly[otherwise if the delicateness of the player < 10]do your best to hold back your moans as you glare right back at [him of M][otherwise if the delicateness of the player < 14]you find yourself looking away, too intimidated even to moan[otherwise]immediately look away, knowing you've completely disregarded [his of M] orders[end if] as [if the size of penis < 4]your [load] dribbles out, slowly colouring the lower end of the sleeve[otherwise if the size of penis < 7]your [load] spurts out, quickly colouring the inside of the sleeve completely[otherwise]your [load] shoots out, rapidly colouring the inside of the sleeve[end if] white.";
-	now penis is not penis-erect.
+[This function can trigger inside the masturbation end function OR at the end of a sex turn]
+To compute handjob orgasm of (M - dominatrix):
+	let SV be (the semen load of the player + 1) / 2;
+	if the sex-length of M > 0:[The player is cumming without permission]
+		say "[BigFuckerDesc of M] frowns as [he of M] notices your impending climax, but doesn't let up, holding eye contact with you as [he of M] relentlessly pumps your spasming shaft. You [if the delicateness of the player < 6]glare right back at [him of M], moaning defiantly[otherwise if the delicateness of the player < 10]do your best to hold back your moans as you glare right back at [him of M][otherwise if the delicateness of the player < 14]you find yourself looking away, too intimidated even to moan[otherwise]immediately look away, knowing you've completely disregarded [his of M] orders[end if][if M is piledriver-masturbating] as [he of M] yanks the sleeve off at the last moment, leaving you no time to prepare[end if]";
+		now the sex-length of M is the size of penis * -1;
+	otherwise:[The player has permission to cum.]
+		if the reaction of the player is 0:
+			say "[line break][speech style of M]'7... 6... 5...'[roman type][line break]You don't stop squirming even for a second, [if the delicateness of the player < 6]determined not to cum on anyone else's terms[otherwise if the delicateness of the player < 10]hoping it's enough to stop yourself from cumming on [his of M] terms[otherwise]hoping against hope that your body won't break down and cum on [his of M] terms[end if], but from the way your [player-penis] begins to spasm, you know it's all in vain.[line break][speech style of M]'4... 5... wait, that's not right, is it? Ugh, I better start over. 10... 9...'[roman type][line break][big his of M] holds eye contact with you as [he of M] suddenly [if M is piledriver-masturbating]yanks the sleeve off[otherwise]suddenly speeds up[end if], smirking";
+		otherwise:
+			say "[line break][speech style of M]'7... 6... 5...'[roman type][line break]You buck and wiggle your hips in an attempt to make yourself cum before your time limit is up.[line break][speech style of M]'4... 3...'[roman type][line break]However, it's only when the countdown is almost over and your [literalMistress of M] has begun to slow down that your [player-penis] finally begins to spasm. You frantically hump the sex toy in [his of M] hand, desperately hoping you aren't too late![line break][speech style of M]'2... 1. Times up, s-'[roman type][line break]You cum the very moment [FuckerDesc of M] [if M is piledriver-masturbating]removes the sleeve[otherwise]stops[end if], moaning in relief";
+	if M is piledriver-masturbating, compute end of piledriver masturbation of M;
+	otherwise say " as your [load] [if SV >= 9]explodes out, instantly[otherwise if SV >= 7]shoots out, quickly[otherwise if SV >= 5]spurts out, promptly[otherwise if SV >= 3]dribbles out, slowly[otherwise]seeps out, barely[end if] colouring the [if the size of penis < 4]lower end[otherwise if the size of penis < 7]middle[otherwise]top end[end if] of the sleeve white.";
+	compute erection decay.
+
+To compute end of piledriver masturbation of (M - dominatrix):
+	let SV be (the semen load of the player + 1) / 2;
+	let pileSpurt be the substituted form of "[player-penis] [one of]unleashes[or]spurts[or]shoots[in random order] [if SV >= 9]rope after big, fat rope[otherwise if SV >= 7]thick ropes[otherwise if SV >= 5]several ropes[otherwise if SV >= 3]several strands[otherwise]a few droplets[end if] of [semen] towards your own face";
+	let open-mouth be false;
+	if bukkake fetish is 0:
+		say " as your [pileSpurt] and land directly in your open mouth!";
+		now open-mouth is true;
+	otherwise if face is not actually occupied:
+		if semen is craved:
+			now open-mouth is true;
+			say " as your [pileSpurt], the sight of which triggers your cravings and makes you instinctively open your mouth!";
+		otherwise:
+			say "as your [pilespurt]. Do you open your mouth?";
+			if the player is bimbo consenting:
+				now open-mouth is true;
+				say "You open your mouth to catch your [semen].".
+
+To say PenisGoneFlav of (M - dominatrix):
+	say ErectionLostFlav of M.
 
 To say ErectionLostFlav of (M - dominatrix):
-	say "[BigFuckerDesc of M] sighs as [he of M] removes the [semen]-dripping cocksleeve and returns to [his of M] feet.[line break][speech style of M]'I warned you.'[roman type][line break]";
-	FavourDown M by 1;
-	now the sex-length of M is 0;
-	if the health of M is the maxhealth of M, decrease the health of M by 1;
-	follow the dominatrix tops the player rule;
-	unless the rule succeeded: [may not be valid code. TODO: Rethink if that is the case.]
-		say "[BigFuckerDesc of M] flips you over and roughly spanks your [AssDesc] several times before letting you go.";
-		PainUp 20.
+	say "[BigNameDesc of M] shakes [his of M] head solemnly, [if M is piledriver-masturbating]zipping [his of M] outfit back up.[otherwise]removing the sleeve and zipping [his of M] outfit back up.[end if]";
+	now the disappointment of M is 1;
+	Bore M;
+	DifficultyUp M by 1;
+	now the sex-length of M is 1.
+
+To say CumShrinkPunishFlav of (M - dominatrix):
+	say "[speech style of M]'When you don't use it properly, it gets taken away.'[roman type][line break]";
+To say CumShrinkPunishCageFlav of (M - dominatrix):
+	say "[speech style of M]'[one of]Freedom is for [manly-penis]s that follow instructions[or]If you can't follow instructions, I see no reason to leave you unlocked[cycling].'[roman type][line break]";
+To say HandCumPunishFlav of (M - dominatrix):
+	say "[line break][speech style of M]'I distinctly remember warning you that you would face a punishment for that.'[roman type][line break][BigNameDesc of M] dumps the contents of the sleeve into [his of M] hand, and then slaps you with it!";
+To say HandCumEatRequest of (M - dominatrix):
+	say "[speech style of M]'Open wide now, there's a good slave...'[roman type][line break][BigNameDesc of M] presents you with [his of M] sticky hand.";
+To say HandCumKeepFlav of (M - dominatrix):
+	say "[if M is intelligent][speech style of M]'[one of]I like this more than I thought[or]I should do this more often[in random order].'[roman type][line break][end if][BigNameDesc of M] peers at the [semen]-filled sleeve.".
 
 Definition: dominatrix (called M) is anticipating-climax:
 	decide yes.
 
-To say ErectionNearingClimaxFlav of (M - dominatrix):
+To say MasturbationNearingClimaxFlav of (M - dominatrix):
+	let countFlav be "10...9...8...";
 	if the reaction of the player is 0:
-		say "[line break][speech style of M]'[one of]I'm feeling generous right now, slave, so you're getting a treat. For the next 10 seconds, you have permission to cum.'[or]I shouldn't be doing this, since you've been so bad, but I'm generous. You have 10 seconds to cum.'[or]You've been bad, but you held on to the end, just like I told you. I'm giving you 10 seconds if you'd like to cum.'[in random order][roman type][line break]";
+		say "[line break][speech style of M]'[one of]I'm feeling generous right now, slave, so you're getting a treat. For the next 10 seconds, you have permission[countFlav]'[or]I shouldn't be doing this, since you've been so bad, but I'm generous. You have 10 seconds[or]You've been bad, but you held on to the end, just like I told you. I'm giving you 10 seconds if you'd like[in random order] to cum. [countFlav]'[roman type][line break]";
+		say MasturbationResistedFlav of M;
 	otherwise:
-		say "[line break][speech style of M]'[one of]You held on all the way to the end, slave! Now, you have 10 seconds to cum.'[or]You made it, slave! For the next 10 seconds, you can cum all you want!'[or]You held on, so how about a reward? For the next 10 seconds, you have my permission to cum.'[in random order][roman type][line break]".
+		say "[line break][speech style of M]'[one of]You held on all the way to the end, slave! Now, you have 10 seconds to cum. [or]You made it, slave! For the next 10 seconds, you can cum all you want! [or]You held on, so how about a reward? For the next 10 seconds, you have my permission to cum. [in random order][countFlav]'[roman type][line break]";
+		say MasturbationSubmittedFlav of M.
 
-To say PenileClimaxFlav of (M - dominatrix):
+[For the dominatrix, this function can ONLY trigger on the condition that player came before the second-to-last turn.]
+To compute penile masturbation end of (M - dominatrix):
+	TimesSubmittedUp M by 1;
+	let H be 0;
+	if the reaction of the player is 0 and refractoryperiod of the player > 0, compute masturbation edge humiliation of M;
+	otherwise compute masturbation edge release of M;
+	replace any chastity;
+	replace any diapers;
+	replace any clothes;
+	if the sex-length of M < 0, say EdgeDominanceFlav of M;
+	satisfy M.
+
+To say EdgeCageFlav of (M - dominatrix):
+	say "[speech style of M]'[one of]Did you enjoy your treat? That's your last one for awhile[or]I hope you enjoyed your treat, because you are NOT having another[in random order].'[roman type][line break]";
+To say EdgeInsultFlav of (M - dominatrix):
+	say "[speech style of M]'I hope you enjoyed your treat.'[roman type][line break]";
+
+To compute masturbation edge humiliation of (M - dominatrix):
+	let C be a random application appropriate off-stage actually summonable chastity cage;
+	if C is a thing and the player is ready for more bondage:
+		say EdgeCageFlav of M;
+		say "[BondageForceFlav of M for C] Only then does [he of M] let go of your [masturbation-grab-point].";
+		summon C locked;
+		compute M keylocking C;
+		say BondageAfterFlav of M for C;
+		reset bondage timer;
+	otherwise:
+		say "[BigNameDesc of M] whips you several times before [if M is piledriver-masturbating]removing you from the X-frame.[otherwise]removing the [semen]-dripping sleeve from your [player-penis].[EdgeInsultFlav of M]";
+		PainUp 15.
+
+To say MasturbationStoppedComment of (M - dominatrix):
+	say "[line break][speech style of M]'[one of]That's a good slave.'[or]I suppose I'll take that as a thank you.'[or]Was it good, slave?'[in random order][roman type][line break]";
+
+To compute masturbation edge release of (M - dominatrix):
 	let N be the reaction of the player;
 	if the disappointment of M > 0, decrease N by 1;
 	increase N by the charisma of the player;
-	if N < 1, now N is 1;[You have at least some chance to cum]
-	if refractoryperiod > 0:[player came at the end of the last turn]
-		say "[line break][speech style of M]'[one of]That's a good slave.'[or]I suppose I'll take that as a thank you.'[or]Was it good, slave?'[in random order][roman type][line break][BigFuckerDesc of M] removes the [semen]-dripping cocksleeve from your shaft and returns to [his of M] feet.";
+	if N < 1, now N is 1;
+	if refractoryperiod of the player > 0:[With permission, the player came at the end of the last turn]
+		say "[MasturbationStoppedComment of M][BigFuckerDesc of M] removes [if M is piledriver-masturbating]you from the X-frame[otherwise]the [semen]-dripping cocksleeve from your shaft and returns to [his of M] feet.[end if]";
 		increase the slave-status of M by 2;
-	otherwise:
-		say "[line break][speech style of M]'10...9...8...'[roman type][line break][BigFuckerDesc of M] [if the reaction of the player is 0]holds you down, still pumping the sleeve over your shaft despite your struggling.[otherwise if N is 1]may have given you permission, but apparently not [his of M] approval, purposely slowing [his of M] pumping down to a crawl.[otherwise if N is 2]keeps pumping at the exact same pace, neither assisting nor hindering your chances to finish.[otherwise if N is 3]speeds up, but only slightly, leaving just enough room that you still might not be able to finish.[otherwise]is clearly serious about giving you a reward, pumping the sleeve over your shaft twice as fast and hard as before![end if]";
-		now the sex-length of M is -1;[so we know where to start the countdown.]
+	otherwise:[The player got permission, but hasn't cum yet. Last chance.]
+		say "[line break][speech style of M]'7...6...5...'[roman type][line break][BigFuckerDesc of M] [if the reaction of the player is 0]holds you down, still pumping the sleeve over your shaft despite your struggling.[otherwise if N is 1]may have given you permission, but apparently not [his of M] approval, purposely slowing [his of M] pumping down to a crawl.[otherwise if N is 2]keeps pumping at the exact same pace, neither assisting nor hindering your chances to finish.[otherwise if N is 3]speeds up, but only slightly, leaving just enough room that you still might not be able to finish.[otherwise]is clearly serious about giving you a reward, pumping the sleeve over your shaft twice as fast and hard as before![end if]";
 		stimulate penis times N;
-		if refractoryperiod > 0:[The player came!]
-			say "[line break][speech style of M]'[one of]That's a good slave.'[or]I suppose I'll take that as a thank you.'[or]Was it good, slave?'[in random order][roman type][line break][BigFuckerDesc of M] removes the [semen]-dripping cocksleeve from your shaft and returns to [his of M] feet.";
+		if refractoryperiod of the player > 0:[The player came!]
+			say "[MasturbationStoppedComment of M][BigFuckerDesc of M] removes [if M is piledriver-masturbating]you from the X-frame[otherwise]the [semen]-dripping cocksleeve from your shaft and returns to [his of M] feet.[end if]";
 			increase the slave-status of M by 1;
 		otherwise:[The player didn't cum.]
-			if the reaction of the player is 0, say "[line break][speech style of M]'7... 6... 5...'[roman type][line break]You don't stop squirming even for a second, [if the delicateness of the player < 6]determined not to cum on anyone else's terms[otherwise if the delicateness of the player < 10]hoping it'll be enough to show [him of M] [he of M] isn't the boss of you[otherwise]hoping this won't be enough to actually make [him of M] angry[end if]. Luckily, your continued struggling gets in [his of M] way, and you feel [him of M] beginning to slow down.[line break][speech style of M]'4... 3... 2... 1. Time's up, slave. I hope you're comfortable with the decision you just made.'[roman type][line break][BigFuckerDesc of M] removes the sleeve from your shaft and returns to [his of M] feet.";
-			otherwise say "[line break][speech style of M]'7... 6... 5...'[roman type][line break]You buck and wiggle your hips in an attempt to make yourself cum before your time limit is up.[line break][speech style of M]'4... 3... 2...'[roman type][line break]However, it's only when the countdown is almost over and your [literalMistress of M] has begun to slow down that your [player-penis] finally begins to spasm. You frantically hump the sex toy in [his of M] hand, desperately hoping you aren't too late! Unfortunately, the cocksleeve is removed half a second later.[line break][speech style of M]'1. Time's up, slave. [one of]I guess you really didn't want to cum after all.'[or]Maybe you'll be luckier next time.'[or]Try being a little faster next time, ok?'[in random order][roman type][line break][BigFuckerDesc of M] returns to [his of M] feet.";
-			if the reaction of the player is 0:[]
+			if the reaction of the player is 0:
+				say "[line break][speech style of M]'7... 6... 5...'[roman type][line break]You don't stop squirming even for a second, [if the delicateness of the player < 6]determined not to cum on anyone else's terms[otherwise if the delicateness of the player < 10]hoping it'll be enough to show [him of M] [he of M] isn't the boss of you[otherwise]hoping this won't be enough to actually make [him of M] angry[end if]. Luckily, your continued struggling gets in [his of M] way, and you feel [him of M] beginning to slow down.[line break][speech style of M]'4... 3... 2... 1. Time's up, slave. I hope you're comfortable with the decision you just made.'[roman type][line break][BigFuckerDesc of M] removes [if M is piledriver-masturbating]you from the X-frame.[otherwise]the sleeve from your shaft and returns to [his of M] feet.[end if]";
 				FavourDown M by 2;
 				if the slave-status of M > 0, decrease the slave-status of M by 1;
-			Bore M.
+			otherwise:
+				say "[line break][speech style of M]'7... 6... 5...'[roman type][line break]You buck and wiggle your hips in an attempt to make yourself cum before your time limit is up.[line break][speech style of M]'4... 3... 2...'[roman type][line break]However, it's only when the countdown is almost over and your [literalMistress of M] has begun to slow down that your [player-penis] finally begins to spasm. You frantically hump the sex toy in [his of M] hand, desperately hoping you aren't too late! Unfortunately, the cocksleeve is removed half a second later.[line break][speech style of M]'1. Time's up, slave. [one of]I guess you really didn't want to cum after all.'[or]Maybe you'll be luckier next time.'[or]Try being a little faster next time, ok?'[in random order][roman type][line break][BigFuckerDesc of M] [if M is piledriver-masturbating]removes you from the X-frame[otherwise]returns to [his of M] feet.[end if]".
 
 Section 2 - Damage
 

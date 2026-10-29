@@ -727,7 +727,7 @@ To decide which number is the dominance of the player:
 		if sexual-penis-length < 3, decrease D by 2;
 		if penis is penis-erect:
 			if sexual-penis-length > 7, increase D by 1;
-			if sexual-penis-length < 5, decrease D by 1; [a smaller erection is actually less intimidating]
+			if sexual-penis-length < 5, decrease D by 1; [a smaller erection is actually less convincing]
 	if fuckskill is 0, decrease D by the delicateness of the player / 4;
 	increase D by the charisma of the player;
 	decide on D.

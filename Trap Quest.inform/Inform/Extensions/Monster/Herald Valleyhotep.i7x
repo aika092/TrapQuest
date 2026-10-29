@@ -101,7 +101,7 @@ This is the herald's blessing attack rule:
 	HairRedUp 1;
 	HairBrightUp 1;
 	HairBlondeUp 1;
-	if the player is ready for event TG:
+	if the player is ready for uncommon event tg:
 		say DefaultSexChangeFlav;
 		SexChange the player;
 	satisfy M;
@@ -119,7 +119,7 @@ To compute punishment of (P - herald-blessing):
 	if the player is totally incontinent:
 		if altar-diaper-link is 0:
 			say "[speech style of M]'All mortals will serve as vessels for [Azathot]'s infinite waste.'[roman type][line break]The next thing you know, you are hovering above the elder altar, completely unable to resist as you are slowly lowered onto the stone slab.";
-			if the player is not in Mansion23, teleport to Mansion23;
+			if the player is not in Mansion23, spatial teleport to Mansion23;
 			ElderOffer;
 		otherwise:
 			say "You feel your mind twisting and warping, becoming more naturally subservient, perverted and simple.";

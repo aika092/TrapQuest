@@ -172,7 +172,7 @@ Check poking a goblin:
 			if J is actually summonable:
 				summon J;
 				say "Just like magic, it appears on your finger![line break][speech style of the noun]'CUMMING!'[roman type][line break]For whatever reason, the teleportation of the ring has sent [NameDesc of the noun] into orgasmic throes.[line break][speech style of the noun]'THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU! And please join us next week for the next episode of FIND THE RIIIIIIIII-'[roman type][line break]You realise the scene is fading, and that you are now appearing back in the [location of goblin-painting].";
-				teleport to the location of goblin-painting;
+				raw teleport to the location of goblin-painting;
 				now playerRegion is mansion;
 			otherwise:
 				say "Nothing happens. Perhaps because there's no room on any of your fingers?";

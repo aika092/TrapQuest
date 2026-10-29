@@ -103,6 +103,20 @@ To decide which text is jewellery-shortcut of (A - an accessory):
 	if A is bracelet, decide on "b";
 	decide on "r".
 
+To accessoryDowngrade (A - an accessory):
+	if A is plentiful:
+		if A is solid gold:
+			now A is pure diamond;
+		otherwise if A is pure diamond:
+			now A is pink diamond;
+		otherwise if A is pink diamond:
+			now A is ruby;
+		otherwise if A is ruby:
+			now A is emerald;
+		otherwise if A is emerald:
+			now A is sapphire;
+		set shortcut of A.
+
 To accessoryUpgrade (A - an accessory):
 	if A is plentiful:
 		if A is pure diamond:

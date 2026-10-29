@@ -388,19 +388,10 @@ To say PrepTaunt of (M - bowsette) in (F - a fuckhole):
 		otherwise say "[line break][speech style of M]'I'm gonna fill your ass with my turtle cum...'[roman type][line break]".
 
 To compute anal sex of (M - bowsette):
-	if the class of the player is living sex doll:
-		compute sexSexDoll of M in asshole;
-	otherwise if the reaction of the player is 2:[begging]
-		compute sexBegging of M in asshole;
-	otherwise if the reaction of the player is 1:[submitting]
-		compute sexSubmit of M in asshole;
-	otherwise:[resisting]
-		compute sexResist of M in asshole;
-	decrease the sex-length of M by 1;
+	compute default anal sex of M;
 	if the temperament of M is 0:
 		say "[one of]As [NameDesc of M] fucks you,[or]More[stopping] [semen] constantly spurts from [his of M] [LongDickDesc of M] into your [asshole].";
-		AssFill 1;
-	say "[one of][M sex reaction][or][cycling]".
+		AssFill 1.
 
 To compute vaginal sex of (M - bowsette):
 	if the class of the player is living sex doll:

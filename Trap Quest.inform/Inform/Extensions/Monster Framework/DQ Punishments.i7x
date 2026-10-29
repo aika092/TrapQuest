@@ -232,7 +232,7 @@ Definition: a monster (called M) is able to carry out masturbation:
 		if N is not M, decide no;
 	if there is a worn chastity-belt, decide no;
 	if there is a worn chastity cage and the player is not possessing a vagina, decide no;
-	if (the player is not a bit horny and M is only willing to masturbate horny players) or refractoryperiod > 0, decide no;
+	if (the player is not a bit horny and M is only willing to masturbate horny players) or refractoryperiod of the player > 0, decide no;
 	decide yes.
 
 Definition: a monster is willing to masturbate: decide no.

@@ -12,6 +12,11 @@ Definition: an aeromancer is willing to fluff:
 	if there is a monster penetrating vagina, decide no;
 	decide yes.
 
+Definition: an aeromancer is willing to charm snakes:
+	decide yes.
+Definition: an aeromancer (called M) is eager to masturbate cocks:
+	decide yes.
+
 Definition: an aeromancer is wenchy: decide yes.
 
 To say ShortDesc of (M - an aeromancer):
@@ -656,6 +661,7 @@ This is the aeromancer tries to curse the player rule:
 		if T > 2:
 			say DefaultSpecialScienceFlavour;
 			compute aeromancer science tier T of current-monster;
+			satisfy current-monster;
 		otherwise:
 			compute the default taunting of current-monster;
 		rule succeeds.
@@ -704,22 +710,18 @@ The aeromancer special science experiments rule is listed in the aeromancer uniq
 
 This is the aeromancer wind barrier rule:
 	let M be current-monster;
-	if (M is wand-empowered or the science history of M > 6) and asshole is occupied and (the player is not possessing a vagina or vagina is occupied) and the number of barriers in the location of the player is 0:
+	if (M is wand-empowered or the science history of M > 6) and the number of barriers in the location of the player is 0:
 		say "[BigNameDesc of M] creates a wall of air around the edges of the room.[line break][speech style of M]'This trick has a tiny margin of AIR-rer.'[roman type][line break]";
 		now wind-wall is in the location of the player;
 		rule succeeds.
 The aeromancer wind barrier rule is listed in the aeromancer unique punishment rules.
 
-This is the aeromancer settles for hip inflation rule:
-	let M be current-monster;
+To compute SelectionFrustrated of (M - an aeromancer):
 	now the inflation-choice of M is 1; [Just in case]
-	if asshole is occupied and (the player is not possessing a vagina or vagina is occupied):
-		say "[BigNameDesc of M] seems to settle for inflating your body. [big he of M] points at your [AssDesc] whilst uncontrollably chuckling.[line break][speech style of M]'[one of]Improving people's bodies like this gives me such a lift! Although I'm afraid you might find it a bit of a drag...'[or]Don't worry baby, I'm sure your fashion style will take off soon.'[or]You're going on the only flight where excess baggage is not only allowed, but encouraged!'[in random order][roman type][line break]You feel [if inflation fetish is 0 and the silicone volume of hips is 0]silicone implants appear inside your [AssDesc],[otherwise if inflation fetish is 0]your silicone ass implants[otherwise]them[end if] inflating rapidly.";
-		if inflation fetish is 1, AssInflate 4;
-		otherwise AssImplantsUp 2;
-		satisfy M;
-		rule succeeds.
-The aeromancer settles for hip inflation rule is listed in the aeromancer unique punishment rules.
+	say "[BigNameDesc of M] seems to settle for inflating your body. [big he of M] points at your [AssDesc] whilst uncontrollably chuckling.[line break][speech style of M]'[one of]Improving people's bodies like this gives me such a lift! Although I'm afraid you might find it a bit of a drag...'[or]Don't worry baby, I'm sure your fashion style will take off soon.'[or]You're going on the only flight where excess baggage is not only allowed, but encouraged!'[in random order][roman type][line break]You feel [if inflation fetish is 0 and the silicone volume of hips is 0]silicone implants appear inside your [AssDesc],[otherwise if inflation fetish is 0]your silicone ass implants[otherwise]them[end if] inflating rapidly.";
+	if inflation fetish is 1, AssInflate 4;
+	otherwise AssImplantsUp 2;
+	bore M.
 
 To compute (M - an aeromancer) attacking (C - a diaper):
 	if asshole is actually occupied or C is perceived messed:
@@ -834,6 +836,96 @@ To say FriendlyPenetrationFlav of (M - an aeromancer) in (F - asshole):
 
 To say FriendlyPenetrationFlav of (M - an aeromancer) in (F - vagina):
 	say "The air around you compresses itself into shimmering tentacles, which immediately shoot into your [vagina].".
+
+To say ErectionDemand of (M - an aeromancer):
+	say "[BigNameDesc of M] points [his of M] wand at your [player-penis], smirking as the air around your shaft compresses itself into a shimmering tornado.[line break][speech style of M]'[one of]This next experiment requires a rigid lightning rod.[or]What an interesting lightning rod.[or]I need a stiff lightning rod for this next part.[in random order]'[roman type][line break]";
+
+To compute unerect taunting of (M - an aeromancer):
+	say "[BigNameDesc of M] waits a few seconds, but once it becomes clear that your [ShortDesc of penis] won't be getting any harder, the tiny tornado dissolves.[line break][speech style of M]'[one of]Afraid to get sucked by lightning, huh?'[or]Even when I lowered the pressure that much?'[or][manly-penis]s really are useless on drainy days!'[in random order][roman type][line break]";
+	FavourDown M by 1;
+	compute aeromancer science of M;
+	Bore M.
+
+To say ErectionMasturbationStart of (M - an aeromancer):
+	if penis is not penis-erect:
+		say "The tornado grows taller and faster as your [ShortDesc of penis] hardens, covering everything from your balls to your just below your tip. [BigNameDesc of M] makes eye contact with you as the miniature tornado begins to twist and pump around your shaft!";
+	otherwise:
+		say "[BigNameDesc of M] points [his of M] wand at your [player-penis], smirking as air compreses itself around it, forming a shimmering tornado exactly as tall as your [ShortDesc of penis] is long![line break][speech style of M]'[one of]I didn't take you for a storm chaser[or]You're in the eye of the storm now[in random order]!'[roman type][line break]".
+
+To say PiledriverMasturbationStart of (M - an aeromancer):
+	if penis is not penis-erect:
+		say "The tornado grows taller and taller as your [ShortDesc of penis] hardens, forming a shimmering tube from the base of your shaft all the way to your mouth. Uh oh.";
+	otherwise:
+		say "[BigNameDesc of M] points [his of M] wand at your [player-penis], smirking as air compreses itself in front of you, forming a shimmering tornado as long as your entire torso. The bottom of the tiny storm sucks in your [ShortDesc of penis] as the top end points itself at your mouth! Uh oh.[line break][speech style of M]'[one of]I didn't take you for a storm chaser[or]You're in the eye of the storm now[in random order]!'[roman type][line break]".
+
+To say DefaultMasturbationResistedSpeech of (M - an aeromancer):
+	if M is piledriver-masturbating, say "[speech style of M]'[one of]I can't believe you're this afraid of a little shower!'[or]If you're acting like that, this is gonna be a real cloudburst!'[or]Getting drained on is an important part of the experiment!'[in random order][roman type][line break]";
+	otherwise say DefaultMasturbationSubmittedSpeech of M.
+
+To say DefaultMasturbationSubmittedSpeech of (M - an aeromancer):
+	say "[speech style of M]'[one of]You really have your [player-penis] in the clouds...'[or]Stormfucker doesn't have as good a ring to it...'[or]Getting drained on is an important part of the experiment!'[or]Enjoying my special cumulonimbus cloud?'[or]Try not to get sucked by lightning!'[in random order][roman type][line break]".
+
+To say MasturbationSubmittedFlav of (M - an aeromancer):
+	if M is piledriver-masturbating, say "[one of]Droplets of precum sprinkle your face like rain as the tornado massages your shaft.[or]The wind tunnel whistles as it twists and pulls your shaft.[or][BigFuckerDesc of M] snickers as the bottom end of the wind tunnel twists up and down your shaft, varying the suction.[or]The wind tunnel drifts in circles as it massages your shaft, pulling it in different directions.[in random order]";
+	otherwise say "[one of]The tornado twists around your shaft.[or][BigFuckerDesc of M] writes in [his of M] [aerobook of M], intrigued as the tornado squishes and stretches around your [player-penis], stimulating different spots.[or][BigNameDesc of M] bends over, watching intently as the tornado massages your [ShortDesc of penis].[or]The tornado dances up and down your shaft, massaging you from top to bottom.[in random order]".
+
+To say MasturbationResistedFlav of (M - an aeromancer):
+	if M is piledriver-masturbating, say "[one of]The top of the tornado follows you no matter how much you try to turn your head, channeling droplets of precum into your face like rain.[or]The wind tunnel howls obnoxiously as it twists and swirls around your shaft.[or][BigFuckerDesc of M] chuckles as the bottom of your wind tunnel twists to follow your every move, pulling your [ShortDesc of penis] in every direction.[or]The wind tunnel seems to pulse in a taunting manner as it dominates your [player-penis].[in random order]";
+	otherwise say "[one of]The tornado follows you no matter how much you move around, stubbornly massaging your [player-penis]![or][BigFuckerDesc of M] writes in [his of M] [aerobook of M], snickering as the tornado squishes and stretches around your [player-penis], stimulating different spots.[or]Tornado whistles annoyingly as it pumps and massages your [ShortDesc of penis].[or]The tornado bounces up and down your shaft, stimulating your entire length with startling efficiency.[in random order]".
+
+To say MasturbationNearingClimaxFlav of (M - an aeromancer):
+	say "The [if M is piledriver-masturbating]wind tunnel[otherwise]tornado[end if] starts spinning slower. Is [he of M] bored?".
+
+To say PileDriverOpenDemand of (M - an aeromancer):
+	say "[speech style of M]'[one of]Catch the rain![or]Haha, try not to get wet![in random order]'[roman type][line break]";
+To say PenisGoneFlav of (M - an aeromancer):
+	say "The [if M is piledriver-masturbating]wind tunnel[otherwise]tornado[end if] slowly disappears.";
+	Bore M;
+	DifficultyUp M by 1;
+	now the sex-length of M is 1.
+To say ErectionLostFlav of (M - an aeromancer):
+	say "The [if M is piledriver-masturbating]wind tunnel[otherwise]tornado[end if] slowly disappears, [if penis is penis-erect]freeing your [player-penis].[otherwise]allowing your softening [player-penis] to droop.[end if]";
+	now penis is not penis-erect;
+	Bore M;
+	DifficultyUp M by 1;
+	now the sex-length of M is 1.
+To say HandCumEatRequest of (M - an aeromancer):
+	if M is intelligent, say "[speech style of M]'[one of]Lets not waste our experimental materials, ok?'[or]Why not eat it? It's mostly water.'[or]Be a good subject and lick it up..'[then at random][roman type][line break]";
+	otherwise say "[BigNameDesc of M] presents you with [his of M] sticky hand.";
+To say HandCumEatFlav of (M - an aeromancer):
+	say "You obediently lick [his of M] [semen]-covered fingers clean, and [NameDesc of M] [one of]smiles proudly[or]looks very pleased[in random order].[if M is intelligent][line break][speech style of M]'[one of]Nice[or]Whoa, [he of M] really did it[or]Awesome[cycling]!'[roman type][line break][end if]";
+To say HandCumKeepFlav of (M - an aeromancer):
+	say "[BigNameDesc of M] scrapes your [semen] into a small vial!";
+	let SV be the semen load of the player;
+	now SV is SV / 2;
+	if SV < 0, now SV is 1;
+	increase the science history of M by SV.
+
+To say MasturbationStoppedFlav of (M - an aeromancer):
+	say "[BigNameDesc of M] lowers [his of M] wand, and the compressed air slowly begins to fade away.".
+
+[Said just after masturbating the player but finishing before they cum and then replacing their clothes, and just before becoming satisfied and losing interest]
+To say EdgeDominanceFlav of (M - an aeromancer):
+	say "[speech style of M]'[one of]I've got something else to do, so let's continue this experiment later[or]Sorry, it messes up the data can't wait around forever for you to cum[or]I've got another project to check, so lets continue this later[then at random], [YouDumbBitch of M].'[roman type][line break]".
+
+To compute masturbation edge release of (M - an aeromancer):
+	say "After a few seconds, the [if M is piledriver-masturbating]wind tunnel[otherwise]tornado[end if] disappears completely, [if penis is penis-erect]freeing your [player-penis].".
+
+To compute masturbation edge humiliation of (M - an aeromancer):
+	let T be a random off-stage research airhancer;
+	if T is actually summonable:
+		say "[speech style of M]'I think you'll find my methods to be airtight!'[roman type][line break][BigNameDesc of M] touches [his of M] wand to your [ShortDesc of penis], and the tornado compresses itself further, and further slowly suffocating your [if the player is penis-erect]erection[otherwise]softening erection[end if] until it's completely soft. A golden watch materialises around your wrist.[line break][speech style of M]I call this my research airhancer. Get it? AIR-hancer?[roman type] [big he of M] pauses to laugh uncontrollably.[line break][speech style of M]So, this thing monitors the air pressure in your belly, and if it dips too low, it should keep your dick from getting hard. No more boners for you unless you're a good little test subject and help out with my experiments! I'm pretty sure I'm the only one who can take it off, but hey, I guess you can't BLOW IT until you try! Hahaha!'[roman type][line break]";
+		summon T;
+		now the parent-mage of T is M;
+		calm M;
+	otherwise:
+		say "[speech style of M]'I think you'll find my methods to be airtight!'[roman type][line break][BigNameDesc of M] touches [his of M] wand to your [ShortDesc of penis], and the tornado compresses itself further, and further slowly suffocating your [if the player is penis-erect]erection[otherwise]softening erection[end if] until it's completely soft. [big he of M] gets up.";
+		PenisObedienceUp 1;
+	compute erection decay;
+	Bore M.
+
+To compute masturbation penis shrink punishment of (M - an aeromancer):
+	compute masturbation edge humiliation of M.
 
 Definition: an aeromancer is willing to let go: decide no.
 
@@ -1223,7 +1315,7 @@ To compute failed dominance punishment of (M - an aeromancer):
 		otherwise say "[line break][speech style of M]'Haha, wow, I don't know who put that on you, but you've got hot air between your ears if you thought you'd get anywhere wearing that.'[roman type][line break][big he of M] flicks your flaccid penis.[line break][speech style of M]'Bad luck for you~!'[roman type][line break][BigNameDesc of M] loses interest.";
 		moderateHumiliate;
 		calm M;
-	if the player is not possessing a penis:
+	otherwise if the player is not possessing a penis:
 		say "[speech style of M]'This next experiment is really going to [if belly liquid types > 0]suck[otherwise]blow[end if]!'[roman type][line break][BigNameDesc of M] presses the tip of [his of M] wand to your belly button, laughing uncontrollably as your belly expands audibly[if inflation fetish is 1] with a rush of air[end if].[if belly liquid types > 0] You hear a gurgle as the liquid contents of your belly are shunted out the other end![end if]";
 		SemenPuddleUp the semen volume of belly;
 		MilkPuddleUp the milk volume of belly;
@@ -1231,47 +1323,14 @@ To compute failed dominance punishment of (M - an aeromancer):
 		empty belly liquids;
 		if inflation fetish is 1, AssFill 10 Air;
 		strongHumiliate;
-	otherwise if the player is getting unlucky:
-		let T be a random off-stage research airhancer;
-		if T is actually summonable:
-			say "[speech style of M]'I think you'll find my methods to be airtight!'[roman type][line break][BigNameDesc of M] touches [his of M] wand to your [ShortDesc of penis], whistling as air swirls around your length. You watch as a semi-transparent sheet of compressed air layers itself over your shaft, causing your [if the player is a bit horny]erection[otherwise]half-erection[end if] to slowly go away as a golden watch materialises around your wrist.[line break][speech style of M]I call this my research airhancer. Get it? AIR-hancer?[roman type] [big he of M] pauses to laugh uncontrollably.[line break][speech style of M]So, this thing monitors the air pressure in your belly, and if it dips too low, it should keep your dick from getting hard. No more sex for you unless you're a good little test subject and help out with my experiments! I'm pretty sure I'm the only one who can take it off, but hey, I guess you can't BLOW IT until you try! Hahaha!'[roman type][line break]";
-			summon T;
-			now the parent-mage of T is M;
-			calm M;
-		otherwise:
-			compute tornado experiment of M;
-		say GotUnluckyFlav;
+	otherwise if penis is an actual target and penis is able to get erect:
+		now chosen-orifice of M is penis;
+		now another-turn-flavour is the substituted form of "The shimmering shackes hold you in place.";
+		now another-turn is 1;
 	otherwise:
 		say "[speech style of M]'This experiment-... You won't believe-... Ugh. You threw off my train of thought. I'll be back.'[roman type][line break]";
 		compute sissification;
 	Bore M.
-
-To compute tornado experiment of (M - an aeromancer):
-	say "[speech style of M]I'm sorry about this experiment. It really blows loads![roman type][line break]A tiny tornado flows out of the tip of [his of M] wand, grabbing your [ShortDesc of penis] and locking it in a prison of powerful suction. [run paragraph on]";
-	if the size of penis >= 9 or the health of M < 3:
-		say "It feels incredible for a moment, but the cone dissipates after only a couple seconds.[line break][speech style of M]'Wow, looks like I'm gonna have to turn up the juice!'[roman type][line break][BigNameDesc of M] furrows [his of M] brow as [he of M] raises [his of M] wand again, whistling forcefully as a second wind tunnel twice as large as the original slowly flows from the tip of [his of M] wand, sucking in air from all around you as it assaults your penis with a rapidly intensifying vortex of pressure. The aeromancer struggles to maintain the spell, clothes ruffling in the wind and eventually tearing off as the suction builds and builds, torturing you with an ever mounting onslaught of pleasure.";
-		if the science history of M > 4 or M is confident aeromancer or M is ballooned or the size of penis < 3:[worse punishment from the skilled aeromancer]
-			say "[line break]You suddenly lose control, groaning as your [ShortDesc of penis] explodes into the cone, which sends your [semen] flying across the room in every direction. [BigNameDesc of M] stands up slowly[if bukkake fetish is 1], thoroughly coated in your load[otherwise], [one of]obviously surprised at[or]pleased with[stopping] [his of M] own strength[end if].";
-			SemenPuddleUp the size of penis;
-			if bukkake fetish is 1:
-				UnannouncedSquirt semen on face by 1;
-				UnannouncedSquirt semen on breasts by 1;
-				UnannouncedSquirt semen on belly by 1;
-				UnannouncedSquirt semen on thighs by 1;
-			Satisfy M;
-			penis orgasm shamefully;
-		otherwise:
-			say "[line break][speech style of M]Oh shi-![roman type] [BigNameDesc of M] suddenly loses control, screaming as [he of M] is pulled face first into the vortex and directly onto your rock hard cock. [big he of M] gags lewdly as your [ShortDesc of penis] slams into the back of [his of M] throat, which is that last little push that finally sends you over the edge. You groan as your cock unloads into [his of M] mouth, filling [his of M] belly with wave after wave of your [semen]. [big he of M] collapses in front of you, [if bukkake fetish is 1]lines of white rolling down [his of M] chin[otherwise]shivering[end if] as [he of M] clutches [his of M] heavily distended belly.";
-			BlowGet;
-			Bore M;
-			orgasm;
-	otherwise:
-		say "It feels incredible! The aeromancer makes sure not to let you enjoy it though, deviously manipulating the width of the tunnel according to the intensity of your moans. [if the size of penis >= 7][big he of M] holds your dick hostage for what feels like an eternity, cruelly releasing you from the spell just before you're able to cum[otherwise][big he of M] holds your dick hostage for what feels like an eternity, cruelly releasing you from [his of M] spell just after you go over the edge, ensuring that your orgasm is as short and unsatisfying as possible[end if]. You can't help your [if the delicateness of the player < 7]infuriated[otherwise]pleading[end if] stare as [he of M] slowly climbs to [his of M] feet.";
-		if the size of penis < 7:
-			orgasm;
-		Arouse 3000;
-		satisfy M;
-	increase the science history of M by 1.
 
 Part 6 - Conversation
 
@@ -1419,7 +1478,7 @@ To compute aeromancer science of (M - confident aeromancer):
 	let N be the science history of M;
 	if N > 5, now N is 5;
 	let R be a random number between 0 and N;[TODO: summons wasp]
-	say "[speech style of M]'[one of]Smart! OK, let's see...' [or]Good choice! Here we go...' [or]That was the right move. Now, stay still...' [at random][roman type][line break]Pointing [his of M] wand towards you, [NameDesc of M] concentrates. ";
+	say "[speech style of M]'[if M is unfriendly]I guess we could do this instead...'[otherwise][one of]Smart! OK, let's see...' [or]Good choice! Here we go...' [or]That was the right move. Now, stay still...' [in random order][end if][roman type][line break]Pointing [his of M] wand towards you, [NameDesc of M] concentrates. ";
 	if R is 0:
 		say "You feel your whole body exploding outwards!";
 		if the largeness of breasts < max breast size, BustInflate 12;

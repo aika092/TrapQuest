@@ -238,7 +238,7 @@ To compute DQ appearance assessment of (M - Icarus):
 woman-player has a number called icarus-scene.
 
 Definition: Icarus (called M) is distracted:
-	if the icarus-scene of woman-player is 0 and the woman-bimbo of woman-player is 2 and M is in the location of the player and woman-player is in the location of the player and the woman-status of M < 30:
+	if the icarus-scene of woman-player is 0 and the woman-bimbo of woman-player is 2 and M is in the location of the player and woman-player is in the location of the player and the woman-status of woman-player < 30:
 		let W be woman-player;
 		say "[BigNameDesc of W] walks up to [NameDesc of M].[line break][speech style of W]'Hey dude... That experiment you did on my lips... Are you sure it's all over? Because they still feel a bit tingly.'[roman type][line break][big he of W] asks, with a hint of anxiety in [his of W] tone.[paragraph break][speech style of M]'Huh? Let me see...'[roman type][BigNameDesc of M] moves [his of M] head to get a closer look at [NameDesc of W][']s thick, luscious lips. [big he of M] touches them gently, making [NameDesc of W] sigh with poorly hidden pleasure.[line break][speech style of M]'Holy crap, they do seem to be even bigger than before. And, if I'm not mistaken, more sensitive...?'[roman type][paragraph break][speech style of W]'Oh fuck, I thought so... I hope the magic wears off soon... Or else... I'm gonna get an oral fixation for sure...'[roman type][line break][big he of W] whimpers with a mixture of shame and pleasure.";
 		cutshow Figure of barbara cutscene 30 for M;

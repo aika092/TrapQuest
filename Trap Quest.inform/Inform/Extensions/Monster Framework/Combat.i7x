@@ -326,7 +326,7 @@ To compute replacement of (T - a thing) in (O - an orifice):
 			otherwise:
 				compute current-monster locking T with K.
 
-[!<DominateUpMonster>+
+[!<ComputeReplacementOfClothing>+
 
 With this function, current-monster moves a given piece of clothing back into place
 
@@ -385,7 +385,7 @@ To TimesSubmittedUp (M - a monster):
 	increase the times-submitted of M by 1;
 	increase the submission-count of the player by 1;
 	increase the sex-count of the player by 1;
-	if vampiress is chain-tethering, end tethering.
+	[if vampiress is chain-tethering, end tethering.]
 
 To compute licking completion of (M - a monster):
 	compute default licking completion for M;
@@ -452,6 +452,7 @@ Definition: a monster is willing to tongue creampie:
 	decide no.
 
 To compute assisted facial of (M - a monster) with (subs - a number):
+	now M is not penetrating face;
 	if the reaction of the player is 0:
 		compute assisted facial dodging of M with subs;
 	otherwise:
@@ -513,7 +514,7 @@ To compute post climax effect of (M - a monster) in (F - a body part):
 	if F is asshole, check post climax anal slimation of M.
 
 To check post climax anal slimation of (M - a monster):
-	if watersports fetish is 1 and grossness fetish > 0 and M is willing to urinate and the bladder of M >= 600 and M is not wrapped, compute anal slimation of M.
+	if watersports fetish is 1 and baseline grossness fetish is 1 and M is willing to urinate and the bladder of M >= 600 and M is not wrapped, compute anal slimation of M.
 
 To compute anal slimation of (M - a monster):
 	if M is intelligent, say AnalSlimationAnnounceFlav of M;
@@ -644,7 +645,7 @@ To compute penile masturbation end of (M - a monster):
 	replace any chastity;
 	replace any diapers;
 	replace any clothes;
-	if M is not friendly-fucking and M is intelligent and H is 0, say EdgeDominanceFlav of M;
+	if M is not friendly-fucking and M is intelligent and H is 0 and refractoryperiod of the player <= 0, say EdgeDominanceFlav of M;
 	satisfy M.
 
 [Similarly, these are BLAND EXAMPLES of what progress sex might look like for your monster.]
@@ -800,7 +801,9 @@ This is the default penile sex rule:
 The default penile sex rule is listed in the default progress sex rules.
 
 To compute penile masturbation of (M - a monster):
-	if penis is not penis-erect: [which implies that the player came]
+	if the size of penis is 0:[The player's penis no longer exists. This usually, but does not necessarily mean the player came.]
+		say PenisGoneFlav of M;
+	otherwise if penis is not penis-erect:[which implies that the player came]
 		say ErectionLostFlav of M;
 	otherwise if the sex-length of M is 1 and M is anticipating-climax:
 		say MasturbationNearingClimaxFlav of M;
@@ -816,7 +819,7 @@ To compute penile masturbation of (M - a monster):
 		decrease the sex-length of M by 1;
 		stimulate penis from M;
 		if the sex-length of M < 0: [this means the player just orgasmed]
-			if the sex-length of M > the size of penis * -1 and the player is possessing a penis and shrink TG < 3:  [this means the player just orgasmed AND their penis shrunk AND they still have a penis]
+			if the sex-length of M > the size of penis * -1 and the player is possessing a penis and instant shrink tg is 0:  [this means the player just orgasmed AND their penis shrunk AND they still have a penis]
 				compute masturbation penis shrink punishment of M;
 			otherwise if M is penis-masturbating:
 				compute masturbation cum in hand punishment of M;
@@ -958,15 +961,15 @@ This is the monster punishment rule:
 		if current-monster is a-dick-detacher and tough-shit is 1 and (detach-likelihood + a random number between 1 and 20) > 18:
 			now detach-likelihood is 0;
 			let method be 0;
-			if penis-is-detachable by current-monster using 2:
+			if penis is detachable-via-tug:
 				now method is 2;
-			otherwise if penis-is-detachable by current-monster using 3:
+			otherwise if penis is detachable-via-magic:
 				now method is 3;
-			otherwise if penis-is-detachable by current-monster using 1:
+			otherwise if penis is detachable-via-blowjob:
 				now method is 1;
 			if method > 0:
 				say "[BigNameDesc of current-monster] doesn't move. You've just started wondering if [he of current-monster] is about to show mercy, ";
-				compute detach-players-dick by current-monster using method;
+				compute dick-detachment by current-monster using method;
 				rule succeeds;
 		follow the monster punishment rules;
 		if the rule succeeded, rule succeeds.
@@ -1133,7 +1136,7 @@ Definition: face is a potential target:
 	decide no.
 
 Definition: thighs is a potential target: [Thighs is used to target for making the player lick something.]
-	if grossness fetish > 0 and current-monster is willing to do licking, decide yes;
+	if baseline grossness fetish is 1 and current-monster is willing to do licking, decide yes;
 	decide no.
 
 Definition: vagina is a potential target:
@@ -1153,7 +1156,7 @@ Definition: breasts (called B) is a potential target:
 	decide no.
 
 Definition: penis (called B) is a potential target:
-	if B is penis and the player is possessing a penis and players-dick-is-detached is 0 and current-monster is willing to charm snakes, decide yes;
+	if B is penis and the player is possessing a penis and penis is attached and current-monster is willing to charm snakes, decide yes;
 	decide no.
 
 Definition: an object is an actual target: decide no.
@@ -1170,9 +1173,9 @@ Definition: a body part (called B) is a reasonable target:
 		decide no;
 	if there is a triggered cage trap in the location of the player:
 		unless (B is face or B is breasts or B is belly) and the number of worn stuck clothing + the number of stuck body parts is 0, decide no; [when trapped by a cage trap, the only parts accessible are your face and breasts, and that's only when you are stuck halfway out]
-	if B is fuckhole:
+	if B is fuckhole or B is penis:
 		let C be a random worn top level ass protection clothing;
-		if B is vagina, let C be a random worn top level protection clothing;
+		if B is not asshole, let C be a random worn top level protection clothing;
 		if C is clothing and C is not rippable and C is not displacable and C is untearable and (C is not crotch-zipped or current-monster is not intelligent) and C is not vaginal seal and C is not chastity bond:
 			if debugmode > 1, say "[C] cannot be removed!";
 			decide no;
@@ -2120,9 +2123,9 @@ The monster penetrating penis rule is listed last in the monster penis insertion
 To get penis penetration image for (M - a monster):
 	do nothing.
 To get penis normal masturbation image for (M - a monster):
-	cutshow the piledriver-masturbating-monster-image of M for M.
-To get penis piledriver masturbation image for (M - a monster):
 	cutshow the penis-masturbating-monster-image of M for M.
+To get penis piledriver masturbation image for (M - a monster):
+	cutshow the piledriver-masturbating-monster-image of M for M.
 
 To compute (M - a monster) demanding erection:
 	if penis is not penis-erect, say ErectionDemand of M;

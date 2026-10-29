@@ -161,7 +161,7 @@ To trigger lactation:
 			now the lactation count of breasts is 0;
 			now the plug size of milking harness is the openness of asshole;
 			say "[one of]You look down to try and work out exactly what this thing does...[line break][ExamineDesc of milking harness][or][stopping]";
-		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation count of breasts and a2m fetish >= 2 and royal circlet is off-stage and royal circlet is actually summonable and yellow-pacifier is not worn:
+		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation count of breasts and snowball fetish is 1 and royal circlet is off-stage and royal circlet is actually summonable and yellow-pacifier is not worn:
 			if black strap hood is off-stage and there is worn black themed latex clothing and black strap hood is actually summonable:
 				say "[bold type]As you finish lactating, a black strap hood appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
 				summon black strap hood cursed;

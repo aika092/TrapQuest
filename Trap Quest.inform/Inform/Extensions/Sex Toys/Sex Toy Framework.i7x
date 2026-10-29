@@ -23,7 +23,8 @@ Definition: a sex toy is transformation-protected: decide yes.
 Definition: a sex toy is disintegration-protected: decide yes.
 
 To decide which number is the initial outrage of (S - a sex toy):
-	decide on 11.
+	if S is worn, decide on 16;
+	decide on 15 + (the size of S / 2).
 
 To decide which number is the unworn outrage of (S - a sex toy):
 	let O be (the initial outrage of S) + (the size of S);
@@ -39,7 +40,7 @@ To decide which number is the outrage of (S - a sex toy):
 
 Definition: a sex toy (called S) is actually summonable:
 	if S is on-stage, decide no;
-	if S is players-detached-dick and players-dick-is-detached is not 0, decide yes;
+	if S is players-detached-dick and penis is detached, decide yes;
 	if S is part of something, decide no;
 	if the size of S is 0, decide no;
 	if asshole is actually occupied, decide no;
@@ -72,12 +73,28 @@ To say ShortDesc of (C - a sex toy):
 To say MediumDesc of (C - a sex toy):
 	say "[DongSize of C] [ShortDesc of C]".
 
+To say AppearanceDesc of (C - a sex toy):
+	if C is carried, say "held ";
+	[if C is tonguing, say "salivating and licking ";]
+	say cumdesc of C.
+
+To say cumdesc of (C - a clothing):
+	if the known-total-soak of C > 0:
+		if the known-semen-soak of C > 0:
+			say "cum-dipped ";
+		otherwise if the known-slime-soak of C > 0:
+			say "[slime]-dipped ";
+		otherwise if the known-milk-soak of C > 0:
+			say "milk-dipped ";
+		otherwise:
+			say "damp ".
+
 Report examining a sex toy:
 	if there is an orifice penetrated by the noun:
 		repeat with O running through orifices penetrated by the noun:
 			say "It is currently inside your [variable O]. ";
 		say insertedToleranceDesc of the noun;
-	otherwise:
+	otherwise if the noun is not worn:
 		say potentialToleranceDesc of the noun.
 
 To say insertedToleranceDesc of (P - a sex toy):
@@ -87,7 +104,7 @@ To say insertedToleranceDesc of (P - a sex toy):
 To say potentialToleranceDesc of (P - a sex toy):
 	let F be asshole;
 	if P is not plug and the player is possessing a vagina, now F is vagina;
-	say "[if the girth of P < insertableGirthAcceptance of F - 3 and diaper quest is 0]Your experienced [variable F] can easily take a plug of this size[otherwise if the girth of P < insertableGirthAcceptance of F - 3]Your new perverted self won't have any problems handling a plug of this size[otherwise if the girth of P < insertableGirthAcceptance of F]Your [variable F] shouldn't have any major problems taking a plug of this size[otherwise if the girth of P < insertableGirthAcceptance of F + 2]This plug would definitely stretch your [variable F] to new limits[otherwise]There's almost definitely no way that you could get this inside your [variable F][end if].".
+	say "[if the girth of P < insertableGirthAcceptance of F - 3 and diaper quest is 0]Your experienced [variable F] can easily take a toy of this size[otherwise if the girth of P < insertableGirthAcceptance of F - 3]Your new perverted self won't have any problems handling a toy of this size[otherwise if the girth of P < insertableGirthAcceptance of F]Your [variable F] shouldn't have any major problems taking a toy of this size[otherwise if the girth of P < insertableGirthAcceptance of F + 2]This toy would definitely stretch your [variable F] to new limits[otherwise]There's almost definitely no way that you could get this inside your [variable F][end if].".
 
 toyShortcutCount is initially 1.
 
@@ -147,7 +164,7 @@ To compute periodic expansion effect of (C - a sex toy):
 		now the toy-charge of C is 0;
 		increase the size of C by 1;
 		let F be a random fuckhole penetrated by C;
-		say "Your [ShortDesc of C] drastically increases in size![if the size of C > the openness of F] You feel your [variable F] stretching painfully to accommodate the enlarged intruder[otherwise] You feel the [clothing-material of C] pressing much tighter against the inside of your [variable F][end if].";
+		say "Your [ShortDesc of C] drastically increases in size![if the size of C > the openness of F] You feel your [variable F] stretching painfully to accommodate the enlarged intruder[otherwise if C is biological] You feel it pressing much tighter against the inside of your [variable F][otherwise] You feel the [clothing-material of C] pressing much tighter against the inside of your [variable F][end if].";
 		if the size of C > the openness of F, Ruin F;
 		if C is not cursed and the player is somehow possessing a penis and the mystical size of penis < the size of C, SpecialPenisUp 1.[uncursed expansion clothing will slowly increase penis size for male players] [#LXorDD]
 
@@ -226,13 +243,20 @@ An all time based rule (this is the sex toys slipping out rule):
 vaginalGripCount is a number that varies.
 analGripCount is a number that varies.
 
+Definition: a thing (called I) is able to anally slip out:
+	if I is not glued clothing and I is not cursed clothing and I is not nintendolls flag plug and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room) and the player is not ass protected:
+		if I is sex toy and chastity-belt is worn and the size of I > 8, decide no;
+		otherwise decide yes;
+	otherwise:
+		decide no.
+
 To compute gripping of (I - a thing):
 	let G be the grip of I;
 	let R be a random number between 0 and G * G * 3;
 	[#LXorDD: For the case of wearing the stick-on 0-sized penis decal, it's too fiddly to bother add a whole 'It peels off and flutters to the ground' or 'the stick on decal magically somehow fills your [orifice]' thing, so instead we'll kludge this special case and say the player is just pretending. I also suspect if it isn't counted as being held 'inside' long enough this might loop forever, too. So we pretend everything is proceeding normally.]
 	let pretence be "The";
 	if I is players-detached-dick and the size of I is 0, now pretence is "You pretend that your";
-	if the player is upright and I is not glued clothing and I is not cursed clothing and chastity-belt is not worn and I is not nintendolls flag plug and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
+	if the player is upright and I is able to anally slip out:
 		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength[roman type][line break]";
 		if I is players-detached-dick and the size of I is 0:
 			do nothing; [so, avoid the falls 'out' check]
@@ -321,7 +345,7 @@ To check plug holding with reason (T - a text):
 	if I is sex toy:
 		let G be the grip of I;
 		let R be a random number between 1 and G;
-		if I is not glued clothing and I is not cursed clothing and chastity-belt is not worn and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room) and the player is not ass protected:
+		if I is able to anally slip out:
 			if debuginfo > 0, say "[input-style][ShortDesc of I] gripping check: Grip value ([G]); d[G] = [R] | 1.5 Required grip strength[roman type][line break]";
 			if R <= 1:
 				if T is not "", say "[T] you lose hold of [NameDesc of I].";
@@ -354,7 +378,7 @@ Chapter 1 - Dongs
 A dong is a kind of sex toy. Understand "dildo" as dong.
 
 To decide which number is the masturbation-bonus of (C - a sex toy):
-	decide on 1 + the magic-modifier of C + the raw-masturbation-bonus of C.
+	decide on 1 + the magic-modifier of C + the raw-masturbation-bonus of C + (the size of C / 3).
 
 To decide which number is the raw-masturbation-bonus of (C - a sex toy):
 	decide on 0.
@@ -633,6 +657,7 @@ This is the skirt tail plug clash rule:
 			if summoning is 0 and autowear is false, say "You can't wear that because your [printed name of O] is in the way!";
 			rule fails.
 The skirt tail plug clash rule is listed in the skirt wearability rules.
+The skirt tail plug clash rule is listed in the corset wearability rules.
 
 To UniquePinkWardrobeUnclash (C - a tail plug):
 	repeat with O running through worn total protection clothing:
